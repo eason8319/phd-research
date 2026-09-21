@@ -1,0 +1,15 @@
+---
+description: Restrict every chat in this repo to the current workspace only
+alwaysApply: true
+---
+
+# Workspace isolation
+
+This repository is the only allowed working context.
+
+- Read, search, and edit files only under the current workspace root.
+- Do not open, search, or cite other local projects, other workspace folders, or paths outside this repo (except the current workspace's own `.cursor/` project files if needed for this repo).
+- Do not search, read, or quote past conversations, agent transcripts, chat history, or cached cloud chats.
+- Do not use the user's personal agent store, global memories, or other chats as background. If a fact is not in this repo or the current thread, ask or look in this repo.
+- Do not treat previously viewed files from other projects as relevant context.
+- If information seems to exist only in an old chat, say so and work from this repo instead of retrieving that chat.

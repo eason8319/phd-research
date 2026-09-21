@@ -1,0 +1,18 @@
+---
+description: 每月更新文献清单和 BibTeX：按月度约定检索、核预印本并同步书目。Use when editing the reading list, BibTeX, or monthly log, or when the user asks for a monthly literature update / preprint check / 做本月文献更新.
+globs: docs/literature-survey-*.md,docs/literature-survey.bib
+alwaysApply: false
+---
+
+# 文献清单维护
+
+- 每次更新先通读 `docs/literature-survey-monthly.md` 的检索约定，再按其中来源、检索式、纳入规则执行；不要凭记忆另写一套检索。
+- 归类按目录文首定义：A–D 为四个主类，E 为基础与评测附录，K 单列预印本与技术报告。每篇只保留一个完整条目，交叉机制用标签或引用说明，不另建平行清单。
+- 每次更新必须同步 `docs/literature-survey-reading-list.md` 与 `docs/literature-survey.bib`；新增、剔除、改题名、转正式发表和重新编号均须同步。清单保留简称，BibTeX 保留完整题名、完整作者和可核出版信息；不得只改 Markdown。
+- 引用键与清单编号一一对应。改编号前按 DOI/arXiv 号/完整题名建立旧键到新键的映射，并同步仓库内已有引用；不得让同一引用键悄然改指另一篇论文。仍有正文引用的剔除项先解决引用归属，不能直接删键。
+- 完成前检查 BibTeX 语法、重复键及重复版本、条目数与身份对应、必需字段和标识；转正式发表更新条目类型、年份、venue、DOI/卷页，保留经核实的开放版本标识。来源未提供的字段留空，不推测补齐；未通过一致性检查不得称为完成。
+- 当月动作只在月度文档「更新记录」追加一行表格；必要备注写入该行，不追加逐篇清单或过程说明。同步刷新目录日期、数量与编号。
+- 每月核查 K 中全部条目并标注主题归属，不在 A–E 重复列出。确认正式出处后移入对应主类或附录并删除 K 中原条目，迁移不计新增。主会、期刊、研讨会、技术报告、预印本须区分；未完成核查不得更新为已核日期。
+- 禁止编造题名、作者、DOI、arXiv 号。每条须有可核 URL。
+- 不要在本仓库添加检索脚本、爬虫或其他仅供助手执行的代码；用网页/数据库按月度约定查阅即可。
+- 公式只用 `$...$` / `$$...$$`。
