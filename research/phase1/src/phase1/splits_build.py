@@ -391,8 +391,11 @@ def main() -> None:
     for name, tokenizer, is_llama in (("qwen", qwen, False), ("llama", llama, True)):
         text, _ = render(tokenizer, prefix_user, is_llama)
         prefixes[name] = text.split(prefix_user)[0]
-    if "Cutting Knowledge Date: 26 Jul 2024" not in prefixes["llama"]:
-        raise SystemExit("Llama 模板没有注入固定日期")
+    llama_prefix = prefixes["llama"]
+    has_cutoff = "Cutting Knowledge Date:" in llama_prefix
+    has_today = "Today Date: 26 Jul 2024" in llama_prefix
+    if not has_cutoff or not has_today:
+        raise SystemExit("Llama 模板没有同时注入知识截止日期和固定日期")
     if "Qwen" not in prefixes["qwen"]:
         raise SystemExit("Qwen 模板没有注入默认身份句")
     gsm = allocate_gsm8k(load_gsm8k(parquet_path(root, "gsm8k.source.json")))
