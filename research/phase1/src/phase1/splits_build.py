@@ -296,74 +296,113 @@ def pack_hotpot(
     tokenizer: Any,
     row: dict[str, Any],
     pool: list[str],
-    cursor: int,
+    start: int,
     llama: bool,
-) -> tuple[dict[str, Any], int]:
-    """把两份支持文档隔开至少 8192 token，并把较长问法压进 30K–31K。"""
+) -> dict[str, Any] | None:
+    """两份支持文档隔开至少 8192 token。装不进 30K–31K 时返回 None。"""
     supports = [support_text(row, title) for title in row["support_titles"]]
     own = [
         f"{title}: {' '.join(sentences)}"
         for title, sentences in row["docs"].items()
-        if title not in row["support_titles"]
+        if title not in set(row["support_titles"])
     ]
-    gap: list[str] = list(own)
-    tail: list[str] = []
+    first = "[[SUPPORT-1]]\n" + supports[0] + "\n[[SUPPORT-1-END]]"
+    second = "[[SUPPORT-2]]\n" + supports[1]
 
-    def consume(count: int) -> list[str]:
-        nonlocal cursor
-        picked = []
-        for _ in range(count):
-            picked.append(pool[cursor % len(pool)])
-            cursor += 1
-        return picked
-
-    def assemble(gap_lines: list[str], tail_lines: list[str], template: str) -> tuple[str, list[int]]:
-        documents = "\n\n".join([supports[0], *gap_lines, supports[1], *tail_lines])
+    def build(extra_gap: int, extra_tail: int, template: str) -> tuple[str, list[int]]:
+        gap_lines = own + _pool_slice(pool, start, extra_gap)
+        tail_lines = _pool_slice(pool, start + extra_gap, extra_tail)
+        documents = "\n\n".join([first, *gap_lines, second, *tail_lines])
         user = template.format(documents=documents, question=row["question"])
         return render(tokenizer, user, llama)
 
-    # 先放够间隔，再补尾部。每轮用整段 tokenize 校正，避免逐句重编码。
-    for _ in range(6):
-        long_text, long_ids = assemble(gap, tail, HOTPOT_LONG)
-        gap_tokens = _gap_tokens(tokenizer, long_text, supports[0], supports[1])
-        if gap_tokens < GAP_TOKENS:
-            gap.extend(consume(40))
-            continue
-        if len(long_ids) > TARGET_32K and len(tail) > 20:
-            del tail[-20:]
-            continue
-        if len(long_ids) > TARGET_32K and len(gap) > len(own) + 40:
-            del gap[-20:]
-            continue
-        if len(long_ids) < 30 * 1024:
-            tail.extend(consume(40))
-            continue
-        short_text, short_ids = assemble(gap, tail, HOTPOT_MAIN)
-        return (
-            {
-                "main_text": short_text,
-                "main_tokens": len(short_ids),
-                "main_sha256": sha256_text(short_text),
-                "long_text": long_text,
-                "long_tokens": len(long_ids),
-                "long_sha256": sha256_text(long_text),
-                "support_titles": row["support_titles"],
-                "gap_tokens": gap_tokens,
-                "support_fraction": [
-                    _span_fraction(tokenizer, long_text, supports[0][:80]),
-                    _span_fraction(tokenizer, long_text, supports[1][:80]),
-                ],
-            },
-            cursor,
-        )
-    raise RuntimeError(f"无法把 {row['id']} 装进 32K 窗口")
+    def gap_of(text: str) -> int:
+        return _marker_gap(tokenizer, text, "[[SUPPORT-1-END]]", "[[SUPPORT-2]]")
+
+    probe, probe_ids = build(0, 0, HOTPOT_LONG)
+    if len(probe_ids) > TARGET_32K:
+        return None
+    best_gap = _smallest_gap(build, gap_of)
+    if best_gap is None:
+        return None
+    best_tail = _longest_tail(build, best_gap)
+    if best_tail is None:
+        return None
+    long_text, long_ids = build(best_gap, best_tail, HOTPOT_LONG)
+    short_text, short_ids = build(best_gap, best_tail, HOTPOT_MAIN)
+    gap_tokens = gap_of(long_text)
+    long_n = len(long_ids)
+    short_n = len(short_ids)
+    if gap_tokens < GAP_TOKENS or long_n > TARGET_32K or short_n > TARGET_32K:
+        return None
+    if long_n < 30 * 1024:
+        return None
+    return {
+        "main_text": short_text,
+        "main_tokens": short_n,
+        "main_sha256": sha256_text(short_text),
+        "long_text": long_text,
+        "long_tokens": long_n,
+        "long_sha256": sha256_text(long_text),
+        "support_titles": row["support_titles"],
+        "gap_tokens": gap_tokens,
+        "support_fraction": [
+            _span_fraction(tokenizer, long_text, "[[SUPPORT-1]]"),
+            _span_fraction(tokenizer, long_text, "[[SUPPORT-2]]"),
+        ],
+    }
 
 
-def _gap_tokens(tokenizer: Any, text: str, first: str, second: str) -> int:
+def _pool_slice(pool: list[str], start: int, count: int) -> list[str]:
+    if count <= 0:
+        return []
+    return [pool[(start + offset) % len(pool)] for offset in range(count)]
+
+
+def _smallest_gap(build: Any, gap_of: Any) -> int | None:
+    """找仍能放进窗口的最少填料句，使两份支持文档的间隔达到 8192 token。"""
+    low, high = 0, 2500
+    best: int | None = None
+    while low <= high:
+        mid = (low + high) // 2
+        _text, ids = build(mid, 0, HOTPOT_LONG)
+        if len(ids) > TARGET_32K:
+            high = mid - 1
+            continue
+        if gap_of(_text) >= GAP_TOKENS:
+            best = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    return best
+
+
+def _longest_tail(build: Any, extra_gap: int) -> int | None:
+    """在不越过 31744 token 的前提下，把较长问法尽量放到 30K 以上。"""
+    low, high = 0, 2500
+    best: int | None = None
+    best_len = -1
+    while low <= high:
+        mid = (low + high) // 2
+        _text, ids = build(extra_gap, mid, HOTPOT_LONG)
+        length = len(ids)
+        if length > TARGET_32K:
+            high = mid - 1
+            continue
+        if length >= best_len:
+            best = mid
+            best_len = length
+        low = mid + 1
+    if best is None or best_len < 30 * 1024:
+        return None
+    return best
+
+
+def _marker_gap(tokenizer: Any, text: str, first: str, second: str) -> int:
     encoded = tokenizer(text, add_special_tokens=False, return_offsets_mapping=True)
     offsets = encoded["offset_mapping"]
-    first_at = text.find(first[:80])
-    second_at = text.find(second[:80])
+    first_at = text.find(first)
+    second_at = text.find(second)
     if first_at < 0 or second_at < 0:
         return 0
 
@@ -374,6 +413,78 @@ def _gap_tokens(tokenizer: Any, text: str, first: str, second: str) -> int:
         return 0
 
     return locate(second_at) - locate(first_at)
+
+
+def saved_retrieval(tokenizer: Any, spec: dict[str, Any], text: str) -> dict[str, Any]:
+    """从已经写好的全文恢复长度、深度和校验值，避免重跑二分搜索。"""
+    ids = tokenizer(text, add_special_tokens=False)["input_ids"]
+    key = f"key-{spec['seed']:08x}"
+    value = f"val-{spec['seed']:08x}"
+    needle = NEEDLE_SENTENCE.format(key=key, value=value)
+    return {
+        "text": text,
+        "tokens": len(ids),
+        "actual_depth": _span_fraction(tokenizer, text, needle),
+        "key": key,
+        "value": value,
+        "sha256": sha256_text(text),
+    }
+
+
+def _take_hotpot(
+    rows: list[dict[str, Any]],
+    count: int,
+    label: str,
+    banned: set[str],
+    pool: list[str],
+    text_root: Path,
+    qwen: Any,
+    llama: Any,
+) -> tuple[list[dict[str, Any]], set[str]]:
+    """按顺序装箱，装不下的题跳过，直到凑满 count。"""
+    taken: list[dict[str, Any]] = []
+    blocked = set(banned)
+    models = (("qwen", qwen, False), ("llama", llama, True))
+    for index, row in enumerate(rows):
+        if len(taken) >= count:
+            break
+        if row["id"] in blocked:
+            continue
+        start = (index * 2500) % len(pool)
+        packed_by_model: dict[str, dict[str, Any]] = {}
+        for name, tokenizer, is_llama in models:
+            packed = pack_hotpot(tokenizer, row, pool, start, is_llama)
+            if packed is None:
+                packed_by_model = {}
+                break
+            packed_by_model[name] = packed
+        if not packed_by_model:
+            print(f"skip {label} {row['id']}", flush=True)
+            continue
+        item: dict[str, Any] = {
+            "id": row["id"],
+            "row": row["row"],
+            "answer": row["answer"],
+            "models": {},
+        }
+        for name, packed in packed_by_model.items():
+            folder = text_root / "hotpot" / name / label
+            _store_text(folder / f"{row['id']}.main.txt", packed["main_text"])
+            _store_text(folder / f"{row['id']}.long.txt", packed["long_text"])
+            item["models"][name] = {
+                "main_tokens": packed["main_tokens"],
+                "main_sha256": packed["main_sha256"],
+                "long_tokens": packed["long_tokens"],
+                "long_sha256": packed["long_sha256"],
+                "support_titles": packed["support_titles"],
+                "gap_tokens": packed["gap_tokens"],
+                "support_fraction": packed["support_fraction"],
+            }
+        taken.append(item)
+        print(f"hotpot {label} {len(taken)} {row['id']}", flush=True)
+    if len(taken) < count:
+        raise SystemExit(f"{label} 只装进 {len(taken)} 题，需要 {count}")
+    return taken, {item["id"] for item in taken}
 
 
 def main() -> None:
@@ -404,36 +515,53 @@ def main() -> None:
     ]
     rng = np.random.default_rng(stream_seed(2, 0))
     order = rng.permutation(len(hotpot_rows))
-    chosen = [hotpot_rows[int(order[i])] for i in range(HOTPOT_V + HOTPOT_EXPAND + HOTPOT_T)]
-    hotpot_v = chosen[:HOTPOT_V]
-    hotpot_expand = chosen[HOTPOT_V : HOTPOT_V + HOTPOT_EXPAND]
-    hotpot_t = chosen[HOTPOT_V + HOTPOT_EXPAND :]
-    held_ids = {row["id"] for row in hotpot_t}
-    pool = filler_pool(load_hotpot(parquet_path(root, "hotpotqa.source.json")), held_ids)
+    ordered = [hotpot_rows[int(index)] for index in order]
+    t_block = ordered[:500]
+    rest = ordered[500:]
+    held_ids = {row["id"] for row in t_block}
+    all_hotpot = load_hotpot(parquet_path(root, "hotpotqa.source.json"))
+    pool = filler_pool(all_hotpot, held_ids)
     retrieval_public = []
     for spec in retrieval_plan():
-        record = {key: spec[key] for key in ("id", "seed", "target_tokens", "depth", "interference", "fold")}
+        record = {
+            "id": spec["id"],
+            "seed": spec["seed"],
+            "target_tokens": spec["target_tokens"],
+            "depth": spec["depth"],
+            "interference": spec["interference"],
+            "fold": spec["fold"],
+        }
         record["models"] = {}
         for name, tokenizer, is_llama in (("qwen", qwen, False), ("llama", llama, True)):
-            built = build_retrieval(tokenizer, spec, is_llama)
-            _store_text(text_root / "retrieval" / name / f"{spec['id']}.txt", built["text"])
-            record["models"][name] = {key: built[key] for key in ("tokens", "actual_depth", "key", "value", "sha256")}
+            path = text_root / "retrieval" / name / f"{spec['id']}.txt"
+            if path.exists():
+                built = saved_retrieval(tokenizer, spec, path.read_text(encoding="utf-8"))
+            else:
+                built = build_retrieval(tokenizer, spec, is_llama)
+                _store_text(path, built["text"])
+            record["models"][name] = {
+                "tokens": built["tokens"],
+                "actual_depth": built["actual_depth"],
+                "key": built["key"],
+                "value": built["value"],
+                "sha256": built["sha256"],
+            }
         retrieval_public.append(record)
         if len(retrieval_public) % 20 == 0:
             print(f"retrieval {len(retrieval_public)}", flush=True)
-    cursor = 0
-    hotpot_public = {"v": [], "expand": [], "t": [], "long_decode": []}
-    for split_name, split_rows in (("v", hotpot_v), ("expand", hotpot_expand), ("t", hotpot_t)):
-        for row in split_rows:
-            item = {"id": row["id"], "row": row["row"], "answer": row["answer"], "models": {}}
-            for name, tokenizer, is_llama in (("qwen", qwen, False), ("llama", llama, True)):
-                packed, cursor = pack_hotpot(tokenizer, row, pool, cursor, is_llama)
-                _store_text(text_root / "hotpot" / name / split_name / f"{row['id']}.main.txt", packed["main_text"])
-                _store_text(text_root / "hotpot" / name / split_name / f"{row['id']}.long.txt", packed["long_text"])
-                item["models"][name] = {key: packed[key] for key in ("main_tokens", "main_sha256", "long_tokens", "long_sha256", "support_titles", "gap_tokens", "support_fraction")}
-            hotpot_public[split_name].append(item)
-            print(f"hotpot {split_name} {row['id']}", flush=True)
-    hotpot_public["long_decode"] = [item["id"] for item in hotpot_public["v"][:LONG_DECODE]]
+    hotpot_t, _used_t = _take_hotpot(t_block, HOTPOT_T, "t", set(), pool, text_root, qwen, llama)
+    used = {item["id"] for item in hotpot_t}
+    hotpot_v, _used_v = _take_hotpot(rest, HOTPOT_V, "v", used, pool, text_root, qwen, llama)
+    used.update(item["id"] for item in hotpot_v)
+    hotpot_expand, _used_e = _take_hotpot(
+        rest, HOTPOT_EXPAND, "expand", used, pool, text_root, qwen, llama
+    )
+    hotpot_public = {
+        "v": hotpot_v,
+        "expand": hotpot_expand,
+        "t": hotpot_t,
+        "long_decode": [item["id"] for item in hotpot_v[:LONG_DECODE]],
+    }
     write_json(
         out / "seeds.json",
         {
