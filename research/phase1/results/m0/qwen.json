@@ -1,0 +1,51 @@
+{
+  "protocol": "phase1-protocol v4",
+  "commit": "e29000b",
+  "model": "qwen",
+  "model_dir": "models/Qwen2.5-7B-Instruct",
+  "bf16": true,
+  "torch": "2.5.1+cu121",
+  "cuda": "12.1",
+  "device": "NVIDIA RTX 6000 Ada Generation",
+  "lengths": [
+    {
+      "length": 32,
+      "status": "ok",
+      "prefill_s": 0.19711463525891304,
+      "decode_s": 0.06279581040143967,
+      "peak_bytes": 15246174720,
+      "cache_tokens": 32,
+      "logits_shape": [
+        1,
+        1,
+        152064
+      ]
+    },
+    {
+      "length": 4096,
+      "status": "ok",
+      "prefill_s": 0.7124052792787552,
+      "decode_s": 0.06283679604530334,
+      "peak_bytes": 16059819520,
+      "cache_tokens": 4096,
+      "logits_shape": [
+        1,
+        1,
+        152064
+      ]
+    },
+    {
+      "length": 32768,
+      "status": "ok",
+      "prefill_s": 8.064763948321342,
+      "decode_s": 0.2145523689687252,
+      "peak_bytes": 21800183296,
+      "cache_tokens": 32768,
+      "logits_shape": [
+        1,
+        1,
+        152064
+      ]
+    }
+  ]
+}

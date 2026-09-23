@@ -1,0 +1,18 @@
+{
+  "protocol": "phase1-protocol v4",
+  "commit": "e29000b",
+  "job_id": "20345",
+  "node": "node8",
+  "gpu_index": 0,
+  "gpu_uuid": "GPU-6a42cade-6910-bdd4-4103-1c33d47381a6",
+  "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+  "memory_total_mib": 49140,
+  "mem_request_gb": 64,
+  "bf16": true,
+  "logits_last_position_only": true,
+  "peak_bytes": {
+    "qwen_32768": 21800183296,
+    "llama_32768": 26010360320
+  },
+  "passed": true
+}
