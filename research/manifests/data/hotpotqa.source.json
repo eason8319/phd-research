@@ -1,0 +1,18 @@
+{
+  "dataset_id": "hotpotqa/hotpot_qa",
+  "config": "distractor",
+  "split": "validation",
+  "revision": "1908d6afbbead072334abe2965f91bd2709910ab",
+  "source": "https://huggingface.co/datasets/hotpotqa/hotpot_qa/resolve/1908d6afbbead072334abe2965f91bd2709910ab/distractor/validation-00000-of-00001.parquet",
+  "destination": "/cluster/home/zengy/phd-research/research/.runtime/data/huggingface/hotpotqa/hotpot_qa/1908d6afbbead072334abe2965f91bd2709910ab/distractor/validation-00000-of-00001.parquet",
+  "copied_utc": "2026-09-23T12:35:00Z",
+  "total_bytes": 27452575,
+  "verification": "SHA256 of the pinned Hugging Face parquet matches the server copy. Row counts are not read in this record.",
+  "files": [
+    {
+      "file": "distractor/validation-00000-of-00001.parquet",
+      "bytes": 27452575,
+      "sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6"
+    }
+  ]
+}

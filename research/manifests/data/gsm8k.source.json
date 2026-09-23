@@ -1,0 +1,18 @@
+{
+  "dataset_id": "openai/gsm8k",
+  "config": "main",
+  "split": "train",
+  "revision": "740312add88f781978c0658806c59bc2815b9866",
+  "source": "https://huggingface.co/datasets/openai/gsm8k/resolve/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet",
+  "destination": "/cluster/home/zengy/phd-research/research/.runtime/data/huggingface/openai/gsm8k/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet",
+  "copied_utc": "2026-09-23T12:35:00Z",
+  "total_bytes": 2306545,
+  "verification": "SHA256 of the pinned Hugging Face parquet matches the server copy. Row counts are not read in this record.",
+  "files": [
+    {
+      "file": "main/train-00000-of-00001.parquet",
+      "bytes": 2306545,
+      "sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d"
+    }
+  ]
+}
