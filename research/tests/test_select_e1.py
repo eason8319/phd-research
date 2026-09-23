@@ -40,9 +40,10 @@ class SelectE1Test(unittest.TestCase):
         cells = [
             cell("clean", "6", 0.4),
             cell("bad", "6", 0.1, invalid=True),
+            cell("four", "4", 0.2, bits=5.0),
         ]
-        chosen = select_e1(cells, kv8_bits=9.0, kv4_error=0.0)
-        self.assertEqual(chosen.kept, ("clean",))
+        chosen = select_e1(cells, kv8_bits=9.0, kv4_error=0.5)
+        self.assertEqual(chosen.kept, ("clean", "four"))
 
     def test_equal_error_prefers_fewer_bytes(self) -> None:
         cells = [
