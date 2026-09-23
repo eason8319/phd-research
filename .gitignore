@@ -1,0 +1,10 @@
+# Server-only model files, runtime environment, caches and one-off tests.
+/models/
+/research/.runtime/
+
+# Generated Python bytecode and tool caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

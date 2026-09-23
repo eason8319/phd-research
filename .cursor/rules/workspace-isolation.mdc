@@ -1,15 +1,29 @@
 ---
-description: Restrict every chat in this repo to the current workspace only
+description: 将本仓库的每次对话限制在当前工作区之内
 alwaysApply: true
 ---
 
-# Workspace isolation
+# 工作区隔离
 
-This repository is the only allowed working context.
+只允许读取、搜索或编辑以下两棵项目目录：
 
-- Read, search, and edit files only under the current workspace root.
-- Do not open, search, or cite other local projects, other workspace folders, or paths outside this repo (except the current workspace's own `.cursor/` project files if needed for this repo).
-- Do not search, read, or quote past conversations, agent transcripts, chat history, or cached cloud chats.
-- Do not use the user's personal agent store, global memories, or other chats as background. If a fact is not in this repo or the current thread, ask or look in this repo.
-- Do not treat previously viewed files from other projects as relevant context.
-- If information seems to exist only in an old chat, say so and work from this repo instead of retrieving that chat.
+- 本地：本仓库当前打开的 Cursor 工作区根目录（`f:\phd-research`）。
+- 服务器：SSH 主机 `myserver` 上的 `/cluster/home/zengy/phd-research`。
+
+这两棵根目录之内的目录均在范围内。SSH 与 shell 命令必须从对应的根目录开始，不得列出、读取或搜索任何上级目录或其他路径。
+
+对本项目在 `myserver` 上打开的每条 SSH 命令或会话：
+
+- 远程命令在任何检查、脚本或任务之前，必须以 `cd /cluster/home/zengy/phd-research || exit 1` 开头。进入该目录失败则立即停止。
+- 每次新建连接都执行这一进入步骤；上一条 SSH 命令的工作目录不会延续到下一次连接。
+- 交互式会话中，开始项目工作前先进入该目录。此后的全部操作都留在项目树内，并遵守下列隔离规则。
+
+- 在当前 Windows 机器上，运行 `docs/server-access.md` 中的 `ssh` 命令。不要为该连接新增项目脚本。不要通过检索其他对话来查找连接设置。
+- 仅用于认证的例外：OpenSSH 可以仅为连接本项目服务器而使用 `C:\Users\User\.ssh\config`、`C:\Users\User\.ssh\id_ecdsa_zengy` 及其已有的主机密钥记录。不得读取、显示、复制或提交私钥内容，也不得浏览其他 SSH 文件。工具层面的权限检查仍然适用。
+
+- 不要打开其他本地项目、服务器上的同级目录、其他用户的文件或 SSH 主目录。
+- 这两棵根目录之外，仅在需要时可以使用本工作区自身的 Cursor 项目元数据，以及上述仅用于认证的 SSH 例外。
+- 不要搜索、读取或引用过往对话、代理对话记录、聊天记录或缓存的云端聊天。
+- 不要把用户的个人代理存储、全局记忆或其他聊天当作背景资料。若某一事实不在这两棵根目录或当前线程中，应向用户询问，或在相应根目录内查找。
+- 不要把此前在其他项目中查看过的文件当作相关上下文。
+- 若信息似乎只存在于旧聊天中，应如实说明，并基于这两棵根目录开展工作，不要去检索那次聊天。

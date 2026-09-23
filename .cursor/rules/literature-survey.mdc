@@ -1,5 +1,5 @@
 ---
-description: 每月更新文献清单和 BibTeX：按月度约定检索、核预印本并同步书目。Use when editing the reading list, BibTeX, or monthly log, or when the user asks for a monthly literature update / preprint check / 做本月文献更新.
+description: 每月更新文献清单和 BibTeX。编辑阅读清单、BibTeX 或月度记录时适用；用户要求本月文献更新、预印本核查，或说出「做本月文献更新」时适用。按月度约定检索、核预印本并同步书目。
 globs: docs/literature-survey-*.md,docs/literature-survey.bib
 alwaysApply: false
 ---
