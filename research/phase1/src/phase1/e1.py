@@ -39,8 +39,6 @@ def _render_gsm(tokenizer: Any, question: str, llama: bool) -> torch.Tensor:
 def _load_c_items(model_key: str) -> list[dict[str, Any]]:
     root = project_root()
     gsm = json.loads((root / "research/phase1/splits/gsm8k.json").read_text(encoding="utf-8"))
-    table = pq.read_table(root / "research/manifests/data/gsm8k.source.json")
-    # 问题文本在服务器 parquet，路径以清单为准。
     meta = json.loads((root / "research/manifests/data/gsm8k.source.json").read_text(encoding="utf-8"))
     questions = pq.read_table(meta["destination"]).column("question").to_pylist()
     items = []
@@ -52,7 +50,7 @@ def _load_c_items(model_key: str) -> list[dict[str, Any]]:
             continue
         path = root / "research/.runtime/data/phase1-text/retrieval" / model_key / f"{row['id']}.txt"
         items.append({"id": row["id"], "fold": int(row["fold"]), "kind": "retrieval", "text": path.read_text(encoding="utf-8")})
-    del table
+    del questions
     return items
 
 
