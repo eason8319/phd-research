@@ -1,0 +1,96 @@
+{
+  "protocol": "phase1-protocol v4",
+  "commit": "3c9997a",
+  "summary": {
+    "kv8-per_channel-pre": {
+      "error": 0.0001201909827888888,
+      "invalid": 0.0,
+      "bytes": 3214034432.0
+    },
+    "k8v4-per_channel-pre": {
+      "error": 0.005024379674718408,
+      "invalid": 0.0,
+      "bytes": 2459086336.0
+    },
+    "k4v8-per_channel-pre": {
+      "error": 0.018309484152247195,
+      "invalid": 0.0,
+      "bytes": 2459086336.0
+    },
+    "kv4-per_channel-pre": {
+      "error": 0.023251794594779357,
+      "invalid": 0.0,
+      "bytes": 1704138240.0
+    },
+    "kv8-per_channel-post": {
+      "error": 0.00012047007513025338,
+      "invalid": 0.0,
+      "bytes": 3214034432.0
+    },
+    "k8v4-per_channel-post": {
+      "error": 0.005021516125972474,
+      "invalid": 0.0,
+      "bytes": 2459086336.0
+    },
+    "k4v8-per_channel-post": {
+      "error": 0.024557954790387675,
+      "invalid": 0.0,
+      "bytes": 2459086336.0
+    },
+    "kv4-per_channel-post": {
+      "error": 0.029544471846921147,
+      "invalid": 0.0,
+      "bytes": 1704138240.0
+    },
+    "kv8-per_token-pre": {
+      "error": 0.0005351568277599686,
+      "invalid": 0.0,
+      "bytes": 3397266432.0
+    },
+    "k8v4-per_token-pre": {
+      "error": 0.005447319074413651,
+      "invalid": 0.0,
+      "bytes": 2642318336.0
+    },
+    "k4v8-per_token-pre": {
+      "error": 0.08759734825014762,
+      "invalid": 0.0,
+      "bytes": 2642318336.0
+    },
+    "kv4-per_token-pre": {
+      "error": 0.09293523246863819,
+      "invalid": 0.0,
+      "bytes": 1887370240.0
+    },
+    "kv8-per_token-post": {
+      "error": 0.0005689453834593548,
+      "invalid": 0.0,
+      "bytes": 3397266432.0
+    },
+    "k8v4-per_token-post": {
+      "error": 0.005478147216070371,
+      "invalid": 0.0,
+      "bytes": 2642318336.0
+    },
+    "k4v8-per_token-post": {
+      "error": 0.08775183401680153,
+      "invalid": 0.0,
+      "bytes": 2642318336.0
+    },
+    "kv4-per_token-post": {
+      "error": 0.09314420844809015,
+      "invalid": 0.0,
+      "bytes": 1887370240.0
+    },
+    "kv4-per_channel-pre-vchannel": {
+      "error": 0.11517691211476977,
+      "invalid": 0.0,
+      "bytes": 1520906240.0
+    }
+  },
+  "kept": [
+    "k8v4-per_channel-post",
+    "kv4-per_channel-pre"
+  ],
+  "reason": "6bit+4bit"
+}
