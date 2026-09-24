@@ -166,7 +166,6 @@ def run_model(model_key: str, commit: str) -> None:
     n_layers = len(captured[0]["pre"])
     kv = captured[0]["pre"][0].shape[0]
     dim = captured[0]["pre"][0].shape[-1]
-    device = "cpu"
     scales: dict[int, dict[str, Any]] = {}
     for fold in (0, 1):
         acc = {
@@ -187,7 +186,6 @@ def run_model(model_key: str, commit: str) -> None:
             "k_post4": _fit_minmax(acc["k_post"], 4),
             "v4": _fit_minmax(acc["v"], 4),
         }
-        del device
     totals: dict[str, dict[str, float]] = {
         cfg["name"]: {"err0": 0.0, "n0": 0.0, "err1": 0.0, "n1": 0.0, "invalid": 0.0, "bytes": 0.0} for cfg in configs
     }
