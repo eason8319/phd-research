@@ -1,4 +1,4 @@
-"""E2 短生成的高精度基线。贪心解码，遇 EOS 或 1024 个新 token 停止。"""
+"""E2 数学题的高精度基线。贪心解码，遇 EOS 或 1024 个新 token 停止。"""
 
 from __future__ import annotations
 
@@ -45,7 +45,10 @@ def _generate(model: Any, input_ids: torch.Tensor, eos: set[int]) -> list[int]:
     return produced
 
 
-def run(model_key: str, commit: str) -> None:
+def run(model_key: str, commit: str, split: str = "v") -> None:
+    """在冻结的 C 或 V 题目上运行高精度基线并保存逐题评分。"""
+    if split not in ("c", "v"):
+        raise ValueError(f"不支持的数据划分: {split}")
     root = project_root()
     llama = model_key == "llama"
     tokenizer = AutoTokenizer.from_pretrained(root / MODELS[model_key])
@@ -61,7 +64,7 @@ def run(model_key: str, commit: str) -> None:
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     correct = 0
-    for item in gsm["v"]:
+    for item in gsm[split]:
         user = templates["gsm8k"].format(question=questions[item["row"]])
         kwargs = {"date_string": "26 Jul 2024"} if llama else {}
         ids = tokenizer.apply_chat_template(
@@ -81,17 +84,23 @@ def run(model_key: str, commit: str) -> None:
         "commit": commit,
         "model": model_key,
         "config": "bf16-h0",
-        "task": "v-gsm8k",
+        "task": f"{split}-gsm8k",
         "n": len(rows),
         "correct": correct,
         "em": 100.0 * correct / len(rows),
         "rows": rows,
     }
-    (out / "v_gsm8k_bf16.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    print(model_key, "em", payload["em"], flush=True)
+    (out / f"{split}_gsm8k_bf16.json").write_text(
+        json.dumps(payload, indent=2) + "\n", encoding="utf-8"
+    )
+    print(model_key, split, "em", payload["em"], flush=True)
 
 
 if __name__ == "__main__":
     import sys
 
-    run(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "unknown")
+    run(
+        sys.argv[1],
+        sys.argv[2] if len(sys.argv) > 2 else "unknown",
+        sys.argv[3] if len(sys.argv) > 3 else "v",
+    )
