@@ -1,0 +1,93 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "e95f6d3",
+  "model": "llama",
+  "total_n": 64,
+  "e2_selection_commit": "c1f2cc2",
+  "e3_selection_commit": "e95f6d3",
+  "candidates": [
+    "e2"
+  ],
+  "cells": {
+    "gsm8k": {
+      "e2": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "interval_crosses_2_or_missing": true
+      }
+    },
+    "hotpot": {
+      "e2": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": null,
+          "upper": null,
+          "kind": "all_zero",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -0.07440476190476208,
+          "lower": -3.3482142857142856,
+          "upper": 3.1249999999999996,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "interval_crosses_2_or_missing": true
+      }
+    }
+  },
+  "next_expansion": {
+    "gsm8k": {
+      "next_total_n": 128,
+      "conditions": [
+        "bf16",
+        "kv8",
+        "e2"
+      ]
+    },
+    "hotpot": {
+      "next_total_n": 128,
+      "conditions": [
+        "bf16",
+        "kv8",
+        "e2"
+      ]
+    }
+  },
+  "expansion_history": [],
+  "retrieval_32k_excluded": true
+}
