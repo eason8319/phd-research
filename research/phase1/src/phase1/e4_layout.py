@@ -499,6 +499,86 @@ def _comparison_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return comparisons
 
 
+def _constraint_table(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """整理可从布局和带宽下界直接验证的格式约束。"""
+    indexed = {
+        (row["format"], row["length"], row["batch"], row["block_tokens"]): row
+        for row in rows
+    }
+    post = indexed[("k8v4-per_token-post", 32768, 1, 64)]
+    pre = indexed[("k8v4-per_token-pre", 32768, 1, 64)]
+    pre_read = pre["decode_256"]["average_bytes"]
+    post_read = post["decode_256"]["average_bytes"]
+    memory_keys = ("read_k_lower_per_step", "read_v_lower_per_step", "write_per_step")
+    split_shorter = sum(
+        bound["split_equal_read_lower_s"] + 1e-15 < bound["shared_read_lower_s"]
+        for row in rows if "decode_256" in row
+        for bound in row["decode_256"]["bandwidth_lower_bounds"]
+    )
+    parameter_shares = {
+        name: {
+            str(length): indexed[(name, length, 1, 64)][
+                "parameter_fraction_of_full_dense_read"
+            ]
+            for length in (4096, 131072)
+        }
+        for name in (
+            "kv8-per_token-post", "kv8-per_channel-post-vchannel",
+            "kv4-per_token-post", "kv4-per_channel-post-vchannel",
+        )
+    }
+    simple = rows[0]
+    simple_32k = indexed[(simple["format"], 32768, 1, 64)]
+    mixing = []
+    for row in rows:
+        if (not row["format"].startswith("e3-") or row["length"] != 32768
+                or row["batch"] != 1 or row["block_tokens"] != 64):
+            continue
+        mixing.append({
+            "format": row["format"],
+            "versus_k8v4_resident_bytes": row["resident_bytes"] - post["resident_bytes"],
+            "versus_kv4_resident_bytes": (
+                row["resident_bytes"]
+                - indexed[("kv4-per_token-post", 32768, 1, 64)]["resident_bytes"]
+            ),
+            "datapath_switch_cost_measured": False,
+        })
+    cross = indexed[("cross-token-diagnostic", 32768, 1, 64)]
+    return {
+        "pre_rope": {
+            "memory_read_write_bytes_unchanged": all(
+                pre_read[key] == post_read[key] for key in memory_keys
+            ),
+            "extra_read_time_rotation_mul_adds_per_step": pre[
+                "decode_256"
+            ]["onchip_and_arithmetic"]["pre_rope_mul_adds_per_step"],
+            "service_order_requires_rotation_throughput": True,
+        },
+        "cross_token": {
+            "all_physical_blocks_divisible_by_group": all(
+                block % G_T == 0 for block in BLOCK_TOKENS
+            ),
+            "group_tokens": G_T,
+            "maximum_open_tokens_during_decode_window": G_T - 1,
+            "open_key_uses_bf16_staging_in_resident_and_read": True,
+            "staging_write_counted_each_decode_step": True,
+            "resident_bytes_at_closed_32k": cross["resident_bytes"],
+        },
+        "shared_vs_equal_split": {
+            "equal_split_shorter_case_count": split_shorter,
+            "equal_split_divides_same_total_bandwidth": True,
+        },
+        "parameter_fraction_of_full_dense_read_4k_128k": parameter_shares,
+        "selected_simple_residual": {
+            "format": simple["format"],
+            "bits": simple["residual_bits"],
+            "resident_bytes_32k": simple_32k["components"]["residual"],
+            "acts_as_second_static_precision": bool(simple["residual_bits"]),
+        },
+        "mixed_vs_uniform_32k_block64": mixing,
+    }
+
+
 def run(model_key: str, commit: str) -> None:
     """F 扩样审核后，对正式候选和固定对照完成 E4 布局计数。"""
     root = project_root()
@@ -572,6 +652,7 @@ def run(model_key: str, commit: str) -> None:
             "unknown compute rates and dependence costs remain symbolic"
         ),
         "nominal_order_flip_conditions": _comparison_rows(rows),
+        "format_constraints": _constraint_table(rows),
         "rows": rows,
     }
     folder = root / "research/phase1/results/e4" / model_key
