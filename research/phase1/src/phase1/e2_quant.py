@@ -354,8 +354,10 @@ def run(
     model_key: str, task: str, split: str, name: str, commit: str, h_bits: int = 0
 ) -> None:
     """按一个配置和任务逐题运行；只回传小型评分与输入来源索引。"""
-    if task not in ("gsm8k", "retrieval", "hotpot") or split not in ("v", "expand"):
+    if task not in ("gsm8k", "retrieval", "hotpot", "hotpot_long") or split not in ("v", "expand"):
         raise ValueError(f"不支持的任务与划分：{task}/{split}")
+    if task == "hotpot_long" and split != "v":
+        raise ValueError("长解码诊断只使用 V")
     if h_bits not in (0, 8, 16) or (h_bits and split != "v"):
         raise ValueError(f"残留条件不支持：H={h_bits}，{split}")
     root = project_root()
@@ -420,7 +422,7 @@ def run(
     if h_bits:
         payload["residual_bits"] = h_bits
         payload["residual_tokens"] = RESIDUAL_TOKENS
-    if task == "hotpot":
+    if task.startswith("hotpot"):
         payload["em"] = 100 * sum(row["em"] for row in rows) / len(rows)
         payload["f1"] = sum(row["f1"] for row in rows) / len(rows)
     else:

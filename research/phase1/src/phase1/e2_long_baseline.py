@@ -33,18 +33,27 @@ def _samples(root: Path, model_key: str, task: str, split: str) -> list[dict[str
             }
             for item in items if item["id"].startswith(prefix)
         ]
-    if task == "hotpot":
-        items = json.loads((root / "research/phase1/splits/hotpot.json").read_text("utf-8"))
+    if task in ("hotpot", "hotpot_long"):
+        frozen = json.loads((root / "research/phase1/splits/hotpot.json").read_text("utf-8"))
+        if task == "hotpot_long":
+            if split != "v":
+                raise ValueError("长解码诊断只使用 V")
+            indexed = {item["id"]: item for item in frozen["v"]}
+            items = [indexed[item_id] for item_id in frozen["long_decode"]]
+            variant = "long"
+        else:
+            items = frozen[split]
+            variant = "main"
         return [
             {
                 "id": item["id"],
                 "answer": item["answer"],
-                "tokens": item["models"][model_key]["main_tokens"],
-                "sha256": item["models"][model_key]["main_sha256"],
+                "tokens": item["models"][model_key][f"{variant}_tokens"],
+                "sha256": item["models"][model_key][f"{variant}_sha256"],
                 "path": root / "research/.runtime/data/phase1-text/hotpot"
-                / model_key / split / f"{item['id']}.main.txt",
+                / model_key / split / f"{item['id']}.{variant}.txt",
             }
-            for item in items[split]
+            for item in items
         ]
     raise ValueError(f"未知任务：{task}")
 
@@ -73,6 +82,7 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
     if (task, split) not in {
         ("retrieval", "c"), ("retrieval", "v"), ("retrieval", "expand"),
         ("hotpot", "v"), ("hotpot", "expand"),
+        ("hotpot_long", "v"),
     }:
         raise ValueError(f"不支持的任务与划分：{task}/{split}")
     root = project_root()
@@ -127,7 +137,7 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
         }, ensure_ascii=False) + "\n", encoding="utf-8")
         print(model_key, task, split, len(rows), row, flush=True)
     payload: dict[str, Any] = {
-        "protocol": "phase1-protocol v6" if task == "hotpot" else "phase1-protocol v7",
+        "protocol": "phase1-protocol v6" if task.startswith("hotpot") else "phase1-protocol v7",
         "commit": commit,
         "model": model_key,
         "config": "bf16-h0",
