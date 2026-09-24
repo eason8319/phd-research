@@ -10,7 +10,7 @@ import torch
 from kvstudy.attention import full_history_mask
 from kvstudy.paths import project_root
 from phase1.e0_quant import write_report
-from phase1.runner import cache_lists, decode_step, load_model, modeling_module, prefill
+from phase1.runner import cache_lists, load_model, modeling_module, prefill
 
 MODELS = {
     "qwen": "models/Qwen2.5-7B-Instruct",
@@ -64,19 +64,50 @@ def check_length(model: Any, length: int, vocab: int) -> dict[str, object]:
     logits = outputs.logits.view(-1, outputs.logits.shape[-1])
     next_id = int(logits[0].argmax())
     cache_len = int(keys[0].shape[2])
+    logits_shape = list(outputs.logits.shape)
+    n_layers = len(saved)
     mask = full_history_mask(cache_len + 1, device="cuda")
-    _logits, updated_k, _updated_v = decode_step(model, keys, _values, next_id, length)
     rope_err = _rope_error(model, saved[0], keys[0])
+    layer_k = keys[0]
+    layer_v = _values[0]
+    del outputs, keys, _values, saved
+    torch.cuda.empty_cache()
+    decode_len = _decode_one_layer(model, layer_k, layer_v, next_id, length)
     return {
         "length": length,
         "cache_tokens": cache_len,
-        "decode_tokens": int(updated_k[0].shape[2]),
-        "layers_captured": len(saved),
+        "decode_tokens": decode_len,
+        "layers_captured": n_layers,
         "mask_ones": int(mask.sum()),
-        "logits_shape": list(outputs.logits.shape),
+        "logits_shape": logits_shape,
         "rope_max_abs": rope_err,
-        "ok": cache_len == length and int(updated_k[0].shape[2]) == length + 1 and int(mask.sum()) == length + 1 and outputs.logits.shape[1] == 1,
+        "ok": (
+            cache_len == length
+            and decode_len == length + 1
+            and int(mask.sum()) == length + 1
+            and logits_shape[1] == 1
+        ),
     }
+
+
+def _decode_one_layer(
+    model: Any, key: torch.Tensor, value: torch.Tensor, token_id: int, position: int
+) -> int:
+    """只对第 0 层做一步 decode，确认单 token 能看见全部历史。"""
+    from phase1.runner import attention_from_batch, project_qkv
+
+    apply_rope = modeling_module(model).apply_rotary_pos_emb
+    hidden = model.model.embed_tokens(torch.tensor([[token_id]], device=key.device))
+    position_ids = torch.tensor([[position]], device=key.device)
+    cos, sin = model.model.rotary_emb(hidden, position_ids)
+    layer = model.model.layers[0]
+    query, new_key, new_value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
+    query, new_key = apply_rope(query, new_key, cos, sin)
+    key = torch.cat([key, new_key], dim=2)
+    value = torch.cat([value, new_value], dim=2)
+    attended = attention_from_batch(query, key, value)
+    del attended
+    return int(key.shape[2])
 
 
 def main(commit: str) -> None:
