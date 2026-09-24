@@ -127,7 +127,7 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
         }, ensure_ascii=False) + "\n", encoding="utf-8")
         print(model_key, task, split, len(rows), row, flush=True)
     payload: dict[str, Any] = {
-        "protocol": "phase1-protocol v6" if task == "hotpot" else "phase1-protocol v5",
+        "protocol": "phase1-protocol v6" if task == "hotpot" else "phase1-protocol v7",
         "commit": commit,
         "model": model_key,
         "config": "bf16-h0",
