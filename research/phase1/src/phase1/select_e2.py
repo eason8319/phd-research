@@ -106,6 +106,8 @@ def run(model_key: str, commit: str) -> None:
                 state = quality_state(
                     _interval(versus_bf16), _interval(versus_kv8), format_ok=format_ok
                 )
+                if state == "保留":
+                    state = "开发晋级"  # 起始 V 只给开发证据；保留留给 F 扩样后判定。
                 passes = class_unit_passes(
                     _interval(versus_bf16), _interval(versus_kv8), format_ok=format_ok
                 )
