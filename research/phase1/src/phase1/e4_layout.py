@@ -130,6 +130,15 @@ def _specs(root: Path, model_key: str, n_layers: int) -> list[FormatSpec]:
         rope="post",
         token_tag=True,
     ))
+    cross_name = residual["selected_low_bit"] or "kv4-per_token-post"
+    cross_config = _config(cross_name)
+    specs.append(FormatSpec(
+        name="cross-token-diagnostic",
+        layer_bits=((cross_config["k_bits"], cross_config["v_bits"]),) * n_layers,
+        key_mode="cross_token",
+        value_mode=cross_config["value_mode"],
+        rope=cross_config["rope"],
+    ))
     return specs
 
 
@@ -149,6 +158,8 @@ def _tagged_components(
         "k_params": params_side,
         "v_params": params_side,
         "residual": 0,
+        "k_residual": 0,
+        "v_residual": 0,
         "labels": labels,
     }
     full, tail = divmod(seq, block)
@@ -160,7 +171,10 @@ def _tagged_components(
     params_stored = _blocked_stored(heads * math.ceil(dim / G_C) * 4, seq, block)
     labels_stored = _blocked_stored(heads, seq, block)
     stored = n_layers * (2 * payload_stored + 2 * params_stored + labels_stored)
-    return {**raw, "stored": stored, "padding": stored - sum(raw.values())}
+    physical_raw = sum(raw[key] for key in (
+        "k_payload", "v_payload", "k_params", "v_params", "residual", "labels"
+    ))
+    return {**raw, "stored": stored, "padding": stored - physical_raw}
 
 
 def _blocked_stored(bytes_per_token: int, seq: int, block: int) -> int:
@@ -185,6 +199,7 @@ def _components(
     total = {
         "k_payload": 0, "v_payload": 0, "k_params": 0,
         "v_params": 0, "residual": 0, "labels": 0,
+        "k_residual": 0, "v_residual": 0,
         "stored": 0, "padding": 0,
     }
     for k_bits, v_bits in spec.layer_bits:
@@ -199,12 +214,24 @@ def _components(
         for key in ("k_payload", "v_payload", "k_params", "v_params",
                     "residual", "labels"):
             total[key] += getattr(ledger, key).raw_bytes
+        if spec.key_mode == "cross_token" and spec.residual_bits == 0:
+            total["k_residual"] += ledger.residual.raw_bytes
+        else:
+            if ledger.residual.raw_bytes % 2:
+                raise RuntimeError("K/V 残留不能均分")
+            total["k_residual"] += ledger.residual.raw_bytes // 2
+            total["v_residual"] += ledger.residual.raw_bytes // 2
         units = heads * batch
-        k_stored = _blocked_stored(units * dim * k_bits // 8, seq, block)
+        k_stored_tokens = seq // G_T * G_T if spec.key_mode == "cross_token" else seq
+        k_stored = _blocked_stored(units * dim * k_bits // 8, k_stored_tokens, block)
         v_stored = _blocked_stored(units * dim * v_bits // 8, seq, block)
         k_params_stored = (
             _blocked_stored(units * math.ceil(dim / G_C) * 4, seq, block)
-            if spec.key_mode == "per_token" else align_up(ledger.k_params.raw_bytes).stored_bytes
+            if spec.key_mode == "per_token" else (
+                _blocked_stored(units * dim * 4 // G_T, k_stored_tokens, block)
+                if spec.key_mode == "cross_token" else
+                align_up(ledger.k_params.raw_bytes).stored_bytes
+            )
         )
         v_params_stored = (
             _blocked_stored(units * math.ceil(dim / G_C) * 4, seq, block)
@@ -245,7 +272,10 @@ def _residual_write(
 ) -> int:
     """滑动窗口驻留量不变，但每个新 token 仍写入一份残留副本。"""
     if not spec.residual_bits:
-        return 0
+        return (
+            len(spec.layer_bits) * heads * batch * dim * 2
+            if spec.key_mode == "cross_token" else 0
+        )
     units = len(spec.layer_bits) * heads * batch
     raw = 2 * units * dim * spec.residual_bits // 8
     if spec.residual_bits == 8:
@@ -264,9 +294,8 @@ def _movement(
     after = _components(
         spec, heads=heads, dim=dim, seq=history + 1, batch=batch, block=block
     )
-    residual_side = before["residual"] // 2
-    full_k = before["k_payload"] + before["k_params"] + residual_side
-    full_v = before["v_payload"] + before["v_params"] + residual_side
+    full_k = before["k_payload"] + before["k_params"] + before["k_residual"]
+    full_v = before["v_payload"] + before["v_params"] + before["v_residual"]
     skip_k, skip_v = _recent_main_bytes(
         spec, heads=heads, dim=dim, history=history, batch=batch
     )
@@ -317,6 +346,9 @@ def _decode_window(
     averages = {key + "_per_step": value / DECODE_STEPS for key, value in totals.items()}
     read_lower = averages["read_k_lower_per_step"] + averages["read_v_lower_per_step"]
     read_full = averages["read_k_full_per_step"] + averages["read_v_full_per_step"]
+    averages["read_lower_per_step"] = read_lower
+    averages["read_full_per_step"] = read_full
+    averages["io_lower_per_step"] = read_lower + averages["write_per_step"]
     bandwidth_bounds = []
     for tbps in BANDWIDTH_TBPS:
         width = tbps * 1e12
@@ -324,6 +356,7 @@ def _decode_window(
             "bandwidth_TBps": tbps,
             "shared_read_lower_s": read_lower / width,
             "shared_read_full_s": read_full / width,
+            "shared_io_lower_s": averages["io_lower_per_step"] / width,
             "split_equal_read_lower_s": max(
                 averages["read_k_lower_per_step"] / (width / 2),
                 averages["read_v_lower_per_step"] / (width / 2),
@@ -371,6 +404,9 @@ def _layout(
         "block_tokens": block,
         "block_count": math.ceil(length / block),
         "tail_valid_tokens": length % block or block,
+        "open_group_tokens_at_length": (
+            length % G_T if spec.key_mode == "cross_token" else 0
+        ),
         "nominal_bits": nominal,
         "effective_bits": components["stored"] * 8 / elements,
         "resident_bytes": components["stored"],
@@ -378,6 +414,12 @@ def _layout(
         "parameter_fraction_of_resident": (
             components["k_params"] + components["v_params"]
         ) / components["stored"],
+        "parameter_fraction_of_full_dense_read": (
+            (components["k_params"] + components["v_params"])
+            / (sum(components[key] for key in (
+                "k_payload", "v_payload", "k_params", "v_params", "residual", "labels"
+            )))
+        ),
         "label_assumption": (
             "one_byte_per_layer_kv_head_token_for_both_sides" if spec.token_tag else None
         ),
@@ -388,6 +430,51 @@ def _layout(
             query_heads=query_heads, batch=batch, block=block,
         )
     return result
+
+
+def _comparison_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """给出名义位宽排序翻转所需的额外计算延迟阈值。"""
+    indexed = {
+        (row["format"], row["length"], row["batch"], row["block_tokens"]): row
+        for row in rows if "decode_256" in row
+    }
+    pairs = (
+        ("kv4-per_token-post", "k8v4-per_token-post"),
+        ("k8v4-per_token-post", "kv8-per_token-post"),
+        ("kv4-per_token-post", "kv8-per_token-post"),
+    )
+    comparisons = []
+    for (lower_name, higher_name) in pairs:
+        for length in LENGTHS[:-1]:
+            for block in BLOCK_TOKENS:
+                key = (length, 1, block)
+                lower = indexed[(lower_name, *key)]
+                higher = indexed[(higher_name, *key)]
+                if lower["nominal_bits"] >= higher["nominal_bits"]:
+                    raise RuntimeError("E4 名义位宽比较顺序不一致")
+                lower_bytes = lower["decode_256"]["average_bytes"]["io_lower_per_step"]
+                higher_bytes = higher["decode_256"]["average_bytes"]["io_lower_per_step"]
+                saved = higher_bytes - lower_bytes
+                comparisons.append({
+                    "lower_nominal_format": lower_name,
+                    "higher_nominal_format": higher_name,
+                    "length": length,
+                    "batch": 1,
+                    "block_tokens": block,
+                    "lower_nominal_saves_io_bytes_per_step": saved,
+                    "memory_only_reverses_nominal_order": saved < 0,
+                    "required_extra_lowbit_compute_us_to_reverse": {
+                        str(width): max(0.0, saved / (width * 1e6))
+                        for width in BANDWIDTH_TBPS
+                    },
+                    "break_even_TBps_for_one_us_extra_compute": (
+                        saved / 1e6 if saved > 0 else None
+                    ),
+                    "break_even_formula": (
+                        "W_TBps = saved_bytes_per_step / (extra_compute_us * 1e6)"
+                    ),
+                })
+    return comparisons
 
 
 def run(model_key: str, commit: str) -> None:
@@ -408,7 +495,9 @@ def run(model_key: str, commit: str) -> None:
             root / "research/phase1/results/e3" / model_key / "allocations.json"
         )
     source_sha256 = {
-        str(path.relative_to(root)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
+        str(path.relative_to(root)).replace("\\", "/"): hashlib.sha256(
+            path.read_bytes()
+        ).hexdigest()
         for path in source_paths
     }
     rows = []
@@ -460,6 +549,7 @@ def run(model_key: str, commit: str) -> None:
             "T_AV>=max(D_V/W_V,F_AV/P_AV); "
             "unknown compute rates and dependence costs remain symbolic"
         ),
+        "nominal_order_flip_conditions": _comparison_rows(rows),
         "rows": rows,
     }
     folder = root / "research/phase1/results/e4" / model_key
