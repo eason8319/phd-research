@@ -28,6 +28,7 @@ from phase1.score import answer_exact, gsm8k_exact, retrieval_exact, token_f1
 
 G_C = 32
 MAX_CONTEXT = 32768
+RESIDUAL_TOKENS = 128
 
 
 def _config(name: str) -> dict[str, Any]:
@@ -114,13 +115,25 @@ def _quantize(
     return restored, (status == STATUS_INVALID).sum()
 
 
+def _recent(values: torch.Tensor, h_bits: int) -> tuple[torch.Tensor, torch.Tensor]:
+    """从高精度原值生成最近窗口的 H=8 或 H=16 副本。"""
+    if h_bits == 16:
+        return values.float(), torch.zeros((), dtype=torch.int64, device=values.device)
+    if h_bits == 8:
+        return _quantize(values, 8, "per_token", None)
+    raise ValueError(f"未知残留位宽：{h_bits}")
+
+
 def _prefill_cache(
     model: Any,
     input_ids: torch.Tensor,
     config: dict[str, Any],
     calibrated: dict[str, Any],
     limit: int,
-) -> tuple[int, list[torch.Tensor], list[torch.Tensor], int]:
+    h_bits: int,
+) -> tuple[
+    int, list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], int
+]:
     """高精度 prefill 后量化缓存；预留生成空间以避免逐步复制历史。"""
     pre_keys: list[torch.Tensor] = []
     module = modeling_module(model)
@@ -142,6 +155,8 @@ def _prefill_cache(
         raise RuntimeError("未捕获所有层的 pre-RoPE Key")
     keys: list[torch.Tensor] = []
     values: list[torch.Tensor] = []
+    read_keys: list[torch.Tensor] = []
+    read_values: list[torch.Tensor] = []
     invalid = torch.zeros((), dtype=torch.int64, device=input_ids.device)
     positions = torch.arange(input_ids.shape[1], device=input_ids.device).view(1, -1)
     for index in range(len(original_k)):
@@ -165,21 +180,40 @@ def _prefill_cache(
         keys.append(key_buffer)
         values.append(value_buffer)
         invalid += bad_k + bad_v
+        if h_bits:
+            start = max(0, int(input_ids.shape[1]) - RESIDUAL_TOKENS)
+            high_k, bad_high_k = _recent(original_k[index][0][:, start:, :], h_bits)
+            high_v, bad_high_v = _recent(original_v[index][0][:, start:, :], h_bits)
+            read_key = torch.empty_like(key_buffer)
+            read_value = torch.empty_like(value_buffer)
+            read_key[:, :, :input_ids.shape[1], :] = key_buffer[:, :, :input_ids.shape[1], :]
+            read_value[:, :, :input_ids.shape[1], :] = value_buffer[:, :, :input_ids.shape[1], :]
+            read_key[:, :, start:input_ids.shape[1], :] = high_k.unsqueeze(0)
+            read_value[:, :, start:input_ids.shape[1], :] = high_v.unsqueeze(0)
+            read_keys.append(read_key)
+            read_values.append(read_value)
+            invalid += bad_high_k + bad_high_v
+        else:
+            read_keys.append(key_buffer)
+            read_values.append(value_buffer)
         original_k[index] = None
         original_v[index] = None
         if pre_keys:
             pre_keys[index] = None
-    return first, keys, values, int(invalid.item())
+    return first, keys, values, read_keys, read_values, int(invalid.item())
 
 
 def _decode_step(
     model: Any,
     keys: list[torch.Tensor],
     values: list[torch.Tensor],
+    read_keys: list[torch.Tensor],
+    read_values: list[torch.Tensor],
     token: int,
     position: int,
     config: dict[str, Any],
     calibrated: dict[str, Any],
+    h_bits: int,
 ) -> tuple[int | None, int]:
     """追加量化 KV 并按共同 FP32 注意力路径解码一步。"""
     device = keys[0].device
@@ -203,8 +237,23 @@ def _decode_step(
         invalid += bad_k + bad_v
         keys[index][:, :, position:position + 1, :] = k_hat.unsqueeze(0)
         values[index][:, :, position:position + 1, :] = v_hat.unsqueeze(0)
+        if h_bits:
+            high_k, bad_high_k = _recent(key_post[0], h_bits)
+            high_v, bad_high_v = _recent(value[0], h_bits)
+            read_keys[index][:, :, position:position + 1, :] = high_k.unsqueeze(0)
+            read_values[index][:, :, position:position + 1, :] = high_v.unsqueeze(0)
+            if position >= RESIDUAL_TOKENS:
+                leaving = position - RESIDUAL_TOKENS
+                read_keys[index][:, :, leaving:leaving + 1, :] = (
+                    keys[index][:, :, leaving:leaving + 1, :]
+                )
+                read_values[index][:, :, leaving:leaving + 1, :] = (
+                    values[index][:, :, leaving:leaving + 1, :]
+                )
+            invalid += bad_high_k + bad_high_v
         attended = attention_from_batch(
-            query, keys[index][:, :, :position + 1, :], values[index][:, :, :position + 1, :]
+            query, read_keys[index][:, :, :position + 1, :],
+            read_values[index][:, :, :position + 1, :],
         )
         hidden = residual + layer.self_attn.o_proj(attended)
         residual = hidden
@@ -224,10 +273,13 @@ def _generate(
     limit: int,
     config: dict[str, Any],
     calibrated: dict[str, Any],
+    h_bits: int = 0,
 ) -> tuple[list[int], str, int]:
     """返回生成 token、停止原因和累计无效组数。"""
     tensor = torch.tensor([ids], device="cuda")
-    first, keys, values, invalid = _prefill_cache(model, tensor, config, calibrated, limit)
+    first, keys, values, read_keys, read_values, invalid = _prefill_cache(
+        model, tensor, config, calibrated, limit, h_bits
+    )
     if invalid:
         return [first], "invalid", invalid
     produced = [first]
@@ -236,7 +288,8 @@ def _generate(
     token = first
     for step in range(limit - 1):
         next_token, bad = _decode_step(
-            model, keys, values, token, len(ids) + step, config, calibrated
+            model, keys, values, read_keys, read_values,
+            token, len(ids) + step, config, calibrated, h_bits,
         )
         invalid += bad
         if next_token is None:
@@ -297,10 +350,14 @@ def _ids_and_source(
     return list(ids), hashlib.sha256(source.encode("utf-8")).hexdigest()
 
 
-def run(model_key: str, task: str, split: str, name: str, commit: str) -> None:
+def run(
+    model_key: str, task: str, split: str, name: str, commit: str, h_bits: int = 0
+) -> None:
     """按一个配置和任务逐题运行；只回传小型评分与输入来源索引。"""
     if task not in ("gsm8k", "retrieval", "hotpot") or split not in ("v", "expand"):
         raise ValueError(f"不支持的任务与划分：{task}/{split}")
+    if h_bits not in (0, 8, 16) or (h_bits and split != "v"):
+        raise ValueError(f"残留条件不支持：H={h_bits}，{split}")
     root = project_root()
     config = _config(name)
     items = _inputs(root, model_key, task, split)
@@ -315,7 +372,8 @@ def run(model_key: str, task: str, split: str, name: str, commit: str) -> None:
         source_index = [template_hash + item["question_sha256"] for item in items]
     else:
         source_index = [item["sha256"] for item in items]
-    progress = root / "research/.runtime" / f"e2-{model_key}-{task}-{split}-{name}.json"
+    suffix = f"-h{h_bits}" if h_bits else ""
+    progress = root / "research/.runtime" / f"e2-{model_key}-{task}-{split}-{name}{suffix}.json"
     if progress.exists():
         state = json.loads(progress.read_text("utf-8"))
         if (state["commit"] != commit or state["ids"] != ids_order
@@ -332,7 +390,9 @@ def run(model_key: str, task: str, split: str, name: str, commit: str) -> None:
         if len(ids) + limit > MAX_CONTEXT:
             raise RuntimeError(f"输入超出总窗口：{item['id']}")
         with torch.inference_mode():
-            produced, stop, invalid = _generate(model, ids, eos, limit, config, calibration)
+            produced, stop, invalid = _generate(
+                model, ids, eos, limit, config, calibration, h_bits
+            )
         prediction = tokenizer.decode(produced, skip_special_tokens=True)
         row: dict[str, Any] = {
             "id": item["id"], "input_tokens": len(ids), "input_sha256": source_hash,
@@ -357,6 +417,9 @@ def run(model_key: str, task: str, split: str, name: str, commit: str) -> None:
         "calibration_commit": calibration.get("commit"),
         "invalid_samples": sum(row["invalid_groups"] > 0 for row in rows),
     }
+    if h_bits:
+        payload["residual_bits"] = h_bits
+        payload["residual_tokens"] = RESIDUAL_TOKENS
     if task == "hotpot":
         payload["em"] = 100 * sum(row["em"] for row in rows) / len(rows)
         payload["f1"] = sum(row["f1"] for row in rows) / len(rows)
@@ -365,11 +428,14 @@ def run(model_key: str, task: str, split: str, name: str, commit: str) -> None:
         payload["em"] = 100 * payload["correct"] / len(rows)
     out = root / "research/phase1/results/e2" / model_key
     out.mkdir(parents=True, exist_ok=True)
-    (out / f"{split}_{task}_{name}.json").write_text(
+    (out / f"{split}_{task}_{name}{suffix}.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(model_key, task, split, name, payload.get("f1", payload.get("em")), flush=True)
 
 
 if __name__ == "__main__":
-    run(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+    run(
+        sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5],
+        int(sys.argv[6]) if len(sys.argv) > 6 else 0,
+    )
