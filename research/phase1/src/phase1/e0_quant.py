@@ -23,8 +23,22 @@ from kvstudy.quantize import (
 from kvstudy.paths import project_root
 
 
-def _case(name: str, ok: bool, detail: dict[str, object]) -> dict[str, object]:
-    return {"name": name, "ok": ok, "detail": detail}
+def _plain(value: object) -> object:
+    if isinstance(value, torch.Tensor):
+        if value.numel() == 1:
+            return value.detach().float().item()
+        return value.detach().cpu().tolist()
+    if isinstance(value, dict):
+        return {str(key): _plain(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_plain(item) for item in value]
+    if isinstance(value, (bool, int, float, str)) or value is None:
+        return value
+    return str(value)
+
+
+def _case(name: str, ok: object, detail: dict[str, object]) -> dict[str, object]:
+    return {"name": name, "ok": bool(ok), "detail": _plain(detail)}
 
 
 def boundary_cases() -> list[dict[str, object]]:
@@ -169,12 +183,12 @@ def write_report(commit: str) -> Path:
     cases = boundary_cases()
     cases.append(roundtrip_case())
     passed = all(bool(item["ok"]) for item in cases)
-    payload = {
+    payload = _plain({
         "protocol": "phase1-protocol v4",
         "commit": commit,
         "passed": passed,
         "cases": cases,
-    }
+    })
     out = project_root() / "research/phase1/results/e0"
     out.mkdir(parents=True, exist_ok=True)
     path = out / "quant.json"
