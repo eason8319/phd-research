@@ -33,7 +33,8 @@ GSM8K_TEMPLATE = (
     "For example, if the answer is 42, the last line is: #### 42\n\n{question}"
 )
 RETRIEVAL_TEMPLATE = (
-    "Find the value stored for the given key. Reply with the value only, "
+    "Find the value stored for the exact key below. Keys differing in any character "
+    "are different. Reply with the value only, "
     "with no extra words.\n\n{context}\n\nKey: {key}\nValue:"
 )
 HOTPOT_MAIN = (
@@ -197,7 +198,10 @@ def build_retrieval(tokenizer: Any, spec: dict[str, Any], llama: bool) -> dict[s
     key = f"key-{spec['seed']:08x}"
     value = f"val-{spec['seed']:08x}"
     distractors = 1 if spec["interference"] == "low" else 8
-    others = [f"val-{spec['seed']:08x}-d{i}" for i in range(distractors)]
+    others = [
+        (f"key-{(spec['seed'] + i + 1) & 0xffffffff:08x}", f"val-{spec['seed']:08x}-d{i}")
+        for i in range(distractors)
+    ]
     low, high = 1, 4000
     best_n = 1
     best_gap = 10**9
@@ -228,7 +232,7 @@ def _retrieval_text(
     spec: dict[str, Any],
     key: str,
     value: str,
-    others: list[str],
+    others: list[tuple[str, str]],
     sentences: int,
     depth: float,
     llama: bool,
@@ -237,11 +241,11 @@ def _retrieval_text(
     needle_at = min(len(lines) - 1, max(0, round(depth * (len(lines) - 1))))
     lines[needle_at] = NEEDLE_SENTENCE.format(key=key, value=value)
     used = {needle_at}
-    for index, other in enumerate(others):
+    for index, (other_key, other_value) in enumerate(others):
         slot = (needle_at + 3 + index * max(1, sentences // (len(others) + 2))) % sentences
-        if slot in used:
+        while slot in used:
             slot = (slot + 1) % sentences
-        lines[slot] = NEEDLE_SENTENCE.format(key=key, value=other)
+        lines[slot] = NEEDLE_SENTENCE.format(key=other_key, value=other_value)
         used.add(slot)
     user = RETRIEVAL_TEMPLATE.format(context="\n".join(lines), key=key)
     text, ids = render(tokenizer, user, llama)
@@ -680,6 +684,61 @@ def rebuild_hotpot_prompts() -> None:
     print(f"HotpotQA v6 问法已更新：{len(pending)} 份全文", flush=True)
 
 
+def rebuild_retrieval_inputs() -> None:
+    """核对旧检索全文与样本计划后，重建唯一键版本的所有冻结输入。"""
+    root = project_root()
+    split_root = root / "research/phase1/splits"
+    text_root = root / "research/.runtime/data/phase1-text/retrieval"
+    templates_path = split_root / "templates.json"
+    retrieval_path = split_root / "retrieval.json"
+    templates = json.loads(templates_path.read_text(encoding="utf-8"))
+    if "Find the value stored for the given key." not in templates["retrieval"]:
+        raise SystemExit("旧检索问法不是预期版本")
+    records = json.loads(retrieval_path.read_text(encoding="utf-8"))
+    plans = retrieval_plan()
+    if len(records) != len(plans):
+        raise SystemExit("冻结检索题数与生成计划不一致")
+    tokenizers = {
+        "qwen": load_tokenizer(root, "models/Qwen2.5-7B-Instruct"),
+        "llama": load_tokenizer(root, "models/Llama-3.1-8B-Instruct"),
+    }
+    pending: list[tuple[Path, str]] = []
+    for record, spec in zip(records, plans):
+        for field in ("id", "seed", "target_tokens", "depth", "interference", "fold"):
+            if record[field] != spec[field]:
+                raise SystemExit(f"冻结检索题的 {field} 与计划不一致：{record['id']}")
+        for model, tokenizer in tokenizers.items():
+            path = text_root / model / f"{record['id']}.txt"
+            old_text = path.read_text(encoding="utf-8")
+            if sha256_text(old_text) != record["models"][model]["sha256"]:
+                raise SystemExit(f"旧检索全文校验失败：{path}")
+            built = build_retrieval(tokenizer, spec, model == "llama")
+            count = built["tokens"]
+            if count > spec["target_tokens"] or (
+                spec["target_tokens"] == TARGET_32K and count < 30 * 1024
+            ):
+                raise SystemExit(f"重建检索全文长度越界：{path}，{count} token")
+            needle = NEEDLE_SENTENCE.format(key=built["key"], value=built["value"])
+            if built["text"].count(needle) != 1:
+                raise SystemExit(f"目标证据不唯一：{path}")
+            record["models"][model] = {
+                "tokens": count,
+                "actual_depth": built["actual_depth"],
+                "key": built["key"],
+                "value": built["value"],
+                "sha256": built["sha256"],
+            }
+            pending.append((path, built["text"]))
+        if len(pending) % 64 == 0:
+            print(f"retrieval rebuilt {len(pending)}", flush=True)
+    templates["retrieval"] = RETRIEVAL_TEMPLATE
+    for path, text in pending:
+        _store_text(path, text)
+    write_json(templates_path, templates)
+    write_json(retrieval_path, records)
+    print(f"检索 v7 输入已更新：{len(pending)} 份全文", flush=True)
+
+
 def _trajectories(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any]) -> dict[str, Any]:
     math_ids = [f"gsm8k-train-{row['row']}" for row in gsm["c"]]
     by_fold: dict[int, list[str]] = {0: [], 1: []}
@@ -718,7 +777,9 @@ def _checks(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]
 if __name__ == "__main__":
     if sys.argv[1:] == ["--rebuild-hotpot-prompts"]:
         rebuild_hotpot_prompts()
+    elif sys.argv[1:] == ["--rebuild-retrieval-inputs"]:
+        rebuild_retrieval_inputs()
     elif len(sys.argv) == 1:
         main()
     else:
-        raise SystemExit("只支持 --rebuild-hotpot-prompts")
+        raise SystemExit("只支持 --rebuild-hotpot-prompts 或 --rebuild-retrieval-inputs")

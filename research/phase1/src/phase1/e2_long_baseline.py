@@ -79,11 +79,14 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
     samples = _samples(root, model_key, task, split)
     if not samples:
         raise RuntimeError("冻结样本为空")
+    ids = [item["id"] for item in samples]
+    input_hashes = [item["sha256"] for item in samples]
     progress = root / "research/.runtime" / f"e2-{model_key}-{task}-{split}.json"
     if progress.exists():
         state = json.loads(progress.read_text("utf-8"))
-        if state["commit"] != commit or state["ids"] != [item["id"] for item in samples]:
-            raise RuntimeError("已有进度与当前代码或冻结题目不一致")
+        if (state["commit"] != commit or state["ids"] != ids
+                or state.get("input_hashes") != input_hashes):
+            raise RuntimeError("已有进度与当前代码或冻结输入不一致")
         rows = state["rows"]
     else:
         rows = []
@@ -118,7 +121,8 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
         rows.append(row)
         progress.write_text(json.dumps({
             "commit": commit,
-            "ids": [sample["id"] for sample in samples],
+            "ids": ids,
+            "input_hashes": input_hashes,
             "rows": rows,
         }, ensure_ascii=False) + "\n", encoding="utf-8")
         print(model_key, task, split, len(rows), row, flush=True)
