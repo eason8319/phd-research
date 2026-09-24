@@ -124,6 +124,16 @@ def _recent(values: torch.Tensor, h_bits: int) -> tuple[torch.Tensor, torch.Tens
     raise ValueError(f"未知残留位宽：{h_bits}")
 
 
+def _layer_bits(config: dict[str, Any], index: int) -> tuple[int, int]:
+    """E3 可按层覆盖 K/V 位宽；E2 保持全层同一配置。"""
+    if "layer_bits" not in config:
+        return config["k_bits"], config["v_bits"]
+    row = config["layer_bits"][index]
+    if row["k"] not in (4, 8) or row["v"] not in (4, 8):
+        raise ValueError("E3 层位宽只允许 INT4 或 INT8")
+    return row["k"], row["v"]
+
+
 def _prefill_cache(
     model: Any,
     input_ids: torch.Tensor,
@@ -160,14 +170,15 @@ def _prefill_cache(
     invalid = torch.zeros((), dtype=torch.int64, device=input_ids.device)
     positions = torch.arange(input_ids.shape[1], device=input_ids.device).view(1, -1)
     for index in range(len(original_k)):
+        k_bits, v_bits = _layer_bits(config, index)
         source = pre_keys[index][0] if config["rope"] == "pre" else original_k[index][0]
         k_params = calibrated.get("key", [None] * len(original_k))[index]
-        k_hat, bad_k = _quantize(source, config["k_bits"], config["key_mode"], k_params)
+        k_hat, bad_k = _quantize(source, k_bits, config["key_mode"], k_params)
         if config["rope"] == "pre":
             k_hat = _rotate_key(model, k_hat, positions)
         v_params = calibrated.get("value", [None] * len(original_k))[index]
         v_hat, bad_v = _quantize(
-            original_v[index][0], config["v_bits"], config["value_mode"], v_params
+            original_v[index][0], v_bits, config["value_mode"], v_params
         )
         capacity = int(input_ids.shape[1]) + limit
         key_buffer = torch.empty(
@@ -223,17 +234,18 @@ def _decode_step(
     apply_rope = modeling_module(model).apply_rotary_pos_emb
     invalid = torch.zeros((), dtype=torch.int64, device=device)
     for index, layer in enumerate(model.model.layers):
+        k_bits, v_bits = _layer_bits(config, index)
         residual = hidden
         query, key_pre, value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
         query, key_post = apply_rope(query, key_pre, cos, sin)
         source = key_pre[0] if config["rope"] == "pre" else key_post[0]
         k_params = calibrated.get("key", [None] * len(keys))[index]
-        k_hat, bad_k = _quantize(source, config["k_bits"], config["key_mode"], k_params)
+        k_hat, bad_k = _quantize(source, k_bits, config["key_mode"], k_params)
         if config["rope"] == "pre":
             _, rotated = apply_rope(k_hat.unsqueeze(0), k_hat.unsqueeze(0), cos, sin)
             k_hat = rotated[0]
         v_params = calibrated.get("value", [None] * len(keys))[index]
-        v_hat, bad_v = _quantize(value[0], config["v_bits"], config["value_mode"], v_params)
+        v_hat, bad_v = _quantize(value[0], v_bits, config["value_mode"], v_params)
         invalid += bad_k + bad_v
         keys[index][:, :, position:position + 1, :] = k_hat.unsqueeze(0)
         values[index][:, :, position:position + 1, :] = v_hat.unsqueeze(0)
