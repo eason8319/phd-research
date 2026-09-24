@@ -61,12 +61,23 @@ def run(model_key: str, commit: str) -> None:
     e1 = _read(root / "research/phase1/results/e1" / model_key / "summary.json")
     seeds = _read(root / "research/phase1/splits/seeds.json")
     candidates = list(dict.fromkeys([KV8, KV4, *e1["kept"]]))
+    early_stops = {
+        name: _read(folder / f"v_gsm8k_{name}_early_stop.json")
+        for name in candidates
+        if (folder / f"v_gsm8k_{name}_early_stop.json").exists()
+    }
+    for name, result in early_stops.items():
+        if (name == KV8 or result["config"] != name or not result["stopped_early"]
+                or result["versus_bf16"]["lower"] <= 2
+                and result["versus_kv8"]["lower"] <= 2):
+            raise RuntimeError("提前停止记录不满足严重失效条件")
+    active_candidates = [name for name in candidates if name not in early_stops]
     references: dict[str, dict[str, Any]] = {}
     quantized: dict[str, dict[str, dict[str, Any]]] = {}
     for task in TASKS:
         references[task] = _read(folder / f"v_{task}_bf16.json")
         quantized[task] = {
-            name: _read(folder / f"v_{task}_{name}.json") for name in candidates
+            name: _read(folder / f"v_{task}_{name}.json") for name in active_candidates
         }
     baseline_ok = {
         "gsm8k": references["gsm8k"]["em"] >= 50,
@@ -77,7 +88,7 @@ def run(model_key: str, commit: str) -> None:
     cells: dict[str, dict[str, Any]] = {}
     for task in TASKS:
         cells[task] = {}
-        for name in candidates:
+        for name in active_candidates:
             candidate = quantized[task][name]
             if candidate["n"] != 64 or references[task]["n"] != 64:
                 raise RuntimeError("V 起始样本数不是 64")
@@ -109,7 +120,7 @@ def run(model_key: str, commit: str) -> None:
                 "state": state,
                 "class_unit_passes": passes,
             }
-    low_bit = [name for name in candidates if name != KV8]
+    low_bit = [name for name in active_candidates if name != KV8]
     eligible = [
         name for name in low_bit
         if all(cells[task][name]["state"] != "淘汰"
@@ -139,6 +150,16 @@ def run(model_key: str, commit: str) -> None:
         "h": 0,
         "baseline_usable": {**baseline_ok, "retrieval": retrieval_ok},
         "retrieval_quality_excluded": not retrieval_ok,
+        "early_stops": {
+            name: {
+                "observed_n": result["observed_n"],
+                "planned_n": result["planned_n"],
+                "versus_bf16": result["versus_bf16"],
+                "versus_kv8": result["versus_kv8"],
+                "reason": result["reason"],
+            }
+            for name, result in early_stops.items()
+        },
         "cells": cells,
         "selected_low_bit": selected,
         "fallback_if_none": KV8,
