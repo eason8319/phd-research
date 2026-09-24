@@ -1,0 +1,9 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "435e205",
+  "model": "qwen",
+  "selected_low_bit": null,
+  "e3_representation": "kv8-per_token-post",
+  "e3_residual_bits": 0,
+  "reason": "低位宽在 H=0 下全部淘汰"
+}

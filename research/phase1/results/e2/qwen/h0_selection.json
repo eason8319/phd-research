@@ -1,0 +1,163 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "435e205",
+  "model": "qwen",
+  "e1_commit": "6ca63fd",
+  "h": 0,
+  "baseline_usable": {
+    "gsm8k": true,
+    "hotpot": true,
+    "retrieval": false
+  },
+  "retrieval_quality_excluded": true,
+  "early_stops": {
+    "kv4-per_token-post": {
+      "observed_n": 9,
+      "planned_n": 64,
+      "versus_bf16": {
+        "estimate": 88.88888888888889,
+        "lower": 8.465177957777815,
+        "upper": 99.86033337799365,
+        "kind": "binary",
+        "n": 9,
+        "detail": {
+          "degrade": 8,
+          "improve": 0
+        }
+      },
+      "versus_kv8": {
+        "estimate": 88.88888888888889,
+        "lower": 8.465177957777815,
+        "upper": 99.86033337799365,
+        "kind": "binary",
+        "n": 9,
+        "detail": {
+          "degrade": 8,
+          "improve": 0
+        }
+      },
+      "reason": "生成均达到上限且失分；配对下降区间下界越过 2 分容差"
+    }
+  },
+  "cells": {
+    "gsm8k": {
+      "k8v4-per_channel-post": {
+        "score": 89.0625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 0
+          }
+        },
+        "versus_kv8": {
+          "estimate": 4.6875,
+          "lower": -5.8679912319045835,
+          "upper": 14.435628574313652,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 3,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      },
+      "kv4-per_channel-pre": {
+        "score": 87.5,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 3.125,
+          "lower": -8.8114122917227,
+          "upper": 14.41597615845572,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 3,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 6.25,
+          "lower": -5.219168108095118,
+          "upper": 16.64468309709648,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 4,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      }
+    },
+    "hotpot": {
+      "k8v4-per_channel-post": {
+        "score": 26.736749478192287,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 23.493754172818715,
+          "lower": 13.178410095602834,
+          "upper": 34.02963686760108,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 19.576460099022768,
+          "lower": 9.53192865427584,
+          "upper": 29.83030837481669,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "kv4-per_channel-pre": {
+        "score": 33.674447465308866,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 16.55605618570214,
+          "lower": 7.464263486383606,
+          "upper": 26.21875922786862,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 12.638762111906193,
+          "lower": 3.2335896005892812,
+          "upper": 22.407498671549607,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      }
+    }
+  },
+  "selected_low_bit": null,
+  "fallback_if_none": "kv8-per_token-post",
+  "reason": "低位宽表示在参加判断的单元上全部淘汰"
+}
