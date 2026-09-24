@@ -15,7 +15,7 @@ from kvstudy.attention import attention_fp32
 from kvstudy.groups import quantize_cross_token
 from kvstudy.paths import project_root
 from phase1.e1 import MODELS, _capture, _rotate_query
-from phase1.e2_quant import _calibration, _config, _quantize, _rotate_key
+from phase1.e2_quant import _calibration, _config, _inputs, _quantize, _rotate_key
 from phase1.e2_scale_drift import _head_errors, _input_ids, _load_items
 from phase1.runner import load_model
 
@@ -55,6 +55,25 @@ def _source_index(items: list[dict[str, Any]]) -> list[str]:
     ]
 
 
+def _items_with_v_math(root: Path, model_key: str) -> list[dict[str, Any]]:
+    """把冻结的 V 数学轨迹插入 C 与 V 长任务之间。"""
+    items = _load_items(root, model_key)
+    frozen = json.loads((root / "research/phase1/splits/trajectories.json").read_text("utf-8"))
+    indexed = {
+        item["id"]: item for item in _inputs(root, model_key, "gsm8k", "v")
+    }
+    v_math = [
+        {**indexed[item_id], "subset": "v_math", "kind": "math"}
+        for item_id in frozen["v_math"]
+    ]
+    c_count = len(frozen["c_math"]) + len(frozen["c_retrieval"])
+    if [item["id"] for item in items[:c_count]] != (
+        frozen["c_math"] + frozen["c_retrieval"]
+    ):
+        raise RuntimeError("跨 token 轨迹的 C 冻结顺序不一致")
+    return items[:c_count] + v_math + items[c_count:]
+
+
 def run(model_key: str, commit: str) -> None:
     """量化各预登记输入末尾的一个完整组，并记录闭合前后差异。"""
     root = project_root()
@@ -65,7 +84,7 @@ def run(model_key: str, commit: str) -> None:
     calibration = _calibration(root, model_key, config)
     if BLOCK_TOKENS % GROUP_TOKENS:
         raise RuntimeError("跨 token 组长度必须整除物理块长")
-    items = _load_items(root, model_key)
+    items = _items_with_v_math(root, model_key)
     ordered_ids = [item["id"] for item in items]
     sources = _source_index(items)
     progress = root / "research/.runtime" / f"e2-cross-token-{model_key}.json"
