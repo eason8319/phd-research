@@ -3,5 +3,7 @@
   "hotpot_unique": true,
   "long_decode_subset": true,
   "c_folds": true,
-  "retrieval_count": 352
+  "retrieval_count": 352,
+  "retrieval_exact_target_key_unique": true,
+  "retrieval_checked_files": 704
 }

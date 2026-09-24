@@ -1,6 +1,6 @@
 {
   "gsm8k": "Solve the math problem. Show your work. End with a separate line containing exactly four # characters, one space, and the numeric answer. For example, if the answer is 42, the last line is: #### 42\n\n{question}",
-  "retrieval": "Find the value stored for the given key. Reply with the value only, with no extra words.\n\n{context}\n\nKey: {key}\nValue:",
+  "retrieval": "Find the value stored for the exact key below. Keys differing in any character are different. Reply with the value only, with no extra words.\n\n{context}\n\nKey: {key}\nValue:",
   "hotpot_main": "Read the documents and answer the question. Give a short explanation, then finish with a line that starts with Final answer: and gives the actual answer.\n\n{documents}\n\nQuestion: {question}",
   "hotpot_long": "Read the documents and answer the question. Reason step by step, then give the actual answer on the last line, starting with Final answer:.\n\n{documents}\n\nQuestion: {question}",
   "needle": "The register {key} stores {value}.",
