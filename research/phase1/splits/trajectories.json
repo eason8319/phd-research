@@ -1,0 +1,51 @@
+{
+  "c_math": [
+    "gsm8k-train-207",
+    "gsm8k-train-3708",
+    "gsm8k-train-7122",
+    "gsm8k-train-6326",
+    "gsm8k-train-1248",
+    "gsm8k-train-6731",
+    "gsm8k-train-983",
+    "gsm8k-train-1740"
+  ],
+  "c_retrieval": [
+    "synth-c-0000",
+    "synth-c-0002",
+    "synth-c-0004",
+    "synth-c-0006",
+    "synth-c-0001",
+    "synth-c-0003",
+    "synth-c-0005",
+    "synth-c-0007"
+  ],
+  "v_math": [
+    "gsm8k-train-6748",
+    "gsm8k-train-2048",
+    "gsm8k-train-7317",
+    "gsm8k-train-1354"
+  ],
+  "v_retrieval_32k": [
+    "synth-v-0000",
+    "synth-v-0001",
+    "synth-v-0002",
+    "synth-v-0003",
+    "synth-v-0004",
+    "synth-v-0005",
+    "synth-v-0006",
+    "synth-v-0007"
+  ],
+  "v_hotpot": [
+    "5ae7fd085542993210984007",
+    "5ab7ba7555429928e1fe38b5",
+    "5a7e3a3f5542995ed0d166dd",
+    "5ab29bdc554299545a2cf9d1"
+  ],
+  "counts": {
+    "c_math": 8,
+    "c_retrieval": 8,
+    "v_math": 4,
+    "v_retrieval_32k": 8,
+    "v_hotpot": 4
+  }
+}

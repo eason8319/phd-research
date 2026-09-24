@@ -1,0 +1,1994 @@
+{
+  "c": [
+    {
+      "id": "gsm8k-train-207",
+      "row": 207,
+      "question_sha256": "634fc001cd273608cedbfe6765df3e4aad678decc2da17ae05663088f5d4fde5",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-3708",
+      "row": 3708,
+      "question_sha256": "71088605146173c5184785c28f6365d3d552a9ed9582eddea0c2545abac7ef43",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-7122",
+      "row": 7122,
+      "question_sha256": "17aaa0158dc84be98917029ec370ec2cee6bfa0bb6fcc44897a1bc7d3ca4f4b4",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6326",
+      "row": 6326,
+      "question_sha256": "5cc9b7960c498f0c693d7cba82aa1a1feb1bb64f39bce68240a39bf883958741",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-5955",
+      "row": 5955,
+      "question_sha256": "298154593627733006c746992ec75760b95f74a2a4062722447ee766a882fdd3",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-2471",
+      "row": 2471,
+      "question_sha256": "dd2f239fb5d989ebba07efeba44224b75c7251b583e5118e4d95cd204cb20113",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6916",
+      "row": 6916,
+      "question_sha256": "3003332df0b07bdff793118e1f3061e37dcaf8a86ec61a55de5577f462cddbf4",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-5990",
+      "row": 5990,
+      "question_sha256": "fa8211ef983051913c57646bcc46e7a16fb3b1ab005440c102fe75d1f9454d10",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-1248",
+      "row": 1248,
+      "question_sha256": "c93a668008a03ac59be5798469152a8a658c7ee9388ec12d2a59837d84ed2fa1",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6731",
+      "row": 6731,
+      "question_sha256": "61c86618d4973dded5dedcbbdb1163490d566ba8a8414a1fcff98892c002f96e",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-983",
+      "row": 983,
+      "question_sha256": "b5ce7d5d5757d9ca3f996b25fcf1541b053beb136e08dbcef2a5519a3f2c6da0",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-1740",
+      "row": 1740,
+      "question_sha256": "78db60c10909596e133fbf55d63d95dbbdcbcc33e52ef22bf0e1e6d41138391a",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-848",
+      "row": 848,
+      "question_sha256": "d772f6e2afee5af67537588090db10f7962788077a65e8f723dd7b2c4d207587",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-748",
+      "row": 748,
+      "question_sha256": "bcc89179b86460ac131e6ebb32cf7e92105b35840af68e275c996f8e136e955c",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6082",
+      "row": 6082,
+      "question_sha256": "64b402883c2bf6e00192dee062ed02d91fc3c36feda95850fc0d7e67e9c75fb2",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6550",
+      "row": 6550,
+      "question_sha256": "d7e0b342ba0aaf72b46691ac0c384f2d5de3fdf391f24f7c38a2e82c10f37213",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-3866",
+      "row": 3866,
+      "question_sha256": "4b380870769adba6958d631dbf951a8a5789d4bc2ea161e7dcf8a0054afa6406",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-5899",
+      "row": 5899,
+      "question_sha256": "7bff3aa4b419a046a409ac9a54dc4274470e71d115ac3ae09233090a10357452",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-4343",
+      "row": 4343,
+      "question_sha256": "77d5d78680ac3880b5241174e38c21266551a81f4c6cea37c84f52c73d8c4247",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6688",
+      "row": 6688,
+      "question_sha256": "3e1de82271885cf43d3a566379fedf5b9517b2449459a18ea56fcd2ee50e46c1",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-4827",
+      "row": 4827,
+      "question_sha256": "5b0d081a11dc22c3f86f0223d1f932d898a6191610f824dddd88c71b4fd041f8",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-3309",
+      "row": 3309,
+      "question_sha256": "a8f1ec3ccdca5b76618f4197f794710368df182675ac2ef426a78671c38e0d0f",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-3591",
+      "row": 3591,
+      "question_sha256": "95c8934ab140afcd5c78677e39deb3e5f67388a416090fd2b5d9a18cfadd4d2a",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6099",
+      "row": 6099,
+      "question_sha256": "ac56f71d1d0faacb104927663550d6c28a726a7486ecd61ecd3d32a8bebd9266",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-5689",
+      "row": 5689,
+      "question_sha256": "e5f55bae249ce392c3cfb15319fd27cc5d3ef0323d226f1e8ab17f1078596d47",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-118",
+      "row": 118,
+      "question_sha256": "a9b68e9e0d4e93ba9d12c08b705f23dc11002a2233b082deec145bca3b0c9fae",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-2108",
+      "row": 2108,
+      "question_sha256": "8810c4ec8336e409eeaff72d74d144ad0ab4ea71920b86c9630aa63e07e63b22",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-939",
+      "row": 939,
+      "question_sha256": "8d0e37f8d7cd9b4e689c517229ee9993d55aeed450f23e1eb0be27c3a7af7995",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-2356",
+      "row": 2356,
+      "question_sha256": "615745950743434f773213980f1487f17904b3cd23b83b66cfd8407bd3102c9b",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6442",
+      "row": 6442,
+      "question_sha256": "4bf969542525710d7e2950b14b83634379e1398e0466a46777a7187e07806170",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-1743",
+      "row": 1743,
+      "question_sha256": "3dd2b68b952345261c64dfd8e8a29781bb5317e812603046672760b912acd0ce",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-4726",
+      "row": 4726,
+      "question_sha256": "ad3404ed4acb363fa35a4d13c12254b2b00475bbd2437e2a5ac2c5f047df7856",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-2032",
+      "row": 2032,
+      "question_sha256": "4a42aee03fb663b723204b1d0d597eb91704d2b920783c530e5c5c7960894d23",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-4311",
+      "row": 4311,
+      "question_sha256": "59aabaceab4c454e6d125368fb6008f187caadf0e66c26e955aea44054f25bb5",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-7311",
+      "row": 7311,
+      "question_sha256": "f7ebaba9295513f4a228cdadfb0a9eaaf598905df14f386b1586a0083a57a247",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-4746",
+      "row": 4746,
+      "question_sha256": "9652d2c26a120590ecd93a456490043b5d688d8f019c004287a9b18a9a0073e4",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-3268",
+      "row": 3268,
+      "question_sha256": "36f18259a1d37ff2dc4ef68bcffc01b459ee697df4de806f74aece92ec05ef3e",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-5836",
+      "row": 5836,
+      "question_sha256": "2b752f39e682126292ffacb073519554edaa5e0fcff1fd4709ef0d4671a986fc",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6003",
+      "row": 6003,
+      "question_sha256": "5eb017b43f5254d76762098149df09dabdc01c4d3aacead924158f1aab524293",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-982",
+      "row": 982,
+      "question_sha256": "c456a9ded063d929d73fdc9368f14bf34860bbe9ee6fdfb84f2e99d0d64b228a",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-3336",
+      "row": 3336,
+      "question_sha256": "056a377ac75e5b83f2879bc0c82581ca1eb95a0f75ce56d704b2fa4fbf2044d8",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-1293",
+      "row": 1293,
+      "question_sha256": "7bf7166635409ff35c0b74e88314d8df2e7fbd77c0b8c0832806e013c17acb1b",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6102",
+      "row": 6102,
+      "question_sha256": "7c8e4ad618e461a1b0369f0e6d5d7db524aa2bef24212ac7210a7bbda315a0f5",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-1612",
+      "row": 1612,
+      "question_sha256": "f61506cf866ef1417f9312a3338f8076b65f72250700c517968c4a5cf9853adb",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6265",
+      "row": 6265,
+      "question_sha256": "b992230393f89ac16ad723b9b8547817fc347582151ab1717982e79f5b8ba3ca",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-5163",
+      "row": 5163,
+      "question_sha256": "c7ae9a161d3fa55891343174d66b245a6de93e3d94b652bf5374e29a6acb24fc",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-7087",
+      "row": 7087,
+      "question_sha256": "77031c3de5e647f382fdf9f1e58a80fb0fa54f2a3773d6899fa44dacb43f1a57",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-3744",
+      "row": 3744,
+      "question_sha256": "53f4b10ff099231e06813ab99659fd3ca2580cc24511e10b2d5ddd60420aa92a",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-3934",
+      "row": 3934,
+      "question_sha256": "96c4701c4a59f7f1d606c52637ba7a08c99097b97933b6152d12cdc500204737",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-2573",
+      "row": 2573,
+      "question_sha256": "b40fd4742df4fa12c14d82621f7321c2d690b1b93d69d1f70e31cb3207a1cc98",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-2281",
+      "row": 2281,
+      "question_sha256": "0d013576520fcd064a524e977add1226a48e690e98c8affc2c37ffefa219a4db",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-2542",
+      "row": 2542,
+      "question_sha256": "7dccd1fa0c7752cc0e30d3bb5967c40c8a31b1c240c0831276446abcd89cbe01",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-6498",
+      "row": 6498,
+      "question_sha256": "b268aeaed91041678b732e7597c2925b6aa575717d5464f20a8f183ea6847dd0",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-7239",
+      "row": 7239,
+      "question_sha256": "3c8af1691f9434f721bc42887b0439199087ef56d725e4bdde34ccfec1f74d79",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-1942",
+      "row": 1942,
+      "question_sha256": "7f2305a2b4d5caf8e5f3cf3968263a970b19dbe6cceb61b3055fabe4b8d940cd",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-4326",
+      "row": 4326,
+      "question_sha256": "666e5ffe790e5a5d24a534e72e449eea3e5977f9405f22818a32b6b4b4bb6443",
+      "fold": 0
+    },
+    {
+      "id": "gsm8k-train-789",
+      "row": 789,
+      "question_sha256": "21f5516f730392ff8dd426b08f31118214d5e774942b80dddb6ce6744b10446e",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-444",
+      "row": 444,
+      "question_sha256": "531d9fabbc58e1ec36c812b9c25fa3f982a29208a3b31ced5cc0edd36c818340",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6812",
+      "row": 6812,
+      "question_sha256": "ff33c0ae0b2451968f5cba3e13062d3317deba8332b40eb09109c892cc8504df",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-3577",
+      "row": 3577,
+      "question_sha256": "57b6047bd5c3c7faf569811dd81ab8221680e9596bb0771dd42634d07d6ffed2",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-2086",
+      "row": 2086,
+      "question_sha256": "c4ead1fb01ca1961d19b3a235c10e40ebe19b1b0e243f9b9011548136aa59c8b",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-6819",
+      "row": 6819,
+      "question_sha256": "937386988456375878234b98e6eae80386533d0cddf18cbdfff927e22d10b4fe",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-2457",
+      "row": 2457,
+      "question_sha256": "2297c72daff6865ea1cf2a98bd05ea35642f8b19018da2a3182e9f1a92171d37",
+      "fold": 1
+    },
+    {
+      "id": "gsm8k-train-938",
+      "row": 938,
+      "question_sha256": "9a489cf82230b2c3bc8f41f31ec0d224facb19f810f4c418f3c00e89604c18bd",
+      "fold": 1
+    }
+  ],
+  "v": [
+    {
+      "id": "gsm8k-train-6748",
+      "row": 6748,
+      "question_sha256": "52634adbe86665f192db09c208f97077e6ec24b786b6bafee7fe67cd04b01e91"
+    },
+    {
+      "id": "gsm8k-train-2048",
+      "row": 2048,
+      "question_sha256": "9aef58c10d61e101dd139d573df5e4d2d376dc40f1453f9941e4d3e1750588f5"
+    },
+    {
+      "id": "gsm8k-train-7317",
+      "row": 7317,
+      "question_sha256": "d069920b5c17ef6d75952b9c80657ac0d95679ceb07f4d5418c469efadcaf14b"
+    },
+    {
+      "id": "gsm8k-train-1354",
+      "row": 1354,
+      "question_sha256": "8ce33e97d3ff5ac4b282ba6175b87dc92579837240212088c2cb932169094953"
+    },
+    {
+      "id": "gsm8k-train-764",
+      "row": 764,
+      "question_sha256": "10c4383b144e2d8a806fd1a04362836fcb46b8f67130cad363d7ec89525ab5e5"
+    },
+    {
+      "id": "gsm8k-train-2994",
+      "row": 2994,
+      "question_sha256": "ca0990aa00782f83c08fb42c320d1c0c15db8170620d9a7e8cfbe7038e982fe8"
+    },
+    {
+      "id": "gsm8k-train-4897",
+      "row": 4897,
+      "question_sha256": "bb220687f384b81e70385c5d256e6be4e254a92500c56162623a9210e29fa387"
+    },
+    {
+      "id": "gsm8k-train-4273",
+      "row": 4273,
+      "question_sha256": "e2adac4a54070de0322cdddd2e3c4da7ca5c45d23fa58db5db095eac469e9c80"
+    },
+    {
+      "id": "gsm8k-train-717",
+      "row": 717,
+      "question_sha256": "57fb9fc577138f521b10295f21033c9f2d40c8d6c9d4da96702ff94cb26d9dd8"
+    },
+    {
+      "id": "gsm8k-train-2636",
+      "row": 2636,
+      "question_sha256": "956b7af42da59d9c4f12667f719dafc903aa9bddab8a8d0b4fcca7348b6d06cf"
+    },
+    {
+      "id": "gsm8k-train-2263",
+      "row": 2263,
+      "question_sha256": "876bcc750c61399df0e7ab8837abbe5da4d9aa260028b960256232e6a530543f"
+    },
+    {
+      "id": "gsm8k-train-2935",
+      "row": 2935,
+      "question_sha256": "6b58ec2a0645349d876d4e76770280a96982b0cf7fce5c0d358dd56015b93497"
+    },
+    {
+      "id": "gsm8k-train-3985",
+      "row": 3985,
+      "question_sha256": "0a3d5bfc9bb54d7100d96f4a7cc93ed402a80a985c306cc43d00bc403fc2e271"
+    },
+    {
+      "id": "gsm8k-train-7453",
+      "row": 7453,
+      "question_sha256": "c08fb0d3027c5a7ba46fad528790194d733558cc05e3ef9779d88d8993dd1792"
+    },
+    {
+      "id": "gsm8k-train-4723",
+      "row": 4723,
+      "question_sha256": "0a831cf566e3fe5983e4044a92188a692f803f253a49c75270cf899b3de3cb43"
+    },
+    {
+      "id": "gsm8k-train-5640",
+      "row": 5640,
+      "question_sha256": "6d258b8a2e9ccc4cd69ab435c2c87d59288e0077d5e06ca82fab31154416dfb5"
+    },
+    {
+      "id": "gsm8k-train-5143",
+      "row": 5143,
+      "question_sha256": "e824f7414e66b6a967b5721d893cdd0296bd5fbb6e979e531f3be08d22145279"
+    },
+    {
+      "id": "gsm8k-train-5403",
+      "row": 5403,
+      "question_sha256": "151ad60f712ea44ea7e6d0bd5fe422d51075e6c1c38cfc5d0e70205b8f4a881a"
+    },
+    {
+      "id": "gsm8k-train-4039",
+      "row": 4039,
+      "question_sha256": "b535151ab8353ba5f33b2715be75abc3a6cf5ddac563539357831121954dfda9"
+    },
+    {
+      "id": "gsm8k-train-3153",
+      "row": 3153,
+      "question_sha256": "2a9f9fd05e5518be0189356923ff2be662f67f45b3bd0c48caf27bf267a4e594"
+    },
+    {
+      "id": "gsm8k-train-329",
+      "row": 329,
+      "question_sha256": "74add42c5cb21acb69bed1012422564f535f100dbe0ecc3770193751163a76d6"
+    },
+    {
+      "id": "gsm8k-train-5292",
+      "row": 5292,
+      "question_sha256": "16b56ae4c1d92b476053adfb485d630bf682a1573affe013a52eac12c6e899d6"
+    },
+    {
+      "id": "gsm8k-train-637",
+      "row": 637,
+      "question_sha256": "db498be547effcc4bfe1ee673750a62527a5636e30e07831a583ad96ca1970cb"
+    },
+    {
+      "id": "gsm8k-train-1159",
+      "row": 1159,
+      "question_sha256": "2a8ed3e00535767a5652c3e42778d2b3474587b831016eb88904dffa6dbc7b6f"
+    },
+    {
+      "id": "gsm8k-train-605",
+      "row": 605,
+      "question_sha256": "20e6ff0aa44a7186b4013f1c79ccb62fbfbcee01f60e11c50d58d2c5f4e57970"
+    },
+    {
+      "id": "gsm8k-train-7367",
+      "row": 7367,
+      "question_sha256": "0e63273752172d72568d49ae33da0e8e0c4c50a706fc329c404b2cfaed57aa4e"
+    },
+    {
+      "id": "gsm8k-train-795",
+      "row": 795,
+      "question_sha256": "66e9f6c99b8725fdbb5467c953c59eca90b128a549d04a1db414141071d64762"
+    },
+    {
+      "id": "gsm8k-train-70",
+      "row": 70,
+      "question_sha256": "39f26f8a429fdc7d6da7a511b974d7e3b4a61dcaee99a0bf10de6c773bf39089"
+    },
+    {
+      "id": "gsm8k-train-3597",
+      "row": 3597,
+      "question_sha256": "e75d448ed7d5ae22eb75f550938613ae2c758d3b05e37784e3cb2c61644500fa"
+    },
+    {
+      "id": "gsm8k-train-6904",
+      "row": 6904,
+      "question_sha256": "3b93e2ee51eed850d96ccdbabc715316e7043c99edc641f793a1a1fe87a4a7e5"
+    },
+    {
+      "id": "gsm8k-train-258",
+      "row": 258,
+      "question_sha256": "6e62560d9d5da1ceeb8b42d29ab4e1e316883806cf96690bba944ebe3d4a99b1"
+    },
+    {
+      "id": "gsm8k-train-1298",
+      "row": 1298,
+      "question_sha256": "c50a9d3120b552c0b6ca3d15c49b27adfa4477ed877047a93239392213690e56"
+    },
+    {
+      "id": "gsm8k-train-6121",
+      "row": 6121,
+      "question_sha256": "f3b802383c25d9a6a358f9860c9e748f31ab8f807dd68e8173444b8e5b208364"
+    },
+    {
+      "id": "gsm8k-train-4414",
+      "row": 4414,
+      "question_sha256": "2e26560ed2a73261f5e83359e741fbb88cfe0c9604a96a215e3592abd85d6185"
+    },
+    {
+      "id": "gsm8k-train-4932",
+      "row": 4932,
+      "question_sha256": "a94c5d0b781cb3d85c857d3cfdeeeedb648651b1ad0cd5b45baa4b819824478f"
+    },
+    {
+      "id": "gsm8k-train-193",
+      "row": 193,
+      "question_sha256": "5b05ef609031715a507d8c408c1025d7e12c32a432c74c514ce2c8d312ade514"
+    },
+    {
+      "id": "gsm8k-train-1007",
+      "row": 1007,
+      "question_sha256": "1919b9728f9677a3f69ead1234f07c46bdaea887edf248b5428a4387714bbef1"
+    },
+    {
+      "id": "gsm8k-train-3698",
+      "row": 3698,
+      "question_sha256": "f438236eb610dbd71c1aa40907223c15a471ae8f145f81378b1d001da8cd3ca2"
+    },
+    {
+      "id": "gsm8k-train-2873",
+      "row": 2873,
+      "question_sha256": "4cd2d3d95df6ef9e535e3f84c86cf267e9df3178fc6c8ad0c07b5564bb682fcb"
+    },
+    {
+      "id": "gsm8k-train-5811",
+      "row": 5811,
+      "question_sha256": "376bed658e57938071bc2fc3b813ba37c177c91d9b87be37527b67980f432562"
+    },
+    {
+      "id": "gsm8k-train-2650",
+      "row": 2650,
+      "question_sha256": "46854db783673af9e7ed1777328a961dd5b8772cee3640c54bd99e9fd4f74d32"
+    },
+    {
+      "id": "gsm8k-train-2519",
+      "row": 2519,
+      "question_sha256": "9e3de959ecb6028f6502cff22892cbd2bb4807341552b70c8f18355845bc901f"
+    },
+    {
+      "id": "gsm8k-train-1",
+      "row": 1,
+      "question_sha256": "3f23a7d4df7cb484dc2414bb2632f29e51a580a202d5968f1dbca00ed0f210bc"
+    },
+    {
+      "id": "gsm8k-train-2131",
+      "row": 2131,
+      "question_sha256": "64a93d12edc22bbf26c5d50d7027a6ec57e52e8f715a20985c286c082b159926"
+    },
+    {
+      "id": "gsm8k-train-869",
+      "row": 869,
+      "question_sha256": "e41bdfb69d0bc4e3a3a215aa711eeb4d9961d80aad1bebf261a43f2567182492"
+    },
+    {
+      "id": "gsm8k-train-4783",
+      "row": 4783,
+      "question_sha256": "2a71e860c4e143086407eebea21927f28a9fb105a7d574b3edce74d6bae1cf41"
+    },
+    {
+      "id": "gsm8k-train-5169",
+      "row": 5169,
+      "question_sha256": "c2f9214099f6773926f61990148bbd95f708e88aa3d065cb26fc580eec9d0644"
+    },
+    {
+      "id": "gsm8k-train-4546",
+      "row": 4546,
+      "question_sha256": "4d6c2ef30143f38b3b08ef7f0613f209e467eeed4a624652a8a4324cec1e07d7"
+    },
+    {
+      "id": "gsm8k-train-988",
+      "row": 988,
+      "question_sha256": "52d8602077853f2cd9b71a666c694964366e377b3a4f6cfdc4b8154375abf56f"
+    },
+    {
+      "id": "gsm8k-train-3186",
+      "row": 3186,
+      "question_sha256": "c0e9376091d9d76677aae5a3995fec64669929fdd969da0a4087f63983ac7dba"
+    },
+    {
+      "id": "gsm8k-train-220",
+      "row": 220,
+      "question_sha256": "1a1b8feee07655a0d2b2c8c69b150ec5d6abe6d7158f39cc6762f916a5a19de9"
+    },
+    {
+      "id": "gsm8k-train-3675",
+      "row": 3675,
+      "question_sha256": "c99929d7dbfcbae8f6442fbeb0e6b23c9b483e297a47d21f11134ac6c369735d"
+    },
+    {
+      "id": "gsm8k-train-2684",
+      "row": 2684,
+      "question_sha256": "8e912e2815a23dee768341c90d2ad0e2bca4456fe376929c54f13b760142840e"
+    },
+    {
+      "id": "gsm8k-train-2609",
+      "row": 2609,
+      "question_sha256": "5db29e9f42650815d97fd5547a1d85e3913846d1245aafe9bda72a66d871ac62"
+    },
+    {
+      "id": "gsm8k-train-1006",
+      "row": 1006,
+      "question_sha256": "68b81fe7e8f4bf4b0b420ea2af9fa6e19c03d0ff074706a9f3b7617b774136eb"
+    },
+    {
+      "id": "gsm8k-train-7392",
+      "row": 7392,
+      "question_sha256": "d98ee5839b029d0569f555d70ef6dac3a0d09d25dd3aeda1accce138c13882ac"
+    },
+    {
+      "id": "gsm8k-train-1235",
+      "row": 1235,
+      "question_sha256": "256152518cb687686c2fb033fb68a96e24be29a496a69798a9fab36fed601f19"
+    },
+    {
+      "id": "gsm8k-train-3715",
+      "row": 3715,
+      "question_sha256": "cd01ef3096493fef344180280ac98f298cd2c33fc4a3bc26beb64e5d87a51871"
+    },
+    {
+      "id": "gsm8k-train-2863",
+      "row": 2863,
+      "question_sha256": "dbb3f403be8155c827c552284ee8ce2c4f48e1fe531da55bf44b89db0e4ba881"
+    },
+    {
+      "id": "gsm8k-train-874",
+      "row": 874,
+      "question_sha256": "8f90a3158536c1b2f0b7a1c0a96054ba79589cf73d86618d27cfbc86f5f7537f"
+    },
+    {
+      "id": "gsm8k-train-7124",
+      "row": 7124,
+      "question_sha256": "0861f4408364702030a5c7f9ef4403673016e0497b7d4e3511fa076109b0170d"
+    },
+    {
+      "id": "gsm8k-train-2887",
+      "row": 2887,
+      "question_sha256": "032bc4b78fc665c52ad4e3fd6ece198f78f6cb2fa55f910676ff0c074fc14228"
+    },
+    {
+      "id": "gsm8k-train-7337",
+      "row": 7337,
+      "question_sha256": "54fd353b40e42509153cc97c03fb5ab09a5d125298254e533c492a6c4c87812e"
+    },
+    {
+      "id": "gsm8k-train-6704",
+      "row": 6704,
+      "question_sha256": "804fe9f4e6f1fc2584eb72cdc2e3c43368b11350d8e31c25c3a531e03a1067f0"
+    }
+  ],
+  "expand": [
+    {
+      "id": "gsm8k-train-3686",
+      "row": 3686,
+      "question_sha256": "478acd81520a3e9c34a6dcda29e31922ecf65c09fe43508d6883004b78fa433c"
+    },
+    {
+      "id": "gsm8k-train-6320",
+      "row": 6320,
+      "question_sha256": "66775db277eb8894751ec5fb101b92ac48727179c3af213a0b6f8b966708a523"
+    },
+    {
+      "id": "gsm8k-train-1694",
+      "row": 1694,
+      "question_sha256": "d54b575d013bd0f38bc0e0680ec2cb17766f697c0d01f3d6adb15d3d2de52f82"
+    },
+    {
+      "id": "gsm8k-train-6028",
+      "row": 6028,
+      "question_sha256": "e5ac29b82f9fb821824e60049c80514ef9ea3c2d7c154c1e125ef23f77427e2b"
+    },
+    {
+      "id": "gsm8k-train-4217",
+      "row": 4217,
+      "question_sha256": "8abf3b77c7c9bc207f7d4d45ed4d67c531eb231f00754377417404b6ed5b2ad3"
+    },
+    {
+      "id": "gsm8k-train-6375",
+      "row": 6375,
+      "question_sha256": "1d8f8d0d2b45e5f7f8663f3007e16dcd81487b326d54d181f0bbed5c6d66d239"
+    },
+    {
+      "id": "gsm8k-train-274",
+      "row": 274,
+      "question_sha256": "93f5ecfe410b5c47add049e6f000170f90f2602771dd2cb07c66627c76cf68cc"
+    },
+    {
+      "id": "gsm8k-train-5671",
+      "row": 5671,
+      "question_sha256": "0b498ea510d43e39b9e2996b8e5c1eb8d2a83a58fb2beba79dd226e81d6a244d"
+    },
+    {
+      "id": "gsm8k-train-1463",
+      "row": 1463,
+      "question_sha256": "314bdb697e6449bab31b3ed08e328bdb8aaa8f149a5921588ef5bfd9287e893b"
+    },
+    {
+      "id": "gsm8k-train-1177",
+      "row": 1177,
+      "question_sha256": "dada5c9c691bb17ad6f25aff28e0db1fd22a9542e435098a2092d3f115dc71b2"
+    },
+    {
+      "id": "gsm8k-train-835",
+      "row": 835,
+      "question_sha256": "089516560b7adaef178bd3d2d5a433f8104a2df2fce01d2e23dbf42477559a96"
+    },
+    {
+      "id": "gsm8k-train-1689",
+      "row": 1689,
+      "question_sha256": "53ead8dade18d03775d460204c632453460f1144127df8cc6e498b70a2653d46"
+    },
+    {
+      "id": "gsm8k-train-6893",
+      "row": 6893,
+      "question_sha256": "3b0977b8328c68b7e0b24c818e93261401af38c08e3a882a55857c9a17845167"
+    },
+    {
+      "id": "gsm8k-train-1225",
+      "row": 1225,
+      "question_sha256": "230e018e596a93553203f39a779162df28fce15513581e62c4b7e8d99ef9f230"
+    },
+    {
+      "id": "gsm8k-train-855",
+      "row": 855,
+      "question_sha256": "3c120cccd6be657591e0c72cde81e55e30a5df58fbfcb17037a92d902c4c7f7d"
+    },
+    {
+      "id": "gsm8k-train-7150",
+      "row": 7150,
+      "question_sha256": "533bb50756f473bd8d0695e90b90761bfa67ea6115dc7a2e647d915fddef2e2c"
+    },
+    {
+      "id": "gsm8k-train-6961",
+      "row": 6961,
+      "question_sha256": "c81cb523a23b7ee87c9fd1c3de29f5acea0a220e15cf4e31e0eb0d184680da79"
+    },
+    {
+      "id": "gsm8k-train-792",
+      "row": 792,
+      "question_sha256": "04b2a415a93c5dd9830c29b9315ca03d297e9e9250ee927f1193ce7e1f8e68d7"
+    },
+    {
+      "id": "gsm8k-train-3611",
+      "row": 3611,
+      "question_sha256": "400ed6d8aede3e228de059bd35ca8def0262b31618452abb55503d9667e1f369"
+    },
+    {
+      "id": "gsm8k-train-5196",
+      "row": 5196,
+      "question_sha256": "83e271dd0d25f360835c4d6f5639d0f4fc2d4c9cd8d8e262774b729f2670ee56"
+    },
+    {
+      "id": "gsm8k-train-7202",
+      "row": 7202,
+      "question_sha256": "9c1c9c1b93576bbadaab2b3bac611e6d1b8850a768284ebf3b6a8c3975ec5a09"
+    },
+    {
+      "id": "gsm8k-train-6721",
+      "row": 6721,
+      "question_sha256": "b0fdb47e23f0fb505574336bfcb64cb99e9e03e602a3e045813e9ac36854c739"
+    },
+    {
+      "id": "gsm8k-train-5483",
+      "row": 5483,
+      "question_sha256": "3c1af4d423e0df2c836d7341e0500c0e12db4a09476846e3c4fe016fa21b6406"
+    },
+    {
+      "id": "gsm8k-train-870",
+      "row": 870,
+      "question_sha256": "90b547278cd26714fc4c3700ca7e877060556cac72e43c62d7f9ff150e9b8132"
+    },
+    {
+      "id": "gsm8k-train-5157",
+      "row": 5157,
+      "question_sha256": "153e6d141cac7c1debbac0e7cd444866b8c948a898c9d543c3a469387242808a"
+    },
+    {
+      "id": "gsm8k-train-3224",
+      "row": 3224,
+      "question_sha256": "1b94f3379a05d90cdf79876ceadc3c88f5f628d2acb896c4fbb92eeddada248b"
+    },
+    {
+      "id": "gsm8k-train-5547",
+      "row": 5547,
+      "question_sha256": "70c2c6f33abb57c53679fd7763a42606dd53f84e9dc6c1ed41c221ee9e7231fc"
+    },
+    {
+      "id": "gsm8k-train-5219",
+      "row": 5219,
+      "question_sha256": "ba12e7f9bc33c573fbcc71d35cdd4bc756a1ac8fbaf5d3886fda92f8c81417f0"
+    },
+    {
+      "id": "gsm8k-train-776",
+      "row": 776,
+      "question_sha256": "c22cabef064eeeca4da826f4de18fabf1df0c432a8fd20107e657ca8fe224913"
+    },
+    {
+      "id": "gsm8k-train-4582",
+      "row": 4582,
+      "question_sha256": "6fcb31fb267944e4fcb9affef651b3e662efdf57cbe2472fded36c21c1d77071"
+    },
+    {
+      "id": "gsm8k-train-995",
+      "row": 995,
+      "question_sha256": "de49bdcd87a5f5a9a9dcb3e756d35d3eb58cf910231019e5b5f2746f4671f54d"
+    },
+    {
+      "id": "gsm8k-train-4230",
+      "row": 4230,
+      "question_sha256": "f5c997c284f3109349ec663724ec979ba15b8c1561bb79150ea636e98268e9d6"
+    },
+    {
+      "id": "gsm8k-train-1091",
+      "row": 1091,
+      "question_sha256": "bb5b41db7e5cb42a4ef720687459ff717878a822c813c9328ce1d5322d5da09b"
+    },
+    {
+      "id": "gsm8k-train-5310",
+      "row": 5310,
+      "question_sha256": "f19dc39462eda728471899614a927be42a0217831358697917f79a380dad6dde"
+    },
+    {
+      "id": "gsm8k-train-5485",
+      "row": 5485,
+      "question_sha256": "93037ae7bdbdee1d6a5c676437c0161ac30f68372a39bf9ddd4c4c63a08cd6d1"
+    },
+    {
+      "id": "gsm8k-train-1173",
+      "row": 1173,
+      "question_sha256": "c1201508e97121d4bdcbd5dcb1cf738623b2b73bf60d964263847fae66fe7f11"
+    },
+    {
+      "id": "gsm8k-train-2176",
+      "row": 2176,
+      "question_sha256": "d75e3225fc422e4ac5d2611d97b5d6a9aa071dd283981d28c72088e3f7078185"
+    },
+    {
+      "id": "gsm8k-train-5473",
+      "row": 5473,
+      "question_sha256": "06c94771beca3482bb78fd6c39b56e10d25cc86b7497c758e85f76b58ba79e93"
+    },
+    {
+      "id": "gsm8k-train-1295",
+      "row": 1295,
+      "question_sha256": "63cfa052f263414a447180aa51d1aee27ca834fed23eb4cf517edc6d639985a9"
+    },
+    {
+      "id": "gsm8k-train-5225",
+      "row": 5225,
+      "question_sha256": "f6ab9cd5709cb5ece6e59973414a6d9dd6b8cb5058eb219afd041f9ada270a6b"
+    },
+    {
+      "id": "gsm8k-train-5782",
+      "row": 5782,
+      "question_sha256": "c4b1a0bd18d4b291f3611f372478439e08ed98cd0448550d6ae0385f5a6344a2"
+    },
+    {
+      "id": "gsm8k-train-2769",
+      "row": 2769,
+      "question_sha256": "2a0ddf4f833b52e359acda32a201ff9bbbd6388400a7edd2a05a20e149930413"
+    },
+    {
+      "id": "gsm8k-train-589",
+      "row": 589,
+      "question_sha256": "9191ecea8e090cc42b9e8039ae32cbbd497843fae80aee25b3bd5a6cb66b9f83"
+    },
+    {
+      "id": "gsm8k-train-6047",
+      "row": 6047,
+      "question_sha256": "1c6668777e7cceda3b5133825456f46f8db09ceacda12bc5f757baa84abe32e7"
+    },
+    {
+      "id": "gsm8k-train-6793",
+      "row": 6793,
+      "question_sha256": "53425330917f69b423d810942420b1464cf50eeb0bded6c182375dc7c88d5399"
+    },
+    {
+      "id": "gsm8k-train-5942",
+      "row": 5942,
+      "question_sha256": "9f71728162b82a8c851baf163f3da4ff4b5cf958d4a497ad40e60224a7e4eb81"
+    },
+    {
+      "id": "gsm8k-train-4937",
+      "row": 4937,
+      "question_sha256": "8619d9b01076adb1d0dfef99cd131489b8ed7f068d35dfe4cc1546cce1341f69"
+    },
+    {
+      "id": "gsm8k-train-3691",
+      "row": 3691,
+      "question_sha256": "f59121f1e02a0407bdd15251b581d46319bec07ed1d6ed4f9f1da0181d7940fe"
+    },
+    {
+      "id": "gsm8k-train-3103",
+      "row": 3103,
+      "question_sha256": "14cb7a1241bdf426ec7b62b373683041d06aae100262143f0e5cb103874b7587"
+    },
+    {
+      "id": "gsm8k-train-1341",
+      "row": 1341,
+      "question_sha256": "7bb4cc00b5073c1d03a75c4b5e5abf7b877d8b6d6ece76c92a9ede3a50093599"
+    },
+    {
+      "id": "gsm8k-train-770",
+      "row": 770,
+      "question_sha256": "10896b5568f62f9507f7d515539b3d43ee360d152576c361127d34e096d8008c"
+    },
+    {
+      "id": "gsm8k-train-4924",
+      "row": 4924,
+      "question_sha256": "8e13f27c2870663a353280ae6ca6cfa81e78934fa7b87bffa8aa617b1f34578c"
+    },
+    {
+      "id": "gsm8k-train-3509",
+      "row": 3509,
+      "question_sha256": "9ccaa22c55a95adde0330f60157483bb99496f9914335ae35cdaf7620c94cc6f"
+    },
+    {
+      "id": "gsm8k-train-1391",
+      "row": 1391,
+      "question_sha256": "d61314c5fb140e4248f8f3064b6d8ad197301ceb94d40d4f27238e1de22035f6"
+    },
+    {
+      "id": "gsm8k-train-3486",
+      "row": 3486,
+      "question_sha256": "92fa568b3a16868c952b48066c25591d412d205420dba05b8b21bbe81c7ab4a6"
+    },
+    {
+      "id": "gsm8k-train-1931",
+      "row": 1931,
+      "question_sha256": "15ee7ae773cdb4bcd9201b815b3df60e8f3872d71173f4a322f4163b8014c2cc"
+    },
+    {
+      "id": "gsm8k-train-2989",
+      "row": 2989,
+      "question_sha256": "e61a9a6f99b475f44ff0cebe451eeeb361762c316e2e9797f21740a1ed89e769"
+    },
+    {
+      "id": "gsm8k-train-3380",
+      "row": 3380,
+      "question_sha256": "9ed1ff2b72985c50fcf5d40d7ef1fb8f3e7044ba1d6e3f71ab57229c469776d1"
+    },
+    {
+      "id": "gsm8k-train-7264",
+      "row": 7264,
+      "question_sha256": "cc1f02f80cd42dcc46ec5034103ac79bbd0397582d0eff6ea2120678ad794e4a"
+    },
+    {
+      "id": "gsm8k-train-3040",
+      "row": 3040,
+      "question_sha256": "d06206ae986286bfd8effce73f7854960d2d6049c2b9783da4fd04e36bc527f1"
+    },
+    {
+      "id": "gsm8k-train-2107",
+      "row": 2107,
+      "question_sha256": "c6adc595faa65df31be43584edb4d00978dfcc74042c89441b68d882158431b3"
+    },
+    {
+      "id": "gsm8k-train-3499",
+      "row": 3499,
+      "question_sha256": "6d58a69e967df420547dbec6c77d511ac096c8e953f84beb7816b8895099d343"
+    },
+    {
+      "id": "gsm8k-train-2582",
+      "row": 2582,
+      "question_sha256": "573c6497a76432dea759823b6752d96f687cd8b0bc8579ca4bec0d57a11b88e5"
+    },
+    {
+      "id": "gsm8k-train-2917",
+      "row": 2917,
+      "question_sha256": "b98d2be3577a7eaf733584e1e6787c4ce225c1a324b9429e181a404101cda1c4"
+    },
+    {
+      "id": "gsm8k-train-2978",
+      "row": 2978,
+      "question_sha256": "b715545e253df4d3c5bb8487d4ceb81da7066dfcaa8078f8f9171466368f9122"
+    },
+    {
+      "id": "gsm8k-train-7420",
+      "row": 7420,
+      "question_sha256": "4437d220589c70b82372279f488f3cf06dc7d17e2df2a7d9b59d6adbd56c8882"
+    },
+    {
+      "id": "gsm8k-train-4122",
+      "row": 4122,
+      "question_sha256": "598645f753c0517ca10b49e3c0a766f4187ac596c0c7ca64e490481e42576f98"
+    },
+    {
+      "id": "gsm8k-train-1417",
+      "row": 1417,
+      "question_sha256": "5d78c1e51c8cf6f13fa1082114939af58ed8c7c2bc999477fad2bbf2584037d9"
+    },
+    {
+      "id": "gsm8k-train-5347",
+      "row": 5347,
+      "question_sha256": "9b29d99cd4a0bf87c7544d18ffea9a9f44f2bd269c9685608c356e22266331e6"
+    },
+    {
+      "id": "gsm8k-train-3010",
+      "row": 3010,
+      "question_sha256": "cb5e2a579754b5bb17b3dfb2e0ed586127f244bbcc930a12d47138e892654c4d"
+    },
+    {
+      "id": "gsm8k-train-4025",
+      "row": 4025,
+      "question_sha256": "99a2a44390bc461db592ccf1d31d88afd6320b57e7cc3283e8c6b055b4506323"
+    },
+    {
+      "id": "gsm8k-train-1532",
+      "row": 1532,
+      "question_sha256": "f01b107459846e2f35bfefe6563e207fce2b387ad53a0e55a4ba0355838c997c"
+    },
+    {
+      "id": "gsm8k-train-6025",
+      "row": 6025,
+      "question_sha256": "b52c630e9c9027bf4463f85640d7827c40b759b8320150a9dd094061e7d6609e"
+    },
+    {
+      "id": "gsm8k-train-7236",
+      "row": 7236,
+      "question_sha256": "cccc74bf66b9299dd96cfdd73b8675cd4844fc051f8f6a80ced5947c2993a1b9"
+    },
+    {
+      "id": "gsm8k-train-2372",
+      "row": 2372,
+      "question_sha256": "8d6a7afe554ddc4893ddd3a6fe616ee129284253cceac2bdabf8c27adbef0a55"
+    },
+    {
+      "id": "gsm8k-train-7",
+      "row": 7,
+      "question_sha256": "99c93669d063c21f3c4160988005ee0b93ca9cc212e4815db446c28f9bbff151"
+    },
+    {
+      "id": "gsm8k-train-2010",
+      "row": 2010,
+      "question_sha256": "a94eab5eccdaa794aeff17a2063291efbdb414b8b226e3f3eacf08583fba37c5"
+    },
+    {
+      "id": "gsm8k-train-269",
+      "row": 269,
+      "question_sha256": "f7ceadcf49d59e30924e159d9a4489487420eeedd7813a520abd5434c12bafee"
+    },
+    {
+      "id": "gsm8k-train-3150",
+      "row": 3150,
+      "question_sha256": "031f8aca7239df9ff990abcc38edd1b0f440da74e0ce4c6e69f2f98b274eb5f8"
+    },
+    {
+      "id": "gsm8k-train-4369",
+      "row": 4369,
+      "question_sha256": "a755458db6666fc5a3854b15c74bb9dec21f6997da2901e48a32e5f527acebd1"
+    },
+    {
+      "id": "gsm8k-train-3346",
+      "row": 3346,
+      "question_sha256": "9d52c2c2b065c328dd26ae73137a0eb3016668e2df3ac440e4a0941c94f99568"
+    },
+    {
+      "id": "gsm8k-train-2728",
+      "row": 2728,
+      "question_sha256": "fbe04f5794f6448eb7d05cd730d66bcb1b8a7f2e0c44a1987c958cffd7a8fac0"
+    },
+    {
+      "id": "gsm8k-train-4506",
+      "row": 4506,
+      "question_sha256": "29cf338deee42270dc26b217b80d441511d84c934824ba011547bad905e5ab99"
+    },
+    {
+      "id": "gsm8k-train-2688",
+      "row": 2688,
+      "question_sha256": "b0ff5e49e9cf53a410a36ee2a5020dacbf68737c9b98e250de8facf01148ffb7"
+    },
+    {
+      "id": "gsm8k-train-440",
+      "row": 440,
+      "question_sha256": "c1475c9d6b971ff1acf4050722f71c405b5044a4d0ca03a001db4cc607fe9e36"
+    },
+    {
+      "id": "gsm8k-train-5910",
+      "row": 5910,
+      "question_sha256": "3a78c49e6afc2b6fa16f6524f27a8762f6caf60e6c62afbb397e52ca7c023e45"
+    },
+    {
+      "id": "gsm8k-train-4804",
+      "row": 4804,
+      "question_sha256": "35d2dbfd72c5608214236a8643f5b7939911bf95fab2510c7ccd37de46420b32"
+    },
+    {
+      "id": "gsm8k-train-404",
+      "row": 404,
+      "question_sha256": "ab33ed460818f0873f6d081ccec929292c422955b1700fb614aa5d7fe506f658"
+    },
+    {
+      "id": "gsm8k-train-6931",
+      "row": 6931,
+      "question_sha256": "943c33d6d4ac6ae2d3f1181a86434fad100d94bf16179d09fce71e5e1ab6c1ba"
+    },
+    {
+      "id": "gsm8k-train-1274",
+      "row": 1274,
+      "question_sha256": "7c08b4082e85c7278916ee900bcac77e6f7a4652ec1a904dd27d0230739198f0"
+    },
+    {
+      "id": "gsm8k-train-4381",
+      "row": 4381,
+      "question_sha256": "a39f53a204517a8e66068fc8f0a934c9d3db0cfbee203a5efa55b471c0c049d7"
+    },
+    {
+      "id": "gsm8k-train-1286",
+      "row": 1286,
+      "question_sha256": "34caf14babbf2f78fbf066c9120b02e99c265848f0c9f8f28434df4fd7d9419d"
+    },
+    {
+      "id": "gsm8k-train-2745",
+      "row": 2745,
+      "question_sha256": "5fa42f2bd5fc553a00b78c9c740890b79f477957ddc69bec6d0b87906bd47f5e"
+    },
+    {
+      "id": "gsm8k-train-248",
+      "row": 248,
+      "question_sha256": "ea0708d5d954566727f58191c24d8cbb12eff3855cfbb6cc09b458655a1b0cb6"
+    },
+    {
+      "id": "gsm8k-train-3817",
+      "row": 3817,
+      "question_sha256": "f41691c9e433e7c3da14ae849340a2fdea866f96d5a6fab1797eb2bc1007e20a"
+    },
+    {
+      "id": "gsm8k-train-3430",
+      "row": 3430,
+      "question_sha256": "b34e198f974930c8648e1be6b3a58bffd2fbacf20b5e0d6b49d35514d6478c44"
+    },
+    {
+      "id": "gsm8k-train-3149",
+      "row": 3149,
+      "question_sha256": "d16a3183834d271998dadcd03042820d914254f22aa084a9acd5c1fc8641eae1"
+    },
+    {
+      "id": "gsm8k-train-2851",
+      "row": 2851,
+      "question_sha256": "84443e898ff4b81005e601302beeb977c2849d8a3485963ae400000952b4bf39"
+    },
+    {
+      "id": "gsm8k-train-6824",
+      "row": 6824,
+      "question_sha256": "eddbc93fcaf99f85866d78283e00fb85be752f673cdd5617cbbd8ac43b2c6cfe"
+    },
+    {
+      "id": "gsm8k-train-803",
+      "row": 803,
+      "question_sha256": "4e365bac094979c577657786e4fe49650e22e59ffa425e9e68997c6e279d104b"
+    },
+    {
+      "id": "gsm8k-train-3526",
+      "row": 3526,
+      "question_sha256": "25c0d7455fac81fdae5649e1af17d56f05a57571fa50665b20a2b6a08425082c"
+    },
+    {
+      "id": "gsm8k-train-5891",
+      "row": 5891,
+      "question_sha256": "a269843b54ffe2d7b8af5f9990779414c73ea3f6c3e6562850c62cad35d38c48"
+    },
+    {
+      "id": "gsm8k-train-1817",
+      "row": 1817,
+      "question_sha256": "ed3e0bff93831644dfc1f416a5828f47ffa6509508ced4ece8b58166e673f4e6"
+    },
+    {
+      "id": "gsm8k-train-2135",
+      "row": 2135,
+      "question_sha256": "026e56dcfaf81d4a91b36aad4dbf20cf6960b1f1d4a5aaea44a8196a390f6975"
+    },
+    {
+      "id": "gsm8k-train-7232",
+      "row": 7232,
+      "question_sha256": "f34b8b70001c042d6c2a730e2c21c50d1b122a0b99462c6ec2efe8edf1e9a0bd"
+    },
+    {
+      "id": "gsm8k-train-4797",
+      "row": 4797,
+      "question_sha256": "9c0efe5e2bb28e669c32d1559f292ad70d67b78e74d5ca396e92056c4bc5d201"
+    },
+    {
+      "id": "gsm8k-train-405",
+      "row": 405,
+      "question_sha256": "562d67d68eddf4c53305d0c2ad49eafef0a6d6680d9d8ed7ffa07cdf64a67136"
+    },
+    {
+      "id": "gsm8k-train-3351",
+      "row": 3351,
+      "question_sha256": "7e90249294bf7aa962a6f25e1cd5d68c1eab8427326be4608feba519e291699f"
+    },
+    {
+      "id": "gsm8k-train-3556",
+      "row": 3556,
+      "question_sha256": "e71f412f4404903ec2c7185cddb9f665a286281d4e4d404cd5104d3d9440961d"
+    },
+    {
+      "id": "gsm8k-train-1359",
+      "row": 1359,
+      "question_sha256": "c2e5dba4c3eed716b40b7262140a9caab72b36a2caa152c5b2aed1d4c014ebd8"
+    },
+    {
+      "id": "gsm8k-train-6901",
+      "row": 6901,
+      "question_sha256": "a84ac64b74d2beb26703f90b44de7afc809a44ab0faffb52e2e4dc3b65363f12"
+    },
+    {
+      "id": "gsm8k-train-474",
+      "row": 474,
+      "question_sha256": "095f1d79583f5858860b0938928378f9b6115a29464ea1c52908f48cdfbb6a8b"
+    },
+    {
+      "id": "gsm8k-train-3826",
+      "row": 3826,
+      "question_sha256": "4c5f6e7aacbe08fc7b7a93394853f514a5d8dec3a24a6738ff460287c70832f1"
+    },
+    {
+      "id": "gsm8k-train-4831",
+      "row": 4831,
+      "question_sha256": "eb6c81d80daf714bd4d11f03a2ef37c60a6573a2d2471264a79889e636edffc5"
+    },
+    {
+      "id": "gsm8k-train-2629",
+      "row": 2629,
+      "question_sha256": "51d7029fc0c5bfbd2e0af265e956716b0323a61f6d211274b7d796b1c3d56d53"
+    },
+    {
+      "id": "gsm8k-train-671",
+      "row": 671,
+      "question_sha256": "2cdf92fe9507e0dca538a153e4f28d635760de7075c974ba07daffe5bb546d42"
+    },
+    {
+      "id": "gsm8k-train-4762",
+      "row": 4762,
+      "question_sha256": "4c589ae4d1ff3f4614be81cef5a3307ba6064f5d4d6445c32a02a4cf399500f2"
+    },
+    {
+      "id": "gsm8k-train-3203",
+      "row": 3203,
+      "question_sha256": "36caa3d36d5afea453f7e7e68f0c02ca2c62c066d2c82232c6ff70df040f16fe"
+    },
+    {
+      "id": "gsm8k-train-1181",
+      "row": 1181,
+      "question_sha256": "7247300bd80b2543b811234f16ead566c8c88ba0d76a0d508a96f324ff7647e2"
+    },
+    {
+      "id": "gsm8k-train-146",
+      "row": 146,
+      "question_sha256": "32241b4a19963787f98e9ee6c404dcfe20e9a597f85d1277e8a6258ba049e452"
+    },
+    {
+      "id": "gsm8k-train-1751",
+      "row": 1751,
+      "question_sha256": "2fc32f934693dc5cbec24fc851f43ea5528c374dfadc4959197f3db8b2322896"
+    },
+    {
+      "id": "gsm8k-train-2045",
+      "row": 2045,
+      "question_sha256": "f9f6809de05d71995fb431f92013a62e09db63666254d9e9f57ac6513fc76b91"
+    },
+    {
+      "id": "gsm8k-train-1474",
+      "row": 1474,
+      "question_sha256": "1ba8d365b666911f0bc7f579b39e5c9b9cef6aecf9443878475716de4bf5b698"
+    },
+    {
+      "id": "gsm8k-train-4294",
+      "row": 4294,
+      "question_sha256": "509fde99878162e065429808e9b0e8f97c9193193b298ff3bdc6e2f824e53411"
+    },
+    {
+      "id": "gsm8k-train-3673",
+      "row": 3673,
+      "question_sha256": "5917b1ce3a4da66a520b54c39185e6787defeb7fa8497970011c65c65aecdd0e"
+    },
+    {
+      "id": "gsm8k-train-5841",
+      "row": 5841,
+      "question_sha256": "b9be54bbdd9e6142b4c38ec7c335410028bd9dd2e9a31d845e5684d5645dd8ad"
+    },
+    {
+      "id": "gsm8k-train-3763",
+      "row": 3763,
+      "question_sha256": "b2acdcea530de0323d418d7a6cd42c302f9aba890ef557ef59576647deefa476"
+    },
+    {
+      "id": "gsm8k-train-7419",
+      "row": 7419,
+      "question_sha256": "32c690915f468a2d0731ba49e537f2b05a85f8d077b3375c493c01c13ee56387"
+    },
+    {
+      "id": "gsm8k-train-1679",
+      "row": 1679,
+      "question_sha256": "8ea25ee220d6fc233cefe8ddb47699cc1fd5ffa55823856fd9437e08ad46c4fd"
+    },
+    {
+      "id": "gsm8k-train-1928",
+      "row": 1928,
+      "question_sha256": "2028825f4f8d2f114b9511992bbe30685df9ce5dafa122a433e813e960132fc6"
+    },
+    {
+      "id": "gsm8k-train-3179",
+      "row": 3179,
+      "question_sha256": "295316376098f783976dcf1af92880bac2234f7b7ee4e2379f4098c15310e00b"
+    },
+    {
+      "id": "gsm8k-train-3604",
+      "row": 3604,
+      "question_sha256": "d2bbd06409f010dce3961653c72c825f6de388774213135d3195dfc1eb6adddd"
+    },
+    {
+      "id": "gsm8k-train-3703",
+      "row": 3703,
+      "question_sha256": "847eb79b704327a9fbfb47a82673a1de613ede2bdcfa75f2e59ed17827cde0e7"
+    },
+    {
+      "id": "gsm8k-train-2347",
+      "row": 2347,
+      "question_sha256": "30450b63a78fa5f50b7b59d882ad7bdc7cfadbbf4fc78fd0e936bceaa0b34175"
+    },
+    {
+      "id": "gsm8k-train-3812",
+      "row": 3812,
+      "question_sha256": "9aa1c5508694f502d8ee6f32224a076d79af0abd4746b68dd57fd6c480866757"
+    },
+    {
+      "id": "gsm8k-train-2440",
+      "row": 2440,
+      "question_sha256": "4d488a3e87623304f573f95502a241cf3a117c45515fc135066be15b9394c173"
+    },
+    {
+      "id": "gsm8k-train-2496",
+      "row": 2496,
+      "question_sha256": "be2e9b7ea81c7b84080e4c583bafd1f20e1db4ffa9ec7ac93ed30da9336bc393"
+    },
+    {
+      "id": "gsm8k-train-6593",
+      "row": 6593,
+      "question_sha256": "db032db6917721aee367591824ce65502d11372dfd2356674e57527e738b480d"
+    },
+    {
+      "id": "gsm8k-train-2791",
+      "row": 2791,
+      "question_sha256": "42ef815aa5f03abc6851bdfd220439505a863fd261b25e3e749b65429466c231"
+    },
+    {
+      "id": "gsm8k-train-2734",
+      "row": 2734,
+      "question_sha256": "3e0dc6989916fadc4125b390bdfcb3f02bfe64396c0d08522d367557cf723eb6"
+    },
+    {
+      "id": "gsm8k-train-6563",
+      "row": 6563,
+      "question_sha256": "a81097c857a6b90e45df4c4d06bafc6c9aec04326fb3ffd0f78cf3943bc00da7"
+    },
+    {
+      "id": "gsm8k-train-283",
+      "row": 283,
+      "question_sha256": "8b82e75d791b0f0275f7689d9c537321b752ac0e571f6f3ff650e3091648d91c"
+    },
+    {
+      "id": "gsm8k-train-4193",
+      "row": 4193,
+      "question_sha256": "5688d8f14979d800ffe5a16ccea3c96c55e78c670516b74743ba9ebb8d498cdc"
+    },
+    {
+      "id": "gsm8k-train-3244",
+      "row": 3244,
+      "question_sha256": "aae8a7b88f5404f8b57277a7837f4bae6258a15a66385aa1a04e892cc88fd154"
+    },
+    {
+      "id": "gsm8k-train-2419",
+      "row": 2419,
+      "question_sha256": "6eef8e31a33ed496aa8f8df8cfc53784bbc6e13c0eac0387b078e306ae07042d"
+    },
+    {
+      "id": "gsm8k-train-2442",
+      "row": 2442,
+      "question_sha256": "ded1e5f2233f6fdd4f8258ea14be3f0b51e5359843b1b220914a9e404242aa16"
+    },
+    {
+      "id": "gsm8k-train-93",
+      "row": 93,
+      "question_sha256": "e3d4f8a2b1d9a8ef694ff609eb6aa4130b56b1869d4cd7c37e81f3a3337d0549"
+    },
+    {
+      "id": "gsm8k-train-217",
+      "row": 217,
+      "question_sha256": "6fdff38339d5194df44d1628b4442e73967b464a5ffe9631a7b93407b0d36d77"
+    },
+    {
+      "id": "gsm8k-train-2015",
+      "row": 2015,
+      "question_sha256": "e5e69a00e47807c86c5fd017da701e4985fba328b315a3bc774e8c749f5cd34a"
+    },
+    {
+      "id": "gsm8k-train-3506",
+      "row": 3506,
+      "question_sha256": "0e157340e6f5f2e13ddc639dbed84fa0839fb1c7f517cba19959213b81e9cc28"
+    },
+    {
+      "id": "gsm8k-train-5271",
+      "row": 5271,
+      "question_sha256": "a8cc70fe685680c3201d76bb59e0c0f36d261b615c220b7e84ecb924685e19ba"
+    },
+    {
+      "id": "gsm8k-train-6084",
+      "row": 6084,
+      "question_sha256": "f4b5e73d6bae2d6455836ee0df54c993118923fde927fdc3f202e6941fea8f70"
+    },
+    {
+      "id": "gsm8k-train-6792",
+      "row": 6792,
+      "question_sha256": "eece5d16d8f8e95492c7c27795c2065b9d7d7bb23ccbad6426073aabcd7ea6fa"
+    },
+    {
+      "id": "gsm8k-train-4302",
+      "row": 4302,
+      "question_sha256": "218da5cf5a983ac3e870b64b84027ac54b6609149bfc15d32bbcaa9ef75febba"
+    },
+    {
+      "id": "gsm8k-train-2581",
+      "row": 2581,
+      "question_sha256": "3ef8f58cbdbbb9706ff6b82b60ca79ccce185e6ffe5a7021fe86c41ddfb598ca"
+    },
+    {
+      "id": "gsm8k-train-6840",
+      "row": 6840,
+      "question_sha256": "27f52bfd79fd55fbab5df530bdeed5d7df98879714ad1047ed1b694babcc7a68"
+    },
+    {
+      "id": "gsm8k-train-4620",
+      "row": 4620,
+      "question_sha256": "8da530d8c84cf625579605fff6256939c405fc5e1e67b21ba1a28bef0acfcda1"
+    },
+    {
+      "id": "gsm8k-train-2000",
+      "row": 2000,
+      "question_sha256": "0bb6c93778e1470739b891ca6a8eae78b4d05737cae8ef397d88a851774a45d1"
+    },
+    {
+      "id": "gsm8k-train-3171",
+      "row": 3171,
+      "question_sha256": "0f0dc059962c53381505e56d830464e5db627b3b81542061b6eb4bd1d38d5298"
+    },
+    {
+      "id": "gsm8k-train-6932",
+      "row": 6932,
+      "question_sha256": "b64b7609e27d7d3da3c074024e97126dc00e7807fe6884037409ae54994e1dd1"
+    },
+    {
+      "id": "gsm8k-train-3199",
+      "row": 3199,
+      "question_sha256": "9945d0d26a4f7c5f53404ab415f38cda11744605e7882f0b2981d77bbf407354"
+    },
+    {
+      "id": "gsm8k-train-3933",
+      "row": 3933,
+      "question_sha256": "bd47f05290b9a2ebbcd88135f488ec637a4928897a91a5e8c5253cc64d2990b5"
+    },
+    {
+      "id": "gsm8k-train-5543",
+      "row": 5543,
+      "question_sha256": "d4a07e783c9f7d727bd8b7b275bb29c84ca971086ab796ac2d96c7a257172996"
+    },
+    {
+      "id": "gsm8k-train-2889",
+      "row": 2889,
+      "question_sha256": "da914dc3de3f3221aff9a953ceda55c320fbabd265327d3f58abc3bbf0e67938"
+    },
+    {
+      "id": "gsm8k-train-2995",
+      "row": 2995,
+      "question_sha256": "932207229112eeca95edc7e7daee1599f404d2cf2d449e2c10d1e6b12d1bb877"
+    },
+    {
+      "id": "gsm8k-train-2164",
+      "row": 2164,
+      "question_sha256": "6f2f1f83f0065f9a95011bc5a549fa585a778715d870e94347b5ca93abed9a78"
+    },
+    {
+      "id": "gsm8k-train-5674",
+      "row": 5674,
+      "question_sha256": "9d24364a576903306261816b80a5b580d934ed37294b0b02a54a6c0478865787"
+    },
+    {
+      "id": "gsm8k-train-6806",
+      "row": 6806,
+      "question_sha256": "51b23c7fef26cee8de2ace3b5b53797220fb9f86c68b0d89c1d74ef81bee3c83"
+    },
+    {
+      "id": "gsm8k-train-2307",
+      "row": 2307,
+      "question_sha256": "1ad6ebc64eef3894acb9afce59ef6b87c4d66068598accaf38687e04f885afd2"
+    },
+    {
+      "id": "gsm8k-train-1195",
+      "row": 1195,
+      "question_sha256": "070d33d6bd6f893c24c2e9c90977ebb40c4a6bc3ecc36ecfe913eadbd0bb0bd3"
+    },
+    {
+      "id": "gsm8k-train-3628",
+      "row": 3628,
+      "question_sha256": "fa37c271cc67eecebe3cb1850aaafe6cc8f36e11ac068c14e350468973ca69a8"
+    },
+    {
+      "id": "gsm8k-train-3372",
+      "row": 3372,
+      "question_sha256": "84fdb9e220814eff8056b12fe51144dc7e788b9254b187624169bc7cafdb0b41"
+    },
+    {
+      "id": "gsm8k-train-2850",
+      "row": 2850,
+      "question_sha256": "c72b74ee5dea115541d7e4f7329af54d40c6032223dc8c3db7abc7bf6d524550"
+    },
+    {
+      "id": "gsm8k-train-353",
+      "row": 353,
+      "question_sha256": "40ccd08f754b1208c7bfd6340c80d394a20f4f92692f6dbc0b4c0c3530684cc2"
+    },
+    {
+      "id": "gsm8k-train-3104",
+      "row": 3104,
+      "question_sha256": "68f65ff6e4cb935b86ed34a1a03e1709b18abbd435fe1596177ab3f95b14fe48"
+    },
+    {
+      "id": "gsm8k-train-1271",
+      "row": 1271,
+      "question_sha256": "c67fab799a91f5935e7f029a851e44496f1f9261d73781890ceffe8431b1febc"
+    },
+    {
+      "id": "gsm8k-train-4958",
+      "row": 4958,
+      "question_sha256": "a30b7bc5e4e07a96e7ee97a7674d34537dcc83d210d6359d43a2d546c7930727"
+    },
+    {
+      "id": "gsm8k-train-3156",
+      "row": 3156,
+      "question_sha256": "3d05a5b0e60698bc800aa1772ccbd7910037608908bee8d1c517d8244a69725e"
+    },
+    {
+      "id": "gsm8k-train-6604",
+      "row": 6604,
+      "question_sha256": "8232300c81078d1ddec6aecf4b0a251b5943cb38e27ff3bac455f737f03401b8"
+    },
+    {
+      "id": "gsm8k-train-5226",
+      "row": 5226,
+      "question_sha256": "2a0d9f5358dbf9764fe5d2e3813024a06e6786841875fcc88916f7a0445fc5bb"
+    },
+    {
+      "id": "gsm8k-train-6204",
+      "row": 6204,
+      "question_sha256": "67e1199f1bb05b571ea7ddd2c928dc891d7425a2b3c8c277acc0e8496f80d0ef"
+    },
+    {
+      "id": "gsm8k-train-6105",
+      "row": 6105,
+      "question_sha256": "c4cdedaa0688fb710a12ea2e01830a663dc827a90daaec30be3ca24b5652b7eb"
+    },
+    {
+      "id": "gsm8k-train-7022",
+      "row": 7022,
+      "question_sha256": "046cbf78f118b0b81bb09bf1f9f2b3c87af4022ab876fbd8f8914748c7d2ea5c"
+    },
+    {
+      "id": "gsm8k-train-2276",
+      "row": 2276,
+      "question_sha256": "96692e6afa55db403f2d145d7dbd8dc68e056d7cc6c1d9408d75e0606cc77c16"
+    },
+    {
+      "id": "gsm8k-train-6236",
+      "row": 6236,
+      "question_sha256": "83003a10dd7e5ff90480463c982bdf757f1fdb5ece570c9d3d4c656b88d721a9"
+    },
+    {
+      "id": "gsm8k-train-2903",
+      "row": 2903,
+      "question_sha256": "f9765e1ba9b1d887a70ed0b7a022467111db6ee4e4d1304733c168605f19d3c4"
+    },
+    {
+      "id": "gsm8k-train-1065",
+      "row": 1065,
+      "question_sha256": "ed6940968a09e6c4a09d052c234fc27d4b277007647ed7f6f10430ce49512f93"
+    },
+    {
+      "id": "gsm8k-train-2027",
+      "row": 2027,
+      "question_sha256": "f2db10b656ca5120aec9b73cf26cb4c808c6a0ec23be6e69d1641ccf9e07385e"
+    },
+    {
+      "id": "gsm8k-train-2572",
+      "row": 2572,
+      "question_sha256": "a2fc2c1e911777d5fe41507227d2bf286dea4b8d7d6b00f39dd740ef6abf3222"
+    },
+    {
+      "id": "gsm8k-train-167",
+      "row": 167,
+      "question_sha256": "549d4ecc6508ca0101d0510b9247a6481f97613933e9002a5d0cf0829055227d"
+    },
+    {
+      "id": "gsm8k-train-4448",
+      "row": 4448,
+      "question_sha256": "6a943bb781811b8235f388b2c7fc33192cd6048e39a2f29a3d4b5fef4ce7bef1"
+    },
+    {
+      "id": "gsm8k-train-4562",
+      "row": 4562,
+      "question_sha256": "9d3f85edda96b769a1a1519f12eff1bd5f43eec0afc053068e5dd99dd1424d90"
+    }
+  ],
+  "t": [
+    {
+      "id": "gsm8k-train-2805",
+      "row": 2805,
+      "question_sha256": "b7877c8142b2f0264c6e57d36c745884355a461868723a4a7cc81ec1cc253fe2"
+    },
+    {
+      "id": "gsm8k-train-1589",
+      "row": 1589,
+      "question_sha256": "b712ae01d16ada88be9d5066654e90a8a773a41645057c15449d6f77647281be"
+    },
+    {
+      "id": "gsm8k-train-2145",
+      "row": 2145,
+      "question_sha256": "1a49b91c8af7dcaaafb690f7ec68662dcb481ce4746c2364a4072b36219d5626"
+    },
+    {
+      "id": "gsm8k-train-2154",
+      "row": 2154,
+      "question_sha256": "1dc4a9a92cb37b72c8d80fac5f1b6ed29904f16574acaa74496d2d2ab61107a4"
+    },
+    {
+      "id": "gsm8k-train-1879",
+      "row": 1879,
+      "question_sha256": "d54ff6e5269984217e90f379fd579d44ef5f8f0ac6c9733c63de608d4c388f1f"
+    },
+    {
+      "id": "gsm8k-train-4826",
+      "row": 4826,
+      "question_sha256": "0bb900229d53a0c0878a18ff507fe11875b291f8708c5f2489838e194420fa53"
+    },
+    {
+      "id": "gsm8k-train-4086",
+      "row": 4086,
+      "question_sha256": "56dca720283727d4a3f66ff3275252a7a5caf80700eba32bb7f8097cfbca9392"
+    },
+    {
+      "id": "gsm8k-train-4945",
+      "row": 4945,
+      "question_sha256": "6d4572f9f62fed7c5b991788046192d05ec9cd1b87a2abeb3fb962cc59e8b139"
+    },
+    {
+      "id": "gsm8k-train-5598",
+      "row": 5598,
+      "question_sha256": "5c40efd4f6e3e9e91f343909f785332971ae1169e89d98319e7074e95c4559e5"
+    },
+    {
+      "id": "gsm8k-train-618",
+      "row": 618,
+      "question_sha256": "3a69dd0d860b2ddd5b5cc545943a157ae28e8fbe95999ee2c32eeb317f567d63"
+    },
+    {
+      "id": "gsm8k-train-6280",
+      "row": 6280,
+      "question_sha256": "bc2c844e1f642cb87a44cd9fe8c472680524d3929fee87c04d9afc2669fd4555"
+    },
+    {
+      "id": "gsm8k-train-3860",
+      "row": 3860,
+      "question_sha256": "2457fec63745be024bff75f8d542cf49c94473849dfd825c38369cad4d5ace0b"
+    },
+    {
+      "id": "gsm8k-train-516",
+      "row": 516,
+      "question_sha256": "eef5cfd0efcd06fb378e64f828fd0f153fad14eb0ad502c851818ed83f8fdcb8"
+    },
+    {
+      "id": "gsm8k-train-1001",
+      "row": 1001,
+      "question_sha256": "393de9cd0e20267f72d7ebee1bdad79f740c62675ab90338d440bf2d2c509266"
+    },
+    {
+      "id": "gsm8k-train-5179",
+      "row": 5179,
+      "question_sha256": "d7ad6128db3b5f13b8d4d3e440ce574bf698f041192f031ba650ac4b4ea9e0e6"
+    },
+    {
+      "id": "gsm8k-train-3115",
+      "row": 3115,
+      "question_sha256": "679d0634f8cd2df8cf468e135a4a0bd7374b53a69654bcceb1e1a5f88afe02c6"
+    },
+    {
+      "id": "gsm8k-train-7413",
+      "row": 7413,
+      "question_sha256": "e5b66806414dd28fdbeedb0f9b1deb91652db5ee1fcf01897b065631cf074459"
+    },
+    {
+      "id": "gsm8k-train-1894",
+      "row": 1894,
+      "question_sha256": "850f14b860c5010ae470826021e3723521f98f4c00839bc311c7e82fcf92309b"
+    },
+    {
+      "id": "gsm8k-train-688",
+      "row": 688,
+      "question_sha256": "b6991c2ff4153876233e6d71ea19a9c29bfdaac54acf6d865d79cc16fad5f4ed"
+    },
+    {
+      "id": "gsm8k-train-6753",
+      "row": 6753,
+      "question_sha256": "61de21a0690dcc9467d0c44cb2985b59de1e6f5c9c0c438c31aeb8c63e549b0e"
+    },
+    {
+      "id": "gsm8k-train-4133",
+      "row": 4133,
+      "question_sha256": "405b037489be8ff9ce7650e7a6a94cd208d86da604e0651e17a88fb77e854618"
+    },
+    {
+      "id": "gsm8k-train-5073",
+      "row": 5073,
+      "question_sha256": "eeadc8ee6339a3e8ee4a700d7f031fc9b8ce38d419917803579ab4f61b8fbc0f"
+    },
+    {
+      "id": "gsm8k-train-6585",
+      "row": 6585,
+      "question_sha256": "6a214f44972d1d17b86c89e9fe849e9b16bf87cdd78cf505d07ab7685e65d136"
+    },
+    {
+      "id": "gsm8k-train-987",
+      "row": 987,
+      "question_sha256": "dbc7f72c03840c5267d75cd19c5f30475e2771aa1aa5911e72d9ba3791d8fa74"
+    },
+    {
+      "id": "gsm8k-train-2118",
+      "row": 2118,
+      "question_sha256": "8a303356bf900873008aef0b83028802e5e5228a32bc68b1e5cb0bcc6a6b2d13"
+    },
+    {
+      "id": "gsm8k-train-2835",
+      "row": 2835,
+      "question_sha256": "5eca3800af81d0556d1ab582dead561ac95879e4d83e8d6cfcfc5b5ed42df7c4"
+    },
+    {
+      "id": "gsm8k-train-1469",
+      "row": 1469,
+      "question_sha256": "c71c945843f1faa3f439a58c6ab44962626331635dac913806b9a86336ac1e3d"
+    },
+    {
+      "id": "gsm8k-train-3875",
+      "row": 3875,
+      "question_sha256": "c583025f198d2506e46c29230b54d48aea18b4daca8d392faddf9adde18ada7a"
+    },
+    {
+      "id": "gsm8k-train-4952",
+      "row": 4952,
+      "question_sha256": "0e132081e7a4037ab083b7d172d3843ef39198e2d1a462effcbaa4deb6ba21fd"
+    },
+    {
+      "id": "gsm8k-train-2161",
+      "row": 2161,
+      "question_sha256": "d255d24b16ce465ff24256c5f8c8af1daf453aac4138745cb00cbd5423cc9a07"
+    },
+    {
+      "id": "gsm8k-train-714",
+      "row": 714,
+      "question_sha256": "bf31530c5cdd4ba5444fd7fab8f3bbdb91be7ec7f90d851318552f8efdfb5e3c"
+    },
+    {
+      "id": "gsm8k-train-6147",
+      "row": 6147,
+      "question_sha256": "a70e69e4406c54a26a630e8a9958e13cab53b2db5dd868e31514581e3e02f74b"
+    },
+    {
+      "id": "gsm8k-train-1750",
+      "row": 1750,
+      "question_sha256": "3ad792020d34658deda471917970ec1ee14b7df194f9537cbddf1fc649697efd"
+    },
+    {
+      "id": "gsm8k-train-1541",
+      "row": 1541,
+      "question_sha256": "98a2b94367e93e3ebbc730c91f8c992be18b94e999c85a9a300fc0231751a030"
+    },
+    {
+      "id": "gsm8k-train-2522",
+      "row": 2522,
+      "question_sha256": "8beb578650d05ba1ab2497483cba9c880751a0ea94d20322b7ddddf9483ff396"
+    },
+    {
+      "id": "gsm8k-train-4862",
+      "row": 4862,
+      "question_sha256": "f1d1d478ad5d05f873d3cffe87b7290b2707cef86bb753f99f8b038a981da979"
+    },
+    {
+      "id": "gsm8k-train-6144",
+      "row": 6144,
+      "question_sha256": "994d90ce163fafc370d9eaa461115cfa91151567dabca40b43c96e82bc93107c"
+    },
+    {
+      "id": "gsm8k-train-2753",
+      "row": 2753,
+      "question_sha256": "f07ad30a661648d7d2f64a5764531cc893e02221070a9dbdfc12f9b2dacc2fe8"
+    },
+    {
+      "id": "gsm8k-train-2382",
+      "row": 2382,
+      "question_sha256": "89994875b3813c917ee4e59db6c97d3d692761b7362105c92e7b09e88904d35b"
+    },
+    {
+      "id": "gsm8k-train-4466",
+      "row": 4466,
+      "question_sha256": "dd4ef9daca89dcf2d08675da12af04b279e8e73b6952a4e3bb36401d5c5737f8"
+    },
+    {
+      "id": "gsm8k-train-966",
+      "row": 966,
+      "question_sha256": "89b197d566eeb88a75bd7f1c31a95f195a04a79bc9ee31def715f3b5f9e71893"
+    },
+    {
+      "id": "gsm8k-train-579",
+      "row": 579,
+      "question_sha256": "37dcd895cf9e401b047cc389a1550d5b4ffc5f8668fc096cea16833193b2eca5"
+    },
+    {
+      "id": "gsm8k-train-5102",
+      "row": 5102,
+      "question_sha256": "7a818d3aa457a0ddcfc0e1c9b35c5337411b5b55377fbe09a4caae9c18a2122e"
+    },
+    {
+      "id": "gsm8k-train-4050",
+      "row": 4050,
+      "question_sha256": "8d70918e2e396c346aded3f74434e7eec92ca776274851c0b48309e504b31400"
+    },
+    {
+      "id": "gsm8k-train-665",
+      "row": 665,
+      "question_sha256": "5c3d0d851f581cb7cd7a9369b9f3033e4a16d8b9fb922af5d37d9d08e280327a"
+    },
+    {
+      "id": "gsm8k-train-4799",
+      "row": 4799,
+      "question_sha256": "7f7096f2ce17035531c312103c1829f5c0a12902dc551d87ca2b4192826b74f6"
+    },
+    {
+      "id": "gsm8k-train-5424",
+      "row": 5424,
+      "question_sha256": "467dd4213063f20fc6ae5c017b7b5f9ba0959ea55f6d8c0620a1221b12f17ad9"
+    },
+    {
+      "id": "gsm8k-train-7132",
+      "row": 7132,
+      "question_sha256": "46913f4786db1ea4681c44057f93a935e81dfd76640aade5134ff7224a889635"
+    },
+    {
+      "id": "gsm8k-train-4472",
+      "row": 4472,
+      "question_sha256": "0f59835114d6d0eeaaa7a283c404c597c777af968ad7f24969fa1cee27e17e78"
+    },
+    {
+      "id": "gsm8k-train-4182",
+      "row": 4182,
+      "question_sha256": "e1fb00e1c85e1e9b06602e1a7a8659504632a17fdd397fba5b3216cf4ffa83e0"
+    },
+    {
+      "id": "gsm8k-train-850",
+      "row": 850,
+      "question_sha256": "f76469d6128d1ba693ecac79c6d0fc30db91667604ac5b1a87dbc63a39cf3f6c"
+    },
+    {
+      "id": "gsm8k-train-6991",
+      "row": 6991,
+      "question_sha256": "00e37e109945f602b2940b0b66d548c7c9fc84b3550087c9bbbd16591c61f940"
+    },
+    {
+      "id": "gsm8k-train-1412",
+      "row": 1412,
+      "question_sha256": "c46927d820c30e7a36a49fab5805e9628aa9b481d3acbbccc9504297cb3c13a4"
+    },
+    {
+      "id": "gsm8k-train-4334",
+      "row": 4334,
+      "question_sha256": "fcf5356639ad4215783a333e15bb1d97b179519289d570510732b6bc4223a331"
+    },
+    {
+      "id": "gsm8k-train-1458",
+      "row": 1458,
+      "question_sha256": "c5be575b625cb0bf88a5fb4cb9ce5bb51c0233ae1e941428417f842b076e0d2a"
+    },
+    {
+      "id": "gsm8k-train-6514",
+      "row": 6514,
+      "question_sha256": "fa86c83571312ee3b255d8a165dab50dd72685b1e24ecff471309a8d0c82bc1a"
+    },
+    {
+      "id": "gsm8k-train-6054",
+      "row": 6054,
+      "question_sha256": "6fa9bcc7582f7dd74981258a7d7a592ce0847b25bf056ddbd72329dde4e47f2c"
+    },
+    {
+      "id": "gsm8k-train-6512",
+      "row": 6512,
+      "question_sha256": "ea734cf3af96d39367da574851731b322f69688d0ead041eb50da06dfc23dc0b"
+    },
+    {
+      "id": "gsm8k-train-6347",
+      "row": 6347,
+      "question_sha256": "e0e10003f498d65dce20761903fd951af89035baf9b3999b2aa0d2eebd8ffacd"
+    },
+    {
+      "id": "gsm8k-train-1332",
+      "row": 1332,
+      "question_sha256": "d045d12c5f939c76316ff103c7e79bd3c36c98ce915152d219af0dbd3c5961b8"
+    },
+    {
+      "id": "gsm8k-train-1518",
+      "row": 1518,
+      "question_sha256": "ce2ff2b11ba3e60715e923db76a80acd0a257f1074e9c65cf6d2e61114d70fcc"
+    },
+    {
+      "id": "gsm8k-train-6086",
+      "row": 6086,
+      "question_sha256": "429e01108c380071d81fe32ac42412849ceff15041bfaf16ff2a8f727b0e93aa"
+    },
+    {
+      "id": "gsm8k-train-3969",
+      "row": 3969,
+      "question_sha256": "492d1bf1cfd26cb27935d5c429a24a31079fb228c78d1b0eb158f83996e157b8"
+    },
+    {
+      "id": "gsm8k-train-1221",
+      "row": 1221,
+      "question_sha256": "9d20e37a9c219b70a8f2d108f9ac889efbf64671fdcb229749abd2cf5e406eb8"
+    }
+  ]
+}

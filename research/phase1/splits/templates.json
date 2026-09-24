@@ -1,0 +1,13 @@
+{
+  "gsm8k": "Solve the math problem. Show your work, and on the last line write the final numeric answer in the form #### <number>.\n\n{question}",
+  "retrieval": "Find the value stored for the given key. Reply with the value only, with no extra words.\n\n{context}\n\nKey: {key}\nValue:",
+  "hotpot_main": "Read the documents and answer the question. Give a short explanation, then the final answer on its own line in the form: Final answer: <answer>\n\n{documents}\n\nQuestion: {question}",
+  "hotpot_long": "Read the documents and answer the question. Reason step by step, then give the final answer on its own line in the form: Final answer: <answer>\n\n{documents}\n\nQuestion: {question}",
+  "needle": "The register {key} stores {value}.",
+  "filler": "Background note {i} says the sky is clear and the street is quiet today.",
+  "prefixes": {
+    "qwen": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\n",
+    "llama": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n"
+  },
+  "date_string": "26 Jul 2024"
+}

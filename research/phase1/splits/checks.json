@@ -1,0 +1,7 @@
+{
+  "gsm8k_unique": true,
+  "hotpot_unique": true,
+  "long_decode_subset": true,
+  "c_folds": true,
+  "retrieval_count": 352
+}
