@@ -119,8 +119,9 @@ def _prefill_cache(
     input_ids: torch.Tensor,
     config: dict[str, Any],
     calibrated: dict[str, Any],
+    limit: int,
 ) -> tuple[int, list[torch.Tensor], list[torch.Tensor], int]:
-    """高精度 prefill 后仅量化缓存；返回首 token、缓存和无效组数。"""
+    """高精度 prefill 后量化缓存；预留生成空间以避免逐步复制历史。"""
     pre_keys: list[torch.Tensor] = []
     module = modeling_module(model)
     original = module.apply_rotary_pos_emb
@@ -153,8 +154,16 @@ def _prefill_cache(
         v_hat, bad_v = _quantize(
             original_v[index][0], config["v_bits"], config["value_mode"], v_params
         )
-        keys.append(k_hat.unsqueeze(0))
-        values.append(v_hat.unsqueeze(0))
+        capacity = int(input_ids.shape[1]) + limit
+        key_buffer = torch.empty(
+            (1, *k_hat.shape[:1], capacity, k_hat.shape[-1]),
+            device=k_hat.device, dtype=torch.float32,
+        )
+        value_buffer = torch.empty_like(key_buffer)
+        key_buffer[:, :, :input_ids.shape[1], :] = k_hat.unsqueeze(0)
+        value_buffer[:, :, :input_ids.shape[1], :] = v_hat.unsqueeze(0)
+        keys.append(key_buffer)
+        values.append(value_buffer)
         invalid += bad_k + bad_v
         original_k[index] = None
         original_v[index] = None
@@ -192,9 +201,11 @@ def _decode_step(
         v_params = calibrated.get("value", [None] * len(keys))[index]
         v_hat, bad_v = _quantize(value[0], config["v_bits"], config["value_mode"], v_params)
         invalid += bad_k + bad_v
-        keys[index] = torch.cat([keys[index], k_hat.unsqueeze(0)], dim=2)
-        values[index] = torch.cat([values[index], v_hat.unsqueeze(0)], dim=2)
-        attended = attention_from_batch(query, keys[index], values[index])
+        keys[index][:, :, position:position + 1, :] = k_hat.unsqueeze(0)
+        values[index][:, :, position:position + 1, :] = v_hat.unsqueeze(0)
+        attended = attention_from_batch(
+            query, keys[index][:, :, :position + 1, :], values[index][:, :, :position + 1, :]
+        )
         hidden = residual + layer.self_attn.o_proj(attended)
         residual = hidden
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
@@ -216,7 +227,7 @@ def _generate(
 ) -> tuple[list[int], str, int]:
     """返回生成 token、停止原因和累计无效组数。"""
     tensor = torch.tensor([ids], device="cuda")
-    first, keys, values, invalid = _prefill_cache(model, tensor, config, calibrated)
+    first, keys, values, invalid = _prefill_cache(model, tensor, config, calibrated, limit)
     if invalid:
         return [first], "invalid", invalid
     produced = [first]
