@@ -51,21 +51,31 @@ def attention_fp32(
         raise ValueError("Q、K、V 的头维度不一致")
     if query_heads % kv_heads != 0:
         raise ValueError("query head 不能整除 KV head")
-    expanded_key = repeat_kv(key, query_heads // kv_heads)
-    expanded_value = repeat_kv(value, query_heads // kv_heads)
-    scores = torch.matmul(expanded_key, query.unsqueeze(-1)).squeeze(-1)
-    scores = scores / math.sqrt(dim)
-    if valid is not None:
-        if valid.shape != (seq,):
-            raise ValueError("掩码长度必须等于历史长度")
-        scores = scores.masked_fill(~valid.unsqueeze(0), float("-inf"))
-    if seq == 0:
-        probs = scores
-        output = torch.zeros(query_heads, dim, dtype=torch.float32, device=query.device)
-        return output, scores, probs
-    probs = torch.softmax(scores, dim=-1)
-    output = torch.matmul(probs.unsqueeze(1), expanded_value).squeeze(1)
-    return output, scores, probs
+    repeats = query_heads // kv_heads
+    outputs = []
+    score_rows = []
+    prob_rows = []
+    for index in range(kv_heads):
+        query_slice = query[index * repeats : (index + 1) * repeats]
+        scores = torch.matmul(query_slice, key[index].transpose(0, 1))
+        scores = scores / math.sqrt(dim)
+        if valid is not None:
+            if valid.shape != (seq,):
+                raise ValueError("掩码长度必须等于历史长度")
+            scores = scores.masked_fill(~valid.unsqueeze(0), float("-inf"))
+        if seq == 0:
+            probs = scores
+            head_out = torch.zeros(repeats, dim, dtype=torch.float32, device=query.device)
+        else:
+            probs = torch.softmax(scores, dim=-1)
+            head_out = torch.matmul(probs, value[index])
+        outputs.append(head_out)
+        score_rows.append(scores)
+        prob_rows.append(probs)
+    if seq == 0 and kv_heads == 0:
+        empty = torch.zeros(query_heads, 0, dtype=torch.float32, device=query.device)
+        return torch.zeros(query_heads, dim, dtype=torch.float32, device=query.device), empty, empty
+    return torch.cat(outputs, dim=0), torch.cat(score_rows, dim=0), torch.cat(prob_rows, dim=0)
 
 
 def relative_output_error(reference: torch.Tensor, candidate: torch.Tensor) -> tuple[float, bool]:
