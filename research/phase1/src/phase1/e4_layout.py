@@ -393,6 +393,10 @@ def _layout(
         spec, heads=heads, dim=dim, seq=length, batch=batch, block=block
     )
     elements = 2 * len(spec.layer_bits) * heads * batch * length * dim
+    bf16_input_bytes = elements * 2
+    converted_raw_bytes = sum(components[key] for key in (
+        "k_payload", "v_payload", "k_params", "v_params", "residual", "labels"
+    ))
     nominal = (
         6.0 if spec.token_tag else
         sum(k_bits + v_bits for k_bits, v_bits in spec.layer_bits)
@@ -411,6 +415,13 @@ def _layout(
         "effective_bits": components["stored"] * 8 / elements,
         "resident_bytes": components["stored"],
         "components": components,
+        "prefill_conversion_once": {
+            "bf16_input_read_bytes": bf16_input_bytes,
+            "converted_write_raw_bytes": converted_raw_bytes,
+            "simultaneous_bf16_and_converted_upper_bytes": (
+                bf16_input_bytes + components["stored"]
+            ),
+        },
         "parameter_fraction_of_resident": (
             components["k_params"] + components["v_params"]
         ) / components["stored"],
