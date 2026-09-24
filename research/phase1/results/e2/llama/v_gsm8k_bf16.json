@@ -1,332 +1,332 @@
 {
-  "protocol": "phase1-protocol v4",
-  "commit": "f328094",
+  "protocol": "phase1-protocol v5",
+  "commit": "6ca9534",
   "model": "llama",
   "config": "bf16-h0",
   "task": "v-gsm8k",
   "n": 64,
-  "correct": 0,
-  "em": 0.0,
+  "correct": 58,
+  "em": 90.625,
   "rows": [
     {
       "id": "gsm8k-train-6748",
-      "correct": false,
-      "new_tokens": 243
+      "correct": true,
+      "new_tokens": 183
     },
     {
       "id": "gsm8k-train-2048",
-      "correct": false,
-      "new_tokens": 311
+      "correct": true,
+      "new_tokens": 441
     },
     {
       "id": "gsm8k-train-7317",
-      "correct": false,
-      "new_tokens": 146
+      "correct": true,
+      "new_tokens": 137
     },
     {
       "id": "gsm8k-train-1354",
-      "correct": false,
-      "new_tokens": 221
+      "correct": true,
+      "new_tokens": 220
     },
     {
       "id": "gsm8k-train-764",
-      "correct": false,
-      "new_tokens": 154
+      "correct": true,
+      "new_tokens": 119
     },
     {
       "id": "gsm8k-train-2994",
-      "correct": false,
-      "new_tokens": 129
+      "correct": true,
+      "new_tokens": 85
     },
     {
       "id": "gsm8k-train-4897",
-      "correct": false,
-      "new_tokens": 247
+      "correct": true,
+      "new_tokens": 227
     },
     {
       "id": "gsm8k-train-4273",
       "correct": false,
-      "new_tokens": 180
+      "new_tokens": 176
     },
     {
       "id": "gsm8k-train-717",
-      "correct": false,
-      "new_tokens": 216
+      "correct": true,
+      "new_tokens": 168
     },
     {
       "id": "gsm8k-train-2636",
-      "correct": false,
-      "new_tokens": 142
+      "correct": true,
+      "new_tokens": 190
     },
     {
       "id": "gsm8k-train-2263",
-      "correct": false,
-      "new_tokens": 140
+      "correct": true,
+      "new_tokens": 95
     },
     {
       "id": "gsm8k-train-2935",
-      "correct": false,
-      "new_tokens": 201
+      "correct": true,
+      "new_tokens": 157
     },
     {
       "id": "gsm8k-train-3985",
-      "correct": false,
-      "new_tokens": 210
+      "correct": true,
+      "new_tokens": 142
     },
     {
       "id": "gsm8k-train-7453",
-      "correct": false,
-      "new_tokens": 182
+      "correct": true,
+      "new_tokens": 121
     },
     {
       "id": "gsm8k-train-4723",
-      "correct": false,
-      "new_tokens": 154
+      "correct": true,
+      "new_tokens": 143
     },
     {
       "id": "gsm8k-train-5640",
-      "correct": false,
-      "new_tokens": 211
+      "correct": true,
+      "new_tokens": 214
     },
     {
       "id": "gsm8k-train-5143",
-      "correct": false,
-      "new_tokens": 176
+      "correct": true,
+      "new_tokens": 104
     },
     {
       "id": "gsm8k-train-5403",
       "correct": false,
-      "new_tokens": 168
+      "new_tokens": 140
     },
     {
       "id": "gsm8k-train-4039",
-      "correct": false,
-      "new_tokens": 316
+      "correct": true,
+      "new_tokens": 310
     },
     {
       "id": "gsm8k-train-3153",
-      "correct": false,
-      "new_tokens": 189
+      "correct": true,
+      "new_tokens": 178
     },
     {
       "id": "gsm8k-train-329",
-      "correct": false,
-      "new_tokens": 176
+      "correct": true,
+      "new_tokens": 173
     },
     {
       "id": "gsm8k-train-5292",
-      "correct": false,
-      "new_tokens": 151
+      "correct": true,
+      "new_tokens": 211
     },
     {
       "id": "gsm8k-train-637",
-      "correct": false,
-      "new_tokens": 135
+      "correct": true,
+      "new_tokens": 133
     },
     {
       "id": "gsm8k-train-1159",
-      "correct": false,
-      "new_tokens": 266
+      "correct": true,
+      "new_tokens": 244
     },
     {
       "id": "gsm8k-train-605",
-      "correct": false,
-      "new_tokens": 110
+      "correct": true,
+      "new_tokens": 81
     },
     {
       "id": "gsm8k-train-7367",
-      "correct": false,
-      "new_tokens": 145
+      "correct": true,
+      "new_tokens": 144
     },
     {
       "id": "gsm8k-train-795",
-      "correct": false,
-      "new_tokens": 150
+      "correct": true,
+      "new_tokens": 138
     },
     {
       "id": "gsm8k-train-70",
-      "correct": false,
-      "new_tokens": 91
+      "correct": true,
+      "new_tokens": 125
     },
     {
       "id": "gsm8k-train-3597",
-      "correct": false,
-      "new_tokens": 100
+      "correct": true,
+      "new_tokens": 95
     },
     {
       "id": "gsm8k-train-6904",
-      "correct": false,
-      "new_tokens": 119
+      "correct": true,
+      "new_tokens": 126
     },
     {
       "id": "gsm8k-train-258",
-      "correct": false,
-      "new_tokens": 184
+      "correct": true,
+      "new_tokens": 165
     },
     {
       "id": "gsm8k-train-1298",
-      "correct": false,
-      "new_tokens": 199
+      "correct": true,
+      "new_tokens": 182
     },
     {
       "id": "gsm8k-train-6121",
-      "correct": false,
-      "new_tokens": 228
+      "correct": true,
+      "new_tokens": 192
     },
     {
       "id": "gsm8k-train-4414",
-      "correct": false,
-      "new_tokens": 208
+      "correct": true,
+      "new_tokens": 174
     },
     {
       "id": "gsm8k-train-4932",
-      "correct": false,
-      "new_tokens": 264
+      "correct": true,
+      "new_tokens": 263
     },
     {
       "id": "gsm8k-train-193",
-      "correct": false,
-      "new_tokens": 200
+      "correct": true,
+      "new_tokens": 118
     },
     {
       "id": "gsm8k-train-1007",
-      "correct": false,
-      "new_tokens": 168
+      "correct": true,
+      "new_tokens": 157
     },
     {
       "id": "gsm8k-train-3698",
-      "correct": false,
-      "new_tokens": 189
+      "correct": true,
+      "new_tokens": 213
     },
     {
       "id": "gsm8k-train-2873",
-      "correct": false,
-      "new_tokens": 169
+      "correct": true,
+      "new_tokens": 123
     },
     {
       "id": "gsm8k-train-5811",
-      "correct": false,
-      "new_tokens": 139
+      "correct": true,
+      "new_tokens": 189
     },
     {
       "id": "gsm8k-train-2650",
-      "correct": false,
-      "new_tokens": 112
+      "correct": true,
+      "new_tokens": 88
     },
     {
       "id": "gsm8k-train-2519",
       "correct": false,
-      "new_tokens": 227
+      "new_tokens": 162
     },
     {
       "id": "gsm8k-train-1",
-      "correct": false,
-      "new_tokens": 127
+      "correct": true,
+      "new_tokens": 123
     },
     {
       "id": "gsm8k-train-2131",
-      "correct": false,
-      "new_tokens": 206
+      "correct": true,
+      "new_tokens": 174
     },
     {
       "id": "gsm8k-train-869",
-      "correct": false,
-      "new_tokens": 290
+      "correct": true,
+      "new_tokens": 326
     },
     {
       "id": "gsm8k-train-4783",
-      "correct": false,
-      "new_tokens": 134
+      "correct": true,
+      "new_tokens": 151
     },
     {
       "id": "gsm8k-train-5169",
       "correct": false,
-      "new_tokens": 132
+      "new_tokens": 134
     },
     {
       "id": "gsm8k-train-4546",
-      "correct": false,
-      "new_tokens": 178
+      "correct": true,
+      "new_tokens": 195
     },
     {
       "id": "gsm8k-train-988",
-      "correct": false,
-      "new_tokens": 238
+      "correct": true,
+      "new_tokens": 260
     },
     {
       "id": "gsm8k-train-3186",
-      "correct": false,
-      "new_tokens": 153
+      "correct": true,
+      "new_tokens": 136
     },
     {
       "id": "gsm8k-train-220",
-      "correct": false,
-      "new_tokens": 211
+      "correct": true,
+      "new_tokens": 202
     },
     {
       "id": "gsm8k-train-3675",
-      "correct": false,
-      "new_tokens": 132
+      "correct": true,
+      "new_tokens": 104
     },
     {
       "id": "gsm8k-train-2684",
       "correct": false,
-      "new_tokens": 411
+      "new_tokens": 292
     },
     {
       "id": "gsm8k-train-2609",
-      "correct": false,
-      "new_tokens": 197
+      "correct": true,
+      "new_tokens": 201
     },
     {
       "id": "gsm8k-train-1006",
-      "correct": false,
-      "new_tokens": 152
+      "correct": true,
+      "new_tokens": 165
     },
     {
       "id": "gsm8k-train-7392",
-      "correct": false,
-      "new_tokens": 208
+      "correct": true,
+      "new_tokens": 266
     },
     {
       "id": "gsm8k-train-1235",
-      "correct": false,
-      "new_tokens": 139
+      "correct": true,
+      "new_tokens": 135
     },
     {
       "id": "gsm8k-train-3715",
       "correct": false,
-      "new_tokens": 343
+      "new_tokens": 408
     },
     {
       "id": "gsm8k-train-2863",
-      "correct": false,
-      "new_tokens": 177
+      "correct": true,
+      "new_tokens": 147
     },
     {
       "id": "gsm8k-train-874",
-      "correct": false,
-      "new_tokens": 122
+      "correct": true,
+      "new_tokens": 121
     },
     {
       "id": "gsm8k-train-7124",
-      "correct": false,
-      "new_tokens": 191
+      "correct": true,
+      "new_tokens": 190
     },
     {
       "id": "gsm8k-train-2887",
-      "correct": false,
-      "new_tokens": 98
+      "correct": true,
+      "new_tokens": 149
     },
     {
       "id": "gsm8k-train-7337",
-      "correct": false,
-      "new_tokens": 314
+      "correct": true,
+      "new_tokens": 248
     },
     {
       "id": "gsm8k-train-6704",
-      "correct": false,
-      "new_tokens": 175
+      "correct": true,
+      "new_tokens": 133
     }
   ]
 }
