@@ -1,0 +1,136 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "989874d",
+  "model": "qwen",
+  "total_n": 64,
+  "e2_selection_commit": "435e205",
+  "e3_selection_commit": "989874d",
+  "candidates": [
+    "kv8",
+    "e3-p50_sensitivity"
+  ],
+  "cells": {
+    "gsm8k": {
+      "kv8": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "versus_kv8": null,
+        "interval_crosses_2_or_missing": true
+      },
+      "e3-p50_sensitivity": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.0,
+          "lower": -6.617774702077083,
+          "upper": 6.617774702077083,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 0
+          }
+        },
+        "interval_crosses_2_or_missing": true
+      }
+    },
+    "hotpot": {
+      "kv8": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 3.9172940737959467,
+          "lower": 0.28182265818369595,
+          "upper": 8.599392966280654,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": null,
+        "interval_crosses_2_or_missing": true
+      },
+      "e3-p50_sensitivity": {
+        "total_n": 64,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -0.6625055555053929,
+          "lower": -6.458883350624576,
+          "upper": 4.685525235629338,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -4.579799629301339,
+          "lower": -10.983468475224148,
+          "upper": 1.4291417093509258,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "interval_crosses_2_or_missing": true
+      }
+    }
+  },
+  "next_expansion": {
+    "gsm8k": {
+      "next_total_n": 128,
+      "conditions": [
+        "bf16",
+        "kv8",
+        "e3-p50_sensitivity",
+        "e3-p50_random_202609231",
+        "e3-p50_random_202609232",
+        "e3-p50_random_202609233"
+      ]
+    },
+    "hotpot": {
+      "next_total_n": 128,
+      "conditions": [
+        "bf16",
+        "kv8",
+        "e3-p50_sensitivity",
+        "e3-p50_random_202609231",
+        "e3-p50_random_202609232",
+        "e3-p50_random_202609233"
+      ]
+    }
+  },
+  "expansion_history": [],
+  "retrieval_32k_excluded": true
+}

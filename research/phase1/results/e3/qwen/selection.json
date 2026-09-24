@@ -1,0 +1,307 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "989874d",
+  "model": "qwen",
+  "gate_commit": "2ccd43a",
+  "allocation_commit": "80d6c07",
+  "baseline_usable": {
+    "gsm8k": true,
+    "hotpot": true,
+    "retrieval": false
+  },
+  "retrieval_32k_excluded": true,
+  "active_retrieval_units": [
+    "hotpot"
+  ],
+  "cells": {
+    "gsm8k": {
+      "p50_sensitivity": {
+        "score": 93.75,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.0,
+          "lower": -6.617774702077083,
+          "upper": 6.617774702077083,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "p50_inverse": {
+        "score": 1.5625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 89.0625,
+          "lower": 70.58200237132891,
+          "upper": 96.08159056977411,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 57,
+            "improve": 0
+          }
+        },
+        "versus_kv8": {
+          "estimate": 92.1875,
+          "lower": 74.61992875993195,
+          "upper": 97.8397424587972,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 59,
+            "improve": 0
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609231": {
+        "score": 0.0,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 90.625,
+          "lower": 72.57262087650838,
+          "upper": 96.99382306487377,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 58,
+            "improve": 0
+          }
+        },
+        "versus_kv8": {
+          "estimate": 93.75,
+          "lower": 76.73754220082645,
+          "upper": 98.60139340601803,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 60,
+            "improve": 0
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609232": {
+        "score": 0.0,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 90.625,
+          "lower": 72.57262087650838,
+          "upper": 96.99382306487377,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 58,
+            "improve": 0
+          }
+        },
+        "versus_kv8": {
+          "estimate": 93.75,
+          "lower": 76.73754220082645,
+          "upper": 98.60139340601803,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 60,
+            "improve": 0
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609233": {
+        "score": 90.625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": -11.836053879328052,
+          "upper": 11.836053879328052,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 2,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": 3.125,
+          "lower": -6.3549534272533865,
+          "upper": 12.09887515415175,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 2,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      }
+    },
+    "hotpot": {
+      "p50_sensitivity": {
+        "score": 50.8930092065164,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -0.6625055555053929,
+          "lower": -6.458883350624576,
+          "upper": 4.685525235629338,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -4.579799629301339,
+          "lower": -10.983468475224148,
+          "upper": 1.4291417093509258,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "p50_inverse": {
+        "score": 0.8333333333333334,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 49.39717031767768,
+          "lower": 39.467684728282656,
+          "upper": 59.45540856926291,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 45.47987624388173,
+          "lower": 35.95326096995734,
+          "upper": 55.40530830056026,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609231": {
+        "score": 3.2762252628324062,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 46.95427838817861,
+          "lower": 35.81703947166147,
+          "upper": 57.899395870829075,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 43.03698431438266,
+          "lower": 32.35191844130557,
+          "upper": 53.76833246550436,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609232": {
+        "score": 0.24042864807325978,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 49.99007500293776,
+          "lower": 39.95385073918635,
+          "upper": 60.165040453118465,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 46.0727809291418,
+          "lower": 36.45580451076728,
+          "upper": 56.066971919006626,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "p50_random_202609233": {
+        "score": 43.49091540520528,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 6.739588245805731,
+          "lower": -2.5602131881083614,
+          "upper": 15.91273044298033,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 2.8222941720097836,
+          "lower": -5.758783073950894,
+          "upper": 11.6166625692398,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      }
+    }
+  },
+  "sensitivity_better_than_all_random_on_active_retrieval": true,
+  "e3_evidence": "优于随机",
+  "f_protocol_candidate": "p50_sensitivity",
+  "simpler_e2_candidate": "kv8-per_token-post",
+  "reason": "C 门槛通过后，按参加判断的检索单元最大下降点估计选择"
+}
