@@ -1,0 +1,524 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "a0e841e",
+  "model": "llama",
+  "config": "bf16-h0",
+  "task": "v-retrieval",
+  "n": 64,
+  "rows": [
+    {
+      "id": "synth-v-0000",
+      "input_tokens": 31739,
+      "input_sha256": "ecebafa2b87861091f86c31d38d03994b7add34a87eb6092e24ab1075d167195",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0001",
+      "input_tokens": 31739,
+      "input_sha256": "3f157aa063bf4ec73c2d18c591144c18b491f89744a03b0fbd44bd21aac3c80e",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0002",
+      "input_tokens": 31739,
+      "input_sha256": "8a94c897189a6dbfe55c226476d24bf7223aa7bef49371b319bf67683c8fc08f",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0003",
+      "input_tokens": 31739,
+      "input_sha256": "d2613922594dfc773c3fb76fb78f7a686504b93d9c4f8f9b5fccec5a3732739d",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0004",
+      "input_tokens": 31739,
+      "input_sha256": "4b8a1fa3cbde42a9c70626d88de221a6b28e3a6a84d4b87a85e164376e9f14d2",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0005",
+      "input_tokens": 31738,
+      "input_sha256": "6e8dc277a2bced7fb0c6661330aabefad69c66afefdece9e393bf83283ef9bea",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0006",
+      "input_tokens": 31735,
+      "input_sha256": "1d55c01482e487ffe21048bfe4863390cbcb1e50b0e8e995f92e718f21fd91a9",
+      "new_tokens": 7,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0007",
+      "input_tokens": 31739,
+      "input_sha256": "7ed23a3a3229ca46bfddea30275cdd8689bb07c4567fd3359a99b0bdf182ee14",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0008",
+      "input_tokens": 31730,
+      "input_sha256": "0115bcef974331c01b4275176d8c83dd702f17e315ce24c4343e56ec4c8498e2",
+      "new_tokens": 3,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0009",
+      "input_tokens": 31730,
+      "input_sha256": "856da6db57ddb4127b27d5d7756ce76774a9ae39eb00a056667a95295d5629d0",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0010",
+      "input_tokens": 31730,
+      "input_sha256": "d4bf3a892da40efa8baf2d74a41536bfc4550141ceb24a422911d069859d00fc",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0011",
+      "input_tokens": 31729,
+      "input_sha256": "0199ccb1ad024f963adef2efe3fed4b49fbc646221b8283407e1cf250c4a0b69",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0012",
+      "input_tokens": 31728,
+      "input_sha256": "d0dbf886d76eceee7d857f4fab8675f3156bb11fba0b78ec190f915494364834",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0013",
+      "input_tokens": 31728,
+      "input_sha256": "c7fc3050a38cbcec05f25b4bea3434bdd2301b5506d7dc45138be846608f3729",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0014",
+      "input_tokens": 31728,
+      "input_sha256": "987095e9bc030b0398f8e6a665a493fbd19a7ed26d792190175df865a16f0694",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0015",
+      "input_tokens": 31744,
+      "input_sha256": "4d0b9b34bc4a7588830663fa46874f3f843f4b9540b25948e8fdd37bd7a7dd52",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0016",
+      "input_tokens": 31739,
+      "input_sha256": "7ddad9f30b99fcf5a0528d1059121499e00a116f22503e65fd80d08ff3f99c22",
+      "new_tokens": 2,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0017",
+      "input_tokens": 31739,
+      "input_sha256": "66ebd6e2c481fe13aa05899f55918029c3b25de20a6e07c8c99029ce6d40b9c4",
+      "new_tokens": 5,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0018",
+      "input_tokens": 31738,
+      "input_sha256": "02ce05b5b81398135fd5a9373aa1f36f0ee1f400ca42737eef936c8d71c68c35",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0019",
+      "input_tokens": 31734,
+      "input_sha256": "967f80b224c19f7512cd25ffa994ada0dc2e05610b02b87ffbb12d0277205c5d",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0020",
+      "input_tokens": 31735,
+      "input_sha256": "301486480797ee6f037bf9c57c6f0ec6312dd351798e5748d0c0dfd683e71ff7",
+      "new_tokens": 2,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0021",
+      "input_tokens": 31739,
+      "input_sha256": "35fe9b5ace032b7092eb9e4f07687b5d2df7148085bbdd9ede7ab1417d4dae0f",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0022",
+      "input_tokens": 31738,
+      "input_sha256": "c284ebbcaf588c2400600e7fdd912233d925e63f8e73bf181384b9acd18ad100",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0023",
+      "input_tokens": 31735,
+      "input_sha256": "39f47a56ba7051a3d78cd78f68e17bac01b61215420ebec1329edaef426e0a20",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0024",
+      "input_tokens": 31728,
+      "input_sha256": "a4f7e19babd3a594f6f9a478f76acedd49d000a06c7593512bcec7459d25fcce",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0025",
+      "input_tokens": 31728,
+      "input_sha256": "9a925c7e9dc265342bbb4cd0c3554e97bc1fd6d1fffb34848d0973e3f178e82b",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0026",
+      "input_tokens": 31728,
+      "input_sha256": "e066cea0dcff397522514ce5ac24ae158ddd5fae71e23aec537680415d3693f8",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0027",
+      "input_tokens": 31744,
+      "input_sha256": "0adca71d5d967037ecc271a8ac94baf0b25c8dd15bae8a78884becfb22d125bd",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0028",
+      "input_tokens": 31744,
+      "input_sha256": "44831176f9eb1cd6867d1853d7d2462bad32227c286a10d4c786ffc244289074",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0029",
+      "input_tokens": 31743,
+      "input_sha256": "98181324018cac68f3da091508e4c35474094de77c4cc63e768f812f52320510",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0030",
+      "input_tokens": 31742,
+      "input_sha256": "f3bb6c1c3e1fb68a154a9bc81ecc2dc5bc31b61793c4485a0a605c22ec07dced",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0031",
+      "input_tokens": 31741,
+      "input_sha256": "1b432ea85fb4f78855396da22287cd6e9f73d2c0d318ae5c2b85d3f150e2af93",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0032",
+      "input_tokens": 31737,
+      "input_sha256": "54560c672564a3e1c76021e1b89b6f840b700be11f2b5f0b82767489e0fd6e68",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0033",
+      "input_tokens": 31737,
+      "input_sha256": "e9bc652694ae1cbcb98333a24d2d01a7e9f65699f03491050939d9708653adcb",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0034",
+      "input_tokens": 31736,
+      "input_sha256": "4d858ae5b2a048732c46dd2cbfbe53ba07462c2e77992b252ed70cadbfbceaf1",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0035",
+      "input_tokens": 31733,
+      "input_sha256": "715fdbfa6716cb59637bd9a6726ad87557178f64b00fcf55fc58609b8960cd1b",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0036",
+      "input_tokens": 31736,
+      "input_sha256": "d2bf3b5890187f516aa1c84e4ab256620b9cc51e14ecda54fb45520eb2504b89",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0037",
+      "input_tokens": 31732,
+      "input_sha256": "b67f80af945d933daa88e91b5b9b4c4bee299ac2ac477c6a84ada5695d74dc2a",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0038",
+      "input_tokens": 31732,
+      "input_sha256": "d8f22c742f000c36eb1847b5c9821094d19c0910c9f8016d3e4f5b9ae327c19f",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0039",
+      "input_tokens": 31733,
+      "input_sha256": "858f17dad428faaf16949edb4baf872d8b70e6e9f750703d9be866721db88021",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0040",
+      "input_tokens": 31728,
+      "input_sha256": "99248f007f26ea8ef507ebae1811da68b7d1b5eae859bcc1b0ec7f2ba4e545f1",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0041",
+      "input_tokens": 31728,
+      "input_sha256": "74b2f6d0021a85437981c7186815c8d2c80e667b23468792500ef7be4a149dae",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0042",
+      "input_tokens": 31728,
+      "input_sha256": "2c83f1bbe68999658b15827a3aa9edd30d747e2cc39d7d5f4349576145aba18e",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0043",
+      "input_tokens": 31744,
+      "input_sha256": "145f4ef8a4205de83274bf90ed5b9d476775ea51aed3dc59f97de9d3e232db62",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0044",
+      "input_tokens": 31743,
+      "input_sha256": "2a41139808ec026ae2f344e805c19a7b5a754cbf123c92c3a4babc9ec08d1807",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0045",
+      "input_tokens": 31743,
+      "input_sha256": "441381b8665ae24abed94a05477a2aa361f38b9afa6b73e2dbfbf916572a2ed7",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0046",
+      "input_tokens": 31742,
+      "input_sha256": "5211c2655cde341b7f879764f84c2283a70018f34af89731ec89277499fd0c89",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0047",
+      "input_tokens": 31741,
+      "input_sha256": "6dcca4478030545bbf3f9f0d056190dd96929173dcb3df384289dc7d6a9a0460",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0048",
+      "input_tokens": 31737,
+      "input_sha256": "a6403a0a1ef92f514ae0b69732e5ba1df11e1a09383a976560c993247b2e690b",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0049",
+      "input_tokens": 31737,
+      "input_sha256": "a86befa5cf97528c0009d206e125af43ce80dc17a1a1a5bb7b872d2d059cb8b3",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0050",
+      "input_tokens": 31736,
+      "input_sha256": "e57c8362a3437cf833d605edb7966cf8c8845ddae9a586c3e488d7668b199246",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0051",
+      "input_tokens": 31732,
+      "input_sha256": "c511cbb8e774c1555c2714e1ef3306bfdc58b57e4d5bd845d739471a76151a9a",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0052",
+      "input_tokens": 31733,
+      "input_sha256": "dfdd2ac2354966fce55b2ca92e37d88b524f68edf13470e0f9216c6c1432f15a",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0053",
+      "input_tokens": 31736,
+      "input_sha256": "9b63f16e3736976d59dd4a980fb9e558e8f8d1064661aa9525f0bd167228edcf",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0054",
+      "input_tokens": 31732,
+      "input_sha256": "921ebc0e4ec3007e81c42444d9173e75c20a1f70f16bfac24bf45bc9fbacd8ee",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0055",
+      "input_tokens": 31733,
+      "input_sha256": "39bad38eefe7a464493a8d35ec0dd3edfbe1ed65882e67892c1110a3e233e68c",
+      "new_tokens": 12,
+      "stop": "eos",
+      "correct": false
+    },
+    {
+      "id": "synth-v-0056",
+      "input_tokens": 31730,
+      "input_sha256": "73d84c35f8bd8e310e4fd3d0612b3d0e49405cd8187595b7a5abbd9e03d2433d",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0057",
+      "input_tokens": 31730,
+      "input_sha256": "70dd794c1bea9c44d50e6a9df2154bdac7c0e1f12a58c880a16a09a705f70392",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0058",
+      "input_tokens": 31730,
+      "input_sha256": "56c36900271b65d02969db0f67725b03348a6f95220141c74ac3cbc4a0d19d63",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0059",
+      "input_tokens": 31729,
+      "input_sha256": "49a84509e2e265c69da300c01a26e1cf753733a9d89b12d974e0787cef5cb751",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0060",
+      "input_tokens": 31729,
+      "input_sha256": "e8b3f7059b53fd99dcdd4462cea0b8eafb5effb80323ccf88806063e79434830",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0061",
+      "input_tokens": 31728,
+      "input_sha256": "96eaa6277f9728a140057ce3241ab60404b1f9813087f3fa42858cd968be7beb",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0062",
+      "input_tokens": 31744,
+      "input_sha256": "adc5804bd246e2340b22221ff20e75c620f65abda220bd5a3f68d892aab9ab00",
+      "new_tokens": 8,
+      "stop": "eos",
+      "correct": true
+    },
+    {
+      "id": "synth-v-0063",
+      "input_tokens": 31743,
+      "input_sha256": "4ed9e836109f5d520e63a4f0ec8d986b95a169a40bd95a4048f37795dea08693",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": false
+    }
+  ],
+  "correct": 18,
+  "em": 28.125
+}
