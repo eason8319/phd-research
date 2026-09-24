@@ -36,11 +36,14 @@ def _paired(
         raise RuntimeError("配对结果样本数不一致")
     if [row["id"] for row in reference["rows"]] != [row["id"] for row in candidate["rows"]]:
         raise RuntimeError("配对结果样本 ID 或顺序不一致")
-    if task == "hotpot":
+    if all("input_sha256" in row for row in reference["rows"]):
         for old, new in zip(reference["rows"], candidate["rows"]):
-            if (old["input_sha256"] != new["input_sha256"]
-                    or old["input_tokens"] != new["input_tokens"]):
-                raise RuntimeError("HotpotQA 配对输入不一致")
+            if (old["input_sha256"] != new.get("input_sha256")
+                    or old["input_tokens"] != new.get("input_tokens")):
+                raise RuntimeError("配对输入不一致")
+    if task == "hotpot":
+        if not all("input_sha256" in row for row in reference["rows"]):
+            raise RuntimeError("HotpotQA 参考结果缺少输入校验值")
         old_scores = np.asarray([row["f1"] for row in reference["rows"]])
         new_scores = np.asarray([row["f1"] for row in candidate["rows"]])
         interval = bootstrap_drop_interval(old_scores, new_scores, seed=seed, draws=draws)
