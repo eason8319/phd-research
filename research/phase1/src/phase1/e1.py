@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -49,7 +50,14 @@ def _load_c_items(model_key: str) -> list[dict[str, Any]]:
         if not row["id"].startswith("synth-c-"):
             continue
         path = root / "research/.runtime/data/phase1-text/retrieval" / model_key / f"{row['id']}.txt"
-        items.append({"id": row["id"], "fold": int(row["fold"]), "kind": "retrieval", "text": path.read_text(encoding="utf-8")})
+        source = path.read_text(encoding="utf-8")
+        frozen = row["models"][model_key]
+        if hashlib.sha256(source.encode("utf-8")).hexdigest() != frozen["sha256"]:
+            raise RuntimeError(f"检索全文校验失败：{row['id']}")
+        items.append({
+            "id": row["id"], "fold": int(row["fold"]), "kind": "retrieval",
+            "text": source, "tokens": frozen["tokens"],
+        })
     del questions
     return items
 
@@ -157,6 +165,8 @@ def run_model(model_key: str, commit: str) -> None:
             ids = _render_gsm(tokenizer, item["question"], llama)
         else:
             ids = tokenizer(item["text"], add_special_tokens=False, return_tensors="pt").input_ids.to("cuda")
+            if int(ids.shape[1]) != item["tokens"]:
+                raise RuntimeError(f"检索长度与冻结记录不符：{item['id']}")
         blob = _capture(model, ids)
         blob["id"] = item["id"]
         blob["fold"] = item["fold"]
@@ -238,7 +248,7 @@ def run_model(model_key: str, commit: str) -> None:
     chosen = select_e1(cells, kv8_bits, summary[kv4_name]["error"])
     out = root / "research/phase1/results/e1" / model_key
     out.mkdir(parents=True, exist_ok=True)
-    payload = {"protocol": "phase1-protocol v5", "commit": commit, "summary": summary, "kept": list(chosen.kept), "reason": chosen.reason}
+    payload = {"protocol": "phase1-protocol v7", "commit": commit, "summary": summary, "kept": list(chosen.kept), "reason": chosen.reason}
     (out / "summary.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(model_key, chosen, flush=True)
 
