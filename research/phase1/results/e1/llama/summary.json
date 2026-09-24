@@ -1,91 +1,91 @@
 {
-  "protocol": "phase1-protocol v5",
-  "commit": "6ca9534",
+  "protocol": "phase1-protocol v7",
+  "commit": "6ca63fd",
   "summary": {
     "kv8-per_channel-pre": {
-      "error": 8.597113352889114e-05,
+      "error": 8.83850501314972e-05,
       "invalid": 0.0,
-      "bytes": 7444893696.0
+      "bytes": 7455825920.0
     },
     "k8v4-per_channel-pre": {
-      "error": 0.0052289565416382775,
+      "error": 0.00531789332402847,
       "invalid": 0.0,
-      "bytes": 5696114688.0
+      "bytes": 5704474624.0
     },
     "k4v8-per_channel-pre": {
-      "error": 0.016306745561659376,
+      "error": 0.016502743964451838,
       "invalid": 0.0,
-      "bytes": 5696114688.0
+      "bytes": 5704474624.0
     },
     "kv4-per_channel-pre": {
-      "error": 0.021540179687387234,
+      "error": 0.021875686667044647,
       "invalid": 0.0,
-      "bytes": 3947335680.0
+      "bytes": 3953123328.0
     },
     "kv8-per_channel-post": {
-      "error": 9.963156745603405e-05,
+      "error": 0.00010434440322744838,
       "invalid": 0.0,
-      "bytes": 7444893696.0
+      "bytes": 7455825920.0
     },
     "k8v4-per_channel-post": {
-      "error": 0.00524603783579399,
+      "error": 0.005330638496161555,
       "invalid": 0.0,
-      "bytes": 5696114688.0
+      "bytes": 5704474624.0
     },
     "k4v8-per_channel-post": {
-      "error": 0.024823405146965644,
+      "error": 0.02575823704000868,
       "invalid": 0.0,
-      "bytes": 5696114688.0
+      "bytes": 5704474624.0
     },
     "kv4-per_channel-post": {
-      "error": 0.03016354519286324,
+      "error": 0.03124274796512812,
       "invalid": 0.0,
-      "bytes": 3947335680.0
+      "bytes": 3953123328.0
     },
     "kv8-per_token-pre": {
-      "error": 6.510464504009642e-05,
+      "error": 6.602004502317035e-05,
       "invalid": 0.0,
-      "bytes": 7869505536.0
+      "bytes": 7881080832.0
     },
     "k8v4-per_token-pre": {
-      "error": 0.005220432272759959,
+      "error": 0.005306550484078798,
       "invalid": 0.0,
-      "bytes": 6120726528.0
+      "bytes": 6129729536.0
     },
     "k4v8-per_token-pre": {
-      "error": 0.01390328186297059,
+      "error": 0.01392800287787092,
       "invalid": 0.0,
-      "bytes": 6120726528.0
+      "bytes": 6129729536.0
     },
     "kv4-per_token-pre": {
-      "error": 0.019183873493147985,
+      "error": 0.019286665843537776,
       "invalid": 0.0,
-      "bytes": 4371947520.0
+      "bytes": 4378378240.0
     },
     "kv8-per_token-post": {
-      "error": 5.8896001876658964e-05,
+      "error": 5.9727104858649696e-05,
       "invalid": 0.0,
-      "bytes": 7869505536.0
+      "bytes": 7881080832.0
     },
     "k8v4-per_token-post": {
-      "error": 0.005209608945051514,
+      "error": 0.00529590208107796,
       "invalid": 0.0,
-      "bytes": 6120726528.0
+      "bytes": 6129729536.0
     },
     "k4v8-per_token-post": {
-      "error": 0.01310834507576904,
+      "error": 0.013198043844530124,
       "invalid": 0.0,
-      "bytes": 6120726528.0
+      "bytes": 6129729536.0
     },
     "kv4-per_token-post": {
-      "error": 0.018368102008101538,
+      "error": 0.01852892525895792,
       "invalid": 0.0,
-      "bytes": 4371947520.0
+      "bytes": 4378378240.0
     },
     "kv4-per_channel-pre-vchannel": {
-      "error": 0.4378297150618285,
+      "error": 0.46487752913465863,
       "invalid": 0.0,
-      "bytes": 3522723840.0
+      "bytes": 3527868416.0
     }
   },
   "kept": [

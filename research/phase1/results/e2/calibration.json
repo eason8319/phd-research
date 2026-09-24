@@ -1,0 +1,18 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "6ca63fd",
+  "source": "all 64 C GSM8K and 32 C retrieval inputs per model",
+  "scale_format": "FP16 scale and FP16 floating offset",
+  "files": {
+    "qwen": {
+      "path": "research/.runtime/e2-calibration-qwen.pt",
+      "bytes": 574418,
+      "sha256": "a9cfa05403000ada67f1f7f5e33a66d4e7796f3b7ef60729c6a4c07a468e6682"
+    },
+    "llama": {
+      "path": "research/.runtime/e2-calibration-llama.pt",
+      "bytes": 1148198,
+      "sha256": "10d412004f5503517e65e22e2fbe1edff19ccdb968a7b6f68b1f9c5292528929"
+    }
+  }
+}
