@@ -84,9 +84,20 @@ def _specs(root: Path, model_key: str, n_layers: int) -> list[FormatSpec]:
         if condition == "kv8":
             specs.append(_from_name("kv8-per_token-post", n_layers))
         elif condition == "e2":
-            specs.append(_from_name(
+            selected = _from_name(
                 residual["e3_representation"], n_layers,
                 int(residual["e3_residual_bits"]),
+            )
+            specs.append(FormatSpec(
+                name=(
+                    f"e2-selected-h{selected.residual_bits}"
+                    if selected.residual_bits else selected.name
+                ),
+                layer_bits=selected.layer_bits,
+                key_mode=selected.key_mode,
+                value_mode=selected.value_mode,
+                rope=selected.rope,
+                residual_bits=selected.residual_bits,
             ))
         elif condition.startswith("e3-"):
             allocations = json.loads(
