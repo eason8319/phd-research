@@ -12,8 +12,8 @@ import pyarrow.parquet as pq
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.groups import quantize_per_channel, quantize_per_token
 from kvstudy.paths import project_root
+from kvstudy.quantize import STATUS_INVALID, dequantize, fit_group_params, quantize_with_params
 from phase1.e2_gsm import MODELS, _eos_ids
 from phase1.e2_long_baseline import _samples
 from phase1.runner import (
@@ -90,15 +90,28 @@ def _quantize(
     bits: int,
     mode: str,
     params: tuple[torch.Tensor, torch.Tensor, torch.Tensor] | None,
-) -> tuple[torch.Tensor, int]:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """返回 FP32 还原值与无效组数，始终从高精度输入量化。"""
     if mode == "per_token":
-        restored, stats = quantize_per_token(values, bits, G_C)
+        heads, seq, dim = values.shape
+        if dim % G_C:
+            raise RuntimeError("E2 模型的 head_dim 不能被 G_C 整除")
+        grouped = values.reshape(heads, seq, dim // G_C, G_C)
+        scale, offset, status = fit_group_params(grouped, bits)
+        codes = quantize_with_params(grouped, scale, offset, status, bits)
+        restored = dequantize(codes, scale, offset, status).reshape_as(values)
     else:
         if params is None:
             raise RuntimeError("逐通道量化缺少全部 C 校准参数")
-        restored, stats = quantize_per_channel(values, bits, *params)
-    return restored, stats.invalid_groups
+        heads, seq, dim = values.shape
+        scale, offset, status = params
+        scale = scale.unsqueeze(1).expand(heads, seq, dim)
+        offset = offset.unsqueeze(1).expand(heads, seq, dim)
+        status = status.unsqueeze(1).expand(heads, seq, dim)
+        grouped = values.unsqueeze(-1)
+        codes = quantize_with_params(grouped, scale, offset, status, bits)
+        restored = dequantize(codes, scale, offset, status).squeeze(-1)
+    return restored, (status == STATUS_INVALID).sum()
 
 
 def _prefill_cache(
@@ -128,7 +141,7 @@ def _prefill_cache(
         raise RuntimeError("未捕获所有层的 pre-RoPE Key")
     keys: list[torch.Tensor] = []
     values: list[torch.Tensor] = []
-    invalid = 0
+    invalid = torch.zeros((), dtype=torch.int64, device=input_ids.device)
     positions = torch.arange(input_ids.shape[1], device=input_ids.device).view(1, -1)
     for index in range(len(original_k)):
         source = pre_keys[index][0] if config["rope"] == "pre" else original_k[index][0]
@@ -147,7 +160,7 @@ def _prefill_cache(
         original_v[index] = None
         if pre_keys:
             pre_keys[index] = None
-    return first, keys, values, invalid
+    return first, keys, values, int(invalid.item())
 
 
 def _decode_step(
@@ -165,7 +178,7 @@ def _decode_step(
     positions = torch.tensor([[position]], device=device)
     cos, sin = model.model.rotary_emb(hidden, positions)
     apply_rope = modeling_module(model).apply_rotary_pos_emb
-    invalid = 0
+    invalid = torch.zeros((), dtype=torch.int64, device=device)
     for index, layer in enumerate(model.model.layers):
         residual = hidden
         query, key_pre, value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
@@ -179,17 +192,18 @@ def _decode_step(
         v_params = calibrated.get("value", [None] * len(keys))[index]
         v_hat, bad_v = _quantize(value[0], config["v_bits"], config["value_mode"], v_params)
         invalid += bad_k + bad_v
-        if invalid:
-            return None, invalid
         keys[index] = torch.cat([keys[index], k_hat.unsqueeze(0)], dim=2)
         values[index] = torch.cat([values[index], v_hat.unsqueeze(0)], dim=2)
         attended = attention_from_batch(query, keys[index], values[index])
         hidden = residual + layer.self_attn.o_proj(attended)
         residual = hidden
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
+    bad = int(invalid.item())
+    if bad:
+        return None, bad
     hidden = model.model.norm(hidden)
     logits = model.lm_head(hidden[:, -1, :])
-    return int(logits.reshape(-1, logits.shape[-1])[0].argmax()), invalid
+    return int(logits.reshape(-1, logits.shape[-1])[0].argmax()), 0
 
 
 def _generate(
