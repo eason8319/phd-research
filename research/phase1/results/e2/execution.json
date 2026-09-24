@@ -1,0 +1,18 @@
+{
+  "protocol": "phase1-protocol v5",
+  "commit": "6ca9534",
+  "task": "v-gsm8k-bf16",
+  "node": "node8",
+  "models": {
+    "qwen": {
+      "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+      "gpu_uuid": "GPU-6a42cade-6910-bdd4-4103-1c33d47381a6",
+      "execution": "held Slurm job 20345"
+    },
+    "llama": {
+      "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+      "gpu_uuid": "GPU-a1fda54b-81c3-580d-4112-e67a6647ab55",
+      "execution": "srun on node8 with CUDA_VISIBLE_DEVICES=1"
+    }
+  }
+}

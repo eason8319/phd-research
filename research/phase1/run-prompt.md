@@ -2,9 +2,11 @@
 
 本文件只规定代理如何把第一阶段跑完。科学决定、实验顺序、通过条件和停止条件以 [guide.md](guide.md) 与 [configs/](configs/) 为准，协议版本以 guide.md 所记为准。本文件与那些文档冲突时，以那些文档为准。
 
+2026-09-24 用户补充授权：也可在服务器项目目录内使用 `srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[8] --pty /bin/bash` 运行代码。新会话开始项目工作前仍须先进入 `/cluster/home/zengy/phd-research`。这条命令可能不设置 `CUDA_VISIBLE_DEVICES`；加载模型前须核对实际 GPU 的型号、UUID、总显存及空闲显存，显式选择所用设备，并在正式结果中记录设备。2026-09-24 的 v5 GSM8K 高精度基线分别在 node8 的两张同型号 RTX 6000 Ada 上完成，设备记录见 `results/e2/execution.json`。
+
 下次开跑时，把下面这句话作为任务交给执行代理：
 
-> 按 `research/phase1/run-prompt.md` 执行第一阶段。先占住同一张约 48 GiB 的 GPU，再按当前文档从 M0 做到结果回传。中途不释放这张卡。
+> 按 `research/phase1/run-prompt.md` 执行第一阶段。不要提交长期占卡的 `sbatch`。需要 GPU 时用 `srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[8] --pty /bin/bash`，在该会话里从当前步骤做到结果回传。
 
 ## 读什么
 
@@ -60,19 +62,21 @@
 
 用户已授权本轮在本地提交 Git：每次把代码同步到服务器之前提交一次，结果登记这个提交号；`splits/`、`research/manifests/`、环境锁和正式结果回传本地之后也各提交一次。只提交本仓库，不推送 GitHub，不改写已有提交。
 
-## 占住同一张 48 GiB 卡
+## 在 node8 上用 srun 计算
 
 2026-09-23 在本集群核对过：分区 `gpu` 的时限是 unlimited，`OverSubscribe=NO`。`node8` 上有两张 NVIDIA RTX 6000 Ada，`nvidia-smi` 的 `memory.total` 为 49140 MiB。`node6`、`node7` 上能查询到的是 RTX 4090，24564 MiB。分区 `Jupyter` 与 `gpu` 共用这些节点，实验作业提交到 `gpu`。
 
-开跑前先占卡，再写后续计算。整个 M0 到结果回传期间维持这一份分配，写代码和步骤之间的空隙也占着。全部正式计算和需要 GPU 的一次性测试都在这份分配里跑。
+2026-09-24 用户要求释放长期占卡。作业 20345 已结束，`research/.runtime/hold/state.txt` 的状态是 `released`，释放时间 `2026-09-24T08:55:26Z`。之后不要再提交 `sbatch` 占卡，也不要接回那份作业。
 
-提交一份 Slurm 作业，资源按 runtime.md 的初始申请：
+需要 GPU 时，在服务器项目目录里使用：
 
 ```text
-sbatch -p gpu -w node8 --gres=gpu:1 -c 8 --mem=64G
+srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[8] --pty /bin/bash
 ```
 
-不设置会中途杀掉作业的时限。作业脚本放在服务器 `research/.runtime/hold/`，不放入 Git。脚本进入项目目录后立刻做这几件事：
+进入会话后先核对实际 GPU：节点未按 cgroup 隔离设备、`nvidia-smi` 列出多张卡时，只使用准备加载模型的那一张。`memory.total` 须为 49140 MiB 这一档。对不上则退出，不在该卡上加载模型。正式结果记下作业号、节点、GPU index、UUID、名称和显存。
+
+下面是 20345 占卡期间用过的等待循环，现已停用。脚本仍在服务器 `research/.runtime/hold/`，不放入 Git。当时脚本进入项目目录后做这几件事：
 
 1. 用 `nvidia-smi --query-gpu=index,uuid,name,memory.total --format=csv,noheader` 核对 Slurm 分配到的那张卡。节点未按 cgroup 隔离设备、`nvidia-smi` 列出多张卡时，只核对 `CUDA_VISIBLE_DEVICES` 指向的那一张。`memory.total` 须为 49140 MiB 这一档。对不上则马上退出，不在该卡上加载模型。
 2. 把作业号、节点、GPU index、UUID、名称、显存写入 `research/.runtime/hold/state.txt`。这张卡就是本轮唯一的计算卡。
