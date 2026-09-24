@@ -254,8 +254,8 @@ def _empty_minmax(layers: int, kv: int, dim: int) -> dict[str, torch.Tensor]:
 
 def _update_minmax(acc: dict[str, torch.Tensor], tensors: list[torch.Tensor]) -> None:
     for layer, values in enumerate(tensors):
-        acc["min"][layer] = torch.minimum(acc["min"][layer], values.amin(dim=0))
-        acc["max"][layer] = torch.maximum(acc["max"][layer], values.amax(dim=0))
+        acc["min"][layer] = torch.minimum(acc["min"][layer], values.amin(dim=1))
+        acc["max"][layer] = torch.maximum(acc["max"][layer], values.amax(dim=1))
 
 
 def _fit_minmax(acc: dict[str, torch.Tensor], bits: int) -> list[tuple[torch.Tensor, torch.Tensor, torch.Tensor]]:
