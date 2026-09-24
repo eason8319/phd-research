@@ -57,7 +57,8 @@ def _rope_error(model: Any, pre_key: torch.Tensor, post_key: torch.Tensor) -> fl
 def check_length(model: Any, length: int, vocab: int) -> dict[str, object]:
     generator = torch.Generator(device="cpu")
     generator.manual_seed(length)
-    input_ids = torch.randint(10, vocab - 10, (1, length), generator=generator, device="cuda")
+    tokens = torch.randint(10, vocab - 10, (1, length), generator=generator)
+    input_ids = tokens.to("cuda")
     outputs, saved = _capture_pre_rope(model, input_ids)
     keys, _values = cache_lists(outputs.past_key_values)
     logits = outputs.logits.view(-1, outputs.logits.shape[-1])
@@ -102,4 +103,4 @@ def main(commit: str) -> None:
 if __name__ == "__main__":
     import sys
 
-    main(sys.argv[1] if len(sys.argv) > 1 else "unknown")
+    main(sys.argv[1] if len(sys.argv) > 1 else "7f36cda")
