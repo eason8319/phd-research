@@ -77,7 +77,7 @@ def run(model_key: str, commit: str) -> None:
         rows.append({"id": item["id"], "correct": ok, "new_tokens": len(produced)})
         print(item["id"], ok, len(produced), flush=True)
     payload = {
-        "protocol": "phase1-protocol v4",
+        "protocol": "phase1-protocol v5",
         "commit": commit,
         "model": model_key,
         "config": "bf16-h0",

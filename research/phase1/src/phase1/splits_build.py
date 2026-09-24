@@ -27,8 +27,9 @@ LONG_DECODE = 8
 GAP_TOKENS = 8192
 
 GSM8K_TEMPLATE = (
-    "Solve the math problem. Show your work, and on the last line write the "
-    "final numeric answer in the form #### <number>.\n\n{question}"
+    "Solve the math problem. Show your work. End with a separate line containing "
+    "exactly four # characters, one space, and the numeric answer. "
+    "For example, if the answer is 42, the last line is: #### 42\n\n{question}"
 )
 RETRIEVAL_TEMPLATE = (
     "Find the value stored for the given key. Reply with the value only, "

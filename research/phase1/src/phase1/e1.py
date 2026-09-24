@@ -238,7 +238,7 @@ def run_model(model_key: str, commit: str) -> None:
     chosen = select_e1(cells, kv8_bits, summary[kv4_name]["error"])
     out = root / "research/phase1/results/e1" / model_key
     out.mkdir(parents=True, exist_ok=True)
-    payload = {"protocol": "phase1-protocol v4", "commit": commit, "summary": summary, "kept": list(chosen.kept), "reason": chosen.reason}
+    payload = {"protocol": "phase1-protocol v5", "commit": commit, "summary": summary, "kept": list(chosen.kept), "reason": chosen.reason}
     (out / "summary.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(model_key, chosen, flush=True)
 
