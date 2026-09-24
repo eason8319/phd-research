@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -37,12 +38,12 @@ RETRIEVAL_TEMPLATE = (
 )
 HOTPOT_MAIN = (
     "Read the documents and answer the question. Give a short explanation, "
-    "then the final answer on its own line in the form: Final answer: <answer>\n\n"
+    "then finish with a line that starts with Final answer: and gives the actual answer.\n\n"
     "{documents}\n\nQuestion: {question}"
 )
 HOTPOT_LONG = (
     "Read the documents and answer the question. Reason step by step, then give "
-    "the final answer on its own line in the form: Final answer: <answer>\n\n"
+    "the actual answer on the last line, starting with Final answer:.\n\n"
     "{documents}\n\nQuestion: {question}"
 )
 FILLER_SENTENCE = "Background note {i} says the sky is clear and the street is quiet today."
@@ -613,6 +614,72 @@ def _store_text(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def rebuild_hotpot_prompts() -> None:
+    """仅替换 HotpotQA 问法；先核对全部旧文本，再更新全文和冻结元数据。"""
+    root = project_root()
+    split_root = root / "research/phase1/splits"
+    text_root = root / "research/.runtime/data/phase1-text/hotpot"
+    templates_path = split_root / "templates.json"
+    hotpot_path = split_root / "hotpot.json"
+    templates = json.loads(templates_path.read_text(encoding="utf-8"))
+    hotpot = json.loads(hotpot_path.read_text(encoding="utf-8"))
+    previous = {"main": templates["hotpot_main"], "long": templates["hotpot_long"]}
+    replacement = {"main": HOTPOT_MAIN, "long": HOTPOT_LONG}
+    if any("<answer>" not in value for value in previous.values()):
+        raise SystemExit("旧 HotpotQA 问法不是预期的占位符版本")
+    tokenizers = {
+        "qwen": load_tokenizer(root, "models/Qwen2.5-7B-Instruct"),
+        "llama": load_tokenizer(root, "models/Llama-3.1-8B-Instruct"),
+    }
+    pending: list[tuple[Path, str]] = []
+    for split in ("v", "expand", "t"):
+        for item in hotpot[split]:
+            for model, tokenizer in tokenizers.items():
+                meta = item["models"][model]
+                for kind in ("main", "long"):
+                    path = text_root / model / split / f"{item['id']}.{kind}.txt"
+                    old_text = path.read_text(encoding="utf-8")
+                    if sha256_text(old_text) != meta[f"{kind}_sha256"]:
+                        raise SystemExit(f"旧全文与冻结校验值不符：{path}")
+                    old_start = previous[kind].split("{documents}", maxsplit=1)[0]
+                    new_start = replacement[kind].split("{documents}", maxsplit=1)[0]
+                    if old_text.count(old_start) != 1:
+                        raise SystemExit(f"旧问法在全文中未恰好出现一次：{path}")
+                    new_text = old_text.replace(old_start, new_start, 1)
+                    encoded = tokenizer(
+                        new_text, add_special_tokens=False, return_offsets_mapping=True
+                    )
+                    offsets = encoded["offset_mapping"]
+                    count = len(encoded["input_ids"])
+                    if count < 30 * 1024 or count > TARGET_32K:
+                        raise SystemExit(f"修订后长度越界：{path}，{count} token")
+                    meta[f"{kind}_tokens"] = count
+                    meta[f"{kind}_sha256"] = sha256_text(new_text)
+                    if kind == "long":
+                        markers = ("[[SUPPORT-1]]", "[[SUPPORT-1-END]]", "[[SUPPORT-2]]")
+                        positions = [new_text.find(marker) for marker in markers]
+                        if any(position < 0 for position in positions):
+                            raise SystemExit(f"支持文档标记缺失：{path}")
+                        indices = []
+                        for position in positions:
+                            indices.append(next(
+                                index for index, (left, right) in enumerate(offsets)
+                                if left <= position < max(right, left + 1)
+                            ))
+                        meta["gap_tokens"] = indices[2] - indices[1]
+                        meta["support_fraction"] = [indices[0] / count, indices[2] / count]
+                        if meta["gap_tokens"] < GAP_TOKENS:
+                            raise SystemExit(f"支持文档间隔不足：{path}")
+                    pending.append((path, new_text))
+    templates["hotpot_main"] = HOTPOT_MAIN
+    templates["hotpot_long"] = HOTPOT_LONG
+    for path, new_text in pending:
+        _store_text(path, new_text)
+    write_json(templates_path, templates)
+    write_json(hotpot_path, hotpot)
+    print(f"HotpotQA v6 问法已更新：{len(pending)} 份全文", flush=True)
+
+
 def _trajectories(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any]) -> dict[str, Any]:
     math_ids = [f"gsm8k-train-{row['row']}" for row in gsm["c"]]
     by_fold: dict[int, list[str]] = {0: [], 1: []}
@@ -649,4 +716,9 @@ def _checks(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["--rebuild-hotpot-prompts"]:
+        rebuild_hotpot_prompts()
+    elif len(sys.argv) == 1:
+        main()
+    else:
+        raise SystemExit("只支持 --rebuild-hotpot-prompts")
