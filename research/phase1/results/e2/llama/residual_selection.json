@@ -1,0 +1,194 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "dba27b7",
+  "model": "llama",
+  "selected_low_bit": "k8v4-per_token-post",
+  "e3_representation": "k8v4-per_token-post",
+  "e3_residual_bits": 0,
+  "baseline_usable": {
+    "gsm8k": true,
+    "hotpot": true,
+    "retrieval": false
+  },
+  "retrieval_32k_excluded": true,
+  "cells": {
+    "gsm8k": {
+      "0": {
+        "score": 90.625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "8": {
+        "score": 93.75,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "16": {
+        "score": 93.75,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": -3.125,
+          "lower": -12.09887515415175,
+          "upper": 6.3549534272533865,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 2
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      }
+    },
+    "hotpot": {
+      "0": {
+        "score": 67.69874222999223,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": null,
+          "upper": null,
+          "kind": "all_zero",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -0.07440476190476208,
+          "lower": -3.3482142857142856,
+          "upper": 3.1249999999999996,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "8": {
+        "score": 67.22854547073297,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.4701967592592593,
+          "lower": 0.0,
+          "upper": 1.410590277777778,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.3957919973544972,
+          "lower": -2.8780175264550265,
+          "upper": 3.5207919973544968,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "16": {
+        "score": 66.58267080142079,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 1.1160714285714286,
+          "lower": 0.0,
+          "upper": 3.3482142857142856,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.0416666666666665,
+          "lower": 0.0,
+          "upper": 3.1249999999999996,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      }
+    }
+  },
+  "categories": {
+    "short_generation": "无残留可行",
+    "retrieval": "无残留可行"
+  },
+  "rescued_classes": [],
+  "reason": "没有被挽回的类，或同一残留精度不能同时挽回全部类"
+}
