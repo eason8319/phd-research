@@ -1,0 +1,1277 @@
+{
+  "protocol": "phase1-protocol v7",
+  "commit": "461506e",
+  "model": "qwen",
+  "selected_representation": "kv8-per_token-post",
+  "probe_bits": 4,
+  "counts": {
+    "math": 64,
+    "retrieval": 32
+  },
+  "input_token_range": {
+    "math": [
+      98,
+      184
+    ],
+    "retrieval": [
+      2038,
+      4096
+    ]
+  },
+  "units": {
+    "math": [
+      {
+        "layer": 0,
+        "side": "k",
+        "sensitivity": 1.1542937077465467,
+        "reconstruction": 0.01586829189909622,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 0,
+        "side": "v",
+        "sensitivity": 0.007917453330264834,
+        "reconstruction": 0.008785583122516982,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 1,
+        "side": "k",
+        "sensitivity": 0.15141214476534515,
+        "reconstruction": 0.008292473299661651,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 1,
+        "side": "v",
+        "sensitivity": 0.007288069258720498,
+        "reconstruction": 0.007956741166708525,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 2,
+        "side": "k",
+        "sensitivity": 0.0423506336974242,
+        "reconstruction": 0.009135798929492012,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 2,
+        "side": "v",
+        "sensitivity": 0.0053337220024332055,
+        "reconstruction": 0.007663997275813017,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 3,
+        "side": "k",
+        "sensitivity": 0.15737405799154658,
+        "reconstruction": 0.011601779697230086,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 3,
+        "side": "v",
+        "sensitivity": 0.005464314492201083,
+        "reconstruction": 0.007088935504725669,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 4,
+        "side": "k",
+        "sensitivity": 0.020312464755988913,
+        "reconstruction": 0.007972743303980678,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 4,
+        "side": "v",
+        "sensitivity": 0.008783017121459125,
+        "reconstruction": 0.007807828988006804,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 5,
+        "side": "k",
+        "sensitivity": 0.008260601412530377,
+        "reconstruction": 0.009111244668019935,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 5,
+        "side": "v",
+        "sensitivity": 0.006048798416486534,
+        "reconstruction": 0.0074652898401836865,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 6,
+        "side": "k",
+        "sensitivity": 0.01603782716756541,
+        "reconstruction": 0.010120932944118977,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 6,
+        "side": "v",
+        "sensitivity": 0.007227794981190527,
+        "reconstruction": 0.007047662795230281,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 7,
+        "side": "k",
+        "sensitivity": 0.012793476768138135,
+        "reconstruction": 0.00954608568281401,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 7,
+        "side": "v",
+        "sensitivity": 0.0060952725434617605,
+        "reconstruction": 0.006342392000078689,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 8,
+        "side": "k",
+        "sensitivity": 0.012103954717986198,
+        "reconstruction": 0.008767894163611345,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 8,
+        "side": "v",
+        "sensitivity": 0.008131038951432856,
+        "reconstruction": 0.007159560060244985,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 9,
+        "side": "k",
+        "sensitivity": 0.010104482750648458,
+        "reconstruction": 0.008817043737508357,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 9,
+        "side": "v",
+        "sensitivity": 0.004968846004885563,
+        "reconstruction": 0.006215041306859348,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 10,
+        "side": "k",
+        "sensitivity": 0.012611458134415443,
+        "reconstruction": 0.008963951782789081,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 10,
+        "side": "v",
+        "sensitivity": 0.005067928925200249,
+        "reconstruction": 0.006656033823674079,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 11,
+        "side": "k",
+        "sensitivity": 0.010788865204176545,
+        "reconstruction": 0.00860673470015172,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 11,
+        "side": "v",
+        "sensitivity": 0.010677889563339704,
+        "reconstruction": 0.007418290282657836,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 12,
+        "side": "k",
+        "sensitivity": 0.010123696586560982,
+        "reconstruction": 0.008426909655099735,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 12,
+        "side": "v",
+        "sensitivity": 0.004593439517520892,
+        "reconstruction": 0.006682380473648664,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 13,
+        "side": "k",
+        "sensitivity": 0.0806538053575423,
+        "reconstruction": 0.011150958569487557,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 13,
+        "side": "v",
+        "sensitivity": 0.004179866908543772,
+        "reconstruction": 0.006613351215492003,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 14,
+        "side": "k",
+        "sensitivity": 0.01666421560867093,
+        "reconstruction": 0.008349741125130095,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 14,
+        "side": "v",
+        "sensitivity": 0.00845380358168768,
+        "reconstruction": 0.007111524202628061,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 15,
+        "side": "k",
+        "sensitivity": 0.021358504565796466,
+        "reconstruction": 0.008674473574501462,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 15,
+        "side": "v",
+        "sensitivity": 0.0064551055802439805,
+        "reconstruction": 0.007288562221219763,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 16,
+        "side": "k",
+        "sensitivity": 0.010043998365290463,
+        "reconstruction": 0.009377699447213672,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 16,
+        "side": "v",
+        "sensitivity": 0.004813540163013386,
+        "reconstruction": 0.00668667222635122,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 17,
+        "side": "k",
+        "sensitivity": 0.013003605070480262,
+        "reconstruction": 0.008383294276427478,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 17,
+        "side": "v",
+        "sensitivity": 0.004517349799243675,
+        "reconstruction": 0.006776805123081431,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 18,
+        "side": "k",
+        "sensitivity": 0.01060147029465952,
+        "reconstruction": 0.008969539587269537,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 18,
+        "side": "v",
+        "sensitivity": 0.004949910064169671,
+        "reconstruction": 0.006490807434602175,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 19,
+        "side": "k",
+        "sensitivity": 0.03416502884829242,
+        "reconstruction": 0.010631589801050723,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 19,
+        "side": "v",
+        "sensitivity": 0.004795660750914976,
+        "reconstruction": 0.0066023035542457364,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 20,
+        "side": "k",
+        "sensitivity": 0.015060866953717778,
+        "reconstruction": 0.007945365789055359,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 20,
+        "side": "v",
+        "sensitivity": 0.004057853589984006,
+        "reconstruction": 0.006480609983555041,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 21,
+        "side": "k",
+        "sensitivity": 0.00856195708774976,
+        "reconstruction": 0.009267947694752365,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 21,
+        "side": "v",
+        "sensitivity": 0.00446197350629518,
+        "reconstruction": 0.0062399828238994814,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 22,
+        "side": "k",
+        "sensitivity": 0.016440421654351667,
+        "reconstruction": 0.008479627838823944,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 22,
+        "side": "v",
+        "sensitivity": 0.006437039383854426,
+        "reconstruction": 0.006274560262681916,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 23,
+        "side": "k",
+        "sensitivity": 0.012425346698137218,
+        "reconstruction": 0.009003336235764436,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 23,
+        "side": "v",
+        "sensitivity": 0.0055543281114296406,
+        "reconstruction": 0.006452521352912299,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 24,
+        "side": "k",
+        "sensitivity": 0.011062676088272383,
+        "reconstruction": 0.009332055618870072,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 24,
+        "side": "v",
+        "sensitivity": 0.006194347123710031,
+        "reconstruction": 0.006348200840875506,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 25,
+        "side": "k",
+        "sensitivity": 0.015336026845943707,
+        "reconstruction": 0.009034106973558664,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 25,
+        "side": "v",
+        "sensitivity": 0.004994445653210278,
+        "reconstruction": 0.006537434986967128,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 26,
+        "side": "k",
+        "sensitivity": 0.012744682634092896,
+        "reconstruction": 0.008853283230564557,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 26,
+        "side": "v",
+        "sensitivity": 0.005250295189398457,
+        "reconstruction": 0.006270207537454553,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 27,
+        "side": "k",
+        "sensitivity": 0.29662911731202257,
+        "reconstruction": 0.009569762332830578,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 27,
+        "side": "v",
+        "sensitivity": 0.004755674696752976,
+        "reconstruction": 0.006892174293170683,
+        "samples": 64,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      }
+    ],
+    "retrieval": [
+      {
+        "layer": 0,
+        "side": "k",
+        "sensitivity": 1.046108759008348,
+        "reconstruction": 0.016116955026518553,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 0,
+        "side": "v",
+        "sensitivity": 0.008089795970590785,
+        "reconstruction": 0.008702539664227515,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 1,
+        "side": "k",
+        "sensitivity": 0.20440119244449306,
+        "reconstruction": 0.008438195567578077,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 1,
+        "side": "v",
+        "sensitivity": 0.006515478362416616,
+        "reconstruction": 0.008336056111147627,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 2,
+        "side": "k",
+        "sensitivity": 0.03927923249284504,
+        "reconstruction": 0.00884128879988566,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 2,
+        "side": "v",
+        "sensitivity": 0.004575917395413853,
+        "reconstruction": 0.008214094006689265,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 3,
+        "side": "k",
+        "sensitivity": 0.1386862774943438,
+        "reconstruction": 0.011877563054440543,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 3,
+        "side": "v",
+        "sensitivity": 0.005416286890977062,
+        "reconstruction": 0.0077894510759506375,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 4,
+        "side": "k",
+        "sensitivity": 0.01786031430492585,
+        "reconstruction": 0.008686433167895302,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 4,
+        "side": "v",
+        "sensitivity": 0.005793921436634264,
+        "reconstruction": 0.008719882956938818,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 5,
+        "side": "k",
+        "sensitivity": 0.005808933776734193,
+        "reconstruction": 0.009715475753182545,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 5,
+        "side": "v",
+        "sensitivity": 0.003545680327079026,
+        "reconstruction": 0.00799211603589356,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 6,
+        "side": "k",
+        "sensitivity": 0.01604478554054367,
+        "reconstruction": 0.010239581955829635,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 6,
+        "side": "v",
+        "sensitivity": 0.005691511109034764,
+        "reconstruction": 0.007695637294091284,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 7,
+        "side": "k",
+        "sensitivity": 0.019522003411111655,
+        "reconstruction": 0.010135927790543064,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 7,
+        "side": "v",
+        "sensitivity": 0.0046803087079752,
+        "reconstruction": 0.006604522015550174,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 8,
+        "side": "k",
+        "sensitivity": 0.009985708843487373,
+        "reconstruction": 0.009091451676795259,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 8,
+        "side": "v",
+        "sensitivity": 0.007602360999953817,
+        "reconstruction": 0.007659586670342833,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 9,
+        "side": "k",
+        "sensitivity": 0.014262309435252973,
+        "reconstruction": 0.0089152479195036,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 9,
+        "side": "v",
+        "sensitivity": 0.0032295850533046178,
+        "reconstruction": 0.006382964304066263,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 10,
+        "side": "k",
+        "sensitivity": 0.013608121475044754,
+        "reconstruction": 0.008977549179689959,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 10,
+        "side": "v",
+        "sensitivity": 0.004572069248752086,
+        "reconstruction": 0.007113183193723671,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 11,
+        "side": "k",
+        "sensitivity": 0.009411899718543282,
+        "reconstruction": 0.009070982807315886,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 11,
+        "side": "v",
+        "sensitivity": 0.006527163129248947,
+        "reconstruction": 0.0071898083842825145,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 12,
+        "side": "k",
+        "sensitivity": 0.007733378177363193,
+        "reconstruction": 0.008654690871480852,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 12,
+        "side": "v",
+        "sensitivity": 0.0029286161370691843,
+        "reconstruction": 0.006785147619666532,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 13,
+        "side": "k",
+        "sensitivity": 0.0916813928160991,
+        "reconstruction": 0.010981557570630684,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 13,
+        "side": "v",
+        "sensitivity": 0.0033938009537450853,
+        "reconstruction": 0.006764534453395754,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 14,
+        "side": "k",
+        "sensitivity": 0.00664355304752462,
+        "reconstruction": 0.00845374574419111,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 14,
+        "side": "v",
+        "sensitivity": 0.0024483068418703624,
+        "reconstruction": 0.007043837977107614,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 15,
+        "side": "k",
+        "sensitivity": 0.019326776997331763,
+        "reconstruction": 0.008615781291155145,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 15,
+        "side": "v",
+        "sensitivity": 0.004152028077442083,
+        "reconstruction": 0.007091363237123005,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 16,
+        "side": "k",
+        "sensitivity": 0.015929005341604352,
+        "reconstruction": 0.00834538001799956,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 16,
+        "side": "v",
+        "sensitivity": 0.002810346563364874,
+        "reconstruction": 0.006898590712808073,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 17,
+        "side": "k",
+        "sensitivity": 0.013509125354175922,
+        "reconstruction": 0.008164334460161626,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 17,
+        "side": "v",
+        "sensitivity": 0.0029920800725449226,
+        "reconstruction": 0.0068337105913087726,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 18,
+        "side": "k",
+        "sensitivity": 0.009948283193807583,
+        "reconstruction": 0.009199530584737659,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 18,
+        "side": "v",
+        "sensitivity": 0.003986279618402477,
+        "reconstruction": 0.006410697096725926,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 19,
+        "side": "k",
+        "sensitivity": 0.02615215073001309,
+        "reconstruction": 0.009925669786753133,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 19,
+        "side": "v",
+        "sensitivity": 0.0033113332647189964,
+        "reconstruction": 0.006545248979819007,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 20,
+        "side": "k",
+        "sensitivity": 0.009256130433186627,
+        "reconstruction": 0.00851686010719277,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 20,
+        "side": "v",
+        "sensitivity": 0.0024213689348471235,
+        "reconstruction": 0.006353453602059744,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 21,
+        "side": "k",
+        "sensitivity": 0.00764639366116171,
+        "reconstruction": 0.00978102904628031,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 21,
+        "side": "v",
+        "sensitivity": 0.0033699959867590223,
+        "reconstruction": 0.00659281735715922,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 22,
+        "side": "k",
+        "sensitivity": 0.008026350971704233,
+        "reconstruction": 0.00902959264931269,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 22,
+        "side": "v",
+        "sensitivity": 0.002680255805444176,
+        "reconstruction": 0.006355659585096873,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 23,
+        "side": "k",
+        "sensitivity": 0.007338116238315706,
+        "reconstruction": 0.010044920112704858,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 23,
+        "side": "v",
+        "sensitivity": 0.003071873597946251,
+        "reconstruction": 0.006757366136298515,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 24,
+        "side": "k",
+        "sensitivity": 0.00389176382259393,
+        "reconstruction": 0.010345980001147836,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 24,
+        "side": "v",
+        "sensitivity": 0.0053236831263347995,
+        "reconstruction": 0.006374438919010572,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 25,
+        "side": "k",
+        "sensitivity": 0.0094212993471956,
+        "reconstruction": 0.009571760485414416,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 25,
+        "side": "v",
+        "sensitivity": 0.0030860684728395427,
+        "reconstruction": 0.0066199433349538594,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 26,
+        "side": "k",
+        "sensitivity": 0.01322708830866759,
+        "reconstruction": 0.010271612991346046,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 26,
+        "side": "v",
+        "sensitivity": 0.0033585911041882355,
+        "reconstruction": 0.00618371983000543,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 27,
+        "side": "k",
+        "sensitivity": 0.21243762957419676,
+        "reconstruction": 0.010763070255052298,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      },
+      {
+        "layer": 27,
+        "side": "v",
+        "sensitivity": 0.003885637521307217,
+        "reconstruction": 0.006358155136695132,
+        "samples": 32,
+        "zero_heads": 0,
+        "invalid_groups": 0
+      }
+    ]
+  },
+  "rankings": {
+    "math": {
+      "sensitivity": [
+        0,
+        54,
+        6,
+        2,
+        26,
+        4,
+        38,
+        30,
+        8,
+        28,
+        44,
+        12,
+        50,
+        40,
+        34,
+        14,
+        52,
+        20,
+        46,
+        16,
+        48,
+        22,
+        23,
+        36,
+        24,
+        18,
+        32,
+        9,
+        42,
+        29,
+        10,
+        17,
+        1,
+        3,
+        13,
+        31,
+        45,
+        49,
+        15,
+        11,
+        47,
+        7,
+        5,
+        53,
+        21,
+        51,
+        19,
+        37,
+        33,
+        39,
+        55,
+        25,
+        35,
+        43,
+        27,
+        41
+      ],
+      "reconstruction": [
+        0,
+        6,
+        26,
+        38,
+        12,
+        54,
+        14,
+        32,
+        48,
+        42,
+        4,
+        10,
+        50,
+        46,
+        36,
+        20,
+        52,
+        18,
+        1,
+        16,
+        30,
+        22,
+        44,
+        24,
+        34,
+        28,
+        2,
+        8,
+        3,
+        40,
+        9,
+        5,
+        11,
+        23,
+        31,
+        17,
+        29,
+        7,
+        13,
+        55,
+        35,
+        33,
+        25,
+        21,
+        27,
+        39,
+        51,
+        37,
+        41,
+        47,
+        49,
+        15,
+        45,
+        53,
+        43,
+        19
+      ]
+    },
+    "retrieval": {
+      "sensitivity": [
+        0,
+        54,
+        2,
+        6,
+        26,
+        4,
+        38,
+        14,
+        30,
+        8,
+        12,
+        32,
+        18,
+        20,
+        34,
+        52,
+        16,
+        36,
+        50,
+        22,
+        40,
+        1,
+        44,
+        24,
+        42,
+        17,
+        46,
+        28,
+        23,
+        3,
+        10,
+        9,
+        13,
+        7,
+        49,
+        15,
+        5,
+        21,
+        31,
+        37,
+        48,
+        55,
+        11,
+        27,
+        43,
+        53,
+        39,
+        19,
+        51,
+        47,
+        35,
+        25,
+        33,
+        45,
+        29,
+        41
+      ],
+      "reconstruction": [
+        0,
+        6,
+        26,
+        54,
+        48,
+        52,
+        12,
+        14,
+        46,
+        38,
+        42,
+        10,
+        50,
+        36,
+        16,
+        22,
+        44,
+        20,
+        18,
+        4,
+        9,
+        1,
+        8,
+        24,
+        30,
+        40,
+        28,
+        2,
+        32,
+        3,
+        5,
+        34,
+        11,
+        7,
+        13,
+        17,
+        23,
+        21,
+        31,
+        29,
+        33,
+        35,
+        25,
+        27,
+        47,
+        51,
+        15,
+        43,
+        39,
+        37,
+        19,
+        49,
+        55,
+        45,
+        41,
+        53
+      ]
+    }
+  },
+  "top_half_overlap": 25,
+  "top_half_size": 28,
+  "ranking_transfer_warning": false,
+  "calibration_commit": null
+}
