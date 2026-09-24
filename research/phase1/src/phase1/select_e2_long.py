@@ -106,13 +106,9 @@ def run(model_key: str, commit: str) -> None:
         "h0": _source_path(folder, "h0", name, 0),
         f"h{h_bits}": _source_path(folder, "residual", name, h_bits),
     }
-    sources = {condition: _read(path) for condition, path in paths.items()}
-    if (sources["bf16"]["config"] != "bf16-h0"
-            or sources["kv8"]["config"] != KV8
-            or sources["h0"]["config"] != name
-            or sources[f"h{h_bits}"]["config"] != name
-            or sources[f"h{h_bits}"].get("residual_bits") != h_bits):
-        raise RuntimeError("长解码条件与选定表示或残留精度不一致")
+    sources = {"bf16": _read(paths["bf16"])}
+    if sources["bf16"]["config"] != "bf16-h0":
+        raise RuntimeError("长解码高精度条件不一致")
     indices = _validate_results(root, model_key, sources)
     baseline_f1 = (
         sum(sources["bf16"]["rows"][index]["f1"] for index in indices) / len(indices)
@@ -122,6 +118,16 @@ def run(model_key: str, commit: str) -> None:
     cells: dict[str, Any] = {}
     category = "未归类"
     if baseline_usable:
+        sources.update({
+            condition: _read(path) for condition, path in paths.items()
+            if condition != "bf16"
+        })
+        if (sources["kv8"]["config"] != KV8
+                or sources["h0"]["config"] != name
+                or sources[f"h{h_bits}"]["config"] != name
+                or sources[f"h{h_bits}"].get("residual_bits") != h_bits):
+            raise RuntimeError("长解码量化条件与选定表示或残留精度不一致")
+        _validate_results(root, model_key, sources)
         seeds = _read(root / "research/phase1/splits/seeds.json")
         cells = {
             condition: _cell(
@@ -146,13 +152,18 @@ def run(model_key: str, commit: str) -> None:
         "bf16_shorter_than_256_n": 8 - len(indices),
         "bf16_eligible_f1": baseline_f1,
         "baseline_usable": baseline_usable,
+        "baseline_failure_reason": (
+            None if baseline_usable else
+            "no_generation_ge_256_tokens" if not indices else
+            "eligible_f1_below_40"
+        ),
         "cells": cells, "long_decode_category": category,
         "does_not_change_e3_representation_or_residual": True,
         "source_sha256": {
             str(path.relative_to(root)).replace("\\", "/"): hashlib.sha256(
                 path.read_bytes()
             ).hexdigest()
-            for path in paths.values()
+            for condition, path in paths.items() if condition in sources
         },
     }
     (folder / "long_decode_selection.json").write_text(

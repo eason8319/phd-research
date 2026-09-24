@@ -89,12 +89,12 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
     samples = _samples(root, model_key, task, split)
     if not samples:
         raise RuntimeError("冻结样本为空")
-    ids = [item["id"] for item in samples]
+    sample_ids = [item["id"] for item in samples]
     input_hashes = [item["sha256"] for item in samples]
     progress = root / "research/.runtime" / f"e2-{model_key}-{task}-{split}.json"
     if progress.exists():
         state = json.loads(progress.read_text("utf-8"))
-        if (state["commit"] != commit or state["ids"] != ids
+        if (state["commit"] != commit or state["ids"] != sample_ids
                 or state.get("input_hashes") != input_hashes):
             raise RuntimeError("已有进度与当前代码或冻结输入不一致")
         rows = state["rows"]
@@ -108,17 +108,17 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
         source = item["path"].read_text("utf-8")
         if hashlib.sha256(source.encode("utf-8")).hexdigest() != item["sha256"]:
             raise RuntimeError(f"输入全文校验失败：{item['id']}")
-        ids = tokenizer(source, add_special_tokens=False)["input_ids"]
-        if len(ids) != item["tokens"] or len(ids) + limit > 32768:
-            raise RuntimeError(f"输入长度不符合冻结记录：{item['id']}，{len(ids)}")
+        input_ids = tokenizer(source, add_special_tokens=False)["input_ids"]
+        if len(input_ids) != item["tokens"] or len(input_ids) + limit > 32768:
+            raise RuntimeError(f"输入长度不符合冻结记录：{item['id']}，{len(input_ids)}")
         with torch.inference_mode():
             produced, stopped = _generate(
-                model, torch.tensor([ids], device="cuda"), eos, limit
+                model, torch.tensor([input_ids], device="cuda"), eos, limit
             )
         prediction = tokenizer.decode(produced, skip_special_tokens=True)
         row: dict[str, Any] = {
             "id": item["id"],
-            "input_tokens": len(ids),
+            "input_tokens": len(input_ids),
             "input_sha256": item["sha256"],
             "new_tokens": len(produced),
             "stop": stopped,
@@ -131,7 +131,7 @@ def run(model_key: str, task: str, split: str, commit: str) -> None:
         rows.append(row)
         progress.write_text(json.dumps({
             "commit": commit,
-            "ids": ids,
+            "ids": sample_ids,
             "input_hashes": input_hashes,
             "rows": rows,
         }, ensure_ascii=False) + "\n", encoding="utf-8")

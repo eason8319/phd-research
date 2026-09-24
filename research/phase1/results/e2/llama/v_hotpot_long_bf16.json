@@ -1,0 +1,84 @@
+{
+  "protocol": "phase1-protocol v6",
+  "commit": "dd85e2e",
+  "model": "llama",
+  "config": "bf16-h0",
+  "task": "v-hotpot_long",
+  "n": 8,
+  "rows": [
+    {
+      "id": "5adf715b5542992d7e9f9354",
+      "input_tokens": 31729,
+      "input_sha256": "3322f0279c526d5874e59cc09e98c187ac3bef62ece37adc99da4d27601ee541",
+      "new_tokens": 159,
+      "stop": "eos",
+      "em": false,
+      "f1": 0.0
+    },
+    {
+      "id": "5ade914b55429939a52fe8f9",
+      "input_tokens": 31713,
+      "input_sha256": "f611069cabc0e7daa612dce82c799ec51959e9944c9fe53910de9934b085a8e6",
+      "new_tokens": 26,
+      "stop": "eos",
+      "em": false,
+      "f1": 33.333333333333336
+    },
+    {
+      "id": "5ab6b6fd5542995eadef006b",
+      "input_tokens": 31730,
+      "input_sha256": "d87b26dc694012be2987c8f23cf0376962127b1fd2ccc442e565054e6f52c432",
+      "new_tokens": 133,
+      "stop": "eos",
+      "em": false,
+      "f1": 14.285714285714286
+    },
+    {
+      "id": "5ab55b0c554299488d4d995e",
+      "input_tokens": 31717,
+      "input_sha256": "bd59f03522ff427b03fdcd6fc1ae630bb1b0738d7565426eeeb01b94ffc7926c",
+      "new_tokens": 10,
+      "stop": "eos",
+      "em": true,
+      "f1": 100.0
+    },
+    {
+      "id": "5a7a43245542994f819ef19d",
+      "input_tokens": 31661,
+      "input_sha256": "e7cd57440a0a8aea71ab0798fcf4c2f8a1337f189ab1c7bfdb996243ea27fac1",
+      "new_tokens": 52,
+      "stop": "eos",
+      "em": false,
+      "f1": 6.25
+    },
+    {
+      "id": "5a7c34905542996dd594b8d5",
+      "input_tokens": 31728,
+      "input_sha256": "efb35e03cee44d68bfa1e96d7f41194f479c10f0377e6c22ccb9b2c1774d200c",
+      "new_tokens": 64,
+      "stop": "eos",
+      "em": false,
+      "f1": 44.444444444444436
+    },
+    {
+      "id": "5abc3c545542993a06baf89f",
+      "input_tokens": 31728,
+      "input_sha256": "4aa6dd9725f5432ce65ca2e31f1c1d6e199e6c72e87333b4309b8b573bf355a8",
+      "new_tokens": 6,
+      "stop": "eos",
+      "em": true,
+      "f1": 100.0
+    },
+    {
+      "id": "5a73266d5542994cef4bc47d",
+      "input_tokens": 31724,
+      "input_sha256": "7f7d7196b9da87b1e927183ff3a1f2453578a8a9785cf4e0ef70b29142c1f233",
+      "new_tokens": 8,
+      "stop": "eos",
+      "em": true,
+      "f1": 100.0
+    }
+  ],
+  "em": 37.5,
+  "f1": 49.789186507936506
+}
