@@ -188,23 +188,28 @@ def _prefill_cache(
         value_buffer = torch.empty_like(key_buffer)
         key_buffer[:, :, :input_ids.shape[1], :] = k_hat.unsqueeze(0)
         value_buffer[:, :, :input_ids.shape[1], :] = v_hat.unsqueeze(0)
-        keys.append(key_buffer)
-        values.append(value_buffer)
         invalid += bad_k + bad_v
         if h_bits:
             start = max(0, int(input_ids.shape[1]) - RESIDUAL_TOKENS)
             high_k, bad_high_k = _recent(original_k[index][0][:, start:, :], h_bits)
             high_v, bad_high_v = _recent(original_v[index][0][:, start:, :], h_bits)
-            read_key = torch.empty_like(key_buffer)
-            read_value = torch.empty_like(value_buffer)
-            read_key[:, :, :input_ids.shape[1], :] = key_buffer[:, :, :input_ids.shape[1], :]
-            read_value[:, :, :input_ids.shape[1], :] = value_buffer[:, :, :input_ids.shape[1], :]
-            read_key[:, :, start:input_ids.shape[1], :] = high_k.unsqueeze(0)
-            read_value[:, :, start:input_ids.shape[1], :] = high_v.unsqueeze(0)
-            read_keys.append(read_key)
-            read_values.append(read_value)
+            ring_shape = (1, k_hat.shape[0], RESIDUAL_TOKENS, k_hat.shape[-1])
+            low_key_ring = torch.empty(ring_shape, device=k_hat.device, dtype=torch.float32)
+            low_value_ring = torch.empty_like(low_key_ring)
+            ring_indices = torch.arange(start, int(input_ids.shape[1]),
+                                        device=k_hat.device) % RESIDUAL_TOKENS
+            low_key_ring[:, :, ring_indices, :] = k_hat[:, start:, :].unsqueeze(0)
+            low_value_ring[:, :, ring_indices, :] = v_hat[:, start:, :].unsqueeze(0)
+            key_buffer[:, :, start:input_ids.shape[1], :] = high_k.unsqueeze(0)
+            value_buffer[:, :, start:input_ids.shape[1], :] = high_v.unsqueeze(0)
+            keys.append(low_key_ring)
+            values.append(low_value_ring)
+            read_keys.append(key_buffer)
+            read_values.append(value_buffer)
             invalid += bad_high_k + bad_high_v
         else:
+            keys.append(key_buffer)
+            values.append(value_buffer)
             read_keys.append(key_buffer)
             read_values.append(value_buffer)
         original_k[index] = None
@@ -212,6 +217,30 @@ def _prefill_cache(
         if pre_keys:
             pre_keys[index] = None
     return first, keys, values, read_keys, read_values, int(invalid.item())
+
+
+def _write_residual_token(
+    low_key_ring: torch.Tensor,
+    low_value_ring: torch.Tensor,
+    read_key: torch.Tensor,
+    read_value: torch.Tensor,
+    k_hat: torch.Tensor,
+    v_hat: torch.Tensor,
+    high_k: torch.Tensor,
+    high_v: torch.Tensor,
+    position: int,
+) -> None:
+    """先恢复滑出的低位宽值，再写当前高精度副本，避免全历史重复缓存。"""
+    if position >= RESIDUAL_TOKENS:
+        leaving = position - RESIDUAL_TOKENS
+        slot = leaving % RESIDUAL_TOKENS
+        read_key[:, :, leaving:leaving + 1, :] = low_key_ring[:, :, slot:slot + 1, :]
+        read_value[:, :, leaving:leaving + 1, :] = low_value_ring[:, :, slot:slot + 1, :]
+    slot = position % RESIDUAL_TOKENS
+    low_key_ring[:, :, slot:slot + 1, :] = k_hat.unsqueeze(0)
+    low_value_ring[:, :, slot:slot + 1, :] = v_hat.unsqueeze(0)
+    read_key[:, :, position:position + 1, :] = high_k.unsqueeze(0)
+    read_value[:, :, position:position + 1, :] = high_v.unsqueeze(0)
 
 
 def _decode_step(
@@ -247,22 +276,17 @@ def _decode_step(
         v_params = calibrated.get("value", [None] * len(keys))[index]
         v_hat, bad_v = _quantize(value[0], v_bits, config["value_mode"], v_params)
         invalid += bad_k + bad_v
-        keys[index][:, :, position:position + 1, :] = k_hat.unsqueeze(0)
-        values[index][:, :, position:position + 1, :] = v_hat.unsqueeze(0)
         if h_bits:
             high_k, bad_high_k = _recent(key_post[0], h_bits)
             high_v, bad_high_v = _recent(value[0], h_bits)
-            read_keys[index][:, :, position:position + 1, :] = high_k.unsqueeze(0)
-            read_values[index][:, :, position:position + 1, :] = high_v.unsqueeze(0)
-            if position >= RESIDUAL_TOKENS:
-                leaving = position - RESIDUAL_TOKENS
-                read_keys[index][:, :, leaving:leaving + 1, :] = (
-                    keys[index][:, :, leaving:leaving + 1, :]
-                )
-                read_values[index][:, :, leaving:leaving + 1, :] = (
-                    values[index][:, :, leaving:leaving + 1, :]
-                )
+            _write_residual_token(
+                keys[index], values[index], read_keys[index], read_values[index],
+                k_hat, v_hat, high_k, high_v, position,
+            )
             invalid += bad_high_k + bad_high_v
+        else:
+            keys[index][:, :, position:position + 1, :] = k_hat.unsqueeze(0)
+            values[index][:, :, position:position + 1, :] = v_hat.unsqueeze(0)
         attended = attention_from_batch(
             query, read_keys[index][:, :, :position + 1, :],
             read_values[index][:, :, :position + 1, :],
