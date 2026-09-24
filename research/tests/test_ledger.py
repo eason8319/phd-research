@@ -103,6 +103,31 @@ class LedgerTest(unittest.TestCase):
         # 闭合的 32 token 才进入 4 bit 载荷。
         self.assertEqual(ledger.k_payload.raw_bytes, 32 * 4 // 2)
 
+    def test_recent_residual_counts_both_key_and_value(self) -> None:
+        for bits, bytes_per_side_token in ((8, 32 + 4), (16, 32 * 2)):
+            with self.subTest(bits=bits):
+                ledger = account_pair(
+                    layers=1, kv_heads=1, seq=128, dim=32,
+                    k_bits=4, v_bits=4,
+                    k_mode="per_token", v_mode="per_token",
+                    g_c=32, g_t=32, block_tokens=64,
+                    residual_h=bits, residual_r=128,
+                )
+                self.assertEqual(
+                    ledger.residual.raw_bytes, 2 * 128 * bytes_per_side_token
+                )
+
+    def test_open_key_and_recent_pair_do_not_double_count_overlap(self) -> None:
+        ledger = account_pair(
+            layers=1, kv_heads=1, seq=40, dim=4,
+            k_bits=4, v_bits=4,
+            k_mode="cross_token", v_mode="per_token",
+            g_c=4, g_t=32, block_tokens=64,
+            residual_h=8, residual_r=16,
+        )
+        # K: 8 个未闭合 FP16 + 8 个 H8；V: 16 个 H8。
+        self.assertEqual(ledger.residual.raw_bytes, 8 * 4 * 2 + 24 * (4 + 4))
+
     def test_full_block(self) -> None:
         ledger = account_pair(
             layers=1,

@@ -120,7 +120,8 @@ def account_pair(
         dim,
         residual_h,
         residual_r,
-        open_tokens,
+        k_open,
+        v_open,
         g_c,
         weight_float_bytes,
     )
@@ -185,25 +186,26 @@ def _residual_bytes(
     dim: int,
     residual_h: int,
     residual_r: int,
-    open_tokens: int,
+    k_open_tokens: int,
+    v_open_tokens: int,
     g_c: int,
     weight_float_bytes: int,
 ) -> int:
-    """近期残留与未闭合组的并集。未闭合组始终按权重浮点计，避免和 H 副本重复。"""
+    """逐侧计 K/V 近期残留与未闭合组的并集，避免重复计副本。"""
     if residual_h not in (0, 8, 16):
         raise ValueError(f"残留精度只能是 0、8 或 16: {residual_h}")
     window = min(seq, residual_r) if residual_h else 0
-    # 未闭合组位于序列末尾，和残留窗口从末尾重叠。
-    overlap = min(open_tokens, window)
-    high_only = open_tokens
-    h_only = window - overlap
     per_token = units * dim
-    raw = high_only * per_token * weight_float_bytes
-    if residual_h == 16:
-        raw += h_only * per_token * weight_float_bytes
-    elif residual_h == 8:
-        raw += _payload_bytes(h_only * per_token, 8)
-        raw += h_only * units * _group_count(1, dim, g_c) * 4
+    raw = 0
+    for open_tokens in (k_open_tokens, v_open_tokens):
+        # 未闭合组位于序列末尾，和这一侧的近期残留窗口从末尾重叠。
+        h_only = window - min(open_tokens, window)
+        raw += open_tokens * per_token * weight_float_bytes
+        if residual_h == 16:
+            raw += h_only * per_token * weight_float_bytes
+        elif residual_h == 8:
+            raw += _payload_bytes(h_only * per_token, 8)
+            raw += h_only * units * _group_count(1, dim, g_c) * 4
     return raw
 
 
