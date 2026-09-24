@@ -24,8 +24,23 @@ def round_fp16(values: torch.Tensor, *, toward: str) -> torch.Tensor:
     else:
         needs_step = finite & (nearest_as_f32 < original)
         destination = torch.full_like(nearest, float("inf"))
-    stepped = torch.nextafter(nearest, destination)
+    if nearest.is_cuda:
+        stepped = _nextafter_half_cuda(nearest, toward)
+    else:
+        stepped = torch.nextafter(nearest, destination)
     return torch.where(needs_step, stepped, nearest)
+
+
+def _nextafter_half_cuda(values: torch.Tensor, toward: str) -> torch.Tensor:
+    """按 IEEE FP16 相邻编码实现 CUDA 不支持的 half nextafter。"""
+    codes = values.contiguous().view(torch.int16).to(torch.int32) & 0xffff
+    negative = (codes & 0x8000) != 0
+    zero = (codes & 0x7fff) == 0
+    if toward == "up":
+        adjacent = torch.where(zero, 1, torch.where(negative, codes - 1, codes + 1))
+    else:
+        adjacent = torch.where(zero, 0x8001, torch.where(negative, codes + 1, codes - 1))
+    return adjacent.to(torch.int16).view(torch.float16)
 
 
 def fit_group_params(

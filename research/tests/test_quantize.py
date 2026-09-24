@@ -33,6 +33,18 @@ class RoundFp16Test(unittest.TestCase):
         rounded = round_fp16(value, toward="down")
         self.assertTrue(torch.equal(rounded, value.to(dtype=torch.float16)))
 
+    @unittest.skipUnless(torch.cuda.is_available(), "需要 CUDA")
+    def test_cuda_rounding_matches_cpu(self) -> None:
+        """覆盖正负数、零、次正规数和溢出的定向舍入。"""
+        values = torch.tensor([
+            -1e8, -65504.0, -1.0005, -1e-8, -0.0,
+            0.0, 1e-8, 1.0005, 65504.0, 1e8,
+        ], dtype=torch.float32)
+        for toward in ("down", "up"):
+            reference = round_fp16(values, toward=toward)
+            actual = round_fp16(values.cuda(), toward=toward).cpu()
+            self.assertTrue(torch.equal(actual, reference))
+
 
 class QuantizeTest(unittest.TestCase):
     def test_hand_calculated_ramp(self) -> None:
