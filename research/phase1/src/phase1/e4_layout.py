@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import sys
@@ -72,6 +73,10 @@ def _specs(root: Path, model_key: str, n_layers: int) -> list[FormatSpec]:
     residual = json.loads(
         (folder / "e2" / model_key / "residual_selection.json").read_text("utf-8")
     )
+    if (final["protocol"] != "phase1-protocol v7" or final["model"] != model_key
+            or residual["protocol"] != "phase1-protocol v7"
+            or residual["model"] != model_key):
+        raise RuntimeError("E4 来源不是当前模型的冻结协议结果")
     if final["total_n"] not in (64, 128, 256) or final["next_expansion"]:
         raise RuntimeError("F 尚未完成必要扩样，不能冻结 E4 质量候选")
     specs = []
@@ -87,6 +92,9 @@ def _specs(root: Path, model_key: str, n_layers: int) -> list[FormatSpec]:
             allocations = json.loads(
                 (folder / "e3" / model_key / "allocations.json").read_text("utf-8")
             )
+            if (allocations["protocol"] != "phase1-protocol v7"
+                    or allocations["model"] != model_key):
+                raise RuntimeError("E3 分配与当前模型的协议不一致")
             allocation_name = condition[3:]
             rows = allocations["allocations"][allocation_name]["layer_bits"]
             if len(rows) != n_layers:
@@ -391,6 +399,18 @@ def run(model_key: str, commit: str) -> None:
     query_heads = int(model["num_attention_heads"])
     dim = int(model["hidden_size"]) // int(model["num_attention_heads"])
     specs = _specs(root, model_key, n_layers)
+    source_paths = [
+        root / "research/phase1/results/f" / model_key / "selection.json",
+        root / "research/phase1/results/e2" / model_key / "residual_selection.json",
+    ]
+    if any(spec.name.startswith("e3-") for spec in specs):
+        source_paths.append(
+            root / "research/phase1/results/e3" / model_key / "allocations.json"
+        )
+    source_sha256 = {
+        str(path.relative_to(root)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in source_paths
+    }
     rows = []
     for spec in specs:
         for length in LENGTHS:
@@ -433,6 +453,7 @@ def run(model_key: str, commit: str) -> None:
         "kv_heads": heads,
         "query_heads": query_heads,
         "head_dim": dim,
+        "source_sha256": source_sha256,
         "service_time_model": (
             "T_QK + T_softmax + T_AV + T_dequant + T_pre_rope; "
             "T_QK>=max(D_K/W_K,F_QK/P_QK), "
