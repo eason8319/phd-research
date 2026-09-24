@@ -38,13 +38,20 @@ def _render_gsm(tokenizer: Any, question: str, llama: bool) -> torch.Tensor:
 
 
 def _load_c_items(model_key: str) -> list[dict[str, Any]]:
+    """读取冻结 C 样本，并核对数学原题与检索全文的校验值。"""
     root = project_root()
     gsm = json.loads((root / "research/phase1/splits/gsm8k.json").read_text(encoding="utf-8"))
     meta = json.loads((root / "research/manifests/data/gsm8k.source.json").read_text(encoding="utf-8"))
     questions = pq.read_table(meta["destination"]).column("question").to_pylist()
     items = []
     for row in gsm["c"]:
-        items.append({"id": row["id"], "fold": int(row["fold"]), "kind": "math", "question": questions[row["row"]]})
+        question = questions[row["row"]]
+        if hashlib.sha256(question.encode("utf-8")).hexdigest() != row["question_sha256"]:
+            raise RuntimeError(f"数学原题校验失败：{row['id']}")
+        items.append({
+            "id": row["id"], "fold": int(row["fold"]),
+            "kind": "math", "question": question,
+        })
     retrieval = json.loads((root / "research/phase1/splits/retrieval.json").read_text(encoding="utf-8"))
     for row in retrieval:
         if not row["id"].startswith("synth-c-"):
