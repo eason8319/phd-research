@@ -1,0 +1,93 @@
+{
+  "protocol": "phase1-protocol v4",
+  "commit": "cb9cf28",
+  "passed": true,
+  "cases": [
+    {
+      "name": "constant",
+      "ok": true,
+      "detail": {
+        "status": 1,
+        "offset": 1.0
+      }
+    },
+    {
+      "name": "out_of_range",
+      "ok": true,
+      "detail": {
+        "code": 15
+      }
+    },
+    {
+      "name": "partial_group",
+      "ok": true,
+      "detail": {
+        "shape": [
+          1,
+          1,
+          40
+        ],
+        "groups_invalid": 0
+      }
+    },
+    {
+      "name": "just_closed",
+      "ok": true,
+      "detail": {
+        "invalid": 0
+      }
+    },
+    {
+      "name": "open_group",
+      "ok": true,
+      "detail": {
+        "tail_unchanged": true
+      }
+    },
+    {
+      "name": "full_block",
+      "ok": true,
+      "detail": {
+        "blocks": 1,
+        "tail": 64
+      }
+    },
+    {
+      "name": "tail_block",
+      "ok": true,
+      "detail": {
+        "blocks": 2,
+        "tail": 16
+      }
+    },
+    {
+      "name": "non_finite",
+      "ok": true,
+      "detail": {
+        "status": 2
+      }
+    },
+    {
+      "name": "scale_underflow",
+      "ok": true,
+      "detail": {
+        "scale": 5.960464477539063e-08,
+        "status": 0
+      }
+    },
+    {
+      "name": "parameter_overflow",
+      "ok": true,
+      "detail": {
+        "status": 2
+      }
+    },
+    {
+      "name": "roundtrip",
+      "ok": true,
+      "detail": {
+        "packed_bytes": 16
+      }
+    }
+  ]
+}
