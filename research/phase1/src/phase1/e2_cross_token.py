@@ -66,6 +66,11 @@ def _items_with_v_math(root: Path, model_key: str) -> list[dict[str, Any]]:
         {**indexed[item_id], "subset": "v_math", "kind": "math"}
         for item_id in frozen["v_math"]
     ]
+    if any(
+        hashlib.sha256(item["question"].encode("utf-8")).hexdigest()
+        != item["question_sha256"] for item in v_math
+    ):
+        raise RuntimeError("跨 token 的 V 数学原题校验失败")
     c_count = len(frozen["c_math"]) + len(frozen["c_retrieval"])
     if [item["id"] for item in items[:c_count]] != (
         frozen["c_math"] + frozen["c_retrieval"]
