@@ -196,6 +196,33 @@ def run_model(model_key: str, commit: str) -> None:
             "k_post4": _fit_minmax(acc["k_post"], 4),
             "v4": _fit_minmax(acc["v"], 4),
         }
+    full_acc = {
+        "k_pre": _empty_minmax(n_layers, kv, dim),
+        "k_post": _empty_minmax(n_layers, kv, dim),
+        "v": _empty_minmax(n_layers, kv, dim),
+    }
+    for blob in captured:
+        _update_minmax(full_acc["k_pre"], blob["pre"])
+        _update_minmax(full_acc["k_post"], blob["post"])
+        _update_minmax(full_acc["v"], blob["value"])
+    full_scales = {
+        "k_pre8": _fit_minmax(full_acc["k_pre"], 8),
+        "k_pre4": _fit_minmax(full_acc["k_pre"], 4),
+        "k_post8": _fit_minmax(full_acc["k_post"], 8),
+        "k_post4": _fit_minmax(full_acc["k_post"], 4),
+        "v8": _fit_minmax(full_acc["v"], 8),
+        "v4": _fit_minmax(full_acc["v"], 4),
+    }
+    torch.save(
+        {
+            "protocol": "phase1-protocol v7",
+            "commit": commit,
+            "source": "all-c",
+            "ids": [blob["id"] for blob in captured],
+            "params": full_scales,
+        },
+        root / "research/.runtime" / f"e2-calibration-{model_key}.pt",
+    )
     totals: dict[str, dict[str, float]] = {
         cfg["name"]: {"err0": 0.0, "n0": 0.0, "err1": 0.0, "n1": 0.0, "invalid": 0.0, "bytes": 0.0} for cfg in configs
     }
