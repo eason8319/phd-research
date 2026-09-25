@@ -2,7 +2,7 @@
   "protocol": "phase1-protocol v7",
   "commit": "e95f6d3",
   "model": "llama",
-  "total_n": 128,
+  "total_n": 256,
   "e2_selection_commit": "c1f2cc2",
   "e3_selection_commit": "e95f6d3",
   "candidates": [
@@ -11,29 +11,29 @@
   "cells": {
     "gsm8k": {
       "e2": {
-        "total_n": 128,
+        "total_n": 256,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
           "estimate": 0.78125,
-          "lower": -5.823017380119331,
-          "upper": 7.279926847811448,
+          "lower": -3.6062154048109356,
+          "upper": 5.117369649551992,
           "kind": "binary",
-          "n": 128,
+          "n": 256,
           "detail": {
-            "degrade": 3,
-            "improve": 2
+            "degrade": 6,
+            "improve": 4
           }
         },
         "versus_kv8": {
-          "estimate": 0.0,
-          "lower": -7.870824861062804,
-          "upper": 7.870824861062804,
+          "estimate": -0.390625,
+          "lower": -5.263794787670656,
+          "upper": 4.504102372016666,
           "kind": "binary",
-          "n": 128,
+          "n": 256,
           "detail": {
-            "degrade": 4,
-            "improve": 4
+            "degrade": 6,
+            "improve": 7
           }
         },
         "interval_crosses_2_or_missing": true
@@ -70,16 +70,7 @@
       }
     }
   },
-  "next_expansion": {
-    "gsm8k": {
-      "next_total_n": 256,
-      "conditions": [
-        "bf16",
-        "kv8",
-        "e2"
-      ]
-    }
-  },
+  "next_expansion": {},
   "expansion_history": [
     {
       "from_n": 64,
@@ -94,6 +85,19 @@
         },
         "hotpot": {
           "next_total_n": 128,
+          "conditions": [
+            "bf16",
+            "kv8",
+            "e2"
+          ]
+        }
+      }
+    },
+    {
+      "from_n": 128,
+      "plan": {
+        "gsm8k": {
+          "next_total_n": 256,
           "conditions": [
             "bf16",
             "kv8",
