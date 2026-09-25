@@ -1,8 +1,8 @@
 {
   "protocol": "phase1-protocol v7",
-  "commit": "989874d",
+  "commit": "23a395a",
   "model": "qwen",
-  "total_n": 64,
+  "total_n": 128,
   "e2_selection_commit": "435e205",
   "e3_selection_commit": "989874d",
   "candidates": [
@@ -12,47 +12,47 @@
   "cells": {
     "gsm8k": {
       "kv8": {
-        "total_n": 64,
+        "total_n": 128,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": -3.125,
-          "lower": -12.09887515415175,
-          "upper": 6.3549534272533865,
+          "estimate": -1.5625,
+          "lower": -7.401078693562944,
+          "upper": 4.508974033795316,
           "kind": "binary",
-          "n": 64,
+          "n": 128,
           "detail": {
-            "degrade": 0,
-            "improve": 2
+            "degrade": 1,
+            "improve": 3
           }
         },
         "versus_kv8": null,
         "interval_crosses_2_or_missing": true
       },
       "e3-p50_sensitivity": {
-        "total_n": 64,
+        "total_n": 128,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": -3.125,
-          "lower": -12.09887515415175,
-          "upper": 6.3549534272533865,
+          "estimate": -2.34375,
+          "lower": -7.410905384311166,
+          "upper": 2.992902194249457,
           "kind": "binary",
-          "n": 64,
+          "n": 128,
           "detail": {
             "degrade": 0,
-            "improve": 2
+            "improve": 3
           }
         },
         "versus_kv8": {
-          "estimate": 0.0,
-          "lower": -6.617774702077083,
-          "upper": 6.617774702077083,
+          "estimate": -0.78125,
+          "lower": -4.881592848906646,
+          "upper": 3.355694318612565,
           "kind": "binary",
-          "n": 64,
+          "n": 128,
           "detail": {
             "degrade": 0,
-            "improve": 0
+            "improve": 1
           }
         },
         "interval_crosses_2_or_missing": true
@@ -60,15 +60,15 @@
     },
     "hotpot": {
       "kv8": {
-        "total_n": 64,
+        "total_n": 128,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": 3.9172940737959467,
-          "lower": 0.28182265818369595,
-          "upper": 8.599392966280654,
+          "estimate": 1.4041593267937207,
+          "lower": -2.9111005865081947,
+          "upper": 5.829347333502973,
           "kind": "bootstrap",
-          "n": 64,
+          "n": 128,
           "detail": {
             "draws": 10000,
             "seed": 20260923
@@ -78,26 +78,26 @@
         "interval_crosses_2_or_missing": true
       },
       "e3-p50_sensitivity": {
-        "total_n": 64,
+        "total_n": 128,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": -0.6625055555053929,
-          "lower": -6.458883350624576,
-          "upper": 4.685525235629338,
+          "estimate": 3.0739087016499833,
+          "lower": -1.3872558320078152,
+          "upper": 7.711879956351374,
           "kind": "bootstrap",
-          "n": 64,
+          "n": 128,
           "detail": {
             "draws": 10000,
             "seed": 20260923
           }
         },
         "versus_kv8": {
-          "estimate": -4.579799629301339,
-          "lower": -10.983468475224148,
-          "upper": 1.4291417093509258,
+          "estimate": 1.6697493748562633,
+          "lower": -3.251625086230102,
+          "upper": 6.763364625934391,
           "kind": "bootstrap",
-          "n": 64,
+          "n": 128,
           "detail": {
             "draws": 10000,
             "seed": 20260923
@@ -109,7 +109,7 @@
   },
   "next_expansion": {
     "gsm8k": {
-      "next_total_n": 128,
+      "next_total_n": 256,
       "conditions": [
         "bf16",
         "kv8",
@@ -120,7 +120,7 @@
       ]
     },
     "hotpot": {
-      "next_total_n": 128,
+      "next_total_n": 256,
       "conditions": [
         "bf16",
         "kv8",
@@ -131,6 +131,34 @@
       ]
     }
   },
-  "expansion_history": [],
+  "expansion_history": [
+    {
+      "from_n": 64,
+      "plan": {
+        "gsm8k": {
+          "next_total_n": 128,
+          "conditions": [
+            "bf16",
+            "kv8",
+            "e3-p50_sensitivity",
+            "e3-p50_random_202609231",
+            "e3-p50_random_202609232",
+            "e3-p50_random_202609233"
+          ]
+        },
+        "hotpot": {
+          "next_total_n": 128,
+          "conditions": [
+            "bf16",
+            "kv8",
+            "e3-p50_sensitivity",
+            "e3-p50_random_202609231",
+            "e3-p50_random_202609232",
+            "e3-p50_random_202609233"
+          ]
+        }
+      }
+    }
+  ],
   "retrieval_32k_excluded": true
 }
