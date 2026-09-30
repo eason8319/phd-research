@@ -1,4 +1,4 @@
-"""按题汇总 H1 配对诊断，并保存兼容既有候选选择的统一结果。"""
+"""按题汇总位宽与表示交互配对诊断，并保存兼容既有候选选择的统一结果。"""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from collections.abc import Collection, Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
-SCHEMA_VERSION = "h1-paired-v2"
+SCHEMA_VERSION = "paired-propagation-diagnostics"
 PAIRS = tuple(
     f"{mode}-{rope}"
     for mode in ("per_channel", "per_token")
@@ -436,7 +436,7 @@ def write_results(
             raise ValueError(f"主矩阵缺少误差、无效组或字节字段：{name}")
     needed = {"model", "measurement_version", "provenance", "metrics"}
     if not needed <= set(diagnostic_payload):
-        raise ValueError("配对诊断缺少版本、来源、汇总或测量状态")
+        raise ValueError("配对诊断缺少测量格式、来源、汇总或测量状态")
     if not isinstance(samples, list):
         raise ValueError("samples.json 必须为题目记录列表")
     payload = copy.deepcopy(matrix_payload)
@@ -470,7 +470,7 @@ def write_results(
     staged: dict[str, Path] = {}
     try:
         for name, text in serialized.items():
-            handle, temporary = tempfile.mkstemp(prefix=".h1-", suffix=".tmp", dir=destination)
+            handle, temporary = tempfile.mkstemp(prefix=".representation-", suffix=".tmp", dir=destination)
             staged[name] = Path(temporary)
             with os.fdopen(handle, "w", encoding="utf-8", newline="\n") as stream:
                 stream.write(text)

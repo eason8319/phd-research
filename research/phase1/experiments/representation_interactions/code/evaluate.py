@@ -1,4 +1,4 @@
-"""H1 唯一入口：固定轨迹配对诊断，可显式重测主矩阵或仅汇总明细。"""
+"""位宽与表示交互唯一入口：固定轨迹配对诊断，可显式重测主矩阵或仅汇总明细。"""
 
 from __future__ import annotations
 
@@ -43,7 +43,10 @@ from experiments.representation_interactions.code.results import (
     summarize_rows,
     write_results,
 )
-from experiments.representation_interactions.code.select import E1Cell, select_e1
+from experiments.representation_interactions.code.select import (
+    CANDIDATE_POLICY,
+    select_representations,
+)
 
 VALUE_DIAGNOSTIC = "kv4-per_channel-pre-vchannel"
 HEAD_FIELDS = (
@@ -53,11 +56,11 @@ HEAD_FIELDS = (
 
 
 def _settings() -> dict[str, Any]:
-    """读取唯一诊断配置，拒绝缺失字段或不兼容的测量版本。"""
-    path = project_root() / "research/phase1/configs/h1_diagnostics.json"
+    """读取唯一诊断配置，拒绝缺失字段或不兼容的测量格式。"""
+    path = project_root() / "research/phase1/configs/representation_diagnostics.json"
     settings = json.loads(path.read_text(encoding="utf-8"))
     if settings["measurement_version"] != SCHEMA_VERSION:
-        raise ValueError("诊断配置的测量版本与执行代码不一致")
+        raise ValueError("诊断配置的测量格式与执行代码不一致")
     for name in ("top_k", "bootstrap_seed", "bootstrap_resamples"):
         value = settings[name]
         if isinstance(value, bool) or not isinstance(value, int):
@@ -77,7 +80,7 @@ def _sha256(path: Path) -> str:
 
 
 def _code_hashes() -> dict[str, str]:
-    """索引 H1 四个模块和阶段共用辅助模块的代码校验值。"""
+    """索引位宽与表示交互四个模块和阶段共用辅助模块的代码校验值。"""
     root = project_root()
     directory = "research/phase1/experiments/representation_interactions/code"
     paths = [f"{directory}/{name}.py" for name in ("evaluate", "metrics", "results", "select")]
@@ -408,7 +411,6 @@ def _matrix_payload(
     if seen != expected:
         raise RuntimeError("逐题主矩阵未完整覆盖冻结样本")
     summary = {}
-    cells = []
     for cfg in configs:
         slot = totals[cfg["name"]]
         if not slot["folds"][0] or not slot["folds"][1]:
@@ -419,32 +421,29 @@ def _matrix_payload(
             "error": error, "invalid": float(slot["invalid"]), "bytes": resident_bytes,
             "zero_reference_outputs": slot["zero_reference_outputs"],
         }
-        if cfg["tier"] != "base":
-            bits = (cfg["k_bits"] + cfg["v_bits"]) / 2
-            bits += 0 if cfg["key_mode"] == "per_channel" else 1
-            cells.append(E1Cell(
-                cfg["name"], cfg["tier"], error, bits, int(resident_bytes),
-                slot["invalid"] > 0,
-            ))
-    selected = select_e1(cells, 9, summary["kv4-per_token-post"]["error"])
+    selected = select_representations(summary)
     return {
-        "protocol": "phase1-protocol v7", "commit": commit, "summary": summary,
+        "protocol": "phase1-full-key-retrieval", "commit": commit, "summary": summary,
         "kept": list(selected.kept), "reason": selected.reason,
+        "candidate_policy": CANDIDATE_POLICY,
     }
 
 
 def _finalize(model_key: str, manifest: dict[str, Any], commit: str) -> None:
     """审核来源、SHA256 和逐题完整性后写正式结果，不生成报告。"""
     root = project_root()
-    expected_path = f"research/.runtime/h1-{model_key}.jsonl"
-    if manifest["detail_path"] != expected_path:
-        raise RuntimeError("H1 明细路径不属于该模型的正式运行路径")
-    detail = root / expected_path
+    allowed_paths = {
+        f"research/.runtime/representation_diagnostics-{model_key}.jsonl",
+        f"research/.runtime/h1-{model_key}.jsonl",
+    }
+    if manifest["detail_path"] not in allowed_paths:
+        raise RuntimeError("位宽与表示交互明细路径不属于该模型的正式运行路径")
+    detail = root / manifest["detail_path"]
     if _sha256(detail) != manifest["detail_sha256"]:
-        raise RuntimeError("H1 明细的校验值与来源索引不一致")
+        raise RuntimeError("位宽与表示交互明细的校验值与来源索引不一致")
     expected = _expected_items(model_key)
     if manifest["expected_items"] != expected:
-        raise RuntimeError("H1 明细来源与当前冻结样本划分不一致")
+        raise RuntimeError("位宽与表示交互明细来源与当前冻结样本划分不一致")
     settings = manifest["settings"]
     metrics, samples = summarize_rows(
         _read_rows(detail), expected, bootstrap_seed=settings["bootstrap_seed"],
@@ -477,7 +476,7 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
     with torch.inference_mode():
         captured = _capture_items(model_key, tokenizer, model)
         scales, full_scales = _fit_scales(captured, refresh_matrix)
-        detail = root / "research/.runtime" / f"h1-{model_key}.jsonl"
+        detail = root / "research/.runtime" / f"representation_diagnostics-{model_key}.jsonl"
         partial = detail.with_suffix(".partial")
         with partial.open("w", encoding="utf-8") as stream:
             for blob in captured:
@@ -490,7 +489,8 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
     if refresh_matrix:
         matrix_payload = _matrix_payload(detail, commit, {blob["id"] for blob in captured})
     provenance = {
-        "protocol": "phase1-protocol v7", "measurement_version": settings["measurement_version"],
+        "protocol": "phase1-full-key-retrieval",
+        "measurement_version": settings["measurement_version"],
         "commit": commit, "model": model_key, "samples": len(captured), "pairs": len(PAIRS),
         "layers": len(captured[0]["pre"]), "query_heads": captured[0]["query"][0].shape[0],
         "detail_path": detail.relative_to(root).as_posix(), "detail_sha256": _sha256(detail),
@@ -507,7 +507,7 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
         "provenance": provenance, "matrix_payload": matrix_payload,
         "measurement_status": {
             "main_matrix": {
-                "status": "measured", "measurement_version": "phase1-protocol v7",
+                "status": "measured", "measurement_version": "phase1-full-key-retrieval",
                 "commit": matrix_payload["commit"],
             },
             **{
@@ -525,28 +525,32 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
             },
         },
     }
-    manifest_path = root / "research/.runtime" / f"h1-{model_key}.manifest.json"
+    manifest_path = (
+        root / "research/.runtime" / f"representation_diagnostics-{model_key}.manifest.json"
+    )
     _write_json(manifest_path, manifest)
     _finalize(model_key, manifest, commit)
     if refresh_matrix:
         torch.save(
             {
-                "protocol": "phase1-protocol v7", "commit": commit, "source": "all-c",
+                "protocol": "phase1-full-key-retrieval", "commit": commit, "source": "all-c",
                 "ids": [blob["id"] for blob in captured], "params": full_scales,
             },
-            root / "research/.runtime" / f"e2-calibration-{model_key}.pt",
+            root / "research/.runtime" / f"generation-calibration-{model_key}.pt",
         )
 
 
 def summarize_only(model_key: str, commit: str) -> None:
-    """仅审核既有 H1 来源索引并汇总，不捕获激活、不量化、不使用 GPU。"""
+    """仅审核既有位宽与表示交互来源索引并汇总，不捕获激活、不量化、不使用 GPU。"""
     root = project_root()
-    path = root / "research/.runtime" / f"h1-{model_key}.manifest.json"
+    path = root / "research/.runtime" / f"representation_diagnostics-{model_key}.manifest.json"
+    if not path.exists():
+        path = root / "research/.runtime" / f"h1-{model_key}.manifest.json"
     manifest = json.loads(path.read_text(encoding="utf-8"))
     if manifest["model"] != model_key:
-        raise RuntimeError("H1 来源索引的模型标识不匹配")
-    if manifest["settings"]["measurement_version"] != SCHEMA_VERSION:
-        raise RuntimeError("H1 来源索引的测量版本不受当前代码支持")
+        raise RuntimeError("位宽与表示交互来源索引的模型标识不匹配")
+    if manifest["settings"]["measurement_version"] not in {SCHEMA_VERSION, "h1-paired-v2"}:
+        raise RuntimeError("位宽与表示交互来源索引的测量格式不受当前代码支持")
     _finalize(model_key, manifest, commit)
 
 

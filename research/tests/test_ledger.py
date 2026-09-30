@@ -125,7 +125,7 @@ class LedgerTest(unittest.TestCase):
             g_c=4, g_t=32, block_tokens=64,
             residual_h=8, residual_r=16,
         )
-        # K: 8 个未闭合 FP16 + 8 个 H8；V: 16 个 H8。
+        # K: 8 个未闭合 FP16 + 8 个 8 bit 残留；V: 16 个 8 bit 残留。
         self.assertEqual(ledger.residual.raw_bytes, 8 * 4 * 2 + 24 * (4 + 4))
 
     def test_full_block(self) -> None:

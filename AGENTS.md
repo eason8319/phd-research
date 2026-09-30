@@ -18,9 +18,12 @@
 
 ## 实验管理
 
+- 全项目文档直接原位更新，文件与实验按实际内容命名；遵守 [`.cursor/rules/project-naming.mdc`](.cursor/rules/project-naming.mdc)。
+
 - 研究目录、共用代码、阶段执行代码、结果回传和审核后报告，始终遵守 [`.cursor/rules/experiment-management.mdc`](.cursor/rules/experiment-management.mdc)。
 - 共用代码放在 `research/src/kvstudy/`。各阶段的执行代码和唯一指导文档放在 `research/phaseN/`。当前只有第一阶段。
-- 代码、指导文档和审核后报告的权威维护位置在本地。正式结果整理后回传到本地 `research/phaseN/results/`，同一实验的新结果覆盖旧结果。运行过程不写报告；审核通过后才作图并写报告。根目录 `models/` 与 `research/.runtime/` 仅在服务器，不进入 Git。一次性测试及其结果不留在项目中。
+- 代码、指导文档和审核后报告的权威维护位置在本地。正式结果整理后回传到本地 `research/phaseN/experiments/<实验名>/results/`，同一实验的新结果覆盖旧结果。运行过程不写报告；审核通过后才作图并写报告。根目录 `models/` 与 `research/.runtime/` 仅在服务器，不进入 Git。一次性测试及其结果不留在项目中。
+- 预备环境冒烟和实现正确性检查通过并审核后，在该阶段 `configs/runtime.md` 保留最小准入事实、适用边界及执行提交／历史结果来源，清理其一次性代码、结果、报告和独立目录。尚未解决的预备失败不得删除；正式实验负结果、共享实现和长期回归测试保留。
 - 项目内代码与注释遵守 [`.cursor/rules/experiment-code.mdc`](.cursor/rules/experiment-code.mdc)。项目内报告遵守 [`.cursor/rules/experiment-reports.mdc`](.cursor/rules/experiment-reports.mdc)。
 
 ## 文献综述

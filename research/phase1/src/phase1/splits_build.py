@@ -1,4 +1,4 @@
-"""在 M0 之后一次生成并冻结 splits/。只使用 tokenizer 计数，不跑模型前向。"""
+"""在环境与高精度冒烟之后一次生成并冻结 splits/。只使用 tokenizer 计数，不跑模型前向。"""
 
 from __future__ import annotations
 
@@ -681,7 +681,7 @@ def rebuild_hotpot_prompts() -> None:
         _store_text(path, new_text)
     write_json(templates_path, templates)
     write_json(hotpot_path, hotpot)
-    print(f"HotpotQA v6 问法已更新：{len(pending)} 份全文", flush=True)
+    print(f"HotpotQA 答案占位符已移除：{len(pending)} 份全文", flush=True)
 
 
 def rebuild_retrieval_inputs() -> None:
@@ -736,7 +736,7 @@ def rebuild_retrieval_inputs() -> None:
         _store_text(path, text)
     write_json(templates_path, templates)
     write_json(retrieval_path, records)
-    print(f"检索 v7 输入已更新：{len(pending)} 份全文", flush=True)
+    print(f"完整键匹配检索输入已更新：{len(pending)} 份全文", flush=True)
 
 
 def _trajectories(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any]) -> dict[str, Any]:

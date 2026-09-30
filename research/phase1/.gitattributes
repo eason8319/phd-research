@@ -1,0 +1,2 @@
+experiments/**/results/**/*.json text eol=lf
+source_index.json text eol=lf
