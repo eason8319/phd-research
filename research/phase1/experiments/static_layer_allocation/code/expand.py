@@ -18,7 +18,7 @@ from experiments.static_layer_allocation.code.select_final import (
 from experiments.generation_error_sources.code.short_baseline import MODELS, _eos_ids
 from experiments.generation_error_sources.code.long_baseline import _generate as _generate_bf16
 from experiments.generation_error_sources.code.quantized_generation import (
-    MAX_CONTEXT, _config, _generate, _ids_and_source, _inputs,
+    MAX_CONTEXT, _calibration, _config, _generate, _ids_and_source, _inputs,
 )
 from phase1.runner import load_model
 from phase1.score import answer_exact, gsm8k_exact, token_f1
@@ -69,10 +69,7 @@ def run(
     condition_name = _canonical_condition(condition_name)
     root = project_root()
     config, residual_h, source_name = _condition(root, model_key, condition_name)
-    if config is not None and (
-        config["key_mode"] != "per_token" or config["value_mode"] != "per_token"
-    ):
-        raise RuntimeError("当前扩样实现需要在线逐 token 的 K/V 轴")
+    calibrated = _calibration(root, model_key, config) if config is not None else {}
     items = _inputs(root, model_key, task, "expand")
     if len(items) != 192:
         raise RuntimeError("扩样池不是冻结的 192 题")
@@ -125,7 +122,7 @@ def run(
                 invalid = 0
             else:
                 produced, stop, invalid = _generate(
-                    model, ids, eos, limit, config, {}, residual_h
+                    model, ids, eos, limit, config, calibrated, residual_h
                 )
         prediction = tokenizer.decode(produced, skip_special_tokens=True)
         row: dict[str, Any] = {
@@ -154,6 +151,7 @@ def run(
         "model": model_key, "task": task,
         "condition": condition_name, "source": source_name,
         "residual_bits": residual_h,
+        "calibration_commit": calibrated.get("commit"),
         "config_digest": config_digest,
         "extra_n": extra_n, "total_n_with_v": 64 + extra_n,
         "rows": used,

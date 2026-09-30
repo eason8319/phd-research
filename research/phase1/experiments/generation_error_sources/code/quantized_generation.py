@@ -54,7 +54,9 @@ def _config(name: str) -> dict[str, Any]:
     }
 
 
-def _calibration(root: Path, model_key: str, config: dict[str, Any]) -> dict[str, Any]:
+def _calibration(
+    root: Path, model_key: str, config: dict[str, Any], *, device: str = "cuda",
+) -> dict[str, Any]:
     """仅离线轴读取全部 C 拟合的参数，并核对 C 的冻结 ID。"""
     if config["key_mode"] != "per_channel" and config["value_mode"] != "per_channel":
         return {}
@@ -69,14 +71,31 @@ def _calibration(root: Path, model_key: str, config: dict[str, Any]) -> dict[str
     if (not _protocol_matches(payload["protocol"], "phase1-full-key-retrieval")
             or payload["ids"] != expected):
         raise RuntimeError("全部 C 的离线参数与当前冻结划分不一致")
-    key = f"k_{config['rope']}{config['k_bits']}"
     result: dict[str, Any] = {"commit": payload["commit"]}
     if config["key_mode"] == "per_channel":
-        result["key"] = [tuple(t.to("cuda") for t in row) for row in payload["params"][key]]
+        bits_needed = {config["k_bits"]}
+        bits_needed.update(row["k"] for row in config.get("layer_bits", []))
+        result["key_by_bits"] = {
+            bits: [tuple(t.to(device) for t in row)
+                   for row in payload["params"][f"k_{config['rope']}{bits}"]]
+            for bits in bits_needed
+        }
+        result["key"] = result["key_by_bits"][config["k_bits"]]
     if config["value_mode"] == "per_channel":
         value = f"v{config['v_bits']}"
-        result["value"] = [tuple(t.to("cuda") for t in row) for row in payload["params"][value]]
+        result["value"] = [tuple(t.to(device) for t in row) for row in payload["params"][value]]
     return result
+
+
+def _layer_params(
+    calibrated: dict[str, Any], side: str, layer: int, bits: int,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor] | None:
+    """混合层按实际位宽读取离线参数；未校准的在线轴返回 None。"""
+    by_bits = calibrated.get(f"{side}_by_bits")
+    if by_bits is not None:
+        return by_bits[bits][layer]
+    params = calibrated.get(side)
+    return params[layer] if params is not None else None
 
 
 def _rotate_key(model: Any, key: torch.Tensor, positions: torch.Tensor) -> torch.Tensor:
@@ -176,11 +195,11 @@ def _prefill_cache(
     for index in range(len(original_k)):
         k_bits, v_bits = _layer_bits(config, index)
         source = pre_keys[index][0] if config["rope"] == "pre" else original_k[index][0]
-        k_params = calibrated.get("key", [None] * len(original_k))[index]
+        k_params = _layer_params(calibrated, "key", index, k_bits)
         k_hat, bad_k = _quantize(source, k_bits, config["key_mode"], k_params)
         if config["rope"] == "pre":
             k_hat = _rotate_key(model, k_hat, positions)
-        v_params = calibrated.get("value", [None] * len(original_k))[index]
+        v_params = _layer_params(calibrated, "value", index, v_bits)
         v_hat, bad_v = _quantize(
             original_v[index][0], v_bits, config["value_mode"], v_params
         )
@@ -272,12 +291,12 @@ def _decode_step(
         query, key_pre, value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
         query, key_post = apply_rope(query, key_pre, cos, sin)
         source = key_pre[0] if config["rope"] == "pre" else key_post[0]
-        k_params = calibrated.get("key", [None] * len(keys))[index]
+        k_params = _layer_params(calibrated, "key", index, k_bits)
         k_hat, bad_k = _quantize(source, k_bits, config["key_mode"], k_params)
         if config["rope"] == "pre":
             _, rotated = apply_rope(k_hat.unsqueeze(0), k_hat.unsqueeze(0), cos, sin)
             k_hat = rotated[0]
-        v_params = calibrated.get("value", [None] * len(keys))[index]
+        v_params = _layer_params(calibrated, "value", index, v_bits)
         v_hat, bad_v = _quantize(value[0], v_bits, config["value_mode"], v_params)
         invalid += bad_k + bad_v
         if h_bits:

@@ -11,7 +11,9 @@ import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.quantized_generation import _config, _decode_step, _prefill_cache
+from experiments.generation_error_sources.code.quantized_generation import (
+    _calibration, _config, _decode_step, _prefill_cache,
+)
 from phase1.representation import MODELS, _load_c_items, _render_gsm
 from phase1.runner import cache_lists, decode_step, load_model, prefill
 
@@ -24,10 +26,12 @@ def _kl(reference: torch.Tensor, candidate: torch.Tensor) -> float:
 
 def _candidate_logits(
     model: Any, ids: torch.Tensor, token: int,
-    config: dict[str, Any], residual_h: int,
+    config: dict[str, Any], residual_h: int, calibrated: dict[str, Any] | None = None,
 ) -> tuple[torch.Tensor | None, int]:
+    """用同一全层分配取末位 logits，离线参数来自冻结 C。"""
+    calibrated = calibrated or {}
     first, keys, values, read_keys, read_values, invalid = _prefill_cache(
-        model, ids, config, {}, 1, residual_h
+        model, ids, config, calibrated, 1, residual_h
     )
     if first != token:
         raise RuntimeError("候选与高精度的第一个生成 token 不一致")
@@ -42,7 +46,7 @@ def _candidate_logits(
     try:
         _next, bad = _decode_step(
             model, keys, values, read_keys, read_values,
-            token, int(ids.shape[1]), config, {}, residual_h,
+            token, int(ids.shape[1]), config, calibrated, residual_h,
         )
     finally:
         hook.remove()
@@ -54,13 +58,15 @@ def _candidate_logits(
 
 
 def run(model_key: str, commit: str) -> None:
+    """在冻结 C 上复核全层分配，按检索 KL 决定 V 的准入路线。"""
     root = project_root()
     folder = root / "research/phase1/experiments/static_layer_allocation/results" / model_key
     allocations = json.loads((folder / "allocations.json").read_text("utf-8"))
     selected_name = allocations["representation"]
     base = _config(selected_name)
-    if base["key_mode"] != "per_token" or base["value_mode"] != "per_token":
-        raise RuntimeError("当前静态层分配门槛实现需要在线逐 token 的 K/V 轴")
+    calibrated = _calibration(root, model_key, {
+        **base, "layer_bits": [{"k": 4, "v": 4}, {"k": 8, "v": 8}],
+    })
     residual_h = int(allocations["residual_bits"])
     names = [
         "p50_sensitivity", "p50_reconstruction", "p50_inverse",
@@ -113,7 +119,7 @@ def run(model_key: str, commit: str) -> None:
             for name, spec in specs.items():
                 config = {**base, "layer_bits": spec["layer_bits"]}
                 candidate, bad = _candidate_logits(
-                    model, ids, token, config, residual_h
+                    model, ids, token, config, residual_h, calibrated
                 )
                 kl[name] = None if candidate is None else _kl(reference, candidate)
                 invalid[name] = bad
@@ -158,6 +164,7 @@ def run(model_key: str, commit: str) -> None:
         "protocol": "phase1-full-key-retrieval", "commit": commit,
         "model": model_key, "allocation_commit": allocations["commit"],
         "allocation_digest": allocation_digest,
+        "calibration_commit": calibrated.get("commit"),
         "counts": {"math": 64, "retrieval": 32},
         "mean_next_token_kl": means,
         "sensitivity_strictly_below_all_random": gate_passes,

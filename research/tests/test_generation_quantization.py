@@ -1,15 +1,47 @@
 """真实生成与误差来源快速假量化与已核验的通用分组实现保持数值一致。"""
 
 import unittest
+from pathlib import Path
+from unittest.mock import patch
 
 import torch
 
 from kvstudy.groups import fit_per_channel, quantize_per_channel, quantize_per_token
-from experiments.generation_error_sources.code.quantized_generation import RESIDUAL_TOKENS, _quantize, _write_residual_token
+from experiments.generation_error_sources.code.quantized_generation import (
+    RESIDUAL_TOKENS, _calibration, _config, _layer_params, _quantize, _write_residual_token,
+)
 
 
 class E2QuantTest(unittest.TestCase):
     """检查真实生成与误差来源快速路径的还原值和无效组计数。"""
+
+    def test_mixed_offline_uses_each_bit_width_calibration(self) -> None:
+        """混合 INT4/INT8 的 pre/post 轴必须与分别校准的通用还原值一致。"""
+        values = torch.linspace(-2, 2, 128).reshape(1, 1, 128)
+        params = {bits: fit_per_channel(values, bits) for bits in (4, 8)}
+        for rope in ("pre", "post"):
+            config = _config(f"k8v4-per_channel-{rope}")
+            config["layer_bits"] = [{"k": 4, "v": 4}, {"k": 8, "v": 4}]
+            payload = {
+                "protocol": "phase1-full-key-retrieval", "commit": "calibration",
+                "ids": ["math", "synth-c-0"],
+                "params": {f"k_{rope}{bits}": [params[bits], params[bits]]
+                           for bits in (4, 8)},
+            }
+            with patch("torch.load", return_value=payload), patch(
+                "pathlib.Path.read_text",
+                side_effect=['{"c": [{"id": "math"}]}', '[{"id": "synth-c-0"}]'],
+            ):
+                calibrated = _calibration(Path("unused"), "qwen", config, device="cpu")
+            for layer, bits in enumerate((4, 8)):
+                selected = _layer_params(calibrated, "key", layer, bits)
+                restored, bad = _quantize(values * 0.71, bits, "per_channel", selected)
+                expected, stats = quantize_per_channel(values * 0.71, bits, *params[bits])
+                self.assertTrue(torch.equal(restored, expected))
+                self.assertEqual(int(bad), stats.invalid_groups)
+            with self.assertRaises(KeyError):
+                _layer_params(calibrated, "key", 0, 2)
+            self.assertIsNone(_layer_params(calibrated, "value", 0, 4))
 
     def test_per_token_matches_shared_implementation(self) -> None:
         """含普通组和非有限组的 INT4/INT8 结果逐位相同。"""

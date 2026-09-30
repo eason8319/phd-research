@@ -12,12 +12,15 @@ from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
 from experiments.generation_error_sources.code.short_baseline import MODELS, _eos_ids
-from experiments.generation_error_sources.code.quantized_generation import MAX_CONTEXT, _config, _generate, _ids_and_source, _inputs
+from experiments.generation_error_sources.code.quantized_generation import (
+    MAX_CONTEXT, _calibration, _config, _generate, _ids_and_source, _inputs,
+)
 from phase1.runner import load_model
 from phase1.score import answer_exact, gsm8k_exact, token_f1
 
 
 def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
+    """在冻结 V 上运行已准入的分配，离线轴按实际层位宽读取 C 校准。"""
     if task not in ("gsm8k", "hotpot"):
         raise ValueError("静态层分配 V 只运行基线达标的短题和长问答单元")
     root = project_root()
@@ -32,8 +35,7 @@ def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
         **_config(allocations["representation"]),
         "layer_bits": spec["layer_bits"],
     }
-    if config["key_mode"] != "per_token" or config["value_mode"] != "per_token":
-        raise RuntimeError("当前静态层生成实现需要在线逐 token 的 K/V 轴")
+    calibrated = _calibration(root, model_key, config)
     residual_h = int(allocations["residual_bits"])
     items = _inputs(root, model_key, task, "v")
     if len(items) != 64:
@@ -74,7 +76,7 @@ def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
             raise RuntimeError(f"输入超出窗口：{item['id']}")
         with torch.inference_mode():
             produced, stop, invalid = _generate(
-                model, ids, eos, limit, config, {}, residual_h
+                model, ids, eos, limit, config, calibrated, residual_h
             )
         prediction = tokenizer.decode(produced, skip_special_tokens=True)
         row: dict[str, Any] = {
@@ -102,6 +104,7 @@ def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
         "gate_commit": gate["commit"],
         "allocation_digest": digest,
         "representation": allocations["representation"],
+        "calibration_commit": calibrated.get("commit"),
         "residual_bits": residual_h,
         "task": f"v-{task}", "n": len(rows), "rows": rows,
         "invalid_samples": sum(row["invalid_groups"] > 0 for row in rows),
