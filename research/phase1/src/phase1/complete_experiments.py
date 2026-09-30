@@ -154,9 +154,13 @@ class ExperimentCompletion:
         name = selection["e3_representation"]
         h = selection["e3_residual_bits"]
         allocations = folder / "allocations.json"
-        reuse = allocations.exists() and (
+        probe_path = folder / "probe.json"
+        gate_path = folder / "gate.json"
+        reuse = allocations.exists() and probe_path.exists() and gate_path.exists() and (
             _read(allocations)["representation"] == name
             and _read(allocations)["residual_bits"] == h
+            and _read(probe_path)["selected_representation"] == name
+            and _read(gate_path)["allocation_commit"] == _read(allocations)["commit"]
         )
         if not reuse:
             self._run(f"{ALLOCATION}.probe", model, name, self.commit)

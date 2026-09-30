@@ -81,3 +81,9 @@ $$
 原始结果固定在 Git 提交 `52068a6a14ecbbb182f39ca42d62245a0325cf2a`：环境冒烟来源为该提交的 `research/phase1/results/m0/device.json`、`qwen.json`、`llama.json`；正确性来源为该提交的 `research/phase1/results/e0/quant.json`、`model.json`。这些是历史来源路径，原始协议字段、执行提交和完整数值可按该提交复查；一次性预备代码、结果和报告已清理，不作为当前实验入口。
 
 上述证据只确认指定环境的运行与实现准入，不代表任务质量、长上下文迁移或服务性能通过。单次时延和峰值不外推到其他设备。模型、软件或共享注意力／量化实现发生影响正确性的变化时，在项目运行目录重新核对受影响的准入；长期回归测试保留在 `research/tests/`。
+
+## 离线混合位宽实现核验
+
+2026-09-30 核验执行提交 `c3a2db2ce73ab6316741eaf011d096f0270c6ff3`。在 `node7` 的 RTX 4090 上，74 项长期回归测试全部通过；两模型的 pre／post-RoPE、在线／离线 K8V4 共 8 个短输入对照与整理前实现生成相同 token。4 个离线混合 INT4／INT8 对照使用实际层位宽的全部 C 参数，有效 KV 和生成 token 与手动逐层选择正确参数的参考逐值一致，全层门槛 logits 为有限值。原有量化、生成与 FP32 注意力数值函数的语法树核对通过，忽略文档字符串和异常文字，未改变数值运算。
+
+这次只验证短输入实现与位宽参数选择，不构成 RTX 4090 的 32K 运行准入，也不构成任务质量结论。正式补测仍使用已准入的 `node8`、RTX 6000 Ada；加载模型前等待所分配 GPU 至少有 40 GiB 空闲显存，不缩短上下文或样本。临时核验结果 SHA256 为 `32f8014ea82fb93c758ad6f1b2766d189476ea2f46c0f30b4b3107f85d80392c`；审核后按一次性检查规则清理。持续回归见 `research/tests/test_generation_quantization.py`，中断依赖保护见 `research/tests/test_experiment_completion.py`。
