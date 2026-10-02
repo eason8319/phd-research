@@ -12,25 +12,45 @@
     "historical_records_rewritten": false,
     "active_completion": {
       "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-      "slurm_job_id": "20722",
-      "status": "waiting_gpu_memory",
+      "slurm_job_id": "20976",
+      "status": "queued_for_resume",
       "node": "node8",
       "allocated_gpu": "NVIDIA RTX 6000 Ada Generation",
-      "checked_at_utc": "2026-09-30T14:10:11.092180+00:00",
+      "checked_at_utc": "2026-10-02T06:51:22Z",
       "required_free_bytes": 42949672960,
-      "measured_free_bytes": 4451467264,
       "missing_generation_cells": {
         "qwen": 6,
         "llama": 4
       },
       "planned_generation_samples": 640,
-      "launcher_path": "research/.runtime/representation_completion-6abde3269299475a21d6b2d566e26dc9927fb70a.sh",
+      "launcher_path": "research/.runtime/representation_completion_resume-6abde3269299475a21d6b2d566e26dc9927fb70a.sh",
       "publication_index_path": "research/.runtime/phase1-completion-publication-6abde3269299475a21d6b2d566e26dc9927fb70a.json",
       "progress_path": "research/.runtime/phase1-completion-6abde3269299475a21d6b2d566e26dc9927fb70a.json",
       "resource_status_path": "research/.runtime/phase1-completion-resource-6abde3269299475a21d6b2d566e26dc9927fb70a.json",
       "downstream": "补齐共同候选后重选；表示或残留变化时重跑依赖的诊断、层分配和扩样；最终重算成本。",
       "formal_results_returned": false,
-      "reports_updated": false
+      "reports_updated": false,
+      "resume_publication_path": "research/.runtime/phase1-completion-resume-publication-6abde3269299475a21d6b2d566e26dc9927fb70a.json",
+      "original_failed_job_id": "20722",
+      "original_job_failed_at": "2026-10-01T18:44:42+08:00",
+      "failure_reason": "Qwen HotpotQA 扩样模型前向显存耗尽；日志显示同时有其他进程占用同一 GPU。",
+      "resume_step": "Qwen HotpotQA 最终候选由 64 扩到 128 题",
+      "completed_missing_generation_cells": {
+        "qwen": 6,
+        "llama": 0
+      },
+      "remaining_missing_generation_cells": {
+        "qwen": 0,
+        "llama": 4
+      },
+      "qwen_completed_stages": [
+        "四种共同候选 H=0",
+        "选定表示 H=8/16 残留",
+        "配对轨迹与长解码边界",
+        "静态层分配 C/V",
+        "GSM8K 扩到 128 题的候选及随机配置追加评分；下一轮判定尚待问答扩样"
+      ],
+      "memory_retry_limit": 16
     }
   },
   "numeric_audit": {
