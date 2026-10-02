@@ -12,11 +12,11 @@
     "historical_records_rewritten": false,
     "active_completion": {
       "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-      "slurm_job_id": "20976",
-      "status": "cancelled_by_user",
+      "slurm_job_id": "20986",
+      "status": "waiting_gpu_memory",
       "node": "node8",
       "allocated_gpu": "NVIDIA RTX 6000 Ada Generation",
-      "checked_at_utc": "2026-10-02T06:51:22Z",
+      "checked_at_utc": "2026-10-02T07:02:04.522191+00:00",
       "required_free_bytes": 42949672960,
       "missing_generation_cells": {
         "qwen": 6,
@@ -51,10 +51,21 @@
         "GSM8K 扩到 128 题的候选及随机配置追加评分；下一轮判定尚待问答扩样"
       ],
       "memory_retry_limit": 16,
-      "cancellation_confirmed": true,
-      "cancellation_reason": "用户取消已提交作业，后续统一按指定交互式 srun 在第八节点运行。",
       "execution_mode_reference": "docs/server-access.md#计算节点执行方式",
-      "automatic_retry_active": false
+      "automatic_retry_active": true,
+      "cancelled_batch_submission": {
+        "job_id": "20976",
+        "cancelled": true,
+        "reason": "用户取消已提交作业，后续统一按指定交互式 srun 在第八节点运行。"
+      },
+      "execution_mode": "interactive_srun",
+      "unified_exec_session_id": 15659,
+      "selected_gpu_index": 1,
+      "selected_gpu_uuid": "GPU-a1fda54b-81c3-580d-4112-e67a6647ab55",
+      "measured_free_bytes": 28094496768,
+      "interactive_log_path": "research/.runtime/representation_completion_interactive-20986.log",
+      "attempt_log_pattern": "research/.runtime/representation_completion_resume-20986-attempt*.log",
+      "measurements_started_in_current_session": false
     }
   },
   "numeric_audit": {
