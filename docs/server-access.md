@@ -43,6 +43,16 @@ srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[8] --pty /bin/bash
 
 进入节点后核对实际 GPU 与可用显存，使用项目内冻结运行环境。实验继续保持每次一个模型、一个进程，并保留逐题恢复进度。会话结束后按实际状态记录中断或完成，不将排队、获得 shell 或启动进程记为实验完成。
 
+长时间等待显存或运行实验时，在服务器端的持久交互终端中执行上述 `srun`，以便本地 SSH 连接结束后继续运行。使用 `tmux` 时，将其显式配置文件和套接字放在本项目的 `research/.runtime/` 内；计算节点 shell 仍须先进入项目根目录。启动后通过另一条连接确认终端存活、等待日志持续更新，再记为自动等待或执行。
+
+当前补测的持久终端名为 `phase1-completion-node8`，套接字为 `research/.runtime/phase1-completion.tmux.sock`。按连接命令进入项目根目录后，可用以下命令接回该终端：
+
+```bash
+tmux -S /cluster/home/zengy/phd-research/research/.runtime/phase1-completion.tmux.sock attach -t phase1-completion-node8
+```
+
+接回终端后，`Ctrl+b` 再按 `d` 可脱离终端并保持服务器进程运行。不要在等待或实验前台运行时退出计算节点 shell；重启前先确认当前交互分配与进程是否仍存活，避免重复运行。
+
 ## 连接失败时
 
 - **无法识别主机别名**：使用上述命令，确保传入显式的 SSH 配置路径；不要执行 `ssh zengy`。

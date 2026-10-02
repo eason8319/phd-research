@@ -12,11 +12,11 @@
     "historical_records_rewritten": false,
     "active_completion": {
       "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-      "slurm_job_id": "20986",
+      "slurm_job_id": "20987",
       "status": "waiting_gpu_memory",
       "node": "node8",
       "allocated_gpu": "NVIDIA RTX 6000 Ada Generation",
-      "checked_at_utc": "2026-10-02T07:02:04.522191+00:00",
+      "checked_at_utc": "2026-10-02T08:19:51.822451+00:00",
       "required_free_bytes": 42949672960,
       "missing_generation_cells": {
         "qwen": 6,
@@ -59,13 +59,28 @@
         "reason": "用户取消已提交作业，后续统一按指定交互式 srun 在第八节点运行。"
       },
       "execution_mode": "interactive_srun",
-      "unified_exec_session_id": 15659,
-      "selected_gpu_index": 1,
-      "selected_gpu_uuid": "GPU-a1fda54b-81c3-580d-4112-e67a6647ab55",
-      "measured_free_bytes": 28094496768,
-      "interactive_log_path": "research/.runtime/representation_completion_interactive-20986.log",
-      "attempt_log_pattern": "research/.runtime/representation_completion_resume-20986-attempt*.log",
-      "measurements_started_in_current_session": false
+      "terminal_persistence": "server_tmux",
+      "tmux_session": "phase1-completion-node8",
+      "tmux_socket_path": "research/.runtime/phase1-completion.tmux.sock",
+      "tmux_config_path": "research/.runtime/phase1-completion-tmux.conf",
+      "connection_independent_verified": true,
+      "selected_gpu_index": 0,
+      "selected_gpu_uuid": "GPU-6a42cade-6910-bdd4-4103-1c33d47381a6",
+      "measured_free_bytes": 33047969792,
+      "interactive_log_path": "research/.runtime/representation_completion_interactive-20987.log",
+      "attempt_log_pattern": "research/.runtime/representation_completion_resume-20987-attempt*.log",
+      "measurements_started_in_current_session": false,
+      "previous_interactive_session": {
+        "job_id": "20986",
+        "unified_exec_session_id": 15659,
+        "state": "FAILED",
+        "exit_code": "0:9",
+        "ended_at": "2026-10-02T15:24:23+08:00",
+        "last_waiting_check_utc": "2026-10-02T07:24:04.564028+00:00",
+        "measurements_started": false,
+        "termination_source": "unknown",
+        "replacement_job_id": "20987"
+      }
     }
   },
   "numeric_audit": {
