@@ -31,6 +31,18 @@ ssh -F C:\Users\User\.ssh\config -i C:\Users\User\.ssh\id_ecdsa_zengy -o Identit
 
 这条命令只设置初始目录，不提供操作系统级隔离；后续命令仍须遵守 `AGENTS.md` 和 `.cursor/rules/workspace-isolation.mdc`，不得访问其他项目、父目录或聊天记录。
 
+## 计算节点执行方式
+
+按用户 2026-10-02 的要求，实验、实现核验和 GPU 资源检查统一通过下面的交互式命令进入第八节点，不再提交 `sbatch` 批处理作业，也不改用其他节点：
+
+```bash
+srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[8] --pty /bin/bash
+```
+
+从 Windows 连接时，在上面的 SSH 选项中加 `-tt`，并使用支持终端交互的会话。远程命令仍先执行 `cd /cluster/home/zengy/phd-research || exit 1`，然后执行上述 `srun`。进入计算节点 shell 后，在任何检查或实验之前再次执行 `cd /cluster/home/zengy/phd-research || exit 1`；全部后续操作留在项目树内。
+
+进入节点后核对实际 GPU 与可用显存，使用项目内冻结运行环境。实验继续保持每次一个模型、一个进程，并保留逐题恢复进度。会话结束后按实际状态记录中断或完成，不将排队、获得 shell 或启动进程记为实验完成。
+
 ## 连接失败时
 
 - **无法识别主机别名**：使用上述命令，确保传入显式的 SSH 配置路径；不要执行 `ssh zengy`。

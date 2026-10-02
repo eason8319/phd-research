@@ -13,7 +13,7 @@
     "active_completion": {
       "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
       "slurm_job_id": "20976",
-      "status": "queued_for_resume",
+      "status": "cancelled_by_user",
       "node": "node8",
       "allocated_gpu": "NVIDIA RTX 6000 Ada Generation",
       "checked_at_utc": "2026-10-02T06:51:22Z",
@@ -50,7 +50,11 @@
         "静态层分配 C/V",
         "GSM8K 扩到 128 题的候选及随机配置追加评分；下一轮判定尚待问答扩样"
       ],
-      "memory_retry_limit": 16
+      "memory_retry_limit": 16,
+      "cancellation_confirmed": true,
+      "cancellation_reason": "用户取消已提交作业，后续统一按指定交互式 srun 在第八节点运行。",
+      "execution_mode_reference": "docs/server-access.md#计算节点执行方式",
+      "automatic_retry_active": false
     }
   },
   "numeric_audit": {

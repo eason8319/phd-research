@@ -30,4 +30,5 @@ alwaysApply: true
 - 不纳入 Git：根目录 `models/`，以及服务器 `research/.runtime/`（运行环境、缓存、临时文件、一次性测试）。
 - 资源和输出路径从项目根解析。配置使用项目相对路径。
 - 代码发布、结果回传和 GitHub 同步是独立操作。明确要求云同步时，按 `AGENTS.md` 执行。服务器连接使用 `docs/server-access.md` 的 `ssh` 命令，每次先进入服务器项目根目录。不新增连接脚本，不复制或读取私钥。
+- 服务器的实验、实现核验和 GPU 资源检查统一使用 `docs/server-access.md`「计算节点执行方式」中的交互式 `srun` 命令，在第八节点运行。不提交 `sbatch` 批处理作业，不改用其他节点；进入计算节点 shell 后仍先进入项目根目录。
 - 代码与注释格式见 `experiment-code.mdc`。报告结构见 `experiment-reports.mdc`。
