@@ -42,6 +42,14 @@ def _verify_code(root: Path, path: str, checksum: str, commit: str) -> None:
         raise RuntimeError("历史执行源码与已登记校验值不一致：" + path)
 
 
+def _question_mean(values: list[float]) -> float:
+    """复现执行环境 Python 3.11 的逐项 FP64 累加，避免版本改变 sum 的舍入。"""
+    total = 0.0
+    for value in values:
+        total += value
+    return total / len(values)
+
+
 def _probe_summary(samples: list[dict[str, Any]], layers: int) -> dict[str, Any]:
     subsets = {}
     ranks = {}
@@ -58,7 +66,7 @@ def _probe_summary(samples: list[dict[str, Any]], layers: int) -> dict[str, Any]
             for metric in ("sensitivity", "reconstruction", "k8v4_error", "k4v4_error"):
                 defined = [value[metric] for value in measured if value[metric] is not None]
                 row[metric] = (
-                    sum(defined) / len(defined) if defined and not row["invalid_groups"] else None
+                    _question_mean(defined) if defined and not row["invalid_groups"] else None
                 )
                 row[metric + "_valid_questions"] = len(defined)
             rows.append(row)
@@ -146,6 +154,9 @@ def review_model(root: Path, model_key: str, plan: dict[str, Any]) -> dict[str, 
                     if row[metric] is not None and (
                             not math.isfinite(row[metric]) or row[metric] < 0):
                         raise RuntimeError("探针误差不是非负有限数")
+                if format_spec["residual_bits"] and sample["input_tokens"] + 1 <= 128:
+                    _assert_equal(row["sensitivity"], 0.0, "fully residual local change")
+                    _assert_equal(row["k8v4_error"], row["k4v4_error"], "same residual output")
         for key, recomputed in _probe_summary(samples, layers).items():
             _assert_equal(measured[key], recomputed, "probe " + key)
         choices, permutations = build_choices(
@@ -211,6 +222,10 @@ def review_model(root: Path, model_key: str, plan: dict[str, Any]) -> dict[str, 
             _assert_equal(row["invalid_groups"][name], 0, "invalid candidate groups")
         for alias, name in duplicates.items():
             _assert_equal(row["kl"][alias], row["kl"][name], "reused configuration")
+        if row["kind"] == "math" and row["input_tokens"] + 1 <= 128:
+            values = {value for name, value in row["kl"].items()
+                      if name.startswith("offline_pre_")}
+            _assert_equal(len(values), 1, "fully residual full-layer invariance")
     _assert_equal(len(gate["rows"]), len(identities), "gate rows")
     for name, value in distribution_summary(
             gate["rows"], allocation["formats"], seeds).items():
@@ -309,4 +324,3 @@ def run() -> None:
 if __name__ == "__main__":
     argparse.ArgumentParser(description=__doc__).parse_args()
     run()
-

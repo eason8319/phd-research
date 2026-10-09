@@ -65,7 +65,7 @@ def _layer_cost(experiment) -> None:
              "Source: probe.json, reviewed full C | Common high-precision output denominator"
              " | Equal weight per question",
              ha="center", fontsize=8)
-    fig.tight_layout(rect=(0, 0.025, 1, 0.9))
+    fig.tight_layout(rect=(0, 0.025, 1, 0.99))
     fig.savefig(experiment / "report/key_downgrade_layers.png", dpi=200)
     plt.close(fig)
 
@@ -111,7 +111,7 @@ def _budget_kl(experiment) -> None:
              "Source: gate.json, reviewed full C | Retrieval: 32 questions"
              " | Common BF16 first token, one decode | r=0: same-format K8V4",
              ha="center", fontsize=8)
-    fig.tight_layout(rect=(0, 0.025, 1, 0.87))
+    fig.tight_layout(rect=(0, 0.025, 1, 0.96))
     fig.savefig(experiment / "report/key_budget_kl.png", dpi=200)
     plt.close(fig)
 
@@ -127,4 +127,3 @@ def run() -> None:
 
 if __name__ == "__main__":
     run()
-

@@ -6,7 +6,7 @@
     "current_rule_reference": "research/phase1/guide.md",
     "representation_interactions": "两模型四种K8V4的局部主矩阵与配对传播测量齐备；历史kept字段保持原运行含义。",
     "generation_error_sources": "历史候选覆盖。当前四种K8V4中，Qwen已测1种、缺3种；Llama已测2种、缺2种。",
-    "static_layer_allocation": "层分配、扩大质量样本与最终选择依赖历史生成选择；当前四候选补齐后须重新判断。",
+    "static_layer_allocation": "两模型三格式的局部降位宽测量、三个预算及六策略的冻结位宽表、完整成本、全层 KL 和数值核验已完成并审核；开发生成筛选与 V 计划尚未冻结。旧 C/V 与扩样结果由 static_key_allocation.superseded_results 追溯。",
     "storage_service_cost": "现有布局计数对应历史候选；不能作为当前四候选全部完成质量与成本验证的证据。",
     "new_candidate_set_fully_measured": false,
     "historical_records_rewritten": false,
@@ -567,286 +567,6 @@
       "raw_record_unchanged": true
     },
     {
-      "historical_path": "research/phase1/results/e3/llama/allocations.json",
-      "historical_sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json",
-      "current_sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
-      "execution_commit": "be4fea3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/gate.json",
-      "historical_sha256": "c6e0f1352623cb57d9f5d3d6f9792195954cd03b5ad9bb91157c4612fcaf8b26",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/gate.json",
-      "current_sha256": "c6e0f1352623cb57d9f5d3d6f9792195954cd03b5ad9bb91157c4612fcaf8b26",
-      "execution_commit": "e860b42",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/probe.json",
-      "historical_sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/probe.json",
-      "current_sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
-      "execution_commit": "7f05519",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/selection.json",
-      "historical_sha256": "3ee260fd6fbe17da927823f804c86cbf824b7cdfd4f7e9e925835308cd861026",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/selection.json",
-      "current_sha256": "3ee260fd6fbe17da927823f804c86cbf824b7cdfd4f7e9e925835308cd861026",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_inverse.json",
-      "historical_sha256": "7752776ef3db4d4826c403d17312547f9755dba2d76eca8a36762dccd1bfc7d0",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_inverse.json",
-      "current_sha256": "7752776ef3db4d4826c403d17312547f9755dba2d76eca8a36762dccd1bfc7d0",
-      "execution_commit": "5611f3d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609231.json",
-      "historical_sha256": "0b9fb86391411070a6205ee8d36d4f270bed5400bb1d4b233eee30bb2b182822",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609231.json",
-      "current_sha256": "0b9fb86391411070a6205ee8d36d4f270bed5400bb1d4b233eee30bb2b182822",
-      "execution_commit": "5611f3d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609232.json",
-      "historical_sha256": "6bf73d686e57121af8de27c5b0ab449ae89b783159dc938d197e3f5fe9eda8fe",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609232.json",
-      "current_sha256": "6bf73d686e57121af8de27c5b0ab449ae89b783159dc938d197e3f5fe9eda8fe",
-      "execution_commit": "5611f3d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609233.json",
-      "historical_sha256": "d1c1fe083432f1714b3eee7c489b9635949ca5a994668122a6c81d55d5147650",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609233.json",
-      "current_sha256": "d1c1fe083432f1714b3eee7c489b9635949ca5a994668122a6c81d55d5147650",
-      "execution_commit": "5611f3d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_reconstruction.json",
-      "historical_sha256": "1d78a8c9863e200182751925ba747948b8e778ffb3d2026eba2c4718aab03905",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_reconstruction.json",
-      "current_sha256": "1d78a8c9863e200182751925ba747948b8e778ffb3d2026eba2c4718aab03905",
-      "execution_commit": "5611f3d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_inverse.json",
-      "historical_sha256": "2ee8d756f8a9fb65f04f6ca0ede3acfad0d40441a8db5cc6807bd84ff030d9fd",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_inverse.json",
-      "current_sha256": "2ee8d756f8a9fb65f04f6ca0ede3acfad0d40441a8db5cc6807bd84ff030d9fd",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609231.json",
-      "historical_sha256": "fa02fb114eaa16de5ac4d705bc31b0e825c45c0295a1412579c83b9ade8a920b",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609231.json",
-      "current_sha256": "fa02fb114eaa16de5ac4d705bc31b0e825c45c0295a1412579c83b9ade8a920b",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609232.json",
-      "historical_sha256": "6a1ac3c6c5de3db433c484ec33141d2b63329445c9154ce5a56d6eaba64055b6",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609232.json",
-      "current_sha256": "6a1ac3c6c5de3db433c484ec33141d2b63329445c9154ce5a56d6eaba64055b6",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609233.json",
-      "historical_sha256": "4c32b1742a78d25ae567867d06908154c8c284298726c2467af7f4ea20f5e0f7",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609233.json",
-      "current_sha256": "4c32b1742a78d25ae567867d06908154c8c284298726c2467af7f4ea20f5e0f7",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_reconstruction.json",
-      "historical_sha256": "bc389f5776e91e94a7ca1b1b9542e9113e213c2ceddebe40007950cce9b2c40b",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_reconstruction.json",
-      "current_sha256": "bc389f5776e91e94a7ca1b1b9542e9113e213c2ceddebe40007950cce9b2c40b",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/allocations.json",
-      "historical_sha256": "60ef3b8311fe0bde93b43b63dd5da40188ddd756e0eedf013fa42ffe3eb9ddae",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json",
-      "current_sha256": "60ef3b8311fe0bde93b43b63dd5da40188ddd756e0eedf013fa42ffe3eb9ddae",
-      "execution_commit": "80d6c07",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/gate.json",
-      "historical_sha256": "46fea897d702908dda1e0126d8a2b3e481d1f455d65a1c329a9ef02aab02223e",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json",
-      "current_sha256": "46fea897d702908dda1e0126d8a2b3e481d1f455d65a1c329a9ef02aab02223e",
-      "execution_commit": "2ccd43a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/probe.json",
-      "historical_sha256": "e5077057fe5377eb836028a7b411d631ed456e9590cfab2a0d601b8d4c56b7c8",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json",
-      "current_sha256": "e5077057fe5377eb836028a7b411d631ed456e9590cfab2a0d601b8d4c56b7c8",
-      "execution_commit": "461506e",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/selection.json",
-      "historical_sha256": "f0b9200a1aaa05f99d0c9bd70c68bbfa6b0196fd1a3b1dea8e41a3666feeecd8",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/selection.json",
-      "current_sha256": "f0b9200a1aaa05f99d0c9bd70c68bbfa6b0196fd1a3b1dea8e41a3666feeecd8",
-      "execution_commit": "989874d",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_inverse.json",
-      "historical_sha256": "30a26222fafde63ae95f8a929ab6f6e308c2da1c32913a436665d66c261578cc",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_inverse.json",
-      "current_sha256": "30a26222fafde63ae95f8a929ab6f6e308c2da1c32913a436665d66c261578cc",
-      "execution_commit": "99f0363",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609231.json",
-      "historical_sha256": "1e828c9e475cde16fac7a09b2175b58029e8d739e9b8111de58295589521103a",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609231.json",
-      "current_sha256": "1e828c9e475cde16fac7a09b2175b58029e8d739e9b8111de58295589521103a",
-      "execution_commit": "99f0363",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609232.json",
-      "historical_sha256": "249d7ab8db23820cb5862282682387fb88488bdf575e7b190a65fcc75a4849ff",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609232.json",
-      "current_sha256": "249d7ab8db23820cb5862282682387fb88488bdf575e7b190a65fcc75a4849ff",
-      "execution_commit": "99f0363",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609233.json",
-      "historical_sha256": "0fb88d280f6d7e0dce029c9f3a150f8e0129abf460e02883e6dd046905fca886",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609233.json",
-      "current_sha256": "0fb88d280f6d7e0dce029c9f3a150f8e0129abf460e02883e6dd046905fca886",
-      "execution_commit": "99f0363",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_sensitivity.json",
-      "historical_sha256": "281ade72a35d6dde9f07f7f627fba37a6aa2a48b603eaad9e4f2322bec59c8f5",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_sensitivity.json",
-      "current_sha256": "281ade72a35d6dde9f07f7f627fba37a6aa2a48b603eaad9e4f2322bec59c8f5",
-      "execution_commit": "99f0363",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_inverse.json",
-      "historical_sha256": "8dee2e18cea58d2d244c9e248888440bdf5a425b72f49afd8ee17b474f0dd442",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_inverse.json",
-      "current_sha256": "8dee2e18cea58d2d244c9e248888440bdf5a425b72f49afd8ee17b474f0dd442",
-      "execution_commit": "78e94d4",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609231.json",
-      "historical_sha256": "a58d7ded0021e791134d1e14c6579e213caa565f0013f51bcd65637aabdc95fb",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609231.json",
-      "current_sha256": "a58d7ded0021e791134d1e14c6579e213caa565f0013f51bcd65637aabdc95fb",
-      "execution_commit": "78e94d4",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609232.json",
-      "historical_sha256": "d991254e4600040b04eb12b5cfd2e53ba389e0a33cac72c3eeaa24c7643ddd13",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609232.json",
-      "current_sha256": "d991254e4600040b04eb12b5cfd2e53ba389e0a33cac72c3eeaa24c7643ddd13",
-      "execution_commit": "78e94d4",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609233.json",
-      "historical_sha256": "6750b6ac84bb0ed7d662698954bbaf50cf1373f6f74bd7c12b9c0eba9ad0a95c",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609233.json",
-      "current_sha256": "6750b6ac84bb0ed7d662698954bbaf50cf1373f6f74bd7c12b9c0eba9ad0a95c",
-      "execution_commit": "78e94d4",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_sensitivity.json",
-      "historical_sha256": "86a7aa47c0e122f3811e4b33c06dbe30f247e8ec0f27ab2972b13dbe990407ec",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_sensitivity.json",
-      "current_sha256": "86a7aa47c0e122f3811e4b33c06dbe30f247e8ec0f27ab2972b13dbe990407ec",
-      "execution_commit": "78e94d4",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
       "historical_path": "research/phase1/results/e4/llama/layout.json",
       "historical_sha256": "e8bee33c2d0a534f796483d8d6784a8479ebf60262c845861e9cfd0a5327a0a7",
       "current_path": "research/phase1/experiments/storage_service_cost/results/llama/layout.json",
@@ -861,356 +581,6 @@
       "historical_sha256": "b31f0afe71085033a457e51ae869bc22aaa517b8a190af193cfcad7a48b1977e",
       "current_path": "research/phase1/experiments/storage_service_cost/results/qwen/layout.json",
       "current_sha256": "b31f0afe71085033a457e51ae869bc22aaa517b8a190af193cfcad7a48b1977e",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_bf16_n128.json",
-      "historical_sha256": "af84836fbac2211c35a5ffd76ef2bd5ae4a8708982f0246f7043bb76e345aec3",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n128.json",
-      "current_sha256": "af84836fbac2211c35a5ffd76ef2bd5ae4a8708982f0246f7043bb76e345aec3",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_bf16_n256.json",
-      "historical_sha256": "d916af167bf635a80f1ec7384a506e5a0e85b4da843dfe7bfa826a6465e9b6ce",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n256.json",
-      "current_sha256": "d916af167bf635a80f1ec7384a506e5a0e85b4da843dfe7bfa826a6465e9b6ce",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_e2_n128.json",
-      "historical_sha256": "0722361f329bc2fb89e9466dfe1010392c590eb3c8af20c9f688dc8abf4b9d55",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n128.json",
-      "current_sha256": "0722361f329bc2fb89e9466dfe1010392c590eb3c8af20c9f688dc8abf4b9d55",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_e2_n256.json",
-      "historical_sha256": "d7bf480ce62835dadfda394db66417a4e12658bd5ce31c2d12a4ad46e03eb91d",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n256.json",
-      "current_sha256": "d7bf480ce62835dadfda394db66417a4e12658bd5ce31c2d12a4ad46e03eb91d",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_kv8_n128.json",
-      "historical_sha256": "d3713258445fd48c90b97fd6cc8b734f7edb38e2e24d99f863f4a44f16917724",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n128.json",
-      "current_sha256": "d3713258445fd48c90b97fd6cc8b734f7edb38e2e24d99f863f4a44f16917724",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/gsm8k_kv8_n256.json",
-      "historical_sha256": "db76cfce6ab7ea8c72ae2252424a97dfda89249ad0b23ec25ed72171ffea5397",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n256.json",
-      "current_sha256": "db76cfce6ab7ea8c72ae2252424a97dfda89249ad0b23ec25ed72171ffea5397",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/hotpot_bf16_n128.json",
-      "historical_sha256": "54c2a3eed01796c9cca949ec666b3c31cd0e9ceb61da1b1362d21bf45caef7d2",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_bf16_n128.json",
-      "current_sha256": "54c2a3eed01796c9cca949ec666b3c31cd0e9ceb61da1b1362d21bf45caef7d2",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/hotpot_e2_n128.json",
-      "historical_sha256": "0e5105f49fbf1ff33ec9d29db7d15494bbaea3fde35b43e6a1e16c6d9bec469b",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_uniform_quantization_n128.json",
-      "current_sha256": "0e5105f49fbf1ff33ec9d29db7d15494bbaea3fde35b43e6a1e16c6d9bec469b",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/hotpot_kv8_n128.json",
-      "historical_sha256": "7fad61cfa9542a6d6a4178560dafb1c6e6baba8257a19116cd53e9902a0f2460",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_kv8_n128.json",
-      "current_sha256": "7fad61cfa9542a6d6a4178560dafb1c6e6baba8257a19116cd53e9902a0f2460",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/llama/selection.json",
-      "historical_sha256": "7ed2b101866d9ea20813fc56434ddb300719aff7c7239fce0f4039a407b24551",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/selection.json",
-      "current_sha256": "7ed2b101866d9ea20813fc56434ddb300719aff7c7239fce0f4039a407b24551",
-      "execution_commit": "e95f6d3",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_bf16_n128.json",
-      "historical_sha256": "01fa56cfae8e6f7b652caa78fc3ce302d653145746662422bd8b3b56b1c4a991",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n128.json",
-      "current_sha256": "01fa56cfae8e6f7b652caa78fc3ce302d653145746662422bd8b3b56b1c4a991",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_bf16_n256.json",
-      "historical_sha256": "c5786a15000faca410f07a5703542756bad03005aef52bc734eb71a5e2c28a63",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n256.json",
-      "current_sha256": "c5786a15000faca410f07a5703542756bad03005aef52bc734eb71a5e2c28a63",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609231_n128.json",
-      "historical_sha256": "b051b89a5cda9d467511ffca63816471d849dcb93976d45c42a9c6b7f555f567",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n128.json",
-      "current_sha256": "b051b89a5cda9d467511ffca63816471d849dcb93976d45c42a9c6b7f555f567",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609231_n256.json",
-      "historical_sha256": "45489d731e26442904276c90eabceedfa5197cf18e47c55e88f3adc672cd11fe",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n256.json",
-      "current_sha256": "45489d731e26442904276c90eabceedfa5197cf18e47c55e88f3adc672cd11fe",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609232_n128.json",
-      "historical_sha256": "97dc6eec097fef5763a3b370203e8447cc8a4650abb4d7c6368be75b9f3248ff",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n128.json",
-      "current_sha256": "97dc6eec097fef5763a3b370203e8447cc8a4650abb4d7c6368be75b9f3248ff",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609232_n256.json",
-      "historical_sha256": "07ae7495bee7bca14fd341d214a2d50400621e145e0a7ae9ff53fc17dc3debdb",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n256.json",
-      "current_sha256": "07ae7495bee7bca14fd341d214a2d50400621e145e0a7ae9ff53fc17dc3debdb",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609233_n128.json",
-      "historical_sha256": "a23cdb4c91eb2098f8731244805a744fa91002adb3e229920a22ac67642fed6c",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n128.json",
-      "current_sha256": "a23cdb4c91eb2098f8731244805a744fa91002adb3e229920a22ac67642fed6c",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609233_n256.json",
-      "historical_sha256": "298dc347551ab93bb15f6831668f08bd6e8c4ffa11c91519d3c2c095ba653a47",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n256.json",
-      "current_sha256": "298dc347551ab93bb15f6831668f08bd6e8c4ffa11c91519d3c2c095ba653a47",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_sensitivity_n128.json",
-      "historical_sha256": "687631093390b0b803a3d5bd89ea9c6cfa79cf9353c1591b89a5f9124c2cb875",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n128.json",
-      "current_sha256": "687631093390b0b803a3d5bd89ea9c6cfa79cf9353c1591b89a5f9124c2cb875",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_sensitivity_n256.json",
-      "historical_sha256": "b518cb392138e0eab963c75287b01397d6cf28b57e7e7f24e33e2248c97b7f3a",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n256.json",
-      "current_sha256": "b518cb392138e0eab963c75287b01397d6cf28b57e7e7f24e33e2248c97b7f3a",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_kv8_n128.json",
-      "historical_sha256": "655af4bf0a5f0dbe7436fe06c48577f80589a04279bf0ae5ef32b6a0820eb5db",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n128.json",
-      "current_sha256": "655af4bf0a5f0dbe7436fe06c48577f80589a04279bf0ae5ef32b6a0820eb5db",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/gsm8k_kv8_n256.json",
-      "historical_sha256": "1c5fc0d1a72da8ef0b474c67ee2db6fc8fcfad0db4f45083e67e8975d1a52742",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n256.json",
-      "current_sha256": "1c5fc0d1a72da8ef0b474c67ee2db6fc8fcfad0db4f45083e67e8975d1a52742",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_bf16_n128.json",
-      "historical_sha256": "e86b094b2c1bf028fa85546442bb555a506e637a931b2d6ed5fb07eb6411efc9",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n128.json",
-      "current_sha256": "e86b094b2c1bf028fa85546442bb555a506e637a931b2d6ed5fb07eb6411efc9",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_bf16_n256.json",
-      "historical_sha256": "4ac7fceee728f1e6b4a71100a5388a39ee93be41352895ff838813c2697edea7",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n256.json",
-      "current_sha256": "4ac7fceee728f1e6b4a71100a5388a39ee93be41352895ff838813c2697edea7",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609231_n128.json",
-      "historical_sha256": "04f89c1cb90949206fa5b19404a1ea302ff97133776058d9f0750526fc8b139b",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n128.json",
-      "current_sha256": "04f89c1cb90949206fa5b19404a1ea302ff97133776058d9f0750526fc8b139b",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609231_n256.json",
-      "historical_sha256": "b3433dc966b39902f1e488afa60dae312d65011d204f21f91ab6895942e37623",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n256.json",
-      "current_sha256": "b3433dc966b39902f1e488afa60dae312d65011d204f21f91ab6895942e37623",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609232_n128.json",
-      "historical_sha256": "6e42edc1c281725e7c3348b144d4ac9e33295ecb2e6dadb4d262a2c3bd8b5189",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n128.json",
-      "current_sha256": "6e42edc1c281725e7c3348b144d4ac9e33295ecb2e6dadb4d262a2c3bd8b5189",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609232_n256.json",
-      "historical_sha256": "7df9d48a018450cfde78433579d689dbdbd1e45c19fc9a2f93ef94c431470b54",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n256.json",
-      "current_sha256": "7df9d48a018450cfde78433579d689dbdbd1e45c19fc9a2f93ef94c431470b54",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609233_n128.json",
-      "historical_sha256": "da20fa2e6b75005a4e9365935f61eacbcebe2db705b77c62eca67c2db58027a8",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n128.json",
-      "current_sha256": "da20fa2e6b75005a4e9365935f61eacbcebe2db705b77c62eca67c2db58027a8",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609233_n256.json",
-      "historical_sha256": "68188ac6c2d07338d8d28d54f48a5d670791f550a368a4845549720eb42baca1",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n256.json",
-      "current_sha256": "68188ac6c2d07338d8d28d54f48a5d670791f550a368a4845549720eb42baca1",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_sensitivity_n128.json",
-      "historical_sha256": "9cbc6e38cbaa7b36a5569bd9c7fca624dbbe19c6528673dc48dc597f87aa3030",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n128.json",
-      "current_sha256": "9cbc6e38cbaa7b36a5569bd9c7fca624dbbe19c6528673dc48dc597f87aa3030",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_sensitivity_n256.json",
-      "historical_sha256": "5586706196a0f53bf1cb3856b4125d5dd8c7006eaa5cd48a6bfb192fc92d6b32",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n256.json",
-      "current_sha256": "5586706196a0f53bf1cb3856b4125d5dd8c7006eaa5cd48a6bfb192fc92d6b32",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_kv8_n128.json",
-      "historical_sha256": "6a88ce642f8fa41e603e766d1a58afb1fd594a3a75e6e977e3b8e13c0b05e373",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n128.json",
-      "current_sha256": "6a88ce642f8fa41e603e766d1a58afb1fd594a3a75e6e977e3b8e13c0b05e373",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/hotpot_kv8_n256.json",
-      "historical_sha256": "3adf3856c4c65c8aea908fb2ccb366d613410f925fe55fe3a8b25e443bad5b0b",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n256.json",
-      "current_sha256": "3adf3856c4c65c8aea908fb2ccb366d613410f925fe55fe3a8b25e443bad5b0b",
-      "execution_commit": "23a395a",
-      "historical_protocol": "phase1-protocol v7",
-      "current_protocol": "phase1-protocol v7",
-      "raw_record_unchanged": true
-    },
-    {
-      "historical_path": "research/phase1/results/f/qwen/selection.json",
-      "historical_sha256": "f75093b67078104e16bb574af0662e0b34651124e45d98edde2afabf99d68080",
-      "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/selection.json",
-      "current_sha256": "f75093b67078104e16bb574af0662e0b34651124e45d98edde2afabf99d68080",
       "execution_commit": "23a395a",
       "historical_protocol": "phase1-protocol v7",
       "current_protocol": "phase1-protocol v7",
@@ -3565,6 +2935,1265 @@
       "historical_protocol": "phase1-protocol v7",
       "current_protocol": "phase1-protocol v7",
       "raw_record_unchanged": true
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json",
+      "current_sha256": "441fd3c03cbdd89fcad8974953dfa6d57d804147d12b4d5bbd86a21b029e0ba6",
+      "bytes": 254884,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "allocations",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/gate.json",
+      "current_sha256": "4096f67cb7d57ee489953cf167e269c40b0b8dc1d7c2dc9e458eeff0bb7e2b35",
+      "bytes": 1473582,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "gate",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/numerical_check.json",
+      "current_sha256": "850e7ccae3b0f2842657ed502d91863c3e92720883fb469d6b60a272853c1cdd",
+      "bytes": 70251,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "0ce3fa14167b3884ae6000197423cc6a7b62df7a",
+      "evidence_role": "numerical_check",
+      "execution_source": "research/.runtime/static-key-allocation/numerical-publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/probe.json",
+      "current_sha256": "b7b17692196c183fc93aae30d5ad1f89f0ee1950870dbe33c90126a0d1cb23d5",
+      "bytes": 3247819,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "probe",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json",
+      "current_sha256": "cee328d31b5fec2bf9fa47b0eae910380b87ff7797925bd6f9c322ca60fb538c",
+      "bytes": 239988,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "allocations",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json",
+      "current_sha256": "2b481da6bf90f435cdc6e1851c47750cc3645b771bc66c26d53cb54b70e3ab6a",
+      "bytes": 1466394,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "gate",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/numerical_check.json",
+      "current_sha256": "4a6183670056411b48b533bd241b7aa236eeb905d8cb613ac3c646d213f023c2",
+      "bytes": 69227,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "0ce3fa14167b3884ae6000197423cc6a7b62df7a",
+      "evidence_role": "numerical_check",
+      "execution_source": "research/.runtime/static-key-allocation/numerical-publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json",
+      "current_sha256": "77378b3808fa13790cfc17b0dcc965d89b1ab28eb99d54a87493fe6f405902b7",
+      "bytes": 2858271,
+      "current_protocol": "phase1-static-key-downgrade",
+      "raw_record_unchanged": true,
+      "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "evidence_role": "probe",
+      "execution_source": "research/.runtime/static-key-allocation/publication.json"
+    },
+    {
+      "current_path": "research/phase1/experiments/static_layer_allocation/results/review.json",
+      "current_sha256": "d74bd9ccd36d99880bbe387ed72e1f55d2c5b6be133bd1c48782b3cd6f136172",
+      "bytes": 15254,
+      "current_protocol": "phase1-static-key-downgrade",
+      "execution_commit": null,
+      "evidence_role": "review",
+      "derived": true,
+      "review_code_sha256": "95f96b20c7b8a3e019a91d91b1f5c6951168c50c4d7eaa2bc89dc83a907cefa4",
+      "execution_source": "local_review",
+      "line_endings": "LF"
     }
-  ]
+  ],
+  "static_key_allocation": {
+    "status": "completed_reviewed",
+    "date": "2026-10-09",
+    "protocol": "phase1-static-key-downgrade",
+    "design": "research/phase1/configs/static_layer_allocation.json",
+    "design_file_sha256": "6774f8b638167cba9778734ca828d71cc9bbfa7b6e07f31ae7a9b8600cece254",
+    "plan_sha256": "e1c404e296ed441a7dbc50289ef000ef9b24372eae09049875fa0a51cb9fa5cb",
+    "statistical_unit": "question",
+    "counts_per_model": {
+      "math": 64,
+      "retrieval": 32
+    },
+    "models": [
+      "qwen",
+      "llama"
+    ],
+    "formats": [
+      "online_pre",
+      "online_post",
+      "offline_pre"
+    ],
+    "budget_workpoints": 18,
+    "named_budget_strategies": 108,
+    "named_same_format_endpoints": 12,
+    "named_full_comparisons_per_model": 62,
+    "strict_random_wins": 6,
+    "below_reconstruction": 9,
+    "below_inverse": 12,
+    "generation_screen": "not_frozen",
+    "quality_threshold": null,
+    "v_plan_frozen": false,
+    "execution": {
+      "main_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+      "numerical_commit": "0ce3fa14167b3884ae6000197423cc6a7b62df7a",
+      "node": "node8",
+      "slurm_job_id": "21430",
+      "device": "NVIDIA RTX 6000 Ada Generation",
+      "main_completed_utc": "2026-10-09T05:36:59Z",
+      "numerical_completed_utc": "2026-10-09T05:40:13Z",
+      "raw_sources": {
+        "research/.runtime/static-key-allocation/publication.json": "e2c31f6c4aeaeba49ee86e66368070560bc5c5e3bc2e25fd18eef5eff0c40dda",
+        "research/.runtime/static-key-allocation/numerical-publication.json": "dde9028a96b6894d31913339b86b27b6597b16a8f72f12e863f0c7909b956470",
+        "research/.runtime/static-key-allocation/run.log": "6f70d72bd287531bf60a3ed49934529a3ad55671f8982241fae371f14b26e834",
+        "research/.runtime/static-key-allocation/numerical.log": "b195ac4859881e6ba4540efcd0b51671bbfb695fc032d2788c5a5ad2de956374",
+        "research/.runtime/static-key-allocation/previous-results.tar.gz": "a7e7cd141116f5602eaf2f7734e82118e99e8330dbec503654edc6c359946192"
+      },
+      "regression_tests": {
+        "passed": 19,
+        "path": "research/.runtime/static-key-allocation/tests.log",
+        "sha256": "c1bf319551641cdf8a7cb4b055220cdec5a94e6c1585359ec3da3a0636754924"
+      },
+      "prefill_admission": {
+        "passed": 16,
+        "lengths": [
+          64,
+          192
+        ],
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "result_sha256": "46d9e24ccb3cc3ad956be8d3002c105eba3e9f1310e5e9b0a0aecb4088211026",
+        "code_sha256": "f6318816d2a83d164057af7d4a28d4b8ace29dae7f0649bc2c14cd0aee25fe21",
+        "status": "passed_cleaned"
+      },
+      "allocation_release": {
+        "status": "completed",
+        "slurm_state": "COMPLETED",
+        "exit_code": "0:0",
+        "node": "node8"
+      },
+      "cleanup": {
+        "status": "completed",
+        "path": "research/.runtime/static-key-allocation/cleanup.json",
+        "sha256": "d6e8dde0e70cc790bd7eb1259adf3d459516288697966b44c705baa2fe297f8a",
+        "obsolete_server_result_files_removed": 44,
+        "server_formal_raw_files_retained": 8,
+        "prefill_admission_artifacts_removed": true
+      }
+    },
+    "formal_results": [
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json",
+        "current_sha256": "441fd3c03cbdd89fcad8974953dfa6d57d804147d12b4d5bbd86a21b029e0ba6",
+        "bytes": 254884,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "allocations",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/gate.json",
+        "current_sha256": "4096f67cb7d57ee489953cf167e269c40b0b8dc1d7c2dc9e458eeff0bb7e2b35",
+        "bytes": 1473582,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "gate",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/numerical_check.json",
+        "current_sha256": "850e7ccae3b0f2842657ed502d91863c3e92720883fb469d6b60a272853c1cdd",
+        "bytes": 70251,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "0ce3fa14167b3884ae6000197423cc6a7b62df7a",
+        "evidence_role": "numerical_check",
+        "execution_source": "research/.runtime/static-key-allocation/numerical-publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/probe.json",
+        "current_sha256": "b7b17692196c183fc93aae30d5ad1f89f0ee1950870dbe33c90126a0d1cb23d5",
+        "bytes": 3247819,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "probe",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json",
+        "current_sha256": "cee328d31b5fec2bf9fa47b0eae910380b87ff7797925bd6f9c322ca60fb538c",
+        "bytes": 239988,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "allocations",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json",
+        "current_sha256": "2b481da6bf90f435cdc6e1851c47750cc3645b771bc66c26d53cb54b70e3ab6a",
+        "bytes": 1466394,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "gate",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/numerical_check.json",
+        "current_sha256": "4a6183670056411b48b533bd241b7aa236eeb905d8cb613ac3c646d213f023c2",
+        "bytes": 69227,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "0ce3fa14167b3884ae6000197423cc6a7b62df7a",
+        "evidence_role": "numerical_check",
+        "execution_source": "research/.runtime/static-key-allocation/numerical-publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json",
+        "current_sha256": "77378b3808fa13790cfc17b0dcc965d89b1ab28eb99d54a87493fe6f405902b7",
+        "bytes": 2858271,
+        "current_protocol": "phase1-static-key-downgrade",
+        "raw_record_unchanged": true,
+        "execution_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "evidence_role": "probe",
+        "execution_source": "research/.runtime/static-key-allocation/publication.json"
+      },
+      {
+        "current_path": "research/phase1/experiments/static_layer_allocation/results/review.json",
+        "current_sha256": "d74bd9ccd36d99880bbe387ed72e1f55d2c5b6be133bd1c48782b3cd6f136172",
+        "bytes": 15254,
+        "current_protocol": "phase1-static-key-downgrade",
+        "execution_commit": null,
+        "evidence_role": "review",
+        "derived": true,
+        "review_code_sha256": "95f96b20c7b8a3e019a91d91b1f5c6951168c50c4d7eaa2bc89dc83a907cefa4",
+        "execution_source": "local_review",
+        "line_endings": "LF"
+      }
+    ],
+    "review": {
+      "path": "research/phase1/experiments/static_layer_allocation/results/review.json",
+      "sha256": "d74bd9ccd36d99880bbe387ed72e1f55d2c5b6be133bd1c48782b3cd6f136172",
+      "status": "passed"
+    },
+    "report": {
+      "path": "research/phase1/experiments/static_layer_allocation/report/index.md",
+      "sha256": "b7be70fd9dea23329e0a3e1e3b8315a8f11745fe73cbe270852cc3a6785083e8",
+      "status": "passed",
+      "structure": "manual_three_sections_two_result_subsections",
+      "tables": 10,
+      "figures": [
+        "key_downgrade_layers.png",
+        "key_budget_kl.png"
+      ]
+    },
+    "figures": {
+      "research/phase1/experiments/static_layer_allocation/report/key_budget_kl.png": "9e3ec38d94dee63596e7e9bb5068afeaa6fd7748f7481e1a6c7218dac5e82732",
+      "research/phase1/experiments/static_layer_allocation/report/key_downgrade_layers.png": "497eb5257ea03dee6cef77c0aed9184da1aff8859c8128135c94a652c631067f"
+    },
+    "authoring_sources": {
+      "research/phase1/experiments/static_layer_allocation/code/review.py": "95f96b20c7b8a3e019a91d91b1f5c6951168c50c4d7eaa2bc89dc83a907cefa4",
+      "research/phase1/experiments/static_layer_allocation/code/plot.py": "65eea864cbd6c7b64022f352f1718dfb7071f9990cd5f405471d1b0aa8c34161"
+    },
+    "model_input_identity": {
+      "qwen": {
+        "input_digest": "99da6d3fe24028b7cadc49007c272367abdea405ca35ff2712758b30ea90d9b3",
+        "frozen_sources": {
+          "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+          "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+          "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+          "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+          "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74"
+        },
+        "calibration_source": {
+          "path": "research/.runtime/e2-calibration-qwen.pt",
+          "bytes": 574418,
+          "sha256": "a9cfa05403000ada67f1f7f5e33a66d4e7796f3b7ef60729c6a4c07a468e6682",
+          "commit": "6ca63fd",
+          "protocol": "phase1-protocol v7"
+        }
+      },
+      "llama": {
+        "input_digest": "2a78fcfad8c491f06a9b2e596b8a6bc84299ab08c7180d77d853f0eb851f7da7",
+        "frozen_sources": {
+          "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+          "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+          "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+          "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+          "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2"
+        },
+        "calibration_source": {
+          "path": "research/.runtime/e2-calibration-llama.pt",
+          "bytes": 1148198,
+          "sha256": "10d412004f5503517e65e22e2fbe1edff19ccdb968a7b6f68b1f9c5292528929",
+          "commit": "6ca63fd",
+          "protocol": "phase1-protocol v7"
+        }
+      }
+    },
+    "superseded_results": {
+      "history_commit": "c25ee7cf518385a3dcd79c2d5c29848010bd317f",
+      "files": [
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n256.json",
+          "sha256": "5d1604717954d95b4e83e84400cbbadfc09c68432d636dae4bb1b37551be8b36",
+          "bytes": 58056
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n256.json",
+          "sha256": "b7e46978291c903369546bf571a2cda4fdef7ab97818ffac2733b5a022581a0b",
+          "bytes": 58066
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n256.json",
+          "sha256": "09951ea7f91fd47aab1f55b0173b8a3e81c533082ad96cdef44ab93cec6e0818",
+          "bytes": 58086
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_bf16_n128.json",
+          "sha256": "b632f679a7a0fe32e490a6516e48d0cb445a9844a80c154820a1ddce26c24b1d",
+          "bytes": 21291
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_kv8_n128.json",
+          "sha256": "0a7d60b06256f95d19343dc42610651812df82f0488b7a8fec4f80f4a9a44e32",
+          "bytes": 21303
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_uniform_quantization_n128.json",
+          "sha256": "3e352ca529b4f9edb2f03c73bc3220304645e66b8f1d2961c3f9ef0ec3a97141",
+          "bytes": 21291
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/selection.json",
+          "sha256": "12cce19739f25beca40f205cc4ab7767fe5f31a214144b78e70008c3297e5c7d",
+          "bytes": 2499
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n256.json",
+          "sha256": "93a74fee3704ead47668cd898c6fb45b81234118ea77396217ccdbf968386619",
+          "bytes": 58796
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n256.json",
+          "sha256": "79f07c2e36c1fb2095e3585d74bfca6b8ea48a245f4672c3416c26a4b40a482b",
+          "bytes": 58770
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n256.json",
+          "sha256": "e7d223a872fd401d46d90e7925f5474063bb939bd0ec1e006d164bfeccbc979e",
+          "bytes": 58137
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n256.json",
+          "sha256": "88f659eb358be73554ac2cf9c2d82ceea068064e9096994b8c74024eac42ee61",
+          "bytes": 58128
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n256.json",
+          "sha256": "e3bdc86c0dd94e6dde20464054a769d3023c6314d9f1d484d8d858f77fe9a21f",
+          "bytes": 58060
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n256.json",
+          "sha256": "705127d15a6b59ce0400e5c23f50c781548a0a7c6537ca05f1c02ee42fb38a65",
+          "bytes": 58060
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_uniform_quantization_n256.json",
+          "sha256": "c2bf1be1e84b45a783293185998691c09c75d161529a4b01d1279fc80c16b550",
+          "bytes": 58114
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n256.json",
+          "sha256": "b5f2c9365c356080b34a82955a4cfd07edade2c7d4fa42173b8bd07d5ceaa5d9",
+          "bytes": 63095
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n256.json",
+          "sha256": "658b083ea1202d689c75f9d245fd632e63066c31fb23eff2768508c4dfa8140a",
+          "bytes": 63044
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n256.json",
+          "sha256": "ca84c7f39ef7103b6079a01db96ba47a86f1928e21f1c2ae8d5146435439ba1b",
+          "bytes": 63861
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n256.json",
+          "sha256": "90617cf8a658be74b13030b540ec90d51a50beb901e30f2897f282bc096ab1ad",
+          "bytes": 63841
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n256.json",
+          "sha256": "764da343198f4c842c8c7ac247d7fb95395ff4580d156b31135da8d12a998f21",
+          "bytes": 63806
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n256.json",
+          "sha256": "27ddf098f98e57e6af1df58f1ad4f296eb815497f3f52e066b5c9c97e097d90a",
+          "bytes": 63793
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_uniform_quantization_n256.json",
+          "sha256": "2836db04397f6998408aee6a260a0130c1cb5d01637f0fc37f98c096d18288b0",
+          "bytes": 63772
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/selection.json",
+          "sha256": "94277365fd5f2a8c8e269ab40e4af2c1d3ed5f7ec1d8174f1efd913b2c9ae78d",
+          "bytes": 4780
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json",
+          "sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+          "bytes": 33187
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/gate.json",
+          "sha256": "7d63b804376a547c5a1da16248fbe8d3db76ebf0d556d246994588038c1af418",
+          "bytes": 64360
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/probe.json",
+          "sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+          "bytes": 32858
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/selection.json",
+          "sha256": "0ee12688ec2e95d6d96bd4efe4083b2a6fc2de050a21bd3c8e3fa1c87688bbd8",
+          "bytes": 7971
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_inverse.json",
+          "sha256": "d6c38a521498e244cbeed4f2e1a5c7890c54c119db8a871c281a12b4c523f482",
+          "bytes": 19706
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609231.json",
+          "sha256": "4a9cb3f36922641c54336cb038f35807695a04aca70eda36f40bb68baa104a85",
+          "bytes": 19711
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609232.json",
+          "sha256": "b0e072f535b493b0af2a79c1070739ecc81d6f1b36af9e2e686e9ab29659ed07",
+          "bytes": 19713
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609233.json",
+          "sha256": "a41fb8cd1fa22e83c1529c944c0be96a6325ae1536b5ed25e4923961eee6e946",
+          "bytes": 19712
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_reconstruction.json",
+          "sha256": "c3d629f3ece2652190749c3873853d17af4b855ab42ab163c0f8323cb679fb79",
+          "bytes": 19711
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_inverse.json",
+          "sha256": "42c9771d4d849a3153f3db54354869f04b99a5f1199e14ff99df0b94b9d717e6",
+          "bytes": 21361
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609231.json",
+          "sha256": "d2d94866b27a0e1ff9db1bdf6dce1638cc1f1ff56a8c911c81c53c835c6fe46a",
+          "bytes": 21358
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609232.json",
+          "sha256": "a3c3b37e5d6f8b48ef5f6a4db2c31fe9261e95a456ffd6e13e61ce09c4eee302",
+          "bytes": 21358
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609233.json",
+          "sha256": "e44d7df4edae42456042e5f12a6adef2b948035388571735d897f1c8f7ffbba8",
+          "bytes": 21370
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_reconstruction.json",
+          "sha256": "c4ff0b39c0fa448868d814d305e7e682f14a8f8e81cdb561106c455971cbd84b",
+          "bytes": 21373
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json",
+          "sha256": "67909b7f3f98053a95ea0c95548d94339fe883993174d66570be71241f598979",
+          "bytes": 29685
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json",
+          "sha256": "8951495933e105ef4a4adf534f5e40aad07f7bb4b865c589dc04381031acd46f",
+          "bytes": 63952
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json",
+          "sha256": "0bcc93dd9f5a3d29f690d894c4f3aa0bfdb60d71ddac3b90bf35c4f27b22e0dd",
+          "bytes": 28853
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/selection.json",
+          "sha256": "f4cee2ca0e4828675971baa7623abef7ea67a90af3f931a4d0d162ee916b5e9c",
+          "bytes": 8036
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_inverse.json",
+          "sha256": "c36da1f0b13ba4e83522e39910eca18747cf7f44037882a0d6a312dff6c9c806",
+          "bytes": 20036
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609231.json",
+          "sha256": "92ecff4f79d014f3c19f47ae8404ad2017d259fc141fb1b7d29fb0f9be62fef0",
+          "bytes": 20043
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609232.json",
+          "sha256": "df74d28f812d2d3f619baa4e2ddc4188b6ceb3cc3b284289ec1639af270d253d",
+          "bytes": 20039
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609233.json",
+          "sha256": "78ffaa1f262fa8211a5f8afdda2f7720f013d7f1f1c5594cde40f5e45669798b",
+          "bytes": 19822
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_sensitivity.json",
+          "sha256": "5d30d20e03adb371b30a60af8b93ed3f6d10ad3cca41acfd40fab681864db7cf",
+          "bytes": 19816
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_inverse.json",
+          "sha256": "91fec91d65028897a3092d06fac59c942e24e6e2eb5d129632b82690392e4454",
+          "bytes": 21461
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609231.json",
+          "sha256": "d53bffe9f525b2d6e4478f05b19eb8e6189bb5a6482d3d4f51969d6ae93d2005",
+          "bytes": 21475
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609232.json",
+          "sha256": "288ca01b87a38afa68eed4739776ddb3068cb38b3d35baafef0e7e24a363bb38",
+          "bytes": 21467
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609233.json",
+          "sha256": "3a50eaba6d17eb64f682efd93d5b90fae6ee15c6849db4e2812b5cce30cc271c",
+          "bytes": 21796
+        },
+        {
+          "path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_sensitivity.json",
+          "sha256": "f6f9d1ce26f44c97de61ccba38b2ca03bf311a680b1016f4da5e240701c8409e",
+          "bytes": 21719
+        }
+      ],
+      "previous_source_entries": [
+        {
+          "historical_path": "research/phase1/results/f/llama/gsm8k_bf16_n256.json",
+          "historical_sha256": "d916af167bf635a80f1ec7384a506e5a0e85b4da843dfe7bfa826a6465e9b6ce",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n256.json",
+          "current_sha256": "5d1604717954d95b4e83e84400cbbadfc09c68432d636dae4bb1b37551be8b36",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "d916af167bf635a80f1ec7384a506e5a0e85b4da843dfe7bfa826a6465e9b6ce",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/gsm8k_kv8_n256.json",
+          "historical_sha256": "db76cfce6ab7ea8c72ae2252424a97dfda89249ad0b23ec25ed72171ffea5397",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n256.json",
+          "current_sha256": "b7e46978291c903369546bf571a2cda4fdef7ab97818ffac2733b5a022581a0b",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "db76cfce6ab7ea8c72ae2252424a97dfda89249ad0b23ec25ed72171ffea5397",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/gsm8k_e2_n256.json",
+          "historical_sha256": "d7bf480ce62835dadfda394db66417a4e12658bd5ce31c2d12a4ad46e03eb91d",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n256.json",
+          "current_sha256": "09951ea7f91fd47aab1f55b0173b8a3e81c533082ad96cdef44ab93cec6e0818",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "d7bf480ce62835dadfda394db66417a4e12658bd5ce31c2d12a4ad46e03eb91d",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/hotpot_bf16_n128.json",
+          "historical_sha256": "54c2a3eed01796c9cca949ec666b3c31cd0e9ceb61da1b1362d21bf45caef7d2",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_bf16_n128.json",
+          "current_sha256": "b632f679a7a0fe32e490a6516e48d0cb445a9844a80c154820a1ddce26c24b1d",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "54c2a3eed01796c9cca949ec666b3c31cd0e9ceb61da1b1362d21bf45caef7d2",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/hotpot_kv8_n128.json",
+          "historical_sha256": "7fad61cfa9542a6d6a4178560dafb1c6e6baba8257a19116cd53e9902a0f2460",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_kv8_n128.json",
+          "current_sha256": "0a7d60b06256f95d19343dc42610651812df82f0488b7a8fec4f80f4a9a44e32",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "7fad61cfa9542a6d6a4178560dafb1c6e6baba8257a19116cd53e9902a0f2460",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/hotpot_e2_n128.json",
+          "historical_sha256": "0e5105f49fbf1ff33ec9d29db7d15494bbaea3fde35b43e6a1e16c6d9bec469b",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_uniform_quantization_n128.json",
+          "current_sha256": "3e352ca529b4f9edb2f03c73bc3220304645e66b8f1d2961c3f9ef0ec3a97141",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "0e5105f49fbf1ff33ec9d29db7d15494bbaea3fde35b43e6a1e16c6d9bec469b",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/llama/selection.json",
+          "historical_sha256": "7ed2b101866d9ea20813fc56434ddb300719aff7c7239fce0f4039a407b24551",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/selection.json",
+          "current_sha256": "12cce19739f25beca40f205cc4ab7767fe5f31a214144b78e70008c3297e5c7d",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "12cce19739f25beca40f205cc4ab7767fe5f31a214144b78e70008c3297e5c7d",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609231_n256.json",
+          "historical_sha256": "45489d731e26442904276c90eabceedfa5197cf18e47c55e88f3adc672cd11fe",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n256.json",
+          "current_sha256": "93a74fee3704ead47668cd898c6fb45b81234118ea77396217ccdbf968386619",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "1167109fe922e64139d87d5daeedc3290c271e4b256d54e9f8b8799cd75ddfd2",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609232_n256.json",
+          "historical_sha256": "07ae7495bee7bca14fd341d214a2d50400621e145e0a7ae9ff53fc17dc3debdb",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n256.json",
+          "current_sha256": "79f07c2e36c1fb2095e3585d74bfca6b8ea48a245f4672c3416c26a4b40a482b",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "166c32b46c20cc319764dcb1366a1ab409c9923b8e1f81264ab576b3f5870d53",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_random_202609233_n256.json",
+          "historical_sha256": "298dc347551ab93bb15f6831668f08bd6e8c4ffa11c91519d3c2c095ba653a47",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n256.json",
+          "current_sha256": "e7d223a872fd401d46d90e7925f5474063bb939bd0ec1e006d164bfeccbc979e",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "c94880ff1aefe25b58daaa95f317ac93d2edf28d8276981cb9f7d96b536ac12c",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_e3-p50_sensitivity_n256.json",
+          "historical_sha256": "b518cb392138e0eab963c75287b01397d6cf28b57e7e7f24e33e2248c97b7f3a",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n256.json",
+          "current_sha256": "88f659eb358be73554ac2cf9c2d82ceea068064e9096994b8c74024eac42ee61",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "98aea70662e455c908f05be78c8d399eea5aa38380a23393984be347b882a3f8",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_bf16_n256.json",
+          "historical_sha256": "c5786a15000faca410f07a5703542756bad03005aef52bc734eb71a5e2c28a63",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n256.json",
+          "current_sha256": "e3bdc86c0dd94e6dde20464054a769d3023c6314d9f1d484d8d858f77fe9a21f",
+          "execution_commit": "23a395a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "c5786a15000faca410f07a5703542756bad03005aef52bc734eb71a5e2c28a63",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/gsm8k_kv8_n256.json",
+          "historical_sha256": "1c5fc0d1a72da8ef0b474c67ee2db6fc8fcfad0db4f45083e67e8975d1a52742",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n256.json",
+          "current_sha256": "705127d15a6b59ce0400e5c23f50c781548a0a7c6537ca05f1c02ee42fb38a65",
+          "execution_commit": "23a395a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "1c5fc0d1a72da8ef0b474c67ee2db6fc8fcfad0db4f45083e67e8975d1a52742",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_uniform_quantization_n256.json",
+          "current_sha256": "c2bf1be1e84b45a783293185998691c09c75d161529a4b01d1279fc80c16b550",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "c4a27f48ef4dac933d3884214afbe63063406e9cc8478fb8eba216c8badb4473",
+          "current_protocol": "phase1-full-key-retrieval",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609231_n256.json",
+          "historical_sha256": "b3433dc966b39902f1e488afa60dae312d65011d204f21f91ab6895942e37623",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n256.json",
+          "current_sha256": "b5f2c9365c356080b34a82955a4cfd07edade2c7d4fa42173b8bd07d5ceaa5d9",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "584452bf0f7cd4db1fd1c0a5624cd5ec834ed8fb41cefec35430266825c77894",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609232_n256.json",
+          "historical_sha256": "7df9d48a018450cfde78433579d689dbdbd1e45c19fc9a2f93ef94c431470b54",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n256.json",
+          "current_sha256": "658b083ea1202d689c75f9d245fd632e63066c31fb23eff2768508c4dfa8140a",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "777c8fcd1723cba6eacd32757cbef37e5b77ae2df8180dc007cbb49b65a1ac64",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_random_202609233_n256.json",
+          "historical_sha256": "68188ac6c2d07338d8d28d54f48a5d670791f550a368a4845549720eb42baca1",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n256.json",
+          "current_sha256": "ca84c7f39ef7103b6079a01db96ba47a86f1928e21f1c2ae8d5146435439ba1b",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "9589af2224e81471d4ba2c889604cb9c88647f7e190e00783b010ed5f898c644",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_e3-p50_sensitivity_n256.json",
+          "historical_sha256": "5586706196a0f53bf1cb3856b4125d5dd8c7006eaa5cd48a6bfb192fc92d6b32",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n256.json",
+          "current_sha256": "90617cf8a658be74b13030b540ec90d51a50beb901e30f2897f282bc096ab1ad",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "104a377e6c79ad48fe415534b09db076a7dc3b527e12d728fd08c4aa6cbeaded",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_bf16_n256.json",
+          "historical_sha256": "4ac7fceee728f1e6b4a71100a5388a39ee93be41352895ff838813c2697edea7",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n256.json",
+          "current_sha256": "764da343198f4c842c8c7ac247d7fb95395ff4580d156b31135da8d12a998f21",
+          "execution_commit": "23a395a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "4ac7fceee728f1e6b4a71100a5388a39ee93be41352895ff838813c2697edea7",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/hotpot_kv8_n256.json",
+          "historical_sha256": "3adf3856c4c65c8aea908fb2ccb366d613410f925fe55fe3a8b25e443bad5b0b",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n256.json",
+          "current_sha256": "27ddf098f98e57e6af1df58f1ad4f296eb815497f3f52e066b5c9c97e097d90a",
+          "execution_commit": "23a395a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "3adf3856c4c65c8aea908fb2ccb366d613410f925fe55fe3a8b25e443bad5b0b",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": false
+        },
+        {
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_uniform_quantization_n256.json",
+          "current_sha256": "2836db04397f6998408aee6a260a0130c1cb5d01637f0fc37f98c096d18288b0",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "e3aa3407e7f2a4f61c8e0859fcc75a2036cc21357cd696ed2c6732a5d15dca81",
+          "current_protocol": "phase1-full-key-retrieval",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/f/qwen/selection.json",
+          "historical_sha256": "f75093b67078104e16bb574af0662e0b34651124e45d98edde2afabf99d68080",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/selection.json",
+          "current_sha256": "94277365fd5f2a8c8e269ab40e4af2c1d3ed5f7ec1d8174f1efd913b2c9ae78d",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "94277365fd5f2a8c8e269ab40e4af2c1d3ed5f7ec1d8174f1efd913b2c9ae78d",
+          "historical_execution_commit": "23a395a",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/allocations.json",
+          "historical_sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json",
+          "current_sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+          "execution_commit": "be4fea3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": true,
+          "measurement_completion_sha256": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+          "historical_execution_commit": "be4fea3",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/gate.json",
+          "historical_sha256": "c6e0f1352623cb57d9f5d3d6f9792195954cd03b5ad9bb91157c4612fcaf8b26",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/gate.json",
+          "current_sha256": "7d63b804376a547c5a1da16248fbe8d3db76ebf0d556d246994588038c1af418",
+          "execution_commit": "e860b42",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "c6e0f1352623cb57d9f5d3d6f9792195954cd03b5ad9bb91157c4612fcaf8b26",
+          "historical_execution_commit": "e860b42",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/probe.json",
+          "historical_sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/probe.json",
+          "current_sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+          "execution_commit": "7f05519",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": true,
+          "measurement_completion_sha256": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+          "historical_execution_commit": "7f05519",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/selection.json",
+          "historical_sha256": "3ee260fd6fbe17da927823f804c86cbf824b7cdfd4f7e9e925835308cd861026",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/selection.json",
+          "current_sha256": "0ee12688ec2e95d6d96bd4efe4083b2a6fc2de050a21bd3c8e3fa1c87688bbd8",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "0ee12688ec2e95d6d96bd4efe4083b2a6fc2de050a21bd3c8e3fa1c87688bbd8",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_inverse.json",
+          "historical_sha256": "7752776ef3db4d4826c403d17312547f9755dba2d76eca8a36762dccd1bfc7d0",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_inverse.json",
+          "current_sha256": "d6c38a521498e244cbeed4f2e1a5c7890c54c119db8a871c281a12b4c523f482",
+          "execution_commit": "5611f3d",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "7752776ef3db4d4826c403d17312547f9755dba2d76eca8a36762dccd1bfc7d0",
+          "historical_execution_commit": "5611f3d",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609231.json",
+          "historical_sha256": "0b9fb86391411070a6205ee8d36d4f270bed5400bb1d4b233eee30bb2b182822",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609231.json",
+          "current_sha256": "4a9cb3f36922641c54336cb038f35807695a04aca70eda36f40bb68baa104a85",
+          "execution_commit": "5611f3d",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "0b9fb86391411070a6205ee8d36d4f270bed5400bb1d4b233eee30bb2b182822",
+          "historical_execution_commit": "5611f3d",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609232.json",
+          "historical_sha256": "6bf73d686e57121af8de27c5b0ab449ae89b783159dc938d197e3f5fe9eda8fe",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609232.json",
+          "current_sha256": "b0e072f535b493b0af2a79c1070739ecc81d6f1b36af9e2e686e9ab29659ed07",
+          "execution_commit": "5611f3d",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "6bf73d686e57121af8de27c5b0ab449ae89b783159dc938d197e3f5fe9eda8fe",
+          "historical_execution_commit": "5611f3d",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_random_202609233.json",
+          "historical_sha256": "d1c1fe083432f1714b3eee7c489b9635949ca5a994668122a6c81d55d5147650",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609233.json",
+          "current_sha256": "a41fb8cd1fa22e83c1529c944c0be96a6325ae1536b5ed25e4923961eee6e946",
+          "execution_commit": "5611f3d",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "d1c1fe083432f1714b3eee7c489b9635949ca5a994668122a6c81d55d5147650",
+          "historical_execution_commit": "5611f3d",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_gsm8k_p50_reconstruction.json",
+          "historical_sha256": "1d78a8c9863e200182751925ba747948b8e778ffb3d2026eba2c4718aab03905",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_reconstruction.json",
+          "current_sha256": "c3d629f3ece2652190749c3873853d17af4b855ab42ab163c0f8323cb679fb79",
+          "execution_commit": "5611f3d",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "1d78a8c9863e200182751925ba747948b8e778ffb3d2026eba2c4718aab03905",
+          "historical_execution_commit": "5611f3d",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_inverse.json",
+          "historical_sha256": "2ee8d756f8a9fb65f04f6ca0ede3acfad0d40441a8db5cc6807bd84ff030d9fd",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_inverse.json",
+          "current_sha256": "42c9771d4d849a3153f3db54354869f04b99a5f1199e14ff99df0b94b9d717e6",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "2ee8d756f8a9fb65f04f6ca0ede3acfad0d40441a8db5cc6807bd84ff030d9fd",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609231.json",
+          "historical_sha256": "fa02fb114eaa16de5ac4d705bc31b0e825c45c0295a1412579c83b9ade8a920b",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609231.json",
+          "current_sha256": "d2d94866b27a0e1ff9db1bdf6dce1638cc1f1ff56a8c911c81c53c835c6fe46a",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "fa02fb114eaa16de5ac4d705bc31b0e825c45c0295a1412579c83b9ade8a920b",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609232.json",
+          "historical_sha256": "6a1ac3c6c5de3db433c484ec33141d2b63329445c9154ce5a56d6eaba64055b6",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609232.json",
+          "current_sha256": "a3c3b37e5d6f8b48ef5f6a4db2c31fe9261e95a456ffd6e13e61ce09c4eee302",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "6a1ac3c6c5de3db433c484ec33141d2b63329445c9154ce5a56d6eaba64055b6",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_random_202609233.json",
+          "historical_sha256": "4c32b1742a78d25ae567867d06908154c8c284298726c2467af7f4ea20f5e0f7",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609233.json",
+          "current_sha256": "e44d7df4edae42456042e5f12a6adef2b948035388571735d897f1c8f7ffbba8",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "4c32b1742a78d25ae567867d06908154c8c284298726c2467af7f4ea20f5e0f7",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/llama/v_hotpot_p50_reconstruction.json",
+          "historical_sha256": "bc389f5776e91e94a7ca1b1b9542e9113e213c2ceddebe40007950cce9b2c40b",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_reconstruction.json",
+          "current_sha256": "c4ff0b39c0fa448868d814d305e7e682f14a8f8e81cdb561106c455971cbd84b",
+          "execution_commit": "e95f6d3",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-protocol v7",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "bc389f5776e91e94a7ca1b1b9542e9113e213c2ceddebe40007950cce9b2c40b",
+          "historical_execution_commit": "e95f6d3",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/allocations.json",
+          "historical_sha256": "60ef3b8311fe0bde93b43b63dd5da40188ddd756e0eedf013fa42ffe3eb9ddae",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json",
+          "current_sha256": "67909b7f3f98053a95ea0c95548d94339fe883993174d66570be71241f598979",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "67909b7f3f98053a95ea0c95548d94339fe883993174d66570be71241f598979",
+          "historical_execution_commit": "80d6c07",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/gate.json",
+          "historical_sha256": "46fea897d702908dda1e0126d8a2b3e481d1f455d65a1c329a9ef02aab02223e",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json",
+          "current_sha256": "8951495933e105ef4a4adf534f5e40aad07f7bb4b865c589dc04381031acd46f",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "8951495933e105ef4a4adf534f5e40aad07f7bb4b865c589dc04381031acd46f",
+          "historical_execution_commit": "2ccd43a",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/probe.json",
+          "historical_sha256": "e5077057fe5377eb836028a7b411d631ed456e9590cfab2a0d601b8d4c56b7c8",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json",
+          "current_sha256": "0bcc93dd9f5a3d29f690d894c4f3aa0bfdb60d71ddac3b90bf35c4f27b22e0dd",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "0bcc93dd9f5a3d29f690d894c4f3aa0bfdb60d71ddac3b90bf35c4f27b22e0dd",
+          "historical_execution_commit": "461506e",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/selection.json",
+          "historical_sha256": "f0b9200a1aaa05f99d0c9bd70c68bbfa6b0196fd1a3b1dea8e41a3666feeecd8",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/selection.json",
+          "current_sha256": "f4cee2ca0e4828675971baa7623abef7ea67a90af3f931a4d0d162ee916b5e9c",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "f4cee2ca0e4828675971baa7623abef7ea67a90af3f931a4d0d162ee916b5e9c",
+          "historical_execution_commit": "989874d",
+          "measurement_record_unchanged": true
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_inverse.json",
+          "historical_sha256": "30a26222fafde63ae95f8a929ab6f6e308c2da1c32913a436665d66c261578cc",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_inverse.json",
+          "current_sha256": "c36da1f0b13ba4e83522e39910eca18747cf7f44037882a0d6a312dff6c9c806",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "bd3d37d5e70c3bf5b1f409d331158c6b7f8d64602be47ed5fb52d0b4b77b9f5d",
+          "historical_execution_commit": "99f0363",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609231.json",
+          "historical_sha256": "1e828c9e475cde16fac7a09b2175b58029e8d739e9b8111de58295589521103a",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609231.json",
+          "current_sha256": "92ecff4f79d014f3c19f47ae8404ad2017d259fc141fb1b7d29fb0f9be62fef0",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "c9d0449465c234246c2eb7a0e73b08d8b22d17b8caa3346e2ddcb69891ac03fe",
+          "historical_execution_commit": "99f0363",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609232.json",
+          "historical_sha256": "249d7ab8db23820cb5862282682387fb88488bdf575e7b190a65fcc75a4849ff",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609232.json",
+          "current_sha256": "df74d28f812d2d3f619baa4e2ddc4188b6ceb3cc3b284289ec1639af270d253d",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "e812a5a0d5147dd564b568bba4f46961159bf6cb0631ada713a96181c38394cf",
+          "historical_execution_commit": "99f0363",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_random_202609233.json",
+          "historical_sha256": "0fb88d280f6d7e0dce029c9f3a150f8e0129abf460e02883e6dd046905fca886",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609233.json",
+          "current_sha256": "78ffaa1f262fa8211a5f8afdda2f7720f013d7f1f1c5594cde40f5e45669798b",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "a4c5acd8b55fa97c406a72c85ab21e2302d60b0d1d89b6cfa78e2e573d7d0f82",
+          "historical_execution_commit": "99f0363",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_gsm8k_p50_sensitivity.json",
+          "historical_sha256": "281ade72a35d6dde9f07f7f627fba37a6aa2a48b603eaad9e4f2322bec59c8f5",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_sensitivity.json",
+          "current_sha256": "5d30d20e03adb371b30a60af8b93ed3f6d10ad3cca41acfd40fab681864db7cf",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "423a987b12089bb74da425baf464aa043d7a0837a3394d8e6b17efd5398b76a6",
+          "historical_execution_commit": "99f0363",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_inverse.json",
+          "historical_sha256": "8dee2e18cea58d2d244c9e248888440bdf5a425b72f49afd8ee17b474f0dd442",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_inverse.json",
+          "current_sha256": "91fec91d65028897a3092d06fac59c942e24e6e2eb5d129632b82690392e4454",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "adfb8422f4f42c0d3d076d44af3e088b8e970b917a3c073ca7866094b317c56f",
+          "historical_execution_commit": "78e94d4",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609231.json",
+          "historical_sha256": "a58d7ded0021e791134d1e14c6579e213caa565f0013f51bcd65637aabdc95fb",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609231.json",
+          "current_sha256": "d53bffe9f525b2d6e4478f05b19eb8e6189bb5a6482d3d4f51969d6ae93d2005",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "13168e461eac896e63ff8b9a5107de8166b7046c42bc645aac6386a1b3bb6dac",
+          "historical_execution_commit": "78e94d4",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609232.json",
+          "historical_sha256": "d991254e4600040b04eb12b5cfd2e53ba389e0a33cac72c3eeaa24c7643ddd13",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609232.json",
+          "current_sha256": "288ca01b87a38afa68eed4739776ddb3068cb38b3d35baafef0e7e24a363bb38",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "cda98721c67a4380fd7ebf5ecae142eebb90033212705fee2d3b2dba96a97856",
+          "historical_execution_commit": "78e94d4",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_random_202609233.json",
+          "historical_sha256": "6750b6ac84bb0ed7d662698954bbaf50cf1373f6f74bd7c12b9c0eba9ad0a95c",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609233.json",
+          "current_sha256": "3a50eaba6d17eb64f682efd93d5b90fae6ee15c6849db4e2812b5cce30cc271c",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "b6205c447069e1812997be26e13e0b11433778a296a668b7197b48cea6be513a",
+          "historical_execution_commit": "78e94d4",
+          "measurement_record_unchanged": false
+        },
+        {
+          "historical_path": "research/phase1/results/e3/qwen/v_hotpot_p50_sensitivity.json",
+          "historical_sha256": "86a7aa47c0e122f3811e4b33c06dbe30f247e8ec0f27ab2972b13dbe990407ec",
+          "current_path": "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_sensitivity.json",
+          "current_sha256": "f6f9d1ce26f44c97de61ccba38b2ca03bf311a680b1016f4da5e240701c8409e",
+          "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+          "historical_protocol": "phase1-protocol v7",
+          "current_protocol": "phase1-full-key-retrieval",
+          "raw_record_unchanged": false,
+          "measurement_completion_sha256": "0c598588bd217860b710e7b136b73a13ecd72458d39de4f23bddcc10074b22fd",
+          "historical_execution_commit": "78e94d4",
+          "measurement_record_unchanged": false
+        }
+      ],
+      "reason": "按新手册原位替换：K4V4−K8V4 与仅 K 三预算；历史负结果及扩样由 Git 追溯"
+    },
+    "retired_exclusive_execution_code": [
+      {
+        "path": "research/phase1/experiments/static_layer_allocation/code/quality.py",
+        "sha256": "b26757f6a7471c716dbff4ed6b1c26d139e5d53f0c3d42797bb87a39f4eb6c32",
+        "history_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "reason": "旧 K/V 分配的 V 执行入口；原结果已由新 Key 三预算结果替换，无其他导入"
+      },
+      {
+        "path": "research/phase1/experiments/static_layer_allocation/code/select.py",
+        "sha256": "5032da8d0ccd478203c1392446e7901797a733849780d678a0fa5e256b43e2ba",
+        "history_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+        "reason": "旧 K/V 分配的 V 执行入口；原结果已由新 Key 三预算结果替换，无其他导入"
+      }
+    ],
+    "retained_shared_legacy_helpers": [
+      "expand.py",
+      "select_final.py"
+    ],
+    "historical_cost_dependency": "storage_service_cost 当前结果仍对应旧分配，其输入由 superseded_results 的历史提交追溯",
+    "numerical_observation": "全部 C 检索的 BF16 首 token 为 val、下一 token 为 -；低 KL 对应共同前缀位置",
+    "independent_numerical_check": {
+      "selected_questions_per_model": 3,
+      "reference_distributions_per_model": 32,
+      "status": "passed"
+    },
+    "superseded_report_review": {
+      "sha256": "a88c764d7b507ba851782af32f10a42b78414dca9b5518c9060357b4817f472a",
+      "history_commit": "c25ee7cf518385a3dcd79c2d5c29848010bd317f",
+      "review_record_date": "2026-10-05T15:19:47.880184+08:00"
+    },
+    "superseded_report": {
+      "path": "research/phase1/experiments/static_layer_allocation/report/index.md",
+      "history_commit": "c25ee7cf518385a3dcd79c2d5c29848010bd317f",
+      "git_blob_sha256": "fee0bed7fb239b7537a32a5a82baf37bc5fc0ec947ad1dbdb05c3b23a689ac08"
+    }
+  }
 }

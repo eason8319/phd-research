@@ -87,3 +87,20 @@ $$
 2026-09-30 核验执行提交 `c3a2db2ce73ab6316741eaf011d096f0270c6ff3`。在 `node7` 的 RTX 4090 上，74 项长期回归测试全部通过；两模型的 pre／post-RoPE、在线／离线 K8V4 共 8 个短输入对照与整理前实现生成相同 token。4 个离线混合 INT4／INT8 对照使用实际层位宽的全部 C 参数，有效 KV 和生成 token 与手动逐层选择正确参数的参考逐值一致，全层门槛 logits 为有限值。原有量化、生成与 FP32 注意力数值函数的语法树核对通过，忽略文档字符串和异常文字，未改变数值运算。
 
 这次只验证短输入实现与位宽参数选择，不构成 RTX 4090 的 32K 运行准入，也不构成任务质量结论。正式补测使用已准入的 `node8`、RTX 6000 Ada；加载模型前确认选用 GPU 至少有 40 GiB 空闲显存，不缩短上下文或样本。临时核验结果 SHA256 为 `32f8014ea82fb93c758ad6f1b2766d189476ea2f46c0f30b4b3107f85d80392c`；审核后按一次性检查规则清理。持续回归见 `research/tests/test_generation_quantization.py`，中断依赖保护见 `research/tests/test_experiment_completion.py`。
+
+## 静态 Key 分配的共享 prefill 准入
+
+2026-10-09 在 node8 的 NVIDIA RTX 6000 Ada 上，沿用 Python 3.11、
+PyTorch 2.5.1+cu121、Transformers 4.46.3 和 BF16 权重，执行提交为
+`ef664c0219e2efd774aa037d7ec1de6beadfff15`。两模型各在 64、192 token 输入下核验三个开发格式及
+既定 KV8，共 16 个对照；混合 K4/K8、V4 与 H=8、R=128 的近期副本按正式规则构建。
+共用高精度 prefill 后独立量化各配置，与各配置单独 prefill 的入口相比，
+有效 K/V 缓存及下一步 logits 逐值一致。19 项相关长期回归测试通过。
+准入覆盖上述短输入的捕获与构建等价，正式 C 的局部指标和全层 KL 另由正式结果审核。
+
+一次性核验代码 SHA256 为
+`f6318816d2a83d164057af7d4a28d4b8ace29dae7f0649bc2c14cd0aee25fe21`，
+输出 SHA256 为
+`46d9e24ccb3cc3ad956be8d3002c105eba3e9f1310e5e9b0a0aecb4088211026`。
+审核后清理一次性代码、输出及独立目录；执行来源和回归记录见
+`research/phase1/source_index.json` 的 `static_key_allocation`。
