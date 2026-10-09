@@ -69,6 +69,11 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
         suffixes = [item["key"][4:], item["value"][4:]]
         suffixes += [part[4:] for pair in item["distractors"] for part in pair]
         compare(len(suffixes), len(set(suffixes)), "unique key and value content")
+        if check_logits:
+            for record in (item["models"][model], item.get("paired_models", {}).get(model)):
+                if record is not None:
+                    compare(hashlib.sha256((root / record["path"]).read_bytes()).hexdigest(),
+                            record["sha256"], "frozen prompt")
     files = {name: read(folder / model / (name + ".json"))
              for name in ("calibration", "mapping", "probe", "allocations", "gate")}
     probe, allocation, gate = (files[name] for name in ("probe", "allocations", "gate"))
@@ -168,6 +173,7 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
             compare(spec["layer_bits"], alias["layer_bits"], "reused bit configuration")
             compare(row["schemes"][name], row["schemes"][spec["alias"]], "reused measurement")
         for name, scheme in row["schemes"].items():
+            compare(scheme["content_tokens"], len(rec["content_indices"]), "content token count")
             compare(scheme["free_exact"], int(scheme["prediction"] == item["value"]), "free EM")
             for key in scheme["frames"][0]:
                 compare(scheme[key], float(np.mean([f[key] for f in scheme["frames"]])),
@@ -195,6 +201,14 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
             compare(measured["exact"], measured["prediction"] == answer, "mapping exact")
         compare(row["cases"]["original"]["tokens"], row["cases"]["swapped"]["tokens"],
                 "same length mapping pair")
+        compare(row["both_follow_mapping"], row["cases"]["original"]["exact"]
+                and row["cases"]["swapped"]["exact"], "mapping follows both values")
+        control = row["cases"]["legacy_target_removed"]
+        compare(control["copies_old_answer"], control["prediction"] == control["original_answer"],
+                "legacy copy classification")
+        if check_logits:
+            compare(hashlib.sha256((root / control["path"]).read_bytes()).hexdigest(),
+                    control["sha256"], "legacy control prompt")
     verified_logits = 0
     if model == plan["single_layer_diagnostic"]["model"]:
         diagnostic = read(folder / model / "single_layer.json")
