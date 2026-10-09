@@ -8,6 +8,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator, ScalarFormatter
 import numpy as np
 
 from kvstudy.paths import project_root
@@ -55,6 +56,8 @@ def plot() -> None:
             ax.grid(alpha=.2)
             if row == col == 0:
                 ax.legend(frameon=False)
+    fig.supxlabel('Source: reviewed probe.json | Calibration n=16 | '
+                  'Valid groups, content tokens, then equal-weight questions', fontsize=9)
     fig.savefig(output / 'key_downgrade_layers.png', dpi=160)
     plt.close(fig)
     for metric, filename, ylabel in (
@@ -91,8 +94,12 @@ def plot() -> None:
                     ax.set_ylim(bottom=0)
                 if metric == 'free_exact':
                     ax.set_ylim(-.03, 1.03)
-                if row == col == 0:
-                    ax.legend(frameon=False, fontsize=8, ncol=2)
+        handles, labels = axes[0, 0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc='outside upper center', ncol=9, frameon=False,
+                   fontsize=9)
+        fig.supxlabel('Source: reviewed gate.json | Validation n=16 | '
+                      'Equal-weight questions | Same-format K8V4, BF16 and KV8 references',
+                      fontsize=9)
         fig.savefig(output / filename, dpi=160)
         plt.close(fig)
     diagnosis = load(result / 'llama/single_layer.json')
@@ -106,11 +113,18 @@ def plot() -> None:
             ax.annotate(str(row['layer']), (row['matched_local_sensitivity'], row[key]),
                         xytext=(3, 3), textcoords='offset points', fontsize=8)
         ax.set_xscale('log')
-        ax.set_yscale('symlog', linthresh=1e-4)
+        ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
+        formatter = ScalarFormatter(useMathText=True)
+        formatter.set_powerlimits((0, 0))
+        ax.yaxis.set_major_formatter(formatter)
+        if key == 'kl_baseline':
+            ax.set_ylim(bottom=0)
         ax.set_xlabel('Local S in K8V4 background')
         ax.set_ylabel(label)
         ax.set_title('Llama | Online post, H=0 | n=16')
         ax.grid(alpha=.2)
+    fig.supxlabel('Source: reviewed single_layer.json | Same-format K8V4 baseline | '
+                  'Question means; labels are layer indices', fontsize=9)
     fig.savefig(output / 'single_layer_prediction.png', dpi=160)
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), constrained_layout=True)
@@ -143,6 +157,9 @@ def plot() -> None:
         ax.grid(alpha=.2)
         if predicted == 'additive':
             ax.legend(frameon=False, fontsize=8)
+    fig.supxlabel('Source: reviewed single_layer.json | Validation n=16 | '
+                  'Content tokens, then equal-weight questions | Point size: K4 layer count',
+                  fontsize=9)
     fig.savefig(output / 'logit_superposition.png', dpi=160)
     plt.close(fig)
 

@@ -53,6 +53,10 @@ def code_check(root: Path, record: dict[str, Any]) -> None:
                     raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
         if checksum in {hashlib.sha256(value).hexdigest() for value in variants}:
             continue
+        archive = root / "research/.runtime/static-key-content/execution_sources"
+        archive = archive / record["commit"] / path
+        if archive.exists() and hashlib.sha256(archive.read_bytes()).hexdigest() == checksum:
+            continue
         raw = subprocess.run(["git", "show", record["commit"] + ":" + path],
                              cwd=root, check=True, capture_output=True).stdout
         variants = (raw, raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
