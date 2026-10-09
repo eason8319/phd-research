@@ -209,6 +209,31 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
         if check_logits:
             compare(hashlib.sha256((root / control["path"]).read_bytes()).hexdigest(),
                     control["sha256"], "legacy control prompt")
+    trace_path = folder / model / "free_token_diagnostic.json"
+    trace_verified = False
+    if trace_path.exists():
+        trace = read(trace_path)
+        question = next(row for row in gate["rows"] if row["key"] == trace["key"])
+        compare(trace["input_sha256"], question["input_sha256"], "free trace input")
+        compare(trace["main_execution_commit"], gate["commit"], "free trace main source")
+        for name, measured in trace["schemes"].items():
+            compare(measured["prediction"], question["schemes"][name]["prediction"],
+                    "free trace reproduced answer")
+            frames = measured["teacher_forced"]
+            nll = float(np.mean([frames[i]["target"]["nll"]
+                                 for i in trace["content_indices"]]))
+            compare(nll, question["schemes"][name]["nll"], "free trace content loss")
+            for i, current in enumerate(measured["frames"]):
+                compare(measured["token_ids"][i], current["top"][0]["id"], "greedy trace")
+                compare(current["correct_token_prefix"],
+                        measured["token_ids"][:i] == trace["answer_ids"][:i], "trace prefix")
+        source = root / "research/phase1/experiments/static_layer_allocation/code"
+        source = source / "free_token_diagnostic.py"
+        if not source.exists():
+            source = root / "research/.runtime/static-key-content/free_token_diagnostic.py"
+        compare(hashlib.sha256(source.read_bytes()).hexdigest(), trace["diagnostic_code_sha256"],
+                "free trace source")
+        trace_verified = True
     verified_logits = 0
     if model == plan["single_layer_diagnostic"]["model"]:
         diagnostic = read(folder / model / "single_layer.json")
@@ -277,6 +302,7 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
                 for budgets in gate["budget_comparisons"].values() for result in budgets.values()
             ), "full_logits_questions_verified": verified_logits,
             "mapping_both_follow": mapping["both_follow_mapping"],
+            "free_token_trace_verified": trace_verified,
             "legacy_complete_answer_matches": mapping["legacy_target_removed_copies"],
             "legacy_shared_suffix_questions": sum(
                 row["cases"]["legacy_target_removed"]["original_answer"][4:]
