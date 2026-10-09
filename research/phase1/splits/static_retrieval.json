@@ -1,0 +1,5553 @@
+{
+  "protocol": "phase1-independent-key-value",
+  "commit": "46c3a158a3148330a4b0c4ece6d93f936ed51d97",
+  "spec_source": "research/phase1/splits/retrieval.json",
+  "spec_source_sha256": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+  "counts": {
+    "calibration": 16,
+    "validation": 16
+  },
+  "rows": [
+    {
+      "id": "synth-c-0000",
+      "seed": 1623086992,
+      "target_tokens": 2048,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-8861db84",
+      "value": "val-974dd3ac",
+      "distractors": [
+        [
+          "key-e7c9896d",
+          "val-dd779676"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2040,
+          "actual_depth": 0.11274509803921569,
+          "sha256": "4eafc55d607cd40c97670db3b63b3f7ecffc1aee8b2c74a8ee1a0975f4282cae",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0000.txt",
+          "answer_ids": [
+            831,
+            12,
+            24,
+            22,
+            19,
+            631,
+            18,
+            580
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2042,
+          "actual_depth": 0.12291870714985309,
+          "sha256": "06a26b52fb6c65867c27c999c5e00008aafe2a487e75cdf36dc58b7550d6685a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0000.txt",
+          "answer_ids": [
+            838,
+            12,
+            26007,
+            634,
+            18,
+            582
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-d70cb09e",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0000-swapped.txt",
+          "sha256": "7c7ea9986c33cabc05b3c66b3d942e4b297d0914bd87ab799ee6234a1be5b305",
+          "tokens": 2040,
+          "answer_ids": [
+            831,
+            1737,
+            22,
+            15,
+            7221,
+            15,
+            24,
+            68
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0000-swapped.txt",
+          "sha256": "d1c067f7ee4b684589439a7c4150f6ea2857553b0a1ac767def940f0d8f100c1",
+          "tokens": 2042,
+          "answer_ids": [
+            838,
+            1773,
+            2031,
+            7369,
+            2545,
+            68
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0001",
+      "seed": 1623086993,
+      "target_tokens": 2048,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-1e8c38c8",
+      "value": "val-e3368eb0",
+      "distractors": [
+        [
+          "key-a114497e",
+          "val-4cc7bcff"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2041,
+          "actual_depth": 0.11268985791278785,
+          "sha256": "3a7cc844c4139899c2a2522bd88bcc00fb6c9070c5cb1b589f314221753fb3bf",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0001.txt",
+          "answer_ids": [
+            831,
+            5655,
+            18,
+            18,
+            21,
+            23,
+            3065,
+            15
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2033,
+          "actual_depth": 0.1234628627643876,
+          "sha256": "fbba5199032d22411aff2bc8b05b834f8264aec9bd9a8df6c148774790e9919a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0001.txt",
+          "answer_ids": [
+            838,
+            5773,
+            17014,
+            23,
+            3141,
+            15
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0002",
+      "seed": 1623086994,
+      "target_tokens": 2048,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-6565d25f",
+      "value": "val-000e02a9",
+      "distractors": [
+        [
+          "key-8990026f",
+          "val-2a195201"
+        ],
+        [
+          "key-a06de227",
+          "val-9826fce9"
+        ],
+        [
+          "key-e0505dbc",
+          "val-24b11c97"
+        ],
+        [
+          "key-a67bc005",
+          "val-1ac97131"
+        ],
+        [
+          "key-7991e313",
+          "val-7c084366"
+        ],
+        [
+          "key-567d2405",
+          "val-9ddfa04c"
+        ],
+        [
+          "key-52f510e4",
+          "val-3558ecfb"
+        ],
+        [
+          "key-2673208d",
+          "val-6bfb161c"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2045,
+          "actual_depth": 0.11246943765281174,
+          "sha256": "ba6b99d6fe31dcc68d2a3f662291dc51d9968098bebb4420ba9cb5cd4f69d0cb",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0002.txt",
+          "answer_ids": [
+            831,
+            12,
+            15,
+            15,
+            15,
+            68,
+            15,
+            17,
+            64,
+            24
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2047,
+          "actual_depth": 0.12261846604787494,
+          "sha256": "c75754f8fa3ca8ed652e8f403053c662f542e7e6f31925463b98bc3343aa017a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0002.txt",
+          "answer_ids": [
+            838,
+            12,
+            931,
+            68,
+            2437,
+            64,
+            24
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0003",
+      "seed": 1623086995,
+      "target_tokens": 2048,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-ea899434",
+      "value": "val-fd8fd231",
+      "distractors": [
+        [
+          "key-3c45dc5f",
+          "val-77fae4bc"
+        ],
+        [
+          "key-833393a3",
+          "val-cf30f296"
+        ],
+        [
+          "key-ad203dd2",
+          "val-f2b4a618"
+        ],
+        [
+          "key-91685423",
+          "val-a1dac071"
+        ],
+        [
+          "key-1024cd52",
+          "val-145314bb"
+        ],
+        [
+          "key-83d77dec",
+          "val-e371d103"
+        ],
+        [
+          "key-072c8932",
+          "val-c0c717b7"
+        ],
+        [
+          "key-7d227ba2",
+          "val-001c277f"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2038,
+          "actual_depth": 0.11285574092247301,
+          "sha256": "b464a34bf2929a395189011a83e017aa3977af90a0dd69828c582299ede0bd07",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0003.txt",
+          "answer_ids": [
+            831,
+            2220,
+            67,
+            23,
+            6902,
+            17,
+            18,
+            16
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2042,
+          "actual_depth": 0.12291870714985309,
+          "sha256": "ac82449ac7f385a8af1e4c0771c01f67e46974d031413cb6a26b837a1da4802a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0003.txt",
+          "answer_ids": [
+            838,
+            2269,
+            67,
+            23,
+            7047,
+            12245
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0004",
+      "seed": 1623086996,
+      "target_tokens": 2048,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-2a335525",
+      "value": "val-8f7ebe16",
+      "distractors": [
+        [
+          "key-52923854",
+          "val-a2421417"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2045,
+          "actual_depth": 0.3535452322738386,
+          "sha256": "c089e875bdc046c1f9b4bf15fd92473c9977aedd9d8283ad55a4e8c7912946a9",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0004.txt",
+          "answer_ids": [
+            831,
+            12,
+            23,
+            69,
+            22,
+            68,
+            1371,
+            16,
+            21
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2042,
+          "actual_depth": 0.36581782566111654,
+          "sha256": "2b894d93fff9ca95000d8915258da884a4badaa6f176c89c89d1efacc18a081f",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0004.txt",
+          "answer_ids": [
+            838,
+            12,
+            23,
+            69,
+            22,
+            109977,
+            845
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0005",
+      "seed": 1623086997,
+      "target_tokens": 2048,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-14c50e1d",
+      "value": "val-f8301174",
+      "distractors": [
+        [
+          "key-75d468fa",
+          "val-678aa7e7"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2044,
+          "actual_depth": 0.35371819960861056,
+          "sha256": "d023bc71b211fe14ba58a11289bb6b2e5f2d2236bec8454ac6f6c8889bcc245d",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0005.txt",
+          "answer_ids": [
+            831,
+            2220,
+            23,
+            18,
+            15,
+            16,
+            16,
+            22,
+            19
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2047,
+          "actual_depth": 0.36492427943331707,
+          "sha256": "6ae3996f9deb61a2b3c7cd0343074c9c9253253d162fb35b57dab88c0331d9cd",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0005.txt",
+          "answer_ids": [
+            838,
+            2269,
+            21221,
+            8546,
+            19
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0006",
+      "seed": 1623086998,
+      "target_tokens": 2048,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-ca0bf2d4",
+      "value": "val-2c6ce6cb",
+      "distractors": [
+        [
+          "key-b736dd69",
+          "val-bdf33a7b"
+        ],
+        [
+          "key-d071712a",
+          "val-7eb0d493"
+        ],
+        [
+          "key-e184ec06",
+          "val-13513fc2"
+        ],
+        [
+          "key-4c0aa2f9",
+          "val-d752e3a0"
+        ],
+        [
+          "key-7725cff0",
+          "val-ad650f4b"
+        ],
+        [
+          "key-8bee34ee",
+          "val-1146143a"
+        ],
+        [
+          "key-91a19d7f",
+          "val-e866a225"
+        ],
+        [
+          "key-7f7f8297",
+          "val-f42b783c"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2032,
+          "actual_depth": 0.35088582677165353,
+          "sha256": "d7c8069d209aedeb4ec9ed14ed2c429bdb4a9d4d236e04dd7570b7f4e5fe1a89",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0006.txt",
+          "answer_ids": [
+            831,
+            12,
+            17,
+            66,
+            21,
+            346,
+            21,
+            7221
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2037,
+          "actual_depth": 0.3598429062346588,
+          "sha256": "57af8d240fb63216c88e6cc5d2f0855ec02cb11f40d780f2c113ed20ad6e15d0",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0006.txt",
+          "answer_ids": [
+            838,
+            12,
+            17,
+            66,
+            21,
+            346,
+            21,
+            7369
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-7dabd6c7",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0006-swapped.txt",
+          "sha256": "4a6e3cdec58fabd4aebfcff6901ef5299ebed00960f9786347d0b33b272314ba",
+          "tokens": 2032,
+          "answer_ids": [
+            831,
+            12,
+            22,
+            67,
+            85920,
+            21,
+            66,
+            22
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0006-swapped.txt",
+          "sha256": "df09a49c413c36523f7d40867d4daa7ad862840da072aa0cec690f2796c947bd",
+          "tokens": 2037,
+          "answer_ids": [
+            838,
+            12,
+            22,
+            67,
+            87020,
+            21,
+            66,
+            22
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0007",
+      "seed": 1623086999,
+      "target_tokens": 2048,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-5c9737be",
+      "value": "val-c30a96b5",
+      "distractors": [
+        [
+          "key-2705b883",
+          "val-f6891c33"
+        ],
+        [
+          "key-a2a97a6f",
+          "val-7ca28508"
+        ],
+        [
+          "key-c351caa2",
+          "val-68388e0d"
+        ],
+        [
+          "key-6cc83a0c",
+          "val-63382c2c"
+        ],
+        [
+          "key-c4c9576c",
+          "val-807a2ec9"
+        ],
+        [
+          "key-af926194",
+          "val-2add3789"
+        ],
+        [
+          "key-098797ca",
+          "val-e678ca38"
+        ],
+        [
+          "key-b85284bb",
+          "val-3b184fc8"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2039,
+          "actual_depth": 0.34870034330554195,
+          "sha256": "ab44ad99487752ece486fed3ac103babb6acb77f3613aec25254df9e6ddf5fdb",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0007.txt",
+          "answer_ids": [
+            831,
+            1786,
+            18,
+            15,
+            64,
+            24,
+            21,
+            65,
+            20
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2034,
+          "actual_depth": 0.35939036381514256,
+          "sha256": "78c42b276f26d4f6f1746f599e04fdd3386c3bfd2095eb1f89e7115ad6bd08ec",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0007.txt",
+          "answer_ids": [
+            838,
+            1824,
+            966,
+            64,
+            4161,
+            65,
+            20
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0008",
+      "seed": 1623087000,
+      "target_tokens": 2048,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-d0a863ba",
+      "value": "val-e7039a67",
+      "distractors": [
+        [
+          "key-a236c133",
+          "val-31263b80"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2041,
+          "actual_depth": 0.6374326310632044,
+          "sha256": "cd36c88816eff425fb41e63fee07b84bf8f2730507650694a841e4592e93a385",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0008.txt",
+          "answer_ids": [
+            831,
+            5655,
+            22,
+            15,
+            18,
+            24,
+            64,
+            21,
+            22
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2042,
+          "actual_depth": 0.6478942213516161,
+          "sha256": "19cd15ff43d94f9efcc364e644866eefd2e4ff6ff9858cfe8d2a48a6facf2be3",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0008.txt",
+          "answer_ids": [
+            838,
+            5773,
+            20436,
+            24,
+            64,
+            3080
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-71dbd579",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0008-swapped.txt",
+          "sha256": "4412cd0863568a8969bda47aef4eff26404d906801dec71717daed167c82bc1d",
+          "tokens": 2041,
+          "answer_ids": [
+            831,
+            12,
+            22,
+            16,
+            1999,
+            67,
+            20,
+            22,
+            24
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0008-swapped.txt",
+          "sha256": "3994bef0a97a2b915c05772a3c3e15f3f9efb87c76944ce028f35614760801bc",
+          "tokens": 2042,
+          "answer_ids": [
+            838,
+            12,
+            6028,
+            2042,
+            67,
+            24847
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0009",
+      "seed": 1623087001,
+      "target_tokens": 2048,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-bcb41740",
+      "value": "val-63f0c2cd",
+      "distractors": [
+        [
+          "key-5da7e32a",
+          "val-9d27ea0c"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2040,
+          "actual_depth": 0.6377450980392156,
+          "sha256": "3b59a648043f30a010edc46a3dca73303a185524a97fec3415064e5e4a633710",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0009.txt",
+          "answer_ids": [
+            831,
+            12,
+            21,
+            18,
+            69,
+            15,
+            66,
+            17,
+            4385
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2047,
+          "actual_depth": 0.6463116756228627,
+          "sha256": "760ff9ee929ae669db85bdf9300453032836e74360fa6052e0e7588c962d91cc",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0009.txt",
+          "answer_ids": [
+            838,
+            12,
+            5495,
+            69,
+            15,
+            66,
+            17,
+            4484
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0010",
+      "seed": 1623087002,
+      "target_tokens": 2048,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-6a53c985",
+      "value": "val-b360a722",
+      "distractors": [
+        [
+          "key-67163bee",
+          "val-e5d3bf40"
+        ],
+        [
+          "key-a833924d",
+          "val-298e4ea7"
+        ],
+        [
+          "key-75ec3f72",
+          "val-d2e73e11"
+        ],
+        [
+          "key-69e36917",
+          "val-efbf4bb1"
+        ],
+        [
+          "key-c5c33fb7",
+          "val-2a1b7ace"
+        ],
+        [
+          "key-0a0957a9",
+          "val-ac268313"
+        ],
+        [
+          "key-cef4d717",
+          "val-a4518ddc"
+        ],
+        [
+          "key-36856067",
+          "val-b8909139"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2037,
+          "actual_depth": 0.6391752577319587,
+          "sha256": "13aba361a7d2ae8fe24f213f0de16f3f0d1edfb41a91ec9337f4a359bd0d56b5",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0010.txt",
+          "answer_ids": [
+            831,
+            1455,
+            18,
+            21,
+            15,
+            64,
+            22,
+            17,
+            17
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2048,
+          "actual_depth": 0.646484375,
+          "sha256": "598b58d4819e8bc8b0e36f5d1bf8a3cb44049829406058b26f1a9cef0fcf707a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0010.txt",
+          "answer_ids": [
+            838,
+            1481,
+            6843,
+            64,
+            23024
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0011",
+      "seed": 1623087003,
+      "target_tokens": 2048,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-23fde66f",
+      "value": "val-a7bdd61c",
+      "distractors": [
+        [
+          "key-68f24ddd",
+          "val-6b0adc20"
+        ],
+        [
+          "key-49171fa7",
+          "val-c36c98bd"
+        ],
+        [
+          "key-cc7b3d70",
+          "val-629a5ddd"
+        ],
+        [
+          "key-626f8c15",
+          "val-9c4e5247"
+        ],
+        [
+          "key-9efcc18a",
+          "val-90a22ab4"
+        ],
+        [
+          "key-a376b266",
+          "val-f30d2aef"
+        ],
+        [
+          "key-f966a31b",
+          "val-3512ce56"
+        ],
+        [
+          "key-f022dacb",
+          "val-528ac631"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2033,
+          "actual_depth": 0.6399409739301525,
+          "sha256": "038a0128031f7d5646884e8710ca051bfaae1f341b0e377a0febc5ac9319e42f",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0011.txt",
+          "answer_ids": [
+            831,
+            7409,
+            22,
+            50442,
+            21,
+            16,
+            66
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2035,
+          "actual_depth": 0.6501228501228501,
+          "sha256": "a6dc1a6f9d412f8f0385d73b72e32b086f7311b52b4eeef6d63d1725795ffdf9",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0011.txt",
+          "answer_ids": [
+            838,
+            7561,
+            22,
+            51542,
+            5547,
+            66
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0012",
+      "seed": 1623087004,
+      "target_tokens": 2048,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-73625be8",
+      "value": "val-51bfa212",
+      "distractors": [
+        [
+          "key-571e51f0",
+          "val-e9d438ec"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2040,
+          "actual_depth": 0.8808823529411764,
+          "sha256": "cbc03bd0d3ca453a2f5dba66bded2322bd2a4190d6b657ccb1d33a80360d3392",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0012.txt",
+          "answer_ids": [
+            831,
+            12,
+            20,
+            16,
+            65,
+            3632,
+            17,
+            16,
+            17
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2044,
+          "actual_depth": 0.889921722113503,
+          "sha256": "da6d0b0e8c4e5f5c964a58fc07a39b4f9542a0d40a45b60e46663661e8a66ed5",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0012.txt",
+          "answer_ids": [
+            838,
+            12,
+            3971,
+            65,
+            3716,
+            11227
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0013",
+      "seed": 1623087005,
+      "target_tokens": 2048,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-909c1bd1",
+      "value": "val-8b6b444a",
+      "distractors": [
+        [
+          "key-db9a1c01",
+          "val-d694ade7"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2038,
+          "actual_depth": 0.8817468105986261,
+          "sha256": "1ebb62570a7b8deef35299596477bc6ca41d0beb123dd3e8eb9b0471ba0504cb",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0013.txt",
+          "answer_ids": [
+            831,
+            12,
+            23,
+            65,
+            21,
+            65,
+            19,
+            19,
+            19,
+            64
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2047,
+          "actual_depth": 0.8886174890083048,
+          "sha256": "cffc77216d08dd4db554a5f58b69fc90129f5e88983b557dea65fdb59ad58e80",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0013.txt",
+          "answer_ids": [
+            838,
+            12,
+            23,
+            65,
+            21,
+            65,
+            14870,
+            64
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0014",
+      "seed": 1623087006,
+      "target_tokens": 2048,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-0fff89fa",
+      "value": "val-f010478e",
+      "distractors": [
+        [
+          "key-9ff1db05",
+          "val-a5ec3d42"
+        ],
+        [
+          "key-695147a0",
+          "val-1812c622"
+        ],
+        [
+          "key-722e1cd3",
+          "val-b58fffef"
+        ],
+        [
+          "key-9adeb028",
+          "val-5281ec5f"
+        ],
+        [
+          "key-4532e61f",
+          "val-76d56b30"
+        ],
+        [
+          "key-9e01e058",
+          "val-9f7f8ab2"
+        ],
+        [
+          "key-0923658e",
+          "val-79d4b9d6"
+        ],
+        [
+          "key-5ad7647c",
+          "val-ea5cd5d0"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2036,
+          "actual_depth": 0.8835952848722987,
+          "sha256": "3cc859979f0073bc6d3e85f7dcb17df990814369b0aebe266d806e6a9343224e",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0014.txt",
+          "answer_ids": [
+            831,
+            2220,
+            15,
+            16,
+            15,
+            19,
+            22,
+            23,
+            68
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2041,
+          "actual_depth": 0.8897599216070554,
+          "sha256": "40fe08ad12383479c5b77129c6fd1e87216f760ad4ec84e86ed5b17dec576c0e",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0014.txt",
+          "answer_ids": [
+            838,
+            2269,
+            7755,
+            22086,
+            68
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-847ca611",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0014-swapped.txt",
+          "sha256": "d9b572b630b91994ebdf988eaafb6e823d9bbb28929c71a5f621d18d0e4bb4bc",
+          "tokens": 2036,
+          "answer_ids": [
+            831,
+            12,
+            23,
+            19,
+            22,
+            924,
+            21,
+            16,
+            16
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0014-swapped.txt",
+          "sha256": "c2e26e98b21b19e06db3d6e5360c3a4e57cf9d5f229c644a61dade5490be0cf6",
+          "tokens": 2041,
+          "answer_ids": [
+            838,
+            12,
+            25125,
+            936,
+            20973
+          ],
+          "content_indices": [
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0015",
+      "seed": 1623087007,
+      "target_tokens": 2048,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-d926b7e5",
+      "value": "val-8697c45f",
+      "distractors": [
+        [
+          "key-46bf31e0",
+          "val-660e1a03"
+        ],
+        [
+          "key-0a8ec2ad",
+          "val-519779b9"
+        ],
+        [
+          "key-ed56312d",
+          "val-bec9c3a1"
+        ],
+        [
+          "key-42d0698a",
+          "val-aa462a42"
+        ],
+        [
+          "key-b2f0d500",
+          "val-e78780f1"
+        ],
+        [
+          "key-c526de99",
+          "val-dc478af7"
+        ],
+        [
+          "key-c3a0b1d3",
+          "val-198848c3"
+        ],
+        [
+          "key-d4e0b4ab",
+          "val-e6973eb9"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 2038,
+          "actual_depth": 0.879784102060844,
+          "sha256": "aaa852e5589eb7dbd0f36bc9b5bf5147f0b1d668fadbac90d1c4b36f961944ee",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0015.txt",
+          "answer_ids": [
+            831,
+            12,
+            23,
+            21,
+            24,
+            22,
+            66,
+            19,
+            20,
+            69
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 2041,
+          "actual_depth": 0.8878000979911808,
+          "sha256": "96554f35bddfd8dae898aad635cda23fb7614517682b5280dce04c0705116163",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0015.txt",
+          "answer_ids": [
+            838,
+            12,
+            26497,
+            22,
+            66,
+            1774,
+            69
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0016",
+      "seed": 1623087008,
+      "target_tokens": 4096,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-90532b17",
+      "value": "val-d4ea6f60",
+      "distractors": [
+        [
+          "key-7bc146db",
+          "val-077ed1c6"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4094,
+          "actual_depth": 0.10600879335613092,
+          "sha256": "b29e0474e72026d9093f8e3b4479aa3a1329520477d95ae9bafaf9cd1003ad01",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0016.txt",
+          "answer_ids": [
+            831,
+            1737,
+            19,
+            12508,
+            21,
+            69,
+            21,
+            15
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4093,
+          "actual_depth": 0.11214268262887857,
+          "sha256": "b95f873ffdc25341983e473a522202f414e779d353a543e7b2d5f68084267ca4",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0016.txt",
+          "answer_ids": [
+            838,
+            1773,
+            19,
+            12791,
+            21,
+            69,
+            1399
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-cfca81b6",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0016-swapped.txt",
+          "sha256": "ad9feb6180e54d8f8dadddb4ab6f34fb0875b2fd121c45755cdab4b599a6248d",
+          "tokens": 4094,
+          "answer_ids": [
+            831,
+            1786,
+            69,
+            924,
+            23,
+            16,
+            65,
+            21
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0016-swapped.txt",
+          "sha256": "ebdfb141cdac43c17835816e1070c676cb032723745cf5ec3aff3aaca583f4f4",
+          "tokens": 4093,
+          "answer_ids": [
+            838,
+            1824,
+            69,
+            936,
+            5932,
+            65,
+            21
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0017",
+      "seed": 1623087009,
+      "target_tokens": 4096,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-5daa81a5",
+      "value": "val-d2137c0f",
+      "distractors": [
+        [
+          "key-cc98a70b",
+          "val-cdf269e6"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4093,
+          "actual_depth": 0.10603469337893966,
+          "sha256": "7943eb8f3d90f416e48c4967f844655609d14330f3e9e554253873f4b500983b",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0017.txt",
+          "answer_ids": [
+            831,
+            1737,
+            17,
+            16,
+            18,
+            22,
+            66,
+            15,
+            69
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4081,
+          "actual_depth": 0.11247243322715021,
+          "sha256": "9bc9b82d034cb5a876bd2baf8f96f039cd12da3be8bc1d33105a72346ffa8107",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0017.txt",
+          "answer_ids": [
+            838,
+            1773,
+            11702,
+            22,
+            66,
+            15,
+            69
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0018",
+      "seed": 1623087010,
+      "target_tokens": 4096,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-41638e2a",
+      "value": "val-9a269585",
+      "distractors": [
+        [
+          "key-bb97a885",
+          "val-595b878a"
+        ],
+        [
+          "key-6382d06f",
+          "val-61850259"
+        ],
+        [
+          "key-17b8578a",
+          "val-f4a2ad46"
+        ],
+        [
+          "key-5d2ca8af",
+          "val-0274a56f"
+        ],
+        [
+          "key-68649b90",
+          "val-169f579f"
+        ],
+        [
+          "key-d9a4e418",
+          "val-c0c471f6"
+        ],
+        [
+          "key-83290785",
+          "val-9f697230"
+        ],
+        [
+          "key-47d76099",
+          "val-f7174cff"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4080,
+          "actual_depth": 0.10220588235294117,
+          "sha256": "94ffd164d0544e043fd037b0caa525527e2519e524b64583df6d1b1c3e425f05",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0018.txt",
+          "answer_ids": [
+            831,
+            12,
+            24,
+            64,
+            17,
+            21,
+            24,
+            20,
+            23,
+            20
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4082,
+          "actual_depth": 0.11244487996080353,
+          "sha256": "7f3ce136c9ac7aac4371bfdbfd945b6fd7f27ad81e253006a4e9b315ceb1827a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0018.txt",
+          "answer_ids": [
+            838,
+            12,
+            24,
+            64,
+            16955,
+            21535
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0019",
+      "seed": 1623087011,
+      "target_tokens": 4096,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-12715151",
+      "value": "val-11c3a0b1",
+      "distractors": [
+        [
+          "key-fe975dd4",
+          "val-6b04c273"
+        ],
+        [
+          "key-67859228",
+          "val-afbb451f"
+        ],
+        [
+          "key-81484998",
+          "val-5864df09"
+        ],
+        [
+          "key-574aa7fa",
+          "val-9a34be94"
+        ],
+        [
+          "key-1529c838",
+          "val-3b44637c"
+        ],
+        [
+          "key-518e3a4a",
+          "val-4d93b76d"
+        ],
+        [
+          "key-6924bc87",
+          "val-5e80f456"
+        ],
+        [
+          "key-981824bd",
+          "val-5d60a8ed"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4096,
+          "actual_depth": 0.10595703125,
+          "sha256": "fd90fd96647cd7253ef3747cc43e78fed0d0631e3302ae3ccfd12584c8833094",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0019.txt",
+          "answer_ids": [
+            831,
+            12,
+            16,
+            16,
+            66,
+            18,
+            64,
+            15,
+            65,
+            16
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4082,
+          "actual_depth": 0.11244487996080353,
+          "sha256": "2ebfde84b9254acf7325c5714471c296ffba5154877d8db2771a9890967ed92b",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0019.txt",
+          "answer_ids": [
+            838,
+            12,
+            806,
+            66,
+            18,
+            64,
+            15,
+            65,
+            16
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0020",
+      "seed": 1623087012,
+      "target_tokens": 4096,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-3d98dd7b",
+      "value": "val-c969382d",
+      "distractors": [
+        [
+          "key-ccbdb48d",
+          "val-e54efe66"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4090,
+          "actual_depth": 0.34303178484107577,
+          "sha256": "3c51e9a00dd3768202fce9dcafa713f0132fa7c49887c19bd5bd5cbaeab7cba1",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0020.txt",
+          "answer_ids": [
+            831,
+            1786,
+            24,
+            21,
+            24,
+            18,
+            23,
+            17,
+            67
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4093,
+          "actual_depth": 0.35841680918641583,
+          "sha256": "ee5a1b0b2a6c587bf9af731aa056c96e95398effed7a3e3ae46401101ba0567a",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0020.txt",
+          "answer_ids": [
+            838,
+            1824,
+            24792,
+            18781,
+            67
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0021",
+      "seed": 1623087013,
+      "target_tokens": 4096,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-68b4ff1a",
+      "value": "val-33511f28",
+      "distractors": [
+        [
+          "key-6d94e693",
+          "val-eee21e70"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4095,
+          "actual_depth": 0.3426129426129426,
+          "sha256": "4126365806c259ca61c7453887c53dfa283e218cb28b8c8816327897b281e5c7",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0021.txt",
+          "answer_ids": [
+            831,
+            12,
+            18,
+            18,
+            20,
+            16,
+            16,
+            69,
+            17,
+            23
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4096,
+          "actual_depth": 0.358154296875,
+          "sha256": "b3aa00ab5fe28f2cd598dcb33b14da5a143b1b4411506669b9b5be508204b608",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0021.txt",
+          "answer_ids": [
+            838,
+            12,
+            16596,
+            806,
+            69,
+            1591
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0022",
+      "seed": 1623087014,
+      "target_tokens": 4096,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-4c8ed450",
+      "value": "val-c05c6f37",
+      "distractors": [
+        [
+          "key-f5999721",
+          "val-7a873ddf"
+        ],
+        [
+          "key-935d6f8a",
+          "val-e61d0f77"
+        ],
+        [
+          "key-8057a598",
+          "val-d38c7d11"
+        ],
+        [
+          "key-b5387a1b",
+          "val-e729de03"
+        ],
+        [
+          "key-768a4d7b",
+          "val-e466ea51"
+        ],
+        [
+          "key-58121679",
+          "val-4474aca4"
+        ],
+        [
+          "key-f6b03dee",
+          "val-b01d8590"
+        ],
+        [
+          "key-db7acdbe",
+          "val-6646a942"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4083,
+          "actual_depth": 0.34019103600293904,
+          "sha256": "c06be61c1d8ce815213f93ba908645515d3697a128fa8e934ff67f737e6904ba",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0022.txt",
+          "answer_ids": [
+            831,
+            1786,
+            15,
+            20,
+            66,
+            21,
+            69,
+            18,
+            22
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4096,
+          "actual_depth": 0.35791015625,
+          "sha256": "02b1ac4d3b610791bc704431cae903caa759801d2b9826f70f90a92f5b83536d",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0022.txt",
+          "answer_ids": [
+            838,
+            1824,
+            2304,
+            66,
+            21,
+            69,
+            1806
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-50fc1f67",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0022-swapped.txt",
+          "sha256": "e8e1e8b4f3a09252aa3ff4ba00f7047d5d97ab5fca500cab538870f791e86941",
+          "tokens": 4083,
+          "answer_ids": [
+            831,
+            12,
+            20,
+            15,
+            8316,
+            16,
+            69,
+            21,
+            22
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0022-swapped.txt",
+          "sha256": "c4fad9061798bc0cb38218427a2c09b0b0abae29d9e641e53848e7cdd92a7a31",
+          "tokens": 4096,
+          "answer_ids": [
+            838,
+            12,
+            1135,
+            8480,
+            16,
+            69,
+            3080
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0023",
+      "seed": 1623087015,
+      "target_tokens": 4096,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-2a5fbe72",
+      "value": "val-d617d0b8",
+      "distractors": [
+        [
+          "key-2690d141",
+          "val-494a4036"
+        ],
+        [
+          "key-0f6fdd90",
+          "val-a8cfde40"
+        ],
+        [
+          "key-0f44dbfe",
+          "val-1bb6becd"
+        ],
+        [
+          "key-e48f1e3e",
+          "val-3d1e5f60"
+        ],
+        [
+          "key-f81dd197",
+          "val-fe628cff"
+        ],
+        [
+          "key-7b17da7c",
+          "val-009d899f"
+        ],
+        [
+          "key-40efbd51",
+          "val-6be8b2ed"
+        ],
+        [
+          "key-ae01ae57",
+          "val-00aec6c0"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4095,
+          "actual_depth": 0.33943833943833945,
+          "sha256": "adc21bcaa13f2fa102834882bdfb427f4339afc0bd6cf5c9c87c3c3cb3d17345",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0023.txt",
+          "answer_ids": [
+            831,
+            1737,
+            21,
+            16,
+            22,
+            67,
+            15,
+            65,
+            23
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4089,
+          "actual_depth": 0.35509904622157007,
+          "sha256": "0d344476abcfde7fb02e9963d9a33861f300a3124532090c51babc55b8cc71c7",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0023.txt",
+          "answer_ids": [
+            838,
+            1773,
+            21717,
+            67,
+            15,
+            65,
+            23
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0024",
+      "seed": 1623087016,
+      "target_tokens": 4096,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-ae1b7190",
+      "value": "val-6fdf6b88",
+      "distractors": [
+        [
+          "key-ac01a830",
+          "val-92195d8b"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4091,
+          "actual_depth": 0.6372525054998778,
+          "sha256": "fef52175fe6fea9af2fd8f944fa8307f15c629eb3a43187b0b2ee27ea610478b",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0024.txt",
+          "answer_ids": [
+            831,
+            12,
+            21,
+            80583,
+            21,
+            65,
+            23,
+            23
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4094,
+          "actual_depth": 0.647532975085491,
+          "sha256": "c64aef8404a8f64da3a6504c7630e6beeb5c75aca98df622791f75341af92528",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0024.txt",
+          "answer_ids": [
+            838,
+            12,
+            21,
+            81683,
+            21,
+            65,
+            2421
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-a43fe5c0",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0024-swapped.txt",
+          "sha256": "fcc99fabf39abc7acc8d179185cddfd88ee3dfcf21274f8762de3d162a08df8c",
+          "tokens": 4091,
+          "answer_ids": [
+            831,
+            7409,
+            19,
+            18,
+            1859,
+            20,
+            66,
+            15
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0024-swapped.txt",
+          "sha256": "98de3d60e6a1421717aba671e8f19d43abc495776ee2ed57817ec9f412a06fd1",
+          "tokens": 4094,
+          "answer_ids": [
+            838,
+            7561,
+            3391,
+            1897,
+            20,
+            66,
+            15
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0025",
+      "seed": 1623087017,
+      "target_tokens": 4096,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-14f0bd2c",
+      "value": "val-b265ee17",
+      "distractors": [
+        [
+          "key-06ff0949",
+          "val-fef9793d"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4090,
+          "actual_depth": 0.6374083129584353,
+          "sha256": "07f2b8b46b89abda9ce6462a8989c523c607e286409ad09c20916876e2185934",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0025.txt",
+          "answer_ids": [
+            831,
+            1455,
+            17,
+            21,
+            20,
+            2127,
+            16,
+            22
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4094,
+          "actual_depth": 0.647532975085491,
+          "sha256": "5f25a44653f7cf5ce0fb9fdb296a1bb3844d3d24f812741068a63d90661c1ec0",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0025.txt",
+          "answer_ids": [
+            838,
+            1481,
+            14374,
+            2176,
+            1114
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0026",
+      "seed": 1623087018,
+      "target_tokens": 4096,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-8ecebac6",
+      "value": "val-7c97b889",
+      "distractors": [
+        [
+          "key-5f72996a",
+          "val-088e891c"
+        ],
+        [
+          "key-4ba98687",
+          "val-daca8ef6"
+        ],
+        [
+          "key-a32f3484",
+          "val-64dc72f4"
+        ],
+        [
+          "key-4476b91c",
+          "val-2e0d053d"
+        ],
+        [
+          "key-8a69da42",
+          "val-8d1df0ee"
+        ],
+        [
+          "key-e7de4c99",
+          "val-6fe35948"
+        ],
+        [
+          "key-c80a52ca",
+          "val-7f7b1f1d"
+        ],
+        [
+          "key-0966e86e",
+          "val-6ee40182"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4083,
+          "actual_depth": 0.6387460200832721,
+          "sha256": "5af94c4f8ee3c28b5387024ded888bec15a0f204f0b109bc2f9fa87615988251",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0026.txt",
+          "answer_ids": [
+            831,
+            12,
+            22,
+            66,
+            24,
+            22,
+            65,
+            23,
+            23,
+            24
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4090,
+          "actual_depth": 0.6503667481662592,
+          "sha256": "fb7a6344bbbd1cd914b8b2f9005b575fd61d037c5a10d3c33edadbe42e54c4bc",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0026.txt",
+          "answer_ids": [
+            838,
+            12,
+            22,
+            66,
+            3534,
+            65,
+            25354
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0027",
+      "seed": 1623087019,
+      "target_tokens": 4096,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-c0b025ef",
+      "value": "val-320e71ee",
+      "distractors": [
+        [
+          "key-31fdbd4e",
+          "val-f53f736b"
+        ],
+        [
+          "key-19996668",
+          "val-1dbd0e84"
+        ],
+        [
+          "key-c5b87fb2",
+          "val-445e92e0"
+        ],
+        [
+          "key-57fbd680",
+          "val-ca3b1ca9"
+        ],
+        [
+          "key-dfbe5c52",
+          "val-bc37b5e1"
+        ],
+        [
+          "key-b5efe9f9",
+          "val-8bd2f22a"
+        ],
+        [
+          "key-4eb92f3d",
+          "val-4c477400"
+        ],
+        [
+          "key-9525d90b",
+          "val-594e8a65"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4083,
+          "actual_depth": 0.6387460200832721,
+          "sha256": "24116e493d0451dcf569554fede0e517586d90f3b51149c899e691df74c32054",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0027.txt",
+          "answer_ids": [
+            831,
+            12,
+            18,
+            17,
+            15,
+            68,
+            22,
+            16,
+            2127
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4089,
+          "actual_depth": 0.6505258009293226,
+          "sha256": "3549ae222b84a6a984efc6e0bbdfa67cb1d5b826f730a04115dcd13a4a346a1c",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0027.txt",
+          "answer_ids": [
+            838,
+            12,
+            9588,
+            68,
+            6028,
+            2176
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0028",
+      "seed": 1623087020,
+      "target_tokens": 4096,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-8f33de1d",
+      "value": "val-a744d3f4",
+      "distractors": [
+        [
+          "key-e331cc22",
+          "val-781c266c"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4092,
+          "actual_depth": 0.8878299120234604,
+          "sha256": "35a65b146df45adae0369c66ebf823d1c433344b9324e7f43ebf3857403755e2",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0028.txt",
+          "answer_ids": [
+            831,
+            7409,
+            22,
+            19,
+            19,
+            67,
+            18,
+            69,
+            19
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4095,
+          "actual_depth": 0.8935286935286936,
+          "sha256": "c96ad35145119fa7ddb4fdcfc9d913099fb14aa5eabf0b55a834f1a102f31309",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0028.txt",
+          "answer_ids": [
+            838,
+            7561,
+            23800,
+            67,
+            18,
+            69,
+            19
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0029",
+      "seed": 1623087021,
+      "target_tokens": 4096,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-c8455c61",
+      "value": "val-bea75825",
+      "distractors": [
+        [
+          "key-9d0758c8",
+          "val-1bfa5f20"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4092,
+          "actual_depth": 0.8878299120234604,
+          "sha256": "83c84d83b5ec8961e472a89c2842d08a45eeb52948fb7bae4a4ecae6a7ddf2d8",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0029.txt",
+          "answer_ids": [
+            831,
+            15150,
+            64,
+            22,
+            20,
+            23,
+            17,
+            20
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4094,
+          "actual_depth": 0.8937469467513435,
+          "sha256": "d198c087ec6b826b616c0ae6e70e4078c46c1ccfe09e752cde2e6e0ba7387096",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0029.txt",
+          "answer_ids": [
+            838,
+            15502,
+            64,
+            25302,
+            914
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0030",
+      "seed": 1623087022,
+      "target_tokens": 4096,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": 0,
+      "role": "calibration",
+      "key": "key-3c55fdd3",
+      "value": "val-c9867cff",
+      "distractors": [
+        [
+          "key-c778c0c3",
+          "val-d9820ac6"
+        ],
+        [
+          "key-cb619224",
+          "val-2f73e71f"
+        ],
+        [
+          "key-f9854cf5",
+          "val-c5e1ebcc"
+        ],
+        [
+          "key-fa18ece2",
+          "val-b2aae172"
+        ],
+        [
+          "key-03fd9e21",
+          "val-e3b2647a"
+        ],
+        [
+          "key-9e7c9222",
+          "val-908697bd"
+        ],
+        [
+          "key-273e7abe",
+          "val-09a32aa6"
+        ],
+        [
+          "key-7d4c0618",
+          "val-4b213a9b"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4084,
+          "actual_depth": 0.8883447600391773,
+          "sha256": "c2bf2ba83936cf40506738bf385f0f52d395dbac2d669b9f5869fc962668e658",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0030.txt",
+          "answer_ids": [
+            831,
+            1786,
+            24,
+            23,
+            21,
+            22,
+            57823
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4089,
+          "actual_depth": 0.8933724627048178,
+          "sha256": "23746f920e45f27ed74769827a89c977d5e70e96ee04eb2dae571ccbcb4d5adb",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0030.txt",
+          "answer_ids": [
+            838,
+            1824,
+            27468,
+            22,
+            58923
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      },
+      "paired_value": "val-ee846cec",
+      "paired_models": {
+        "qwen": {
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0030-swapped.txt",
+          "sha256": "a9f3ebfd9c0816873355d220c1a460d17809a98c4e05dccd603c9224dc3374bb",
+          "tokens": 4084,
+          "answer_ids": [
+            831,
+            12,
+            2127,
+            23,
+            19,
+            21,
+            68955
+          ],
+          "content_indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0030-swapped.txt",
+          "sha256": "9395cdf54c526b19f2aa50905c7496e958cc1771543c1fbdf62f76206a082d5c",
+          "tokens": 4089,
+          "answer_ids": [
+            838,
+            12,
+            2176,
+            26563,
+            70055
+          ],
+          "content_indices": [
+            2,
+            3,
+            4
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "synth-c-0031",
+      "seed": 1623087023,
+      "target_tokens": 4096,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": 1,
+      "role": "validation",
+      "key": "key-a3796347",
+      "value": "val-e869ae7f",
+      "distractors": [
+        [
+          "key-a94490b8",
+          "val-f14d77b3"
+        ],
+        [
+          "key-575ae8c1",
+          "val-a7d43d20"
+        ],
+        [
+          "key-f850aaa0",
+          "val-5a7578ee"
+        ],
+        [
+          "key-8faef871",
+          "val-8e196664"
+        ],
+        [
+          "key-fda26f3d",
+          "val-d71cef8d"
+        ],
+        [
+          "key-e296d171",
+          "val-c9cde2af"
+        ],
+        [
+          "key-e9466790",
+          "val-de1d8c88"
+        ],
+        [
+          "key-97f8c247",
+          "val-107de8a9"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 4082,
+          "actual_depth": 0.8878000979911808,
+          "sha256": "da6b937cfef729c926397e7daf39b39356aede00df9400828a8ed8502ae80c0b",
+          "path": "research/.runtime/static-key-content/inputs/qwen/synth-c-0031.txt",
+          "answer_ids": [
+            831,
+            5655,
+            23,
+            21,
+            24,
+            5918,
+            22,
+            69
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        },
+        "llama": {
+          "tokens": 4095,
+          "actual_depth": 0.8947496947496948,
+          "sha256": "026d58e136373c9463cfe5a7ab161e3140148b56fea10aad1f39e296d4169c06",
+          "path": "research/.runtime/static-key-content/inputs/llama/synth-c-0031.txt",
+          "answer_ids": [
+            838,
+            5773,
+            26497,
+            6043,
+            22,
+            69
+          ],
+          "content_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer_offsets": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "audit": {
+    "old_c_same_key_value_suffix": {
+      "qwen": 32,
+      "llama": 32
+    },
+    "new_key_value_suffix_matches": 0,
+    "new_distractor_suffix_matches": 0,
+    "paired_n": 8
+  },
+  "mapping_seed_rule": "numpy_default_rng_original_spec_seed_unique_independent_draws",
+  "identity_digest": "6f20a1d489041696dee3f972babdeb18acbde0cc5efdb8516c08b6c7774c36b6"
+}
