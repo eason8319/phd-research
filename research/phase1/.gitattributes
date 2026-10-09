@@ -1,2 +1,3 @@
 experiments/**/results/**/*.json text eol=lf
 source_index.json text eol=lf
+splits/static_retrieval.json text eol=lf

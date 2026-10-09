@@ -104,3 +104,20 @@ PyTorch 2.5.1+cu121、Transformers 4.46.3 和 BF16 权重，执行提交为
 `46d9e24ccb3cc3ad956be8d3002c105eba3e9f1310e5e9b0a0aecb4088211026`。
 审核后清理一次性代码、输出及独立目录；执行来源和回归记录见
 `research/phase1/source_index.json` 的 `static_key_allocation`。
+
+## 静态 Key 分配的独立映射与内容位置准入
+
+2026-10-09 在 node8、NVIDIA RTX 6000 Ada 的 GPU 1 上，沿用冻结的 Python 3.11、
+PyTorch 2.5.1+cu121、Transformers 4.46.3 与 BF16 权重。
+准入执行提交为 `46c3a158a3148330a4b0c4ece6d93f936ed51d97`，25 项长期回归通过，
+覆盖独立映射、实际分词跨度、正确目标差距、题内等权汇总、持续缓存与预测前测量、
+固定 K 预算及残留成本，以及线性 logits 下 KL 的非可加性。
+成功输出 SHA256 为 `e0df4a325d7440ec640ba29ba161bd8290c85511c3aaa31f8c3797cb6d0a1a54`；
+预备输出已清理，持续回归与来源见 `source_index.json` 的 `static_key_allocation`。
+
+正式执行提交为 `6be99c903005b1ee2004ce7c6861ea967d82f278`，冻结 2K/4K 检索输入、
+32-token 自由输出预算及每方案独立缓存。含余量峰值估算为 Qwen 20 GiB、Llama 22.5 GiB，
+各模型加载前实际空闲容量满足估算；实测最大分配/预留为 Qwen 15.109/15.348 GiB、
+Llama 17.470/18.229 GiB。全矩阵无无效量化、非有限输出或 OOM，内容与单层原始 logits
+复算通过。node6 的 GPU 设备访问失败尚未解决，其记录保留在来源索引指定的服务器路径。
+本节登记上述输入与实现的运行事实，V 计划保持未冻结。

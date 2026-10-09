@@ -1,509 +1,412 @@
 {
-  "schema": "key-downgrade-allocation",
-  "protocol": "phase1-full-key-retrieval",
-  "commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
+  "schema": "independent-retrieval-content-allocation",
+  "protocol": "phase1-independent-key-value",
   "model": "qwen",
-  "n_layers": 28,
-  "rank_source": "retrieval",
-  "model_geometry": {
-    "hidden_size": 3584,
-    "num_attention_heads": 28,
-    "num_key_value_heads": 4,
-    "num_hidden_layers": 28
-  },
-  "plan_sha256": "e1c404e296ed441a7dbc50289ef000ef9b24372eae09049875fa0a51cb9fa5cb",
-  "probe_sha256": "27fe790b15624ec832339056a02852519aca1f109f868bd833e9fc4ebf4dc5fd",
-  "probe_commit": "ef664c0219e2efd774aa037d7ec1de6beadfff15",
-  "input_digest": "99da6d3fe24028b7cadc49007c272367abdea405ca35ff2712758b30ea90d9b3",
-  "model_config_sha256": "aa62acf47c1c3e20f7d15196c08dc4a1492105471e371cc9abc258e9ad800899",
-  "frozen_sources": {
-    "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
-    "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
-    "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
-    "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
-    "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74"
-  },
-  "calibration_source": {
-    "path": "research/.runtime/e2-calibration-qwen.pt",
-    "bytes": 574418,
-    "sha256": "a9cfa05403000ada67f1f7f5e33a66d4e7796f3b7ef60729c6a4c07a468e6682",
-    "commit": "6ca63fd",
-    "protocol": "phase1-protocol v7"
-  },
-  "random_seeds": [
-    202609231,
-    202609232,
-    202609233
-  ],
+  "commit": "6be99c903005b1ee2004ce7c6861ea967d82f278",
+  "plan_sha256": "2c47fe8414181e8fcfe27abfb42b21dbc8135bdae13a7a8ba443a0795d7855e9",
+  "dataset_digest": "6f20a1d489041696dee3f972babdeb18acbde0cc5efdb8516c08b6c7774c36b6",
+  "dataset_sha256": "72f1f0bf306a8182bc212471c2db3d0cebf982313939abc90e8d8a5bf58c89ee",
   "code_sha256": {
     "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
-    "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "405958434de2ace5009fed68abaf0b4b4bf9c2be9c2822aaf338d86f68180440",
+    "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "c4bb03c950188e1b3bef3328da76c96226ef64237c868088bfc3a76c71156456",
     "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
     "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
     "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
-    "research/phase1/experiments/static_layer_allocation/code/allocations.py": "205bb78fbb063a6000387b74e0f6bcf24402c12c89fe88d8bb66a429046e7278",
+    "research/phase1/experiments/static_layer_allocation/code/allocations.py": "44472dffbb529873f8c5c9ead89cbe5c0361ce595f2b81ed43a72d30696df34d",
+    "research/phase1/experiments/static_layer_allocation/code/content.py": "caf7da6142eceaf77b537b4f8c63b50471aa87d75776144a5a887c885db23d06",
+    "research/phase1/experiments/static_layer_allocation/code/content_data.py": "10e90928e2e694d8ae8c3412f44c17376417fd68bd2fa1ef1d1b99e3c9b1632d",
+    "research/phase1/experiments/static_layer_allocation/code/content_metrics.py": "eb24ee3c83cb18dfbb7d2c2a2bfbab57597e8d361a277d88c05af9e2f4f7e15e",
     "research/phase1/experiments/static_layer_allocation/code/expand.py": "122ac1323a228e3b6df25e64f11e7134d9c58625ca53179b5d65e9da86d9014f",
-    "research/phase1/experiments/static_layer_allocation/code/gate.py": "b81941f0b8b021087645cda712c7e839ded3be641024f5040bbd1a2f659a6378",
+    "research/phase1/experiments/static_layer_allocation/code/gate.py": "6a91358fed5374869c2ae294702303e59dd0da62aec548dc214f309c41b3109c",
     "research/phase1/experiments/static_layer_allocation/code/metrics.py": "e5f3009ad84c9bb54bebb833fca86fe9b9cec52cef6bebe942636f32248f7aa1",
-    "research/phase1/experiments/static_layer_allocation/code/probe.py": "60339853df1874f4062e03f6673920a4e334c67e6020150ba905aac4ac78ad0d",
-    "research/phase1/experiments/static_layer_allocation/code/protocol.py": "8c6210cbd8e0efa3aec25763192faab4e14e967866ae0c54df99c0409e4e0d59",
-    "research/phase1/experiments/static_layer_allocation/code/quality.py": "b26757f6a7471c716dbff4ed6b1c26d139e5d53f0c3d42797bb87a39f4eb6c32",
-    "research/phase1/experiments/static_layer_allocation/code/select.py": "5032da8d0ccd478203c1392446e7901797a733849780d678a0fa5e256b43e2ba",
+    "research/phase1/experiments/static_layer_allocation/code/numerical_check.py": "655200fa18536a03a23511fd12d37b2a10ed130ce1cbe745138fc8c74bc9e087",
+    "research/phase1/experiments/static_layer_allocation/code/plot.py": "65eea864cbd6c7b64022f352f1718dfb7071f9990cd5f405471d1b0aa8c34161",
+    "research/phase1/experiments/static_layer_allocation/code/probe.py": "65db35ea8a81e7652b2739b50cb784a339e95df4e3abe9d912e99e822098b608",
+    "research/phase1/experiments/static_layer_allocation/code/protocol.py": "4a8a23358d33e33b5a905dd6c38ef0b936f75fe7474cf2a31825bf991f980d4e",
+    "research/phase1/experiments/static_layer_allocation/code/review.py": "95f96b20c7b8a3e019a91d91b1f5c6951168c50c4d7eaa2bc89dc83a907cefa4",
     "research/phase1/experiments/static_layer_allocation/code/select_final.py": "61c350c3514fa0a8ee05c303a9bb916e4303dea888be75bb193fb9b34c604d80",
     "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
     "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
-    "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+    "research/phase1/src/phase1/runner.py": "cdb7d3f74660c37f4e02c43973d65a966034b0dfed569c9eae08bc6cfd685c7f",
     "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+    "research/phase1/src/phase1/splits_build.py": "459fc0f13c2be44af29f2c8067ee3738ab23e13314bd164c8bad3b7a6ccf3bda",
     "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
     "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
     "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
     "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
     "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10"
   },
-  "formats": {
+  "model_config_sha256": "aa62acf47c1c3e20f7d15196c08dc4a1492105471e371cc9abc258e9ad800899",
+  "model_manifest_sha256": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+  "device": {
+    "node": "node8",
+    "slurm_job_id": "21437",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "free_before_load": 29222764544,
+    "total_bytes": 51002867712,
+    "estimated_peak_with_margin_bytes": 21474836480
+  },
+  "random_seeds": [
+    202609231,
+    202609232,
+    202609233
+  ],
+  "budget_groups": {
     "online_pre": {
-      "representation": "k8v4-per_token-pre",
-      "residual_bits": 0,
-      "residual_tokens": 0,
-      "budget_groups": {
-        "k4_layers_2": [
-          "online_pre_k4_layers_2_sensitivity",
-          "online_pre_k4_layers_2_reconstruction",
-          "online_pre_k4_layers_2_inverse",
-          "online_pre_k4_layers_2_random_202609231",
-          "online_pre_k4_layers_2_random_202609232",
-          "online_pre_k4_layers_2_random_202609233"
-        ],
-        "k4_layers_7": [
-          "online_pre_k4_layers_7_sensitivity",
-          "online_pre_k4_layers_7_reconstruction",
-          "online_pre_k4_layers_7_inverse",
-          "online_pre_k4_layers_7_random_202609231",
-          "online_pre_k4_layers_7_random_202609232",
-          "online_pre_k4_layers_7_random_202609233"
-        ],
-        "k4_layers_14": [
-          "online_pre_k4_layers_14_sensitivity",
-          "online_pre_k4_layers_14_reconstruction",
-          "online_pre_k4_layers_14_inverse",
-          "online_pre_k4_layers_14_random_202609231",
-          "online_pre_k4_layers_14_random_202609232",
-          "online_pre_k4_layers_14_random_202609233"
-        ]
-      },
-      "random_permutations": {
-        "202609231": [
-          4,
-          24,
-          6,
-          13,
-          12,
-          8,
-          19,
-          21,
-          20,
-          26,
-          25,
-          14,
-          17,
-          15,
-          9,
-          16,
-          7,
-          10,
-          11,
-          2,
-          3,
-          22,
-          1,
-          18,
-          27,
-          5,
-          23,
-          0
-        ],
-        "202609232": [
-          24,
-          1,
-          15,
-          14,
-          21,
-          12,
-          20,
-          7,
-          2,
-          3,
-          22,
-          11,
-          9,
-          25,
-          0,
-          8,
-          5,
-          19,
-          13,
-          18,
-          10,
-          4,
-          23,
-          26,
-          6,
-          16,
-          17,
-          27
-        ],
-        "202609233": [
-          27,
-          23,
-          25,
-          22,
-          9,
-          13,
-          24,
-          1,
-          26,
-          0,
-          16,
-          11,
-          10,
-          4,
-          5,
-          12,
-          20,
-          19,
-          2,
-          18,
-          3,
-          8,
-          15,
-          6,
-          17,
-          21,
-          7,
-          14
-        ]
-      },
-      "existing_quality": {
-        "path": "research/phase1/experiments/generation_error_sources/results/residual_diagnostics.json",
-        "sha256": "c1431269c1e91353a4ee8115bcd79ca1d2c9213c3671b241fd2d6ef983d37248",
-        "status": "existing_condition_evidence",
-        "tasks": {
-          "gsm8k": {
-            "state": "证据不足",
-            "class_unit_passes": true,
-            "measurement_status": "复用",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json",
-            "sha256": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993",
-            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-            "n": 64
-          },
-          "hotpot": {
-            "state": "证据不足",
-            "class_unit_passes": true,
-            "measurement_status": "复用",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json",
-            "sha256": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1",
-            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-            "n": 64
-          }
-        }
-      }
+      "k4_layers_2": [
+        "online_pre_k4_layers_2_sensitivity",
+        "online_pre_k4_layers_2_reconstruction",
+        "online_pre_k4_layers_2_inverse",
+        "online_pre_k4_layers_2_random_202609231",
+        "online_pre_k4_layers_2_random_202609232",
+        "online_pre_k4_layers_2_random_202609233"
+      ],
+      "k4_layers_7": [
+        "online_pre_k4_layers_7_sensitivity",
+        "online_pre_k4_layers_7_reconstruction",
+        "online_pre_k4_layers_7_inverse",
+        "online_pre_k4_layers_7_random_202609231",
+        "online_pre_k4_layers_7_random_202609232",
+        "online_pre_k4_layers_7_random_202609233"
+      ],
+      "k4_layers_14": [
+        "online_pre_k4_layers_14_sensitivity",
+        "online_pre_k4_layers_14_reconstruction",
+        "online_pre_k4_layers_14_inverse",
+        "online_pre_k4_layers_14_random_202609231",
+        "online_pre_k4_layers_14_random_202609232",
+        "online_pre_k4_layers_14_random_202609233"
+      ]
     },
     "online_post": {
-      "representation": "k8v4-per_token-post",
-      "residual_bits": 0,
-      "residual_tokens": 0,
-      "budget_groups": {
-        "k4_layers_2": [
-          "online_post_k4_layers_2_sensitivity",
-          "online_post_k4_layers_2_reconstruction",
-          "online_post_k4_layers_2_inverse",
-          "online_post_k4_layers_2_random_202609231",
-          "online_post_k4_layers_2_random_202609232",
-          "online_post_k4_layers_2_random_202609233"
-        ],
-        "k4_layers_7": [
-          "online_post_k4_layers_7_sensitivity",
-          "online_post_k4_layers_7_reconstruction",
-          "online_post_k4_layers_7_inverse",
-          "online_post_k4_layers_7_random_202609231",
-          "online_post_k4_layers_7_random_202609232",
-          "online_post_k4_layers_7_random_202609233"
-        ],
-        "k4_layers_14": [
-          "online_post_k4_layers_14_sensitivity",
-          "online_post_k4_layers_14_reconstruction",
-          "online_post_k4_layers_14_inverse",
-          "online_post_k4_layers_14_random_202609231",
-          "online_post_k4_layers_14_random_202609232",
-          "online_post_k4_layers_14_random_202609233"
-        ]
-      },
-      "random_permutations": {
-        "202609231": [
-          4,
-          24,
-          6,
-          13,
-          12,
-          8,
-          19,
-          21,
-          20,
-          26,
-          25,
-          14,
-          17,
-          15,
-          9,
-          16,
-          7,
-          10,
-          11,
-          2,
-          3,
-          22,
-          1,
-          18,
-          27,
-          5,
-          23,
-          0
-        ],
-        "202609232": [
-          24,
-          1,
-          15,
-          14,
-          21,
-          12,
-          20,
-          7,
-          2,
-          3,
-          22,
-          11,
-          9,
-          25,
-          0,
-          8,
-          5,
-          19,
-          13,
-          18,
-          10,
-          4,
-          23,
-          26,
-          6,
-          16,
-          17,
-          27
-        ],
-        "202609233": [
-          27,
-          23,
-          25,
-          22,
-          9,
-          13,
-          24,
-          1,
-          26,
-          0,
-          16,
-          11,
-          10,
-          4,
-          5,
-          12,
-          20,
-          19,
-          2,
-          18,
-          3,
-          8,
-          15,
-          6,
-          17,
-          21,
-          7,
-          14
-        ]
-      },
-      "existing_quality": {
-        "path": "research/phase1/experiments/generation_error_sources/results/residual_diagnostics.json",
-        "sha256": "c1431269c1e91353a4ee8115bcd79ca1d2c9213c3671b241fd2d6ef983d37248",
-        "status": "existing_condition_evidence",
-        "tasks": {
-          "gsm8k": {
-            "state": "证据不足",
-            "class_unit_passes": true,
-            "measurement_status": "复用",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
-            "sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
-            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-            "n": 64
-          },
-          "hotpot": {
-            "state": "证据不足",
-            "class_unit_passes": false,
-            "measurement_status": "复用",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
-            "sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
-            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
-            "n": 64
-          }
-        }
-      }
+      "k4_layers_2": [
+        "online_post_k4_layers_2_sensitivity",
+        "online_post_k4_layers_2_reconstruction",
+        "online_post_k4_layers_2_inverse",
+        "online_post_k4_layers_2_random_202609231",
+        "online_post_k4_layers_2_random_202609232",
+        "online_post_k4_layers_2_random_202609233"
+      ],
+      "k4_layers_7": [
+        "online_post_k4_layers_7_sensitivity",
+        "online_post_k4_layers_7_reconstruction",
+        "online_post_k4_layers_7_inverse",
+        "online_post_k4_layers_7_random_202609231",
+        "online_post_k4_layers_7_random_202609232",
+        "online_post_k4_layers_7_random_202609233"
+      ],
+      "k4_layers_14": [
+        "online_post_k4_layers_14_sensitivity",
+        "online_post_k4_layers_14_reconstruction",
+        "online_post_k4_layers_14_inverse",
+        "online_post_k4_layers_14_random_202609231",
+        "online_post_k4_layers_14_random_202609232",
+        "online_post_k4_layers_14_random_202609233"
+      ]
     },
     "offline_pre": {
-      "representation": "k8v4-per_channel-pre",
-      "residual_bits": 8,
-      "residual_tokens": 128,
-      "budget_groups": {
-        "k4_layers_2": [
-          "offline_pre_k4_layers_2_sensitivity",
-          "offline_pre_k4_layers_2_reconstruction",
-          "offline_pre_k4_layers_2_inverse",
-          "offline_pre_k4_layers_2_random_202609231",
-          "offline_pre_k4_layers_2_random_202609232",
-          "offline_pre_k4_layers_2_random_202609233"
-        ],
-        "k4_layers_7": [
-          "offline_pre_k4_layers_7_sensitivity",
-          "offline_pre_k4_layers_7_reconstruction",
-          "offline_pre_k4_layers_7_inverse",
-          "offline_pre_k4_layers_7_random_202609231",
-          "offline_pre_k4_layers_7_random_202609232",
-          "offline_pre_k4_layers_7_random_202609233"
-        ],
-        "k4_layers_14": [
-          "offline_pre_k4_layers_14_sensitivity",
-          "offline_pre_k4_layers_14_reconstruction",
-          "offline_pre_k4_layers_14_inverse",
-          "offline_pre_k4_layers_14_random_202609231",
-          "offline_pre_k4_layers_14_random_202609232",
-          "offline_pre_k4_layers_14_random_202609233"
-        ]
-      },
-      "random_permutations": {
-        "202609231": [
-          4,
-          24,
-          6,
-          13,
-          12,
-          8,
-          19,
-          21,
-          20,
-          26,
-          25,
-          14,
-          17,
-          15,
-          9,
-          16,
-          7,
-          10,
-          11,
-          2,
-          3,
-          22,
-          1,
-          18,
-          27,
-          5,
-          23,
-          0
-        ],
-        "202609232": [
-          24,
-          1,
-          15,
-          14,
-          21,
-          12,
-          20,
-          7,
-          2,
-          3,
-          22,
-          11,
-          9,
-          25,
-          0,
-          8,
-          5,
-          19,
-          13,
-          18,
-          10,
-          4,
-          23,
-          26,
-          6,
-          16,
-          17,
-          27
-        ],
-        "202609233": [
-          27,
-          23,
-          25,
-          22,
-          9,
-          13,
-          24,
-          1,
-          26,
-          0,
-          16,
-          11,
-          10,
-          4,
-          5,
-          12,
-          20,
-          19,
-          2,
-          18,
-          3,
-          8,
-          15,
-          6,
-          17,
-          21,
-          7,
-          14
-        ]
-      },
-      "existing_quality": {
-        "path": "research/phase1/experiments/generation_error_sources/results/residual_diagnostics.json",
-        "sha256": "c1431269c1e91353a4ee8115bcd79ca1d2c9213c3671b241fd2d6ef983d37248",
-        "status": "existing_condition_evidence",
-        "tasks": {
-          "gsm8k": {
-            "state": "证据不足",
-            "class_unit_passes": false,
-            "measurement_status": "新测",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual8.json",
-            "sha256": "75cbd050edd1ba0c17dd4ec1d8dd8ce8a96c91ab7fab9d585b6769553cb4ec3e",
-            "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
-            "n": 64
-          },
-          "hotpot": {
-            "state": "证据不足",
-            "class_unit_passes": false,
-            "measurement_status": "新测",
-            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual8.json",
-            "sha256": "8bca861550a249ec107479ad9d1ec17ebce0c2a746c6bf0078cf0d443a6198f2",
-            "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
-            "n": 64
-          }
-        }
-      }
+      "k4_layers_2": [
+        "offline_pre_k4_layers_2_sensitivity",
+        "offline_pre_k4_layers_2_reconstruction",
+        "offline_pre_k4_layers_2_inverse",
+        "offline_pre_k4_layers_2_random_202609231",
+        "offline_pre_k4_layers_2_random_202609232",
+        "offline_pre_k4_layers_2_random_202609233"
+      ],
+      "k4_layers_7": [
+        "offline_pre_k4_layers_7_sensitivity",
+        "offline_pre_k4_layers_7_reconstruction",
+        "offline_pre_k4_layers_7_inverse",
+        "offline_pre_k4_layers_7_random_202609231",
+        "offline_pre_k4_layers_7_random_202609232",
+        "offline_pre_k4_layers_7_random_202609233"
+      ],
+      "k4_layers_14": [
+        "offline_pre_k4_layers_14_sensitivity",
+        "offline_pre_k4_layers_14_reconstruction",
+        "offline_pre_k4_layers_14_inverse",
+        "offline_pre_k4_layers_14_random_202609231",
+        "offline_pre_k4_layers_14_random_202609232",
+        "offline_pre_k4_layers_14_random_202609233"
+      ]
+    }
+  },
+  "random_permutations": {
+    "online_pre": {
+      "202609231": [
+        4,
+        24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
+        25,
+        14,
+        17,
+        15,
+        9,
+        16,
+        7,
+        10,
+        11,
+        2,
+        3,
+        22,
+        1,
+        18,
+        27,
+        5,
+        23,
+        0
+      ],
+      "202609232": [
+        24,
+        1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
+        2,
+        3,
+        22,
+        11,
+        9,
+        25,
+        0,
+        8,
+        5,
+        19,
+        13,
+        18,
+        10,
+        4,
+        23,
+        26,
+        6,
+        16,
+        17,
+        27
+      ],
+      "202609233": [
+        27,
+        23,
+        25,
+        22,
+        9,
+        13,
+        24,
+        1,
+        26,
+        0,
+        16,
+        11,
+        10,
+        4,
+        5,
+        12,
+        20,
+        19,
+        2,
+        18,
+        3,
+        8,
+        15,
+        6,
+        17,
+        21,
+        7,
+        14
+      ]
+    },
+    "online_post": {
+      "202609231": [
+        4,
+        24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
+        25,
+        14,
+        17,
+        15,
+        9,
+        16,
+        7,
+        10,
+        11,
+        2,
+        3,
+        22,
+        1,
+        18,
+        27,
+        5,
+        23,
+        0
+      ],
+      "202609232": [
+        24,
+        1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
+        2,
+        3,
+        22,
+        11,
+        9,
+        25,
+        0,
+        8,
+        5,
+        19,
+        13,
+        18,
+        10,
+        4,
+        23,
+        26,
+        6,
+        16,
+        17,
+        27
+      ],
+      "202609233": [
+        27,
+        23,
+        25,
+        22,
+        9,
+        13,
+        24,
+        1,
+        26,
+        0,
+        16,
+        11,
+        10,
+        4,
+        5,
+        12,
+        20,
+        19,
+        2,
+        18,
+        3,
+        8,
+        15,
+        6,
+        17,
+        21,
+        7,
+        14
+      ]
+    },
+    "offline_pre": {
+      "202609231": [
+        4,
+        24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
+        25,
+        14,
+        17,
+        15,
+        9,
+        16,
+        7,
+        10,
+        11,
+        2,
+        3,
+        22,
+        1,
+        18,
+        27,
+        5,
+        23,
+        0
+      ],
+      "202609232": [
+        24,
+        1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
+        2,
+        3,
+        22,
+        11,
+        9,
+        25,
+        0,
+        8,
+        5,
+        19,
+        13,
+        18,
+        10,
+        4,
+        23,
+        26,
+        6,
+        16,
+        17,
+        27
+      ],
+      "202609233": [
+        27,
+        23,
+        25,
+        22,
+        9,
+        13,
+        24,
+        1,
+        26,
+        0,
+        16,
+        11,
+        10,
+        4,
+        5,
+        12,
+        20,
+        19,
+        2,
+        18,
+        3,
+        8,
+        15,
+        6,
+        17,
+        21,
+        7,
+        14
+      ]
     }
   },
   "allocations": {
@@ -511,13 +414,10 @@
       "format": "online_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        14,
-        24
+        18,
+        5
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -540,6 +440,22 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 8,
           "v": 4
         },
@@ -601,22 +517,6 @@
         },
         {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -632,8 +532,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "f3761ac2279069c038b345bc1bc81c148804f4abf7670736eac957215b7104c9",
-      "measurement_alias": "online_pre_k4_layers_2_sensitivity",
+      "alias": "online_pre_k4_layers_2_sensitivity",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -687,80 +588,77 @@
       "format": "online_pre",
       "strategy": "reconstruction",
       "k4_layers": [
-        16,
-        17
+        17,
+        1
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -808,8 +706,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "a5e2e57c0cf8a6135336699133bb16bfc9ce762a7ba0ad0e04d3f28671bdc0a1",
-      "measurement_alias": "online_pre_k4_layers_2_reconstruction",
+      "alias": "online_pre_k4_layers_2_reconstruction",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -867,9 +766,6 @@
         27
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 4,
@@ -984,8 +880,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4cfe140549fc39f9dd538e4d2ea1f09d0972d0705c941b34e56f5a132fabff56",
-      "measurement_alias": "online_pre_k4_layers_2_inverse",
+      "alias": "online_pre_k4_layers_2_inverse",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1043,9 +940,6 @@
         24
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -1160,8 +1054,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7f61ba862bde3571166acef35ed09d3749ff3126a14a3834d11acb9949182e22",
-      "measurement_alias": "online_pre_k4_layers_2_random_202609231",
+      "alias": "online_pre_k4_layers_2_random_202609231",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1215,13 +1110,10 @@
       "format": "online_pre",
       "strategy": "random_202609232",
       "k4_layers": [
-        1,
-        24
+        24,
+        1
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -1336,8 +1228,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4bf07cc76e5a8f1e6b27183fefc9ab64281e04255151e5a9b1753a3d8fd90f6c",
-      "measurement_alias": "online_pre_k4_layers_2_random_202609232",
+      "alias": "online_pre_k4_layers_2_random_202609232",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1391,13 +1284,10 @@
       "format": "online_pre",
       "strategy": "random_202609233",
       "k4_layers": [
-        23,
-        27
+        27,
+        23
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -1512,8 +1402,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "513a2fef726180cb5360f44a9191f799b1a330ee7e6b8bccd6fcdc323f4bdbb5",
-      "measurement_alias": "online_pre_k4_layers_2_random_202609233",
+      "alias": "online_pre_k4_layers_2_random_202609233",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1567,18 +1458,15 @@
       "format": "online_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        11,
-        12,
-        14,
         18,
+        5,
+        20,
         21,
-        23,
-        24
+        22,
+        8,
+        14
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -1601,7 +1489,19 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
           "v": 4
         },
         {
@@ -1629,31 +1529,7 @@
           "v": 4
         },
         {
-          "k": 4,
-          "v": 4
-        },
-        {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -1678,6 +1554,18 @@
         },
         {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -1693,8 +1581,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "36e0bab20f8ea9dd82d3aedee1cfb2c95a769e37d94805f413680fd2417c07c6",
-      "measurement_alias": "online_pre_k4_layers_7_sensitivity",
+      "alias": "online_pre_k4_layers_7_sensitivity",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1748,18 +1637,15 @@
       "format": "online_pre",
       "strategy": "reconstruction",
       "k4_layers": [
-        1,
-        4,
-        12,
-        14,
-        16,
         17,
-        20
+        1,
+        16,
+        20,
+        14,
+        12,
+        4
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -1874,8 +1760,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "f1415a0b4a2839302501e55c12b2154c0379770951fe827f3c9d26bb129a9ab7",
-      "measurement_alias": "online_pre_k4_layers_7_reconstruction",
+      "alias": "online_pre_k4_layers_7_reconstruction",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -1930,17 +1817,14 @@
       "strategy": "inverse",
       "k4_layers": [
         0,
+        27,
         1,
-        2,
-        3,
-        6,
         13,
-        27
+        3,
+        2,
+        6
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 4,
@@ -2055,8 +1939,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "06255b22f398632fbc9b8599983141560589255eeed925b5b87967735ebb3d16",
-      "measurement_alias": "online_pre_k4_layers_7_inverse",
+      "alias": "online_pre_k4_layers_7_inverse",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -2111,17 +1996,14 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
+        24,
         6,
-        8,
-        12,
         13,
-        19,
-        24
+        12,
+        8,
+        19
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -2236,8 +2118,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "1500e97126338dde693efedd558dbe4a40b61ac8da77809eb0a8f9e93e1ad3a9",
-      "measurement_alias": "online_pre_k4_layers_7_random_202609231",
+      "alias": "online_pre_k4_layers_7_random_202609231",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -2291,18 +2174,15 @@
       "format": "online_pre",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
-        12,
-        14,
         15,
-        20,
+        14,
         21,
-        24
+        12,
+        20
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -2417,8 +2297,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "f607611e640406f81a2f2fa30c5d9c06b5905eb708b3404974ee44726805097b",
-      "measurement_alias": "online_pre_k4_layers_7_random_202609232",
+      "alias": "online_pre_k4_layers_7_random_202609232",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -2472,18 +2353,15 @@
       "format": "online_pre",
       "strategy": "random_202609233",
       "k4_layers": [
+        27,
+        23,
+        25,
+        22,
         9,
         13,
-        22,
-        23,
-        24,
-        25,
-        27
+        24
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -2598,8 +2476,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "e4d00fca69cb315a17b9cda461ed8410f2ce87133f5ca2aeef353de27bd6483d",
-      "measurement_alias": "online_pre_k4_layers_7_random_202609233",
+      "alias": "online_pre_k4_layers_7_random_202609233",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -2653,25 +2532,22 @@
       "format": "online_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        5,
-        8,
-        10,
-        11,
-        12,
-        14,
         18,
+        5,
         20,
         21,
         22,
-        23,
+        8,
+        14,
         24,
-        25,
-        26
+        9,
+        12,
+        4,
+        11,
+        10,
+        17
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -2690,34 +2566,6 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
           "k": 4,
           "v": 4
         },
@@ -2727,26 +2575,6 @@
         },
         {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -2774,11 +2602,59 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
         {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -2786,8 +2662,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "5e79f908419719468c5c8ba94ea4de6984d5f73d89f26e09f707c824c7fd9a3e",
-      "measurement_alias": "online_pre_k4_layers_14_sensitivity",
+      "alias": "online_pre_k4_layers_14_sensitivity",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -2841,25 +2718,22 @@
       "format": "online_pre",
       "strategy": "reconstruction",
       "k4_layers": [
-        1,
-        2,
-        4,
-        8,
-        9,
-        10,
-        12,
-        14,
-        15,
-        16,
         17,
-        18,
+        1,
+        16,
         20,
-        22
+        14,
+        12,
+        4,
+        15,
+        2,
+        9,
+        22,
+        10,
+        8,
+        18
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -2974,8 +2848,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4c29f2523a114232a6933dff28d8bd5639f45ebd9237753ca510a0f4e9c4b9ed",
-      "measurement_alias": "online_pre_k4_layers_14_reconstruction",
+      "alias": "online_pre_k4_layers_14_reconstruction",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3030,24 +2905,21 @@
       "strategy": "inverse",
       "k4_layers": [
         0,
+        27,
         1,
-        2,
-        3,
-        4,
-        6,
-        7,
-        9,
         13,
-        15,
-        16,
-        17,
+        3,
+        2,
+        6,
+        25,
         19,
-        27
+        26,
+        23,
+        7,
+        15,
+        16
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -3066,34 +2938,6 @@
           "v": 4
         },
         {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 8,
           "v": 4
         },
@@ -3103,26 +2947,6 @@
         },
         {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         },
         {
@@ -3150,11 +2974,59 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
           "v": 4
         },
         {
           "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
           "v": 4
         },
         {
@@ -3162,8 +3034,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "21f224627daa856330de445836da9fed08adbe9e73772b2a2a4d47356c4aebfb",
-      "measurement_alias": "online_pre_k4_layers_14_inverse",
+      "alias": "online_pre_k4_layers_14_inverse",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3218,24 +3091,21 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
-        6,
-        8,
-        12,
-        13,
-        14,
-        15,
-        17,
-        19,
-        20,
-        21,
         24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
         25,
-        26
+        14,
+        17,
+        15
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -3350,8 +3220,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "8939031f351804fcde4554bbf87fe5d602027abafcc104933bbf1408fd8d7613",
-      "measurement_alias": "online_pre_k4_layers_14_random_202609231",
+      "alias": "online_pre_k4_layers_14_random_202609231",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3405,25 +3276,22 @@
       "format": "online_pre",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
         2,
         3,
-        7,
-        9,
-        11,
-        12,
-        14,
-        15,
-        20,
-        21,
         22,
-        24,
+        11,
+        9,
         25
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -3538,8 +3406,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "115374fd6f942a1b62d626f0acbcfa1258565d705fb870861c4c0c9f160717e6",
-      "measurement_alias": "online_pre_k4_layers_14_random_202609232",
+      "alias": "online_pre_k4_layers_14_random_202609232",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3593,25 +3462,22 @@
       "format": "online_pre",
       "strategy": "random_202609233",
       "k4_layers": [
-        0,
-        1,
-        4,
-        9,
-        10,
-        11,
-        13,
-        16,
-        22,
+        27,
         23,
-        24,
         25,
+        22,
+        9,
+        13,
+        24,
+        1,
         26,
-        27
+        0,
+        16,
+        11,
+        10,
+        4
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -3726,8 +3592,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "b0231c056117758502418037f2316f8bd27401cd540099e104247b111b4b5c02",
-      "measurement_alias": "online_pre_k4_layers_14_random_202609233",
+      "alias": "online_pre_k4_layers_14_random_202609233",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3780,8 +3647,8 @@
     "online_pre_k8v4": {
       "format": "online_pre",
       "strategy": "k8v4",
-      "r": 0,
       "k4_layers": [],
+      "r": 0,
       "layer_bits": [
         {
           "k": 8,
@@ -3896,8 +3763,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7edf3f4276724a6b483d06dbd2127c92fcd148dbc293d873e4b71c3dc94681a5",
-      "measurement_alias": "online_pre_k8v4",
+      "alias": "online_pre_k8v4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -3950,7 +3816,6 @@
     "online_pre_kv4": {
       "format": "online_pre",
       "strategy": "kv4",
-      "r": 28,
       "k4_layers": [
         0,
         1,
@@ -3981,6 +3846,7 @@
         26,
         27
       ],
+      "r": 28,
       "layer_bits": [
         {
           "k": 4,
@@ -4095,8 +3961,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "927af5de6694ddbc526fac895508f100c41a1a64f9b52653c6d59ac9f4eed5f7",
-      "measurement_alias": "online_pre_kv4",
+      "alias": "online_pre_kv4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -4151,12 +4016,9 @@
       "strategy": "sensitivity",
       "k4_layers": [
         5,
-        24
+        18
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -4231,31 +4093,31 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -4271,8 +4133,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "9b5cdc47a9a2b3feb58a0814f8e3155c268dded87e01222a9fc32379289ae3ee",
-      "measurement_alias": "online_post_k4_layers_2_sensitivity",
+      "alias": "online_post_k4_layers_2_sensitivity",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -4326,13 +4189,10 @@
       "format": "online_post",
       "strategy": "reconstruction",
       "k4_layers": [
-        16,
-        17
+        17,
+        16
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -4447,8 +4307,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "a5e2e57c0cf8a6135336699133bb16bfc9ce762a7ba0ad0e04d3f28671bdc0a1",
-      "measurement_alias": "online_post_k4_layers_2_reconstruction",
+      "alias": "online_post_k4_layers_2_reconstruction",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -4506,9 +4367,6 @@
         27
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 4,
@@ -4623,8 +4481,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4cfe140549fc39f9dd538e4d2ea1f09d0972d0705c941b34e56f5a132fabff56",
-      "measurement_alias": "online_post_k4_layers_2_inverse",
+      "alias": "online_post_k4_layers_2_inverse",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -4682,9 +4541,6 @@
         24
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -4799,8 +4655,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7f61ba862bde3571166acef35ed09d3749ff3126a14a3834d11acb9949182e22",
-      "measurement_alias": "online_post_k4_layers_2_random_202609231",
+      "alias": "online_post_k4_layers_2_random_202609231",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -4854,13 +4711,10 @@
       "format": "online_post",
       "strategy": "random_202609232",
       "k4_layers": [
-        1,
-        24
+        24,
+        1
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -4975,8 +4829,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4bf07cc76e5a8f1e6b27183fefc9ab64281e04255151e5a9b1753a3d8fd90f6c",
-      "measurement_alias": "online_post_k4_layers_2_random_202609232",
+      "alias": "online_post_k4_layers_2_random_202609232",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5030,13 +4885,10 @@
       "format": "online_post",
       "strategy": "random_202609233",
       "k4_layers": [
-        23,
-        27
+        27,
+        23
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -5151,8 +5003,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "513a2fef726180cb5360f44a9191f799b1a330ee7e6b8bccd6fcdc323f4bdbb5",
-      "measurement_alias": "online_post_k4_layers_2_random_202609233",
+      "alias": "online_post_k4_layers_2_random_202609233",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5207,17 +5060,14 @@
       "strategy": "sensitivity",
       "k4_layers": [
         5,
-        12,
+        18,
+        20,
+        8,
+        24,
         14,
-        21,
-        22,
-        23,
-        24
+        21
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -5252,35 +5102,7 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         },
         {
@@ -5308,11 +5130,39 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
         {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -5332,8 +5182,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "8579b423669033f31cfd1d1fa39a4d34224993c211794aaebdb1be98c49214c9",
-      "measurement_alias": "online_post_k4_layers_7_sensitivity",
+      "alias": "online_post_k4_layers_7_sensitivity",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5387,18 +5238,15 @@
       "format": "online_post",
       "strategy": "reconstruction",
       "k4_layers": [
-        1,
-        12,
-        14,
-        15,
-        16,
         17,
-        20
+        16,
+        14,
+        1,
+        20,
+        15,
+        12
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -5513,8 +5361,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "c72e64d5dbb224b013bd70665caa0d2a914410910c0f59bb71a16567568446e6",
-      "measurement_alias": "online_post_k4_layers_7_reconstruction",
+      "alias": "online_post_k4_layers_7_reconstruction",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5569,17 +5418,14 @@
       "strategy": "inverse",
       "k4_layers": [
         0,
+        27,
         1,
-        2,
         3,
         13,
-        19,
-        27
+        2,
+        19
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 4,
@@ -5694,8 +5540,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "2c586dc532553cddb3241c8c6f86b5417eb4c56b6b454a859222eee0cf36c619",
-      "measurement_alias": "online_post_k4_layers_7_inverse",
+      "alias": "online_post_k4_layers_7_inverse",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5750,17 +5597,14 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
+        24,
         6,
-        8,
-        12,
         13,
-        19,
-        24
+        12,
+        8,
+        19
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -5875,8 +5719,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "1500e97126338dde693efedd558dbe4a40b61ac8da77809eb0a8f9e93e1ad3a9",
-      "measurement_alias": "online_post_k4_layers_7_random_202609231",
+      "alias": "online_post_k4_layers_7_random_202609231",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -5930,18 +5775,15 @@
       "format": "online_post",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
-        12,
-        14,
         15,
-        20,
+        14,
         21,
-        24
+        12,
+        20
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -6056,8 +5898,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "f607611e640406f81a2f2fa30c5d9c06b5905eb708b3404974ee44726805097b",
-      "measurement_alias": "online_post_k4_layers_7_random_202609232",
+      "alias": "online_post_k4_layers_7_random_202609232",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -6111,18 +5954,15 @@
       "format": "online_post",
       "strategy": "random_202609233",
       "k4_layers": [
+        27,
+        23,
+        25,
+        22,
         9,
         13,
-        22,
-        23,
-        24,
-        25,
-        27
+        24
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -6237,8 +6077,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "e4d00fca69cb315a17b9cda461ed8410f2ce87133f5ca2aeef353de27bd6483d",
-      "measurement_alias": "online_post_k4_layers_7_random_202609233",
+      "alias": "online_post_k4_layers_7_random_202609233",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -6293,24 +6134,21 @@
       "strategy": "sensitivity",
       "k4_layers": [
         5,
-        8,
-        11,
-        12,
-        14,
-        17,
         18,
         20,
+        8,
+        24,
+        14,
         21,
         22,
-        23,
-        24,
-        25,
-        26
+        11,
+        12,
+        9,
+        4,
+        15,
+        10
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -6329,34 +6167,6 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
           "v": 4
         },
@@ -6366,26 +6176,6 @@
         },
         {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -6413,11 +6203,59 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
         {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -6425,8 +6263,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "ac59f8356d468f2af25d5e0d488ef8147f605b857c50554069de2a28a7d1d5dd",
-      "measurement_alias": "online_post_k4_layers_14_sensitivity",
+      "alias": "online_post_k4_layers_14_sensitivity",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -6480,25 +6319,22 @@
       "format": "online_post",
       "strategy": "reconstruction",
       "k4_layers": [
+        17,
+        16,
+        14,
         1,
-        2,
+        20,
+        15,
+        12,
         4,
-        8,
+        2,
         9,
         10,
+        22,
         11,
-        12,
-        14,
-        15,
-        16,
-        17,
-        20,
-        22
+        8
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -6613,8 +6449,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "e6cb5be11784086c3a981697307017b4df11bd5fe02addd9f550c6b9e65c07b7",
-      "measurement_alias": "online_post_k4_layers_14_reconstruction",
+      "alias": "online_post_k4_layers_14_reconstruction",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -6669,24 +6506,21 @@
       "strategy": "inverse",
       "k4_layers": [
         0,
+        27,
         1,
-        2,
         3,
-        4,
+        13,
+        2,
+        19,
+        26,
+        25,
         6,
         7,
-        9,
-        10,
-        13,
-        15,
+        23,
         16,
-        19,
-        27
+        17
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -6705,34 +6539,6 @@
           "v": 4
         },
         {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
           "k": 8,
           "v": 4
         },
@@ -6742,26 +6548,6 @@
         },
         {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         },
         {
@@ -6789,11 +6575,59 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
           "v": 4
         },
         {
           "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
           "v": 4
         },
         {
@@ -6801,8 +6635,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "ff65e226db54459b428961fd7a424b58b4cf071e3657bc94a07c998d1ca0ec54",
-      "measurement_alias": "online_post_k4_layers_14_inverse",
+      "alias": "online_post_k4_layers_14_inverse",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -6857,24 +6692,21 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
-        6,
-        8,
-        12,
-        13,
-        14,
-        15,
-        17,
-        19,
-        20,
-        21,
         24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
         25,
-        26
+        14,
+        17,
+        15
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -6989,8 +6821,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "8939031f351804fcde4554bbf87fe5d602027abafcc104933bbf1408fd8d7613",
-      "measurement_alias": "online_post_k4_layers_14_random_202609231",
+      "alias": "online_post_k4_layers_14_random_202609231",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7044,25 +6877,22 @@
       "format": "online_post",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
         2,
         3,
-        7,
-        9,
-        11,
-        12,
-        14,
-        15,
-        20,
-        21,
         22,
-        24,
+        11,
+        9,
         25
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -7177,8 +7007,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "115374fd6f942a1b62d626f0acbcfa1258565d705fb870861c4c0c9f160717e6",
-      "measurement_alias": "online_post_k4_layers_14_random_202609232",
+      "alias": "online_post_k4_layers_14_random_202609232",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7232,25 +7063,22 @@
       "format": "online_post",
       "strategy": "random_202609233",
       "k4_layers": [
-        0,
-        1,
-        4,
-        9,
-        10,
-        11,
-        13,
-        16,
-        22,
+        27,
         23,
-        24,
         25,
+        22,
+        9,
+        13,
+        24,
+        1,
         26,
-        27
+        0,
+        16,
+        11,
+        10,
+        4
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -7365,8 +7193,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "b0231c056117758502418037f2316f8bd27401cd540099e104247b111b4b5c02",
-      "measurement_alias": "online_post_k4_layers_14_random_202609233",
+      "alias": "online_post_k4_layers_14_random_202609233",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7419,8 +7248,8 @@
     "online_post_k8v4": {
       "format": "online_post",
       "strategy": "k8v4",
-      "r": 0,
       "k4_layers": [],
+      "r": 0,
       "layer_bits": [
         {
           "k": 8,
@@ -7535,8 +7364,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7edf3f4276724a6b483d06dbd2127c92fcd148dbc293d873e4b71c3dc94681a5",
-      "measurement_alias": "online_post_k8v4",
+      "alias": "online_post_k8v4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7589,7 +7417,6 @@
     "online_post_kv4": {
       "format": "online_post",
       "strategy": "kv4",
-      "r": 28,
       "k4_layers": [
         0,
         1,
@@ -7620,6 +7447,7 @@
         26,
         27
       ],
+      "r": 28,
       "layer_bits": [
         {
           "k": 4,
@@ -7734,8 +7562,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "927af5de6694ddbc526fac895508f100c41a1a64f9b52653c6d59ac9f4eed5f7",
-      "measurement_alias": "online_post_kv4",
+      "alias": "online_post_kv4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7789,16 +7616,13 @@
       "format": "offline_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        0,
-        1
+        1,
+        3
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
-          "k": 4,
+          "k": 8,
           "v": 4
         },
         {
@@ -7810,7 +7634,7 @@
           "v": 4
         },
         {
-          "k": 8,
+          "k": 4,
           "v": 4
         },
         {
@@ -7910,8 +7734,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "d3ae5fd59a5b8dcff8af79e590b00436d0bbe268f9fc9c0cedc2a1cc3751f992",
-      "measurement_alias": "offline_pre_k4_layers_2_sensitivity",
+      "alias": "offline_pre_k4_layers_2_sensitivity",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -7969,9 +7794,6 @@
         1
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 4,
@@ -8086,8 +7908,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "d3ae5fd59a5b8dcff8af79e590b00436d0bbe268f9fc9c0cedc2a1cc3751f992",
-      "measurement_alias": "offline_pre_k4_layers_2_sensitivity",
+      "alias": "offline_pre_k4_layers_2_reconstruction",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -8141,13 +7964,10 @@
       "format": "offline_pre",
       "strategy": "inverse",
       "k4_layers": [
-        4,
-        25
+        26,
+        27
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -8166,104 +7986,105 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         }
       ],
-      "layer_bits_sha256": "405a06a3d3c8b524ac539d3da4265bf777fe76f31281cfb6b7c459fd7953abff",
-      "measurement_alias": "offline_pre_k4_layers_2_inverse",
+      "alias": "offline_pre_k4_layers_2_inverse",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -8321,9 +8142,6 @@
         24
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -8438,8 +8256,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7f61ba862bde3571166acef35ed09d3749ff3126a14a3834d11acb9949182e22",
-      "measurement_alias": "offline_pre_k4_layers_2_random_202609231",
+      "alias": "offline_pre_k4_layers_2_random_202609231",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -8493,13 +8312,10 @@
       "format": "offline_pre",
       "strategy": "random_202609232",
       "k4_layers": [
-        1,
-        24
+        24,
+        1
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -8614,8 +8430,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "4bf07cc76e5a8f1e6b27183fefc9ab64281e04255151e5a9b1753a3d8fd90f6c",
-      "measurement_alias": "offline_pre_k4_layers_2_random_202609232",
+      "alias": "offline_pre_k4_layers_2_random_202609232",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -8669,13 +8486,10 @@
       "format": "offline_pre",
       "strategy": "random_202609233",
       "k4_layers": [
-        23,
-        27
+        27,
+        23
       ],
       "r": 2,
-      "actual_int8_units": 26,
-      "p_int8": 0.4642857142857143,
-      "nominal_bits": 5.857142857142858,
       "layer_bits": [
         {
           "k": 8,
@@ -8790,8 +8604,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "513a2fef726180cb5360f44a9191f799b1a330ee7e6b8bccd6fcdc323f4bdbb5",
-      "measurement_alias": "offline_pre_k4_layers_2_random_202609233",
+      "alias": "offline_pre_k4_layers_2_random_202609233",
+      "actual_int8_units": 26,
+      "p_int8": 0.4642857142857143,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -8845,18 +8660,15 @@
       "format": "offline_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        0,
         1,
-        2,
         3,
+        0,
+        2,
         6,
-        10,
-        18
+        18,
+        7
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 4,
@@ -8887,19 +8699,19 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -8971,8 +8783,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "32c6d098705a39088cd68212d1772cb1d1af1eee4902a35b62e7be3606c23bf4",
-      "measurement_alias": "offline_pre_k4_layers_7_sensitivity",
+      "alias": "offline_pre_k4_layers_7_sensitivity",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9028,16 +8841,13 @@
       "k4_layers": [
         0,
         1,
-        2,
         3,
-        6,
+        2,
         7,
-        13
+        13,
+        6
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 4,
@@ -9152,8 +8962,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "629b1629d2985dd4f84273b90d2308b6356a667068ae0a8ee9af347d8d6e242f",
-      "measurement_alias": "offline_pre_k4_layers_7_reconstruction",
+      "alias": "offline_pre_k4_layers_7_reconstruction",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9207,18 +9018,15 @@
       "format": "offline_pre",
       "strategy": "inverse",
       "k4_layers": [
-        4,
-        16,
-        17,
-        22,
+        26,
+        27,
         23,
         25,
-        26
+        22,
+        17,
+        21
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -9237,10 +9045,6 @@
           "v": 4
         },
         {
-          "k": 4,
-          "v": 4
-        },
-        {
           "k": 8,
           "v": 4
         },
@@ -9274,22 +9078,6 @@
         },
         {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -9313,6 +9101,26 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
@@ -9329,12 +9137,13 @@
           "v": 4
         },
         {
-          "k": 8,
+          "k": 4,
           "v": 4
         }
       ],
-      "layer_bits_sha256": "49b695c24d9416ad168850cc85a7eb3e13e08dfc87345cf08bbde6934452ff67",
-      "measurement_alias": "offline_pre_k4_layers_7_inverse",
+      "alias": "offline_pre_k4_layers_7_inverse",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9389,17 +9198,14 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
+        24,
         6,
-        8,
-        12,
         13,
-        19,
-        24
+        12,
+        8,
+        19
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -9514,8 +9320,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "1500e97126338dde693efedd558dbe4a40b61ac8da77809eb0a8f9e93e1ad3a9",
-      "measurement_alias": "offline_pre_k4_layers_7_random_202609231",
+      "alias": "offline_pre_k4_layers_7_random_202609231",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9569,18 +9376,15 @@
       "format": "offline_pre",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
-        12,
-        14,
         15,
-        20,
+        14,
         21,
-        24
+        12,
+        20
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -9695,8 +9499,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "f607611e640406f81a2f2fa30c5d9c06b5905eb708b3404974ee44726805097b",
-      "measurement_alias": "offline_pre_k4_layers_7_random_202609232",
+      "alias": "offline_pre_k4_layers_7_random_202609232",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9750,18 +9555,15 @@
       "format": "offline_pre",
       "strategy": "random_202609233",
       "k4_layers": [
+        27,
+        23,
+        25,
+        22,
         9,
         13,
-        22,
-        23,
-        24,
-        25,
-        27
+        24
       ],
       "r": 7,
-      "actual_int8_units": 21,
-      "p_int8": 0.375,
-      "nominal_bits": 5.5,
       "layer_bits": [
         {
           "k": 8,
@@ -9876,8 +9678,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "e4d00fca69cb315a17b9cda461ed8410f2ce87133f5ca2aeef353de27bd6483d",
-      "measurement_alias": "offline_pre_k4_layers_7_random_202609233",
+      "alias": "offline_pre_k4_layers_7_random_202609233",
+      "actual_int8_units": 21,
+      "p_int8": 0.375,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -9931,25 +9734,22 @@
       "format": "offline_pre",
       "strategy": "sensitivity",
       "k4_layers": [
-        0,
         1,
-        2,
         3,
-        5,
+        0,
+        2,
         6,
+        18,
         7,
         10,
-        11,
-        12,
         13,
+        20,
+        11,
         15,
-        18,
-        20
+        5,
+        8
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -9984,23 +9784,23 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
-          "v": 4
-        },
-        {
-          "k": 4,
           "v": 4
         },
         {
@@ -10064,8 +9864,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "b1ace6e923bbdc3f92dda7a44001104a6bec011b552ea5b59d4e743098ab1abf",
-      "measurement_alias": "offline_pre_k4_layers_14_sensitivity",
+      "alias": "offline_pre_k4_layers_14_sensitivity",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -10121,23 +9922,20 @@
       "k4_layers": [
         0,
         1,
-        2,
         3,
-        5,
-        6,
+        2,
         7,
-        9,
-        10,
         13,
-        24,
-        25,
+        6,
+        27,
+        10,
+        9,
         26,
-        27
+        25,
+        24,
+        5
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -10252,8 +10050,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "6ffd9e36a36e678515c00f5f3a6709d174f99993d21dad7a266fe4e7dd42a463",
-      "measurement_alias": "offline_pre_k4_layers_14_reconstruction",
+      "alias": "offline_pre_k4_layers_14_reconstruction",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -10307,25 +10106,22 @@
       "format": "offline_pre",
       "strategy": "inverse",
       "k4_layers": [
-        4,
-        8,
-        9,
-        14,
-        16,
-        17,
-        19,
-        21,
-        22,
-        23,
-        24,
-        25,
         26,
-        27
+        27,
+        23,
+        25,
+        22,
+        17,
+        21,
+        16,
+        4,
+        24,
+        14,
+        19,
+        12,
+        9
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -10360,23 +10156,23 @@
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
           "v": 4
         },
         {
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
+          "v": 4
+        },
+        {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         },
         {
@@ -10440,8 +10236,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "2bf9ceba8502927d1afef06dc56684a2e1eb7be019b43d1ea296cfbf4052dbff",
-      "measurement_alias": "offline_pre_k4_layers_14_inverse",
+      "alias": "offline_pre_k4_layers_14_inverse",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -10496,24 +10293,21 @@
       "strategy": "random_202609231",
       "k4_layers": [
         4,
-        6,
-        8,
-        12,
-        13,
-        14,
-        15,
-        17,
-        19,
-        20,
-        21,
         24,
+        6,
+        13,
+        12,
+        8,
+        19,
+        21,
+        20,
+        26,
         25,
-        26
+        14,
+        17,
+        15
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -10628,8 +10422,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "8939031f351804fcde4554bbf87fe5d602027abafcc104933bbf1408fd8d7613",
-      "measurement_alias": "offline_pre_k4_layers_14_random_202609231",
+      "alias": "offline_pre_k4_layers_14_random_202609231",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -10683,25 +10478,22 @@
       "format": "offline_pre",
       "strategy": "random_202609232",
       "k4_layers": [
+        24,
         1,
+        15,
+        14,
+        21,
+        12,
+        20,
+        7,
         2,
         3,
-        7,
-        9,
-        11,
-        12,
-        14,
-        15,
-        20,
-        21,
         22,
-        24,
+        11,
+        9,
         25
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 8,
@@ -10816,8 +10608,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "115374fd6f942a1b62d626f0acbcfa1258565d705fb870861c4c0c9f160717e6",
-      "measurement_alias": "offline_pre_k4_layers_14_random_202609232",
+      "alias": "offline_pre_k4_layers_14_random_202609232",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -10871,25 +10664,22 @@
       "format": "offline_pre",
       "strategy": "random_202609233",
       "k4_layers": [
-        0,
-        1,
-        4,
-        9,
-        10,
-        11,
-        13,
-        16,
-        22,
+        27,
         23,
-        24,
         25,
+        22,
+        9,
+        13,
+        24,
+        1,
         26,
-        27
+        0,
+        16,
+        11,
+        10,
+        4
       ],
       "r": 14,
-      "actual_int8_units": 14,
-      "p_int8": 0.25,
-      "nominal_bits": 5.0,
       "layer_bits": [
         {
           "k": 4,
@@ -11004,8 +10794,9 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "b0231c056117758502418037f2316f8bd27401cd540099e104247b111b4b5c02",
-      "measurement_alias": "offline_pre_k4_layers_14_random_202609233",
+      "alias": "offline_pre_k4_layers_14_random_202609233",
+      "actual_int8_units": 14,
+      "p_int8": 0.25,
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -11058,8 +10849,8 @@
     "offline_pre_k8v4": {
       "format": "offline_pre",
       "strategy": "k8v4",
-      "r": 0,
       "k4_layers": [],
+      "r": 0,
       "layer_bits": [
         {
           "k": 8,
@@ -11174,8 +10965,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "7edf3f4276724a6b483d06dbd2127c92fcd148dbc293d873e4b71c3dc94681a5",
-      "measurement_alias": "offline_pre_k8v4",
+      "alias": "offline_pre_k8v4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -11228,7 +11018,6 @@
     "offline_pre_kv4": {
       "format": "offline_pre",
       "strategy": "kv4",
-      "r": 28,
       "k4_layers": [
         0,
         1,
@@ -11259,6 +11048,7 @@
         26,
         27
       ],
+      "r": 28,
       "layer_bits": [
         {
           "k": 4,
@@ -11373,8 +11163,7 @@
           "v": 4
         }
       ],
-      "layer_bits_sha256": "927af5de6694ddbc526fac895508f100c41a1a64f9b52653c6d59ac9f4eed5f7",
-      "measurement_alias": "offline_pre_kv4",
+      "alias": "offline_pre_kv4",
       "cost": {
         "4096": {
           "source": "layout_count",
@@ -11425,73 +11214,24 @@
       }
     }
   },
-  "duplicate_configurations": {
-    "offline_pre_k4_layers_2_reconstruction": "offline_pre_k4_layers_2_sensitivity"
-  },
-  "v_plan_frozen": false,
-  "reference_cost": {
-    "kv8": {
-      "4096": {
-        "source": "layout_count",
-        "length": 4096,
-        "batch": 1,
-        "components_raw_bytes": {
-          "k_payload": 58720256,
-          "v_payload": 58720256,
-          "k_params": 7340032,
-          "v_params": 7340032,
-          "residual": 0
-        },
-        "padding_bytes": 0,
-        "resident_bytes": 132120576,
-        "decode_read_lower_bytes": 132120576,
-        "decode_read_full_bytes": 132120576,
-        "decode_main_write_bytes": 32256,
-        "decode_residual_write_bytes": 0,
-        "decode_write_bytes": 32256,
-        "prefill_conversion_write_raw_bytes": 132120576,
-        "pre_rope_mul_adds_per_read": 0,
-        "alignment_bytes": 128,
-        "block_tokens": 64
-      },
-      "32768": {
-        "source": "layout_count",
-        "length": 32768,
-        "batch": 1,
-        "components_raw_bytes": {
-          "k_payload": 469762048,
-          "v_payload": 469762048,
-          "k_params": 58720256,
-          "v_params": 58720256,
-          "residual": 0
-        },
-        "padding_bytes": 0,
-        "resident_bytes": 1056964608,
-        "decode_read_lower_bytes": 1056964608,
-        "decode_read_full_bytes": 1056964608,
-        "decode_main_write_bytes": 32256,
-        "decode_residual_write_bytes": 0,
-        "decode_write_bytes": 32256,
-        "prefill_conversion_write_raw_bytes": 1056964608,
-        "pre_rope_mul_adds_per_read": 0,
-        "alignment_bytes": 128,
-        "block_tokens": 64
-      }
-    },
-    "bf16": {
-      "4096": {
-        "source": "layout_count",
-        "resident_bytes": 234881024,
-        "quantization_parameters_bytes": 0,
-        "residual_bytes": 0
-      },
-      "32768": {
-        "source": "layout_count",
-        "resident_bytes": 1879048192,
-        "quantization_parameters_bytes": 0,
-        "residual_bytes": 0
-      }
-    }
-  },
-  "allocation_digest": "29832f8acd392b9b34ead61bc58315001dec873deff67a8cd027e8af7287870e"
+  "probe_sha256": "c9ff3cacd2c3dc724658a884b6bb779cea39a81084b4ed353b9069d30824ffb6",
+  "rank_calibration_ids": [
+    "synth-c-0000",
+    "synth-c-0002",
+    "synth-c-0004",
+    "synth-c-0006",
+    "synth-c-0008",
+    "synth-c-0010",
+    "synth-c-0012",
+    "synth-c-0014",
+    "synth-c-0016",
+    "synth-c-0018",
+    "synth-c-0020",
+    "synth-c-0022",
+    "synth-c-0024",
+    "synth-c-0026",
+    "synth-c-0028",
+    "synth-c-0030"
+  ],
+  "allocation_digest": "986404843dee6b2224532400ec6ef7b44849e0c39f5f9182a08342db3085e397"
 }

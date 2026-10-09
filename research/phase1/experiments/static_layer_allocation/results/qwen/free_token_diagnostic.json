@@ -1,0 +1,4506 @@
+{
+  "commit": "d1137c08a374024c2504f1369859065650480e27",
+  "model": "qwen",
+  "plan_sha256": "2c47fe8414181e8fcfe27abfb42b21dbc8135bdae13a7a8ba443a0795d7855e9",
+  "selection_role": "post_measurement_explanation_of_observed_discrepancy",
+  "main_execution_commit": "6be99c903005b1ee2004ce7c6861ea967d82f278",
+  "input_sha256": "1ebb62570a7b8deef35299596477bc6ca41d0beb123dd3e8eb9b0471ba0504cb",
+  "key": "key-909c1bd1",
+  "answer": "val-8b6b444a",
+  "answer_ids": [
+    831,
+    12,
+    23,
+    65,
+    21,
+    65,
+    19,
+    19,
+    19,
+    64
+  ],
+  "answer_offsets": [
+    [
+      0,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      12
+    ]
+  ],
+  "content_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "schemes": {
+    "bf16": {
+      "token_ids": [
+        831,
+        12,
+        23,
+        65,
+        21,
+        65,
+        19,
+        19,
+        19,
+        64,
+        151645
+      ],
+      "prediction": "val-8b6b444a",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.20141332136684298,
+            "margin": 1.5
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 9.406868173300609e-09,
+            "margin": 19.25
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.5
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.875
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.044853423896711e-11,
+            "margin": 24.875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.75
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 7.031616178210243e-09,
+            "margin": 19.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 37.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.5
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.625
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.730668941490876e-10,
+            "margin": 23.4375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.25
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.8125
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.875
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 9.555591873322555e-10,
+            "margin": 22.3125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.1875
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.1875
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.5921167434717063e-09,
+            "margin": 21.0
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.625
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 5.441876282930025e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 7.596554496558383e-09,
+            "margin": 19.75
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.625
+            }
+          ]
+        },
+        {
+          "answer_index": 10,
+          "correct_token_prefix": true,
+          "expected_id": null,
+          "expected_text": null,
+          "target": null,
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 28.875
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.875
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.5
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.20141332136684298,
+            "margin": 1.5
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 9.406868173300609e-09,
+            "margin": 19.25
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.5
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.875
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.044853423896711e-11,
+            "margin": 24.875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.75
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 7.031616178210243e-09,
+            "margin": 19.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 37.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.5
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.625
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.730668941490876e-10,
+            "margin": 23.4375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.25
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.8125
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.875
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 9.555591873322555e-10,
+            "margin": 22.3125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.1875
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.1875
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.5921167434717063e-09,
+            "margin": 21.0
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.625
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 5.441876282930025e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 7.596554496558383e-09,
+            "margin": 19.75
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.625
+            }
+          ]
+        }
+      ]
+    },
+    "kv8": {
+      "token_ids": [
+        831,
+        12,
+        23,
+        65,
+        21,
+        65,
+        19,
+        19,
+        19,
+        64,
+        151645
+      ],
+      "prediction": "val-8b6b444a",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.31326174007545404,
+            "margin": 1.0
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.25
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 19.875
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.1881674311098323e-08,
+            "margin": 19.0
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.25
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.0675907914410345e-11,
+            "margin": 24.9375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.5625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.75
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 1.8757845055006328e-08,
+            "margin": 18.375
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.625
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.516937686574238e-10,
+            "margin": 23.5625
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.9375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.8217286285325827e-09,
+            "margin": 21.0625
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.4375
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.722583130638668e-09,
+            "margin": 20.625
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.875
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 8.045468291584257e-09,
+            "margin": 19.375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 17.125
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 8.094886538856372e-09,
+            "margin": 19.75
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.75
+            }
+          ]
+        },
+        {
+          "answer_index": 10,
+          "correct_token_prefix": true,
+          "expected_id": null,
+          "expected_text": null,
+          "target": null,
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 28.875
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.875
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.5
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.31326174007545404,
+            "margin": 1.0
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.25
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 19.875
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.1881674311098323e-08,
+            "margin": 19.0
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.25
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.0675907914410345e-11,
+            "margin": 24.9375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.5625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.75
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 1.8757845055006328e-08,
+            "margin": 18.375
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.625
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.516937686574238e-10,
+            "margin": 23.5625
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.9375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.8217286285325827e-09,
+            "margin": 21.0625
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.4375
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.722583130638668e-09,
+            "margin": 20.625
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.875
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 8.045468291584257e-09,
+            "margin": 19.375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 17.125
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 8.094886538856372e-09,
+            "margin": 19.75
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.75
+            }
+          ]
+        }
+      ]
+    },
+    "online_pre_k8v4": {
+      "token_ids": [
+        831,
+        12,
+        23,
+        65,
+        21,
+        65,
+        19,
+        19,
+        19,
+        64,
+        151645
+      ],
+      "prediction": "val-8b6b444a",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.31326173666885637,
+            "margin": 1.0
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.75
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.375
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.1743310324163758e-08,
+            "margin": 19.125
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.5
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.375
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 3.079492216784274e-11,
+            "margin": 25.375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.25
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.875
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.875
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 6.505132432721439e-09,
+            "margin": 19.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 37.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.5
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.375
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 9.143263923760969e-11,
+            "margin": 24.25
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.25
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.75
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.7252085033069307e-09,
+            "margin": 21.125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.375
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.573422364093858e-09,
+            "margin": 20.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.125
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.583739610097837e-09,
+            "margin": 20.25
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.75
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 6.766448734651931e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.875
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            }
+          ]
+        },
+        {
+          "answer_index": 10,
+          "correct_token_prefix": true,
+          "expected_id": null,
+          "expected_text": null,
+          "target": null,
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 28.875
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.8125
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.4375
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.31326173666885637,
+            "margin": 1.0
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.75
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.375
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.1743310324163758e-08,
+            "margin": 19.125
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.5
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.375
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 3.079492216784274e-11,
+            "margin": 25.375
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.25
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.875
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.875
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 6.505132432721439e-09,
+            "margin": 19.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 37.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.5
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.375
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 9.143263923760969e-11,
+            "margin": 24.25
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.25
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.75
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.7252085033069307e-09,
+            "margin": 21.125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.375
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.573422364093858e-09,
+            "margin": 20.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.125
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.583739610097837e-09,
+            "margin": 20.25
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.75
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 6.766448734651931e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.75
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.875
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.75
+            }
+          ]
+        }
+      ]
+    },
+    "online_post_k8v4": {
+      "token_ids": [
+        831,
+        12,
+        23,
+        65,
+        21,
+        65,
+        19,
+        19,
+        19,
+        64,
+        151645
+      ],
+      "prediction": "val-8b6b444a",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.5759394865803742,
+            "margin": 0.25
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.3841443546880328e-08,
+            "margin": 18.75
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.0
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.5
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 3.2954972084553447e-11,
+            "margin": 25.3125
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.25
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.9375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 1.964730245163082e-08,
+            "margin": 18.25
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.2651923952944344e-10,
+            "margin": 23.75
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.75
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 15.0
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 1.9936194917136163e-09,
+            "margin": 21.4375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.5625
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.4375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.696623369047302e-09,
+            "margin": 21.0
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.1010892459780734e-09,
+            "margin": 20.375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.625
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 7.947477342895581e-09,
+            "margin": 19.625
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.875
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.5
+            }
+          ]
+        },
+        {
+          "answer_index": 10,
+          "correct_token_prefix": true,
+          "expected_id": null,
+          "expected_text": null,
+          "target": null,
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 29.0
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.875
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.5
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.5759394865803742,
+            "margin": 0.25
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.75
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.3841443546880328e-08,
+            "margin": 18.75
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.0
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.5
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 3.2954972084553447e-11,
+            "margin": 25.3125
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.25
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.9375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 1.964730245163082e-08,
+            "margin": 18.25
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.2651923952944344e-10,
+            "margin": 23.75
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.75
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 15.0
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 1.9936194917136163e-09,
+            "margin": 21.4375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.5625
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.4375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.696623369047302e-09,
+            "margin": 21.0
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.1010892459780734e-09,
+            "margin": 20.375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.625
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.25
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 7.947477342895581e-09,
+            "margin": 19.625
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.875
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.5
+            }
+          ]
+        }
+      ]
+    },
+    "offline_pre_k8v4": {
+      "token_ids": [
+        831,
+        12,
+        23,
+        65,
+        21,
+        65,
+        19,
+        19,
+        19,
+        64,
+        151645
+      ],
+      "prediction": "val-8b6b444a",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.4740770495150528,
+            "margin": 0.5
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.0
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.195744658843978e-08,
+            "margin": 19.0
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.25
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.75
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 4.547473508864641e-11,
+            "margin": 25.1875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.75
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.5625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.875
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 2.441802138264393e-08,
+            "margin": 18.0
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 35.75
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.2709477914540912e-10,
+            "margin": 23.75
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.75
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 16.0
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 1.9308998844280723e-09,
+            "margin": 21.4375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.5625
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.746471577414923e-09,
+            "margin": 20.5
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.198597025606432e-09,
+            "margin": 20.125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 6.6105272367167345e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.625
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.375
+            }
+          ]
+        },
+        {
+          "answer_index": 10,
+          "correct_token_prefix": true,
+          "expected_id": null,
+          "expected_text": null,
+          "target": null,
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 28.875
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.875
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.5625
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.4740770495150528,
+            "margin": 0.5
+          },
+          "top": [
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.0
+            },
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.195744658843978e-08,
+            "margin": 19.0
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 36.25
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.25
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.75
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 4.547473508864641e-11,
+            "margin": 25.1875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.75
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.5625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.875
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 2.441802138264393e-08,
+            "margin": 18.0
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 35.75
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.2709477914540912e-10,
+            "margin": 23.75
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.75
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 16.0
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 1.9308998844280723e-09,
+            "margin": 21.4375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.5625
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.375
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.746471577414923e-09,
+            "margin": 20.5
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 4.198597025606432e-09,
+            "margin": 20.125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 6.6105272367167345e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.625
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.375
+            }
+          ]
+        }
+      ]
+    },
+    "online_pre_k4_layers_2_sensitivity": {
+      "token_ids": [
+        831,
+        1737,
+        21,
+        24,
+        19,
+        1021,
+        22,
+        151645
+      ],
+      "prediction": "val-d694ade7",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 1.313261736920822,
+            "margin": -1.0
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 38.25
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 21.125
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": false,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 23.06250001378799,
+            "margin": -23.0625
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 35.25
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.125
+            },
+            {
+              "id": 54441,
+              "text": "-six",
+              "logit": 15.4375
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 31.843750000913957,
+            "margin": -31.84375
+          },
+          "top": [
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 38.75
+            },
+            {
+              "id": 85603,
+              "text": "-nine",
+              "logit": 17.0
+            },
+            {
+              "id": 99609,
+              "text": "九",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": false,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 26.875000000639297,
+            "margin": -26.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 38.25
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.125
+            },
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 23.812505032593762,
+            "margin": -23.8125
+          },
+          "top": [
+            {
+              "id": 1021,
+              "text": "ade",
+              "logit": 36.5
+            },
+            {
+              "id": 32796,
+              "text": "cade",
+              "logit": 23.125
+            },
+            {
+              "id": 32841,
+              "text": "ADE",
+              "logit": 23.0
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 26.562500001072237,
+            "margin": -26.5625
+          },
+          "top": [
+            {
+              "id": 22,
+              "text": "7",
+              "logit": 38.0
+            },
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 15.9375
+            },
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 15.1875
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 32.87500230568116,
+            "margin": -32.875
+          },
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 29.5
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 15.1875
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.875
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 1.313261736920822,
+            "margin": -1.0
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 38.25
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 37.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 21.125
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 5.2250889837068826e-08,
+            "margin": 18.25
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 35.25
+            },
+            {
+              "id": 1999,
+              "text": "db",
+              "logit": 17.0
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 16.625
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 4.629896466212813e-11,
+            "margin": 25.125
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.0
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.875
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.125
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 6.630727966694394e-09,
+            "margin": 19.375
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 37.25
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.875
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.5
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.0077627621285501e-10,
+            "margin": 24.125
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.6875
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 5.025178495543514e-09,
+            "margin": 20.5
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 35.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.25
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.125
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.7363213916942186e-09,
+            "margin": 20.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.125
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.9375
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.628432582696405e-09,
+            "margin": 20.75
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.75
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 8.337401879998652e-09,
+            "margin": 19.625
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.5
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.875
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.75
+            }
+          ]
+        }
+      ]
+    },
+    "online_post_k4_layers_14_sensitivity": {
+      "token_ids": [
+        831,
+        1737,
+        21,
+        24,
+        19,
+        1021,
+        22,
+        151645
+      ],
+      "prediction": "val-d694ade7",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.9740770433028274,
+            "margin": -0.5
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 37.0
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 19.25
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": false,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 23.68750000920548,
+            "margin": -23.6875
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.25
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.875
+            },
+            {
+              "id": 54441,
+              "text": "-six",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 31.625000003338428,
+            "margin": -31.625
+          },
+          "top": [
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 37.75
+            },
+            {
+              "id": 85603,
+              "text": "-nine",
+              "logit": 17.5
+            },
+            {
+              "id": 99609,
+              "text": "九",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": false,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 25.937500013451327,
+            "margin": -25.9375
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 18.75
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 23.875004872444542,
+            "margin": -23.875
+          },
+          "top": [
+            {
+              "id": 1021,
+              "text": "ade",
+              "logit": 36.25
+            },
+            {
+              "id": 32841,
+              "text": "ADE",
+              "logit": 22.75
+            },
+            {
+              "id": 17108,
+              "text": " ade",
+              "logit": 22.625
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 26.437500001521748,
+            "margin": -26.4375
+          },
+          "top": [
+            {
+              "id": 22,
+              "text": "7",
+              "logit": 37.5
+            },
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 15.5
+            },
+            {
+              "id": 99,
+              "text": "�",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 32.26562751324504,
+            "margin": -32.265625
+          },
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 29.25
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 14.9375
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.5625
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 0.9740770433028274,
+            "margin": -0.5
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 37.0
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.5
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 19.25
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 7.349164832248789e-09,
+            "margin": 19.25
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 37.0
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.75
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.5625
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 2.7903013233299134e-11,
+            "margin": 25.5625
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 40.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.9375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.25
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 1.666355586849022e-08,
+            "margin": 18.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 36.0
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.5
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.825100402034877e-10,
+            "margin": 21.875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 38.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 16.625
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 14.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 1.5290027022274444e-09,
+            "margin": 21.8125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.0
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.1875
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 14.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.728779063294496e-09,
+            "margin": 20.25
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.25
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.4375
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 6.118156647971773e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.375
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 7.307463079087029e-09,
+            "margin": 19.75
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.25
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.5
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.125
+            }
+          ]
+        }
+      ]
+    },
+    "offline_pre_k4_layers_7_sensitivity": {
+      "token_ids": [
+        831,
+        1737,
+        21,
+        24,
+        19,
+        1021,
+        22,
+        151645
+      ],
+      "prediction": "val-d694ade7",
+      "frames": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 1.136871077512808,
+            "margin": -0.75
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 37.0
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": false,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 23.500000013756832,
+            "margin": -23.5
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 35.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.75
+            },
+            {
+              "id": 54441,
+              "text": "-six",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 30.656250002425736,
+            "margin": -30.65625
+          },
+          "top": [
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 37.5
+            },
+            {
+              "id": 85603,
+              "text": "-nine",
+              "logit": 16.875
+            },
+            {
+              "id": 99609,
+              "text": "九",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": false,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 26.75000000105286,
+            "margin": -26.75
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 37.75
+            },
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 16.125
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": false,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 23.812504268441707,
+            "margin": -23.8125
+          },
+          "top": [
+            {
+              "id": 1021,
+              "text": "ade",
+              "logit": 36.5
+            },
+            {
+              "id": 32796,
+              "text": "cade",
+              "logit": 22.875
+            },
+            {
+              "id": 17108,
+              "text": " ade",
+              "logit": 22.75
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 26.875000000957677,
+            "margin": -26.875
+          },
+          "top": [
+            {
+              "id": 22,
+              "text": "7",
+              "logit": 38.0
+            },
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 15.625
+            },
+            {
+              "id": 99,
+              "text": "�",
+              "logit": 15.3125
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": false,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 32.421877739150816,
+            "margin": -32.421875
+          },
+          "top": [
+            {
+              "id": 151645,
+              "text": "<|im_end|>",
+              "logit": 29.25
+            },
+            {
+              "id": 151644,
+              "text": "<|im_start|>",
+              "logit": 15.0625
+            },
+            {
+              "id": 151657,
+              "text": "<tool_call>",
+              "logit": 14.8125
+            }
+          ]
+        }
+      ],
+      "teacher_forced": [
+        {
+          "answer_index": 0,
+          "correct_token_prefix": true,
+          "expected_id": 831,
+          "expected_text": "val",
+          "target": {
+            "nll": 7.650898865563249e-07,
+            "margin": 14.75
+          },
+          "top": [
+            {
+              "id": 831,
+              "text": "val",
+              "logit": 39.5
+            },
+            {
+              "id": 1044,
+              "text": " val",
+              "logit": 24.75
+            },
+            {
+              "id": 19302,
+              "text": "\tval",
+              "logit": 24.0
+            }
+          ]
+        },
+        {
+          "answer_index": 1,
+          "correct_token_prefix": true,
+          "expected_id": 12,
+          "expected_text": "-",
+          "target": {
+            "nll": 1.136871077512808,
+            "margin": -0.75
+          },
+          "top": [
+            {
+              "id": 1737,
+              "text": "-d",
+              "logit": 37.0
+            },
+            {
+              "id": 12,
+              "text": "-",
+              "logit": 36.25
+            },
+            {
+              "id": 60399,
+              "text": "-db",
+              "logit": 20.0
+            }
+          ]
+        },
+        {
+          "answer_index": 2,
+          "correct_token_prefix": true,
+          "expected_id": 23,
+          "expected_text": "8",
+          "target": {
+            "nll": 1.7563884568971844e-08,
+            "margin": 18.75
+          },
+          "top": [
+            {
+              "id": 23,
+              "text": "8",
+              "logit": 35.75
+            },
+            {
+              "id": 96488,
+              "text": " Eighth",
+              "logit": 17.0
+            },
+            {
+              "id": 24,
+              "text": "9",
+              "logit": 15.6875
+            }
+          ]
+        },
+        {
+          "answer_index": 3,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 5.4569682106375694e-11,
+            "margin": 25.0625
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 33,
+              "text": "B",
+              "logit": 14.4375
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 13.75
+            }
+          ]
+        },
+        {
+          "answer_index": 4,
+          "correct_token_prefix": true,
+          "expected_id": 21,
+          "expected_text": "6",
+          "target": {
+            "nll": 3.2109284120451775e-08,
+            "margin": 17.75
+          },
+          "top": [
+            {
+              "id": 21,
+              "text": "6",
+              "logit": 35.5
+            },
+            {
+              "id": 98,
+              "text": "�",
+              "logit": 17.75
+            },
+            {
+              "id": 59496,
+              "text": "６",
+              "logit": 16.0
+            }
+          ]
+        },
+        {
+          "answer_index": 5,
+          "correct_token_prefix": true,
+          "expected_id": 65,
+          "expected_text": "b",
+          "target": {
+            "nll": 1.40346401167335e-10,
+            "margin": 23.6875
+          },
+          "top": [
+            {
+              "id": 65,
+              "text": "b",
+              "logit": 39.5
+            },
+            {
+              "id": 59051,
+              "text": "bable",
+              "logit": 15.8125
+            },
+            {
+              "id": 9923,
+              "text": "б",
+              "logit": 15.0625
+            }
+          ]
+        },
+        {
+          "answer_index": 6,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 2.814495303482545e-09,
+            "margin": 21.125
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.5
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 15.375
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.25
+            }
+          ]
+        },
+        {
+          "answer_index": 7,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 3.0166233955242205e-09,
+            "margin": 20.625
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.125
+            },
+            {
+              "id": 96,
+              "text": "�",
+              "logit": 15.8125
+            }
+          ]
+        },
+        {
+          "answer_index": 8,
+          "correct_token_prefix": true,
+          "expected_id": 19,
+          "expected_text": "4",
+          "target": {
+            "nll": 5.579856576787279e-09,
+            "margin": 19.875
+          },
+          "top": [
+            {
+              "id": 19,
+              "text": "4",
+              "logit": 36.75
+            },
+            {
+              "id": 226,
+              "text": "�",
+              "logit": 16.875
+            },
+            {
+              "id": 107035,
+              "text": "四十",
+              "logit": 16.125
+            }
+          ]
+        },
+        {
+          "answer_index": 9,
+          "correct_token_prefix": true,
+          "expected_id": 64,
+          "expected_text": "a",
+          "target": {
+            "nll": 8.36924840541542e-09,
+            "margin": 19.625
+          },
+          "top": [
+            {
+              "id": 64,
+              "text": "a",
+              "logit": 39.25
+            },
+            {
+              "id": 20774,
+              "text": "า",
+              "logit": 19.625
+            },
+            {
+              "id": 55019,
+              "text": "aN",
+              "logit": 19.375
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "diagnostic_code_sha256": "626e8aabd414d48a250215847dd559ade25ddcda662bd1be91fd810a7fafd23b"
+}
