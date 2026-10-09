@@ -88,6 +88,8 @@ def run(model_key: str, commit: str) -> None:
     """完整扫描全部预算；结果只给方案比较，不自动产生质量通过或 V 候选。"""
     root = project_root()
     plan = load_plan(root)
+    if plan.get("measurement") == "teacher_forced_answer_content":
+        raise RuntimeError("当前协议使用 content 入口验证内容 NLL，旧首 token KL 已停止")
     folder = root / "research/phase1/experiments/static_layer_allocation/results" / model_key
     allocations = json.loads((folder / "allocations.json").read_text("utf-8"))
     probe = json.loads((folder / "probe.json").read_text("utf-8"))

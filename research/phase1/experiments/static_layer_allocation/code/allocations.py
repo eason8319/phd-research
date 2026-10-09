@@ -108,6 +108,8 @@ def run(model_key: str, commit: str) -> None:
     """拒绝旧 K/V 探针；所有位宽表在全层测量之前一次冻结。"""
     root = project_root()
     plan = load_plan(root)
+    if plan.get("measurement") == "teacher_forced_answer_content":
+        raise RuntimeError("当前协议在 content 入口按独立校准折冻结位宽表")
     folder = root / "research/phase1/experiments/static_layer_allocation/results" / model_key
     probe = json.loads((folder / "probe.json").read_text("utf-8"))
     if (probe.get("schema") != SCHEMA or probe["model"] != model_key

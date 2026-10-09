@@ -356,7 +356,8 @@ def _decode_step(
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
         if observer is not None:
             observer({"layer": index, "attention": attended, "hidden": hidden,
-                      "key_pre": key_pre, "key_post": key_post, "value": value})
+                      "query": query, "key_pre": key_pre,
+                      "key_post": key_post, "value": value})
         if offloaded:
             for original in {id(value): value for value in originals}.values():
                 original.copy_(resident[id(original)])

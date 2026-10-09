@@ -127,6 +127,8 @@ def run(model_key: str, commit: str) -> None:
     """测量全部冻结 C；每个条件独立排名，不根据数学排名改动分配来源。"""
     root = project_root()
     plan = load_plan(root)
+    if plan.get("measurement") == "teacher_forced_answer_content":
+        raise RuntimeError("当前协议使用 content 入口测量正确答案内容，旧单步探针已停止")
     layers = plan["models"][model_key]["layers"]
     configs = {name: _config(spec["representation"]) for name, spec in plan["formats"].items()}
     source = calibration_source(root, model_key)

@@ -123,7 +123,8 @@ def decode_step(
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
         if observer is not None:
             observer({"layer": index, "attention": attended, "hidden": hidden,
-                      "key_pre": key_pre, "key_post": key_post, "value": new_value})
+                      "query": query, "key_pre": key_pre,
+                      "key_post": key_post, "value": new_value})
         updated_k.append(key)
         updated_v.append(value)
         if consume_cache:

@@ -87,14 +87,18 @@ def render(tokenizer: Any, user: str, llama: bool) -> tuple[str, list[int]]:
 
 
 def parquet_path(root: Path, manifest_name: str) -> Path:
-    meta = json.loads((root / "research/manifests/data" / manifest_name).read_text(encoding="utf-8"))
+    meta = json.loads(
+        (root / "research/manifests/data" / manifest_name).read_text(encoding="utf-8")
+    )
     return Path(meta["destination"])
 
 
 def load_gsm8k(path: Path) -> list[dict[str, Any]]:
     table = pq.read_table(path, columns=["question", "answer"])
     rows = []
-    for index, (question, answer) in enumerate(zip(table.column(0).to_pylist(), table.column(1).to_pylist())):
+    for index, (question, answer) in enumerate(zip(
+        table.column(0).to_pylist(), table.column(1).to_pylist()
+    )):
         rows.append({"row": index, "question": question, "answer": answer})
     return rows
 
@@ -154,7 +158,9 @@ def assign_folds(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return folded
 
 
-def retrieval_spec(kind: str, index: int, length: int, depth: float, level: str, fold: int | None) -> dict[str, Any]:
+def retrieval_spec(
+    kind: str, index: int, length: int, depth: float, level: str, fold: int | None,
+) -> dict[str, Any]:
     return {
         "id": f"synth-{kind}-{index:04d}",
         "seed": stream_seed({"c": 3, "v": 4, "t": 5, "expand": 8}[kind], index),
@@ -193,17 +199,28 @@ def retrieval_plan() -> list[dict[str, Any]]:
     return items
 
 
+def independent_mapping(seed: int, distractors: int) -> tuple[str, str, list[tuple[str, str]]]:
+    """独立抽取键和值；拒绝重复后缀，避免正确值或干扰值泄露查询后缀。"""
+    rng = np.random.default_rng(seed)
+    used: set[str] = set()
+
+    def draw(prefix: str) -> str:
+        while True:
+            suffix = f"{int(rng.integers(0, 2**32)):08x}"
+            if suffix not in used:
+                used.add(suffix)
+                return prefix + suffix
+
+    key, value = draw("key-"), draw("val-")
+    return key, value, [(draw("key-"), draw("val-")) for _ in range(distractors)]
+
+
 def build_retrieval(tokenizer: Any, spec: dict[str, Any], llama: bool) -> dict[str, Any]:
     """用填料句数二分，使聊天模板后的长度接近目标。"""
-    key = f"key-{spec['seed']:08x}"
-    value = f"val-{spec['seed']:08x}"
     distractors = 1 if spec["interference"] == "low" else 8
-    others = [
-        (f"key-{(spec['seed'] + i + 1) & 0xffffffff:08x}", f"val-{spec['seed']:08x}-d{i}")
-        for i in range(distractors)
-    ]
-    low, high = 1, 4000
-    best_n = 1
+    key, value, others = independent_mapping(spec["seed"], distractors)
+    low, high = distractors + 1, 4000
+    best_n = low
     best_gap = 10**9
     while low <= high:
         mid = (low + high) // 2
@@ -607,7 +624,10 @@ def main() -> None:
 
 
 def _public_gsm(row: dict[str, Any]) -> dict[str, Any]:
-    item = {"id": f"gsm8k-train-{row['row']}", "row": row["row"], "question_sha256": sha256_text(row["question"])}
+    item = {
+        "id": f"gsm8k-train-{row['row']}", "row": row["row"],
+        "question_sha256": sha256_text(row["question"]),
+    }
     if "fold" in row:
         item["fold"] = row["fold"]
     return item
@@ -739,7 +759,9 @@ def rebuild_retrieval_inputs() -> None:
     print(f"完整键匹配检索输入已更新：{len(pending)} 份全文", flush=True)
 
 
-def _trajectories(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any]) -> dict[str, Any]:
+def _trajectories(
+    gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any],
+) -> dict[str, Any]:
     math_ids = [f"gsm8k-train-{row['row']}" for row in gsm["c"]]
     by_fold: dict[int, list[str]] = {0: [], 1: []}
     for row, item_id in zip(gsm["c"], math_ids):
@@ -760,7 +782,9 @@ def _trajectories(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str
     }
 
 
-def _checks(gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any]) -> dict[str, Any]:
+def _checks(
+    gsm: dict[str, list[dict[str, Any]]], retrieval: list[dict[str, Any]], hotpot: dict[str, Any],
+) -> dict[str, Any]:
     gsm_ids = [f"gsm8k-train-{row['row']}" for split in gsm.values() for row in split]
     hotpot_ids = [item["id"] for split in ("v", "expand", "t") for item in hotpot[split]]
     long_ids = set(hotpot["long_decode"])

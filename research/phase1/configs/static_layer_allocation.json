@@ -1,7 +1,10 @@
 {
   "schema": "key-downgrade-allocation",
-  "input_protocol": "phase1-full-key-retrieval",
-  "counts": {"math": 64, "retrieval": 32},
+  "input_protocol": "phase1-independent-key-value",
+  "counts": {
+    "calibration": 16,
+    "validation": 16
+  },
   "formats": {
     "online_pre": {
       "representation": "k8v4-per_token-pre",
@@ -20,17 +23,91 @@
     }
   },
   "models": {
-    "qwen": {"layers": 28, "k4_layers": [2, 7, 14]},
-    "llama": {"layers": 32, "k4_layers": [2, 8, 16]}
+    "qwen": {
+      "layers": 28,
+      "k4_layers": [
+        2,
+        7,
+        14
+      ]
+    },
+    "llama": {
+      "layers": 32,
+      "k4_layers": [
+        2,
+        8,
+        16
+      ]
+    }
   },
   "rank_source": "retrieval",
   "tie_break": "layer_index_ascending",
   "high_sensitivity_fraction": 0.5,
   "random_seeds_source": "research/phase1/splits/seeds.json",
   "random_seeds_key": "e3_random",
-  "cost_lengths": [4096, 32768],
+  "cost_lengths": [
+    4096,
+    32768
+  ],
   "kv8_reference": "kv8-per_token-post",
   "kv4_endpoint": "measure_one_step_unless_same_input_severe_failure_recorded",
-  "generation_screen": {"frozen": false},
-  "v_plan": {"frozen": false}
+  "generation_screen": {
+    "frozen": true,
+    "role": "development_validation_no_V_quality_admission"
+  },
+  "v_plan": {
+    "frozen": false
+  },
+  "measurement": "teacher_forced_answer_content",
+  "dataset": "research/phase1/splits/static_retrieval.json",
+  "calibration_fold": 0,
+  "validation_fold": 1,
+  "offline_parameter_math_fold": 0,
+  "answer_content": "tokens_overlapping_hex_suffix_after_val_dash",
+  "primary_metric": "question_mean_content_target_nll",
+  "auxiliary_metrics": [
+    "correct_token_vs_strongest_wrong_margin",
+    "content_kl_bf16_to_candidate",
+    "content_first_token_nll",
+    "free_generation_complete_value_exact"
+  ],
+  "single_layer_diagnostic": {
+    "model": "llama",
+    "format": "online_post",
+    "scope": "all_32_layers_all_16_validation_questions",
+    "reference": "same_format_all_k8v4",
+    "metrics": [
+      "delta_nll",
+      "kl_baseline_to_single",
+      "kl_bf16_to_single"
+    ],
+    "logit_superposition": "all_six_strategies_all_three_budgets"
+  },
+  "mapping_checks": {
+    "paired_calibration_indices": [
+      0,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12,
+      15
+    ],
+    "swap_only_target_value": true,
+    "legacy_target_removed_control": true,
+    "generation_max_new_tokens": 32
+  },
+  "generation": {
+    "max_new_tokens": 32,
+    "do_sample": false,
+    "score": "complete_value_exact_no_extraction",
+    "retain_all_questions": true,
+    "severe_failure_stop": "invalid_quantization_or_nonfinite_logits_or_oom",
+    "quality_pass_threshold": null
+  },
+  "memory_estimate_gib": {
+    "qwen": 20,
+    "llama": 22.5
+  }
 }

@@ -49,6 +49,7 @@ def code_sources(root: Path) -> dict[str, str]:
     paths.extend(root / path for path in (
         "research/phase1/experiments/generation_error_sources/code/quantized_generation.py",
         "research/phase1/src/phase1/representation.py", "research/phase1/src/phase1/runner.py",
+        "research/phase1/src/phase1/splits_build.py",
         "research/src/kvstudy/attention.py", "research/src/kvstudy/quantize.py",
         "research/src/kvstudy/ledger.py",
         "research/src/kvstudy/groups.py", "research/src/kvstudy/paths.py",
