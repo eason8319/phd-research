@@ -174,8 +174,13 @@ class StaticKeyAllocationTest(unittest.TestCase):
         self.assertEqual(result["high_set_overlap"], 1)
 
     def test_v_is_not_automatically_authorized_by_kl(self) -> None:
-        """开发生成与 V 计划都未冻结时，旧真实生成入口必须停止。"""
-        self.assertFalse(load_plan()["generation_screen"]["frozen"])
+        """开发生成的独立授权不解冻 V，旧 V 入口仍须停止。"""
+        plan = load_plan()
+        if plan.get("measurement") == "teacher_forced_answer_content":
+            self.assertTrue(plan["generation_screen"]["frozen"])
+            self.assertIsNone(plan["generation"]["quality_pass_threshold"])
+        else:
+            self.assertFalse(plan["generation_screen"]["frozen"])
         with patch("experiments.static_layer_allocation.code.protocol.load_plan",
                    return_value={"v_plan": {"frozen": False}}):
             with self.assertRaisesRegex(RuntimeError, "尚未冻结"):
