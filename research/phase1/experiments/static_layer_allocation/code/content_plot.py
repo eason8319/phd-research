@@ -83,6 +83,8 @@ def plot() -> None:
                 ax.set_xlabel('Number of K4 layers')
                 ax.set_ylabel(ylabel)
                 ax.grid(alpha=.2)
+                if metric == 'nll':
+                    ax.set_yscale('log')
                 if metric == 'free_exact':
                     ax.set_ylim(-.03, 1.03)
                 if row == col == 0:
