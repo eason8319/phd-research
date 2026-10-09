@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,7 @@ import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from phase1.result_format import write_quality_result
 from kvstudy.quantize import STATUS_INVALID, dequantize, fit_group_params, quantize_with_params
 from experiments.generation_error_sources.code.short_baseline import MODELS, _eos_ids
 from experiments.generation_error_sources.code.long_baseline import _samples
@@ -25,7 +27,10 @@ from phase1.runner import (
     prefill,
     project_qkv,
 )
-from phase1.score import answer_exact, gsm8k_exact, retrieval_exact, token_f1
+from phase1.score import (
+    answer_exact, gsm8k_exact, retrieval_exact, retrieval_number_exact, retrieval_numbers,
+    token_f1,
+)
 
 G_C = 32
 MAX_CONTEXT = 32768
@@ -164,17 +169,19 @@ def _prefill_cache(
     calibrated: dict[str, Any],
     limit: int,
     h_bits: int,
+    *,
+    offload_layers: int = 0,
 ) -> tuple[
     int, list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], int
 ]:
-    """高精度 prefill 后量化缓存；预留生成空间以避免逐步复制历史。"""
+    """高精度 prefill 后量化；前 offload_layers 层以同 dtype 暂存 CPU。"""
     pre_keys: list[torch.Tensor] = []
     module = modeling_module(model)
     original = module.apply_rotary_pos_emb
     if config["rope"] == "pre":
         def capture(query: torch.Tensor, key: torch.Tensor, cos: torch.Tensor,
                     sin: torch.Tensor, *args: object, **kwargs: object) -> Any:
-            pre_keys.append(key.detach())
+            pre_keys.append(key.detach().cpu() if offload_layers else key.detach())
             return original(query, key, cos, sin, *args, **kwargs)
         module.apply_rotary_pos_emb = capture
     try:
@@ -195,6 +202,7 @@ def _prefill_cache(
     for index in range(len(original_k)):
         k_bits, v_bits = _layer_bits(config, index)
         source = pre_keys[index][0] if config["rope"] == "pre" else original_k[index][0]
+        source = source.to(input_ids.device)
         k_params = _layer_params(calibrated, "key", index, k_bits)
         k_hat, bad_k = _quantize(source, k_bits, config["key_mode"], k_params)
         if config["rope"] == "pre":
@@ -239,6 +247,14 @@ def _prefill_cache(
         original_v[index] = None
         if pre_keys:
             pre_keys[index] = None
+        if index < offload_layers:
+            buffers = (keys, values, read_keys, read_values)
+            copied = {}
+            for group in buffers:
+                if id(group[-1]) not in copied:
+                    copied[id(group[-1])] = group[-1].cpu()
+            for group in buffers:
+                group[-1] = copied[id(group[-1])]
     return first, keys, values, read_keys, read_values, int(invalid.item())
 
 
@@ -277,15 +293,27 @@ def _decode_step(
     config: dict[str, Any],
     calibrated: dict[str, Any],
     h_bits: int,
+    *,
+    observer: Callable[[dict[str, Any]], None] | None = None,
 ) -> tuple[int | None, int]:
-    """追加量化 KV 并按共同 FP32 注意力路径解码一步。"""
-    device = keys[0].device
+    """追加 KV 并按共同 FP32 注意力解码；CPU 缓存原样逐层搬运，不转换精度。"""
+    device = model.model.embed_tokens.weight.device
     hidden = model.model.embed_tokens(torch.tensor([[token]], device=device))
     positions = torch.tensor([[position]], device=device)
     cos, sin = model.model.rotary_emb(hidden, positions)
     apply_rope = modeling_module(model).apply_rotary_pos_emb
     invalid = torch.zeros((), dtype=torch.int64, device=device)
     for index, layer in enumerate(model.model.layers):
+        buffers = (keys, values, read_keys, read_values)
+        originals = [group[index] for group in buffers]
+        offloaded = read_keys[index].device.type == "cpu"
+        if offloaded:
+            resident = {}
+            for value in originals:
+                if id(value) not in resident:
+                    resident[id(value)] = value.to(device)
+            for group, original in zip(buffers, originals):
+                group[index] = resident[id(original)]
         k_bits, v_bits = _layer_bits(config, index)
         residual = hidden
         query, key_pre, value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
@@ -317,11 +345,22 @@ def _decode_step(
         hidden = residual + layer.self_attn.o_proj(attended)
         residual = hidden
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
+        if observer is not None:
+            observer({"layer": index, "attention": attended, "hidden": hidden,
+                      "key_pre": key_pre, "key_post": key_post, "value": value})
+        if offloaded:
+            for original in {id(value): value for value in originals}.values():
+                original.copy_(resident[id(original)])
+            for group, original in zip(buffers, originals):
+                group[index] = original
+            del resident
     bad = int(invalid.item())
     if bad:
         return None, bad
     hidden = model.model.norm(hidden)
     logits = model.lm_head(hidden[:, -1, :])
+    if observer is not None:
+        observer({"logits": logits})
     return int(logits.reshape(-1, logits.shape[-1])[0].argmax()), 0
 
 
@@ -333,11 +372,13 @@ def _generate(
     config: dict[str, Any],
     calibrated: dict[str, Any],
     h_bits: int = 0,
+    *,
+    offload_layers: int = 0,
 ) -> tuple[list[int], str, int]:
     """返回生成 token、停止原因和累计无效组数。"""
     tensor = torch.tensor([ids], device="cuda")
     first, keys, values, read_keys, read_values, invalid = _prefill_cache(
-        model, tensor, config, calibrated, limit, h_bits
+        model, tensor, config, calibrated, limit, h_bits, offload_layers=offload_layers
     )
     if invalid:
         return [first], "invalid", invalid
@@ -362,9 +403,15 @@ def _generate(
 
 def _inputs(root: Path, model_key: str, task: str, split: str) -> list[dict[str, Any]]:
     """按冻结顺序加载题目索引；GSM8K 正文延迟到运行时构造。"""
+    if task == "hotpot_four":
+        if split != "v":
+            raise ValueError("四问联答只使用 V")
+        from experiments.generation_error_sources.code.four_question_baseline import samples
+
+        return samples(root, model_key)
     if task != "gsm8k":
         return _samples(root, model_key, task, split)
-    if split not in ("v", "expand"):
+    if split not in ("c", "v", "expand"):
         raise ValueError(f"不支持的数学题划分：{split}")
     frozen = json.loads((root / "research/phase1/splits/gsm8k.json").read_text("utf-8"))
     manifest = json.loads((root / "research/manifests/data/gsm8k.source.json").read_text("utf-8"))
@@ -400,7 +447,7 @@ def _ids_and_source(
             add_generation_prompt=True, **kwargs,
         )
     else:
-        source = item["path"].read_text("utf-8")
+        source = (root / item["path"]).read_text("utf-8")
         if hashlib.sha256(source.encode("utf-8")).hexdigest() != item["sha256"]:
             raise RuntimeError(f"长任务输入校验失败：{item['id']}")
         ids = tokenizer(source, add_special_tokens=False)["input_ids"]
@@ -409,14 +456,51 @@ def _ids_and_source(
     return list(ids), hashlib.sha256(source.encode("utf-8")).hexdigest()
 
 
+def _task_protocol(root: Path, task: str) -> str:
+    """新输入使用各自冻结协议；既有任务保持原协议名。"""
+    if task == "retrieval_ruler":
+        config = root / "research/phase1/configs/retrieval.json"
+    elif task == "hotpot_four":
+        config = root / "research/phase1/configs/long_decode.json"
+    else:
+        return "phase1-full-key-retrieval"
+    return json.loads(config.read_text(encoding="utf-8"))["protocol"]
+
+
+def _score_new_input(
+    task: str, prediction: str, item: dict[str, Any], invalid: int,
+) -> dict[str, Any]:
+    """新检索按唯一七位数字评分；四问先平均四题。无效组将该样本记为 0 分。"""
+    if task == "retrieval_ruler":
+        return {
+            "correct": not invalid and retrieval_number_exact(prediction, item["answer"]),
+            "strict_correct": not invalid and retrieval_exact(prediction, item["answer"]),
+            "extracted_values": retrieval_numbers(prediction),
+            "target": item["answer"],
+        }
+    from experiments.generation_error_sources.code.four_question_baseline import score_request
+
+    scored = score_request(prediction, item["answers"])
+    if invalid:
+        scored.update(
+            f1=0.0, em=False, answer_em_percent=0.0,
+            answer_f1=[0.0, 0.0, 0.0, 0.0], answer_em=[False, False, False, False],
+        )
+    return scored
+
+
 def run(
-    model_key: str, task: str, split: str, name: str, commit: str, h_bits: int = 0
+    model_key: str, task: str, split: str, name: str, commit: str, h_bits: int = 0,
+    *, save_predictions: bool = False, guard_severe_failure: bool = False,
+    execution_source: dict[str, Any] | None = None,
 ) -> None:
     """按一个配置和任务逐题运行；只回传小型评分与输入来源索引。"""
-    if task not in ("gsm8k", "retrieval", "hotpot", "hotpot_long") or split not in ("v", "expand"):
+    if task not in (
+        "gsm8k", "retrieval", "hotpot", "hotpot_long", "retrieval_ruler", "hotpot_four",
+    ) or split not in ("v", "expand"):
         raise ValueError(f"不支持的任务与划分：{task}/{split}")
-    if task == "hotpot_long" and split != "v":
-        raise ValueError("长解码诊断只使用 V")
+    if task in ("hotpot_long", "retrieval_ruler", "hotpot_four") and split != "v":
+        raise ValueError("长任务只使用 V")
     if h_bits not in (0, 8, 16) or (h_bits and split != "v"):
         raise ValueError(f"残留条件不支持：H={h_bits}，{split}")
     root = project_root()
@@ -446,11 +530,32 @@ def run(
                 or state.get("source_index") != source_index):
             raise RuntimeError("已有量化进度与代码或冻结输入不一致")
         rows = state["rows"]
+        predictions = state.get("predictions", [])
+        if save_predictions and (len(predictions) != len(rows)
+                                 or state.get("execution_source") != execution_source):
+            raise RuntimeError("恢复预测缺失或执行来源变化，不能静默重新生成")
     else:
         rows = []
+        predictions = []
+    out = root / "research/phase1/experiments/generation_error_sources/results" / model_key
+    out.mkdir(parents=True, exist_ok=True)
+    if guard_severe_failure:
+        from experiments.generation_error_sources.code.early_stop import severe_failure
+        references = [json.loads((out / f"{split}_{task}_{ref}.json").read_text("utf-8"))
+                      for ref in ("bf16", "kv8-per_token-post")]
+        failure = severe_failure(rows, references, task)
+        if failure is not None:
+            raise RuntimeError(f"已有进度已触发停止：{failure}")
     model = load_model(str(root / MODELS[model_key]))
+    if save_predictions:
+        execution_device = {
+            "name": torch.cuda.get_device_name(),
+            "total_bytes": torch.cuda.get_device_properties(0).total_memory,
+            "torch_version": torch.__version__, "cuda_version": torch.version.cuda,
+        }
+        torch.cuda.reset_peak_memory_stats()
     eos = _eos_ids(tokenizer, model_key == "llama")
-    limit = 128 if task == "retrieval" else 1024
+    limit = 128 if task in ("retrieval", "retrieval_ruler") else 1024
     for item in items[len(rows):]:
         ids, source_hash = _ids_and_source(root, tokenizer, model_key, task, item)
         if len(ids) + limit > MAX_CONTEXT:
@@ -464,21 +569,62 @@ def run(
             "id": item["id"], "input_tokens": len(ids), "input_sha256": source_hash,
             "new_tokens": len(produced), "stop": stop, "invalid_groups": invalid,
         }
+        if save_predictions:
+            row["memory_peak_allocated_bytes"] = torch.cuda.max_memory_allocated()
+            row["memory_peak_reserved_bytes"] = torch.cuda.max_memory_reserved()
         if task == "gsm8k":
             row["correct"] = not invalid and gsm8k_exact(prediction, item["answer"])
         elif task == "retrieval":
             row["correct"] = not invalid and retrieval_exact(prediction, item["answer"])
+        elif task in ("retrieval_ruler", "hotpot_four"):
+            row.update(_score_new_input(task, prediction, item, invalid))
         else:
             row["em"] = not invalid and answer_exact(prediction, item["answer"])
             row["f1"] = 0.0 if invalid else token_f1(prediction, item["answer"])
+        if save_predictions:
+            predictions.append({"id": item["id"], "text": prediction, "token_ids": produced})
+            row["prediction_source"] = {
+                "path": progress.relative_to(root).as_posix(), "index": len(rows),
+                "text_sha256": hashlib.sha256(prediction.encode("utf-8")).hexdigest(),
+            }
         rows.append(row)
-        progress.write_text(json.dumps({
+        state = {
             "commit": commit, "ids": ids_order, "source_index": source_index,
             "rows": rows,
-        }, ensure_ascii=False) + "\n", encoding="utf-8")
+        }
+        if save_predictions:
+            state.update(predictions=predictions, execution_source=execution_source,
+                         execution_device=execution_device,
+                         model=model_key, config=name, residual_bits=h_bits,
+                         residual_tokens=RESIDUAL_TOKENS if h_bits else 0,
+                         task=f"{split}-{task}", generation={
+                             "do_sample": False, "num_beams": 1, "repetition_penalty": 1.0,
+                             "max_new_tokens": limit, "eos_token_ids": sorted(eos),
+                         })
+        temporary = progress.with_suffix(".tmp")
+        temporary.write_text(json.dumps(state, ensure_ascii=False) + "\n", encoding="utf-8")
+        temporary.replace(progress)
         print(model_key, task, split, name, len(rows), row, flush=True)
+        if task in ("retrieval_ruler", "hotpot_four"):
+            torch.cuda.empty_cache()
+        if guard_severe_failure:
+            failure = severe_failure(rows, references, task)
+            if failure is not None:
+                partial = {
+                    "protocol": "phase1-full-key-retrieval", "commit": commit,
+                    "model": model_key, "config": name, "task": f"{split}-{task}",
+                    "planned_n": len(items), "observed_n": len(rows), "rows": rows,
+                    "residual_bits": h_bits, "residual_tokens": RESIDUAL_TOKENS if h_bits else 0,
+                    "stopped_early": True, "reason": failure,
+                    "calibration_commit": calibration.get("commit"),
+                    "execution_source": execution_source,
+                }
+                write_quality_result(
+                    out / f"{split}_{task}_{name}{suffix}_early_stop.json", partial,
+                )
+                raise RuntimeError(f"配置触发严重失效停止：{failure}")
     payload: dict[str, Any] = {
-        "protocol": "phase1-full-key-retrieval", "commit": commit, "model": model_key,
+        "protocol": _task_protocol(root, task), "commit": commit, "model": model_key,
         "config": name, "task": f"{split}-{task}", "n": len(rows), "rows": rows,
         "calibration_commit": calibration.get("commit"),
         "invalid_samples": sum(row["invalid_groups"] > 0 for row in rows),
@@ -486,17 +632,32 @@ def run(
     if h_bits:
         payload["residual_bits"] = h_bits
         payload["residual_tokens"] = RESIDUAL_TOKENS
-    if task.startswith("hotpot"):
+    if save_predictions:
+        payload["execution_source"] = execution_source
+        payload["execution_device"] = execution_device
+        payload["prediction_source"] = {
+            "path": progress.relative_to(root).as_posix(),
+            "sha256": hashlib.sha256(progress.read_bytes()).hexdigest(),
+        }
+    if task == "hotpot_four":
+        payload.update(
+            statistical_unit="request", questions_per_request=4, n_questions=4 * len(rows),
+            em=100 * sum(row["em"] for row in rows) / len(rows),
+            f1=sum(row["f1"] for row in rows) / len(rows),
+            answer_em=sum(row["answer_em_percent"] for row in rows) / len(rows),
+            missing_answers=sum(row["missing_answers"] for row in rows),
+        )
+    elif task.startswith("hotpot"):
         payload["em"] = 100 * sum(row["em"] for row in rows) / len(rows)
         payload["f1"] = sum(row["f1"] for row in rows) / len(rows)
     else:
         payload["correct"] = sum(row["correct"] for row in rows)
         payload["em"] = 100 * payload["correct"] / len(rows)
+        if task == "retrieval_ruler":
+            payload["strict_correct"] = sum(row["strict_correct"] for row in rows)
     out = root / "research/phase1/experiments/generation_error_sources/results" / model_key
     out.mkdir(parents=True, exist_ok=True)
-    (out / f"{split}_{task}_{name}{suffix}.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    write_quality_result(out / f"{split}_{task}_{name}{suffix}.json", payload)
     print(model_key, task, split, name, payload.get("f1", payload.get("em")), flush=True)
 
 
