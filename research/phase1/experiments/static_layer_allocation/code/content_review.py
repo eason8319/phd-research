@@ -276,7 +276,13 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
                 result["sensitivity_strictly_below_all_random"]
                 for budgets in gate["budget_comparisons"].values() for result in budgets.values()
             ), "full_logits_questions_verified": verified_logits,
-            "mapping_both_follow": mapping["both_follow_mapping"]}
+            "mapping_both_follow": mapping["both_follow_mapping"],
+            "legacy_complete_answer_matches": mapping["legacy_target_removed_copies"],
+            "legacy_shared_suffix_questions": sum(
+                row["cases"]["legacy_target_removed"]["original_answer"][4:]
+                in row["cases"]["legacy_target_removed"]["prediction"]
+                for row in mapping["rows"]
+            )}
 
 
 def run(folder: Path, check_logits: bool) -> None:
