@@ -27,13 +27,17 @@ class QuantStats:
     relative_error: float | None
 
 
-def fit_per_channel(values: torch.Tensor, bits: int) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+def fit_per_channel(
+    values: torch.Tensor, bits: int,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """沿 token 维拟合每个 head、每个通道。values 形状为 [heads, seq, dim]。"""
     grouped = values.transpose(1, 2)
     return fit_group_params(grouped, bits)
 
 
-def quantize_per_token(values: torch.Tensor, bits: int, group_size: int) -> tuple[torch.Tensor, QuantStats]:
+def quantize_per_token(
+    values: torch.Tensor, bits: int, group_size: int,
+) -> tuple[torch.Tensor, QuantStats]:
     """每个 token 沿通道分组。不能整除的尾通道单独成组。"""
     restored, status, saturated = _channel_groups(values, bits, group_size)
     return restored, _stats(values, restored, status, saturated)

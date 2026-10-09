@@ -171,26 +171,35 @@ def _prefill_cache(
     h_bits: int,
     *,
     offload_layers: int = 0,
+    prefill_source: dict[str, Any] | None = None,
 ) -> tuple[
     int, list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], list[torch.Tensor], int
 ]:
     """高精度 prefill 后量化；前 offload_layers 层以同 dtype 暂存 CPU。"""
-    pre_keys: list[torch.Tensor] = []
-    module = modeling_module(model)
-    original = module.apply_rotary_pos_emb
-    if config["rope"] == "pre":
-        def capture(query: torch.Tensor, key: torch.Tensor, cos: torch.Tensor,
-                    sin: torch.Tensor, *args: object, **kwargs: object) -> Any:
-            pre_keys.append(key.detach().cpu() if offload_layers else key.detach())
-            return original(query, key, cos, sin, *args, **kwargs)
-        module.apply_rotary_pos_emb = capture
-    try:
-        outputs = prefill(model, input_ids)
-    finally:
-        module.apply_rotary_pos_emb = original
-    first = int(outputs.logits.reshape(-1, outputs.logits.shape[-1])[0].argmax())
-    original_k, original_v = cache_lists(outputs.past_key_values)
-    del outputs
+    if prefill_source is None:
+        pre_keys: list[torch.Tensor] = []
+        module = modeling_module(model)
+        original = module.apply_rotary_pos_emb
+        if config["rope"] == "pre":
+            def capture(query: torch.Tensor, key: torch.Tensor, cos: torch.Tensor,
+                        sin: torch.Tensor, *args: object, **kwargs: object) -> Any:
+                pre_keys.append(key.detach().cpu() if offload_layers else key.detach())
+                return original(query, key, cos, sin, *args, **kwargs)
+            module.apply_rotary_pos_emb = capture
+        try:
+            outputs = prefill(model, input_ids)
+        finally:
+            module.apply_rotary_pos_emb = original
+        first = int(outputs.logits.reshape(-1, outputs.logits.shape[-1])[0].argmax())
+        original_k, original_v = cache_lists(outputs.past_key_values)
+        del outputs
+    else:
+        if not torch.equal(input_ids, prefill_source["input_ids"]):
+            raise RuntimeError("复用的高精度 prefill 与实际输入不一致")
+        first = prefill_source["token"]
+        original_k = list(prefill_source["keys"])
+        original_v = list(prefill_source["values"])
+        pre_keys = list(prefill_source["pre_keys"])
     if config["rope"] == "pre" and len(pre_keys) != len(original_k):
         raise RuntimeError("未捕获所有层的 pre-RoPE Key")
     keys: list[torch.Tensor] = []

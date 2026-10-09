@@ -12,6 +12,8 @@ import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from experiments.static_layer_allocation.code.protocol import require_v_plan
+from phase1.result_format import normalize_quality_result, write_quality_result
 from experiments.static_layer_allocation.code.select_final import (
     _canonical_condition, result_file_name,
 )
@@ -68,6 +70,7 @@ def run(
         raise ValueError("扩样只接受冻结任务和 64→192 的追加题数")
     condition_name = _canonical_condition(condition_name)
     root = project_root()
+    require_v_plan(root)
     config, residual_h, source_name = _condition(root, model_key, condition_name)
     calibrated = _calibration(root, model_key, config) if config is not None else {}
     items = _inputs(root, model_key, task, "expand")
@@ -168,9 +171,16 @@ def run(
         / model_key
     )
     out.mkdir(parents=True, exist_ok=True)
-    (out / file_name).write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    smaller = out / result_file_name(task, condition_name, 128)
+    if extra_n == 192 and smaller.exists():
+        old = normalize_quality_result(json.loads(smaller.read_text("utf-8")))
+        new = normalize_quality_result(payload)
+        if (old["config_digest"] != new["config_digest"]
+                or old["rows"] != new["rows"][:old["extra_n"]]):
+            raise RuntimeError("128 与 256 题扩样前缀冲突，不能覆盖")
+    write_quality_result(out / file_name, payload)
+    if extra_n == 192 and smaller.exists():
+        smaller.unlink()
     print(model_key, task, condition_name, "total", 64 + extra_n, flush=True)
 
 

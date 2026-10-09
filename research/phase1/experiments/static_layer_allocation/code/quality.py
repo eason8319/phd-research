@@ -11,6 +11,8 @@ import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from experiments.static_layer_allocation.code.protocol import require_v_plan
+from phase1.result_format import write_quality_result
 from experiments.generation_error_sources.code.short_baseline import MODELS, _eos_ids
 from experiments.generation_error_sources.code.quantized_generation import (
     MAX_CONTEXT, _calibration, _config, _generate, _ids_and_source, _inputs,
@@ -24,6 +26,7 @@ def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
     if task not in ("gsm8k", "hotpot"):
         raise ValueError("静态层分配 V 只运行基线达标的短题和长问答单元")
     root = project_root()
+    require_v_plan(root)
     folder = root / "research/phase1/experiments/static_layer_allocation/results" / model_key
     allocations = json.loads((folder / "allocations.json").read_text("utf-8"))
     gate = json.loads((folder / "gate.json").read_text("utf-8"))
@@ -115,9 +118,7 @@ def run(model_key: str, task: str, allocation_name: str, commit: str) -> None:
     else:
         payload["em"] = 100 * sum(row["em"] for row in rows) / len(rows)
         payload["f1"] = sum(row["f1"] for row in rows) / len(rows)
-    (folder / f"v_{task}_{allocation_name}.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    write_quality_result(folder / f"v_{task}_{allocation_name}.json", payload)
     print(model_key, task, allocation_name, payload.get("f1", payload.get("em")), flush=True)
 
 

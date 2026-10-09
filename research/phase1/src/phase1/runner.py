@@ -61,7 +61,9 @@ def project_qkv(
     batch, seq, _ = query.shape
     query = query.view(batch, seq, attention.num_heads, attention.head_dim).transpose(1, 2)
     key = key.view(batch, seq, attention.num_key_value_heads, attention.head_dim).transpose(1, 2)
-    value = value.view(batch, seq, attention.num_key_value_heads, attention.head_dim).transpose(1, 2)
+    value = value.view(
+        batch, seq, attention.num_key_value_heads, attention.head_dim
+    ).transpose(1, 2)
     return query, key, value
 
 
@@ -95,8 +97,11 @@ def decode_step(
     past_v: list[torch.Tensor],
     token_id: int,
     position: int,
+    *,
+    observer: Callable[[dict[str, Any]], None] | None = None,
+    consume_cache: bool = False,
 ) -> tuple[torch.Tensor, list[torch.Tensor], list[torch.Tensor]]:
-    """用显式全历史掩码做一步 FP32 decode，并返回拼上新 token 后的缓存。"""
+    """用全历史掩码解码；consume_cache=True 时逐层释放传入列表中的旧缓存。"""
     apply_rope = modeling_module(model).apply_rotary_pos_emb
     device = past_k[0].device
     hidden = model.model.embed_tokens(torch.tensor([[token_id]], device=device))
@@ -107,17 +112,27 @@ def decode_step(
     for index, layer in enumerate(model.model.layers):
         residual = hidden
         query, key, value = project_qkv(layer.self_attn, layer.input_layernorm(hidden))
+        key_pre, new_value = key, value
         query, key = apply_rope(query, key, cos, sin)
+        key_post = key
         key = torch.cat([past_k[index], key], dim=2)
         value = torch.cat([past_v[index], value], dim=2)
         attended = attention_from_batch(query, key, value)
         hidden = residual + layer.self_attn.o_proj(attended)
         residual = hidden
         hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))
+        if observer is not None:
+            observer({"layer": index, "attention": attended, "hidden": hidden,
+                      "key_pre": key_pre, "key_post": key_post, "value": new_value})
         updated_k.append(key)
         updated_v.append(value)
+        if consume_cache:
+            past_k[index] = None
+            past_v[index] = None
     hidden = model.model.norm(hidden)
     logits = model.lm_head(hidden[:, -1, :])
+    if observer is not None:
+        observer({"logits": logits})
     return logits, updated_k, updated_v
 
 

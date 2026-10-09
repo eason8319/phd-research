@@ -10,6 +10,7 @@ _HASH_NUMBER = re.compile(r"####\s*(-?[0-9][0-9,]*(?:\.[0-9]+)?)")
 _FINAL_ANSWER = re.compile(r"Final answer:\s*(.+)", re.IGNORECASE)
 _ARTICLES = re.compile(r"\b(a|an|the)\b")
 _PUNCT = str.maketrans({char: " " for char in string.punctuation})
+_SEVEN_DIGITS = re.compile(r"(?<![0-9])[0-9]{7}(?![0-9])")
 
 
 def extract_gsm8k(text: str) -> str | None:
@@ -35,6 +36,18 @@ def normalize_retrieval(text: str) -> str:
 def retrieval_exact(prediction: str, target: str) -> bool:
     """规范化后的整段预测与预登记目标相同。"""
     return normalize_retrieval(prediction) == normalize_retrieval(target)
+
+
+def retrieval_numbers(prediction: str) -> list[str]:
+    """抽取不同的七位 ASCII 数字值；更长数字中的子串不参与评分。"""
+    return sorted(set(_SEVEN_DIGITS.findall(prediction)))
+
+
+def retrieval_number_exact(prediction: str, target: str) -> bool:
+    """只有唯一七位数字值与目标一致才算正确；相同值重复出现允许。"""
+    if not re.fullmatch(r"[1-9][0-9]{6}", target):
+        raise ValueError("检索目标必须是无前导零的七位数字")
+    return retrieval_numbers(prediction) == [target]
 
 
 def extract_final_answer(text: str) -> str:

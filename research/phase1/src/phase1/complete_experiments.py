@@ -1,4 +1,4 @@
-"""补齐共同候选，并按冻结协议依次复核残留、层分配、扩样和成本。"""
+"""补齐共同生成候选与残留，再完成三格式的静态 Key 分配 C 比较。"""
 
 from __future__ import annotations
 
@@ -13,15 +13,17 @@ from typing import Any
 
 from kvstudy.paths import project_root
 from experiments.generation_error_sources.code.candidates import (
-    TASKS, generation_candidates,
+    KV8, TASKS, generation_candidates,
 )
-from experiments.generation_error_sources.code.select import KV8, _paired, _read
-from experiments.static_layer_allocation.code.expand import _condition
-from experiments.static_layer_allocation.code.select_final import result_file_name
 
 GENERATION = "experiments.generation_error_sources.code"
 ALLOCATION = "experiments.static_layer_allocation.code"
 COST = "experiments.storage_service_cost.code"
+
+
+def _read(path: Path) -> dict[str, Any]:
+    """调度读取结果不加载模型或区间计算依赖。"""
+    return json.loads(path.read_text("utf-8"))
 
 
 def _sha256(path: Path) -> str:
@@ -97,6 +99,8 @@ class ExperimentCompletion:
                     or result["n"] != len(result["rows"])):
                 raise RuntimeError(f"既有生成配置不一致：{path}")
             if task in TASKS:
+                from experiments.generation_error_sources.code.select import _paired
+
                 seeds = _read(self.root / "research/phase1/splits/seeds.json")
                 _paired(_read(folder / f"v_{task}_{KV8}.json"), result, task,
                         seeds["bootstrap"], seeds["bootstrap_draws"])
@@ -113,28 +117,22 @@ class ExperimentCompletion:
         folder = self._folder("generation_error_sources", model)
         name = selection["selected_low_bit"]
         for module, filename, current, legacy in (
-            ("cross_token_groups", "cross_token_gt32.json", "generation-cross-token",
-             "e2-cross-token"),
-            ("trajectories", "trajectories.json", "generation-trajectories",
-             "e2-trajectories"),
+            ("trajectories", "trajectories.json", "generation-propagation",
+             "generation-trajectories"),
         ):
-            chosen = name or "kv4-per_token-post"
             path = folder / filename
-            if path.exists() and _read(path)["representation"] == chosen:
-                continue
+            if path.exists():
+                record = _read(path)
+                plan = self.root / "research/phase1/configs/trajectory_replay.json"
+                if (record.get("schema") == "kv-propagation-v1"
+                        and record.get("plan_sha256") == _sha256(plan)):
+                    continue
             if module == "trajectories" and name is None:
                 continue
             self._fresh_progress(f"{current}-{model}.json", f"{legacy}-{model}.json")
             self._run(f"{GENERATION}.{module}", model, self.commit)
         if name is None:
             return
-        if "per_channel" in name:
-            for module in ("scale_drift", "range_refit"):
-                if not (folder / f"{module}_{name}.json").exists():
-                    prefix = module.replace("_", "-")
-                    self._fresh_progress(f"generation-{prefix}-{model}-{name}.json",
-                                         f"e2-{prefix}-{model}-{name}.json")
-                    self._run(f"{GENERATION}.{module}", model, name, self.commit)
         baseline = folder / "v_hotpot_long_bf16.json"
         if not baseline.exists():
             self._fresh_progress(f"generation-{model}-hotpot_long-v.json",
@@ -150,38 +148,60 @@ class ExperimentCompletion:
         self._run(f"{GENERATION}.select_long_decode", model, self.commit)
 
     def _layers(self, model: str, selection: dict[str, Any]) -> None:
-        folder = self._folder("static_layer_allocation", model)
-        name = selection["e3_representation"]
-        h = selection["e3_residual_bits"]
-        allocations = folder / "allocations.json"
-        probe_path = folder / "probe.json"
-        gate_path = folder / "gate.json"
-        reuse = allocations.exists() and probe_path.exists() and gate_path.exists() and (
-            _read(allocations)["representation"] == name
-            and _read(allocations)["residual_bits"] == h
-            and _read(probe_path)["selected_representation"] == name
-            and _read(gate_path)["allocation_commit"] == _read(allocations)["commit"]
+        """三格式独立测量；恢复时逐步核对来源，保留兼容的全层 KL 进度。"""
+        from experiments.static_layer_allocation.code.protocol import (
+            SCHEMA, calibration_source, code_sources, digest, frozen_sources, load_plan,
         )
-        if not reuse:
-            self._run(f"{ALLOCATION}.probe", model, name, self.commit)
-            self._run(f"{ALLOCATION}.allocations", model, self.commit)
-            self._fresh_progress(f"layer_allocation-gate-{model}.json")
-            self._run(f"{ALLOCATION}.gate", model, self.commit)
-        gate = _read(folder / "gate.json")
-        allocation = _read(allocations)
-        for task in TASKS:
-            for allocation_name in gate["selected_nonrandom_for_v"] + gate["random_for_v"]:
-                path = folder / f"v_{task}_{allocation_name}.json"
-                old = _read(path) if path.exists() else {}
-                if (reuse and old.get("allocation_commit") == allocation["commit"]
-                        and old.get("gate_commit") == gate["commit"]):
-                    continue
-                self._fresh_progress(f"layer_allocation-{model}-{task}-v-"
-                                     f"{allocation_name}.json")
-                self._run(f"{ALLOCATION}.quality", model, task, allocation_name, self.commit)
-        self._run(f"{ALLOCATION}.select", model, self.commit)
+
+        folder = self._folder("static_layer_allocation", model)
+        plan_digest = digest(load_plan(self.root))
+        probe_path = folder / "probe.json"
+        allocations_path = folder / "allocations.json"
+        gate_path = folder / "gate.json"
+
+        def run_step(module: str) -> None:
+            key = f"{ALLOCATION}.{module} {model} --commit {self.commit}"
+            self.state["completed_steps"] = [
+                old for old in self.state["completed_steps"] if old != key
+            ]
+            self._run(f"{ALLOCATION}.{module}", model, "--commit", self.commit)
+
+        probe = _read(probe_path) if probe_path.exists() else {}
+        probe_valid = (
+            probe.get("schema") == SCHEMA and probe.get("plan_sha256") == plan_digest
+            and probe.get("code_sha256") == code_sources(self.root)
+            and probe.get("frozen_sources") == frozen_sources(self.root, model)
+            and probe.get("calibration_source") == calibration_source(self.root, model)
+        )
+        if not probe_valid:
+            run_step("probe")
+            probe = _read(probe_path)
+        allocation = _read(allocations_path) if allocations_path.exists() else {}
+        allocation_valid = (
+            allocation.get("schema") == SCHEMA and allocation.get("plan_sha256") == plan_digest
+            and allocation.get("probe_sha256") == digest(probe)
+            and allocation.get("allocation_digest") == digest({
+                key: value for key, value in allocation.items() if key != "allocation_digest"
+            })
+        )
+        if not allocation_valid:
+            run_step("allocations")
+            allocation = _read(allocations_path)
+        gate = _read(gate_path) if gate_path.exists() else {}
+        gate_valid = (
+            gate.get("schema") == SCHEMA and gate.get("plan_sha256") == plan_digest
+            and gate.get("allocation_digest") == allocation.get("allocation_digest")
+            and gate.get("code_sha256") == code_sources(self.root)
+        )
+        if not gate_valid:
+            self._fresh_progress(f"key-allocation-kl-{model}.json")
+            run_step("gate")
+        self.state["downstream_status"] = "await_frozen_key_allocation_v_plan"
 
     def _expansion(self, model: str) -> None:
+        from experiments.static_layer_allocation.code.expand import _condition
+        from experiments.static_layer_allocation.code.select_final import result_file_name
+
         folder = (self.root / "research/phase1/experiments/static_layer_allocation/results"
                   / "expanded_quality" / model)
         self._run(f"{ALLOCATION}.select_final", model, "64", self.commit)
@@ -212,7 +232,7 @@ class ExperimentCompletion:
             self._run(f"{ALLOCATION}.select_final", model, str(total), self.commit)
 
     def run_model(self, model: str) -> None:
-        """四候选全部补齐后才重选；改变的表示继续重测全部依赖步骤。"""
+        """补齐生成候选后保留其选择，静态 Key 分配按独立三格式计划运行。"""
         folder = self._folder("generation_error_sources", model)
         matrix = _read(self._folder("representation_interactions", model) / "summary.json")
         for name in generation_candidates(matrix):
@@ -222,7 +242,11 @@ class ExperimentCompletion:
                 self._generation(model, task, name)
         self._run(f"{GENERATION}.select", model, self.commit)
         selected = _read(folder / "no_residual_selection.json")["selected_low_bit"]
-        if selected:
+        residual_path = folder / "residual_selection.json"
+        joint = residual_path.exists() and _read(residual_path).get("selection_policy") == (
+            "joint_measured_format_residual"
+        )
+        if selected and not joint:
             for h in (8, 16):
                 for task in TASKS:
                     self._generation(model, task, selected, h)
@@ -230,8 +254,11 @@ class ExperimentCompletion:
         selection = _read(folder / "residual_selection.json")
         self._diagnostics(model, selection)
         self._layers(model, selection)
-        self._expansion(model)
-        self._run(f"{COST}.layout", model, self.commit)
+        from experiments.static_layer_allocation.code.protocol import load_plan
+
+        if load_plan(self.root)["v_plan"]["frozen"]:
+            raise RuntimeError("新 Key 分配的 V 入口需按另行冻结的方案实现后再衔接")
+        self.state["downstream_status"] = "await_frozen_key_allocation_v_plan"
 
     def run(self, models: list[str]) -> None:
         """核对离线校准实体后运行，保存可回传的小型执行索引。"""
@@ -250,6 +277,8 @@ class ExperimentCompletion:
             self.state.update(status="failed", error=str(error))
             self._save()
             raise
+        if self.state.get("error"):
+            self.state.setdefault("recovered_errors", []).append(self.state.pop("error"))
         self.state.update(status="completed", current_step=None, models=models)
         results = {}
         for experiment in ("generation_error_sources", "static_layer_allocation",
@@ -272,8 +301,23 @@ def main() -> None:
     parser.add_argument("--commit", required=True)
     parser.add_argument("--models", nargs="+", choices=("qwen", "llama"),
                         default=["qwen", "llama"])
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--residual-diagnostics", action="store_true",
+                      help="独立补测三种表示的残留，不重新选择或执行下游实验")
+    mode.add_argument("--joint-selection", action="store_true",
+                      help="联合排名已测格式加 H，只更新选择，之后审核下游复用范围")
     args = parser.parse_args()
-    ExperimentCompletion(args.commit).run(args.models)
+    if args.residual_diagnostics:
+        from experiments.generation_error_sources.code.residual_diagnostics import run
+
+        run(args.commit, args.models)
+    elif args.joint_selection:
+        from experiments.generation_error_sources.code.select_residual import run
+
+        for model in args.models:
+            run(model, args.commit, joint=True)
+    else:
+        ExperimentCompletion(args.commit).run(args.models)
 
 
 if __name__ == "__main__":

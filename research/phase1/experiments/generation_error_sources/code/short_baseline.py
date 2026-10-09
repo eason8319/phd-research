@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from typing import Any
 
@@ -10,6 +11,7 @@ import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from phase1.result_format import write_quality_result
 from phase1.runner import cache_lists, decode_step, load_model, prefill
 from phase1.score import gsm8k_exact
 
@@ -86,7 +88,16 @@ def run(model_key: str, commit: str, split: str = "v") -> None:
         text = tokenizer.decode(produced, skip_special_tokens=True)
         ok = gsm8k_exact(text, answers[item["row"]])
         correct += int(ok)
-        rows.append({"id": item["id"], "correct": ok, "new_tokens": len(produced)})
+        source = tokenizer.apply_chat_template(
+            [{"role": "user", "content": user}], tokenize=False,
+            add_generation_prompt=True, **kwargs,
+        )
+        rows.append({
+            "id": item["id"], "correct": ok, "new_tokens": len(produced),
+            "input_tokens": len(ids),
+            "input_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest(),
+            "stop": "eos" if produced[-1] in eos else "limit", "invalid_groups": 0,
+        })
         print(item["id"], ok, len(produced), flush=True)
     payload = {
         "protocol": "phase1-gsm8k-answer-example",
@@ -99,9 +110,7 @@ def run(model_key: str, commit: str, split: str = "v") -> None:
         "em": 100.0 * correct / len(rows),
         "rows": rows,
     }
-    (out / f"{split}_gsm8k_bf16.json").write_text(
-        json.dumps(payload, indent=2) + "\n", encoding="utf-8"
-    )
+    write_quality_result(out / f"{split}_gsm8k_bf16.json", payload)
     print(model_key, split, "em", payload["em"], flush=True)
 
 

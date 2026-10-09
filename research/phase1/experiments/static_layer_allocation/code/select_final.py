@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -40,6 +41,16 @@ def result_file_name(task: str, condition: str, total: int) -> str:
     return f"{task}_{label}_n{total}.json"
 
 
+def expanded_result_path(folder: Path, task: str, condition: str, total: int) -> Path:
+    """定位唯一扩样实体；较小轮次可读取同条件较大实体的冻结前缀。"""
+    for available in TOTALS:
+        if available >= total:
+            path = folder / result_file_name(task, condition, available)
+            if path.exists():
+                return path
+    raise FileNotFoundError(folder / result_file_name(task, condition, total))
+
+
 def _v_path(root: Path, model_key: str, task: str, condition: str) -> Path:
     """确定 V 的已审核逐题文件，包含真实生成与误差来源残留条件。"""
     condition = _canonical_condition(condition)
@@ -69,21 +80,31 @@ def _combined(
         raise RuntimeError("冻结验证集的起始样本数不是 64")
     if total == 64:
         return baseline
-    path = (
+    folder = (
         root / "research/phase1/experiments/static_layer_allocation/results/expanded_quality"
-        / model_key / result_file_name(task, condition, total)
+        / model_key
     )
+    path = expanded_result_path(folder, task, condition, total)
     extra = _read(path)
     if (extra["model"] != model_key or extra["task"] != task
             or _canonical_condition(extra["condition"]) != condition
-            or extra["extra_n"] != total - 64
-            or extra["total_n_with_v"] != total
-            or len(extra["rows"]) != total - 64):
+            or extra["extra_n"] < total - 64
+            or extra["extra_n"] + 64 != extra["total_n_with_v"]
+            or len(extra["rows"]) != extra["extra_n"]):
         raise RuntimeError(f"扩样元数据不符：{path}")
-    ids = [row["id"] for row in baseline["rows"] + extra["rows"]]
+    from experiments.static_layer_allocation.code.expand import _condition
+
+    config, residual_h, source = _condition(root, model_key, condition)
+    expected_digest = hashlib.sha256(json.dumps({
+        "name": condition, "source": source, "config": config, "residual_h": residual_h,
+    }, sort_keys=True).encode("utf-8")).hexdigest()
+    if extra["config_digest"] != expected_digest:
+        raise RuntimeError(f"扩样配置与当前冻结条件不一致：{path}")
+    used = extra["rows"][:total - 64]
+    ids = [row["id"] for row in baseline["rows"] + used]
     if len(ids) != len(set(ids)):
         raise RuntimeError(f"验证集与扩样题重复：{path}")
-    return {"n": total, "rows": baseline["rows"] + extra["rows"]}
+    return {"n": total, "rows": baseline["rows"] + used}
 
 
 def _matching_inputs(results: dict[str, dict[str, Any]], total: int) -> None:

@@ -1,0 +1,36 @@
+{
+  "schema": "key-downgrade-allocation",
+  "input_protocol": "phase1-full-key-retrieval",
+  "counts": {"math": 64, "retrieval": 32},
+  "formats": {
+    "online_pre": {
+      "representation": "k8v4-per_token-pre",
+      "residual_bits": 0,
+      "residual_tokens": 0
+    },
+    "online_post": {
+      "representation": "k8v4-per_token-post",
+      "residual_bits": 0,
+      "residual_tokens": 0
+    },
+    "offline_pre": {
+      "representation": "k8v4-per_channel-pre",
+      "residual_bits": 8,
+      "residual_tokens": 128
+    }
+  },
+  "models": {
+    "qwen": {"layers": 28, "k4_layers": [2, 7, 14]},
+    "llama": {"layers": 32, "k4_layers": [2, 8, 16]}
+  },
+  "rank_source": "retrieval",
+  "tie_break": "layer_index_ascending",
+  "high_sensitivity_fraction": 0.5,
+  "random_seeds_source": "research/phase1/splits/seeds.json",
+  "random_seeds_key": "e3_random",
+  "cost_lengths": [4096, 32768],
+  "kv8_reference": "kv8-per_token-post",
+  "kv4_endpoint": "measure_one_step_unless_same_input_severe_failure_recorded",
+  "generation_screen": {"frozen": false},
+  "v_plan": {"frozen": false}
+}
