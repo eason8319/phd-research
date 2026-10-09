@@ -1,32 +1,42 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "23a395a",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "qwen",
   "total_n": 256,
-  "e2_selection_commit": "435e205",
-  "e3_selection_commit": "989874d",
+  "e2_selection_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+  "e3_selection_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "candidates": [
-    "kv8",
+    "e2",
     "e3-p50_sensitivity"
   ],
   "cells": {
     "gsm8k": {
-      "kv8": {
+      "e2": {
         "total_n": 256,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": -1.171875,
-          "lower": -4.845826110693162,
-          "upper": 2.6035462424837625,
+          "estimate": 0.78125,
+          "lower": -3.223108217258832,
+          "upper": 4.725458845320705,
           "kind": "binary",
           "n": 256,
           "detail": {
-            "degrade": 2,
-            "improve": 5
+            "degrade": 5,
+            "improve": 3
           }
         },
-        "versus_kv8": null,
+        "versus_kv8": {
+          "estimate": 1.953125,
+          "lower": -1.1656538002217824,
+          "upper": 4.911208279652411,
+          "kind": "binary",
+          "n": 256,
+          "detail": {
+            "degrade": 5,
+            "improve": 0
+          }
+        },
         "interval_crosses_2_or_missing": true
       },
       "e3-p50_sensitivity": {
@@ -34,24 +44,24 @@
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": 0.0,
-          "lower": -3.9984029682867543,
-          "upper": 3.9984029682867543,
+          "estimate": 1.5625,
+          "lower": -2.7961142006867816,
+          "upper": 5.815468159742614,
           "kind": "binary",
           "n": 256,
           "detail": {
-            "degrade": 4,
-            "improve": 4
+            "degrade": 7,
+            "improve": 3
           }
         },
         "versus_kv8": {
-          "estimate": 1.171875,
-          "lower": -2.121278525132246,
-          "upper": 4.338724745129744,
+          "estimate": 2.734375,
+          "lower": -1.2747655663836974,
+          "upper": 6.524464431629406,
           "kind": "binary",
           "n": 256,
           "detail": {
-            "degrade": 4,
+            "degrade": 8,
             "improve": 1
           }
         },
@@ -59,32 +69,14 @@
       }
     },
     "hotpot": {
-      "kv8": {
+      "e2": {
         "total_n": 256,
         "state": "证据不足",
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": 0.6185358297692286,
-          "lower": -2.49916067021875,
-          "upper": 3.8252799535713384,
-          "kind": "bootstrap",
-          "n": 256,
-          "detail": {
-            "draws": 10000,
-            "seed": 20260923
-          }
-        },
-        "versus_kv8": null,
-        "interval_crosses_2_or_missing": true
-      },
-      "e3-p50_sensitivity": {
-        "total_n": 256,
-        "state": "证据不足",
-        "invalid_samples": 0,
-        "versus_bf16": {
-          "estimate": 1.4839161266335608,
-          "lower": -1.6707764233364382,
-          "upper": 4.644305929248951,
+          "estimate": 1.7531971288012156,
+          "lower": -1.5606089209650702,
+          "upper": 5.066486899669765,
           "kind": "bootstrap",
           "n": 256,
           "detail": {
@@ -93,9 +85,37 @@
           }
         },
         "versus_kv8": {
-          "estimate": 0.8653802968643325,
-          "lower": -2.6044922580101773,
-          "upper": 4.354160088167425,
+          "estimate": 1.1346612990319866,
+          "lower": -2.5392702888410605,
+          "upper": 4.957467550007634,
+          "kind": "bootstrap",
+          "n": 256,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "interval_crosses_2_or_missing": true
+      },
+      "e3-p50_sensitivity": {
+        "total_n": 256,
+        "state": "证据不足",
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.21944047979398468,
+          "lower": -3.5863934714864545,
+          "upper": 3.9280819031498897,
+          "kind": "bootstrap",
+          "n": 256,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -0.3990953499752442,
+          "lower": -4.253956924954468,
+          "upper": 3.5010938389942807,
           "kind": "bootstrap",
           "n": 256,
           "detail": {
@@ -117,6 +137,7 @@
           "conditions": [
             "bf16",
             "kv8",
+            "e2",
             "e3-p50_sensitivity",
             "e3-p50_random_202609231",
             "e3-p50_random_202609232",
@@ -128,6 +149,7 @@
           "conditions": [
             "bf16",
             "kv8",
+            "e2",
             "e3-p50_sensitivity",
             "e3-p50_random_202609231",
             "e3-p50_random_202609232",
@@ -144,6 +166,7 @@
           "conditions": [
             "bf16",
             "kv8",
+            "e2",
             "e3-p50_sensitivity",
             "e3-p50_random_202609231",
             "e3-p50_random_202609232",
@@ -155,6 +178,7 @@
           "conditions": [
             "bf16",
             "kv8",
+            "e2",
             "e3-p50_sensitivity",
             "e3-p50_random_202609231",
             "e3-p50_random_202609232",

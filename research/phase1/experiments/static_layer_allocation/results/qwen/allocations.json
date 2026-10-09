@@ -1,13 +1,13 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "80d6c07",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "qwen",
-  "representation": "kv8-per_token-post",
+  "representation": "k8v4-per_token-pre",
   "residual_bits": 0,
   "n_layers": 28,
   "n_units": 56,
-  "probe_commit": "461506e",
-  "selection_commit": "435e205",
+  "probe_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+  "selection_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "rank_source": "c_retrieval",
   "random_seeds": [
     202609231,
@@ -62,19 +62,11 @@
           "v": 4
         },
         {
-          "k": 8,
-          "v": 4
-        },
-        {
           "k": 4,
           "v": 4
         },
         {
           "k": 4,
-          "v": 4
-        },
-        {
-          "k": 8,
           "v": 4
         },
         {
@@ -86,11 +78,19 @@
           "v": 4
         },
         {
+          "k": 4,
+          "v": 4
+        },
+        {
           "k": 8,
           "v": 4
         },
         {
-          "k": 4,
+          "k": 8,
+          "v": 4
+        },
+        {
+          "k": 8,
           "v": 4
         },
         {
@@ -188,7 +188,7 @@
           "v": 4
         },
         {
-          "k": 4,
+          "k": 8,
           "v": 4
         },
         {
@@ -216,7 +216,7 @@
           "v": 4
         },
         {
-          "k": 8,
+          "k": 4,
           "v": 4
         },
         {
@@ -774,7 +774,7 @@
           "v": 4
         },
         {
-          "k": 4,
+          "k": 8,
           "v": 4
         },
         {
@@ -810,7 +810,7 @@
           "v": 4
         },
         {
-          "k": 8,
+          "k": 4,
           "v": 4
         },
         {
@@ -1018,7 +1018,7 @@
           "v": 8
         },
         {
-          "k": 8,
+          "k": 4,
           "v": 8
         },
         {
@@ -1054,7 +1054,7 @@
           "v": 8
         },
         {
-          "k": 4,
+          "k": 8,
           "v": 8
         },
         {

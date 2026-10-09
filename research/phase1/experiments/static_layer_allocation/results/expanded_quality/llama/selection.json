@@ -1,10 +1,10 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "e95f6d3",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "llama",
   "total_n": 256,
-  "e2_selection_commit": "c1f2cc2",
-  "e3_selection_commit": "e95f6d3",
+  "e2_selection_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+  "e3_selection_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "candidates": [
     "e2"
   ],

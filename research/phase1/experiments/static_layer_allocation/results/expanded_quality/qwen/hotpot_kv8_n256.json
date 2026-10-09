@@ -18,7 +18,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac1a5b45542991316484b8b",
@@ -28,7 +29,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 22.22222222222222
+      "f1": 22.22222222222222,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7914e155429974737f7973",
@@ -38,7 +40,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae2eb7f55429928c423955b",
@@ -48,7 +51,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.797101449275361
+      "f1": 5.797101449275361,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a829c1d55429966c78a6a67",
@@ -58,7 +62,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab6bae95542995eadef0086",
@@ -68,7 +73,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8c8828554299653c1aa0ae",
@@ -78,7 +84,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 39.99999999999999
+      "f1": 39.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab58ee6554299488d4d99d6",
@@ -88,7 +95,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7b22f8554299042af8f6ff",
@@ -98,7 +106,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab60aec554299110f2199c3",
@@ -108,7 +117,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 9.523809523809524
+      "f1": 9.523809523809524,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adcde475542994d58a2f709",
@@ -118,7 +128,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 36.36363636363636
+      "f1": 36.36363636363636,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac13f425542991316484a96",
@@ -128,7 +139,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 42.857142857142854
+      "f1": 42.857142857142854,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5addda9b5542992200553b5b",
@@ -138,7 +150,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 35.294117647058826
+      "f1": 35.294117647058826,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8457835542990548d0b28a",
@@ -148,7 +161,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 35.714285714285715
+      "f1": 35.714285714285715,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a79395455429970f5fffe7d",
@@ -158,7 +172,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.121212121212121
+      "f1": 12.121212121212121,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a761e855542994ccc9186e0",
@@ -168,7 +183,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 21.428571428571427
+      "f1": 21.428571428571427,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adea62e55429975fa854f3b",
@@ -178,7 +194,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 14.285714285714286
+      "f1": 14.285714285714286,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7e355055429934daa2fbf4",
@@ -188,7 +205,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 22.22222222222222
+      "f1": 22.22222222222222,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae6e0485542996d980e7ca6",
@@ -198,7 +216,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a79caec5542994bb94570ad",
@@ -208,7 +227,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac54f8d5542993e66e822f5",
@@ -218,7 +238,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 25.0
+      "f1": 25.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a737dc455429908901be2c9",
@@ -228,7 +249,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 32.0
+      "f1": 32.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae73d235542991e8301cc29",
@@ -238,7 +260,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a87b2fc5542996e4f3088d0",
@@ -248,7 +271,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adfecd755429942ec259b90",
@@ -258,7 +282,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abe89dd55429976d4830b5d",
@@ -268,7 +293,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 6.896551724137931
+      "f1": 6.896551724137931,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abae1e65542996cc5e49ed2",
@@ -278,7 +304,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae5a8435542992663a4f208",
@@ -288,7 +315,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae1452c554299422ee99654",
@@ -298,7 +326,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab6ff3a5542991d3222372a",
@@ -308,7 +337,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 57.142857142857146
+      "f1": 57.142857142857146,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae56a3f5542992663a4f1f4",
@@ -318,7 +348,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 11.764705882352942
+      "f1": 11.764705882352942,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab4147a5542996a3a969f1e",
@@ -328,7 +359,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae644c55542992663a4f27e",
@@ -338,7 +370,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae3c5535542991a06ce9a20",
@@ -348,7 +381,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab487765542990594ba9c4e",
@@ -358,7 +392,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 33.333333333333336
+      "f1": 33.333333333333336,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae60426554299546bf83019",
@@ -368,7 +403,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ade664555429939a52fe89c",
@@ -378,7 +414,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ade8ad95542992fa25da7b8",
@@ -388,7 +425,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 28.571428571428566
+      "f1": 28.571428571428566,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8c7703554299585d9e36b9",
@@ -398,7 +436,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a733c925542991f9a20c6b7",
@@ -408,7 +447,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adde17f5542992200553b87",
@@ -418,7 +458,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae2c696554299495565db32",
@@ -428,7 +469,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 24.999999999999996
+      "f1": 24.999999999999996,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a73bddb55429978a71e909d",
@@ -438,7 +480,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 21.052631578947366
+      "f1": 21.052631578947366,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae236445542992decbdcc69",
@@ -448,7 +491,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab615cf554299488d4d9aa3",
@@ -458,7 +502,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae1d32a554299492dc91b9c",
@@ -468,7 +513,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 6.25
+      "f1": 6.25,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab8883455429916710eb084",
@@ -478,7 +524,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 11.428571428571429
+      "f1": 11.428571428571429,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7618d85542994ccc9186cf",
@@ -488,7 +535,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab931475542991b5579f12f",
@@ -498,7 +546,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac00f795542996f0d89cb16",
@@ -508,7 +557,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 6.349206349206349
+      "f1": 6.349206349206349,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a711ef85542994082a3e5ac",
@@ -518,7 +568,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 37.5
+      "f1": 37.5,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab1c2bf5542997061209558",
@@ -528,7 +579,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 54.54545454545455
+      "f1": 54.54545454545455,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abf877c5542990832d3a147",
@@ -538,7 +590,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.882352941176471
+      "f1": 5.882352941176471,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae25e835542992decbdccd1",
@@ -548,7 +601,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a9030ef5542995651fb50e4",
@@ -558,7 +612,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a78b3f7554299148911f94c",
@@ -568,7 +623,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.714285714285714
+      "f1": 5.714285714285714,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae274dd5542996483e649ad",
@@ -578,7 +634,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a80a25d5542995d8a8ddfb7",
@@ -588,7 +645,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a90b4fe55429916514e7525",
@@ -598,7 +656,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a83b4d35542996488c2e495",
@@ -608,7 +667,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a71278c5542994082a3e5e2",
@@ -618,7 +678,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab5057b5542991779162d56",
@@ -628,7 +689,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 38.09523809523809
+      "f1": 38.09523809523809,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7fc5875542992e7d278d67",
@@ -638,7 +700,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae0345855429924de1b705f",
@@ -648,7 +711,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab69e4f554299710c8d1eee",
@@ -658,7 +722,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab841d15542990e739ec89d",
@@ -668,7 +733,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 17.391304347826086
+      "f1": 17.391304347826086,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8b9cd65542997f31a41d8b",
@@ -678,7 +744,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7a5ccf55429941d65f25d7",
@@ -688,7 +755,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 80.0
+      "f1": 80.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae4dd0955429960a22e0201",
@@ -698,7 +766,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 6.896551724137931
+      "f1": 6.896551724137931,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae55e6855429960a22e02d0",
@@ -708,7 +777,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae61bfd5542992663a4f261",
@@ -718,7 +788,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a89ddf25542992e4fca83ff",
@@ -728,7 +799,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 16.666666666666668
+      "f1": 16.666666666666668,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab9547755429970cfb8ea6c",
@@ -738,7 +810,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8ca7d4554299240d9c21b8",
@@ -748,7 +821,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abc091555429965836003f6",
@@ -758,7 +832,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 7.8431372549019605
+      "f1": 7.8431372549019605,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8c6bd55542995e66a475ea",
@@ -768,7 +843,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8d6d4e554299441c6b9fdb",
@@ -778,7 +854,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a77415b55429966f1a36cd2",
@@ -788,7 +865,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.797101449275362
+      "f1": 5.797101449275362,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a731c205542994cef4bc45d",
@@ -798,7 +876,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adc094a55429947ff1738c0",
@@ -808,7 +887,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abface75542990832d3a196",
@@ -818,7 +898,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae2c8b05542992decbdcd9d",
@@ -828,7 +909,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8e07b25542995085b3738d",
@@ -838,7 +920,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 4.651162790697675
+      "f1": 4.651162790697675,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a753c8c55429916b01642ab",
@@ -848,7 +931,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 2.898550724637681
+      "f1": 2.898550724637681,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a78f1b555429970f5fffde9",
@@ -858,7 +942,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7aa0a55542990198eaf165",
@@ -868,7 +953,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 57.142857142857146
+      "f1": 57.142857142857146,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adf73a45542992d7e9f9378",
@@ -878,7 +964,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 26.086956521739133
+      "f1": 26.086956521739133,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5add4d8f5542997545bbbd25",
@@ -888,7 +975,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 34.37499999999999
+      "f1": 34.37499999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a871a5e5542996432c5721e",
@@ -898,7 +986,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.12121212121212
+      "f1": 12.12121212121212,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a90ab995542990a98493683",
@@ -908,7 +997,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adebc9b554299728e26c79d",
@@ -918,7 +1008,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ade28b15542997c77aded83",
@@ -928,7 +1019,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 9.09090909090909
+      "f1": 9.09090909090909,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a728f745542991f9a20c4e6",
@@ -938,7 +1030,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8c4ebf554299585d9e365d",
@@ -948,7 +1041,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a83b1e75542990548d0b220",
@@ -958,7 +1052,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab4314955429942dd415ecd",
@@ -968,7 +1063,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae66d515542992ae0d16346",
@@ -978,7 +1074,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a79093955429974737f794b",
@@ -988,7 +1085,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 36.36363636363636
+      "f1": 36.36363636363636,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae36ee05542992f92d822c4",
@@ -998,7 +1096,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a85cd295542997175ce202b",
@@ -1008,7 +1107,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a874e9b554299211dda2bd3",
@@ -1018,7 +1118,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a84fd085542994c784ddaba",
@@ -1028,7 +1129,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8777395542996e4f3087f3",
@@ -1038,7 +1140,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab61668554299488d4d9aa6",
@@ -1048,7 +1151,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae40a2955429970de88d8a3",
@@ -1058,7 +1162,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 4.545454545454546
+      "f1": 4.545454545454546,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae00de055429906c02daab5",
@@ -1068,7 +1173,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 20.689655172413794
+      "f1": 20.689655172413794,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7f4cb055429969796c1a02",
@@ -1078,7 +1184,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a89217455429938390d4039",
@@ -1088,7 +1195,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 20.689655172413794
+      "f1": 20.689655172413794,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7cffb755429907fabef09f",
@@ -1098,7 +1206,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae4ad3155429913cc2044cb",
@@ -1108,7 +1217,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 13.333333333333332
+      "f1": 13.333333333333332,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a80fb97554299260e20a1eb",
@@ -1118,7 +1228,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae22eae554299495565da30",
@@ -1128,7 +1239,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 15.384615384615383
+      "f1": 15.384615384615383,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a89e2ba5542992e4fca8441",
@@ -1138,7 +1250,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 19.047619047619047
+      "f1": 19.047619047619047,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abd573c55429924427fcfb7",
@@ -1148,7 +1261,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 11.11111111111111
+      "f1": 11.11111111111111,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a817d8c55429903bc27b974",
@@ -1158,7 +1272,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 50.0
+      "f1": 50.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adf8dd25542993344016cfe",
@@ -1168,7 +1283,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 9.523809523809524
+      "f1": 9.523809523809524,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7e05f75542995f4f402394",
@@ -1178,7 +1294,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 22.22222222222222
+      "f1": 22.22222222222222,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8b99a45542997f31a41d7f",
@@ -1188,7 +1305,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac4241e5542997ea680ca10",
@@ -1198,7 +1316,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 57.142857142857146
+      "f1": 57.142857142857146,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab852c05542990e739ec8c5",
@@ -1208,7 +1327,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adf5c175542995ec70e8fd0",
@@ -1218,7 +1338,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 46.15384615384615
+      "f1": 46.15384615384615,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac2bbd0554299218029db09",
@@ -1228,7 +1349,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8f13d55542997ba9cb31c9",
@@ -1238,7 +1360,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 80.0
+      "f1": 80.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab2da13554299194fa93542",
@@ -1248,7 +1371,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7b2a2255429927d897bf4c",
@@ -1258,7 +1382,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 11.11111111111111
+      "f1": 11.11111111111111,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a727ca45542994cef4bc2d8",
@@ -1268,7 +1393,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 16.666666666666668
+      "f1": 16.666666666666668,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a83d7d05542992ef85e237a",
@@ -1278,7 +1404,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 33.33333333333333
+      "f1": 33.33333333333333,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac559bd5542993e66e82328",
@@ -1288,7 +1415,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.903225806451614
+      "f1": 12.903225806451614,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7149595542994082a3e76f",
@@ -1298,7 +1426,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 9.75609756097561
+      "f1": 9.75609756097561,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8b6a5155429949d91db5a3",
@@ -1308,7 +1437,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae352285542994393b9e685",
@@ -1318,7 +1448,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.405405405405406
+      "f1": 5.405405405405406,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a77452155429972597f14e1",
@@ -1328,7 +1459,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7a014a5542996c55b2dccf",
@@ -1338,7 +1470,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab69f13554299710c8d1ef3",
@@ -1348,7 +1481,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 14.285714285714286
+      "f1": 14.285714285714286,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab587ad5542992aa134a34b",
@@ -1358,7 +1492,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 13.043478260869566
+      "f1": 13.043478260869566,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8ba45b554299240d9c2051",
@@ -1368,7 +1503,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7f96a95542995d8a8ddead",
@@ -1378,7 +1514,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab953a45542996be202047f",
@@ -1388,7 +1525,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 18.18181818181818
+      "f1": 18.18181818181818,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7327265542994cef4bc480",
@@ -1398,7 +1536,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ababbe9554299232ef4a38a",
@@ -1408,7 +1547,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 9.09090909090909
+      "f1": 9.09090909090909,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae088525542993d6555eba1",
@@ -1418,7 +1558,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 6.451612903225806
+      "f1": 6.451612903225806,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5aba65a055429939ce03dcd2",
@@ -1428,7 +1569,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac3b9c5554299657fa2911b",
@@ -1438,7 +1580,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8f6b7c5542992414482abc",
@@ -1448,7 +1591,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 7.692307692307692
+      "f1": 7.692307692307692,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab85e9e55429934fafe6d8b",
@@ -1458,7 +1602,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab455dc5542991779162c77",
@@ -1468,7 +1613,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 10.909090909090908
+      "f1": 10.909090909090908,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8f55aa554299458435d5bc",
@@ -1478,7 +1624,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 18.18181818181818
+      "f1": 18.18181818181818,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae5ef105542996de7b71a72",
@@ -1488,7 +1635,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a901d6c5542995651fb50bd",
@@ -1498,7 +1646,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae1c90e554299234fd042f7",
@@ -1508,7 +1657,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.903225806451612
+      "f1": 12.903225806451612,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae12b6755429920d52342e4",
@@ -1518,7 +1668,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8eb51655429917b4a5bdb5",
@@ -1528,7 +1679,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.2631578947368425
+      "f1": 5.2631578947368425,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adbe447554299438c868ccd",
@@ -1538,7 +1690,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.5
+      "f1": 12.5,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8ad6db55429950cd6afba7",
@@ -1548,7 +1701,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 3.125
+      "f1": 3.125,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a886b7555429938390d3f4d",
@@ -1558,7 +1712,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 25.0
+      "f1": 25.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae5d82f554299546bf82f9a",
@@ -1568,7 +1723,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a8b81bc55429949d91db5b8",
@@ -1578,7 +1734,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a84f06f5542994c784dda92",
@@ -1588,7 +1745,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a74872655429979e2882978",
@@ -1598,7 +1756,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 8.333333333333334
+      "f1": 8.333333333333334,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab5f854554299637185c64e",
@@ -1608,7 +1767,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 4.651162790697675
+      "f1": 4.651162790697675,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abf931f5542990832d3a158",
@@ -1618,7 +1778,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 4.761904761904762
+      "f1": 4.761904761904762,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a78c235554299078472775d",
@@ -1628,7 +1789,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abbfb5e554299114383a0d0",
@@ -1638,7 +1800,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7ddd565542997cc2c474b2",
@@ -1648,7 +1811,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 13.333333333333336
+      "f1": 13.333333333333336,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5add53fe5542992200553ab1",
@@ -1658,7 +1822,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 13.636363636363635
+      "f1": 13.636363636363635,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a88a4e65542997e5c09a671",
@@ -1668,7 +1833,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7a276d5542996c55b2dd27",
@@ -1678,7 +1844,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 22.22222222222222
+      "f1": 22.22222222222222,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac308135542990b17b154f4",
@@ -1688,7 +1855,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae7f41c5542997ec2727701",
@@ -1698,7 +1866,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac375495542995ef918c1a3",
@@ -1708,7 +1877,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac0c3275542992a796ded7d",
@@ -1718,7 +1888,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 11.11111111111111
+      "f1": 11.11111111111111,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adc368155429944faac2468",
@@ -1728,7 +1899,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 4.4943820224719095
+      "f1": 4.4943820224719095,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab613985542992aa134a418",
@@ -1738,7 +1910,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adc3aff5542996e685252eb",
@@ -1748,7 +1921,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 24.0
+      "f1": 24.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7b57155542992d025e680f",
@@ -1758,7 +1932,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adc861c5542994d58a2f62c",
@@ -1768,7 +1943,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 25.0
+      "f1": 25.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a876cd55542993e715abf36",
@@ -1778,7 +1954,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac0d1555542997d64295a5d",
@@ -1788,7 +1965,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a73522d5542994cef4bc541",
@@ -1798,7 +1976,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 33.333333333333336
+      "f1": 33.333333333333336,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab6973f554299110f219a25",
@@ -1808,7 +1987,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 20.51282051282051
+      "f1": 20.51282051282051,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a75c02f5542992db94736b4",
@@ -1818,7 +1998,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 10.0
+      "f1": 10.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a7a33a35542994f819ef14c",
@@ -1828,7 +2009,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5abe535055429976d4830aea",
@@ -1838,7 +2020,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 5.128205128205127
+      "f1": 5.128205128205127,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab2b7c1554299166977406a",
@@ -1848,7 +2031,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 12.76595744680851
+      "f1": 12.76595744680851,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5adcecbd5542992c1e3a24b7",
@@ -1858,7 +2042,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 18.18181818181818
+      "f1": 18.18181818181818,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae2c6bf554299492dc91c6c",
@@ -1868,7 +2053,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 10.526315789473683
+      "f1": 10.526315789473683,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab934465542996be202043e",
@@ -1878,7 +2064,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 20.0
+      "f1": 20.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ac3271e554299218029dbd3",
@@ -1888,7 +2075,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ab28a87554299449642c8ec",
@@ -1898,7 +2086,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 49.99999999999999
+      "f1": 49.99999999999999,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5ae14def55429901ffe4ae4a",
@@ -1908,7 +2097,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a77720255429967ab10517f",
@@ -1918,7 +2108,8 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 7.999999999999998
+      "f1": 7.999999999999998,
+      "input_identity_source": "recorded"
     },
     {
       "id": "5a773ec45542994aec3b7245",
@@ -1928,10 +2119,15 @@
       "stop": "eos",
       "invalid_groups": 0,
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded"
     }
   ],
   "invalid_samples": 0,
   "em": 25.0,
-  "f1": 40.00341379259609
+  "f1": 40.00341379259609,
+  "result_format_version": 1,
+  "n": 192,
+  "calibration_commit": null,
+  "residual_tokens": 0
 }

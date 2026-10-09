@@ -1,12 +1,13 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "23a395a",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "qwen",
   "task": "gsm8k",
   "condition": "e3-p50_random_202609231",
   "source": "p50_random_202609231",
   "residual_bits": 0,
-  "config_digest": "4deaf112bd2557afb891a4e6362edcfa1ea7ae87a82eb20cda9005d8ea5ec4d8",
+  "calibration_commit": null,
+  "config_digest": "494e0b0a95ace629b88760cfc3a0587d18dd90cd814b7b75a12f404b17aa6612",
   "extra_n": 192,
   "total_n_with_v": 256,
   "rows": [
@@ -17,16 +18,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6320",
       "input_tokens": 112,
       "input_sha256": "de4ee80958235f106e7abf2c4dab8cd489dd1239e9b322d9e7cca781ce9d8c5f",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 978,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": true,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1694",
@@ -35,7 +38,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6028",
@@ -44,7 +48,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4217",
@@ -53,7 +58,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6375",
@@ -62,7 +68,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-274",
@@ -71,7 +78,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5671",
@@ -80,7 +88,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1463",
@@ -89,16 +98,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1177",
       "input_tokens": 116,
       "input_sha256": "1e0ae80e85669d895a9186c1dfb407594188e6d453d1dd50a5899066e1818e26",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 673,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-835",
@@ -107,7 +118,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1689",
@@ -116,25 +128,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6893",
       "input_tokens": 114,
       "input_sha256": "127f6da3551bb18f5fbc838660832ec71e33fd8a73e7137d8fb9d0a54cdb7a35",
-      "new_tokens": 223,
+      "new_tokens": 51,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1225",
       "input_tokens": 139,
       "input_sha256": "4884daca084d6472aedb0d6a3839f4406bd99ea93bef1c0970a1bbb08a5fb392",
-      "new_tokens": 20,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-855",
@@ -143,7 +158,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7150",
@@ -152,7 +168,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6961",
@@ -161,7 +178,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-792",
@@ -170,7 +188,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3611",
@@ -179,7 +198,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5196",
@@ -188,7 +208,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7202",
@@ -197,7 +218,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6721",
@@ -206,7 +228,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5483",
@@ -215,7 +238,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-870",
@@ -224,16 +248,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5157",
       "input_tokens": 134,
       "input_sha256": "b60d4eca89ad863f33f0113c54b25b5a60324c1ab50f76fb59ae6891d9e62bcb",
-      "new_tokens": 32,
+      "new_tokens": 249,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": true,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3224",
@@ -242,7 +268,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5547",
@@ -251,7 +278,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5219",
@@ -260,7 +288,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-776",
@@ -269,7 +298,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4582",
@@ -278,7 +308,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-995",
@@ -287,7 +318,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4230",
@@ -296,7 +328,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1091",
@@ -305,7 +338,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5310",
@@ -314,7 +348,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5485",
@@ -323,7 +358,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1173",
@@ -332,16 +368,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2176",
       "input_tokens": 122,
       "input_sha256": "5c0eaefa6d1ee24b9a2cb18b3bfd12fc6791368ae11bed7510464c2c904a2109",
-      "new_tokens": 968,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5473",
@@ -350,7 +388,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1295",
@@ -359,7 +398,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5225",
@@ -368,7 +408,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5782",
@@ -377,7 +418,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2769",
@@ -386,7 +428,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-589",
@@ -395,16 +438,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6047",
       "input_tokens": 151,
       "input_sha256": "de3bd0f1ca24070077e34e974e49579d5a876f704d818ce5fec84114a557f199",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 24,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6793",
@@ -413,7 +458,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5942",
@@ -422,7 +468,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4937",
@@ -431,7 +478,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3691",
@@ -440,7 +488,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3103",
@@ -449,16 +498,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1341",
       "input_tokens": 117,
       "input_sha256": "fc3c721cfd1a107aa0b8cb3a89ba74207eba50ec4258caf798f4ba7fb34ffedf",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 54,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-770",
@@ -467,16 +518,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4924",
       "input_tokens": 159,
       "input_sha256": "8457189ecb5686c341adb605705bf5a67e653b5b95b4d4a42be1f9a90a85bb81",
-      "new_tokens": 246,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3509",
@@ -485,7 +538,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1391",
@@ -494,7 +548,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3486",
@@ -503,16 +558,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1931",
       "input_tokens": 145,
       "input_sha256": "38ed48335f0c386fc33f21fb097ce422abbfdcae45c58ea5975bc9edc09e113e",
-      "new_tokens": 8,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2989",
@@ -521,25 +578,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3380",
       "input_tokens": 135,
       "input_sha256": "3f95f13d18051a4870e26af4ae5729d8bbf5e8c74ef538ee1447b35e8ab6ab28",
-      "new_tokens": 15,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7264",
       "input_tokens": 123,
       "input_sha256": "f29d96d94a2abaa277010fd68b4862a90b15477a5a5679abce18b20cec84bf9d",
-      "new_tokens": 666,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3040",
@@ -548,7 +608,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2107",
@@ -557,25 +618,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3499",
       "input_tokens": 112,
       "input_sha256": "4abb83c00c29aa6509d435f71db53f49bf20f1680b7df66f28c09c04d49899e4",
-      "new_tokens": 900,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2582",
       "input_tokens": 135,
       "input_sha256": "55819867fcbe693e52342f38e82dc0b0ffb0c912682f64650f4b75c545d46c0f",
-      "new_tokens": 262,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2917",
@@ -584,7 +648,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2978",
@@ -593,7 +658,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7420",
@@ -602,7 +668,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4122",
@@ -611,16 +678,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1417",
       "input_tokens": 106,
       "input_sha256": "07135aa92e6fcc2edc38b549e41847eedbc9966a3452e60bf352aca2c088b33c",
-      "new_tokens": 277,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5347",
@@ -629,7 +698,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3010",
@@ -638,7 +708,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4025",
@@ -647,7 +718,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1532",
@@ -656,16 +728,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6025",
       "input_tokens": 138,
       "input_sha256": "e5527f89a3414a6249552223777ef6483b3ad9b8545804a1367778a9a12faee7",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 844,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7236",
@@ -674,7 +748,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2372",
@@ -683,7 +758,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7",
@@ -692,7 +768,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2010",
@@ -701,7 +778,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-269",
@@ -710,7 +788,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3150",
@@ -719,16 +798,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4369",
       "input_tokens": 108,
       "input_sha256": "005e27190510cbe166a9956dbaadf9d1cb834ac8dfbc34b2dc2352e399921588",
-      "new_tokens": 39,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3346",
@@ -737,7 +818,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2728",
@@ -746,16 +828,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4506",
       "input_tokens": 156,
       "input_sha256": "7cb3a420250a5fd6877c2ffd836708fae93007a2f02f7e94a8b6f6313315c58b",
-      "new_tokens": 26,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2688",
@@ -764,7 +848,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-440",
@@ -773,7 +858,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5910",
@@ -782,7 +868,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4804",
@@ -791,7 +878,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-404",
@@ -800,7 +888,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6931",
@@ -809,7 +898,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1274",
@@ -818,7 +908,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4381",
@@ -827,16 +918,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1286",
       "input_tokens": 127,
       "input_sha256": "3dd011373158dfbf89c9dd43cbff2adda8aca93855df45cd9c7365bd0aa7f93e",
-      "new_tokens": 162,
+      "new_tokens": 363,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2745",
@@ -845,7 +938,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-248",
@@ -854,7 +948,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3817",
@@ -863,16 +958,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3430",
       "input_tokens": 143,
       "input_sha256": "948c8b30cdaaabd8d6cb50c8849bcc5e14988c68f26240e457b9943cea9198ef",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 24,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3149",
@@ -881,7 +978,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2851",
@@ -890,43 +988,48 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6824",
       "input_tokens": 125,
       "input_sha256": "920cbb38c0552687719fd4217a37663817f2eeda0e5085bc434989592e2b282a",
-      "new_tokens": 116,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-803",
       "input_tokens": 217,
       "input_sha256": "2f95746443c631aa7f811c36be94f89a29f55404158d6c3639ccc17040cf589f",
-      "new_tokens": 17,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3526",
       "input_tokens": 149,
       "input_sha256": "4ef579923e4748c3442cf1909c4d1b960d7a492d6227d1693dc56bab4759797f",
-      "new_tokens": 863,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5891",
       "input_tokens": 152,
       "input_sha256": "b67dec3efd0eda469473ba6fac2b7089d5ff1a76dd76499aef2fa6f2ba4daf5b",
-      "new_tokens": 1020,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1817",
@@ -935,7 +1038,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2135",
@@ -944,7 +1048,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7232",
@@ -953,16 +1058,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4797",
       "input_tokens": 139,
       "input_sha256": "43d9b95eaefa8960aab5ed8e5e5a751a26c5aa15481b8d8838da511eb353accd",
-      "new_tokens": 875,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-405",
@@ -971,7 +1078,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3351",
@@ -980,25 +1088,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3556",
       "input_tokens": 149,
       "input_sha256": "0141453b4c1790637addbac05df1963eeb3cee7cb85f7b956d5b2339853bede2",
-      "new_tokens": 476,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1359",
       "input_tokens": 130,
       "input_sha256": "27d201c4df986d41c2ca59ed4ff76661d626660b943802fe5ccc0c2a06db20d3",
-      "new_tokens": 34,
+      "new_tokens": 25,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6901",
@@ -1007,7 +1118,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-474",
@@ -1016,7 +1128,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3826",
@@ -1025,7 +1138,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4831",
@@ -1034,7 +1148,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2629",
@@ -1043,7 +1158,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-671",
@@ -1052,7 +1168,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4762",
@@ -1061,7 +1178,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3203",
@@ -1070,34 +1188,38 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1181",
       "input_tokens": 152,
       "input_sha256": "d531af7a7eb5c3b5e240b356c06c984fdf8e13ad46526453063989eb43deaeb4",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 532,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-146",
       "input_tokens": 140,
       "input_sha256": "20078a10a44e3f0b8d5607bf35c47efb403673bb11005dae3c3ad9ee34f2ec13",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 387,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1751",
       "input_tokens": 127,
       "input_sha256": "9b039107a8f1fe474a7f24abd8ec549d474fd1a8cd826bb92abb8cefeefd646a",
-      "new_tokens": 21,
+      "new_tokens": 8,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2045",
@@ -1106,16 +1228,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1474",
       "input_tokens": 133,
       "input_sha256": "a1a1eb84411f835eabddd63a9e4fc80e72613412e1b20518405d0f57b1e1de79",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 10,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4294",
@@ -1124,7 +1248,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3673",
@@ -1133,7 +1258,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5841",
@@ -1142,16 +1268,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3763",
       "input_tokens": 116,
       "input_sha256": "5a3d9ed7e925badc27d41f3874bc2dff9886d6c592f84e994ccf93fff96b3c95",
-      "new_tokens": 897,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7419",
@@ -1160,34 +1288,38 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1679",
       "input_tokens": 120,
       "input_sha256": "6be664921dc6974dd15c66ea6ee030e55c5e4aa051aa06c55864270a4edf7858",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 954,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1928",
       "input_tokens": 162,
       "input_sha256": "cc8137861162ec7794e17d2fda40c58143010d847e43f6b0f687fa45abe729de",
-      "new_tokens": 851,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3179",
       "input_tokens": 127,
       "input_sha256": "b59e4d65f9427d440af48dc924d319ad5642d3fccfe79ebdd4a280bba9d96d7a",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 12,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3604",
@@ -1196,7 +1328,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3703",
@@ -1205,16 +1338,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2347",
       "input_tokens": 123,
       "input_sha256": "5d1c3eaf9b700fa5409e7693f83aea6b4762f7462d9fe551dacda650d8ba6438",
-      "new_tokens": 536,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3812",
@@ -1223,25 +1358,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2440",
       "input_tokens": 124,
       "input_sha256": "3f129353499656bc475c912bac367fb4a7bb5ba27238040edc489c5d327991d9",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 12,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2496",
       "input_tokens": 152,
       "input_sha256": "a48371b015fe028d44ead0f9b08f2d805def3dbf0cfae9929fe784cbf71e67a4",
-      "new_tokens": 682,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": true
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6593",
@@ -1250,16 +1388,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2791",
       "input_tokens": 147,
       "input_sha256": "4a722474ad6d9bb363771d73390359bbc2f436ff5ddef7e41d53a32e87d3483f",
-      "new_tokens": 14,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2734",
@@ -1268,7 +1408,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6563",
@@ -1277,16 +1418,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-283",
       "input_tokens": 143,
       "input_sha256": "18fcf846cdf7b0bb1fb7ac45c6fed9299a252320656ceda2401574d463ea7ce3",
-      "new_tokens": 46,
+      "new_tokens": 27,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4193",
@@ -1295,7 +1438,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3244",
@@ -1304,7 +1448,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2419",
@@ -1313,16 +1458,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2442",
       "input_tokens": 126,
       "input_sha256": "fb1b7ca9875d28c1333658a9068bb3b40ce9a278e9ac99e7bd29c97c00d092e2",
-      "new_tokens": 898,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-93",
@@ -1331,7 +1478,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-217",
@@ -1340,7 +1488,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2015",
@@ -1349,16 +1498,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3506",
       "input_tokens": 119,
       "input_sha256": "f60f2eb76c9701a050512ff38744852ba5bac19decffe118ca159409976dfca5",
-      "new_tokens": 10,
+      "new_tokens": 981,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5271",
@@ -1367,7 +1518,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6084",
@@ -1376,7 +1528,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6792",
@@ -1385,7 +1538,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4302",
@@ -1394,7 +1548,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2581",
@@ -1403,7 +1558,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6840",
@@ -1412,7 +1568,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4620",
@@ -1421,7 +1578,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2000",
@@ -1430,7 +1588,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3171",
@@ -1439,7 +1598,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6932",
@@ -1448,7 +1608,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3199",
@@ -1457,16 +1618,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3933",
       "input_tokens": 146,
       "input_sha256": "0b3f3df45c2824334f962548af9e71b403b12824e4ce4be2fe307a77ce283619",
-      "new_tokens": 46,
+      "new_tokens": 40,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5543",
@@ -1475,25 +1638,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2889",
       "input_tokens": 128,
       "input_sha256": "96278bc64868f29444d64cd1939160e2105e9d4e9d778d8b6b850b8ddd7b0d76",
-      "new_tokens": 44,
+      "new_tokens": 37,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2995",
       "input_tokens": 136,
       "input_sha256": "2918da47e180f0a435aa2d5148f8ff4b37b7231021236a2c6b01df4550b69551",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 40,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2164",
@@ -1502,7 +1668,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5674",
@@ -1511,16 +1678,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6806",
       "input_tokens": 130,
       "input_sha256": "2121606a019295e430b061a24ef4e6e581d8da3b57e4e6048b81871bb78700c2",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 381,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2307",
@@ -1529,7 +1698,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1195",
@@ -1538,7 +1708,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3628",
@@ -1547,25 +1718,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3372",
       "input_tokens": 149,
       "input_sha256": "b23d53e20eec509a1ca70f00da4931379b77ffb21963cced427586ba5f1fbb7b",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 129,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2850",
       "input_tokens": 138,
       "input_sha256": "55b14b1fb3c603b66990a94b6ae371a30e97fa2a32a2f576bed175ceba36e871",
-      "new_tokens": 536,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-353",
@@ -1574,7 +1748,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3104",
@@ -1583,25 +1758,28 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1271",
       "input_tokens": 159,
       "input_sha256": "8b1c94ad969ae898a0e4a225e5d99f2875e595fc9963502aaff5be02772b742c",
-      "new_tokens": 853,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4958",
       "input_tokens": 178,
       "input_sha256": "cb3aaf8e62bfc48d2258867fce94370ad45591cf98a6070f7289a60ab4e31332",
-      "new_tokens": 21,
+      "new_tokens": 1019,
       "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-3156",
@@ -1610,7 +1788,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6604",
@@ -1619,7 +1798,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-5226",
@@ -1628,7 +1808,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6204",
@@ -1637,7 +1818,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6105",
@@ -1646,7 +1828,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-7022",
@@ -1655,7 +1838,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2276",
@@ -1664,7 +1848,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-6236",
@@ -1673,7 +1858,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2903",
@@ -1682,16 +1868,18 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-1065",
       "input_tokens": 133,
       "input_sha256": "f84cc378d2e7798f8f69abcc11ae01024e0c1f32a164ccc5f5d4f25fbf66367b",
-      "new_tokens": 1024,
-      "stop": "limit",
+      "new_tokens": 77,
+      "stop": "eos",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2027",
@@ -1700,7 +1888,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-2572",
@@ -1709,7 +1898,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-167",
@@ -1718,7 +1908,8 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4448",
@@ -1727,19 +1918,24 @@
       "new_tokens": 1024,
       "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     },
     {
       "id": "gsm8k-train-4562",
       "input_tokens": 114,
       "input_sha256": "db57f4605250ff20828532c8a3024da58a65dd07598e6e9af76a4ff49c7ffe64",
-      "new_tokens": 279,
-      "stop": "eos",
+      "new_tokens": 1024,
+      "stop": "limit",
       "invalid_groups": 0,
-      "correct": false
+      "correct": false,
+      "input_identity_source": "recorded"
     }
   ],
   "invalid_samples": 0,
-  "correct": 1,
-  "em": 0.5208333333333334
+  "correct": 2,
+  "em": 1.0416666666666667,
+  "result_format_version": 1,
+  "n": 192,
+  "residual_tokens": 0
 }

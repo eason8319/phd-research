@@ -1,8 +1,8 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "461506e",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "qwen",
-  "selected_representation": "kv8-per_token-post",
+  "selected_representation": "k8v4-per_token-pre",
   "probe_bits": 4,
   "counts": {
     "math": 64,
@@ -23,8 +23,8 @@
       {
         "layer": 0,
         "side": "k",
-        "sensitivity": 1.1542937077465467,
-        "reconstruction": 0.01586829189909622,
+        "sensitivity": 1.046779096359387,
+        "reconstruction": 0.01588902054936625,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -41,8 +41,8 @@
       {
         "layer": 1,
         "side": "k",
-        "sensitivity": 0.15141214476534515,
-        "reconstruction": 0.008292473299661651,
+        "sensitivity": 0.12360547279604361,
+        "reconstruction": 0.008315345898154192,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -59,8 +59,8 @@
       {
         "layer": 2,
         "side": "k",
-        "sensitivity": 0.0423506336974242,
-        "reconstruction": 0.009135798929492012,
+        "sensitivity": 0.04055532451002364,
+        "reconstruction": 0.009192297628032975,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -77,8 +77,8 @@
       {
         "layer": 3,
         "side": "k",
-        "sensitivity": 0.15737405799154658,
-        "reconstruction": 0.011601779697230086,
+        "sensitivity": 0.14209542020762456,
+        "reconstruction": 0.011564466054551303,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -95,8 +95,8 @@
       {
         "layer": 4,
         "side": "k",
-        "sensitivity": 0.020312464755988913,
-        "reconstruction": 0.007972743303980678,
+        "sensitivity": 0.01821838918613139,
+        "reconstruction": 0.007968249163241126,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -113,8 +113,8 @@
       {
         "layer": 5,
         "side": "k",
-        "sensitivity": 0.008260601412530377,
-        "reconstruction": 0.009111244668019935,
+        "sensitivity": 0.00859848639674965,
+        "reconstruction": 0.00914189095783513,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -131,8 +131,8 @@
       {
         "layer": 6,
         "side": "k",
-        "sensitivity": 0.01603782716756541,
-        "reconstruction": 0.010120932944118977,
+        "sensitivity": 0.014431330358320338,
+        "reconstruction": 0.01015381836623419,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -149,8 +149,8 @@
       {
         "layer": 7,
         "side": "k",
-        "sensitivity": 0.012793476768138135,
-        "reconstruction": 0.00954608568281401,
+        "sensitivity": 0.01145921813122186,
+        "reconstruction": 0.009366566271637566,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -167,8 +167,8 @@
       {
         "layer": 8,
         "side": "k",
-        "sensitivity": 0.012103954717986198,
-        "reconstruction": 0.008767894163611345,
+        "sensitivity": 0.012492756480241951,
+        "reconstruction": 0.008791444022790529,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -185,8 +185,8 @@
       {
         "layer": 9,
         "side": "k",
-        "sensitivity": 0.010104482750648458,
-        "reconstruction": 0.008817043737508357,
+        "sensitivity": 0.009913466787111247,
+        "reconstruction": 0.008662165666464716,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -203,8 +203,8 @@
       {
         "layer": 10,
         "side": "k",
-        "sensitivity": 0.012611458134415443,
-        "reconstruction": 0.008963951782789081,
+        "sensitivity": 0.012503338536134834,
+        "reconstruction": 0.009099399612750858,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -221,8 +221,8 @@
       {
         "layer": 11,
         "side": "k",
-        "sensitivity": 0.010788865204176545,
-        "reconstruction": 0.00860673470015172,
+        "sensitivity": 0.011211180268219323,
+        "reconstruction": 0.008692601084476337,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -239,8 +239,8 @@
       {
         "layer": 12,
         "side": "k",
-        "sensitivity": 0.010123696586560982,
-        "reconstruction": 0.008426909655099735,
+        "sensitivity": 0.009974745653380523,
+        "reconstruction": 0.008387415815377608,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -257,8 +257,8 @@
       {
         "layer": 13,
         "side": "k",
-        "sensitivity": 0.0806538053575423,
-        "reconstruction": 0.011150958569487557,
+        "sensitivity": 0.07684703787617764,
+        "reconstruction": 0.01121042954036966,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -275,8 +275,8 @@
       {
         "layer": 14,
         "side": "k",
-        "sensitivity": 0.01666421560867093,
-        "reconstruction": 0.008349741125130095,
+        "sensitivity": 0.01712702258328136,
+        "reconstruction": 0.0083028015360469,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -293,8 +293,8 @@
       {
         "layer": 15,
         "side": "k",
-        "sensitivity": 0.021358504565796466,
-        "reconstruction": 0.008674473574501462,
+        "sensitivity": 0.023927894116241077,
+        "reconstruction": 0.008787582977674901,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -311,8 +311,8 @@
       {
         "layer": 16,
         "side": "k",
-        "sensitivity": 0.010043998365290463,
-        "reconstruction": 0.009377699447213672,
+        "sensitivity": 0.010248989145111409,
+        "reconstruction": 0.009330171684268862,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -329,8 +329,8 @@
       {
         "layer": 17,
         "side": "k",
-        "sensitivity": 0.013003605070480262,
-        "reconstruction": 0.008383294276427478,
+        "sensitivity": 0.014043717276763346,
+        "reconstruction": 0.008358923965715803,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -347,8 +347,8 @@
       {
         "layer": 18,
         "side": "k",
-        "sensitivity": 0.01060147029465952,
-        "reconstruction": 0.008969539587269537,
+        "sensitivity": 0.01042561908116113,
+        "reconstruction": 0.008927942675654776,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -365,8 +365,8 @@
       {
         "layer": 19,
         "side": "k",
-        "sensitivity": 0.03416502884829242,
-        "reconstruction": 0.010631589801050723,
+        "sensitivity": 0.03345985756004666,
+        "reconstruction": 0.010658118684659712,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -383,8 +383,8 @@
       {
         "layer": 20,
         "side": "k",
-        "sensitivity": 0.015060866953717778,
-        "reconstruction": 0.007945365789055359,
+        "sensitivity": 0.015545811895208317,
+        "reconstruction": 0.007832011848222464,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -401,8 +401,8 @@
       {
         "layer": 21,
         "side": "k",
-        "sensitivity": 0.00856195708774976,
-        "reconstruction": 0.009267947694752365,
+        "sensitivity": 0.009287879250905462,
+        "reconstruction": 0.009202525310683995,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -419,8 +419,8 @@
       {
         "layer": 22,
         "side": "k",
-        "sensitivity": 0.016440421654351667,
-        "reconstruction": 0.008479627838823944,
+        "sensitivity": 0.016138820933292664,
+        "reconstruction": 0.008439331242698245,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -437,8 +437,8 @@
       {
         "layer": 23,
         "side": "k",
-        "sensitivity": 0.012425346698137218,
-        "reconstruction": 0.009003336235764436,
+        "sensitivity": 0.011409877141659308,
+        "reconstruction": 0.009008676803205162,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -455,8 +455,8 @@
       {
         "layer": 24,
         "side": "k",
-        "sensitivity": 0.011062676088272383,
-        "reconstruction": 0.009332055618870072,
+        "sensitivity": 0.011113973371266184,
+        "reconstruction": 0.009399406160810031,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -473,8 +473,8 @@
       {
         "layer": 25,
         "side": "k",
-        "sensitivity": 0.015336026845943707,
-        "reconstruction": 0.009034106973558664,
+        "sensitivity": 0.01486121186235323,
+        "reconstruction": 0.008915516722481698,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -491,8 +491,8 @@
       {
         "layer": 26,
         "side": "k",
-        "sensitivity": 0.012744682634092896,
-        "reconstruction": 0.008853283230564557,
+        "sensitivity": 0.012905128090778817,
+        "reconstruction": 0.008758498457609676,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -509,8 +509,8 @@
       {
         "layer": 27,
         "side": "k",
-        "sensitivity": 0.29662911731202257,
-        "reconstruction": 0.009569762332830578,
+        "sensitivity": 0.2948604815605904,
+        "reconstruction": 0.00953911202668678,
         "samples": 64,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -529,8 +529,8 @@
       {
         "layer": 0,
         "side": "k",
-        "sensitivity": 1.046108759008348,
-        "reconstruction": 0.016116955026518553,
+        "sensitivity": 1.0169846224598587,
+        "reconstruction": 0.01587972103152424,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -547,8 +547,8 @@
       {
         "layer": 1,
         "side": "k",
-        "sensitivity": 0.20440119244449306,
-        "reconstruction": 0.008438195567578077,
+        "sensitivity": 0.14109427713265177,
+        "reconstruction": 0.008374199824174866,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -565,8 +565,8 @@
       {
         "layer": 2,
         "side": "k",
-        "sensitivity": 0.03927923249284504,
-        "reconstruction": 0.00884128879988566,
+        "sensitivity": 0.04974442394222933,
+        "reconstruction": 0.008989009278593585,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -583,8 +583,8 @@
       {
         "layer": 3,
         "side": "k",
-        "sensitivity": 0.1386862774943438,
-        "reconstruction": 0.011877563054440543,
+        "sensitivity": 0.09404086180802551,
+        "reconstruction": 0.012004651711322367,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -601,8 +601,8 @@
       {
         "layer": 4,
         "side": "k",
-        "sensitivity": 0.01786031430492585,
-        "reconstruction": 0.008686433167895302,
+        "sensitivity": 0.0165495634337276,
+        "reconstruction": 0.008758622192544863,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -619,8 +619,8 @@
       {
         "layer": 5,
         "side": "k",
-        "sensitivity": 0.005808933776734193,
-        "reconstruction": 0.009715475753182545,
+        "sensitivity": 0.010595985057761936,
+        "reconstruction": 0.009872938506305218,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -637,8 +637,8 @@
       {
         "layer": 6,
         "side": "k",
-        "sensitivity": 0.01604478554054367,
-        "reconstruction": 0.010239581955829635,
+        "sensitivity": 0.02357437549653696,
+        "reconstruction": 0.010397765436209738,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -655,8 +655,8 @@
       {
         "layer": 7,
         "side": "k",
-        "sensitivity": 0.019522003411111655,
-        "reconstruction": 0.010135927790543064,
+        "sensitivity": 0.01682306772636366,
+        "reconstruction": 0.010108911956194788,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -673,8 +673,8 @@
       {
         "layer": 8,
         "side": "k",
-        "sensitivity": 0.009985708843487373,
-        "reconstruction": 0.009091451676795259,
+        "sensitivity": 0.011471816660559853,
+        "reconstruction": 0.009254503616830334,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -691,8 +691,8 @@
       {
         "layer": 9,
         "side": "k",
-        "sensitivity": 0.014262309435252973,
-        "reconstruction": 0.0089152479195036,
+        "sensitivity": 0.01381544357718667,
+        "reconstruction": 0.009023261402035132,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -709,8 +709,8 @@
       {
         "layer": 10,
         "side": "k",
-        "sensitivity": 0.013608121475044754,
-        "reconstruction": 0.008977549179689959,
+        "sensitivity": 0.012606711695298145,
+        "reconstruction": 0.009225045971106738,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -727,8 +727,8 @@
       {
         "layer": 11,
         "side": "k",
-        "sensitivity": 0.009411899718543282,
-        "reconstruction": 0.009070982807315886,
+        "sensitivity": 0.007949983120852266,
+        "reconstruction": 0.009363959659822285,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -745,8 +745,8 @@
       {
         "layer": 12,
         "side": "k",
-        "sensitivity": 0.007733378177363193,
-        "reconstruction": 0.008654690871480852,
+        "sensitivity": 0.00852963117267791,
+        "reconstruction": 0.00865867713582702,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -763,8 +763,8 @@
       {
         "layer": 13,
         "side": "k",
-        "sensitivity": 0.0916813928160991,
-        "reconstruction": 0.010981557570630684,
+        "sensitivity": 0.11977478266271646,
+        "reconstruction": 0.011010717775207013,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -781,8 +781,8 @@
       {
         "layer": 14,
         "side": "k",
-        "sensitivity": 0.00664355304752462,
-        "reconstruction": 0.00845374574419111,
+        "sensitivity": 0.006720570025663619,
+        "reconstruction": 0.008649970637634397,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -799,8 +799,8 @@
       {
         "layer": 15,
         "side": "k",
-        "sensitivity": 0.019326776997331763,
-        "reconstruction": 0.008615781291155145,
+        "sensitivity": 0.01879732883298857,
+        "reconstruction": 0.008921380416722968,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -817,8 +817,8 @@
       {
         "layer": 16,
         "side": "k",
-        "sensitivity": 0.015929005341604352,
-        "reconstruction": 0.00834538001799956,
+        "sensitivity": 0.015567936072329758,
+        "reconstruction": 0.008369762188522145,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -835,8 +835,8 @@
       {
         "layer": 17,
         "side": "k",
-        "sensitivity": 0.013509125354175922,
-        "reconstruction": 0.008164334460161626,
+        "sensitivity": 0.01396013351768488,
+        "reconstruction": 0.008248276717495173,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -853,8 +853,8 @@
       {
         "layer": 18,
         "side": "k",
-        "sensitivity": 0.009948283193807583,
-        "reconstruction": 0.009199530584737659,
+        "sensitivity": 0.00868110085502849,
+        "reconstruction": 0.009292510076193139,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -871,8 +871,8 @@
       {
         "layer": 19,
         "side": "k",
-        "sensitivity": 0.02615215073001309,
-        "reconstruction": 0.009925669786753133,
+        "sensitivity": 0.021665425254468573,
+        "reconstruction": 0.010073005192680284,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -889,8 +889,8 @@
       {
         "layer": 20,
         "side": "k",
-        "sensitivity": 0.009256130433186627,
-        "reconstruction": 0.00851686010719277,
+        "sensitivity": 0.008866062952620268,
+        "reconstruction": 0.008472195622744039,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -907,8 +907,8 @@
       {
         "layer": 21,
         "side": "k",
-        "sensitivity": 0.00764639366116171,
-        "reconstruction": 0.00978102904628031,
+        "sensitivity": 0.008698551660927478,
+        "reconstruction": 0.010012831102358177,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -925,8 +925,8 @@
       {
         "layer": 22,
         "side": "k",
-        "sensitivity": 0.008026350971704233,
-        "reconstruction": 0.00902959264931269,
+        "sensitivity": 0.008801009516446356,
+        "reconstruction": 0.009132263454375789,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -943,8 +943,8 @@
       {
         "layer": 23,
         "side": "k",
-        "sensitivity": 0.007338116238315706,
-        "reconstruction": 0.010044920112704858,
+        "sensitivity": 0.008655624902075942,
+        "reconstruction": 0.010034559585619718,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -961,8 +961,8 @@
       {
         "layer": 24,
         "side": "k",
-        "sensitivity": 0.00389176382259393,
-        "reconstruction": 0.010345980001147836,
+        "sensitivity": 0.003864849116325786,
+        "reconstruction": 0.010534567380091175,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -979,8 +979,8 @@
       {
         "layer": 25,
         "side": "k",
-        "sensitivity": 0.0094212993471956,
-        "reconstruction": 0.009571760485414416,
+        "sensitivity": 0.010975130085171259,
+        "reconstruction": 0.009524323337245733,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -997,8 +997,8 @@
       {
         "layer": 26,
         "side": "k",
-        "sensitivity": 0.01322708830866759,
-        "reconstruction": 0.010271612991346046,
+        "sensitivity": 0.010987445770751947,
+        "reconstruction": 0.01020620041526854,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -1015,8 +1015,8 @@
       {
         "layer": 27,
         "side": "k",
-        "sensitivity": 0.21243762957419676,
-        "reconstruction": 0.010763070255052298,
+        "sensitivity": 0.2832784914699005,
+        "reconstruction": 0.010802551987580955,
         "samples": 32,
         "zero_heads": 0,
         "invalid_groups": 0
@@ -1046,26 +1046,26 @@
         8,
         28,
         44,
-        12,
-        50,
         40,
+        50,
+        12,
         34,
-        14,
         52,
         20,
-        46,
         16,
-        48,
+        14,
+        46,
         22,
+        48,
         23,
         36,
+        32,
         24,
         18,
-        32,
-        9,
         42,
-        29,
+        9,
         10,
+        29,
         17,
         1,
         3,
@@ -1099,27 +1099,27 @@
         38,
         12,
         54,
+        48,
         14,
         32,
-        48,
         42,
         4,
         10,
-        50,
+        20,
         46,
         36,
-        20,
-        52,
-        18,
-        1,
+        50,
         16,
         30,
+        1,
+        52,
         22,
+        18,
         44,
         24,
         34,
-        28,
         2,
+        28,
         8,
         3,
         40,
@@ -1156,34 +1156,34 @@
         0,
         54,
         2,
-        6,
         26,
+        6,
         4,
-        38,
-        14,
-        30,
-        8,
         12,
+        38,
+        30,
+        14,
+        8,
         32,
+        34,
         18,
         20,
-        34,
-        52,
         16,
-        36,
+        52,
         50,
-        22,
+        10,
         40,
-        1,
         44,
-        24,
         42,
-        17,
+        36,
         46,
+        24,
+        1,
+        22,
+        17,
         28,
         23,
         3,
-        10,
         9,
         13,
         7,
@@ -1193,8 +1193,8 @@
         21,
         31,
         37,
-        48,
         55,
+        48,
         11,
         27,
         43,
@@ -1216,33 +1216,33 @@
         26,
         54,
         48,
-        52,
         12,
+        52,
         14,
-        46,
         38,
+        46,
         42,
         10,
         50,
+        22,
         36,
         16,
-        22,
-        44,
         20,
+        44,
         18,
         4,
+        30,
+        8,
         9,
         1,
-        8,
         24,
-        30,
-        40,
         28,
+        40,
         2,
         32,
         3,
-        5,
         34,
+        5,
         11,
         7,
         13,

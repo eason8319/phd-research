@@ -1,6 +1,6 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "e95f6d3",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "llama",
   "gate_commit": "e860b42",
   "allocation_commit": "be4fea3",
