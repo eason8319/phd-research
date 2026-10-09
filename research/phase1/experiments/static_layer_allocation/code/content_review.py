@@ -60,7 +60,9 @@ def code_check(root: Path, record: dict[str, Any]) -> None:
             raise RuntimeError("执行源码不一致：" + path)
 
 
-def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dict[str, Any]:
+def check_model(
+    root: Path, folder: Path, model: str, check_logits: bool, recompute_logits: bool = True,
+) -> dict[str, Any]:
     """审核所有校准与验证题，不根据结果调整样本、排名或预算。"""
     plan = load_plan(root)
     dataset = read(root / plan["dataset"])
@@ -275,6 +277,9 @@ def check_model(root: Path, folder: Path, model: str, check_logits: bool) -> dic
                 source = row["logits_source"]
                 path = root / source["path"]
                 compare(hashlib.sha256(path.read_bytes()).hexdigest(), source["sha256"], "logits")
+                if not recompute_logits:
+                    verified_logits += 1
+                    continue
                 packed = torch.load(path, weights_only=False, map_location="cpu")
                 record = identities[row["id"]]["models"][model]
                 compare(packed["input_sha256"], record["sha256"], "logits input")
@@ -316,14 +321,28 @@ def run(folder: Path, check_logits: bool) -> None:
     root = project_root()
     if not folder.is_absolute():
         folder = root / folder
-    models = {name: check_model(root, folder, name, check_logits) for name in ("qwen", "llama")}
-    paths = [p for model in models for p in sorted((folder / model).glob('*.json'))
+    paths = [p for model in ("qwen", "llama") for p in sorted((folder / model).glob('*.json'))
              if not p.name.endswith('_progress.json')]
+    sources = {p.relative_to(folder).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+               for p in paths}
+    code_sha = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    previous_path = folder / "review.json"
+    previous = read(previous_path) if previous_path.exists() else {}
+    reuse = (check_logits and previous.get("status") == "passed"
+             and previous.get("logits_checked") is True
+             and previous.get("review_code_sha256") == code_sha
+             and previous.get("models", {}).get("llama", {}).get(
+                 "full_logits_questions_verified") == 16
+             and all(sources.get(path) == checksum
+                     for path, checksum in previous.get("source_files", {}).items())
+             and set(sources) - set(previous.get("source_files", {}))
+             <= {"qwen/free_token_diagnostic.json"})
+    models = {name: check_model(root, folder, name, check_logits, not reuse)
+              for name in ("qwen", "llama")}
     payload = {"status": "passed", "date": "2026-10-09", "models": models,
                "statistical_unit": "question", "logits_checked": check_logits,
-               "source_files": {p.relative_to(folder).as_posix():
-                                hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
-               "review_code_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+               "source_files": sources, "review_code_sha256": code_sha,
+               "logit_recomputation_reused": bool(reuse)}
     (folder / "review.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2)
                                          + '\n', encoding='utf-8', newline='\n')
 

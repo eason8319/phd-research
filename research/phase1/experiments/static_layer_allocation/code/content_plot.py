@@ -59,6 +59,7 @@ def plot() -> None:
     plt.close(fig)
     for metric, filename, ylabel in (
         ('nll', 'key_budget_nll.png', 'Question mean content NLL (nat/token)'),
+        ('kl_bf16', 'key_budget_kl.png', 'Content KL(BF16 || candidate), nat/token'),
         ('free_exact', 'key_budget_accuracy.png', 'Complete answer exact accuracy'),
     ):
         fig, axes = plt.subplots(2, 3, figsize=(15, 8), constrained_layout=True)
@@ -85,6 +86,9 @@ def plot() -> None:
                 ax.grid(alpha=.2)
                 if metric == 'nll':
                     ax.set_yscale('log')
+                if metric == 'kl_bf16':
+                    ax.set_yscale('symlog', linthresh=1e-8)
+                    ax.set_ylim(bottom=0)
                 if metric == 'free_exact':
                     ax.set_ylim(-.03, 1.03)
                 if row == col == 0:
