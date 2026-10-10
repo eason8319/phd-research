@@ -1,0 +1,106 @@
+{
+  "schema": "static-key-numerical-diagnostic",
+  "base_plan": "research/phase1/configs/static_layer_allocation.json",
+  "base_plan_file_sha256": "697a6d7881458d1a426c70df5d2d9c7112c88be6d3b590fda60560f53856e3a6",
+  "base_execution_commit": "6be99c903005b1ee2004ce7c6861ea967d82f278",
+  "dataset": "research/phase1/splits/static_retrieval.json",
+  "validation_n": 16,
+  "models": [
+    "qwen",
+    "llama"
+  ],
+  "formats": [
+    "online_pre",
+    "online_post",
+    "offline_pre"
+  ],
+  "precisions": [
+    "current",
+    "head_fp32",
+    "residual_fp32"
+  ],
+  "repeats_initial": 2,
+  "repeats_if_nonidentical": 6,
+  "repeat_escalation": "affected_question_precision_all_schemes",
+  "prefill": "one_fixed_BF16_source_per_question_across_conditions_and_repeats",
+  "single_layer_format": "online_post",
+  "single_layer_scope": {
+    "llama": "all_32_online_post_layers_all_16_validation_questions",
+    "qwen": "two_calibration_protected_online_post_layers_all_16_validation_questions"
+  },
+  "head_fp32": "actual_FP32_linear_with_BF16_weight_values_cast_to_FP32",
+  "residual_fp32": "FP32_residual_storage_and_two_additions_per_layer; RMSNorm_FP32_then_BF16_at_QKV_and_MLP_inputs; BF16_RoPE_and_projections; final_RMSNorm_and_head_FP32",
+  "tf32": false,
+  "autocast": false,
+  "float32_matmul_precision": "highest",
+  "bf16_projection_reduction": "retain_current_backend_setting_and_record",
+  "answer_positions": "all_frozen_canonical_answer_tokens_plus_canonical_chat_termination",
+  "termination": {
+    "qwen": "<|im_end|>",
+    "llama": "<|eot_id|>"
+  },
+  "free_generation_max_new_tokens": 32,
+  "scoring": {
+    "strip_outer_whitespace": true,
+    "content": "exact_lowercase_8_hex_or_val_dash_8_hex_only",
+    "format": "full_val_dash_8_hex",
+    "legacy": "retain_formatted_correct_separately",
+    "no_substring_extraction": true
+  },
+  "protected_random": {
+    "calibration_source": "existing_same_format_probe_sensitivity",
+    "protected_count": 2,
+    "protected_selection": "largest_sensitivity_layer_index_ascending_ties",
+    "random_source": "same_three_frozen_permutations_filter_protected_then_take_prefix_r",
+    "nested_budgets": true
+  },
+  "reliability": {
+    "unit": "question",
+    "metric": "paired_content_nll_and_all_path_nll",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261010017,
+    "confidence": 0.95,
+    "method": "bootstrap_question_means_of_per_question_min_and_max_paired_effect_over_measured_precisions_repeats",
+    "decision": "reliably_lower_if_upper_below_zero_reliably_higher_if_lower_above_zero_otherwise_unresolved",
+    "numeric_envelope_role": "observed_conditions_not_universal_error_bound",
+    "quality_threshold": null
+  },
+  "ranking_halves": [
+    [
+      0,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12,
+      15
+    ],
+    [
+      1,
+      2,
+      5,
+      6,
+      9,
+      10,
+      13,
+      14
+    ]
+  ],
+  "severe_failure_stop": "invalid_quantization_or_nonfinite_logits_or_oom",
+  "memory_estimate_gib": {
+    "qwen": 24,
+    "llama": 26
+  },
+  "v_plan_frozen": false,
+  "precision_formats": [
+    "online_post"
+  ],
+  "other_format_conditions": {
+    "precisions": [
+      "current"
+    ],
+    "repeats": 1,
+    "comparison_role": "paired_question_resampling_without_complete_precision_envelope_no_reliable_numeric_win_claim"
+  }
+}
