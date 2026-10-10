@@ -121,3 +121,45 @@ PyTorch 2.5.1+cu121、Transformers 4.46.3 与 BF16 权重。
 Llama 17.470/18.229 GiB。全矩阵无无效量化、非有限输出或 OOM，内容与单层原始 logits
 复算通过。node6 的 GPU 设备访问失败尚未解决，其记录保留在来源索引指定的服务器路径。
 本节登记上述输入与实现的运行事实，V 计划保持未冻结。
+
+## 静态 Key 分配的完整路径与配对精度准入
+
+2026-10-10 在 node7、NVIDIA GeForce RTX 4090 的 GPU 0 上，沿用冻结的 Python 3.11、
+PyTorch 2.5.1+cu121、Transformers 4.46.3 与 BF16 权重。准入执行提交为
+`c03e885a2ff2b6c39a38df16d6f57400f31f9801`，6 项长期回归通过，覆盖精确答案规范化、
+首次非正领先量、实测精度包络、共同基线消去、并列平均秩，以及校准关键层保护后的
+随机预算嵌套与同预算完整成本。两模型各用第一条冻结 2K 验证输入和同一 BF16 源值，
+核对高精度参照、三格式 K8V4 与敏感度 r=2 的原内容位置 logits；当前计算条件的新入口
+与原入口逐值一致。实际 FP32 输出头矩阵计算通过 FP64 真值的玩具矩阵核验；
+FP32 残差条件的层归一化输入为 FP32，QKV 投影输入为 BF16。
+
+关闭 TF32 和 autocast，FP32 矩阵精度设为 highest。完整路径的前缀、分隔符、内容与
+规范终止 token 先测预测，再输入当前目标；各方案持续维护自己的量化缓存。
+准入覆盖上述 2K 同源实现与 dtype 边界；正式 2K/4K 完整路径另由原始 logits 审核。
+准入代码 SHA256 为
+`65ea762f9c2e6f54151a922f49cd218be98845082dc376031f868cd99386e705`，
+成功输出 SHA256 为
+`a6c046ce40a00e1bd648f8ece20c90c4d995c8e2f31d5804344538785ade1059`。
+准入事实及一次性材料清理状态由
+`research/.runtime/static-key-numerics/admission.json` 追溯。
+
+原实测保留峰值 Qwen 15.348 GiB、Llama 18.229 GiB，新增实际 FP32 头权重分别为
+2.030 GiB、1.957 GiB；再计残差与临时张量余量，冻结含余量估算为 21 GiB、23 GiB。
+node8 的目标卡在检查时显存不足，正式测量改用满足估算的 node7 空闲卡。
+旧卡历史 NLL 与新卡结果单独记录，三精度诊断始终共用本轮固定 prefill 源值。
+原实现与新入口的同源逐值准入不要求不同设备的历史值逐值一致；过严历史值守卫
+触发的未完成运行保留在 `research/.runtime/static-key-numerics/failures/`。
+正式执行来源为 `83028d8519f9e466bf86bd2b54256f53298aa345`；V 计划保持未冻结。
+
+完整正式测量及 32 题原始输出审核均通过；实测保留峰值为 Qwen 17.480 GiB、
+Llama 19.686 GiB，低于含余量估算。指定路径的在线 post logits 在每题、每精度的
+两次执行中逐值一致；这项事实只说明执行重复性，精度变化另由配对增量检查。
+审核结果见 `experiments/static_layer_allocation/results/numerics_review.json`。
+
+缓存预留容量的补充实现核验使用 Qwen/Llama 的 head 形状、2K/4K 历史、
+9/11/13-token 与 32-token 容量。在共同有效前缀下，注意力逐 KV head 的
+FP32 K/V 矩阵均连续，GEMM 的形状、步长和对齐一致；36 个检查输出逐值相同。
+其最小事实保存在上述 `admission.json`，一次性输出登记后清理。
+审核后作图环境另补 matplotlib 3.10.5；模型测量使用的 PyTorch 2.5.1+cu121、
+Transformers 4.46.3 保持原版本；作图环境中的 NumPy 为 2.4.6，实际版本由
+`research/.runtime/static-key-numerics/figure_environment.json` 追溯。
