@@ -9,6 +9,7 @@ import numpy as np
 
 from kvstudy.paths import project_root
 from experiments.static_layer_allocation.code.numerics_logits import file_sha
+from experiments.static_layer_allocation.code.numerics_summary import paired_comparison, variants
 
 
 def read(path: Path) -> dict:
@@ -16,7 +17,7 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text('utf-8'))
 
 
-def model_data(folder: Path) -> dict:
+def model_data(folder: Path, design: dict) -> dict:
     """按题目等权汇总首内容损失，其他指标直接引用正式汇总。"""
     summary = read(folder / 'numerics_summary.json')
     allocation = read(folder / 'numerical_allocations.json')
@@ -66,6 +67,23 @@ def model_data(folder: Path) -> dict:
                     for name, measured_item in item['same_budget_comparisons'].items()},
             }
     result['comparisons'] = comparisons
+    result['baseline_comparisons'] = {}
+    for fmt, budgets in summary['budget_comparisons'].items():
+        selected = variants(rows, design['precisions']) if fmt == 'online_post' else [('current', 0)]
+        for r in budgets:
+            name = f'{fmt}_k4_layers_{r}_sensitivity'
+            compared = paired_comparison(rows, name, fmt + '_k8v4', selected, design)
+            differences = [row['precisions']['current'][0]['schemes'][name]['content_nll'] -
+                           row['precisions']['current'][0]['schemes'][fmt + '_k8v4'][
+                               'content_nll'] for row in rows]
+            absolute = np.abs(differences)
+            compared['current_mean_delta'] = float(np.mean(differences))
+            compared['current_decreased_questions'] = sum(value < 0 for value in differences)
+            compared['current_top_three_absolute_share'] = float(
+                np.sort(absolute)[-3:].sum() / absolute.sum()) if absolute.sum() else None
+            for metric in compared['metrics'].values():
+                metric.pop('paired_question_effects')
+            result['baseline_comparisons'][name] = compared
     result['current_distributions'] = summary['raw_diagnostics']['precisions'][
         'current']['distributions']
     result['cases'] = {}
@@ -92,7 +110,8 @@ def run() -> None:
             raise RuntimeError('审核结果字节变化：' + name)
     data = {'review_sha256': file_sha(formal / 'numerics_review.json'),
             'code_sha256': file_sha(Path(__file__)),
-            'models': {model: model_data(formal / model) for model in ('qwen', 'llama')}}
+            'models': {model: model_data(formal / model, read(root /
+                'research/phase1/configs/static_numerics.json')) for model in ('qwen', 'llama')}}
     destination = root / 'research/.runtime/static-key-numerics/report_data.json'
     destination.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     print('REVIEWED_REPORT_DATA_SAVED', destination.relative_to(root), flush=True)
