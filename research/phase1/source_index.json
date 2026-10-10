@@ -6818,7 +6818,7 @@
     },
     "report": {
       "path": "research/phase1/experiments/static_layer_allocation/report/index.md",
-      "sha256": "acae863e45347a9c69e0b989fcdab82b3bc6787fb66b73e22824358e620bc9d5",
+      "sha256": "e4578c3716b4c6b00270e38b8969dfc76d22b1549537b08598c1dc3714d71529",
       "figure_code_commit": "618e683cb8ab4c2a7db3cbd43c49cb50a4dbb69f",
       "figure_execution_source": {"path": "research/.runtime/static-key-numerics/execution_sources/618e683cb8ab4c2a7db3cbd43c49cb50a4dbb69f/research/phase1/experiments/static_layer_allocation/code/numerics_plot.py", "sha256": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5"},
       "figure_code_sha256": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
