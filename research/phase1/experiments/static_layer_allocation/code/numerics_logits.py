@@ -135,11 +135,21 @@ def question_analysis(
                 'all_path_kl_baseline': kl_mean(base, value, positions),
             } for layer, value in singles.items()},
             'increments_vs_residual_fp32': {
-                name: incremental_comparison(base[content], values[name][content],
-                                             high[base_name][content], high[name][content])
+                name: {scope: incremental_comparison(base[chosen], values[name][chosen],
+                                                     high[base_name][chosen], high[name][chosen])
+                       for scope, chosen in (('content', content), ('all_path', positions))}
                 for name in diagnostic_names if name not in ('bf16', 'kv8', base_name)
-            }, 'additive': {},
+            }, 'additive': {}, 'distributions': {},
         }
+        for name, value in values.items():
+            fmt = allocation['allocations'].get(name, {}).get('format')
+            baseline = values[fmt + '_k8v4'] if fmt else base
+            result[mode]['distributions'][name] = {
+                scope + '_kl_bf16': kl_mean(values['bf16'], value, chosen)
+                for scope, chosen in (('content', content), ('all_path', positions))}
+            result[mode]['distributions'][name].update({
+                scope + '_kl_baseline': kl_mean(baseline, value, chosen)
+                for scope, chosen in (('content', content), ('all_path', positions))})
         if len(singles) == 32:
             for name, spec in allocation['allocations'].items():
                 if spec['format'] == design['single_layer_format'] and spec.get('r'):
@@ -171,10 +181,16 @@ def raw_summary(questions: list[dict[str, Any]], design: dict[str, Any]) -> dict
                 additive_means[name][scope] = means
         increments = {}
         for name in questions[0][mode]['increments_vs_residual_fp32']:
-            rows = [row[mode]['increments_vs_residual_fp32'][name] for row in questions]
-            increments[name] = {key: float(np.mean([row[key] for row in rows
-                                                   if row[key] is not None]))
-                               if any(row[key] is not None for row in rows) else None
-                               for key in rows[0]}
-        result['precisions'][mode] = {'additive': additive_means, 'increments': increments}
+            increments[name] = {}
+            for scope in ('content', 'all_path'):
+                rows = [row[mode]['increments_vs_residual_fp32'][name][scope] for row in questions]
+                increments[name][scope] = {
+                    key: float(np.mean([row[key] for row in rows if row[key] is not None]))
+                    if any(row[key] is not None for row in rows) else None for key in rows[0]}
+        distributions = {
+            name: {key: float(np.mean([row[mode]['distributions'][name][key]
+                                      for row in questions])) for key in values}
+            for name, values in questions[0][mode]['distributions'].items()}
+        result['precisions'][mode] = {'additive': additive_means, 'increments': increments,
+                                     'distributions': distributions}
     return result
