@@ -89,8 +89,15 @@
   ],
   "severe_failure_stop": "invalid_quantization_or_nonfinite_logits_or_oom",
   "memory_estimate_gib": {
-    "qwen": 24,
-    "llama": 26
+    "qwen": 21,
+    "llama": 23
+  },
+  "memory_estimate_basis": {
+    "prior_peak_reserved_gib": {"qwen": 15.34765625, "llama": 18.228515625},
+    "additional_fp32_head_gib": {"qwen": 2.0302734375, "llama": 1.95703125},
+    "remaining_margin_gib": {"qwen": 3.6220703125, "llama": 2.814453125},
+    "source": "same_input_prior_gate_peak_reserved_plus_actual_FP32_weight_geometry",
+    "allocation_rule": "check_live_free_after_CUDA_initialization_before_model_load"
   },
   "v_plan_frozen": false,
   "precision_formats": [
