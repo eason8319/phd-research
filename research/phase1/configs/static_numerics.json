@@ -23,6 +23,7 @@
   "repeats_if_nonidentical": 6,
   "repeat_escalation": "affected_question_precision_all_schemes",
   "prefill": "one_fixed_BF16_source_per_question_across_conditions_and_repeats",
+  "historical_device_comparison": "record_original_device_predictions_and_nll_changes_separately; same_source_old_vs_new_implementation_byte_equivalence_is_the_admission; historical_prefill_is_not_part_of_the_three_precision_envelope",
   "single_layer_format": "online_post",
   "single_layer_scope": {
     "llama": "all_32_online_post_layers_all_16_validation_questions",

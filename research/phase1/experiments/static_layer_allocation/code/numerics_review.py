@@ -94,9 +94,13 @@ def check_rows(
                 names = all_names if mode == 'current' and repeat['repeat'] == 0 else diagnostic
                 compare(set(repeat['schemes']), names, 'actual measurement scope')
         for name, old in prior[row['id']]['schemes'].items():
-            compare(current[name]['generation']['prediction'], old['prediction'],
-                    'original same-input generation reproduced')
-            compare(current[name]['content_nll'], old['nll'], 'original content NLL reproduced')
+            measured = current[name]
+            history = row['historical_device_comparison']['schemes'][name]
+            compare(history['same_prediction'],
+                    measured['generation']['prediction'] == old['prediction'],
+                    'separate device prediction comparison')
+            compare(history['content_nll_difference'], measured['content_nll'] - old['nll'],
+                    'separate device NLL comparison')
 
 
 def compact_question(row: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
@@ -191,7 +195,12 @@ def run(commit: str) -> None:
             save(formal / model / target, read(folder / name))
         audit_models[model] = {
             'status': 'passed', 'n': len(rows), 'path_questions_raw_recomputed': len(rows),
-            'original_outputs_all_reproduced': True, 'protected_random_configurations': 27,
+            'historical_output_matches': sum(
+                item['same_prediction'] for row in rows
+                for item in row['historical_device_comparison']['schemes'].values()),
+            'historical_output_comparisons': sum(
+                len(row['historical_device_comparison']['schemes']) for row in rows),
+            'protected_random_configurations': 27,
             'single_layers': 32 if model == 'llama' else 2,
             'content_correct_bf16_rescored': sum(row['schemes']['bf16']['content_correct']
                                                 for row in rescoring['rows']),

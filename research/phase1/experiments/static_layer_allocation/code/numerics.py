@@ -308,12 +308,21 @@ def run(model_key: str, commit: str) -> None:
                 print("precision", model_key, question_index, mode, count, flush=True)
                 del previous_logits
             current = path["precisions"]["current"][0]["schemes"]
+            historical = {}
             for name, old in prior_rows[item["id"]]["schemes"].items():
-                if current[name]["generation"]["prediction"] != old["prediction"]:
-                    raise RuntimeError("当前计算条件没有复现原同输入自由生成")
-                if not np.isclose(current[name]["content_nll"], old["nll"], rtol=2e-12,
-                                  atol=2e-14):
-                    raise RuntimeError("当前计算条件没有复现原内容损失")
+                measured = current[name]
+                historical[name] = {
+                    "same_prediction": measured["generation"]["prediction"] == old["prediction"],
+                    "content_nll_difference": measured["content_nll"] - old["nll"],
+                    "same_content_nll": bool(np.isclose(measured["content_nll"], old["nll"],
+                                                        rtol=2e-12, atol=2e-14)),
+                    "old_prediction_score": score_answer(old["prediction"], item["value"]),
+                }
+            path["historical_device_comparison"] = {
+                "historical_gate_sha256": sha(base_folder / "gate.json"),
+                "historical_device": gate["device"], "schemes": historical,
+                "role": "separate_prefill_capture_device_comparison_not_precision_envelope",
+            }
             path["peak_allocated_bytes"] = torch.cuda.max_memory_allocated()
             path["peak_reserved_bytes"] = torch.cuda.max_memory_reserved()
             save(destination, path)
