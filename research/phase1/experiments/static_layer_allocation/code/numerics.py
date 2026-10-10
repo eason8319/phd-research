@@ -67,6 +67,12 @@ def protected_allocations(
                              for n in plan["cost_lengths"]},
                 }
                 result["protected_random_names"].append(name)
+    configurations = {}
+    result["configuration_aliases"] = {}
+    for name, spec in result["allocations"].items():
+        identity = (spec["format"], tuple(row["k"] for row in spec["layer_bits"]))
+        alias = configurations.setdefault(identity, name)
+        result["configuration_aliases"][name] = alias
     result["allocation_digest"] = digest(result)
     return result
 
@@ -153,8 +159,15 @@ def measure_repeat(
     prior: dict[str, Any] | None,
 ) -> tuple[dict[str, Any], dict[str, torch.Tensor]]:
     """首次记录实际贪心输出；严格正路径与贪心一致时直接保留同一实际轨迹。"""
-    metrics, logits = {}, {}
+    metrics, logits, configurations = {}, {}, {}
     for name, spec in names.items():
+        identity = (spec["format"], tuple(row["k"] for row in spec["layer_bits"])) \
+            if spec else (name,)
+        if identity in configurations:
+            alias = configurations[identity]
+            metrics[name], logits[name] = metrics[alias], logits[alias]
+            continue
+        configurations[identity] = name
         config, selected, h = scheme_config(name, spec, plan, params)
         values = trace(model, source, answer, mode, weight, config, selected, h)
         measured = path_metrics(values, answer, tokenizer, positions)
