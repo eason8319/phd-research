@@ -54,7 +54,7 @@ def protected_allocations(
         protected = ranking(probe["formats"][fmt]["layers"], "sensitivity",
                             descending=True)[:design["protected_random"]["protected_count"]]
         result["protected"][fmt] = protected
-        for seed, permutation in base["random_permutations"].items():
+        for seed, permutation in base["random_permutations"][fmt].items():
             allowed = [layer for layer in permutation if layer not in protected]
             for r in plan["models"][probe["model"]]["k4_layers"]:
                 name = f"{fmt}_k4_layers_{r}_protected_random_{seed}"
