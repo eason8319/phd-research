@@ -69,7 +69,8 @@ def model_data(folder: Path, design: dict) -> dict:
     result['comparisons'] = comparisons
     result['baseline_comparisons'] = {}
     for fmt, budgets in summary['budget_comparisons'].items():
-        selected = variants(rows, design['precisions']) if fmt == 'online_post' else [('current', 0)]
+        selected = variants(rows, design['precisions']) if fmt == 'online_post' \
+            else [('current', 0)]
         for r in budgets:
             name = f'{fmt}_k4_layers_{r}_sensitivity'
             compared = paired_comparison(rows, name, fmt + '_k8v4', selected, design)
