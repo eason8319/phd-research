@@ -72,7 +72,7 @@ def matrix_figures(result: Path, output: Path, summaries: dict, allocations: dic
                 if metric == 'nll':
                     ax.set_yscale('log')
                 elif metric == 'kl':
-                    ax.set_yscale('symlog', linthresh=1e-10)
+                    ax.set_yscale('symlog', linthresh=1e-9 if model == 'qwen' else 1e-7)
                     ax.set_ylim(bottom=0)
                 else:
                     ax.set_ylim(-.03, 1.03)
@@ -101,6 +101,8 @@ def single_layers(result: Path, output: Path, summary: dict) -> None:
                 'content_nll']['status'] != 'unresolved' for item in rows]
             ax.scatter(x, y, c=['#007f7c' if valid else '#a5aab0' for valid in reliable], s=28)
             for item, left, right in zip(rows, x, y):
+                if item['layer'] not in (0, 1, 5, 14, 15, 20, 25, 27):
+                    continue
                 ax.annotate(str(item['layer']), (left, right), xytext=(3, 3),
                             textcoords='offset points', fontsize=7)
             ax.set_xscale('log')
@@ -110,7 +112,7 @@ def single_layers(result: Path, output: Path, summary: dict) -> None:
             ax.set_ylabel(label)
             ax.grid(alpha=.2)
     fig.supxlabel('Source: reviewed numerics_summary.json and probe.json | '
-                  'Online post, H=0 | Validation n=16 | Labels: layer indices; '
+                  'Online post, H=0 | Validation n=16 | Labels: selected layer indices; '
                   'teal: resolved delta NLL', fontsize=9)
     fig.savefig(output / 'single_layer_prediction.png', dpi=160)
     plt.close(fig)
@@ -134,6 +136,8 @@ def closure(output: Path, summary: dict, allocation: dict) -> None:
                     label=f"Sensitivity, r={spec['r']}" if sensitive else None)
         ax.set_xticks(range(3), MODE_LABELS)
         ax.set_yscale('log')
+        ax.set_ylim(.025, .85)
+        ax.set_yticks([.03, .06, .1, .2, .4, .8], ['0.03', '0.06', '0.1', '0.2', '0.4', '0.8'])
         ax.set_ylabel('Absolute centered additive residual RMS (logit)')
         label = 'All answer + termination' if scope == 'all_path' else 'Content'
         ax.set_title('Llama | ' + label)
@@ -157,13 +161,14 @@ def closure(output: Path, summary: dict, allocation: dict) -> None:
             ax.scatter(item['actual_kl_baseline'], item['sum_single_layer_kl'],
                        color=color, marker='x', s=28, alpha=.75)
         keys = ('actual_kl_baseline', 'additive_kl_baseline', 'sum_single_layer_kl')
-        upper = max(value['content'][key] for name, value in values.items()
-                    if name in names for key in keys)
-        ax.plot([0, upper], [0, upper], color='#999999', ls='--', lw=1)
-        ax.set_xscale('symlog', linthresh=1e-12)
-        ax.set_yscale('symlog', linthresh=1e-12)
-        ax.set_xlim(left=0)
-        ax.set_ylim(bottom=0)
+        points = [value['content'][key] for name, value in values.items()
+                  if name in names for key in keys]
+        lower, upper = min(points) * .5, max(points) * 1.5
+        ax.plot([lower, upper], [lower, upper], color='#999999', ls='--', lw=1)
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlim(lower, upper)
+        ax.set_ylim(lower, upper)
         ax.set_xlabel('Actual combination KL(B || A) (nat/token)')
         ax.set_ylabel('Predicted combination KL (nat/token)')
         ax.set_title('Llama | ' + label)
@@ -204,6 +209,12 @@ def paired_budgets(output: Path, summaries: dict) -> None:
             ax.set_yticks(range(len(labels)), labels)
             ax.invert_yaxis()
             ax.set_xscale('symlog', linthresh=1e-8 if model == 'qwen' else 1e-6)
+            if model == 'qwen':
+                ax.set_xlim(-12, 1.1e-6)
+                ax.set_xticks([-10, -1e-4, -1e-6, 0, 1e-6],
+                              ['-10', '-1e-4', '-1e-6', '0', '1e-6'])
+            ax.tick_params(axis='x', labelsize=8)
+            ax.minorticks_off()
             ax.set_xlabel('Sensitivity minus comparison NLL (nat/token)')
             ax.set_title(f'{model.capitalize()} | Online post | r={r}')
             ax.grid(axis='x', alpha=.2)
@@ -231,12 +242,6 @@ def full_path_case(result: Path, output: Path) -> None:
         frames = measured['frames']
         axes[0].plot(range(len(frames)), [frame['margin'] for frame in frames],
                      color=COLORS[index], marker='o', ms=4, label=label)
-        divergence = measured['first_nonpositive']
-        if divergence:
-            position = divergence['answer_index']
-            axes[0].annotate(divergence['competitor_text'],
-                             (position, divergence['margin']), xytext=(4, -13 - 10 * index),
-                             textcoords='offset points', fontsize=8, color=COLORS[index])
         axes[1].plot([0, 1], [measured['content_nll'], measured['all_path_nll']],
                      color=COLORS[index], marker='o', ms=5, label=label)
     axes[0].axhline(0, color='#222222', ls='--', lw=1)
@@ -250,7 +255,8 @@ def full_path_case(result: Path, output: Path) -> None:
         ax.grid(alpha=.2)
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc='outside upper center', ncol=3, frameon=False, fontsize=9)
-    fig.suptitle(row['key'] + ' -> ' + row['answer'], fontsize=12)
+    axes[0].set_title(row['key'] + ' -> ' + row['answer'], fontsize=12)
+    axes[1].set_title('Content support and full answer path', fontsize=12)
     fig.supxlabel('Source: reviewed numerical_questions | One fixed Qwen validation question | '
                   'Shared correct prefix; each scheme maintains its own cache', fontsize=9)
     fig.savefig(output / 'full_path_margins.png', dpi=160)
