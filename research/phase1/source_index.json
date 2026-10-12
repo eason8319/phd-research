@@ -5206,7 +5206,15 @@
       "mean_only_workpoints": [
         "qwen/online_post/2",
         "llama/online_post/8"
-      ]
+      ],
+      "reliable_all_workpoints": 0,
+      "all_workpoints": 18,
+      "method_by_format": {
+        "online_post": "question_bootstrap_envelope_over_three_precisions_and_repeats",
+        "online_pre": "question_paired_bootstrap_current_only",
+        "offline_pre": "question_paired_bootstrap_current_only"
+      },
+      "all_workpoint_evidence": "numerics_summary.json/budget_comparisons/*/*/same_budget_comparisons/*random*/metrics/content_nll/status; exclude protected_random; require all three reliably_lower"
     },
     "generation_screen": "completed_C_development_content_and_format_checks; no_V_quality_budget_selected",
     "quality_threshold": null,
@@ -5777,7 +5785,13 @@
         "admission_temporary_files_removed": true,
         "cache_capacity_temporary_output_removed": true,
         "raw_formal_negative_results_retained": true,
-        "verified_transport_cleanup": {"formal_package_sha256": "d2dd98a7c3eb2e2add04bfc2f6ada8dde08619fe59d8c887b66960b4c692716c", "artifact_package_sha256": "2ed7bdc991de6968f702e9d5ed87644694feb85aaba1aa9bca5d67ff2abd63c7", "server_packages_removed": true, "local_transports_removed": true, "local_historical_backup_removed_after_byte_check": true}
+        "verified_transport_cleanup": {
+          "formal_package_sha256": "d2dd98a7c3eb2e2add04bfc2f6ada8dde08619fe59d8c887b66960b4c692716c",
+          "artifact_package_sha256": "2ed7bdc991de6968f702e9d5ed87644694feb85aaba1aa9bca5d67ff2abd63c7",
+          "server_packages_removed": true,
+          "local_transports_removed": true,
+          "local_historical_backup_removed_after_byte_check": true
+        }
       }
     },
     "admission": {
@@ -6812,15 +6826,20 @@
         "path": "research/.runtime/static-key-numerics/report_data.json",
         "sha256": "bfd356f2c33ae7c80531d5a17935df92f7046a3031a5a7e0eae532f5e589c70c",
         "code_commit": "9a783d4e7657d818f41cefe05c62f8d6cbf95a05",
-        "execution_source": {"path": "research/.runtime/static-key-numerics/execution_sources/9a783d4e7657d818f41cefe05c62f8d6cbf95a05/research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py", "sha256": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1"},
+        "execution_source": {
+          "path": "research/.runtime/static-key-numerics/execution_sources/9a783d4e7657d818f41cefe05c62f8d6cbf95a05/research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py",
+          "sha256": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1"
+        },
         "code_sha256": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1"
       }
     },
     "report": {
       "path": "research/phase1/experiments/static_layer_allocation/report/index.md",
-      "sha256": "e4578c3716b4c6b00270e38b8969dfc76d22b1549537b08598c1dc3714d71529",
       "figure_code_commit": "618e683cb8ab4c2a7db3cbd43c49cb50a4dbb69f",
-      "figure_execution_source": {"path": "research/.runtime/static-key-numerics/execution_sources/618e683cb8ab4c2a7db3cbd43c49cb50a4dbb69f/research/phase1/experiments/static_layer_allocation/code/numerics_plot.py", "sha256": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5"},
+      "figure_execution_source": {
+        "path": "research/.runtime/static-key-numerics/execution_sources/618e683cb8ab4c2a7db3cbd43c49cb50a4dbb69f/research/phase1/experiments/static_layer_allocation/code/numerics_plot.py",
+        "sha256": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5"
+      },
       "figure_code_sha256": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
       "figure_runtime": {
         "python": "3.11.7",
@@ -6844,13 +6863,39 @@
         "research/phase1/experiments/static_layer_allocation/report/single_layer_prediction.png": "b263a17e55f7491a22f59d8a78a04f1fb884c450e18f95b8df4a83d3e1e45f48"
       },
       "visual_review": "passed_all_9_figures_after_raw_result_audit",
+      "sha256": "72511f8a3533636ea2575c02d20bb5534554294459b7d5e5fd072eb7b9bd4740",
+      "main_figures": [
+        "key_downgrade_layers.png",
+        "key_budget_nll.png",
+        "paired_budget_comparison.png"
+      ],
+      "supplementary_figures": [
+        "single_layer_prediction.png",
+        "key_budget_kl.png",
+        "key_budget_accuracy.png",
+        "full_path_margins.png",
+        "numerical_closure.png",
+        "logit_superposition.png"
+      ],
       "report_review": {
         "status": "passed",
-        "main_nll_values_checked": 108,
-        "additional_tables_checked": {"distribution_values": 36, "protected_strategy_values": 24, "endpoint_rows": 16, "absolute_rms_values": 18, "additive_kl_values": 36},
+        "date": "2026-10-12",
+        "kind": "editorial_compression_of_reviewed_results",
+        "core_result_groups": 6,
+        "main_figures": 3,
+        "supplementary_figures": 6,
+        "original_trimmed_characters": 19353,
+        "revised_trimmed_characters": 5615,
         "formal_files": 55,
+        "preserved_code_result_and_figure_files": 95,
+        "measurements_code_and_figures_byte_unchanged": true,
         "h2_structure": "实验目的/实验结果与结论/总结",
-        "date": "2026-10-10"
+        "full_matrix_gate_verified_from_paired_content_nll_status": 18,
+        "reliably_below_all_three_random_workpoints": 0,
+        "online_post_precision_envelope_workpoints": 6,
+        "current_only_question_bootstrap_workpoints": 12,
+        "critical_layer_controls_and_cost_endpoints_verified": true,
+        "linked_detail_and_negative_results_retained": true
       }
     }
   }
