@@ -6,9 +6,7 @@ from typing import Any
 
 import numpy as np
 
-from experiments.static_layer_allocation.code.numerics_metrics import (
-    paired_reliability, spearman,
-)
+from experiments.static_layer_allocation.code.numerics_metrics import paired_reliability, spearman
 
 
 def variants(rows: list[dict[str, Any]], modes: list[str]) -> list[tuple[str, int]]:

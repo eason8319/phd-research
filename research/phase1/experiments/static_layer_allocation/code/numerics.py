@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import argparse
 import gc
-import hashlib
-import json
 import os
 from pathlib import Path
 from typing import Any
@@ -14,31 +12,23 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.quantized_generation import _config
-from experiments.generation_error_sources.code.short_baseline import _eos_ids
+from kvstudy.artifacts import read_json as read, file_hash as sha
 from experiments.static_layer_allocation.code.allocations import cost, layer_bits
 from experiments.static_layer_allocation.code.content import capture_source, read_input, save
 from experiments.static_layer_allocation.code.metrics import ranking
 from experiments.static_layer_allocation.code.numerics_forward import generate, trace
 from experiments.static_layer_allocation.code.numerics_metrics import path_metrics, score_answer
 from experiments.static_layer_allocation.code.protocol import code_sources, digest, load_plan
+from kvstudy.paths import project_root
+from phase1.generation import _config
+from phase1.models import _eos_ids
 from phase1.representation import MODELS
 from phase1.runner import load_model
+
 
 DESIGN = "research/phase1/configs/static_numerics.json"
 RUNTIME = "research/.runtime/static-key-numerics"
 FORMAL = "research/phase1/experiments/static_layer_allocation/results"
-
-
-def read(path: Path) -> dict[str, Any]:
-    """读取冻结配置或小型逐题记录。"""
-    return json.loads(path.read_text("utf-8"))
-
-
-def sha(path: Path) -> str:
-    """校验保留实体的实际字节。"""
-    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def protected_allocations(

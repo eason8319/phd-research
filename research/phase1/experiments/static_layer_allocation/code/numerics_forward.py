@@ -8,8 +8,13 @@ import numpy as np
 import torch
 import torch.nn.functional as functional
 
-from experiments.generation_error_sources.code.quantized_generation import (
-    _layer_bits, _layer_params, _prefill_cache, _quantize, _recent, _write_residual_token,
+from phase1.generation import (
+    _layer_bits,
+    _layer_params,
+    _prefill_cache,
+    _quantize,
+    _recent,
+    _write_residual_token,
 )
 from phase1.runner import attention_from_batch, modeling_module, project_qkv
 

@@ -1,8 +1,15 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "c1f2cc2",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "llama",
   "e1_commit": "6ca63fd",
+  "candidate_policy": "all-k8v4-representations",
+  "representation_candidates": [
+    "k8v4-per_channel-pre",
+    "k8v4-per_channel-post",
+    "k8v4-per_token-pre",
+    "k8v4-per_token-post"
+  ],
   "h": 0,
   "baseline_usable": {
     "gsm8k": true,
@@ -41,7 +48,7 @@
         "state": "证据不足",
         "class_unit_passes": true
       },
-      "k8v4-per_token-post": {
+      "k8v4-per_channel-pre": {
         "score": 90.625,
         "invalid_samples": 0,
         "versus_bf16": {
@@ -64,6 +71,34 @@
           "detail": {
             "degrade": 1,
             "improve": 1
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "k8v4-per_channel-post": {
+        "score": 92.1875,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -1.5625,
+          "lower": -12.079222738293817,
+          "upper": 9.298374487071502,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 2
+          }
+        },
+        "versus_kv8": {
+          "estimate": -1.5625,
+          "lower": -12.079222738293817,
+          "upper": 9.298374487071502,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 2
           }
         },
         "state": "证据不足",
@@ -92,6 +127,34 @@
           "detail": {
             "degrade": 1,
             "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "k8v4-per_token-post": {
+        "score": 90.625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
           }
         },
         "state": "证据不足",
@@ -127,7 +190,63 @@
         "state": "证据不足",
         "class_unit_passes": false
       },
-      "k8v4-per_token-post": {
+      "k8v4-per_channel-pre": {
+        "score": 65.19316187284937,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 2.505580357142857,
+          "lower": -0.4464285714285714,
+          "upper": 6.517857142857143,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 2.431175595238095,
+          "lower": -0.4464285714285714,
+          "upper": 6.233677455357137,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      },
+      "k8v4-per_channel-post": {
+        "score": 58.45848990513271,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 9.240252324859524,
+          "lower": 3.406692371781019,
+          "upper": 15.820479300527795,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 9.165847562954761,
+          "lower": 3.365116135007171,
+          "upper": 15.671716218615407,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "淘汰",
+        "class_unit_passes": false
+      },
+      "k8v4-per_token-pre": {
         "score": 67.69874222999223,
         "invalid_samples": 0,
         "versus_bf16": {
@@ -155,7 +274,7 @@
         "state": "证据不足",
         "class_unit_passes": true
       },
-      "k8v4-per_token-pre": {
+      "k8v4-per_token-post": {
         "score": 67.69874222999223,
         "invalid_samples": 0,
         "versus_bf16": {

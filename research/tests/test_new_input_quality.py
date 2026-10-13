@@ -14,10 +14,7 @@ from experiments.generation_error_sources.code.new_input_quality import (
     offline_residual_category,
     planned_new_generations,
 )
-from experiments.generation_error_sources.code.quantized_generation import (
-    _ids_and_source,
-    _score_new_input,
-)
+from phase1.inputs import _ids_and_source, _score_new_input
 
 
 def _row(item_id: str, score: float, *, tokens: int = 400, stop: str = "eos",

@@ -5,14 +5,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from pathlib import Path
 from typing import Any
 
 import numpy as np
 from transformers import AutoTokenizer
 
-from kvstudy.paths import project_root
 from experiments.static_layer_allocation.code.protocol import digest, load_plan, write_json
+from kvstudy.paths import project_root
 from phase1.representation import MODELS
 from phase1.splits_build import NEEDLE_SENTENCE, build_retrieval, independent_mapping
 

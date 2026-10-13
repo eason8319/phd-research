@@ -122,7 +122,6 @@ def _error_metrics(
         "difference_residual": k4v8_error - k8v4_error - key_error + value_error - baseline_cross,
         "key_prediction_error": _divide_or_nan(prediction_residual_energy, reference_energy),
         "key_prediction_relative_error": _divide_or_nan(prediction_residual_energy, key_energy),
-        "key_prediction_norm_ratio": _divide_or_nan(prediction_energy.sqrt(), key_energy.sqrt()),
         "key_prediction_cosine": cosine,
         "key_increment_zero": key_energy == 0,
         "key_prediction_zero": prediction_energy == 0,
@@ -169,8 +168,8 @@ def paired_head_metrics(
     分数为 [H, L]，Value 已按 query head 对齐为 [H, L, D]，参考输出为 [H, D]。
     返回同设备的 [H] 张量，数值均用 float64；KL 使用自然对数，单位为 nat。
     *_error 是平方范数之比，输出误差统一除以高精度参考输出能量。
-    key_prediction_relative_error 除以实际 K 增量能量；norm_ratio 比较预测与实际长度。
-    reference 为零时输出归一化指标为 NaN；长度比和余弦的零向量情况另设标记。
+    key_prediction_relative_error 除以实际 K 增量能量。
+    reference 为零时输出归一化指标为 NaN；余弦的零向量情况另设标记。
     本函数不量化、不修改输入，也不假设位置独立或残差服从高斯分布。
     """
     _validate_inputs(
@@ -181,14 +180,12 @@ def paired_head_metrics(
     probability8 = log_probability8.exp()
     probability4 = log_probability4.exp()
     delta_score = score4.double() - score8.double()
-    score_rms2 = (delta_score - delta_score.mean(dim=-1, keepdim=True)).square().mean(-1)
     weighted_mean = (probability8 * delta_score).sum(dim=-1, keepdim=True)
     centered_score = delta_score - weighted_mean
     weighted_var = (probability8 * centered_score.square()).sum(dim=-1)
     kl = (
         probability8 * (log_probability8 - log_probability4)
     ).sum(dim=-1).clamp_min(0.0)
-    probability_l1 = (probability4 - probability8).abs().sum(dim=-1)
 
     reference = reference_output.double()
     output88, output48, value_delta, key_prediction = _paired_vectors(
@@ -199,71 +196,6 @@ def paired_head_metrics(
 
     return {
         **_error_metrics(reference, baseline_delta, key_delta, value_delta, key_prediction),
-        "score_rms2": score_rms2,
         "weighted_score_var": weighted_var,
         "paired_probability_kl": kl,
-        "probability_l1": probability_l1,
-        "probability_tv": probability_l1 / 2,
-    }
-
-
-def competition_metrics(
-    score8: torch.Tensor,
-    score4: torch.Tensor,
-    value8: torch.Tensor,
-    top_k: int = 8,
-) -> dict[str, torch.Tensor]:
-    """固定选择 K8 基准概率最高的 top_k 个位置，记录其两两竞争。
-
-    输入形状为 [H, L] 和 [H, L, D]；并列分数按原位置顺序选择。
-    pair_positions 为 [H, P, 2]，其他 pair_* 为 [H, P]，P=k(k-1)/2。
-    margin 是基准领先幅度，differential 是该幅度的量化变化，Value 距离为平方欧氏距离。
-    只有基准严格领先且量化后严格落后才算翻转；flip_rate 除以全部选中配对数量。
-    first_order_norm 为 p_i p_j |delta_s_i-delta_s_j| ||v_i-v_j||；它们不能相加当作总误差。
-    L=1 时配对数组为空，数量和翻转率为零；不会建立历史长度的 L×L 矩阵。
-    """
-    _validate_inputs(score8, score4, value8)
-    if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k < 1:
-        raise ValueError("top_k 必须为正整数")
-    heads, length = score8.shape
-    selected_count = min(top_k, length)
-    score8_d = score8.double()
-    score4_d = score4.double()
-    probability8 = torch.log_softmax(score8_d, dim=-1).exp()
-    positions = torch.argsort(score8_d, dim=-1, descending=True, stable=True)
-    positions = positions[:, :selected_count]
-    selected_probability = probability8.gather(1, positions)
-    selected_score = score8_d.gather(1, positions)
-    selected_delta = (score4_d - score8_d).gather(1, positions)
-    selected_value = value8.gather(
-        1, positions.unsqueeze(-1).expand(-1, -1, value8.shape[-1])
-    ).double()
-    left, right = torch.triu_indices(
-        selected_count, selected_count, offset=1, device=score8.device
-    )
-    margin = selected_score[:, left] - selected_score[:, right]
-    differential = selected_delta[:, left] - selected_delta[:, right]
-    quantized_margin = margin + differential
-    value_distance2 = (selected_value[:, left] - selected_value[:, right]).square().sum(-1)
-    pair_weight = selected_probability[:, left] * selected_probability[:, right]
-    first_order_norm = pair_weight * differential.abs() * value_distance2.sqrt()
-    flipped = (margin > 0) & (quantized_margin < 0)
-    pair_count = left.numel()
-    flip_count = flipped.sum(dim=-1)
-    flip_rate = flip_count.double() / pair_count if pair_count else flip_count.double()
-    return {
-        "selected_positions": positions,
-        "selected_probability_coverage": selected_probability.sum(dim=-1),
-        "pair_positions": torch.stack((positions[:, left], positions[:, right]), dim=-1),
-        "pair_probability_weight": pair_weight,
-        "pair_margin": margin,
-        "pair_differential": differential,
-        "pair_quantized_margin": quantized_margin,
-        "pair_value_distance2": value_distance2,
-        "pair_first_order_norm": first_order_norm,
-        "pair_flipped": flipped,
-        "pair_count": torch.full((heads,), pair_count, dtype=torch.long, device=score8.device),
-        "pair_tie_count": (margin == 0).sum(dim=-1),
-        "pair_flip_count": flip_count,
-        "pair_flip_rate": flip_rate,
     }

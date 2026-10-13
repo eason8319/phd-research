@@ -7,8 +7,13 @@ from unittest.mock import patch
 import torch
 
 from kvstudy.groups import fit_per_channel, quantize_per_channel, quantize_per_token
-from experiments.generation_error_sources.code.quantized_generation import (
-    RESIDUAL_TOKENS, _calibration, _config, _layer_params, _quantize, _write_residual_token,
+from phase1.generation import (
+    RESIDUAL_TOKENS,
+    _calibration,
+    _config,
+    _layer_params,
+    _quantize,
+    _write_residual_token,
 )
 
 

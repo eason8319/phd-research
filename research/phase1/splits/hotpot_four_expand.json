@@ -1,0 +1,2182 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "generation_config_digest": "400d3d25dbd6b71d7854c54c796d7cefa0628817b60cad4e7b90fa7e69bdb9fd",
+  "items": [
+    {
+      "id": "hotpot-four-expand-00",
+      "question_ids": [
+        "5ac42c6d5542997ea680ca1a",
+        "5ac1a5b45542991316484b8b",
+        "5a7914e155429974737f7973",
+        "5ae2eb7f55429928c423955b"
+      ],
+      "answers": [
+        "Borgo San Donnino",
+        "yes",
+        "March 30, 1983",
+        "Dave Malloy"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31724,
+          "sha256": "9349f95e99061fe94f381f6a3dc2bd92366caa1532959f1051be15353b54aa19",
+          "support_gaps": [
+            8255,
+            8260,
+            8258,
+            8215
+          ],
+          "gap_fillers": 63,
+          "tail_fillers": 603,
+          "pool_start": 94272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-00.txt"
+        },
+        "llama": {
+          "tokens": 31737,
+          "sha256": "4354c1084b29de42ddafc4c42a746ee397cf240ab714954996f0071679c6f989",
+          "support_gaps": [
+            8256,
+            8257,
+            8253,
+            8210
+          ],
+          "gap_fillers": 74,
+          "tail_fillers": 621,
+          "pool_start": 94272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-00.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-01",
+      "question_ids": [
+        "5a829c1d55429966c78a6a67",
+        "5ab6bae95542995eadef0086",
+        "5a8c8828554299653c1aa0ae",
+        "5ab58ee6554299488d4d99d6"
+      ],
+      "answers": [
+        "court in Åbo",
+        "The University of Georgia",
+        "Miles Fitzalan-Howard, 17th Duke of Norfolk",
+        "February 13, 1946"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31733,
+          "sha256": "0c837926f389e6f18c5a2f658dd2e8a67a5df23c3cdb6af385a90e451b9e8c97",
+          "support_gaps": [
+            8217,
+            8267,
+            8229,
+            8247
+          ],
+          "gap_fillers": 79,
+          "tail_fillers": 602,
+          "pool_start": 96772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-01.txt"
+        },
+        "llama": {
+          "tokens": 31713,
+          "sha256": "aa2d3f0570e3eeb54b1dd338d534a8a5dcacc4d265dc93a6517f68318c8d295f",
+          "support_gaps": [
+            8202,
+            8248,
+            8214,
+            8232
+          ],
+          "gap_fillers": 89,
+          "tail_fillers": 622,
+          "pool_start": 96772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-01.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-02",
+      "question_ids": [
+        "5a7b22f8554299042af8f6ff",
+        "5ab60aec554299110f2199c3",
+        "5adcde475542994d58a2f709",
+        "5ac13f425542991316484a96"
+      ],
+      "answers": [
+        "the Dutch Empire",
+        "fiction",
+        "eastern India",
+        "Louisville International Airport"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31702,
+          "sha256": "3a14a5967d4c1fe93894d57a738ccab0a2f759c4c95aab2c4a74cc9cb55f68fe",
+          "support_gaps": [
+            8334,
+            8301,
+            8217,
+            8256
+          ],
+          "gap_fillers": 75,
+          "tail_fillers": 595,
+          "pool_start": 99272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-02.txt"
+        },
+        "llama": {
+          "tokens": 31736,
+          "sha256": "debf75eeb06a28e461bf296b6d6977ae45b8550dc9604e19187c52864cb88fa3",
+          "support_gaps": [
+            8396,
+            8370,
+            8288,
+            8329
+          ],
+          "gap_fillers": 84,
+          "tail_fillers": 629,
+          "pool_start": 99272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-02.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-03",
+      "question_ids": [
+        "5addda9b5542992200553b5b",
+        "5a8457835542990548d0b28a",
+        "5a79395455429970f5fffe7d",
+        "5a761e855542994ccc9186e0"
+      ],
+      "answers": [
+        "Isla de Xativa",
+        "\"Dexter's Laboratory\", \"Samurai Jack\"",
+        "Maxwell Smart",
+        "British Columbia, Canada"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31739,
+          "sha256": "48552ee196db6815aff204cd8cb9e6ded264b944e8b3390b4c10e8318632cebf",
+          "support_gaps": [
+            8337,
+            8411,
+            8250,
+            8203
+          ],
+          "gap_fillers": 75,
+          "tail_fillers": 583,
+          "pool_start": 101772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-03.txt"
+        },
+        "llama": {
+          "tokens": 31715,
+          "sha256": "deb834c75ca91105797650cc553fc588f8428761b7d0742f50ce6a600bad7e05",
+          "support_gaps": [
+            8348,
+            8414,
+            8257,
+            8214
+          ],
+          "gap_fillers": 87,
+          "tail_fillers": 614,
+          "pool_start": 101772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-03.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-04",
+      "question_ids": [
+        "5adea62e55429975fa854f3b",
+        "5a7e355055429934daa2fbf4",
+        "5ae6e0485542996d980e7ca6",
+        "5a79caec5542994bb94570ad"
+      ],
+      "answers": [
+        "no",
+        "Otto Robert Frisch",
+        "Mani",
+        "early 7th century"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31733,
+          "sha256": "6cccb192d54fe6d6f209f7e9a224a1bc61b1b9c42e114ce9a06e456b4c3fd782",
+          "support_gaps": [
+            8353,
+            8384,
+            8280,
+            8201
+          ],
+          "gap_fillers": 71,
+          "tail_fillers": 615,
+          "pool_start": 104272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-04.txt"
+        },
+        "llama": {
+          "tokens": 31722,
+          "sha256": "ec760af862d11a28b3d480b637892423f6d1ef7679f5cef869978e61ae0b5fc1",
+          "support_gaps": [
+            8342,
+            8373,
+            8271,
+            8197
+          ],
+          "gap_fillers": 81,
+          "tail_fillers": 640,
+          "pool_start": 104272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-04.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-05",
+      "question_ids": [
+        "5ac54f8d5542993e66e822f5",
+        "5a737dc455429908901be2c9",
+        "5ae73d235542991e8301cc29",
+        "5a87b2fc5542996e4f3088d0"
+      ],
+      "answers": [
+        "1954",
+        "Olimpiyskiy National Sports Complex",
+        "Free Range Films",
+        "J. R. R. Tolkien"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31728,
+          "sha256": "f2b55e235fac717206b9c1ca759a3a3064009aa49ef87722616bbbaa047e22a1",
+          "support_gaps": [
+            8250,
+            8235,
+            8277,
+            8253
+          ],
+          "gap_fillers": 92,
+          "tail_fillers": 579,
+          "pool_start": 106772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-05.txt"
+        },
+        "llama": {
+          "tokens": 31699,
+          "sha256": "31426f18a564be01f5b964e651e8318108decff457c865cae62b9fbb6a409884",
+          "support_gaps": [
+            8223,
+            8205,
+            8241,
+            8213
+          ],
+          "gap_fillers": 101,
+          "tail_fillers": 603,
+          "pool_start": 106772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-05.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-06",
+      "question_ids": [
+        "5adfecd755429942ec259b90",
+        "5abe89dd55429976d4830b5d",
+        "5abae1e65542996cc5e49ed2",
+        "5ae5a8435542992663a4f208"
+      ],
+      "answers": [
+        "1933",
+        "Eduardo Kuno Becker Paz",
+        "Vietnam War",
+        "Dutch"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31741,
+          "sha256": "552ea2ca6fb52528229ee77aa0d24233397eaabb0042392a7c5bd1af5f629bfd",
+          "support_gaps": [
+            8310,
+            8245,
+            8224,
+            8210
+          ],
+          "gap_fillers": 61,
+          "tail_fillers": 571,
+          "pool_start": 109272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-06.txt"
+        },
+        "llama": {
+          "tokens": 31727,
+          "sha256": "86d33b218d4aeb30c12d570aa13167518d1574ec93b83df514c15e192e01b84e",
+          "support_gaps": [
+            8310,
+            8246,
+            8232,
+            8214
+          ],
+          "gap_fillers": 73,
+          "tail_fillers": 596,
+          "pool_start": 109272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-06.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-07",
+      "question_ids": [
+        "5ae1452c554299422ee99654",
+        "5ab6ff3a5542991d3222372a",
+        "5ae56a3f5542992663a4f1f4",
+        "5ab4147a5542996a3a969f1e"
+      ],
+      "answers": [
+        "Robert \"Bobby\" Germaine",
+        "Berea College",
+        "pygmy chimpanzee",
+        "seven"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31712,
+          "sha256": "beee62b511095c858b901c29cc880634fd1be33cbe7699cd2e2a50121a9442eb",
+          "support_gaps": [
+            8386,
+            8213,
+            8271,
+            8323
+          ],
+          "gap_fillers": 74,
+          "tail_fillers": 561,
+          "pool_start": 111772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-07.txt"
+        },
+        "llama": {
+          "tokens": 31743,
+          "sha256": "5305d88755a4a8f672fcc750504b597827c9adc3dbdb7c45cdfff033dd9b7d6d",
+          "support_gaps": [
+            8357,
+            8195,
+            8244,
+            8301
+          ],
+          "gap_fillers": 83,
+          "tail_fillers": 590,
+          "pool_start": 111772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-07.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-08",
+      "question_ids": [
+        "5ae644c55542992663a4f27e",
+        "5ae3c5535542991a06ce9a20",
+        "5ab487765542990594ba9c4e",
+        "5ae60426554299546bf83019"
+      ],
+      "answers": [
+        "1919",
+        "TRS-80 Color Computer",
+        "Minoan civilization",
+        "BraveStarr"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31740,
+          "sha256": "bebdad22ab03743c92cfb7a0d9bbce0e6561d2cab6195bf5a5c806fee8e9094e",
+          "support_gaps": [
+            8224,
+            8209,
+            8557,
+            8548
+          ],
+          "gap_fillers": 68,
+          "tail_fillers": 592,
+          "pool_start": 114272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-08.txt"
+        },
+        "llama": {
+          "tokens": 31736,
+          "sha256": "5df133cef9253ea8e818b7da0a20cde0191d484582813fa6f640d73b5e034c91",
+          "support_gaps": [
+            8209,
+            8198,
+            8546,
+            8535
+          ],
+          "gap_fillers": 82,
+          "tail_fillers": 617,
+          "pool_start": 114272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-08.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-09",
+      "question_ids": [
+        "5ade664555429939a52fe89c",
+        "5ade8ad95542992fa25da7b8",
+        "5a8c7703554299585d9e36b9",
+        "5a733c925542991f9a20c6b7"
+      ],
+      "answers": [
+        "Miami Gardens, Florida,",
+        "Talking Heads",
+        "Henry Jackson Society",
+        "cocktails"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31725,
+          "sha256": "a0d76860646b46fcc09686b3ef02c786c027a9247a218a6b76308a14e3eb694c",
+          "support_gaps": [
+            8394,
+            8294,
+            8207,
+            8203
+          ],
+          "gap_fillers": 83,
+          "tail_fillers": 592,
+          "pool_start": 116772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-09.txt"
+        },
+        "llama": {
+          "tokens": 31700,
+          "sha256": "fc01267ce400c1961416c88afb66f1bfdd830c1c8aafc6d33de36255e6ab88df",
+          "support_gaps": [
+            8447,
+            8347,
+            8263,
+            8256
+          ],
+          "gap_fillers": 90,
+          "tail_fillers": 621,
+          "pool_start": 116772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-09.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-10",
+      "question_ids": [
+        "5adde17f5542992200553b87",
+        "5ae2c696554299495565db32",
+        "5a73bddb55429978a71e909d",
+        "5ae236445542992decbdcc69"
+      ],
+      "answers": [
+        "Orlando Magic",
+        "Keeper of the Privy Seal of Scotland",
+        "Mohamed Sanu Sr.",
+        "Les Miles"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31713,
+          "sha256": "7a99f6e4b902bdf2921ed648b61e06edd2c5e83ec83fc4017dd725a91f15fa5c",
+          "support_gaps": [
+            8486,
+            8348,
+            8308,
+            8216
+          ],
+          "gap_fillers": 67,
+          "tail_fillers": 596,
+          "pool_start": 119272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-10.txt"
+        },
+        "llama": {
+          "tokens": 31740,
+          "sha256": "a0daa000d7aee10e6a350a84f8402e4e5c831f6b1c42d2f2f7b2b15035d04cbe",
+          "support_gaps": [
+            8451,
+            8326,
+            8296,
+            8212
+          ],
+          "gap_fillers": 82,
+          "tail_fillers": 626,
+          "pool_start": 119272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-10.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-11",
+      "question_ids": [
+        "5ab615cf554299488d4d9aa3",
+        "5ae1d32a554299492dc91b9c",
+        "5ab8883455429916710eb084",
+        "5a7618d85542994ccc9186cf"
+      ],
+      "answers": [
+        "our greatest comedienne",
+        "2011",
+        "Brent Burns",
+        "Lionel Hollins"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31704,
+          "sha256": "3666386f05c957ec2584e32d9a35f44a5bcf41e7695086b54a3bb623c7b149d9",
+          "support_gaps": [
+            8292,
+            8307,
+            8312,
+            8219
+          ],
+          "gap_fillers": 89,
+          "tail_fillers": 573,
+          "pool_start": 121772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-11.txt"
+        },
+        "llama": {
+          "tokens": 31729,
+          "sha256": "60cb1a60c4d04a66ace666a88ebd3f4347f2d7ed59e6aff20f53e6b3ed858440",
+          "support_gaps": [
+            8267,
+            8283,
+            8286,
+            8202
+          ],
+          "gap_fillers": 97,
+          "tail_fillers": 598,
+          "pool_start": 121772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-11.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-12",
+      "question_ids": [
+        "5ab931475542991b5579f12f",
+        "5ac00f795542996f0d89cb16",
+        "5a711ef85542994082a3e5ac",
+        "5ab1c2bf5542997061209558"
+      ],
+      "answers": [
+        "Duval County",
+        "Alan Young",
+        "Howard University Hospital",
+        "University of Missouri"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31742,
+          "sha256": "4f4862a03057098a89b79f2baf4e466fa27a989f439b5797558c88e245378df1",
+          "support_gaps": [
+            8488,
+            8359,
+            8203,
+            8264
+          ],
+          "gap_fillers": 73,
+          "tail_fillers": 613,
+          "pool_start": 124272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-12.txt"
+        },
+        "llama": {
+          "tokens": 31697,
+          "sha256": "6e3dfe5a39a8abccd0eba32c382a4924eb9fa90e4306e72058ec5884f274c536",
+          "support_gaps": [
+            8478,
+            8351,
+            8217,
+            8276
+          ],
+          "gap_fillers": 88,
+          "tail_fillers": 629,
+          "pool_start": 124272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-12.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-13",
+      "question_ids": [
+        "5abf877c5542990832d3a147",
+        "5ae25e835542992decbdccd1",
+        "5a9030ef5542995651fb50e4",
+        "5a78b3f7554299148911f94c"
+      ],
+      "answers": [
+        "yes",
+        "July 25 to August 4",
+        "American football",
+        "former model"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31741,
+          "sha256": "62bcc735604c9c5fab4c6cb5fe0fd623c818e61c9695e617100c527b35e5a4fb",
+          "support_gaps": [
+            8258,
+            8299,
+            8265,
+            8214
+          ],
+          "gap_fillers": 99,
+          "tail_fillers": 607,
+          "pool_start": 126772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-13.txt"
+        },
+        "llama": {
+          "tokens": 31730,
+          "sha256": "98681c629854a144d785c3f393043ba28b4b26aaf4a71a7a1faf5bb82117d2fc",
+          "support_gaps": [
+            8279,
+            8317,
+            8288,
+            8236
+          ],
+          "gap_fillers": 109,
+          "tail_fillers": 636,
+          "pool_start": 126772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-13.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-14",
+      "question_ids": [
+        "5ae274dd5542996483e649ad",
+        "5a80a25d5542995d8a8ddfb7",
+        "5a90b4fe55429916514e7525",
+        "5a83b4d35542996488c2e495"
+      ],
+      "answers": [
+        "Gurgaon",
+        "Sleepy Brown",
+        "110",
+        "Denmark and Norway"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31727,
+          "sha256": "8da27ff869e5033d4c612b77475522b1f7395081e28ac82b0df59a87ded2a01c",
+          "support_gaps": [
+            8293,
+            8285,
+            8224,
+            8210
+          ],
+          "gap_fillers": 39,
+          "tail_fillers": 599,
+          "pool_start": 129272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-14.txt"
+        },
+        "llama": {
+          "tokens": 31722,
+          "sha256": "53d1b9482c9c69fd13e8e06261fb137a09ef7e0740bb141bc7d0a29c7fe2d141",
+          "support_gaps": [
+            8291,
+            8288,
+            8215,
+            8198
+          ],
+          "gap_fillers": 48,
+          "tail_fillers": 634,
+          "pool_start": 129272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-14.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-15",
+      "question_ids": [
+        "5a71278c5542994082a3e5e2",
+        "5ab5057b5542991779162d56",
+        "5a7fc5875542992e7d278d67",
+        "5ae0345855429924de1b705f"
+      ],
+      "answers": [
+        "J. Cole",
+        "South Korean horror film",
+        "Fifty Pills",
+        "Las Vegas Sands company."
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31721,
+          "sha256": "1d19cbc8585e8f27fd3744e3d84af3aa5c3e16e5a2de35bb4f1c321208a06ef4",
+          "support_gaps": [
+            8327,
+            8289,
+            8281,
+            8213
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 605,
+          "pool_start": 131772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-15.txt"
+        },
+        "llama": {
+          "tokens": 31684,
+          "sha256": "6d3db7df731f2e2d114af198c705945d29b4893f16d84dfc7539735232d80139",
+          "support_gaps": [
+            8318,
+            8276,
+            8268,
+            8202
+          ],
+          "gap_fillers": 102,
+          "tail_fillers": 635,
+          "pool_start": 131772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-15.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-16",
+      "question_ids": [
+        "5ab69e4f554299710c8d1eee",
+        "5ab841d15542990e739ec89d",
+        "5a8b9cd65542997f31a41d8b",
+        "5a7a5ccf55429941d65f25d7"
+      ],
+      "answers": [
+        "child actor",
+        "American playwright and Nobel laureate in Literature",
+        "Juan Carlos Onetti Borges",
+        "Charles R. Black Jr."
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31726,
+          "sha256": "37939c3dd070d850123c3071df5d6e8b56f186e92c8fb6ea1f4d3b7eecf39616",
+          "support_gaps": [
+            8342,
+            8302,
+            8217,
+            8219
+          ],
+          "gap_fillers": 92,
+          "tail_fillers": 577,
+          "pool_start": 134272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-16.txt"
+        },
+        "llama": {
+          "tokens": 31728,
+          "sha256": "82407de5641493886bbc9f30eb2ffe242ca37e4e97ca6c255d8cb33cd05e31e0",
+          "support_gaps": [
+            8315,
+            8282,
+            8206,
+            8208
+          ],
+          "gap_fillers": 100,
+          "tail_fillers": 602,
+          "pool_start": 134272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-16.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-17",
+      "question_ids": [
+        "5ae4dd0955429960a22e0201",
+        "5ae55e6855429960a22e02d0",
+        "5ae61bfd5542992663a4f261",
+        "5a89ddf25542992e4fca83ff"
+      ],
+      "answers": [
+        "Dara Grace Torres",
+        "March 9, 1961",
+        "swingman",
+        "no"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31738,
+          "sha256": "ae666393cc1aeb74b1084fcae38e52d0b18dd76d4a8c6be8fb6158b3ace06114",
+          "support_gaps": [
+            8256,
+            8317,
+            8321,
+            8210
+          ],
+          "gap_fillers": 69,
+          "tail_fillers": 559,
+          "pool_start": 136772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-17.txt"
+        },
+        "llama": {
+          "tokens": 31681,
+          "sha256": "7b4e51c7278583071f88ac34c9f43df1e653a2557a0e74e2668bdb6946bc864b",
+          "support_gaps": [
+            8292,
+            8339,
+            8347,
+            8230
+          ],
+          "gap_fillers": 82,
+          "tail_fillers": 577,
+          "pool_start": 136772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-17.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-18",
+      "question_ids": [
+        "5ab9547755429970cfb8ea6c",
+        "5a8ca7d4554299240d9c21b8",
+        "5abc091555429965836003f6",
+        "5a8c6bd55542995e66a475ea"
+      ],
+      "answers": [
+        "87",
+        "\"Currer Bell\"",
+        "Swan Lake",
+        "Afro-Russian"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31742,
+          "sha256": "8940bd5d2d10485cb0605843e2891bc865a5f542a8db9cfe83d94d92df176479",
+          "support_gaps": [
+            8238,
+            8337,
+            8347,
+            8231
+          ],
+          "gap_fillers": 102,
+          "tail_fillers": 573,
+          "pool_start": 139272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-18.txt"
+        },
+        "llama": {
+          "tokens": 31722,
+          "sha256": "67e2241979bcb64372d1a11e91eb8cd3f06a4d104cf827a9e7ac7b723b703a0b",
+          "support_gaps": [
+            8225,
+            8314,
+            8323,
+            8203
+          ],
+          "gap_fillers": 109,
+          "tail_fillers": 603,
+          "pool_start": 139272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-18.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-19",
+      "question_ids": [
+        "5a8d6d4e554299441c6b9fdb",
+        "5a77415b55429966f1a36cd2",
+        "5a731c205542994cef4bc45d",
+        "5adc094a55429947ff1738c0"
+      ],
+      "answers": [
+        "Legoland Billund",
+        "Martin \"Marty\" McCann",
+        "restaurant chain",
+        "ZZ Top"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31719,
+          "sha256": "9635ec4a3781036ac3928a14dbc45094db844965d4f41fdc18b7f5e18fa0e196",
+          "support_gaps": [
+            8231,
+            8299,
+            8272,
+            8252
+          ],
+          "gap_fillers": 94,
+          "tail_fillers": 592,
+          "pool_start": 141772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-19.txt"
+        },
+        "llama": {
+          "tokens": 31731,
+          "sha256": "cfa544e2306b1e014b25ebd1ff9003e2e5781eddde7fdac28fd5fb364b80b9cd",
+          "support_gaps": [
+            8235,
+            8298,
+            8270,
+            8257
+          ],
+          "gap_fillers": 101,
+          "tail_fillers": 623,
+          "pool_start": 141772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-19.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-20",
+      "question_ids": [
+        "5abface75542990832d3a196",
+        "5ae2c8b05542992decbdcd9d",
+        "5a8e07b25542995085b3738d",
+        "5a753c8c55429916b01642ab"
+      ],
+      "answers": [
+        "Honey Irani",
+        "Guangzhou, China",
+        "Skyscraper",
+        "Tommy"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31718,
+          "sha256": "c0582cc5e32c4e223c68009170c7e13520379425de7e1c1067987478b0398195",
+          "support_gaps": [
+            8415,
+            8413,
+            8208,
+            8213
+          ],
+          "gap_fillers": 17,
+          "tail_fillers": 577,
+          "pool_start": 144272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-20.txt"
+        },
+        "llama": {
+          "tokens": 31743,
+          "sha256": "ab178d28ede305f93eda5573b753300a8c81042158703369acd64e8a3cb6510e",
+          "support_gaps": [
+            8403,
+            8397,
+            8207,
+            8219
+          ],
+          "gap_fillers": 28,
+          "tail_fillers": 613,
+          "pool_start": 144272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-20.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-21",
+      "question_ids": [
+        "5a78f1b555429970f5fffde9",
+        "5a7aa0a55542990198eaf165",
+        "5adf73a45542992d7e9f9378",
+        "5add4d8f5542997545bbbd25"
+      ],
+      "answers": [
+        "1975",
+        "Jacques Feyder",
+        "King Edward II",
+        "cleared a spot on the snowy field specifically for New England kicker John Smith"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31735,
+          "sha256": "6ede60c097b9d4b47966e3e11920765f778025e23f935d6d20cd3ad40b67f17d",
+          "support_gaps": [
+            8292,
+            8278,
+            8231,
+            8283
+          ],
+          "gap_fillers": 42,
+          "tail_fillers": 584,
+          "pool_start": 146772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-21.txt"
+        },
+        "llama": {
+          "tokens": 31712,
+          "sha256": "7fa409a09604fe6184d639335e8a7a4ae068e19e473831c4f5d7342260c1f33f",
+          "support_gaps": [
+            8278,
+            8260,
+            8204,
+            8240
+          ],
+          "gap_fillers": 49,
+          "tail_fillers": 609,
+          "pool_start": 146772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-21.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-22",
+      "question_ids": [
+        "5a871a5e5542996432c5721e",
+        "5a90ab995542990a98493683",
+        "5adebc9b554299728e26c79d",
+        "5ade28b15542997c77aded83"
+      ],
+      "answers": [
+        "ranch hand Jett Rink",
+        "Medinilla",
+        "Wragby Road",
+        "yes"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31739,
+          "sha256": "a66400f73d44aeafc8da8d7a4137c2e790351fef778b87fc2f74c9d756af1425",
+          "support_gaps": [
+            8192,
+            8221,
+            8251,
+            8227
+          ],
+          "gap_fillers": 129,
+          "tail_fillers": 592,
+          "pool_start": 149272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-22.txt"
+        },
+        "llama": {
+          "tokens": 31742,
+          "sha256": "ce351af3b9c1017391c118868fd73e6bbd66a48eae026de05b0f40a122ac1824",
+          "support_gaps": [
+            8265,
+            8299,
+            8324,
+            8306
+          ],
+          "gap_fillers": 139,
+          "tail_fillers": 619,
+          "pool_start": 149272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-22.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-23",
+      "question_ids": [
+        "5a728f745542991f9a20c4e6",
+        "5a8c4ebf554299585d9e365d",
+        "5a83b1e75542990548d0b220",
+        "5ab4314955429942dd415ecd"
+      ],
+      "answers": [
+        "Elle",
+        "Plato",
+        "screenwriter",
+        "4080"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31709,
+          "sha256": "e3f4a3cf6249f84da556de2d265f83e63940aa3229c64da5872acabd3276be24",
+          "support_gaps": [
+            8228,
+            8201,
+            8240,
+            8439
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 582,
+          "pool_start": 151772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-23.txt"
+        },
+        "llama": {
+          "tokens": 31734,
+          "sha256": "94ea278047aa048304e63b3c4294c06a05fca79669980f6fd615470c85d2686a",
+          "support_gaps": [
+            8237,
+            8210,
+            8238,
+            8415
+          ],
+          "gap_fillers": 100,
+          "tail_fillers": 615,
+          "pool_start": 151772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-23.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-24",
+      "question_ids": [
+        "5ae66d515542992ae0d16346",
+        "5a79093955429974737f794b",
+        "5ae36ee05542992f92d822c4",
+        "5a85cd295542997175ce202b"
+      ],
+      "answers": [
+        "1927",
+        "Michel Butor",
+        "November 6, 2018",
+        "Athenion"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31734,
+          "sha256": "85f30083d05c448e3a8a77fc3cb3e0a6c9190282a22b1aba815317084b7ba049",
+          "support_gaps": [
+            8208,
+            8274,
+            8231,
+            8234
+          ],
+          "gap_fillers": 65,
+          "tail_fillers": 583,
+          "pool_start": 154272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-24.txt"
+        },
+        "llama": {
+          "tokens": 31723,
+          "sha256": "979e92cc53bebb1d9ab9a73e406e3461aafc4f090850fefedae2453e353a9eba",
+          "support_gaps": [
+            8196,
+            8260,
+            8214,
+            8212
+          ],
+          "gap_fillers": 77,
+          "tail_fillers": 617,
+          "pool_start": 154272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-24.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-25",
+      "question_ids": [
+        "5a874e9b554299211dda2bd3",
+        "5a84fd085542994c784ddaba",
+        "5a8777395542996e4f3087f3",
+        "5ab61668554299488d4d9aa6"
+      ],
+      "answers": [
+        "fashion model",
+        "various names",
+        "Jean-Marc Vallée",
+        "Faurot Field"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31729,
+          "sha256": "f4adf0884cc63ccc46dc6ca15891f51de94cdfec90f8ac56665189cd77951e9d",
+          "support_gaps": [
+            8288,
+            8249,
+            8277,
+            8208
+          ],
+          "gap_fillers": 71,
+          "tail_fillers": 590,
+          "pool_start": 156772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-25.txt"
+        },
+        "llama": {
+          "tokens": 31741,
+          "sha256": "06e8d158bebfec5d69c93d83eb3ac1cb619a4e52108effd2e1d1c844523d6536",
+          "support_gaps": [
+            8284,
+            8250,
+            8278,
+            8222
+          ],
+          "gap_fillers": 84,
+          "tail_fillers": 614,
+          "pool_start": 156772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-25.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-26",
+      "question_ids": [
+        "5ae40a2955429970de88d8a3",
+        "5ae00de055429906c02daab5",
+        "5a7f4cb055429969796c1a02",
+        "5a89217455429938390d4039"
+      ],
+      "answers": [
+        "Liguria",
+        "Philip K. Dick",
+        "AT&T",
+        "small family car"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31728,
+          "sha256": "cebffab2144150f0c0d9a7a42b0606d56917a6679809fa9c29e8948714f97b20",
+          "support_gaps": [
+            8198,
+            8276,
+            8425,
+            8572
+          ],
+          "gap_fillers": 98,
+          "tail_fillers": 592,
+          "pool_start": 159272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-26.txt"
+        },
+        "llama": {
+          "tokens": 31730,
+          "sha256": "2c41817874f7c0a23a71a543738dde1d6a0481616304c704c0945d0032662bfe",
+          "support_gaps": [
+            8211,
+            8281,
+            8430,
+            8574
+          ],
+          "gap_fillers": 110,
+          "tail_fillers": 619,
+          "pool_start": 159272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-26.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-27",
+      "question_ids": [
+        "5a7cffb755429907fabef09f",
+        "5ae4ad3155429913cc2044cb",
+        "5a80fb97554299260e20a1eb",
+        "5ae22eae554299495565da30"
+      ],
+      "answers": [
+        "Hugh Dowding",
+        "yes",
+        "Elizabeth Gaskell",
+        "310"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31740,
+          "sha256": "f71403250e3369cf7d724f9477b953537eceed90bda2ec3eaa6d82367b421c58",
+          "support_gaps": [
+            8201,
+            8247,
+            8244,
+            8366
+          ],
+          "gap_fillers": 60,
+          "tail_fillers": 596,
+          "pool_start": 161772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-27.txt"
+        },
+        "llama": {
+          "tokens": 31717,
+          "sha256": "b68e0ac6e21dac84659d3fee3f63cb47f2690edad72048bbd8e20df14a7a3c84",
+          "support_gaps": [
+            8250,
+            8290,
+            8285,
+            8396
+          ],
+          "gap_fillers": 69,
+          "tail_fillers": 626,
+          "pool_start": 161772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-27.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-28",
+      "question_ids": [
+        "5a89e2ba5542992e4fca8441",
+        "5abd573c55429924427fcfb7",
+        "5a817d8c55429903bc27b974",
+        "5adf8dd25542993344016cfe"
+      ],
+      "answers": [
+        "John Meston",
+        "NHL",
+        "five months",
+        "#364"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31728,
+          "sha256": "f8dd8082f11592603a831878a91d3e52a57fce5fb1b210657be213f4b5f5f622",
+          "support_gaps": [
+            8193,
+            8226,
+            8344,
+            8342
+          ],
+          "gap_fillers": 45,
+          "tail_fillers": 584,
+          "pool_start": 164272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-28.txt"
+        },
+        "llama": {
+          "tokens": 31697,
+          "sha256": "59a2fcb725c38c2bd2881abb3560c257b748c1e94b96f7acdaac0e868b4b903e",
+          "support_gaps": [
+            8247,
+            8285,
+            8395,
+            8393
+          ],
+          "gap_fillers": 60,
+          "tail_fillers": 597,
+          "pool_start": 164272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-28.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-29",
+      "question_ids": [
+        "5a7e05f75542995f4f402394",
+        "5a8b99a45542997f31a41d7f",
+        "5ac4241e5542997ea680ca10",
+        "5ab852c05542990e739ec8c5"
+      ],
+      "answers": [
+        "China Blue",
+        "Neha Sharma",
+        "Somerset County",
+        "Ngadi Chuli"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31737,
+          "sha256": "9450dd4141208769b397e89c0d2b9ee22bab304d59d83f74bf9b379d7e7b48d6",
+          "support_gaps": [
+            8332,
+            8355,
+            8292,
+            8216
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 608,
+          "pool_start": 166772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-29.txt"
+        },
+        "llama": {
+          "tokens": 31732,
+          "sha256": "4dc0630ddb49095c256b0411f1166aed6ec8aadac2159ba917bf7266867588ad",
+          "support_gaps": [
+            8318,
+            8349,
+            8285,
+            8209
+          ],
+          "gap_fillers": 101,
+          "tail_fillers": 644,
+          "pool_start": 166772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-29.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-30",
+      "question_ids": [
+        "5adf5c175542995ec70e8fd0",
+        "5ac2bbd0554299218029db09",
+        "5a8f13d55542997ba9cb31c9",
+        "5ab2da13554299194fa93542"
+      ],
+      "answers": [
+        "Jaguar Land Rover",
+        "American",
+        "Ozzie Newsome Jr.",
+        "Connor"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31733,
+          "sha256": "731b57ab96298c3c8063f993aee934f2eee19e0c176d12fdb67312a561fde8aa",
+          "support_gaps": [
+            8204,
+            8211,
+            8281,
+            8218
+          ],
+          "gap_fillers": 65,
+          "tail_fillers": 602,
+          "pool_start": 169272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-30.txt"
+        },
+        "llama": {
+          "tokens": 31709,
+          "sha256": "6017cfa3015e6c5358c0c25491cc18db14594839d14c6e901c9ef8c5cadbfe63",
+          "support_gaps": [
+            8203,
+            8227,
+            8291,
+            8235
+          ],
+          "gap_fillers": 77,
+          "tail_fillers": 628,
+          "pool_start": 169272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-30.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-31",
+      "question_ids": [
+        "5a7b2a2255429927d897bf4c",
+        "5a727ca45542994cef4bc2d8",
+        "5a83d7d05542992ef85e237a",
+        "5ac559bd5542993e66e82328"
+      ],
+      "answers": [
+        "The Incredibles",
+        "Westfield Old Orchard",
+        "Liberty Enlightening the World",
+        "heavy metal"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31706,
+          "sha256": "9cda02c8298eda4df1fa0fd0c8bc7e3f87116b400256f4635dc23d22595dbe2e",
+          "support_gaps": [
+            8446,
+            8454,
+            8284,
+            8204
+          ],
+          "gap_fillers": 94,
+          "tail_fillers": 619,
+          "pool_start": 171772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-31.txt"
+        },
+        "llama": {
+          "tokens": 31738,
+          "sha256": "a78887aa4ee7c223791a5dcd62881dcf16d131b2c754b18bd43bbc69c9efc21c",
+          "support_gaps": [
+            8457,
+            8464,
+            8306,
+            8232
+          ],
+          "gap_fillers": 102,
+          "tail_fillers": 650,
+          "pool_start": 171772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-31.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-32",
+      "question_ids": [
+        "5a7149595542994082a3e76f",
+        "5a8b6a5155429949d91db5a3",
+        "5ae352285542994393b9e685",
+        "5a77452155429972597f14e1"
+      ],
+      "answers": [
+        "Henry Albert \"Hank\" Azaria",
+        "Nia Sanchez",
+        "1967",
+        "Round Table Pizza"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31730,
+          "sha256": "46b06ac925012bbaac3853b3356fc814821bad8b386ce6c206851654ffea36f4",
+          "support_gaps": [
+            8232,
+            8240,
+            8195,
+            8273
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 596,
+          "pool_start": 174272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-32.txt"
+        },
+        "llama": {
+          "tokens": 31729,
+          "sha256": "41ed7193e3f501ac157188a6e4acdb17ec37730dc068d9a06f04b486f43c0bcb",
+          "support_gaps": [
+            8232,
+            8241,
+            8197,
+            8274
+          ],
+          "gap_fillers": 100,
+          "tail_fillers": 630,
+          "pool_start": 174272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-32.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-33",
+      "question_ids": [
+        "5a7a014a5542996c55b2dccf",
+        "5ab69f13554299710c8d1ef3",
+        "5ab587ad5542992aa134a34b",
+        "5a8ba45b554299240d9c2051"
+      ],
+      "answers": [
+        "Bismarck",
+        "China",
+        "Charles Lutwidge Dodgson",
+        "200,167"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31715,
+          "sha256": "4954fd11e6e7591bfa20ccf2aafab709fd55d152651d43a58deed67232f54c77",
+          "support_gaps": [
+            8226,
+            8303,
+            8346,
+            8281
+          ],
+          "gap_fillers": 112,
+          "tail_fillers": 596,
+          "pool_start": 176772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-33.txt"
+        },
+        "llama": {
+          "tokens": 31729,
+          "sha256": "0c727b79dcc1bc838b57a1f83ca5cdf54e0ebe024d72ec046c669526dc0e722c",
+          "support_gaps": [
+            8193,
+            8267,
+            8308,
+            8251
+          ],
+          "gap_fillers": 121,
+          "tail_fillers": 626,
+          "pool_start": 176772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-33.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-34",
+      "question_ids": [
+        "5a7f96a95542995d8a8ddead",
+        "5ab953a45542996be202047f",
+        "5a7327265542994cef4bc480",
+        "5ababbe9554299232ef4a38a"
+      ],
+      "answers": [
+        "no",
+        "1883",
+        "Christopher Whitelaw Pine",
+        "Margery Williams"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31719,
+          "sha256": "ead373306831085f7e3c8f1c3f5bbc46c08a7e73893591f5d9aafcdd89533d5a",
+          "support_gaps": [
+            8230,
+            8272,
+            8263,
+            8283
+          ],
+          "gap_fillers": 105,
+          "tail_fillers": 556,
+          "pool_start": 179272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-34.txt"
+        },
+        "llama": {
+          "tokens": 31736,
+          "sha256": "1d9a40cb99f9f478ebed2433d09e22181eeedd35449d2f01123e9b803d7cb1b0",
+          "support_gaps": [
+            8202,
+            8241,
+            8239,
+            8248
+          ],
+          "gap_fillers": 113,
+          "tail_fillers": 583,
+          "pool_start": 179272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-34.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-35",
+      "question_ids": [
+        "5ae088525542993d6555eba1",
+        "5aba65a055429939ce03dcd2",
+        "5ac3b9c5554299657fa2911b",
+        "5a8f6b7c5542992414482abc"
+      ],
+      "answers": [
+        "no",
+        "North African Arab",
+        "Bob Dylan",
+        "The Primettes"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31741,
+          "sha256": "d42e3ee39f8b55df67aef9b32b73d46698b9405b5b6bc45268a1d0aea815bed7",
+          "support_gaps": [
+            8504,
+            8529,
+            8435,
+            8313
+          ],
+          "gap_fillers": 72,
+          "tail_fillers": 563,
+          "pool_start": 181772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-35.txt"
+        },
+        "llama": {
+          "tokens": 31717,
+          "sha256": "57e8d842e5d5d02cb6f4d7945302b49995b54b564164d4db55855ceaeb692a19",
+          "support_gaps": [
+            8418,
+            8443,
+            8364,
+            8252
+          ],
+          "gap_fillers": 80,
+          "tail_fillers": 602,
+          "pool_start": 181772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-35.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-36",
+      "question_ids": [
+        "5ab85e9e55429934fafe6d8b",
+        "5ab455dc5542991779162c77",
+        "5a8f55aa554299458435d5bc",
+        "5ae5ef105542996de7b71a72"
+      ],
+      "answers": [
+        "1614",
+        "brother-in-law",
+        "Aksel Sandemose",
+        "Book of Judges"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31741,
+          "sha256": "9ceaf604e8776b2e2103917b6df246f728da1bd41b60528ffcd0f6c5a8d4fb36",
+          "support_gaps": [
+            8239,
+            8240,
+            8222,
+            8307
+          ],
+          "gap_fillers": 63,
+          "tail_fillers": 581,
+          "pool_start": 184272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-36.txt"
+        },
+        "llama": {
+          "tokens": 31722,
+          "sha256": "ff8c73bc4ff8ce4b777ea389387e0d6b865570f33582610b290d69be2e42293e",
+          "support_gaps": [
+            8237,
+            8247,
+            8222,
+            8305
+          ],
+          "gap_fillers": 71,
+          "tail_fillers": 607,
+          "pool_start": 184272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-36.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-37",
+      "question_ids": [
+        "5a901d6c5542995651fb50bd",
+        "5ae1c90e554299234fd042f7",
+        "5ae12b6755429920d52342e4",
+        "5a8eb51655429917b4a5bdb5"
+      ],
+      "answers": [
+        "Noori",
+        "Frederick Wallace \"Fred\" Smith",
+        "in Singapore",
+        "Graffiti"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31744,
+          "sha256": "d8a36cc53632e2ee4666320c25f1fa747284798fe2e771ad918b41c0e154d0f5",
+          "support_gaps": [
+            8330,
+            8330,
+            8227,
+            8240
+          ],
+          "gap_fillers": 122,
+          "tail_fillers": 581,
+          "pool_start": 186772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-37.txt"
+        },
+        "llama": {
+          "tokens": 31732,
+          "sha256": "7567b2a220241902476af0ad49f911f76d8e3531480c7b31f9a5767601217a67",
+          "support_gaps": [
+            8297,
+            8297,
+            8195,
+            8217
+          ],
+          "gap_fillers": 128,
+          "tail_fillers": 613,
+          "pool_start": 186772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-37.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-38",
+      "question_ids": [
+        "5adbe447554299438c868ccd",
+        "5a8ad6db55429950cd6afba7",
+        "5a886b7555429938390d3f4d",
+        "5ae5d82f554299546bf82f9a"
+      ],
+      "answers": [
+        "yes",
+        "Sufism",
+        "1960s",
+        "3"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31723,
+          "sha256": "8b9ea01400684bc5404a4897f0044a266e612ff88e824418ccb648ba61d3317b",
+          "support_gaps": [
+            8251,
+            8197,
+            8318,
+            8263
+          ],
+          "gap_fillers": 39,
+          "tail_fillers": 593,
+          "pool_start": 189272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-38.txt"
+        },
+        "llama": {
+          "tokens": 31716,
+          "sha256": "d768bb6978d334102980545963022de7c1164f3c36e0d4761a45ffc9e6d8552a",
+          "support_gaps": [
+            8266,
+            8215,
+            8335,
+            8283
+          ],
+          "gap_fillers": 47,
+          "tail_fillers": 620,
+          "pool_start": 189272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-38.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-39",
+      "question_ids": [
+        "5a8b81bc55429949d91db5b8",
+        "5a84f06f5542994c784dda92",
+        "5a74872655429979e2882978",
+        "5ab5f854554299637185c64e"
+      ],
+      "answers": [
+        "magazine",
+        "public",
+        "Taylor Swift",
+        "Pakistani"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31716,
+          "sha256": "6b0c7fa565ae71ac3a82dea9846d11a512bed3f2776f945b2e03d55f6785b76d",
+          "support_gaps": [
+            8198,
+            8361,
+            8326,
+            8306
+          ],
+          "gap_fillers": 108,
+          "tail_fillers": 606,
+          "pool_start": 191772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-39.txt"
+        },
+        "llama": {
+          "tokens": 31730,
+          "sha256": "b1ccdc3f67f8a8d21fe31468b11311d05084148fc1b299395cbb15b5cd764220",
+          "support_gaps": [
+            8219,
+            8382,
+            8347,
+            8326
+          ],
+          "gap_fillers": 119,
+          "tail_fillers": 621,
+          "pool_start": 191772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-39.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-40",
+      "question_ids": [
+        "5abf931f5542990832d3a158",
+        "5a78c235554299078472775d",
+        "5abbfb5e554299114383a0d0",
+        "5a7ddd565542997cc2c474b2"
+      ],
+      "answers": [
+        "2005",
+        "Ferdinand",
+        "Skatoony",
+        "Sister Anthony, S.C."
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31729,
+          "sha256": "cafafe8d8df08c7e97d256c49502b722c3eb2384d9d98d35e414ad5373af0d58",
+          "support_gaps": [
+            8237,
+            8223,
+            8210,
+            8273
+          ],
+          "gap_fillers": 65,
+          "tail_fillers": 552,
+          "pool_start": 194272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-40.txt"
+        },
+        "llama": {
+          "tokens": 31707,
+          "sha256": "e7955b20c54836dc8b9e45f07254e11c605d4c0924a2840f16b0c7e6df2d0832",
+          "support_gaps": [
+            8230,
+            8221,
+            8209,
+            8276
+          ],
+          "gap_fillers": 72,
+          "tail_fillers": 584,
+          "pool_start": 194272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-40.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-41",
+      "question_ids": [
+        "5add53fe5542992200553ab1",
+        "5a88a4e65542997e5c09a671",
+        "5a7a276d5542996c55b2dd27",
+        "5ac308135542990b17b154f4"
+      ],
+      "answers": [
+        "Middle Palaeolithic period",
+        "a Ghanaian boxer",
+        "Colonel Charles Hastings Judd",
+        "1241 until his death in 1250"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31733,
+          "sha256": "816cee134132a1fbaf3322ab0b26bd72c47693e40b824fb53c80ae8a86563495",
+          "support_gaps": [
+            8210,
+            8341,
+            8396,
+            8495
+          ],
+          "gap_fillers": 57,
+          "tail_fillers": 600,
+          "pool_start": 196772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-41.txt"
+        },
+        "llama": {
+          "tokens": 31731,
+          "sha256": "895fee644efee07feb775c64f92be879926e2b3152330a631b21c945802b6c41",
+          "support_gaps": [
+            8229,
+            8354,
+            8403,
+            8499
+          ],
+          "gap_fillers": 67,
+          "tail_fillers": 624,
+          "pool_start": 196772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-41.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-42",
+      "question_ids": [
+        "5ae7f41c5542997ec2727701",
+        "5ac375495542995ef918c1a3",
+        "5ac0c3275542992a796ded7d",
+        "5adc368155429944faac2468"
+      ],
+      "answers": [
+        "Consigliere of the Outfit",
+        "Roman Kostomarov",
+        "Cleveland Press",
+        "Pablo Escobar"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31735,
+          "sha256": "b0ca838a0dc906764b7739e154c113e774933adc311ce87290bef7dfd0d5b6e2",
+          "support_gaps": [
+            8306,
+            8210,
+            8232,
+            8236
+          ],
+          "gap_fillers": 86,
+          "tail_fillers": 578,
+          "pool_start": 199272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-42.txt"
+        },
+        "llama": {
+          "tokens": 31736,
+          "sha256": "c9f1843200df9d46a61a53bc98ed9c6222170ab333df1ca1891e45c8344a1c91",
+          "support_gaps": [
+            8298,
+            8209,
+            8221,
+            8225
+          ],
+          "gap_fillers": 101,
+          "tail_fillers": 597,
+          "pool_start": 199272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-42.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-43",
+      "question_ids": [
+        "5ab613985542992aa134a418",
+        "5adc3aff5542996e685252eb",
+        "5a7b57155542992d025e680f",
+        "5adc861c5542994d58a2f62c"
+      ],
+      "answers": [
+        "aluminum foil",
+        "Sir Derek George Jacobi",
+        "film",
+        "Comodoro Arturo Merino Benítez International Airport"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31730,
+          "sha256": "73873758e24bef45e8da5afa45e12644b9a50d1683d40c6707db7a4e87802ed0",
+          "support_gaps": [
+            8326,
+            8335,
+            8292,
+            8203
+          ],
+          "gap_fillers": 103,
+          "tail_fillers": 613,
+          "pool_start": 201772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-43.txt"
+        },
+        "llama": {
+          "tokens": 31702,
+          "sha256": "5daa37e727a6b7b5dabcf78d90885fa62ee31a4aa51daee6875ece6dd082ca39",
+          "support_gaps": [
+            8290,
+            8303,
+            8261,
+            8193
+          ],
+          "gap_fillers": 111,
+          "tail_fillers": 639,
+          "pool_start": 201772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-43.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-44",
+      "question_ids": [
+        "5a876cd55542993e715abf36",
+        "5ac0d1555542997d64295a5d",
+        "5a73522d5542994cef4bc541",
+        "5ab6973f554299110f219a25"
+      ],
+      "answers": [
+        "KT Music",
+        "Kurt Gerron",
+        "526",
+        "Security Management is the monthly magazine of ASIS International"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31707,
+          "sha256": "dba59eb42f59fc73077e54fa78b7710b567df061b8a86ddb344246fbc1730c24",
+          "support_gaps": [
+            8348,
+            8220,
+            8197,
+            8285
+          ],
+          "gap_fillers": 77,
+          "tail_fillers": 582,
+          "pool_start": 204272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-44.txt"
+        },
+        "llama": {
+          "tokens": 31725,
+          "sha256": "5b06de7d7c23a3fe8ca3f0185c3ef100eee709a85f014908bc1ed8e3b23d5016",
+          "support_gaps": [
+            8344,
+            8225,
+            8200,
+            8280
+          ],
+          "gap_fillers": 87,
+          "tail_fillers": 605,
+          "pool_start": 204272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-44.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-45",
+      "question_ids": [
+        "5a75c02f5542992db94736b4",
+        "5a7a33a35542994f819ef14c",
+        "5abe535055429976d4830aea",
+        "5ab2b7c1554299166977406a"
+      ],
+      "answers": [
+        "Himalchuli has three main peaks: East (7893 m), West (7540 m) and North (7371 m)",
+        "Anne",
+        "Montreal",
+        "John M. Dowd"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31705,
+          "sha256": "e2ab5f8286e0b092d56045582751287a77e255fecf444759cf51aafa8e6b9233",
+          "support_gaps": [
+            8526,
+            8544,
+            8304,
+            8237
+          ],
+          "gap_fillers": 83,
+          "tail_fillers": 593,
+          "pool_start": 206772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-45.txt"
+        },
+        "llama": {
+          "tokens": 31720,
+          "sha256": "3041c2a2423a3b3839f76953cbd0ea13f9f254f905994b587e8f0e6f09a60116",
+          "support_gaps": [
+            8505,
+            8521,
+            8287,
+            8228
+          ],
+          "gap_fillers": 95,
+          "tail_fillers": 622,
+          "pool_start": 206772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-45.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-46",
+      "question_ids": [
+        "5adcecbd5542992c1e3a24b7",
+        "5ae2c6bf554299492dc91c6c",
+        "5ab934465542996be202043e",
+        "5ac3271e554299218029dbd3"
+      ],
+      "answers": [
+        "most performed song of all time",
+        "Karl Kraus",
+        "yes",
+        "Chelmsford"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31722,
+          "sha256": "829b9335cfff104bbc72ec56f67f57265b702f58024a935c48af454ae655518c",
+          "support_gaps": [
+            8401,
+            8341,
+            8244,
+            8310
+          ],
+          "gap_fillers": 76,
+          "tail_fillers": 590,
+          "pool_start": 209272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-46.txt"
+        },
+        "llama": {
+          "tokens": 31705,
+          "sha256": "5580ccf27c2e2ad61310d38dc217ddbe0e795780b71462f0e3fb8709bc8e7cb4",
+          "support_gaps": [
+            8379,
+            8322,
+            8222,
+            8288
+          ],
+          "gap_fillers": 85,
+          "tail_fillers": 619,
+          "pool_start": 209272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-46.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-expand-47",
+      "question_ids": [
+        "5ab28a87554299449642c8ec",
+        "5ae14def55429901ffe4ae4a",
+        "5a77720255429967ab10517f",
+        "5a773ec45542994aec3b7245"
+      ],
+      "answers": [
+        "Pulitzer Prize",
+        "yes",
+        "1985",
+        "Simone Bolelli"
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31721,
+          "sha256": "7959e6dbed9f75c966530ba42c3ea3e8717f815a53a64b2e325e4f5f3c762ad6",
+          "support_gaps": [
+            8227,
+            8250,
+            8249,
+            8355
+          ],
+          "gap_fillers": 100,
+          "tail_fillers": 588,
+          "pool_start": 211772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/qwen/hotpot-four-expand-47.txt"
+        },
+        "llama": {
+          "tokens": 31712,
+          "sha256": "97ea73f496f39242a96fcc19cb8e0ce525e0d5ef2114528ff552111960efa464",
+          "support_gaps": [
+            8205,
+            8230,
+            8233,
+            8332
+          ],
+          "gap_fillers": 110,
+          "tail_fillers": 610,
+          "pool_start": 211772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four_expand/llama/hotpot-four-expand-47.txt"
+        }
+      }
+    }
+  ],
+  "n": 48,
+  "identity_source_sha256": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+  "order": {
+    "totals": [
+      16,
+      32,
+      64
+    ],
+    "maximum_requests": 64,
+    "identity_source": "research/phase1/splits/hotpot.json",
+    "identity_split": "expand",
+    "manifest": "research/phase1/splits/hotpot_four_expand.json",
+    "grouping": "preserve original 16 V requests; four consecutive expansion questions per new request",
+    "new_group_offset": 16,
+    "stop_on_length_admission_insufficient_at_cap": true
+  }
+}

@@ -32,7 +32,7 @@ class RepresentationEvaluateTest(unittest.TestCase):
                 "query": [torch.randn(4, 8, generator=generator) for _ in range(2)],
             })
         self.settings = {
-            "measurement_version": "paired-propagation-diagnostics", "top_k": 3,
+            "measurement_version": "paired-propagation-diagnostics",
             "bootstrap_seed": 17, "bootstrap_resamples": 20,
         }
         self.expected = {blob["id"] for blob in self.captured}
@@ -47,7 +47,7 @@ class RepresentationEvaluateTest(unittest.TestCase):
             return [
                 row for blob in self.captured
                 for row in evaluate._score_item(
-                    blob, None, scales, self.settings, refresh_matrix
+                    blob, None, scales, refresh_matrix
                 )
             ]
 
@@ -72,7 +72,7 @@ class RepresentationEvaluateTest(unittest.TestCase):
         self.assertEqual(set(full), {"k_pre8", "k_pre4", "k_post8", "k_post4", "v8", "v4"})
 
     def test_paired_schema_and_output_decomposition(self) -> None:
-        """默认四种配对只存核心分数指标，整层误差分解和竞争记录完整。"""
+        """默认四种配对保存核心分数指标和完整整层误差分解。"""
         rows = self._rows(False)
         self.assertEqual(len(rows), 8)
         for row in rows:
@@ -85,7 +85,6 @@ class RepresentationEvaluateTest(unittest.TestCase):
                     self.assertGreaterEqual(head["paired_probability_kl"], 0)
                 self.assertAlmostEqual(layer["output"]["difference_residual"], 0, places=12)
                 self.assertIn("key_prediction_relative_error", layer["output"])
-                self.assertEqual(len(layer["competition"]["pair_rows"]), 12)
 
     def test_full_matrix_has_17_cells_and_cumulative_bytes(self) -> None:
         """主矩阵仍为 17 格，并累加各题容量而不改成题均容量。"""
@@ -206,6 +205,41 @@ class RepresentationEvaluateTest(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 evaluate.summarize_only("qwen", "current-maintenance")
         finalize.assert_not_called()
+
+    def test_finalize_generates_layer_statistics_for_new_and_historical_runs(self) -> None:
+        """新运行无历史审核仍生成逐层统计；旧运行保留实际测量标识。"""
+        rows = self._rows(False)
+        for historical in (False, True):
+            measurement_version = "h1-paired-v2" if historical else self.settings[
+                "measurement_version"
+            ]
+            provenance = {"commit": "measurement", "measurement_version": measurement_version}
+            if historical:
+                provenance["review"] = {"detail_checks": {"pairs": {"stale": True}}}
+            manifest = {
+                "detail_path": "research/.runtime/representation_diagnostics-qwen.jsonl",
+                "detail_sha256": "detail-hash", "expected_items": self.expected,
+                "settings": self.settings, "provenance": provenance,
+                "matrix_payload": {"commit": "frozen"}, "measurement_status": {},
+            }
+            with self.subTest(historical=historical), \
+                    patch.object(evaluate, "project_root", return_value=Path("virtual-project")), \
+                    patch.object(evaluate, "_sha256", return_value="detail-hash"), \
+                    patch.object(evaluate, "_expected_items", return_value=self.expected), \
+                    patch.object(evaluate, "_read_rows", return_value=iter(rows)), \
+                    patch.object(evaluate, "_code_hashes", return_value={"module": "hash"}), \
+                    patch.object(evaluate, "write_results") as write:
+                evaluate._finalize("qwen", manifest, "maintenance")
+            diagnostic = write.call_args.args[2]
+            self.assertEqual(diagnostic["measurement_version"], measurement_version)
+            self.assertEqual(diagnostic["provenance"]["commit"], "measurement")
+            review = diagnostic["provenance"]["review"]
+            self.assertEqual(set(review["detail_checks"]["pairs"]), set(evaluate.PAIRS))
+            self.assertEqual(len(review["detail_checks"]["pairs"][evaluate.PAIRS[0]][
+                "layer_means"
+            ]), 2)
+            self.assertEqual(review["statistics_derivation"]["commit"], "maintenance")
+
 
 
 if __name__ == "__main__":

@@ -1,3 +1,2 @@
-experiments/**/results/**/*.json text eol=lf
-source_index.json text eol=lf
-splits/static_retrieval.json text eol=lf
+# 已完成测量与发布源码保留原始换行字节，不由 Git 自动转码。
+* -text !eol

@@ -1,0 +1,449 @@
+{
+  "max_new_tokens": 1024,
+  "reset": "At first different next-token argmax, reconstruct earlier generated KV from BF16 sources in the same candidate format, then decode the same input token.",
+  "conditions": [
+    {
+      "name": "k8v4-per_token-pre",
+      "h": 0
+    },
+    {
+      "name": "k8v4-per_token-post",
+      "h": 0
+    },
+    {
+      "name": "k8v4-per_channel-pre",
+      "h": 8
+    }
+  ],
+  "selection": "Per task: three largest summed positive BF16-minus-candidate score losses across two models and three candidates; one exact-score stable control across all six comparisons; ties by ID. Frozen before replay.",
+  "cases": [
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 20.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 21.052631578947366,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 21.052631578947366,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100.0,
+          "bf16": 100.0
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 238.0,
+      "id": "5ae7fd085542993210984007",
+      "task": "hotpot",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 23.529411764705884,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 21.052631578947366,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100.0,
+          "bf16": 100.0
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 155.0,
+      "id": "5ac1ff2255429964131be2b3",
+      "task": "hotpot",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 33.33333333333333,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 37.5,
+          "bf16": 37.5
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 37.5,
+          "bf16": 37.5
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 0.0,
+          "bf16": 37.5
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 105.0,
+      "id": "5a7ef49a5542994959419a91",
+      "task": "hotpot",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 75.0,
+          "bf16": 75.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 75.0,
+          "bf16": 75.0
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 75.0,
+          "bf16": 75.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100.0,
+          "bf16": 100.0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100.0,
+          "bf16": 100.0
+        }
+      ],
+      "role": "stable_control",
+      "loss": 0.0,
+      "id": "5a738b855542992d56e7e363",
+      "task": "hotpot",
+      "stable": true
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 0,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 100.0,
+      "id": "gsm8k-train-2131",
+      "task": "gsm8k",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 0,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 0,
+          "bf16": 0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 0
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 0
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 100.0,
+      "id": "gsm8k-train-2684",
+      "task": "gsm8k",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 0,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        }
+      ],
+      "role": "quality_regression",
+      "loss": 100.0,
+      "id": "gsm8k-train-2887",
+      "task": "gsm8k",
+      "stable": false
+    },
+    {
+      "comparisons": [
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "qwen",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-pre",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_token-post",
+          "candidate": 100,
+          "bf16": 100
+        },
+        {
+          "model": "llama",
+          "config": "k8v4-per_channel-pre-residual8",
+          "candidate": 100,
+          "bf16": 100
+        }
+      ],
+      "role": "stable_control",
+      "loss": 0.0,
+      "id": "gsm8k-train-1",
+      "task": "gsm8k",
+      "stable": true
+    }
+  ],
+  "schema": "kv-propagation-v1",
+  "sources": [
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json",
+      "sha256": "b735c25fa42311ae1979ae825185aa3abf5733485ccd069c256025b9a8f36109"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json",
+      "sha256": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
+      "sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual8.json",
+      "sha256": "75cbd050edd1ba0c17dd4ec1d8dd8ce8a96c91ab7fab9d585b6769553cb4ec3e"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json",
+      "sha256": "fa2039551ab04234e826f32e9deabe50b6318a93b2c64b9ed11cca7cb66ff1c9"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json",
+      "sha256": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json",
+      "sha256": "ef8459980f8acc6410be821315eb393a711ab0523d25972ac04d86c3d6cf9918"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual8.json",
+      "sha256": "5b1d4745c97991e1fb9da7622a2050873bf80244d21715d7f50bfc057fee0cc6"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json",
+      "sha256": "0dc0ea8faeeea012f50f1cf82509c83fee533250a353253b10cf9e8fa498fcb5"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json",
+      "sha256": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
+      "sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual8.json",
+      "sha256": "8bca861550a249ec107479ad9d1ec17ebce0c2a746c6bf0078cf0d443a6198f2"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json",
+      "sha256": "030e2bfa28c7c675d3e2eaf56db8dc14e4a8eeab81ddb80f9d883c7eeaf83c4d"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json",
+      "sha256": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json",
+      "sha256": "26256661d46d3f3355975c269a4a12b702bd21228416199a32b255c395de9647"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual8.json",
+      "sha256": "100cdb63e19002dc9fb38abaf86ab15c439293c7075e2968f0353d14877fe0fd"
+    }
+  ],
+  "paired_free_generation": "A same-device BF16 reproduction differed from the historical record while the legacy and observed paths were token-identical. Generate paired candidate answers in the diagnostic run; historical scores select cases only and remain unchanged."
+}

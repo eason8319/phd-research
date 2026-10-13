@@ -4,59 +4,26 @@ from __future__ import annotations
 
 import hashlib
 import json
-from typing import Any
 
 import pyarrow.parquet as pq
 import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from phase1.models import MODELS, _eos_ids
 from phase1.result_format import write_quality_result
+from phase1.reuse import GENERATION_RESULTS, require_missing_result
 from phase1.runner import cache_lists, decode_step, load_model, prefill
+from phase1.runner import generate_bf16
 from phase1.score import gsm8k_exact
-
-MODELS = {
-    "qwen": "models/Qwen2.5-7B-Instruct",
-    "llama": "models/Llama-3.1-8B-Instruct",
-}
-
-
-def _eos_ids(tokenizer: Any, llama: bool) -> set[int]:
-    if llama:
-        return {128001, 128008, 128009}
-    values = []
-    for token in ("<|im_end|>", "<|endoftext|>"):
-        values.append(int(tokenizer.convert_tokens_to_ids(token)))
-    return set(values)
-
-
-def _generate(model: Any, input_ids: torch.Tensor, eos: set[int]) -> list[int]:
-    outputs = prefill(model, input_ids)
-    keys, values = cache_lists(outputs.past_key_values)
-    first = int(outputs.logits.view(-1, outputs.logits.shape[-1])[0].argmax())
-    produced = [first]
-    if first in eos:
-        return produced
-    token = first
-    for step in range(1023):
-        logits, keys, values = decode_step(
-            model, keys, values, token, int(input_ids.shape[1]) + step
-        )
-        token = (
-            int(logits.view(-1)[0].argmax()) if logits.ndim == 1
-            else int(logits.view(-1, logits.shape[-1])[0].argmax())
-        )
-        produced.append(token)
-        if token in eos:
-            break
-    return produced
 
 
 def run(model_key: str, commit: str, split: str = "v") -> None:
-    """在冻结的 C 或 V 题目上运行高精度基线并保存逐题评分。"""
-    if split not in ("c", "v"):
+    """在报告使用的冻结 V 题目上运行高精度基线并保存逐题评分。"""
+    if split != "v":
         raise ValueError(f"不支持的数据划分: {split}")
     root = project_root()
+    require_missing_result(root / GENERATION_RESULTS / model_key / f"{split}_gsm8k_bf16.json")
     llama = model_key == "llama"
     tokenizer = AutoTokenizer.from_pretrained(root / MODELS[model_key])
     model = load_model(str(root / MODELS[model_key]))
@@ -68,7 +35,7 @@ def run(model_key: str, commit: str, split: str = "v") -> None:
     meta = json.loads(
         (root / "research/manifests/data/gsm8k.source.json").read_text(encoding="utf-8")
     )
-    table = pq.read_table(meta["destination"])
+    table = pq.read_table(root / meta["destination"])
     questions = table.column("question").to_pylist()
     answers = table.column("answer").to_pylist()
     out = root / "research/phase1/experiments/generation_error_sources/results" / model_key
@@ -84,7 +51,9 @@ def run(model_key: str, commit: str, split: str = "v") -> None:
             add_generation_prompt=True,
             **kwargs,
         )
-        produced = _generate(model, torch.tensor([ids], device="cuda"), eos)
+        produced, stop = generate_bf16(
+            model, torch.tensor([ids], device="cuda"), eos, 1024
+        )
         text = tokenizer.decode(produced, skip_special_tokens=True)
         ok = gsm8k_exact(text, answers[item["row"]])
         correct += int(ok)
@@ -96,7 +65,7 @@ def run(model_key: str, commit: str, split: str = "v") -> None:
             "id": item["id"], "correct": ok, "new_tokens": len(produced),
             "input_tokens": len(ids),
             "input_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest(),
-            "stop": "eos" if produced[-1] in eos else "limit", "invalid_groups": 0,
+            "stop": stop, "invalid_groups": 0,
         })
         print(item["id"], ok, len(produced), flush=True)
     payload = {

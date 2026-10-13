@@ -12,16 +12,18 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.quantized_generation import (
-    _config, _decode_step, _prefill_cache,
-)
-from experiments.generation_error_sources.code.short_baseline import _eos_ids
 from experiments.static_layer_allocation.code.content import (
-    capture_source, quantized_trace, read_input, reference_trace, save,
+    capture_source,
+    quantized_trace,
+    read_input,
+    reference_trace,
+    save,
 )
 from experiments.static_layer_allocation.code.content_metrics import token_metrics
 from experiments.static_layer_allocation.code.protocol import digest, load_plan
+from kvstudy.paths import project_root
+from phase1.generation import _config, _decode_step, _prefill_cache
+from phase1.models import _eos_ids
 from phase1.representation import MODELS
 from phase1.runner import decode_step, load_model
 

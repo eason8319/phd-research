@@ -1,0 +1,2041 @@
+{
+  "protocol": "phase1-new-input-quality-sources",
+  "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+  "completed_utc": "2026-10-10T02:08:18.762022+00:00",
+  "summary": {
+    "path": "research/phase1/experiments/generation_error_sources/results/new_input_quality.json",
+    "sha256": "81af15472ac34bdae8241d7f5119b322efb044d5677dabc31dbf01b7290ef3d1",
+    "bytes": 32444
+  },
+  "frozen_execution": {
+    "execution_root": "research/.runtime/new-input-quality/recovery/execution_root",
+    "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+    "publication_sha256": "1616f6b25ebbc82150740ae718cac481de800441c9c70163d0e8604a12ed03d6",
+    "tracked_files": {
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+      "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+      "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+      "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+      "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+      "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+    },
+    "python_files": {
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+      "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+      "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+      "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+      "research/phase1/src/phase1/complete_experiments.py": "a400b0145d7b04b34b32f484ce822444070c621813b07caa8770600c9cba538d",
+      "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/phase1/src/phase1/review_results.py": "07257b2509c727e1feba09cd90d288c4d80f4312273642aa389197bf76c80cf8",
+      "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/splits_build.py": "f79bf9724777a47b064f42fe6de2dafd4476dccbdb78f5a4e906ee0bae838882",
+      "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+      "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/generation_error_sources/code/candidates.py": "56a595255e95271a70f37f0cc073e9b86ea249515c6c71be0c7192cf28ab1397",
+      "research/phase1/experiments/generation_error_sources/code/cross_token_groups.py": "c039fd72071607a3d8fb3a41bd0c837b43c7ad54241cde6e857c6fb42d907d45",
+      "research/phase1/experiments/generation_error_sources/code/early_stop.py": "a8629e0392879c88b9734f42f783b520bd932f6106008c877abe2b54a2b613d6",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+      "research/phase1/experiments/generation_error_sources/code/range_refit.py": "3fed386dcbef34f7e8e6e8002c8db2be6ec370f0a964a2246b425601a88b885b",
+      "research/phase1/experiments/generation_error_sources/code/scale_drift.py": "eccf10a423162774ea4adb87ef2d7afa3ef5979ed42693c2a3d60855b2dce6a9",
+      "research/phase1/experiments/generation_error_sources/code/select.py": "7048915da065965cd544d26eff57a0c3118985cdeb9c91468a8b14325a94124d",
+      "research/phase1/experiments/generation_error_sources/code/select_long_decode.py": "3f52d76d1d6369efecb2bc0711cb3b1b1070b390beb2ea99dda866590ac772c4",
+      "research/phase1/experiments/generation_error_sources/code/select_residual.py": "80d47b2aacf5f32c5909695d55f56b572989b702715344ab4eff7e4f8b00a50b",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
+      "research/phase1/experiments/generation_error_sources/code/trajectories.py": "0c2aecb0843bc3521a93b7d7b2547b003e0e11ecf73992464cd6d364d32bbc1a",
+      "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "0171b438d8b2c297af94b70d7bb9df4e290aabd400b8090166a480346ee8b084",
+      "research/phase1/experiments/generation_error_sources/code/trajectory_results.py": "df6c8f769ca5c8c486c5d9586c987046644e37c3220fb476f6703b0fcd756cd3",
+      "research/phase1/experiments/generation_error_sources/code/answer_review.py": "8d8a7684c20f074ede77851fb38460f3a5dcc6438196abbcf4c9896726460f8a",
+      "research/phase1/experiments/generation_error_sources/code/trajectory_replay.py": "209c13d8457aeb0dc45640cdab2659ca31e4ec1e1005a11b61e85b27555ffe62",
+      "research/phase1/experiments/generation_error_sources/code/review_trajectories.py": "84fb66c173507e18dc54075b9ae1f68f16554d8bdb85726e995b2c4ab94bd806",
+      "research/phase1/experiments/generation_error_sources/code/plot_trajectories.py": "4c5d8b53fd1ab4fec7c8f4b8ea4bea2d38687a58810aa32a295d0e8683853e60",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+      "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+      "research/phase1/experiments/representation_interactions/code/evaluate.py": "6e1f295ef08726bae1eef4ad991a22913f506c1390fa967bd19e049868f15996",
+      "research/phase1/experiments/representation_interactions/code/metrics.py": "ffc1fc6293b267a095d4a3ec0bdeeb09b03c0721b310ca5fe81b21437c1c9a70",
+      "research/phase1/experiments/representation_interactions/code/results.py": "d16f05d0a61e1ab668687d66afd02cd2304ab85b7a775f91b56471f0750bb455",
+      "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+      "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee"
+    },
+    "shared_paths": [
+      "models",
+      "research/.runtime",
+      "research/manifests",
+      "research/phase1/experiments/generation_error_sources/results"
+    ],
+    "reason": "Use verified frozen numerical sources while preserving current project source changes",
+    "memory_estimate_gib": [
+      28,
+      34
+    ],
+    "memory_uncertainty_margin_gib": 2,
+    "completed_requests_before_resume": 400,
+    "validation": {
+      "tracked_hashes_verified": 18,
+      "python_hashes_verified": 46,
+      "baseline_requests": 160,
+      "completed_requests": 400,
+      "frozen_module": "research/.runtime/new-input-quality/recovery/execution_root/research/phase1/experiments/generation_error_sources/code/quantized_generation.py",
+      "regression_tests": 10,
+      "verification_code_sha256": "13fae0904f1bd1977b37bb18bca060e69b58455f8bc8093d3dcd91fb77fabba9",
+      "verification_output_sha256": "421d8006d9d7a8b11a96e794ac6257c0261e41abd5d1f6e785f7d3966084342a",
+      "regression_output_sha256": "658ee8f6638e043f6c54394b34e4db8d602800e29e7a22d408d54348127930fd"
+    }
+  },
+  "frozen_execution_index": {
+    "path": "research/.runtime/new-input-quality/recovery/frozen_execution.json",
+    "sha256": "3f1665e7b71421bd1a5fd2b83616d78f2ec208dd14495a494a621de182f9a5f8",
+    "bytes": 9834
+  },
+  "resume_admission": {
+    "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+    "frozen_index_sha256": "3f1665e7b71421bd1a5fd2b83616d78f2ec208dd14495a494a621de182f9a5f8",
+    "wrapper_path": "research/.runtime/new-input-quality/recovery/resume_frozen.py",
+    "wrapper_sha256": "3874b79c81cce0a32e766d6a0cdeb6eabfaaebe4553af3986aa4fae05091af3d",
+    "frozen_execution_root": "research/.runtime/new-input-quality/recovery/execution_root",
+    "completed_requests": 535,
+    "capacity_before_resume": {
+      "utc": "2026-10-10T00:26:30.092302+00:00",
+      "node": "node8",
+      "gpu": "0",
+      "name": "NVIDIA RTX 6000 Ada Generation",
+      "free_mib": 48627,
+      "total_mib": 49140,
+      "estimate_peak_gib": [
+        28,
+        34
+      ],
+      "uncertainty_margin_gib": 2
+    },
+    "previous_episode_path": "research/.runtime/new-input-quality/recovery/resume_history/20261010T002630093519",
+    "policy": "Check selected GPU before every group; wait without altering frozen inputs"
+  },
+  "entities": [
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_bf16.json",
+      "sha256": "7dfe090ee8f8431597431f67d3743523a15d70f1f1c3aec8a954fed1d18af564",
+      "bytes": 27337,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "role": "reused_bf16",
+      "prediction_source": {
+        "path": "research/.runtime/retrieval-ruler/qwen.json",
+        "sha256": "67cf4eaac70035065214d0c1465a5594a95468927734396cd4ff8f116db0e2a7",
+        "bytes": 28179
+      },
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_kv8-per_token-post.json",
+      "sha256": "2dbc2cb2a9ae99a326983077015d118335244276faa505bcf9dfc20cc41fea6e",
+      "bytes": 51428,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "config": "kv8-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "execution_source": {
+        "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "f74a6778fc9c1a4aa61e9544c4a805a1a4040ff07585a9cc5bbeba58df53ca1b",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "b8657ee81b06efd136c8955b3a7f03c0f55c758238dfa4e49b8a024e8ad957ce"
+        },
+        "scope": "new-input three candidates plus kv8",
+        "planned_new_generations": 640
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-retrieval_ruler-v-kv8-per_token-post.json",
+        "sha256": "26b8a9c3f53748ab316557ccfd20967efa39fa3e014e49e36ee61d0184b6bc91",
+        "bytes": 51797
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_token-pre.json",
+      "sha256": "e149f98b0075c6fd8ca57f5a3d03de47dc543e5b83f801a164d2ed251871a0cb",
+      "bytes": 51446,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_token-pre",
+      "residual_bits": 0,
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "execution_source": {
+        "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-retrieval_ruler-v-k8v4-per_token-pre.json",
+        "sha256": "3ed78351cb4a1c6b8d6ef474c210e9fbf4404ac528681b6b28a5c20bd48b3b42",
+        "bytes": 51815
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_token-post.json",
+      "sha256": "186464cfdfd2e52bbb344917974d6ffd1a2f52d55fc7fe9e7239d5ebad6484c5",
+      "bytes": 51512,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "execution_source": {
+        "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-retrieval_ruler-v-k8v4-per_token-post.json",
+        "sha256": "de7d636e9eacd60f1f6bc30b12ad8414d7f58ee7d658b905a0d3209656445a9d",
+        "bytes": 51880
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_channel-pre.json",
+      "sha256": "ede749be64d7795d2ed204c0cb40d8ab282cc37544a4626f61f4ddce78395566",
+      "bytes": 51583,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 0,
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "execution_source": {
+        "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-retrieval_ruler-v-k8v4-per_channel-pre.json",
+        "sha256": "a73ea996a7f859f2a700834fc29242067483551a375e32d5ced66e021cc13f07",
+        "bytes": 51945
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_channel-pre-residual8.json",
+      "sha256": "a74daeabab74d0880ad1a228147585433dbcc2a33804089ba188d659b9193d62",
+      "bytes": 52235,
+      "model": "qwen",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 8,
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "execution_source": {
+        "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-retrieval_ruler-v-k8v4-per_channel-pre-residual8.json",
+        "sha256": "c5ee7c4297d44944dcf3ca771fdce4ff3c6686300c7ca350556c4fc9d85fc60c",
+        "bytes": 52587
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_bf16.json",
+      "sha256": "c2b178ebbf5fd43961482f6afe9743dbd3347fe42d3694f5e37ba1c39eb0bd8d",
+      "bytes": 18306,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "role": "reused_bf16",
+      "prediction_source": {
+        "path": "research/.runtime/four-question-decode/qwen.json",
+        "sha256": "b1efc46ce34aad528ec6980ff3d552c40c2e6302e15806c7b86ec4c4f94afd83",
+        "bytes": 165887
+      },
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_kv8-per_token-post.json",
+      "sha256": "3d95170bd98068b6e30db79d4867a52f2bb9d868af14d26ec8ead1784b667f1a",
+      "bytes": 20636,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "config": "kv8-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-kv8-per_token-post.json",
+        "sha256": "cf29ad6e4b266550d2b37de40aa3af8ceb14d67b35220a2386445d32183df39b",
+        "bytes": 97691
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_token-pre.json",
+      "sha256": "64a44749c39c2997f172c65e6885ff0bd68515058d4bc59c831f52654485c075",
+      "bytes": 20467,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "config": "k8v4-per_token-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_token-pre.json",
+        "sha256": "52cc9912cede56f60d10afb6d8565baff73890a750580de0a8e491de174b2c52",
+        "bytes": 96484
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_token-post.json",
+      "sha256": "2ec49f3b3b95205c94855d9a6b21fe71981375770a3147c8f2e47200564f94d6",
+      "bytes": 20706,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "config": "k8v4-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_token-post.json",
+        "sha256": "c40f26687d6d4a4ac33f1f481db8fb6dc1ffe05ed08a4551e8d348e0ea4e3e87",
+        "bytes": 93349
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_channel-pre.json",
+      "sha256": "b1bd7d851f898d249791266b7866a39ee27f47d2ce3efffc2f3cf930f721afa1",
+      "bytes": 21113,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "sha256": "7484a23a1323c693f863cbfc12c7fa9d7630642da827bd0356c47cad9c597651",
+        "bytes": 99203
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_channel-pre-residual8.json",
+      "sha256": "c5058618de9893d6402b9a1bf0ac17cc8246ae08cb529d703986ea94efe3a4f5",
+      "bytes": 20499,
+      "model": "qwen",
+      "task": "hotpot_four",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 8,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre-residual8.json",
+        "sha256": "401b28d93db1a98a346f626fd0cd1e59b9a9c6cb9627988c38ec6e8fb035a3f8",
+        "bytes": 91087
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_bf16.json",
+      "sha256": "c9d7466f6b0c256697ff488ad845ce32b1c17c9b78d1850822d2eb4c9926c180",
+      "bytes": 27275,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "role": "reused_bf16",
+      "prediction_source": {
+        "path": "research/.runtime/retrieval-ruler/llama.json",
+        "sha256": "518b36de9b4e6bae3a7b828bc77d1849551758175886df38ff5cad543314c0ba",
+        "bytes": 27653
+      },
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_kv8-per_token-post.json",
+      "sha256": "fb7e44f1ad52d8a7c74ea68dfb723a20faf54fc31bf903ff8802cebea906acbe",
+      "bytes": 51448,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "config": "kv8-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-retrieval_ruler-v-kv8-per_token-post.json",
+        "sha256": "707f2a6183e637a42cf050ec98d51dd2ff5933c7cc145be77ac60c0c826d6a88",
+        "bytes": 51362
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_token-pre.json",
+      "sha256": "e48021b47adcd15ccd13b92c7b3568ea92ccb90c32cd195a600fabaea5669bf8",
+      "bytes": 51448,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_token-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-retrieval_ruler-v-k8v4-per_token-pre.json",
+        "sha256": "c5dec5fac2d6e9288384352cb0084f7bf180a149f1009bee81fcd64730469c34",
+        "bytes": 51362
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_token-post.json",
+      "sha256": "523bd189c04739d92f9f8850f5611f32f9fdedff446a23ac0989366f6aba726d",
+      "bytes": 51514,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-retrieval_ruler-v-k8v4-per_token-post.json",
+        "sha256": "8b639d7378477ff7b2ce4c6f828ff7e79c5607af5693ed5b52fd7d58e683404d",
+        "bytes": 51427
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_channel-pre.json",
+      "sha256": "c5a01e2934411cb50134700c8bf951997d80c7092225623dad69fd936d3cc912",
+      "bytes": 51585,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-retrieval_ruler-v-k8v4-per_channel-pre.json",
+        "sha256": "a7b3c3f4d8e6b946e0074315efa64e7058da85c4f2daca49d5e9a93c6aa2e7bd",
+        "bytes": 51492
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_channel-pre-residual8.json",
+      "sha256": "e78ac047575f11bfda947e113ddf1c66258a086f7d15c3e96d57e8a47a896177",
+      "bytes": 52237,
+      "model": "llama",
+      "task": "retrieval_ruler",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 8,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-retrieval_ruler-v-k8v4-per_channel-pre-residual8.json",
+        "sha256": "8c919354a7a365d4084f6ae5ad22420ccdc8a8e28a70c4a665e28e6d3b92245b",
+        "bytes": 52134
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_bf16.json",
+      "sha256": "3595c3aba6737edb0d129062b2f9734c3e8de3477244626e7aedfe305b63cf95",
+      "bytes": 17725,
+      "model": "llama",
+      "task": "hotpot_four",
+      "role": "reused_bf16",
+      "prediction_source": {
+        "path": "research/.runtime/four-question-decode/llama.json",
+        "sha256": "e72d97dbb2da2ad58d26c67029e45631c7abbd5bb51a8180b6d0879886dc77e4",
+        "bytes": 201844
+      },
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_kv8-per_token-post.json",
+      "sha256": "e6c898b56176377b3c8d7488140e79c0433164baed561d795618aa86a986e380",
+      "bytes": 19985,
+      "model": "llama",
+      "task": "hotpot_four",
+      "config": "kv8-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-kv8-per_token-post.json",
+        "sha256": "bdf371ae009f135cb1ea2c15fd0cd03716254d0607d5720a7febce066c945f15",
+        "bytes": 114462
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_token-pre.json",
+      "sha256": "715639f7bb187206efee9280b08ef9e01d48c419b79d7e80d51559013f7f9d4e",
+      "bytes": 19983,
+      "model": "llama",
+      "task": "hotpot_four",
+      "config": "k8v4-per_token-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-pre.json",
+        "sha256": "3910b27059eeda7601c0e699e9e522165a6eec92586e07e0a5b53987a0504a5d",
+        "bytes": 114557
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_token-post.json",
+      "sha256": "aba77829a502959360c910ddc975e11634d6cc68a6641bcfcfe17fe5f0b492d3",
+      "bytes": 19955,
+      "model": "llama",
+      "task": "hotpot_four",
+      "config": "k8v4-per_token-post",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "sha256": "d60ea2b589af8a2ab533c085c9dedce6ee87408cf268c0b8d4eb8c41cba5fa2b",
+        "bytes": 112756
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_channel-pre.json",
+      "sha256": "121dbe22bb60bb1af6f686581072e870ef249b9a601dbc36ff559b837e3dd5e1",
+      "bytes": 19896,
+      "model": "llama",
+      "task": "hotpot_four",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 0,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_channel-pre.json",
+        "sha256": "1bff8a383ed763538d5d5c120bfac39a99da5ca7f5c950f36ced047b312c1a7b",
+        "bytes": 107910
+      }
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_channel-pre-residual8.json",
+      "sha256": "6edca6a80805dc9b1d1890f9bc3af5ef2f810c30e5ab6aa392b06b2fbb0d15a5",
+      "bytes": 20235,
+      "model": "llama",
+      "task": "hotpot_four",
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 8,
+      "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+      "execution_source": {
+        "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+        "files": {
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+          "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+          "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+        },
+        "scope": "new-input three candidates, offline pre H=0, plus kv8",
+        "planned_new_generations": 800
+      },
+      "execution_device": {
+        "name": "NVIDIA RTX 6000 Ada Generation",
+        "total_bytes": 51002867712,
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1"
+      },
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_channel-pre-residual8.json",
+        "sha256": "cfe189fcca17fd501e8ebe5399e16318ad6d675280960e87a5fff507aeb23e3e",
+        "bytes": 119009
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0000.txt",
+      "sha256": "162b416ec940dbd34926b0be03f4dcb9fa162d150974253c10da7b9c7e01953e",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0001.txt",
+      "sha256": "dacf89a9f1f0d1c9256561392ad6858cdaa93138a93d9e954450cc1620d184ec",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0002.txt",
+      "sha256": "2780ecf802e7f21b68d76b87766baa06863f63ea3ae803c44e1384b1b1796f22",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0003.txt",
+      "sha256": "d22d4e001e9431e5a10b2bd4378dda3beb5295920a419bcf8104a7aebaee1b9d",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0004.txt",
+      "sha256": "1029df067cfb96f7fdc1578368befcce391193f305b86b7c65484fb0fd325667",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0005.txt",
+      "sha256": "7afdce7626a51367d334823fd36885d381900a37ef4299683bdf0172b2b6649b",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0006.txt",
+      "sha256": "db9ac283294db04b486560f29b887301bb2a4b57d5cffd4523697149a541fb92",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0007.txt",
+      "sha256": "dedb8d0a8babdd669c42eaa9b1c4c50a30eec18c00d1bd6079d7fe6767d91464",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0008.txt",
+      "sha256": "35dee3226bfadacefe77b73c4bf5c4921336e024239674b594b4fdfee557c8fb",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0009.txt",
+      "sha256": "cccb1c486599b55827163e5da4068d458f730dd41f9e247307837d0a3d87594b",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0010.txt",
+      "sha256": "6559c72b52e2b660f6e0fa1b247a552fcd668649440b048aac992646d62b022c",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0011.txt",
+      "sha256": "2681a0c6c55394ae1b8f2f099451f59096277d7368ab5da45c8a6879389635ed",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0012.txt",
+      "sha256": "59ce370618ea44ff522b1283a1d079569eea75bae41a13c7b8fc049bd209679e",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0013.txt",
+      "sha256": "e3efda1a8e0d7196656ba790b69ae20c050497a9275b1f26001b5d7fb5a95e2d",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0014.txt",
+      "sha256": "f42139d2b5de7baef54fd26968078db4b183caa95f0b499c2df2344ad26b6e12",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0015.txt",
+      "sha256": "6468dfa7604fa0da888c90da68372bfdfa92555041729596fdf863434ab17de4",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0016.txt",
+      "sha256": "bcfe6123df0202d0d6333e1199c9e4ee7b6922bd7791f6c52d3069403dafcbeb",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0017.txt",
+      "sha256": "579378b893fb0376f569399be9f1024df0b56de097ed49bdf48d0fa8cd57c6a8",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0018.txt",
+      "sha256": "22937f7795a152b62813bf4bcf2984459ee414cfcaf355f9cd20db5022096f78",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0019.txt",
+      "sha256": "d694bcbc865e867983a969ce399592f2841271a1753d6be7a190aa6aafe6eb1e",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0020.txt",
+      "sha256": "b9ee0a85a7a7f6357a447001ee1fabb089c03f816375c0e217a3e089b697a29c",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0021.txt",
+      "sha256": "09511d620027c0ebb7df104bed8b08e3aa54d9cf7aea5f3c8bee0b049c823bdd",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0022.txt",
+      "sha256": "53e22cefbc21ad58542a9d70e11bee54ff592e55dfbf307d0c4394ca9b7e53fd",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0023.txt",
+      "sha256": "90fcffd568ea4ef911495d7e010c2d6e5b98b802b2c78a6b4baf72350ffd19ab",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0024.txt",
+      "sha256": "4bab9f47619b89e9346f2e06719ee5eb0048d0f4a7d5fd77c788dfa0d0c8ec15",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0025.txt",
+      "sha256": "4bf7359058e1a5a224ab1d780ec563258c695c2a63e0fda627f160589499c5c1",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0026.txt",
+      "sha256": "40fe58a94be00b68558ccac36373878896823cfac6fe77b68253dfc6172f3f59",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0027.txt",
+      "sha256": "92dbfea0e6fff5868995a37b0b80f20e33b6da8efc615e18d59f3156aac3dfdb",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0028.txt",
+      "sha256": "2d5539b48042dac0991f96021f00e9b1c317e1142e2df74ee927f7a54434b3d5",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0029.txt",
+      "sha256": "c88ad6f00d1751b9414884c65ef621b7c50bc57b4da9c68a74fdcd469c588832",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0030.txt",
+      "sha256": "cb67f4878b8376c28f894699ea1e3a7f3c0baa47138337e22839a8e07ef28aa3",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0031.txt",
+      "sha256": "4709608cf2856c3053b604938c7e9a35f804638b4f2404b3063cc3a980cea1c4",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0032.txt",
+      "sha256": "5003043f62b5d21ef212fa368a1ae664ff017df635946f2aeda4510fa6560e95",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0033.txt",
+      "sha256": "2c8e07a3643aa09a1801a26c362af1d13032521ace1a05d09be2716e26036934",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0034.txt",
+      "sha256": "6e5c98fc1a5b4aeaf54b8e13930df98c7682bf48a6e175ac346d17e139ebf440",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0035.txt",
+      "sha256": "bf557a578e39adb9a35135d4742183575ab33862daf3ebc28426bc7702da2d24",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0036.txt",
+      "sha256": "a0b2bce4a07a3459e1c8a161d60a52ceffde6efb4cdc4c4a50b728307601c2f3",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0037.txt",
+      "sha256": "4a74ce6612a4c21f38caf94218b82f03f2e4bf375709dd309cb0e8375f7b4c92",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0038.txt",
+      "sha256": "22254a5ce05d623993fa6097ec500b65df87130003f2e4656e7b63c09d6877b9",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0039.txt",
+      "sha256": "6183b18636e71fc4afc4a3cbdd0d2577243c64274d9ebbd8cb67648b93805bb5",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0040.txt",
+      "sha256": "c21d66197fb3c1199e92f9e1208a150f4bac5b572b325fd18255166f9d61ce11",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0041.txt",
+      "sha256": "dafff390b2ed60c21a1cf89458a5e8a241741ab63f540add2002fd9b1823fd72",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0042.txt",
+      "sha256": "ba9168b721f2fa8a5a2ae2ecde28b2c7ad7d257ea82a9338a57026fcc05a3b63",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0043.txt",
+      "sha256": "b3f293d5c44e8cf1425f759a94d4b2d6231b761206c1091757e5b6abdfc1d703",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0044.txt",
+      "sha256": "3798572aa63ed025ebc8ac1806fab924ae2bde9d7e13eb8c0861828508146201",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0045.txt",
+      "sha256": "74ea7b863c1dbc7556442e4f3f83e691659c7db864a19862bc339b5fdf945294",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0046.txt",
+      "sha256": "ab0d177ffbf963cbe1db7c922b38450bc2f690b153175ca2b56b6180952dd94d",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0047.txt",
+      "sha256": "5779e6b9d8eb6b49b5a24208fd57c68da0fac84c21ae83241227ea37e44891c9",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0048.txt",
+      "sha256": "64f24211339a456ca41f9d7627b2676a3e3862eb7acda8e81abfe0464e9d3169",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0049.txt",
+      "sha256": "976679b6db3646956257f81420a73f623ab889da9efb3573b67749e9dc1f9e7f",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0050.txt",
+      "sha256": "ba6569fbfeafa95fb85fc082b3fe02ef4fd68b2383f93bfed05dcc7fbedf4710",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0051.txt",
+      "sha256": "bffa5d1052342cae057e0518bd6e8f5721076ffeee1eb4727b1c19f71863bcf4",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0052.txt",
+      "sha256": "191775cfa0bb3e6f0f1ea9029f24f46b374a2722ad4957bcbed148f35726da06",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0053.txt",
+      "sha256": "ef714f71fc3ec2449b54a0dcf34b427bdbcf5fe577b29d4c4e932d3a5179a8b9",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0054.txt",
+      "sha256": "a4c7c9b535e225df7d1405c5e5a9f9b0093024a28ab5c60b84b4ec8af912ab18",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0055.txt",
+      "sha256": "9ca758cab0633e4500638784c1f7436980fc907dd2aa5c38e84a458699838dcd",
+      "bytes": 118982
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0056.txt",
+      "sha256": "f3820b31244503bcdc77761f1804d05631e33258bbb4eac5e3508ce7738d8d67",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0057.txt",
+      "sha256": "fe890777f92c24407edc95fcd7dd42ad12e66285320f81f10a32564273bd4d0c",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0058.txt",
+      "sha256": "9ef2e4672f0404343c53cc4ed4f2fcd5699571072f63e28cabea7b72dc1fa3f7",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0059.txt",
+      "sha256": "4d2c0ef8e85c89a45b79fad6b0aed8fc16b535d72e77ba007d8f9c98786fbb6a",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0060.txt",
+      "sha256": "528cb37eaf82138f62623b7d86885e83a175aa754fb3d62cfcd7debda9421efe",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0061.txt",
+      "sha256": "5aa4081ca2c55c330c8a4ad563b1494e48b5dae6c68001ba8996a838bb12d98d",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0062.txt",
+      "sha256": "aabe743bd3d597270da7c24dc5c3cd939a2b9fec5a21a365272ebb337241525b",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0063.txt",
+      "sha256": "8c3ffa4488c3224444f09344403f8aba4a54846cbf9e16616ea7e499c67686e2",
+      "bytes": 118668
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-00.txt",
+      "sha256": "68c93906c37c7a54cd5495977b53e37c3078570869cd1e009022d20a952c9367",
+      "bytes": 125671
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-01.txt",
+      "sha256": "99843a4a59d17dce9b7af133dd666fd807c76ced77e76e7d8177c045d2eda9bb",
+      "bytes": 124916
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-02.txt",
+      "sha256": "42ea804a12695c30287665f05e0b5e5a2460c2af8cd0a505b7ae880df3214d62",
+      "bytes": 125692
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-03.txt",
+      "sha256": "fbf0ec788623ea18437cac6934616e6708ef20231dae663d8f33a7be4d700d37",
+      "bytes": 132795
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-04.txt",
+      "sha256": "bc85131258f206566a381e3fcd8767b7c0f52a89dda48000615ada8f0b4c2a24",
+      "bytes": 129013
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-05.txt",
+      "sha256": "ac113364599349d552730765e609b709ffbeac1fd642d72e0c7c0faa4dbd0b6d",
+      "bytes": 130545
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-06.txt",
+      "sha256": "0264eb50f4c00d494dc8decd388c95e65844693f7945453dce8404daaf8a9b44",
+      "bytes": 128618
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-07.txt",
+      "sha256": "ef4591014f7973e1a9fc62a34f80d3208276459ced4090075038103b08b0aeb5",
+      "bytes": 128068
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-08.txt",
+      "sha256": "4593ffb1f05f2a52e519c879418e33049921110a25ed48b4bb6f4f1427157bd3",
+      "bytes": 129966
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-09.txt",
+      "sha256": "0b7cb5ec0a438103472c065c28c5299cfa91145821ef896e343bb1775a882114",
+      "bytes": 126605
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-10.txt",
+      "sha256": "5dba64dce5a003e9eb66cf6238c8ed40600ced0031d43ec1718502d8bee1d97a",
+      "bytes": 128267
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-11.txt",
+      "sha256": "ae5dd97a4d469c911ee88674cf8b557f2e82db94c045ec3755eaf94f161d7665",
+      "bytes": 127573
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-12.txt",
+      "sha256": "dc03a303e7a8951c5354e6ca9bcc79f14beb4fd01459d2af59aab93aed1c7467",
+      "bytes": 130146
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-13.txt",
+      "sha256": "48c618df9425972cb1999a1f2d4b378676e03cbe98ad245306420adcc756e8c1",
+      "bytes": 128315
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-14.txt",
+      "sha256": "f866fd04ceff9171fba79ee7141382bfa7229be8b31307455a4db247eadb796e",
+      "bytes": 128283
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-15.txt",
+      "sha256": "edd7e478a3882f72c409ff5c468cf2ef889abc1a5611d281cf768b35491043d2",
+      "bytes": 128831
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0000.txt",
+      "sha256": "639d3f93c75de8167b46cd61ecbd8e613a7310e555a30ac18f00e9b1c2508fe9",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0001.txt",
+      "sha256": "bb888083d98dd7eeba5116c3ce9459ed7d3b2d3448fa4daf7fd927259781bb8e",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0002.txt",
+      "sha256": "c1c469171fa180e57791512584578d7f90acf0dfc5491ed37d203e6f07f61d47",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0003.txt",
+      "sha256": "b74202654eb6f7c0e670751b3147464be3356ee9abd017f73282a906b6ddf70e",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0004.txt",
+      "sha256": "7d7959f5cc2c162664abbb416e8a579edb062e28ebff748f19e5856724bd7da8",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0005.txt",
+      "sha256": "e0a295311bfe921e73df0946dde74bd5b8970bea2be137d0a865488ec2e70abf",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0006.txt",
+      "sha256": "0e68f126ce747d6e5b2e55dcf2dbcb54c2500320ca85325eabf227c7ce188295",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0007.txt",
+      "sha256": "1a81f4b6ac38303d1b03ab100a41f907a70ed8ef761dbbe10d48f7cccfd85c8b",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0008.txt",
+      "sha256": "dfc2435c6c65fd3bd6ff791e1b86a269b2f8ecc613615cc7453b16f5b39a09e4",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0009.txt",
+      "sha256": "6903d99f77f527b858ec44e107192f32045a0c27c80c2e570a30802e98422a02",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0010.txt",
+      "sha256": "3c58ff3f93dd845154599b5210ffe0479f0be9bc7eadbcddbb164b73d89c92cf",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0011.txt",
+      "sha256": "57d10b5409fceb79e2d3371701f00fa7ba6d1a1ea2bb4e8ec0e611413baec088",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0012.txt",
+      "sha256": "b2d7fc4d6aaa8bf7d1b2a20f7a4736eb5845cdb125814a2a8d89f09af93c089a",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0013.txt",
+      "sha256": "e7437ab4d02c119e8e05ec2b1c304577a0bbdf1c11693430a92aa7bd24ed50b3",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0014.txt",
+      "sha256": "76d96e8cc141d3b5e2889c1acb9b257f2464e71d00a70efcc22c724bdd123343",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0015.txt",
+      "sha256": "780b45f1d9a309e10c0141d75c1488a225d81a7959433584f3ca3c7c08dd3ff9",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0016.txt",
+      "sha256": "552245a58e87b767e7fac9014dab9b485e73c910d7cd9ac870c0ec8486ea4af9",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0017.txt",
+      "sha256": "5d98e4188fa8beaa8e4dab944a2d8090bdd8bdec1bfa2a52468b09a016b3a102",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0018.txt",
+      "sha256": "c87ea6c4d7af81f1dfa26d4f5773a5a52a60fca00d9647c2671095215a6e7241",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0019.txt",
+      "sha256": "82dc24780b66462b70787f0738b3f5594e5ad1c3ab46bcbf82ddb9008c148987",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0020.txt",
+      "sha256": "715c04c89d16e54981b96d480a9654d3501f37ca7f2371c4263ed27c8e952545",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0021.txt",
+      "sha256": "3f0a537e0ff9b9ee86262190e0dfee26819ec39528ab5f99fa288045146126e6",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0022.txt",
+      "sha256": "ae4b79c677573201ece9569a5407ddcada7e37192b40c3c4c578d54a8a391453",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0023.txt",
+      "sha256": "f0ba71843badb527e3d55e6fbbf9a30216c5f8bc0dc603fe403573b8acc5cf6b",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0024.txt",
+      "sha256": "d16f109267b40cc72b9b7721f22db4c529f33d1b119f9a51019ad816c2d59ae9",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0025.txt",
+      "sha256": "138b6c962a17f238aa9b21b0ab932c07ec3bc1daf1ee435456025dfb93606349",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0026.txt",
+      "sha256": "5632046184c36c4269937155aab1888a8e2a49806318697927d217eb1f5f6be4",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0027.txt",
+      "sha256": "1c46efbb55f8a01f02c955b7c7f91fd9417050c6dc7d91acbc1ed7a05bc606f0",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0028.txt",
+      "sha256": "dfbe09ff5332b50b47ddf5268e421315ef11520b3ba05c96aff1266a1f1cf94d",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0029.txt",
+      "sha256": "077168a8bba9e4179feff768337c450dcc2eb716d8d43834a011dffd7a3bd7ee",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0030.txt",
+      "sha256": "1d366bfd1bfadad2bc9edeb1b326af9623322e114c59ddbb959c0ac9b909fe49",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0031.txt",
+      "sha256": "50c0374f02d5044897eb44361a683556385060c483e8924cf398ff222386f4d8",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0032.txt",
+      "sha256": "6a320d3b5c1a431dea3b52489b9ad926df5892a664f72773c09e89653ff8eec9",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0033.txt",
+      "sha256": "84faa928b9123f79f907b8b2df48d8b3b17e95962b73f6334a5aa4d624b21e55",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0034.txt",
+      "sha256": "69f2780c289efda1fecc276148cf952f72d714c3b98d544d8c8fa6dfb223b39f",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0035.txt",
+      "sha256": "312fb1b84c65a1b19a634d0b6280e0f7f49b2867a7bf65dfe518880f2e5c75ea",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0036.txt",
+      "sha256": "564727f519d76dccd5c842f0a5815afd2032273dce1c61dc47f1f1dcd707b027",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0037.txt",
+      "sha256": "a685bf242d32bd2f9ae56c426482c58efe56012eb57db9c3cef129352fc65a95",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0038.txt",
+      "sha256": "6a3536e3d663d54c6e0693a8ce0865000779bc0246d2226619302c8452556662",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0039.txt",
+      "sha256": "17c0f12199365f5243c2944f31658e191ac7411b13c586418bcf62658403b5ef",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0040.txt",
+      "sha256": "1a74b887b98a0ec3dbc5f2d31e3a788526499fe5395fec6074815153d28b7047",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0041.txt",
+      "sha256": "0bd3af06a3be5d649952a17f20589a2603ca280a96f84b453ca97a4180f57de9",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0042.txt",
+      "sha256": "ede71ecfa739528386bb160fe245767ccc23188100aafde9a55867c9ef6ac576",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0043.txt",
+      "sha256": "f99d21f2b2cac86dc803ea6bf925d5a54cc8a5899fcf692193343c090c113a37",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0044.txt",
+      "sha256": "19a2967954e213b6201fa1acfa4f19729c4bcd4a631b14fe49730461a65bd81d",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0045.txt",
+      "sha256": "7b1312bbd980d765059972744ebeff5046acd57f0b5f90262b57b89d2c7859bf",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0046.txt",
+      "sha256": "94513cc5f30a5f45b2fce8a9d61eb14cc8afe3206d2d8488ab26b2a40234400c",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0047.txt",
+      "sha256": "026af6ea05b2f2e35f0a87b30ccf1d3ccd25717d468aadb7f45e732e726b4621",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0048.txt",
+      "sha256": "60da828d7ee1845f07d6bb2efd7d26b58ee705693d0bdac94c273d6f678250b6",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0049.txt",
+      "sha256": "2f65441ce25f34475612dc6bca0b4f5cc5c74414d67e21a96aa8c1a9fb05ecbb",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0050.txt",
+      "sha256": "073fa17376b7134e5b285a2f738ee877da296f755b3a36099e3668bec6623cb1",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0051.txt",
+      "sha256": "c96a944945d9aee711fd833d2c3992a58b4bed893155a8431a5d15aefde2503d",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0052.txt",
+      "sha256": "b88f61447ca0f2b6418ca597416eecb53ea26293f2baad7eb7ddc487fb23a028",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0053.txt",
+      "sha256": "40fc85ec2b2bd0137472f12949ebd8e16a7dcc528c146ff0ef30854c13889993",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0054.txt",
+      "sha256": "9246cdcfefc8d8db290b5fd994947ded5f6eaa9b4cefc38def378d46f5f56f43",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0055.txt",
+      "sha256": "c3d71f4f43e771f5e68876cb905e3d39a0ed39b5b05ad2d6b57e674f4cf761b7",
+      "bytes": 119157
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0056.txt",
+      "sha256": "6427a0e03f53af5ad732bf227f5326945999d52e3ce60ab2e7a172c0f8f7a478",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0057.txt",
+      "sha256": "3d5248833a435c8a557666c4fe8bc3bbd0c72c1be6276775829ee5adcaef5207",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0058.txt",
+      "sha256": "52f8878d8734d0c721ad9c06821bca0ffe574e9cb0f0a554f4095f52d9d0a80b",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0059.txt",
+      "sha256": "4089c1e86a8338d813a0fc67e63d9939cf24be61d9be0cb1a8bb8cf426cde8ca",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0060.txt",
+      "sha256": "c0fe2cbf05f4d3bfa4b184449a02f04604b2f175171ca9132934b0aff93d6210",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0061.txt",
+      "sha256": "3fd7532c42bb52dedc895172f844cd7b331e25e3ee1a3580a8646e86811f7550",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0062.txt",
+      "sha256": "4f44b65d5a3cfa90e248284b5607cf9a793724f51a753c29426aeea8eb885a76",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/execution_root/research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0063.txt",
+      "sha256": "4dd04374d8143f3e2107585b5301b684d75519b0fda39c24c7621ce1fe389ce6",
+      "bytes": 119113
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-00.txt",
+      "sha256": "75923ec31b837719190045bac4027d143bc042607437ff316c46ee768363a53b",
+      "bytes": 132895
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-01.txt",
+      "sha256": "c63c94aa5d24f5bf6063b96e16701d957cd2dbf7cf73931fd0df10a2dfe7d360",
+      "bytes": 131913
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-02.txt",
+      "sha256": "1fd2ba99cf50e6a0d2e378356a802ccedef3dfbbc33a69427abb741ff0518353",
+      "bytes": 131539
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-03.txt",
+      "sha256": "af864f561319c9d07cd50b00828408ef49ab7acc1bcb57e9c2e2e0f33c959f6a",
+      "bytes": 137975
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-04.txt",
+      "sha256": "beef70c88aae2014282d8c028345fe5ca8d247cd2c2771c31616fb5668b7ab88",
+      "bytes": 134563
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-05.txt",
+      "sha256": "6a878313e45a803182a663d67031f5842defdde5270f22ec905b34df42139d0f",
+      "bytes": 136044
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-06.txt",
+      "sha256": "0d2126baad8eb52ed4eb8c6cb9f1d2276a523655681d5d17f9d1896b30ee2ee8",
+      "bytes": 134601
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-07.txt",
+      "sha256": "baa172609fbc43aaeedd9b08dd7d5c49df2e629864490310f5028f37b66114ae",
+      "bytes": 134424
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-08.txt",
+      "sha256": "5a455424f01e61a4882c3f6abbfcec9cdc4469b75c9f8b2f453e4ff644762567",
+      "bytes": 136061
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-09.txt",
+      "sha256": "d2ce7c902249e9d20c6d1fd1338e5c4e5d71dc9c6340c906695a2b7d44443903",
+      "bytes": 132322
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-10.txt",
+      "sha256": "c27f322a582bbd6014a0719839ddd55f12c5a2d066ed5168bf3f091ef7a855ad",
+      "bytes": 134122
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-11.txt",
+      "sha256": "cff46cdcc3634d9872abb495f78d97ae6a50566d6df164439e1d4f41ab92a65a",
+      "bytes": 133896
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-12.txt",
+      "sha256": "79a046d70794a90f29c0a31bb4a9b13c8ebc1e8847badb5952de75c1d42bb408",
+      "bytes": 137406
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-13.txt",
+      "sha256": "53117ce1edd2b56bdd8a80873686bc021ca80b54af29a6deb532329b41b82eea",
+      "bytes": 133984
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-14.txt",
+      "sha256": "3c3b78060c3490dda8aaf52c9a4422c3ebeba4bcc4d6b88f579856e7721ea54c",
+      "bytes": 135094
+    },
+    {
+      "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-15.txt",
+      "sha256": "8396ec8311cff103045c3e0ae575d28b4fac03593ebd23789a7d45d6f5b7ae26",
+      "bytes": 134496
+    }
+  ],
+  "calibrations": [
+    {
+      "path": "research/.runtime/e2-calibration-qwen.pt",
+      "sha256": "a9cfa05403000ada67f1f7f5e33a66d4e7796f3b7ef60729c6a4c07a468e6682",
+      "bytes": 574418,
+      "model": "qwen",
+      "commit": "6ca63fd",
+      "hash_observed_at_review": true
+    },
+    {
+      "path": "research/.runtime/e2-calibration-llama.pt",
+      "sha256": "10d412004f5503517e65e22e2fbe1edff19ccdb968a7b6f68b1f9c5292528929",
+      "bytes": 1148198,
+      "model": "llama",
+      "commit": "6ca63fd",
+      "hash_observed_at_review": true
+    }
+  ],
+  "model_manifests": [
+    {
+      "path": "research/manifests/models/Llama-3.1-8B-Instruct.source.json",
+      "sha256": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2",
+      "bytes": 2778
+    },
+    {
+      "path": "research/manifests/models/Qwen2.5-7B-Instruct.source.json",
+      "sha256": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+      "bytes": 3952
+    }
+  ],
+  "runtime_evidence": [
+    {
+      "path": "research/.runtime/new-input-quality/publication.json",
+      "sha256": "1616f6b25ebbc82150740ae718cac481de800441c9c70163d0e8604a12ed03d6",
+      "bytes": 2419
+    },
+    {
+      "path": "research/.runtime/new-input-quality/run.log",
+      "sha256": "cec289b4f582a33c02329ef5c81a1fd119ebd8ee53a226317e59a6b88c23494d",
+      "bytes": 657603
+    },
+    {
+      "path": "research/.runtime/new-input-quality/run.completed",
+      "sha256": "0c97ea10507ffb3366d19bdab78f4f1ca8535818f9ce285609255c6b69137134",
+      "bytes": 33
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/frozen_execution.json",
+      "sha256": "3f1665e7b71421bd1a5fd2b83616d78f2ec208dd14495a494a621de182f9a5f8",
+      "bytes": 9834
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_admission.json",
+      "sha256": "07771b727b7d272352d5aaec476c9d37c857c905355d22157521bb4d860b5857",
+      "bytes": 946
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_frozen.py",
+      "sha256": "3874b79c81cce0a32e766d6a0cdeb6eabfaaebe4553af3986aa4fae05091af3d",
+      "bytes": 7996
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/repair.json",
+      "sha256": "b3a79b3e140910b19fa4c3d328e7e8e01a8d7c8de007fca475517a89d9cc412c",
+      "bytes": 5323
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/quantized_generation.before.py",
+      "sha256": "87a4ef76f6befa99e65f17c85a9a213f54428262ec0c8ecd19e3c461d7c17833",
+      "bytes": 30906
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/publication.json",
+      "sha256": "2097659c840c70a7c0340aaeac25fa6833adae694697fc86e5a72b5c337bfdbc",
+      "bytes": 2419
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_progress_repair.json",
+      "sha256": "e0006cbea2657deff21225a5475b1a137cca8bc63eb728dc6c4d4f82a2a598bf",
+      "bytes": 467
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/run.before-frozen-resume.log",
+      "sha256": "94349c6e90a8086fdc11bd4e77743df0f1bfff31bd02f4f0dfe8e825793137c2",
+      "bytes": 236596
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/run.failed.before-frozen-resume",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_history/20261009T143946902891/run.log",
+      "sha256": "06dc26b22f814ccc5e8350d8fb623295a2d9a005bb64cfeb31cd0c3f8151c9f5",
+      "bytes": 325321
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_history/20261009T143946902891/run.failed",
+      "sha256": "448bb6ee393a67a3e4e048fa6f7436374a26ea02a8830c363d473cb1f0545154",
+      "bytes": 2160
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_history/20261010T002630093519/run.log",
+      "sha256": "1ac0507563ecf1d7d288621dd0b1339774dbeeda1f243cdea96752b4ed2f7506",
+      "bytes": 472383
+    },
+    {
+      "path": "research/.runtime/new-input-quality/recovery/resume_history/20261010T002630093519/run.failed",
+      "sha256": "448bb6ee393a67a3e4e048fa6f7436374a26ea02a8830c363d473cb1f0545154",
+      "bytes": 2160
+    }
+  ],
+  "baseline_reviews": [
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/retrieval_baseline_review.json",
+      "sha256": "7fa546cc469c519cf8ccb9071dc9495f8b53284f8d3922806e3002d1abdd5ed8",
+      "bytes": 3484
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/long_decode_baseline_review.json",
+      "sha256": "5cfc317b89a66f5496f020ab8af3d65a64cc380466db4db22497b7ce89defb7c",
+      "bytes": 1882
+    }
+  ],
+  "complete_predictions_retained_on_server": true,
+  "scope": "仅审核本轮新检索与四问长解码，不改历史选择或下游输入"
+}

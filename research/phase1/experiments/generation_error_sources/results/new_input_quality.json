@@ -1,0 +1,1008 @@
+{
+  "protocol": "phase1-new-input-candidate-quality",
+  "commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+  "planned_new_generations": 800,
+  "conditions": [
+    {
+      "config": "kv8-per_token-post",
+      "residual_bits": 0
+    },
+    {
+      "config": "k8v4-per_token-pre",
+      "residual_bits": 0
+    },
+    {
+      "config": "k8v4-per_token-post",
+      "residual_bits": 0
+    },
+    {
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 0
+    },
+    {
+      "config": "k8v4-per_channel-pre",
+      "residual_bits": 8
+    }
+  ],
+  "bf16_generation": "bf16_weights_sdpa_prefill_fp32_attention_decode_greedy",
+  "excluded_references": [
+    "v_retrieval_bf16.json",
+    "v_hotpot_long_"
+  ],
+  "label_rule": {
+    "class_unit_passes": "未淘汰，且相对 BF16 与 KV8 的下降点估计都不超过 2",
+    "state": "状态表结果；区间上界已满足保留时仍记开发晋级",
+    "retention_awarded": "本轮不是 128/256 扩样后的最终候选，不授予保留"
+  },
+  "residual_dependence": {
+    "format": "k8v4-per_channel-pre",
+    "compared": [
+      0,
+      8
+    ],
+    "not_measured": 16,
+    "rule": "H=0 类通过为无残留可行；仅 H=8 类通过为依赖缓冲；两者都未类通过不外推 H=16"
+  },
+  "models": {
+    "qwen": {
+      "retrieval_ruler": {
+        "bf16_reused": true,
+        "paired_ids": [
+          "synth-v-0000",
+          "synth-v-0001",
+          "synth-v-0002",
+          "synth-v-0003",
+          "synth-v-0004",
+          "synth-v-0005",
+          "synth-v-0006",
+          "synth-v-0007",
+          "synth-v-0008",
+          "synth-v-0009",
+          "synth-v-0010",
+          "synth-v-0011",
+          "synth-v-0012",
+          "synth-v-0013",
+          "synth-v-0014",
+          "synth-v-0015",
+          "synth-v-0016",
+          "synth-v-0017",
+          "synth-v-0018",
+          "synth-v-0019",
+          "synth-v-0020",
+          "synth-v-0021",
+          "synth-v-0022",
+          "synth-v-0023",
+          "synth-v-0024",
+          "synth-v-0025",
+          "synth-v-0026",
+          "synth-v-0027",
+          "synth-v-0028",
+          "synth-v-0029",
+          "synth-v-0030",
+          "synth-v-0031",
+          "synth-v-0032",
+          "synth-v-0033",
+          "synth-v-0034",
+          "synth-v-0035",
+          "synth-v-0036",
+          "synth-v-0037",
+          "synth-v-0038",
+          "synth-v-0039",
+          "synth-v-0040",
+          "synth-v-0041",
+          "synth-v-0042",
+          "synth-v-0043",
+          "synth-v-0044",
+          "synth-v-0045",
+          "synth-v-0046",
+          "synth-v-0047",
+          "synth-v-0048",
+          "synth-v-0049",
+          "synth-v-0050",
+          "synth-v-0051",
+          "synth-v-0052",
+          "synth-v-0053",
+          "synth-v-0054",
+          "synth-v-0055",
+          "synth-v-0056",
+          "synth-v-0057",
+          "synth-v-0058",
+          "synth-v-0059",
+          "synth-v-0060",
+          "synth-v-0061",
+          "synth-v-0062",
+          "synth-v-0063"
+        ],
+        "kv8": {
+          "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_kv8-per_token-post.json",
+          "sha256": "2dbc2cb2a9ae99a326983077015d118335244276faa505bcf9dfc20cc41fea6e",
+          "versus_bf16": {
+            "estimate": 0.0,
+            "lower": -6.617774702077083,
+            "upper": 6.617774702077083,
+            "kind": "binary",
+            "n": 64,
+            "detail": {
+              "degrade": 0,
+              "improve": 0
+            }
+          }
+        },
+        "candidates": {
+          "k8v4-per_token-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_token-pre.json",
+            "sha256": "e149f98b0075c6fd8ca57f5a3d03de47dc543e5b83f801a164d2ed251871a0cb",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_token-post.json",
+            "sha256": "186464cfdfd2e52bbb344917974d6ffd1a2f52d55fc7fe9e7239d5ebad6484c5",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_channel-pre.json",
+            "sha256": "ede749be64d7795d2ed204c0cb40d8ab282cc37544a4626f61f4ddce78395566",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_channel-pre-residual8.json",
+            "sha256": "a74daeabab74d0880ad1a228147585433dbcc2a33804089ba188d659b9193d62",
+            "residual_bits": 8,
+            "residual_tokens": 128
+          }
+        },
+        "offline_pre_residual": {
+          "category": "无残留可行",
+          "h16": "未测",
+          "gain_h8_minus_h0": {
+            "estimate": -0.0,
+            "lower": -6.617774702077083,
+            "upper": 6.617774702077083,
+            "kind": "binary",
+            "n": 64,
+            "detail": {
+              "degrade": 0,
+              "improve": 0
+            },
+            "direction": "h8_minus_h0"
+          }
+        }
+      },
+      "hotpot_four": {
+        "bf16_reused": true,
+        "paired_ids": [
+          "hotpot-four-v-00",
+          "hotpot-four-v-01",
+          "hotpot-four-v-02",
+          "hotpot-four-v-03",
+          "hotpot-four-v-04",
+          "hotpot-four-v-05",
+          "hotpot-four-v-06",
+          "hotpot-four-v-07",
+          "hotpot-four-v-08",
+          "hotpot-four-v-09",
+          "hotpot-four-v-10",
+          "hotpot-four-v-11",
+          "hotpot-four-v-12",
+          "hotpot-four-v-13",
+          "hotpot-four-v-14",
+          "hotpot-four-v-15"
+        ],
+        "kv8": {
+          "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_kv8-per_token-post.json",
+          "sha256": "3d95170bd98068b6e30db79d4867a52f2bb9d868af14d26ec8ead1784b667f1a",
+          "versus_bf16": {
+            "estimate": -4.113243527306027,
+            "lower": -13.27204728864885,
+            "upper": 4.667059828192639,
+            "kind": "bootstrap",
+            "n": 16,
+            "detail": {
+              "draws": 10000,
+              "seed": 20260923
+            }
+          }
+        },
+        "candidates": {
+          "k8v4-per_token-pre/H=0": {
+            "n": 16,
+            "score": 70.47181372549021,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -6.176271645021645,
+              "lower": -17.106753923160174,
+              "upper": 3.9924918831168785,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -2.0630281177156187,
+              "lower": -10.26179387019231,
+              "upper": 5.20872259251165,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_token-pre.json",
+            "sha256": "64a44749c39c2997f172c65e6885ff0bd68515058d4bc59c831f52654485c075",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 16,
+            "score": 68.6228354978355,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -4.327293417366946,
+              "lower": -14.776396780303033,
+              "upper": 6.27876718869366,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.21404989006091935,
+              "lower": -7.08270559097765,
+              "upper": 6.4546112588392,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_token-post.json",
+            "sha256": "2ec49f3b3b95205c94855d9a6b21fe71981375770a3147c8f2e47200564f94d6",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 16,
+            "score": 43.40872330713662,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 20.88681877333193,
+              "lower": 6.210466905331941,
+              "upper": 36.33176175376373,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 25.000062300637957,
+              "lower": 10.801186538067947,
+              "upper": 40.35206338753103,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "淘汰",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 16,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_channel-pre.json",
+            "sha256": "b1bd7d851f898d249791266b7866a39ee27f47d2ce3efffc2f3cf930f721afa1",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 16,
+            "score": 62.508982286096256,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.7865597943722946,
+              "lower": -12.982975683170997,
+              "upper": 18.880208333333336,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 5.899803321678322,
+              "lower": -6.8959425990676,
+              "upper": 21.335527753496507,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 4,
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_channel-pre-residual8.json",
+            "sha256": "c5058618de9893d6402b9a1bf0ac17cc8246ae08cb529d703986ea94efe3a4f5",
+            "residual_bits": 8,
+            "residual_tokens": 128
+          }
+        },
+        "offline_pre_residual": {
+          "category": "两个已测精度都未类通过",
+          "h16": "未测",
+          "gain_h8_minus_h0": {
+            "estimate": 19.100258978959637,
+            "lower": 5.729003687942713,
+            "upper": 33.20818558477288,
+            "kind": "bootstrap",
+            "n": 16,
+            "detail": {
+              "draws": 10000,
+              "seed": 20260923
+            },
+            "direction": "h8_minus_h0"
+          }
+        }
+      }
+    },
+    "llama": {
+      "retrieval_ruler": {
+        "bf16_reused": true,
+        "paired_ids": [
+          "synth-v-0000",
+          "synth-v-0001",
+          "synth-v-0002",
+          "synth-v-0003",
+          "synth-v-0004",
+          "synth-v-0005",
+          "synth-v-0006",
+          "synth-v-0007",
+          "synth-v-0008",
+          "synth-v-0009",
+          "synth-v-0010",
+          "synth-v-0011",
+          "synth-v-0012",
+          "synth-v-0013",
+          "synth-v-0014",
+          "synth-v-0015",
+          "synth-v-0016",
+          "synth-v-0017",
+          "synth-v-0018",
+          "synth-v-0019",
+          "synth-v-0020",
+          "synth-v-0021",
+          "synth-v-0022",
+          "synth-v-0023",
+          "synth-v-0024",
+          "synth-v-0025",
+          "synth-v-0026",
+          "synth-v-0027",
+          "synth-v-0028",
+          "synth-v-0029",
+          "synth-v-0030",
+          "synth-v-0031",
+          "synth-v-0032",
+          "synth-v-0033",
+          "synth-v-0034",
+          "synth-v-0035",
+          "synth-v-0036",
+          "synth-v-0037",
+          "synth-v-0038",
+          "synth-v-0039",
+          "synth-v-0040",
+          "synth-v-0041",
+          "synth-v-0042",
+          "synth-v-0043",
+          "synth-v-0044",
+          "synth-v-0045",
+          "synth-v-0046",
+          "synth-v-0047",
+          "synth-v-0048",
+          "synth-v-0049",
+          "synth-v-0050",
+          "synth-v-0051",
+          "synth-v-0052",
+          "synth-v-0053",
+          "synth-v-0054",
+          "synth-v-0055",
+          "synth-v-0056",
+          "synth-v-0057",
+          "synth-v-0058",
+          "synth-v-0059",
+          "synth-v-0060",
+          "synth-v-0061",
+          "synth-v-0062",
+          "synth-v-0063"
+        ],
+        "kv8": {
+          "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_kv8-per_token-post.json",
+          "sha256": "fb7e44f1ad52d8a7c74ea68dfb723a20faf54fc31bf903ff8802cebea906acbe",
+          "versus_bf16": {
+            "estimate": 0.0,
+            "lower": -6.617774702077083,
+            "upper": 6.617774702077083,
+            "kind": "binary",
+            "n": 64,
+            "detail": {
+              "degrade": 0,
+              "improve": 0
+            }
+          }
+        },
+        "candidates": {
+          "k8v4-per_token-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_token-pre.json",
+            "sha256": "e48021b47adcd15ccd13b92c7b3568ea92ccb90c32cd195a600fabaea5669bf8",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_token-post.json",
+            "sha256": "523bd189c04739d92f9f8850f5611f32f9fdedff446a23ac0989366f6aba726d",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_channel-pre.json",
+            "sha256": "c5a01e2934411cb50134700c8bf951997d80c7092225623dad69fd936d3cc912",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_channel-pre-residual8.json",
+            "sha256": "e78ac047575f11bfda947e113ddf1c66258a086f7d15c3e96d57e8a47a896177",
+            "residual_bits": 8,
+            "residual_tokens": 128
+          }
+        },
+        "offline_pre_residual": {
+          "category": "无残留可行",
+          "h16": "未测",
+          "gain_h8_minus_h0": {
+            "estimate": -0.0,
+            "lower": -6.617774702077083,
+            "upper": 6.617774702077083,
+            "kind": "binary",
+            "n": 64,
+            "detail": {
+              "degrade": 0,
+              "improve": 0
+            },
+            "direction": "h8_minus_h0"
+          }
+        }
+      },
+      "hotpot_four": {
+        "bf16_reused": true,
+        "paired_ids": [
+          "hotpot-four-v-00",
+          "hotpot-four-v-01",
+          "hotpot-four-v-02",
+          "hotpot-four-v-03",
+          "hotpot-four-v-04",
+          "hotpot-four-v-05",
+          "hotpot-four-v-06",
+          "hotpot-four-v-07",
+          "hotpot-four-v-08",
+          "hotpot-four-v-09",
+          "hotpot-four-v-10",
+          "hotpot-four-v-11",
+          "hotpot-four-v-12",
+          "hotpot-four-v-13",
+          "hotpot-four-v-14",
+          "hotpot-four-v-15"
+        ],
+        "kv8": {
+          "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_kv8-per_token-post.json",
+          "sha256": "e6c898b56176377b3c8d7488140e79c0433164baed561d795618aa86a986e380",
+          "versus_bf16": {
+            "estimate": -4.506448412698413,
+            "lower": -15.518849206349206,
+            "upper": 2.4803447420634885,
+            "kind": "bootstrap",
+            "n": 16,
+            "detail": {
+              "draws": 10000,
+              "seed": 20260923
+            }
+          }
+        },
+        "candidates": {
+          "k8v4-per_token-pre/H=0": {
+            "n": 16,
+            "score": 76.79067460317461,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -4.246031746031745,
+              "lower": -13.430369543650793,
+              "upper": 3.9161706349206358,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.2604166666666674,
+              "lower": -6.510416666666665,
+              "upper": 7.03125,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_token-pre.json",
+            "sha256": "715639f7bb187206efee9280b08ef9e01d48c419b79d7e80d51559013f7f9d4e",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 16,
+            "score": 75.0,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -2.455357142857143,
+              "lower": -14.80654761904762,
+              "upper": 6.696428571428571,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.05109126984127,
+              "lower": -3.385416666666666,
+              "upper": 7.343936011904759,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_token-post.json",
+            "sha256": "aba77829a502959360c910ddc975e11634d6cc68a6641bcfcfe17fe5f0b492d3",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 16,
+            "score": 74.7594246031746,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -2.214781746031745,
+              "lower": -17.825334821428573,
+              "upper": 15.632812499999995,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.291666666666668,
+              "lower": -7.812499999999998,
+              "upper": 17.5,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 6,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_channel-pre.json",
+            "sha256": "121dbe22bb60bb1af6f686581072e870ef249b9a601dbc36ff559b837e3dd5e1",
+            "residual_bits": 0,
+            "residual_tokens": 0
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 16,
+            "score": 79.32501526251525,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -6.780372405372406,
+              "lower": -18.98592509920635,
+              "upper": 2.7810926053113487,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -2.2739239926739927,
+              "lower": -7.184638278388278,
+              "upper": 2.8182234432234434,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_channel-pre-residual8.json",
+            "sha256": "6edca6a80805dc9b1d1890f9bc3af5ef2f810c30e5ab6aa392b06b2fbb0d15a5",
+            "residual_bits": 8,
+            "residual_tokens": 128
+          }
+        },
+        "offline_pre_residual": {
+          "category": "依赖缓冲",
+          "h16": "未测",
+          "gain_h8_minus_h0": {
+            "estimate": 4.5655906593406606,
+            "lower": -6.17392113095238,
+            "upper": 20.01499542124542,
+            "kind": "bootstrap",
+            "n": 16,
+            "detail": {
+              "draws": 10000,
+              "seed": 20260923
+            },
+            "direction": "h8_minus_h0"
+          }
+        }
+      }
+    }
+  }
+}

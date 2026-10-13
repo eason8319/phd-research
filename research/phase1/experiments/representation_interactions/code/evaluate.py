@@ -3,16 +3,28 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Collection, Iterator
+from datetime import datetime, timezone
 import hashlib
 import json
 import math
-from collections.abc import Collection, Iterator
 from pathlib import Path
 from typing import Any
 
 import torch
 from transformers import AutoTokenizer
 
+from experiments.representation_interactions.code.metrics import output_metrics, paired_head_metrics
+from experiments.representation_interactions.code.results import (
+    PAIRS,
+    SCHEMA_VERSION,
+    summarize_diagnostics,
+    write_results,
+)
+from experiments.representation_interactions.code.select import (
+    CANDIDATE_POLICY,
+    select_representations,
+)
 from kvstudy.attention import attention_fp32, relative_output_error
 from kvstudy.ledger import account_pair
 from kvstudy.paths import project_root
@@ -32,26 +44,10 @@ from phase1.representation import (
 )
 from phase1.runner import load_model
 
-from experiments.representation_interactions.code.metrics import (
-    competition_metrics,
-    output_metrics,
-    paired_head_metrics,
-)
-from experiments.representation_interactions.code.results import (
-    PAIRS,
-    SCHEMA_VERSION,
-    summarize_rows,
-    write_results,
-)
-from experiments.representation_interactions.code.select import (
-    CANDIDATE_POLICY,
-    select_representations,
-)
 
 VALUE_DIAGNOSTIC = "kv4-per_channel-pre-vchannel"
 HEAD_FIELDS = (
-    "score_rms2", "weighted_score_var", "paired_probability_kl",
-    "probability_l1", "probability_tv",
+    "weighted_score_var", "paired_probability_kl",
 )
 
 
@@ -61,7 +57,7 @@ def _settings() -> dict[str, Any]:
     settings = json.loads(path.read_text(encoding="utf-8"))
     if settings["measurement_version"] != SCHEMA_VERSION:
         raise ValueError("诊断配置的测量格式与执行代码不一致")
-    for name in ("top_k", "bootstrap_seed", "bootstrap_resamples"):
+    for name in ("bootstrap_seed", "bootstrap_resamples"):
         value = settings[name]
         if isinstance(value, bool) or not isinstance(value, int):
             raise ValueError(f"诊断参数 {name} 必须为整数")
@@ -199,13 +195,10 @@ def _diagnostic_layer(
     value8: torch.Tensor,
     value4: torch.Tensor,
     reference: torch.Tensor,
-    top_k: int,
 ) -> dict[str, Any]:
     """用 FP64 分数和概率计算解释指标，按 KV head 分块以避免复制完整 Value。"""
     repeats = query.shape[0] // key8.shape[0]
     heads = []
-    competition_heads = []
-    pair_rows = []
     outputs = {name: [] for name in ("kv8", "k4v8", "k8v4", "prediction")}
     for kv_head in range(key8.shape[0]):
         start = kv_head * repeats
@@ -217,26 +210,8 @@ def _diagnostic_layer(
         metrics = paired_head_metrics(
             score8, score4, value8_group, value4_group, reference[start:start + repeats]
         )
-        competition = competition_metrics(score8, score4, value8_group, top_k=top_k)
         for head in range(repeats):
             heads.append({name: _scalar(metrics[name][head]) for name in HEAD_FIELDS})
-            competition_heads.append({
-                name: _scalar(competition[name][head])
-                for name in (
-                    "selected_probability_coverage", "pair_count", "pair_tie_count",
-                    "pair_flip_count", "pair_flip_rate",
-                )
-            })
-            for pair in range(competition["pair_positions"].shape[1]):
-                pair_rows.append({
-                    "head": start + head,
-                    "positions": competition["pair_positions"][head, pair].tolist(),
-                    **{
-                        name: _scalar(tensor[head, pair])
-                        for name, tensor in competition.items()
-                        if name.startswith("pair_") and tensor.ndim == 2
-                    },
-                })
         probability8 = torch.log_softmax(score8, dim=-1).exp()
         probability4 = torch.log_softmax(score4, dim=-1).exp()
         delta = score4 - score8
@@ -251,7 +226,6 @@ def _diagnostic_layer(
     return {
         "heads": heads,
         "output": {name: _scalar(tensor) for name, tensor in output.items()},
-        "competition": {"heads": competition_heads, "pair_rows": pair_rows},
     }
 
 
@@ -290,7 +264,7 @@ def _matrix_bytes(cfg: dict[str, Any], blob: dict[str, Any]) -> float:
 
 def _score_item(
     blob: dict[str, Any], model: Any, scales: dict[int, dict[str, Any]],
-    settings: dict[str, Any], refresh_matrix: bool,
+    refresh_matrix: bool,
 ) -> list[dict[str, Any]]:
     """在同一轨迹上逐层量化一次 K/V，复用到四种配对和可选主矩阵。"""
     rows = {
@@ -326,7 +300,7 @@ def _score_item(
                 )
             diagnostic = _diagnostic_layer(
                 query, keys[pair, 8][0], keys[pair, 4][0],
-                values[8][0], values[4][0], reference, settings["top_k"],
+                values[8][0], values[4][0], reference,
             )
             rows[pair]["layers"].append({"layer": layer, **diagnostic})
         if refresh_matrix:
@@ -445,7 +419,7 @@ def _finalize(model_key: str, manifest: dict[str, Any], commit: str) -> None:
     if manifest["expected_items"] != expected:
         raise RuntimeError("位宽与表示交互明细来源与当前冻结样本划分不一致")
     settings = manifest["settings"]
-    metrics, samples = summarize_rows(
+    metrics, samples, detail_checks = summarize_diagnostics(
         _read_rows(detail), expected, bootstrap_seed=settings["bootstrap_seed"],
         resamples=settings["bootstrap_resamples"],
     )
@@ -453,8 +427,20 @@ def _finalize(model_key: str, manifest: dict[str, Any], commit: str) -> None:
         **manifest["provenance"], "summarizer_commit": commit,
         "summarizer_code_sha256": _code_hashes(),
     }
+    detail_checks.update({"model": model_key, "detail_sha256": manifest["detail_sha256"]})
+    provenance["review"] = {
+        **provenance.get("review", {}),
+        "status": "passed",
+        "layer_statistics_unit": "equal-weight fold means by layer; no independent-layer CI",
+        "detail_checks": detail_checks,
+        "statistics_derivation": {
+            "derived_at_utc": datetime.now(timezone.utc).isoformat(),
+            "commit": commit, "code_sha256": provenance["summarizer_code_sha256"],
+            "detail_sha256": manifest["detail_sha256"],
+        },
+    }
     diagnostic = {
-        "model": model_key, "measurement_version": settings["measurement_version"],
+        "model": model_key, "measurement_version": provenance["measurement_version"],
         "provenance": provenance, "metrics": metrics,
     }
     destination = root / "research/phase1/experiments/representation_interactions/results"
@@ -480,7 +466,7 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
         partial = detail.with_suffix(".partial")
         with partial.open("w", encoding="utf-8") as stream:
             for blob in captured:
-                for row in _score_item(blob, model, scales, settings, refresh_matrix):
+                for row in _score_item(blob, model, scales, refresh_matrix):
                     stream.write(json.dumps(row, ensure_ascii=False, allow_nan=False) + "\n")
                 print(f"评分 {blob['id']}，四种配对完成", flush=True)
         partial.replace(detail)
@@ -516,7 +502,7 @@ def run_model(model_key: str, commit: str, *, refresh_matrix: bool = False) -> N
                 }
                 for name in (
                     "output_increments", "probability_change",
-                    "first_order_prediction", "position_competition",
+                    "first_order_prediction",
                 )
             },
             "sample_statistics": {

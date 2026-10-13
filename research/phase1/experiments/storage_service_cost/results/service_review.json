@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "counts": {
+    "qwen": {
+      "layout_rows_reused": 36,
+      "transfer_rows": 48,
+      "work_rows": 24
+    },
+    "llama": {
+      "layout_rows_reused": 37,
+      "transfer_rows": 50,
+      "work_rows": 25
+    }
+  },
+  "service_sha256": "3b994ea83f8afaddfbbc5c2ef1bf9664cf05400444b84edb642d991af4f54b08",
+  "review_code_sha256": "5267cb5fbad595d9022f0a82b4d93d4e09174ccca11491f365902e0e541f3260",
+  "regression": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "source": "research/tests/test_storage_service.py",
+    "sha256": "5c4e1475b4455b3093f25af42fb89fa105262f414145b00af11ce1e1f0ea8834"
+  },
+  "legacy_formula_auditor_sha256": "0a3822c924ea2bf3414e33f75aa68828a70976804254ff0056f64023dab5b544",
+  "checks": [
+    "unchanged_73_layout_rows_and_quality_dependencies",
+    "independent_transaction_cycle_formula",
+    "per_generated_token",
+    "same_format_rotation_cancels",
+    "component_conservation",
+    "separate_fma_and_scalar_ops",
+    "frozen_quality_states"
+  ]
+}

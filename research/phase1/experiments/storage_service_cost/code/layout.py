@@ -2,19 +2,20 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 import hashlib
 import json
 import math
-import sys
-from dataclasses import dataclass
 from pathlib import Path
+import sys
 from typing import Any
 
 from kvstudy.ledger import account_pair, align_up
 from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.short_baseline import MODELS
-from experiments.generation_error_sources.code.quantized_generation import _config
-from experiments.generation_error_sources.code.sources import _protocol_matches
+from phase1.generation import _config
+from phase1.models import MODELS
+from phase1.runtime_sources import _protocol_matches
+
 
 DECODE_STEPS = 256
 LENGTHS = (4096, 32768, 131072)
@@ -584,9 +585,115 @@ def _constraint_table(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _static_quality_layout(root: Path, model_key: str, commit: str) -> None:
+    """按本轮实际候选层表核算成本，保留失败端点及逐任务质量状态。"""
+    from experiments.static_layer_allocation.code.protocol import load_plan
+    from experiments.static_layer_allocation.code.quality import config_for
+
+    plan = load_plan(root)["v_plan"]
+    selection_path = root / (
+        "research/phase1/experiments/static_layer_allocation/results/expanded_quality"
+    ) / model_key / "selection.json"
+    selection = json.loads(selection_path.read_text("utf-8"))
+    if selection["status"] != "complete":
+        raise RuntimeError("静态候选仍有必要扩样，成本交付尚不能收尾")
+    review_path = root / (
+        "research/phase1/experiments/static_layer_allocation/results/final_quality_review.json"
+    )
+    if json.loads(review_path.read_text("utf-8"))["status"] != "passed":
+        raise RuntimeError("静态候选质量结果尚未审核通过")
+    model = json.loads((root / MODELS[model_key] / "config.json").read_text("utf-8"))
+    layers = int(model["num_hidden_layers"])
+    heads = int(model["num_key_value_heads"])
+    query_heads = int(model["num_attention_heads"])
+    dim = int(model["hidden_size"]) // query_heads
+    names = ["kv8", "k8v4", *plan["candidates"][model_key]]
+    specs = []
+    for name in names:
+        config = config_for(root, model_key, name)
+        bits = config.get("layer_bits", [{"k": config["k_bits"], "v": config["v_bits"]}]
+                          * layers)
+        specs.append(_from_allocation(name, config["name"], bits, 0))
+    rope = "post" if model_key == "qwen" else "pre"
+    mixed_name = next(name for name, spec in plan["candidates"][model_key].items()
+                      if spec["k4_layers"] is not None)
+    if not any(all(k == 4 and v == 4 for k, v in spec.layer_bits) for spec in specs):
+        specs.append(_from_name(f"kv4-per_token-{rope}", layers))
+    rows = []
+    for spec in specs:
+        for length in plan["cost"]["lengths"]:
+            for block in plan["cost"]["blocks"]:
+                rows.append({"format": spec.name, "key_mode": spec.key_mode,
+                             "value_mode": spec.value_mode, "rope": spec.rope,
+                             "residual_bits": 0, "token_tag": False,
+                             **_layout(spec, heads=heads, dim=dim, length=length,
+                                       query_heads=query_heads, batch=1, block=block)})
+    if model_key == "llama":
+        # 沿用既定在线 post K8V4 的 B=4 代表条件。
+        representative = _from_name("k8v4-per_token-post", layers)
+        rows.append({"format": representative.name, "key_mode": representative.key_mode,
+                     "value_mode": representative.value_mode, "rope": representative.rope,
+                     "residual_bits": 0, "token_tag": False,
+                     **_layout(representative, heads=heads, dim=dim, length=32768,
+                               query_heads=query_heads, batch=4, block=64)})
+    main = {row["format"]: row for row in rows if row["length"] == 32768
+            and row["batch"] == 1 and row["block_tokens"] == 64}
+    mixed, baseline = main[mixed_name], main["k8v4"]
+    endpoint = next(row for spec in specs if all(k == 4 and v == 4 for k, v in spec.layer_bits)
+                    for row in [main[spec.name]])
+    dependencies = [selection_path, review_path,
+                    root / "research/phase1/configs/static_layer_allocation.json",
+                    root / "research/phase1/experiments/static_layer_allocation/results"
+                    / model_key / "allocations.json"]
+    actual_configurations = {spec.name: {
+        "layer_bits": list(spec.layer_bits), "rope": spec.rope,
+        "key_mode": spec.key_mode, "value_mode": spec.value_mode,
+    } for spec in specs}
+    if model_key == "llama":
+        actual_configurations[representative.name] = {
+            "layer_bits": list(representative.layer_bits), "rope": representative.rope,
+            "key_mode": representative.key_mode, "value_mode": representative.value_mode,
+        }
+    payload = {
+        "protocol": plan["protocol"], "commit": commit, "model": model_key,
+        "source": "layout_count_and_assumed_bandwidth_lower_bound",
+        "n_layers": layers, "kv_heads": heads, "query_heads": query_heads,
+        "head_dim": dim, "alignment_bytes": 128, "decode_steps": DECODE_STEPS,
+        "decode_window_ends_at_length": True, "bandwidth_TBps": BANDWIDTH_TBPS,
+        "quality": selection["cells"], "candidate_stops": selection["stops"],
+        "actual_configurations": actual_configurations,
+        "layout_code_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "source_sha256": {path.relative_to(root).as_posix(): hashlib.sha256(
+            path.read_bytes()).hexdigest() for path in dependencies},
+        "mixed_32k": {
+            "relative_k8v4_capacity_saved": (
+                1 - mixed["resident_bytes"] / baseline["resident_bytes"]
+            ),
+            "relative_kv4_capacity_extra": (
+                mixed["resident_bytes"] / endpoint["resident_bytes"] - 1
+            ),
+        },
+        "service_time_model": "symbolic compute plus bandwidth lower bounds; no measured speedup",
+        "rows": rows,
+    }
+    path = root / "research/phase1/experiments/storage_service_cost/results" / model_key
+    path.mkdir(parents=True, exist_ok=True)
+    (path / "layout.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", "utf-8"
+    )
+
+
 def run(model_key: str, commit: str) -> None:
     """扩样审核后，对正式候选和固定对照完成存储与服务成本布局计数。"""
     root = project_root()
+    selection = root / (
+        "research/phase1/experiments/static_layer_allocation/results/expanded_quality"
+    ) / model_key / "selection.json"
+    if selection.exists() and json.loads(selection.read_text("utf-8")).get("protocol") == (
+        "static-allocation-independent-generation"
+    ):
+        _static_quality_layout(root, model_key, commit)
+        return
     model = json.loads((root / MODELS[model_key] / "config.json").read_text("utf-8"))
     n_layers = int(model["num_hidden_layers"])
     heads = int(model["num_key_value_heads"])

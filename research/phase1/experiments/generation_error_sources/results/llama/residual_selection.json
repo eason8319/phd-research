@@ -1,7 +1,8 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "dba27b7",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "bb4ceb3300fffbe19ce44f204b44d1ef3051a76a",
   "model": "llama",
+  "selection_policy": "joint_measured_format_residual",
   "selected_low_bit": "k8v4-per_token-post",
   "e3_representation": "k8v4-per_token-post",
   "e3_residual_bits": 0,
@@ -190,5 +191,215 @@
     "retrieval": "无残留可行"
   },
   "rescued_classes": [],
-  "reason": "没有被挽回的类，或同一残留精度不能同时挽回全部类"
+  "ranking": [
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 6129729536,
+      "maximum_drop": 0.0,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 7718453248,
+      "maximum_drop": 0.0,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 8,
+      "R": 128,
+      "complete_bytes": 7023386624,
+      "maximum_drop": 0.4701967592592593,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 7718453248,
+      "maximum_drop": 1.1160714285714286,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 6129729536,
+      "maximum_drop": 1.5625,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 8,
+      "R": 128,
+      "complete_bytes": 6598131712,
+      "maximum_drop": 1.7020089285714286,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 7293198336,
+      "maximum_drop": 1.7020089285714286,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 5704474624,
+      "maximum_drop": 2.505580357142857,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "kv4-per_token-post",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 4378378240,
+      "maximum_drop": 4.002417156486924,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    }
+  ],
+  "excluded_conditions": [],
+  "missing_conditions": [
+    {
+      "representation": "kv4-per_token-post",
+      "H": 8,
+      "tasks": [
+        "gsm8k",
+        "hotpot"
+      ]
+    },
+    {
+      "representation": "kv4-per_token-post",
+      "H": 16,
+      "tasks": [
+        "gsm8k",
+        "hotpot"
+      ]
+    },
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 8,
+      "tasks": [
+        "gsm8k",
+        "hotpot"
+      ]
+    }
+  ],
+  "measurement_sources": {
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv4-per_token-post.json": {
+      "sha256": "6a105ce182e644e80dc934dab5054c67435b7333b862d7d72d3a0c1ea7403e8c",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv4-per_token-post.json": {
+      "sha256": "a4ae44ea408d80932ef86d0941b00c089e9289b64290042c743fc59e90957482",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json": {
+      "sha256": "9087d8db1049078d5a8189305ea2e635261758fb76ab88ec6a52f6bf3d6eb438",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json": {
+      "sha256": "6e20df29c2b5fa5dcd78c5ff5f413a71a28071024e72199c58d46d7b74983392",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual8.json": {
+      "sha256": "5b1d4745c97991e1fb9da7622a2050873bf80244d21715d7f50bfc057fee0cc6",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual8.json": {
+      "sha256": "100cdb63e19002dc9fb38abaf86ab15c439293c7075e2968f0353d14877fe0fd",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual16.json": {
+      "sha256": "d14dea9ed152dacb8d22bc5d9ce65773ff2d937369c5434aebd883225be64a5d",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual16.json": {
+      "sha256": "f6694d7fabf6b8f1f0c664313f27297fe5065281bbb71db29e64bdd9ddaa0efa",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json": {
+      "sha256": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json": {
+      "sha256": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre-residual16.json": {
+      "sha256": "4ec0240d6018cc2972072cee74da9765199af3cf9feb0d646e30f8ea5acce58a",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre-residual16.json": {
+      "sha256": "e83af30c2cea21ba50cfb011b423918a46e38d9e06046d5c745f4962e1f1c726",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json": {
+      "sha256": "ef8459980f8acc6410be821315eb393a711ab0523d25972ac04d86c3d6cf9918",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json": {
+      "sha256": "26256661d46d3f3355975c269a4a12b702bd21228416199a32b255c395de9647",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json": {
+      "sha256": "191e9bfc1e1493ad85f8d6226ae3b4c0522a420bf6895c24763e23df231bbb42",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json": {
+      "sha256": "7d921af49bcb047a3441432f0910e288f133d474e4941ada36a975911fad25fe",
+      "execution_commit": "38f7320"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json": {
+      "sha256": "eeef74a28b30d60503a07c66fad023706042a9fcffbe0ba9d6af0103c8523a1f",
+      "execution_commit": "2ccd43a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json": {
+      "sha256": "bdb8e609e583b3b4b7c4c48c8ffd459d6113b2e991a45a590c754e3be145a0aa",
+      "execution_commit": "38f7320"
+    }
+  },
+  "previous_selection": {
+    "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+    "representation": "k8v4-per_token-post",
+    "H": 0,
+    "sha256": "4b2990bf457eb664b7540a8c4013233e17146005345e8ca8f2d9e0ec2bd584ff"
+  },
+  "capacity_scope": "主矩阵 96 道 C 输入长度的完整驻留字节之和，含残留和对齐",
+  "quality_scope": "初始 V 两个有效任务各 64 题，不使用后续扩样评分",
+  "reason": "全部已测未淘汰格式加 H 联合最小化最大下降，再比较完整字节"
 }

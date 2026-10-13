@@ -1,0 +1,1018 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "config_sha256": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+  "identity_source_sha256": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+  "n": 16,
+  "n_questions": 64,
+  "statistical_unit": "request",
+  "items": [
+    {
+      "id": "hotpot-four-v-00",
+      "question_ids": [
+        "5adf715b5542992d7e9f9354",
+        "5ade914b55429939a52fe8f9",
+        "5ab6b6fd5542995eadef006b",
+        "5ab55b0c554299488d4d995e"
+      ],
+      "answers": [
+        "Sturt",
+        "\"Discover Pure Energy\"",
+        "The Wolfhounds",
+        "the Big 12 Conference"
+      ],
+      "support_titles": [
+        [
+          "Minister for Defence Industry",
+          "Christopher Pyne"
+        ],
+        [
+          "Manta (SeaWorld San Diego)",
+          "Blue Fire"
+        ],
+        [
+          "Music for Dead Birds",
+          "The Wolfhounds"
+        ],
+        [
+          "Billy Preston (basketball)",
+          "Kansas Jayhawks men's basketball"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31742,
+          "sha256": "68c93906c37c7a54cd5495977b53e37c3078570869cd1e009022d20a952c9367",
+          "support_gaps": [
+            8217,
+            8214,
+            8214,
+            8262
+          ],
+          "gap_fillers": 79,
+          "tail_fillers": 565,
+          "pool_start": 54272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-00.txt"
+        },
+        "llama": {
+          "tokens": 31719,
+          "sha256": "75923ec31b837719190045bac4027d143bc042607437ff316c46ee768363a53b",
+          "support_gaps": [
+            8225,
+            8220,
+            8223,
+            8261
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 607,
+          "pool_start": 54272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-00.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "question_ids": [
+        "5a7a43245542994f819ef19d",
+        "5a7c34905542996dd594b8d5",
+        "5abc3c545542993a06baf89f",
+        "5a73266d5542994cef4bc47d"
+      ],
+      "answers": [
+        "1982",
+        "Andre Kirk Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "support_titles": [
+        [
+          "The Cold Corner 2",
+          "Lloyd Banks"
+        ],
+        [
+          "Ana Kasparian",
+          "Andre Agassi"
+        ],
+        [
+          "Codex Escalada",
+          "Juan Diego"
+        ],
+        [
+          "Gunnersbury Park",
+          "Neville Chamberlain"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31720,
+          "sha256": "99843a4a59d17dce9b7af133dd666fd807c76ced77e76e7d8177c045d2eda9bb",
+          "support_gaps": [
+            8203,
+            8326,
+            8354,
+            8223
+          ],
+          "gap_fillers": 78,
+          "tail_fillers": 582,
+          "pool_start": 56772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-01.txt"
+        },
+        "llama": {
+          "tokens": 31739,
+          "sha256": "c63c94aa5d24f5bf6063b96e16701d957cd2dbf7cf73931fd0df10a2dfe7d360",
+          "support_gaps": [
+            8213,
+            8318,
+            8330,
+            8204
+          ],
+          "gap_fillers": 87,
+          "tail_fillers": 619,
+          "pool_start": 56772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-01.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "question_ids": [
+        "5ae7fd085542993210984007",
+        "5ab7ba7555429928e1fe38b5",
+        "5a7e3a3f5542995ed0d166dd",
+        "5ab29bdc554299545a2cf9d1"
+      ],
+      "answers": [
+        "Barack Obama",
+        "James Mitchum",
+        "Kenny Greene",
+        "authoritarian tendencies"
+      ],
+      "support_titles": [
+        [
+          "Jennifer Hunt",
+          "Seth Harris"
+        ],
+        [
+          "The Dukes of Hazzard",
+          "Moonrunners"
+        ],
+        [
+          "Kenny Greene",
+          "Billy Idol"
+        ],
+        [
+          "Uyoku dantai",
+          "Far-right politics"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31707,
+          "sha256": "42ea804a12695c30287665f05e0b5e5a2460c2af8cd0a505b7ae880df3214d62",
+          "support_gaps": [
+            8235,
+            8290,
+            8349,
+            8400
+          ],
+          "gap_fillers": 82,
+          "tail_fillers": 579,
+          "pool_start": 59272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-02.txt"
+        },
+        "llama": {
+          "tokens": 31697,
+          "sha256": "1fd2ba99cf50e6a0d2e378356a802ccedef3dfbbc33a69427abb741ff0518353",
+          "support_gaps": [
+            8210,
+            8256,
+            8318,
+            8369
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 609,
+          "pool_start": 59272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-02.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "question_ids": [
+        "5ae544d75542990ba0bbb249",
+        "5adf430e5542993a75d2645e",
+        "5ac23ff0554299636651994d",
+        "5ae198bf5542997b2ef7d20d"
+      ],
+      "answers": [
+        "chalk quarry",
+        "Dundee Canal",
+        "2000",
+        "yes"
+      ],
+      "support_titles": [
+        [
+          "Arena Essex Raceway",
+          "Lakeside Shopping Centre"
+        ],
+        [
+          "Miami Canal",
+          "Dundee Canal"
+        ],
+        [
+          "Shut Up, Make Love",
+          "Poison (American band)"
+        ],
+        [
+          "Chad Gray",
+          "Dickie Peterson"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31707,
+          "sha256": "fbf0ec788623ea18437cac6934616e6708ef20231dae663d8f33a7be4d700d37",
+          "support_gaps": [
+            8246,
+            8327,
+            8313,
+            8379
+          ],
+          "gap_fillers": 77,
+          "tail_fillers": 588,
+          "pool_start": 61772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-03.txt"
+        },
+        "llama": {
+          "tokens": 31741,
+          "sha256": "af864f561319c9d07cd50b00828408ef49ab7acc1bcb57e9c2e2e0f33c959f6a",
+          "support_gaps": [
+            8220,
+            8296,
+            8280,
+            8343
+          ],
+          "gap_fillers": 84,
+          "tail_fillers": 610,
+          "pool_start": 61772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-03.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "question_ids": [
+        "5a7dcc775542990b8f503ab5",
+        "5ade630e55429975fa854eb7",
+        "5ae33cf45542990afbd1e0ea",
+        "5ae0d7315542990adbacf678"
+      ],
+      "answers": [
+        "picric acid",
+        "Old World fossil representatives",
+        "24 hours a day and 7 days a week",
+        "Toshi Ichiyanagi"
+      ],
+      "support_titles": [
+        [
+          "Shellite (explosive)",
+          "Picric acid"
+        ],
+        [
+          "Acinonychini",
+          "Puma (genus)"
+        ],
+        [
+          "33rd Street station (PATH)",
+          "PATH (rail system)"
+        ],
+        [
+          "Music for Electric Metronomes",
+          "Toshi Ichiyanagi"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31632,
+          "sha256": "bc85131258f206566a381e3fcd8767b7c0f52a89dda48000615ada8f0b4c2a24",
+          "support_gaps": [
+            8208,
+            8252,
+            8214,
+            8194
+          ],
+          "gap_fillers": 69,
+          "tail_fillers": 611,
+          "pool_start": 64272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-04.txt"
+        },
+        "llama": {
+          "tokens": 31737,
+          "sha256": "beef70c88aae2014282d8c028345fe5ca8d247cd2c2771c31616fb5668b7ab88",
+          "support_gaps": [
+            8207,
+            8251,
+            8211,
+            8197
+          ],
+          "gap_fillers": 78,
+          "tail_fillers": 631,
+          "pool_start": 64272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-04.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "question_ids": [
+        "5a7c988755429935c91b524d",
+        "5add433b5542997545bbbd02",
+        "5abd44d955429933744ab760",
+        "5a7d158155429909bec76947"
+      ],
+      "answers": [
+        "Tom Jones",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "support_titles": [
+        [
+          "Love in Several Masques",
+          "Henry Fielding"
+        ],
+        [
+          "Shohola Falls",
+          "Adventures of Huckleberry Finn"
+        ],
+        [
+          "Hains Point",
+          "Jefferson Memorial"
+        ],
+        [
+          "Lady in a Cage",
+          "Olivia de Havilland"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31713,
+          "sha256": "ac113364599349d552730765e609b709ffbeac1fd642d72e0c7c0faa4dbd0b6d",
+          "support_gaps": [
+            8215,
+            8234,
+            8307,
+            8342
+          ],
+          "gap_fillers": 85,
+          "tail_fillers": 587,
+          "pool_start": 66772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-05.txt"
+        },
+        "llama": {
+          "tokens": 31725,
+          "sha256": "6a878313e45a803182a663d67031f5842defdde5270f22ec905b34df42139d0f",
+          "support_gaps": [
+            8227,
+            8244,
+            8315,
+            8346
+          ],
+          "gap_fillers": 93,
+          "tail_fillers": 615,
+          "pool_start": 66772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-05.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "question_ids": [
+        "5a772c925542993735360208",
+        "5adea83b55429975fa854f53",
+        "5a7c6bcc55429935c91b519c",
+        "5a806aca5542996402f6a503"
+      ],
+      "answers": [
+        "The Farming Game",
+        "Tharangambadi",
+        "1944",
+        "Orc characters"
+      ],
+      "support_titles": [
+        [
+          "Polarity (game)",
+          "The Farming Game"
+        ],
+        [
+          "Thirukkalacherry",
+          "Tharangambadi"
+        ],
+        [
+          "Rock Springs (short story collection)",
+          "Richard Ford"
+        ],
+        [
+          "Hinterland (video game)",
+          "Orc"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31691,
+          "sha256": "0264eb50f4c00d494dc8decd388c95e65844693f7945453dce8404daaf8a9b44",
+          "support_gaps": [
+            8244,
+            8251,
+            8308,
+            8349
+          ],
+          "gap_fillers": 91,
+          "tail_fillers": 598,
+          "pool_start": 69272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-06.txt"
+        },
+        "llama": {
+          "tokens": 31738,
+          "sha256": "0d2126baad8eb52ed4eb8c6cb9f1d2276a523655681d5d17f9d1896b30ee2ee8",
+          "support_gaps": [
+            8225,
+            8234,
+            8282,
+            8322
+          ],
+          "gap_fillers": 97,
+          "tail_fillers": 627,
+          "pool_start": 69272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-06.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "question_ids": [
+        "5ae234005542994d89d5b392",
+        "5ae3f6775542991a06ce9a3f",
+        "5adc983c5542990d50227cb6",
+        "5a88f2cc55429938390d3ffb"
+      ],
+      "answers": [
+        "James Dean Bradfield",
+        "senior staffer",
+        "Brazil",
+        "2017"
+      ],
+      "support_titles": [
+        [
+          "James Dean Bradfield",
+          "Rob Thomas (musician)"
+        ],
+        [
+          "Ray Wert",
+          "Jennifer Granholm"
+        ],
+        [
+          "Sul América Esporte Clube",
+          "Manaus"
+        ],
+        [
+          "Jang Hoon",
+          "A Taxi Driver"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31720,
+          "sha256": "ef4591014f7973e1a9fc62a34f80d3208276459ced4090075038103b08b0aeb5",
+          "support_gaps": [
+            8219,
+            8289,
+            8284,
+            8322
+          ],
+          "gap_fillers": 106,
+          "tail_fillers": 597,
+          "pool_start": 71772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-07.txt"
+        },
+        "llama": {
+          "tokens": 31742,
+          "sha256": "baa172609fbc43aaeedd9b08dd7d5c49df2e629864490310f5028f37b66114ae",
+          "support_gaps": [
+            8224,
+            8289,
+            8272,
+            8308
+          ],
+          "gap_fillers": 115,
+          "tail_fillers": 629,
+          "pool_start": 71772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-07.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "question_ids": [
+        "5abeab375542990832d3a091",
+        "5ae7eb43554299540e5a5695",
+        "5abc715f5542993a06baf8ea",
+        "5a758f775542992db9473682"
+      ],
+      "answers": [
+        "Westley Sissel Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "over 210,000 residents"
+      ],
+      "support_titles": [
+        [
+          "1978 NBA Finals",
+          "Wes Unseld"
+        ],
+        [
+          "Willie Vaden",
+          "Texas's 27th congressional district"
+        ],
+        [
+          "Anton Ginsburg",
+          "Daniil Shafran"
+        ],
+        [
+          "Jamil Walker",
+          "Rochester, New York"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31709,
+          "sha256": "4593ffb1f05f2a52e519c879418e33049921110a25ed48b4bb6f4f1427157bd3",
+          "support_gaps": [
+            8433,
+            8292,
+            8282,
+            8221
+          ],
+          "gap_fillers": 64,
+          "tail_fillers": 596,
+          "pool_start": 74272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-08.txt"
+        },
+        "llama": {
+          "tokens": 31727,
+          "sha256": "5a455424f01e61a4882c3f6abbfcec9cdc4469b75c9f8b2f453e4ff644762567",
+          "support_gaps": [
+            8420,
+            8292,
+            8289,
+            8228
+          ],
+          "gap_fillers": 73,
+          "tail_fillers": 628,
+          "pool_start": 74272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-08.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "question_ids": [
+        "5a7ce50f55429909bec76869",
+        "5a763986554299109176e6bd",
+        "5adf8c375542995534e8c7dd",
+        "5ac4c0fc5542997ea680cab1"
+      ],
+      "answers": [
+        "1974",
+        "Pierre Nlend Womé",
+        "1972",
+        "French Second Republic"
+      ],
+      "support_titles": [
+        [
+          "Carsten Olsen",
+          "S. P. L. Sørensen"
+        ],
+        [
+          "Pierre Womé",
+          "Christian Poulsen"
+        ],
+        [
+          "1965 World Series",
+          "Sandy Koufax"
+        ],
+        [
+          "Parc des Buttes Chaumont",
+          "Napoleon III"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31707,
+          "sha256": "0b7cb5ec0a438103472c065c28c5299cfa91145821ef896e343bb1775a882114",
+          "support_gaps": [
+            8379,
+            8277,
+            8258,
+            8242
+          ],
+          "gap_fillers": 69,
+          "tail_fillers": 578,
+          "pool_start": 76772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-09.txt"
+        },
+        "llama": {
+          "tokens": 31704,
+          "sha256": "d2ce7c902249e9d20c6d1fd1338e5c4e5d71dc9c6340c906695a2b7d44443903",
+          "support_gaps": [
+            8343,
+            8245,
+            8226,
+            8203
+          ],
+          "gap_fillers": 80,
+          "tail_fillers": 604,
+          "pool_start": 76772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-09.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "question_ids": [
+        "5adc57325542996e6852531b",
+        "5a8a1b7a5542992d82986ec0",
+        "5ac1089f554299012d1db688",
+        "5ac1ff2255429964131be2b3"
+      ],
+      "answers": [
+        "Giacomo Puccini",
+        "Boston",
+        "yes",
+        "26,788"
+      ],
+      "support_titles": [
+        [
+          "Quando me'n vo'",
+          "La bohème"
+        ],
+        [
+          "Edward G. Walker",
+          "David Walker (abolitionist)"
+        ],
+        [
+          "Shengzhou",
+          "Linchuan District"
+        ],
+        [
+          "BA Connect",
+          "Didsbury"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31740,
+          "sha256": "5dba64dce5a003e9eb66cf6238c8ed40600ced0031d43ec1718502d8bee1d97a",
+          "support_gaps": [
+            8214,
+            8284,
+            8257,
+            8200
+          ],
+          "gap_fillers": 65,
+          "tail_fillers": 613,
+          "pool_start": 79272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-10.txt"
+        },
+        "llama": {
+          "tokens": 31727,
+          "sha256": "c27f322a582bbd6014a0719839ddd55f12c5a2d066ed5168bf3f091ef7a855ad",
+          "support_gaps": [
+            8219,
+            8281,
+            8257,
+            8200
+          ],
+          "gap_fillers": 79,
+          "tail_fillers": 640,
+          "pool_start": 79272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-10.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "question_ids": [
+        "5ae3dcc05542991a06ce9a33",
+        "5a7c00a55542996dd594b87e",
+        "5abff0785542997d64295957",
+        "5a7ef49a5542994959419a91"
+      ],
+      "answers": [
+        "Las Vegas",
+        "Mediterranean",
+        "Catherine Elise Blanchett",
+        "March 23, 2017"
+      ],
+      "support_titles": [
+        [
+          "Thomas Tull",
+          "The Hangover"
+        ],
+        [
+          "San Jose Secondary Educational Center",
+          "Málaga"
+        ],
+        [
+          "Heaven (2002 film)",
+          "Cate Blanchett"
+        ],
+        [
+          "Al Harrington (actor)",
+          "Hawaii Five-0 (2010 TV series)"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31733,
+          "sha256": "ae5dd97a4d469c911ee88674cf8b557f2e82db94c045ec3755eaf94f161d7665",
+          "support_gaps": [
+            8210,
+            8279,
+            8343,
+            8462
+          ],
+          "gap_fillers": 72,
+          "tail_fillers": 592,
+          "pool_start": 81772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-11.txt"
+        },
+        "llama": {
+          "tokens": 31712,
+          "sha256": "cff46cdcc3634d9872abb495f78d97ae6a50566d6df164439e1d4f41ab92a65a",
+          "support_gaps": [
+            8194,
+            8265,
+            8321,
+            8433
+          ],
+          "gap_fillers": 82,
+          "tail_fillers": 631,
+          "pool_start": 81772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-11.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "question_ids": [
+        "5a862da855429960ec39b640",
+        "5a82800855429966c78a6a2f",
+        "5a79c8fa5542994bb94570a1",
+        "5adf65555542992d7e9f9334"
+      ],
+      "answers": [
+        "Rawlings",
+        "no",
+        "technical director",
+        "Wendell Berry"
+      ],
+      "support_titles": [
+        [
+          "Alex Rodriguez",
+          "Rawlings Gold Glove Award"
+        ],
+        [
+          "Loot (2008 film)",
+          "Air Force, Incorporated"
+        ],
+        [
+          "Veda Hlubinka-Cook",
+          "The Last Express"
+        ],
+        [
+          "Dim Gray Bar Press",
+          "Wendell Berry"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31699,
+          "sha256": "dc03a303e7a8951c5354e6ca9bcc79f14beb4fd01459d2af59aab93aed1c7467",
+          "support_gaps": [
+            8193,
+            8211,
+            8197,
+            8197
+          ],
+          "gap_fillers": 48,
+          "tail_fillers": 582,
+          "pool_start": 84272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-12.txt"
+        },
+        "llama": {
+          "tokens": 31726,
+          "sha256": "79a046d70794a90f29c0a31bb4a9b13c8ebc1e8847badb5952de75c1d42bb408",
+          "support_gaps": [
+            8193,
+            8216,
+            8204,
+            8208
+          ],
+          "gap_fillers": 60,
+          "tail_fillers": 615,
+          "pool_start": 84272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-12.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "question_ids": [
+        "5ae2075f5542994d89d5b315",
+        "5a738b855542992d56e7e363",
+        "5a7b69b155429927d897bfbc",
+        "5abe36aa5542993f32c2a08f"
+      ],
+      "answers": [
+        "the Hanna-Barbera show \"Birdman and the Galaxy Trio.\"",
+        "St. Elizabeths Hospital",
+        "Clitheroe Football Club",
+        "American Scientist"
+      ],
+      "support_titles": [
+        [
+          "Gary Cole",
+          "Harvey Birdman"
+        ],
+        [
+          "St. Elizabeths Hospital",
+          "Providence Hospital (Washington, D.C.)"
+        ],
+        [
+          "Dan Hanford",
+          "Clitheroe F.C."
+        ],
+        [
+          "American Scientist",
+          "Dwell (magazine)"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31728,
+          "sha256": "48c618df9425972cb1999a1f2d4b378676e03cbe98ad245306420adcc756e8c1",
+          "support_gaps": [
+            8317,
+            8242,
+            8215,
+            8235
+          ],
+          "gap_fillers": 103,
+          "tail_fillers": 575,
+          "pool_start": 86772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-13.txt"
+        },
+        "llama": {
+          "tokens": 31718,
+          "sha256": "53117ce1edd2b56bdd8a80873686bc021ca80b54af29a6deb532329b41b82eea",
+          "support_gaps": [
+            8297,
+            8227,
+            8204,
+            8222
+          ],
+          "gap_fillers": 111,
+          "tail_fillers": 608,
+          "pool_start": 86772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-13.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "question_ids": [
+        "5abf12005542997719eab661",
+        "5abc095c5542993f40c73c5d",
+        "5ae7e1fc55429952e35ea9cc",
+        "5a78eea555429970f5fffddf"
+      ],
+      "answers": [
+        "Umberto II",
+        "Fazoli's",
+        "orange",
+        "Richard Boleslawski"
+      ],
+      "support_titles": [
+        [
+          "Louis, Count of Armagnac",
+          "Umberto II of Italy"
+        ],
+        [
+          "Vocelli Pizza",
+          "Fazoli's"
+        ],
+        [
+          "Oranjegekte",
+          "Koningsdag"
+        ],
+        [
+          "Richard Boleslawski",
+          "Herschell Gordon Lewis"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31743,
+          "sha256": "f866fd04ceff9171fba79ee7141382bfa7229be8b31307455a4db247eadb796e",
+          "support_gaps": [
+            8282,
+            8274,
+            8257,
+            8194
+          ],
+          "gap_fillers": 102,
+          "tail_fillers": 597,
+          "pool_start": 89272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-14.txt"
+        },
+        "llama": {
+          "tokens": 31732,
+          "sha256": "3c3b78060c3490dda8aaf52c9a4422c3ebeba4bcc4d6b88f579856e7721ea54c",
+          "support_gaps": [
+            8293,
+            8278,
+            8266,
+            8200
+          ],
+          "gap_fillers": 117,
+          "tail_fillers": 620,
+          "pool_start": 89272,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-14.txt"
+        }
+      }
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "question_ids": [
+        "5ae531ee5542990ba0bbb1ff",
+        "5ab2b61d5542991669774065",
+        "5a7b46e55542995eb53be8e5",
+        "5ab38cdd5542992ade7c6de2"
+      ],
+      "answers": [
+        "War & Peace",
+        "Han Solo",
+        "Ordos City",
+        "John Lennon"
+      ],
+      "support_titles": [
+        [
+          "Tommy's Honour",
+          "Jack Lowden"
+        ],
+        [
+          "Dead Heat on a Merry-Go-Round",
+          "Harrison Ford"
+        ],
+        [
+          "Spaceware Sky Vision II",
+          "Ordos City"
+        ],
+        [
+          "Nowhere Boy",
+          "Mimi Smith"
+        ]
+      ],
+      "models": {
+        "qwen": {
+          "tokens": 31729,
+          "sha256": "edd7e478a3882f72c409ff5c468cf2ef889abc1a5611d281cf768b35491043d2",
+          "support_gaps": [
+            8212,
+            8195,
+            8272,
+            8325
+          ],
+          "gap_fillers": 58,
+          "tail_fillers": 577,
+          "pool_start": 91772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/qwen/hotpot-four-v-15.txt"
+        },
+        "llama": {
+          "tokens": 31678,
+          "sha256": "8396ec8311cff103045c3e0ae575d28b4fac03593ebd23789a7d45d6f5b7ae26",
+          "support_gaps": [
+            8259,
+            8242,
+            8310,
+            8351
+          ],
+          "gap_fillers": 68,
+          "tail_fillers": 608,
+          "pool_start": 91772,
+          "path": "research/.runtime/data/phase1-text/hotpot_four/llama/hotpot-four-v-15.txt"
+        }
+      }
+    }
+  ]
+}

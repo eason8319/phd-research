@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+from collections import Counter
 import re
 import string
-from collections import Counter
+from typing import Any
+
 
 _HASH_NUMBER = re.compile(r"####\s*(-?[0-9][0-9,]*(?:\.[0-9]+)?)")
 _FINAL_ANSWER = re.compile(r"Final answer:\s*(.+)", re.IGNORECASE)
@@ -86,3 +88,24 @@ def token_f1(prediction: str, gold: str) -> float:
 def answer_exact(prediction: str, gold: str) -> bool:
     """长问答的 EM：归一化后的 token 序列相同。"""
     return normalize_f1(extract_final_answer(prediction)) == normalize_f1(gold)
+
+
+def score_request(prediction: str, answers: list[str]) -> dict[str, Any]:
+    """抽取四条编号答案；先平均题级 F1，不把四题当作四个独立请求。"""
+    if len(answers) != 4 or any(not answer.strip() for answer in answers):
+        raise ValueError("每个请求须有四个非空标准答案")
+    extracted = []
+    for index in range(1, 5):
+        matches = list(re.finditer(rf"Final answer {index}:", prediction, re.IGNORECASE))
+        tail = prediction[matches[-1].end():].lstrip(" \t\r\n*") if matches else ""
+        answer = tail.splitlines()[0].strip(" \t\r*") if tail else ""
+        if re.search(r"Final answer [1-4]:", answer, re.IGNORECASE):
+            answer = ""
+        extracted.append(answer)
+    f1s = [token_f1(p, g) if p else 0.0 for p, g in zip(extracted, answers)]
+    ems = [bool(p) and answer_exact(p, g) for p, g in zip(extracted, answers)]
+    return {
+        "extracted_answers": extracted, "answer_f1": f1s, "answer_em": ems,
+        "missing_answers": sum(not p for p in extracted),
+        "f1": sum(f1s) / 4, "em": all(ems), "answer_em_percent": 25 * sum(ems),
+    }

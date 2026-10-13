@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import hashlib
 import json
-import sys
 from pathlib import Path
+import sys
 from typing import Any
 
-from kvstudy.intervals import crosses_tolerance, quality_state
+from experiments.generation_error_sources.code.select import KV8
 from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.select import KV8, _interval, _paired, _read
+from phase1.quality_stats import _read
+
 
 TASKS = ("gsm8k", "hotpot")
 TOTALS = (64, 128, 256)
@@ -127,126 +128,15 @@ def _matching_inputs(results: dict[str, dict[str, Any]], total: int) -> None:
 
 
 def run(model_key: str, total: int, commit: str) -> None:
-    """登记每个最终候选的质量状态，并列出下轮必须同扩的条件。"""
-    if total not in TOTALS:
-        raise ValueError("候选判定只接受总样本数 64、128 或 256")
+    """历史命令只转入当前统一判定；旧实体读取函数继续支持审核。"""
+    from experiments.static_layer_allocation.code.protocol import require_v_plan
+    from experiments.static_layer_allocation.code.quality import summarize
+
     root = project_root()
-    generation_folder = (
-        root / "research/phase1/experiments/generation_error_sources/results" / model_key
-    )
-    e2 = _read(generation_folder / "no_residual_selection.json")
-    e3_folder = root / "research/phase1/experiments/static_layer_allocation/results" / model_key
-    e3 = _read(e3_folder / "selection.json")
-    gate = _read(e3_folder / "gate.json")
-    seeds = _read(root / "research/phase1/splits/seeds.json")
-    simple = "e2" if e2["selected_low_bit"] else "kv8"
-    selected = e3["f_protocol_candidate"]
-    candidate_conditions = [simple] + ([f"e3-{selected}"] if selected else [])
-    cells: dict[str, dict[str, Any]] = {}
-    expansion: dict[str, dict[str, Any]] = {}
-    folder = (
-        root / "research/phase1/experiments/static_layer_allocation/results/expanded_quality"
-        / model_key
-    )
-    previous = None
-    if total > 64:
-        previous = _read(folder / "selection.json")
-        if previous["total_n"] != (64 if total == 128 else 128):
-            raise RuntimeError("候选必须按 64→128→256 的顺序复核")
-        if (previous["e2_selection_commit"] != e2["commit"]
-                or previous["e3_selection_commit"] != e3["commit"]
-                or previous["candidates"] != candidate_conditions):
-            raise RuntimeError("上轮扩样计划与当前候选不一致")
-    for task in TASKS:
-        if not e2["baseline_usable"][task]:
-            cells[task] = {"status": "高精度基线未达下限"}
-            continue
-        if previous is not None and task not in previous["next_expansion"]:
-            cells[task] = previous["cells"][task]
-            continue
-        active = candidate_conditions
-        if previous is not None:
-            requested = previous["next_expansion"][task]
-            if requested["next_total_n"] != total:
-                raise RuntimeError("扩样轮次与上次登记不一致")
-            active = [name for name in candidate_conditions if name in requested["conditions"]]
-        conditions = ["bf16", "kv8", *active]
-        conditions = list(dict.fromkeys(conditions))
-        results = {
-            name: _combined(root, model_key, task, name, total)
-            for name in conditions
-        }
-        if selected and f"e3-{selected}" in active and total > 64:
-            results.update({
-                f"e3-{name}": _combined(root, model_key, task, f"e3-{name}", total)
-                for name in gate["random_for_v"]
-            })
-        _matching_inputs(results, total)
-        cells[task] = dict(previous["cells"][task]) if previous is not None else {}
-        crossing: list[str] = []
-        for name in active:
-            versus_bf16 = _paired(
-                results["bf16"], results[name], task,
-                seeds["bootstrap"], seeds["bootstrap_draws"],
-            )
-            versus_kv8 = None
-            if name != "kv8":
-                versus_kv8 = _paired(
-                    results["kv8"], results[name], task,
-                    seeds["bootstrap"], seeds["bootstrap_draws"],
-                )
-            intervals = [versus_bf16] + ([versus_kv8] if versus_kv8 else [])
-            undecided = any(
-                value["upper"] is None or crosses_tolerance(_interval(value))
-                for value in intervals
-            )
-            invalid_samples = sum(
-                row.get("invalid_groups", 0) > 0 for row in results[name]["rows"]
-            )
-            state = quality_state(
-                _interval(versus_bf16),
-                _interval(versus_kv8) if versus_kv8 else _interval(versus_bf16),
-                format_ok=invalid_samples < 2,
-            )
-            if undecided and state != "淘汰":
-                state = "证据不足"
-            cells[task][name] = {
-                "total_n": total, "state": state,
-                "invalid_samples": invalid_samples,
-                "versus_bf16": versus_bf16,
-                "versus_kv8": versus_kv8,
-                "interval_crosses_2_or_missing": undecided,
-            }
-            if undecided and state == "证据不足":
-                crossing.append(name)
-        if crossing and total < 256:
-            needed = ["bf16", "kv8", *crossing]
-            if any(name.startswith("e3-") for name in crossing):
-                needed += [f"e3-{name}" for name in gate["random_for_v"]]
-            expansion[task] = {
-                "next_total_n": 128 if total == 64 else 256,
-                "conditions": list(dict.fromkeys(needed)),
-            }
-    folder.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "protocol": "phase1-full-key-retrieval", "commit": commit,
-        "model": model_key, "total_n": total,
-        "e2_selection_commit": e2["commit"],
-        "e3_selection_commit": e3["commit"],
-        "candidates": candidate_conditions,
-        "cells": cells, "next_expansion": expansion,
-        "expansion_history": (
-            previous["expansion_history"] + [{
-                "from_n": previous["total_n"],
-                "plan": previous["next_expansion"],
-            }] if previous is not None else []
-        ),
-        "retrieval_32k_excluded": not e2["baseline_usable"]["retrieval"],
-    }
-    (folder / "selection.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-    print(model_key, total, "待扩样单元", list(expansion), flush=True)
+    require_v_plan(root)
+    if total not in TOTALS:
+        raise ValueError("质量判定档位非法")
+    summarize(root, model_key)
 
 
 if __name__ == "__main__":

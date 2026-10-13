@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import hashlib
 import json
-import sys
 from pathlib import Path
+import sys
 from typing import Any
 
 import numpy as np
@@ -13,6 +13,7 @@ import pyarrow.parquet as pq
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+
 
 MASTER_SEED = 20260923
 DATE_STRING = "26 Jul 2024"

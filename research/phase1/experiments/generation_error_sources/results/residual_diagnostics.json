@@ -1,0 +1,2757 @@
+{
+  "commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+  "status": "completed",
+  "completed_steps": [
+    "experiments.generation_error_sources.code.quantized_generation qwen gsm8k v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation qwen hotpot v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation qwen gsm8k v k8v4-per_token-post e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation qwen hotpot v k8v4-per_token-post e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation llama gsm8k v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation llama hotpot v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation llama gsm8k v k8v4-per_token-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation llama hotpot v k8v4-per_token-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 16",
+    "experiments.generation_error_sources.code.quantized_generation llama gsm8k v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 8",
+    "experiments.generation_error_sources.code.quantized_generation llama hotpot v k8v4-per_channel-pre e7518c36473401372ba90eaaf8579dc98ca1ea05 8"
+  ],
+  "started_at_utc": "2026-10-05T09:06:02.748989+00:00",
+  "models": [
+    "qwen",
+    "llama"
+  ],
+  "protected_sha256": {
+    "research/phase1/experiments/representation_interactions/results/qwen/samples.json": "040697ec6a9bc898e2297da17bcb3b97545d82c668783ca9655eec09a8a826ed",
+    "research/phase1/experiments/representation_interactions/results/qwen/summary.json": "4cd527f51fd357c8c989eae7bb280a5b3b2e5746c204827f6443bc691dc0bb88",
+    "research/phase1/experiments/representation_interactions/results/llama/samples.json": "ba9a04fd22b407433504d83d1a86bb6d2abe37f0fca7a6e2cd3efd8bcd9ee8da",
+    "research/phase1/experiments/representation_interactions/results/llama/summary.json": "586c31457ff47a145590e75fc3e64c70c6b7faff01ae28dfc94161ff37be4c08",
+    "research/phase1/experiments/generation_error_sources/results/c_execution.json": "8f4fbb5fe63ed1362e8ea83497b506c07077371ec15e14298eea8117ee3865a6",
+    "research/phase1/experiments/generation_error_sources/results/c_retrieval_execution.json": "ed1ddbc607e4b0fdb2f2c61bf4fcc216d1a83f63b05291351eb8b6513fa63e6d",
+    "research/phase1/experiments/generation_error_sources/results/calibration.json": "df3ce58c58a3360b908ae4f03045a7361792a25f27c469a6e82158617015d86f",
+    "research/phase1/experiments/generation_error_sources/results/execution.json": "e3ce7069004ff9ed16e9e892fd6eb0b588a5583683f82e326c092662b07e3250",
+    "research/phase1/experiments/generation_error_sources/results/v_hotpot_execution.json": "6c6c920b024cb983f8944f2fbcffd7dffd3afe41190ee551b7dc848d284e2a84",
+    "research/phase1/experiments/generation_error_sources/results/v_retrieval_audit.json": "0c571f76ad568dd25fc7e22c73a30cc759625e299c4414a21d846ee2b348b35e",
+    "research/phase1/experiments/generation_error_sources/results/completion_execution.json": "c8082b354c1bd3bc1f7069d0fbd97f77d3038552694711c1884a09e641c9c5c8",
+    "research/phase1/experiments/generation_error_sources/results/llama/c_gsm8k_bf16.json": "e92ec1b5eccfdc32fbe9c19b962db1b6ed8dddb60f0d6268cc94e49199587d7b",
+    "research/phase1/experiments/generation_error_sources/results/llama/c_retrieval_bf16.json": "afa78edca9f678ed7eba8a0367f556b6de70243aa65372223f672f7bbed70fcb",
+    "research/phase1/experiments/generation_error_sources/results/llama/cross_token_gt32.json": "c46936ef40c96ad731c1b90e099e302145c30002f2d6ac816ecb7ce15ffb82a8",
+    "research/phase1/experiments/generation_error_sources/results/llama/long_decode_selection.json": "952e1e3bbc468fb8048733fec9e5b535994f52122c24e250858a846f046d92fe",
+    "research/phase1/experiments/generation_error_sources/results/llama/no_residual_selection.json": "3995392ee8568a1472ff8808d163da6cdd41af1d3505fe8009c8aeac647685eb",
+    "research/phase1/experiments/generation_error_sources/results/llama/residual_selection.json": "4b2990bf457eb664b7540a8c4013233e17146005345e8ca8f2d9e0ec2bd584ff",
+    "research/phase1/experiments/generation_error_sources/results/llama/trajectories.json": "727fe6b616961fa33bed23d3fb47c3092bc6b15ea8cb4f139215658a833e2d0c",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json": "fa2039551ab04234e826f32e9deabe50b6318a93b2c64b9ed11cca7cb66ff1c9",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json": "eeef74a28b30d60503a07c66fad023706042a9fcffbe0ba9d6af0103c8523a1f",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json": "191e9bfc1e1493ad85f8d6226ae3b4c0522a420bf6895c24763e23df231bbb42",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json": "ef8459980f8acc6410be821315eb393a711ab0523d25972ac04d86c3d6cf9918",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv4-per_token-post.json": "6a105ce182e644e80dc934dab5054c67435b7333b862d7d72d3a0c1ea7403e8c",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv8-per_token-post.json": "5b367fd96f1090933e8a1bcbce76adc9711baee15dc887a1e052069c1ccd1d19",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json": "030e2bfa28c7c675d3e2eaf56db8dc14e4a8eeab81ddb80f9d883c7eeaf83c4d",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json": "bdb8e609e583b3b4b7c4c48c8ffd459d6113b2e991a45a590c754e3be145a0aa",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json": "7d921af49bcb047a3441432f0910e288f133d474e4941ada36a975911fad25fe",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json": "26256661d46d3f3355975c269a4a12b702bd21228416199a32b255c395de9647",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv4-per_token-post.json": "a4ae44ea408d80932ef86d0941b00c089e9289b64290042c743fc59e90957482",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv8-per_token-post.json": "56613df77f6b3ae76abe8ec6f1f34b29df9bed571b1a7c2169878914eea559b3",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_long_bf16.json": "ebd2ce7d625592e7622d540e3dc300ad0944da92ea9407290898a762579603c8",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_bf16.json": "8ff4cb20ee3d92128401a137f4ac5261916f1b90e6bba7b9cc7def3e6f87d9d1",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json": "9087d8db1049078d5a8189305ea2e635261758fb76ab88ec6a52f6bf3d6eb438",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json": "6e20df29c2b5fa5dcd78c5ff5f413a71a28071024e72199c58d46d7b74983392",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-post.json": "8894531b303cd65c6bcafef72c9280166cca1020bc014f9f14fc77a5fbdb70d7",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-post.json": "4e6efc7db1bb8ea0b93a55eb8efec358d6cabd254f568a756f1746110797b973",
+    "research/phase1/experiments/generation_error_sources/results/qwen/c_gsm8k_bf16.json": "0062edde6e22f42747d2770fc1ebea4cf9fb948fc2cf5a5c432d52a4efd35c28",
+    "research/phase1/experiments/generation_error_sources/results/qwen/c_retrieval_bf16.json": "af9a582597d45b9394b52109b833762afe8f9ef45c22f501adca1176301050fa",
+    "research/phase1/experiments/generation_error_sources/results/qwen/cross_token_gt32.json": "87185a8b33395937688e49846ee48c19fa44cc118bff9ba0efcdde9909470d57",
+    "research/phase1/experiments/generation_error_sources/results/qwen/no_residual_selection.json": "17ecdba295df3a17c2bdd049ffae56226b7f67b67ceb367579be60cfbb525daf",
+    "research/phase1/experiments/generation_error_sources/results/qwen/range_refit_k8v4-per_channel-post.json": "153a0d09c766f5130be0f1638843acc5ad390047704c9218928351d20e2d03bd",
+    "research/phase1/experiments/generation_error_sources/results/qwen/residual_selection.json": "d69dd9818366ab7805d40df2e581f08b7da3e04efb54f5ccccbbe064ec7b68c0",
+    "research/phase1/experiments/generation_error_sources/results/qwen/scale_drift_k8v4-per_channel-post.json": "ccd50f721586d4aebe679d3174bea6772b0f6b12240e1cb97d010d4386d119f0",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json": "b735c25fa42311ae1979ae825185aa3abf5733485ccd069c256025b9a8f36109",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-post.json": "b6f16db459fbaf914cb2f77ea4a945690ed3fc0cfd4ea1be15aeb4bf813396c7",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv4-per_channel-pre.json": "0c8da4de7ba163ec990441647a5dd4ed4453d4a8c45abdf34dab3bd29d0c7590",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv4-per_token-post_early_stop.json": "b321bd627b2d5ed7ec24e4b56a51a3f9c088c8b20352676dcea5e72868cc6673",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv8-per_token-post.json": "a1be7681f34e524c71f7025b274ddd3eb7f134a0e3f3b39ab8f611752145f5e8",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json": "0dc0ea8faeeea012f50f1cf82509c83fee533250a353253b10cf9e8fa498fcb5",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-post.json": "af5c4674a66d11de31412057dc87dcd95ff978df833463d91697fc69118845e1",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv4-per_channel-pre.json": "17c31b81875fd32d6c4f783a03e730a9aa385c91080408d4038ad474c3690e33",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv8-per_token-post.json": "dff2631ee2415d33287c9ffc211636249c29b2cda8717fad9f81a3c0845ecf42",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_bf16.json": "a94f878bf9d490581cf33c340a1b6b3f5486edd24e085e38ab54747c23a73aae",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json": "618212c4f87d70fbed809804875d516c48452a2db52b3bcb5d8a40c96ac4987e",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json": "69e4fc9881e3763c84276786d97ec615ee8ae3c619afe95518dd2fa6bb087fbe",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json": "0b6116ea31950db2fa976c21f8bc2e910ea323db63242e5a515f006badbaeef7",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json": "a7be8ea768c4b43c19edb4684cc92f1dbabcd5d02b48bcd842ad1cd4aef11805",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json": "114ed40ad89907a9729312a9433c48a7b66475ec0627a9822a129809d62d7a2f",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json": "875c5c1a995f94c0ced4e1669c3738f08d66b6ef1041238bda37ded90f81467d",
+    "research/phase1/experiments/generation_error_sources/results/qwen/trajectories.json": "b62852f4d15ad9f8ae81fb772a2d3d229092e5b5cceb843febab02e1fc55005d",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_long_bf16.json": "301c239bdc7f4bc60973c9cabdcfcc8057ff3e6d4f7f624e4ffe2827f094e7c9",
+    "research/phase1/experiments/generation_error_sources/results/qwen/long_decode_selection.json": "5905d72629fdbf9d8261f395190eff495ca48d816feb799f7997e498d6da4ce0",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n256.json": "5d1604717954d95b4e83e84400cbbadfc09c68432d636dae4bb1b37551be8b36",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n256.json": "b7e46978291c903369546bf571a2cda4fdef7ab97818ffac2733b5a022581a0b",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n256.json": "09951ea7f91fd47aab1f55b0173b8a3e81c533082ad96cdef44ab93cec6e0818",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_bf16_n128.json": "b632f679a7a0fe32e490a6516e48d0cb445a9844a80c154820a1ddce26c24b1d",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_kv8_n128.json": "0a7d60b06256f95d19343dc42610651812df82f0488b7a8fec4f80f4a9a44e32",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_uniform_quantization_n128.json": "3e352ca529b4f9edb2f03c73bc3220304645e66b8f1d2961c3f9ef0ec3a97141",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/selection.json": "12cce19739f25beca40f205cc4ab7767fe5f31a214144b78e70008c3297e5c7d",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n256.json": "93a74fee3704ead47668cd898c6fb45b81234118ea77396217ccdbf968386619",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n256.json": "79f07c2e36c1fb2095e3585d74bfca6b8ea48a245f4672c3416c26a4b40a482b",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n256.json": "e7d223a872fd401d46d90e7925f5474063bb939bd0ec1e006d164bfeccbc979e",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n256.json": "88f659eb358be73554ac2cf9c2d82ceea068064e9096994b8c74024eac42ee61",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n256.json": "e3bdc86c0dd94e6dde20464054a769d3023c6314d9f1d484d8d858f77fe9a21f",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n256.json": "705127d15a6b59ce0400e5c23f50c781548a0a7c6537ca05f1c02ee42fb38a65",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n256.json": "b5f2c9365c356080b34a82955a4cfd07edade2c7d4fa42173b8bd07d5ceaa5d9",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n256.json": "658b083ea1202d689c75f9d245fd632e63066c31fb23eff2768508c4dfa8140a",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n256.json": "ca84c7f39ef7103b6079a01db96ba47a86f1928e21f1c2ae8d5146435439ba1b",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n256.json": "90617cf8a658be74b13030b540ec90d51a50beb901e30f2897f282bc096ab1ad",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n256.json": "764da343198f4c842c8c7ac247d7fb95395ff4580d156b31135da8d12a998f21",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n256.json": "27ddf098f98e57e6af1df58f1ad4f296eb815497f3f52e066b5c9c97e097d90a",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/selection.json": "94277365fd5f2a8c8e269ab40e4af2c1d3ed5f7ec1d8174f1efd913b2c9ae78d",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_uniform_quantization_n256.json": "c2bf1be1e84b45a783293185998691c09c75d161529a4b01d1279fc80c16b550",
+    "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_uniform_quantization_n256.json": "2836db04397f6998408aee6a260a0130c1cb5d01637f0fc37f98c096d18288b0",
+    "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+    "research/phase1/experiments/static_layer_allocation/results/llama/gate.json": "7d63b804376a547c5a1da16248fbe8d3db76ebf0d556d246994588038c1af418",
+    "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+    "research/phase1/experiments/static_layer_allocation/results/llama/selection.json": "0ee12688ec2e95d6d96bd4efe4083b2a6fc2de050a21bd3c8e3fa1c87688bbd8",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_inverse.json": "d6c38a521498e244cbeed4f2e1a5c7890c54c119db8a871c281a12b4c523f482",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609231.json": "4a9cb3f36922641c54336cb038f35807695a04aca70eda36f40bb68baa104a85",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609232.json": "b0e072f535b493b0af2a79c1070739ecc81d6f1b36af9e2e686e9ab29659ed07",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609233.json": "a41fb8cd1fa22e83c1529c944c0be96a6325ae1536b5ed25e4923961eee6e946",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_reconstruction.json": "c3d629f3ece2652190749c3873853d17af4b855ab42ab163c0f8323cb679fb79",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_inverse.json": "42c9771d4d849a3153f3db54354869f04b99a5f1199e14ff99df0b94b9d717e6",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609231.json": "d2d94866b27a0e1ff9db1bdf6dce1638cc1f1ff56a8c911c81c53c835c6fe46a",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609232.json": "a3c3b37e5d6f8b48ef5f6a4db2c31fe9261e95a456ffd6e13e61ce09c4eee302",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609233.json": "e44d7df4edae42456042e5f12a6adef2b948035388571735d897f1c8f7ffbba8",
+    "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_reconstruction.json": "c4ff0b39c0fa448868d814d305e7e682f14a8f8e81cdb561106c455971cbd84b",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "67909b7f3f98053a95ea0c95548d94339fe883993174d66570be71241f598979",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json": "8951495933e105ef4a4adf534f5e40aad07f7bb4b865c589dc04381031acd46f",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "0bcc93dd9f5a3d29f690d894c4f3aa0bfdb60d71ddac3b90bf35c4f27b22e0dd",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/selection.json": "f4cee2ca0e4828675971baa7623abef7ea67a90af3f931a4d0d162ee916b5e9c",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_inverse.json": "c36da1f0b13ba4e83522e39910eca18747cf7f44037882a0d6a312dff6c9c806",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609231.json": "92ecff4f79d014f3c19f47ae8404ad2017d259fc141fb1b7d29fb0f9be62fef0",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609232.json": "df74d28f812d2d3f619baa4e2ddc4188b6ceb3cc3b284289ec1639af270d253d",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609233.json": "78ffaa1f262fa8211a5f8afdda2f7720f013d7f1f1c5594cde40f5e45669798b",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_sensitivity.json": "5d30d20e03adb371b30a60af8b93ed3f6d10ad3cca41acfd40fab681864db7cf",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_inverse.json": "91fec91d65028897a3092d06fac59c942e24e6e2eb5d129632b82690392e4454",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609231.json": "d53bffe9f525b2d6e4478f05b19eb8e6189bb5a6482d3d4f51969d6ae93d2005",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609232.json": "288ca01b87a38afa68eed4739776ddb3068cb38b3d35baafef0e7e24a363bb38",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609233.json": "3a50eaba6d17eb64f682efd93d5b90fae6ee15c6849db4e2812b5cce30cc271c",
+    "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_sensitivity.json": "f6f9d1ce26f44c97de61ccba38b2ca03bf311a680b1016f4da5e240701c8409e",
+    "research/phase1/experiments/storage_service_cost/results/llama/layout.json": "a8569a6fc26c93008c7e3c520fad2952df1c476031f276bbe1b5cc93a120ee59",
+    "research/phase1/experiments/storage_service_cost/results/qwen/layout.json": "9d7c437fcdc314cf4b27582c817812032fa7c775f24acf8d1d827647f4d1f385"
+  },
+  "code_config_sha256": {
+    "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+    "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+    "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+    "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+    "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+    "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+    "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+    "research/phase1/src/phase1/complete_experiments.py": "1e499c05ee44d569ccc867e9d0a5003e62ad2ec7fe436cdc800802071c2e0d33",
+    "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+    "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+    "research/phase1/src/phase1/review_results.py": "5f163c88e47e2787ea52286004dd497f55fdcef9b65c2a2935634904eee92bbd",
+    "research/phase1/src/phase1/runner.py": "76bcb9527243c1be35140759218e6a29a4b3657c0e195807890a065433f917af",
+    "research/phase1/src/phase1/score.py": "6ceeb1a9fa1ba3c26da0d2f5289e57661be82b85eda8c7d2fe6e87f00826288e",
+    "research/phase1/src/phase1/splits_build.py": "f79bf9724777a47b064f42fe6de2dafd4476dccbdb78f5a4e906ee0bae838882",
+    "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+    "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+    "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+    "research/phase1/experiments/representation_interactions/code/evaluate.py": "052ecabcfcac0cd0ccb0121e38d01b5ef579979f1bfbc3b3767a7c272c174046",
+    "research/phase1/experiments/representation_interactions/code/metrics.py": "164fe2819d1a1c9f951424acbac5dc857db914a2072f37e4d49b6ac19986bbfc",
+    "research/phase1/experiments/representation_interactions/code/results.py": "810bfab4e9d9f4e53c5cc36c5361a03b4df44149eaa8d0a1bf4f4fd75f76fdd3",
+    "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+    "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+    "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+    "research/phase1/experiments/generation_error_sources/code/candidates.py": "56a595255e95271a70f37f0cc073e9b86ea249515c6c71be0c7192cf28ab1397",
+    "research/phase1/experiments/generation_error_sources/code/cross_token_groups.py": "c039fd72071607a3d8fb3a41bd0c837b43c7ad54241cde6e857c6fb42d907d45",
+    "research/phase1/experiments/generation_error_sources/code/early_stop.py": "9dd3657e2e99255f5b17315981de937c51bbd3d82e0406c0a39ae3e49c60b903",
+    "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "f5af657c48c10a817eb57ac51a72a6972510f7372dc723b984bfa0d6cb387054",
+    "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "0491322636bae2117b149d72fb91f3f8ac17141d4275c437deb28b43013c916a",
+    "research/phase1/experiments/generation_error_sources/code/range_refit.py": "3fed386dcbef34f7e8e6e8002c8db2be6ec370f0a964a2246b425601a88b885b",
+    "research/phase1/experiments/generation_error_sources/code/scale_drift.py": "344b42996a34ef2176f201790962c5dd5538952ec356a49dfa6f51236e04838b",
+    "research/phase1/experiments/generation_error_sources/code/select.py": "7048915da065965cd544d26eff57a0c3118985cdeb9c91468a8b14325a94124d",
+    "research/phase1/experiments/generation_error_sources/code/select_long_decode.py": "3f52d76d1d6369efecb2bc0711cb3b1b1070b390beb2ea99dda866590ac772c4",
+    "research/phase1/experiments/generation_error_sources/code/select_residual.py": "d68991549b5c3e225b58d5f5d7687b54e9fca2662f250cfdfc4d6ce411e102bd",
+    "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+    "research/phase1/experiments/generation_error_sources/code/sources.py": "37f5a8641a6d513de7b3f7ca3897ad3df0c1423d81655dadb8df3d41716786cf",
+    "research/phase1/experiments/generation_error_sources/code/trajectories.py": "b26cb115ef0a35546a57c678b2a812acd11724e3cd4170d2954e051910164c56",
+    "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+    "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "17aba83a1379eee2025d74ceecbd6a25bec8cbd03ec08dc9aa4c95d2457f0bc6",
+    "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+    "research/phase1/experiments/static_layer_allocation/code/allocations.py": "766cbd440f25821160c091e6058eb2d2408d88351c7fb38ae8ae04c716cb45f1",
+    "research/phase1/experiments/static_layer_allocation/code/expand.py": "d69ea0e965a1a6fbb0a9a75d1627068bf27ea305ceda1153dc8d94d2d078dd04",
+    "research/phase1/experiments/static_layer_allocation/code/gate.py": "67b2f62b43bcf7f793f0bab91b9e296ebfc33aa0f972877626c867e2f29ea745",
+    "research/phase1/experiments/static_layer_allocation/code/probe.py": "18673d62dfadc1eef5d07d049d76a165299f57efba217be689e0f9cac3bc7755",
+    "research/phase1/experiments/static_layer_allocation/code/quality.py": "a103e6432a07441804fe0351e4f35c8ad7dc6c29557084bc31cc5cc6cbb0b346",
+    "research/phase1/experiments/static_layer_allocation/code/select.py": "5032da8d0ccd478203c1392446e7901797a733849780d678a0fa5e256b43e2ba",
+    "research/phase1/experiments/static_layer_allocation/code/select_final.py": "61c350c3514fa0a8ee05c303a9bb916e4303dea888be75bb193fb9b34c604d80",
+    "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+    "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+    "research/phase1/experiments/storage_service_cost/code/layout.py": "9a3f187a1d554a8b09fae0e1462f8a420cb5b4eeb722a065cf86117e936f2869",
+    "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+    "research/phase1/configs/h1_diagnostics.json": "7c5ce1de57525100fad75414679f2159952991d5c62f928759a2d95a6190aba0",
+    "research/phase1/configs/data.md": "43891ae03f0fe9e21f75e0ab3fc3ea12e0296cf195faec1689ee7d2e074e6395",
+    "research/phase1/configs/quality.md": "d2e877d62c31b6b34c3d53f2bbe511ae27470a5343ac48930bbc44f1d05e477e",
+    "research/phase1/configs/quant.md": "20aba400a480f9e3a039dc211e58d866e3c8f0d17cc6c815f9efac68c9c91927",
+    "research/phase1/configs/representation_diagnostics.json": "e61b428dff1061c032584362d26e0ec658248f3a06318f45f19254a849fd5c0c",
+    "research/phase1/configs/runtime.md": "1aa7f0b1377412c3c6b4b9e60da8d5bf29c4130600c1aab1c5014585f66eaf56",
+    "research/phase1/configs/results.md": "31b4da606bcd7ce369d5982e6d3c182b80097f8a437e6e60526cfd91bc95d617",
+    "research/phase1/splits/checks.json": "fcb27a5e1dd6ddf3f67348808949db184c7a3cc29b8cdbc83075aee8b78b9813",
+    "research/phase1/splits/gsm8k.json": "1b1882ea571de31a76ee5eb7075791d080cabcaa3be198c7e3344ee51338b295",
+    "research/phase1/splits/hotpot.json": "42ce2b031c6e63644b7a2cf5259ebe12d81dc440d6d5aa1756d6ff0b3bb5b5c0",
+    "research/phase1/splits/retrieval.json": "f48f4d0350215b0763f5ae5a6de4d55e0c3ce0ef730bc20f908a180e037c5de3",
+    "research/phase1/splits/seeds.json": "2ee980700f7055270014f786a188371fb78f8fc14f08e91497d9b413dfd7d32e",
+    "research/phase1/splits/templates.json": "15dd43f168b382bcb1f9a1a63fe2ab0fa8c449d7d63dd6f071a5684563d9ce54",
+    "research/phase1/splits/trajectories.json": "8999a238f3188fda7d6ee7b4132e6b6cfa33df79576eb87e8be26f83b64c769d",
+    "research/phase1/guide.md": "e1194dfe6d0115257d308f1794459cc2e79ecc9dfbcd1e2bb6b18d8986078357"
+  },
+  "reused_measurements": [
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv8-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv8-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json",
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv8-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv8-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json",
+    "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json"
+  ],
+  "preregistration": {
+    "formats": [
+      "k8v4-per_channel-pre",
+      "k8v4-per_token-pre",
+      "k8v4-per_token-post"
+    ],
+    "tasks": [
+      "gsm8k",
+      "hotpot"
+    ],
+    "n": 64,
+    "R": 128,
+    "order": "all_missing_h16_then_conditional_h8",
+    "h8_trigger": "rescued_class_or_paired_gain_lower_strictly_above_zero",
+    "point_only": "pending_confirmation_no_expansion",
+    "existing_h8": "retain_including_negative_results",
+    "downstream": "unchanged_no_selection_or_rerun",
+    "registered_at_utc": "2026-10-05T09:06:12.410794+00:00"
+  },
+  "preflight": {
+    "frozen_inputs_verified": true,
+    "calibration_sha256_verified": true
+  },
+  "updated_at_utc": "2026-10-05T12:31:04.240055+00:00",
+  "current_step": null,
+  "recovered_errors": [
+    {
+      "error": "Command '['/cluster/home/zengy/phd-research/research/.runtime/env/py311/bin/python', '-u', '-m', 'experiments.generation_error_sources.code.quantized_generation', 'llama', 'hotpot', 'v', 'k8v4-per_token-pre', 'e7518c36473401372ba90eaaf8579dc98ca1ea05', '16']' returned non-zero exit status 1.",
+      "reason": "concurrent_gpu_memory_use",
+      "log": "research/.runtime/residual-diagnostics.log",
+      "resumed_at_utc": "2026-10-05T11:40:45.071755+00:00",
+      "gpu": "1",
+      "slurm_job_id": "21277"
+    }
+  ],
+  "h8_decisions": {
+    "qwen": {
+      "k8v4-per_channel-pre": {
+        "run": false,
+        "existing_retained": false,
+        "rescued_by_h16": [],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [
+          "gsm8k",
+          "hotpot"
+        ],
+        "status": "未补测",
+        "reason": "仅点估计改善，区间不足以支持；待确认",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+            "sha256": "ecf2b755be1438851ff40a43b2b6d0a442b911c4b639a8fd298dcc9453db285c",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 44.81623396715247,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 5.414269683858538,
+              "lower": -0.8962763618712781,
+              "upper": 12.34531967249746,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.4969756100625908,
+              "lower": -5.595272200776767,
+              "upper": 8.644046975370633,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual16.json",
+            "sha256": "838f7a72c0ce2fdbb61a6aed766fa1a9672f789c1d13d3fcbd3e051e60d984ae",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 0.36035553734194714,
+              "lower": -8.349905469955406,
+              "upper": 9.286949642125489,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      },
+      "k8v4-per_token-pre": {
+        "run": false,
+        "existing_retained": true,
+        "rescued_by_h16": [],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [],
+        "status": "复用",
+        "reason": "已有 H=8 测量照常保留",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json",
+            "sha256": "114ed40ad89907a9729312a9433c48a7b66475ec0627a9822a129809d62d7a2f",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 44.11764399283245,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 6.1128596581785635,
+              "lower": -0.046299841107301974,
+              "upper": 12.870668412847504,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.1955655843826167,
+              "lower": -5.366532180018229,
+              "upper": 10.061517689835824,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json",
+            "sha256": "875c5c1a995f94c0ced4e1669c3738f08d66b6ef1041238bda37ded90f81467d",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -5.20408251670824,
+              "lower": -9.57460238526693,
+              "upper": -1.5969484659693565,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": true
+          }
+        }
+      },
+      "k8v4-per_token-post": {
+        "run": false,
+        "existing_retained": false,
+        "rescued_by_h16": [],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [],
+        "status": "未补测",
+        "reason": "未挽回任务类且没有配对区间支持的正向改善",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post-residual16.json",
+            "sha256": "c08739889f80be8b2117dec5a85785d5b33e41e980bb0c5ba602730d7be00bb6",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 45.26366360543601,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 4.966840045575001,
+              "lower": -1.1860339829337299,
+              "upper": 11.773703434013624,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.0495459717790543,
+              "lower": -5.429588862547445,
+              "upper": 8.071232060871491,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post-residual16.json",
+            "sha256": "b0e1aa241300a8e7c151441cc72c9f4809f94875573d39ff3d981cad8b268977",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.5653746448266727,
+              "lower": -7.711898277363044,
+              "upper": 6.52378699637837,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      }
+    },
+    "llama": {
+      "k8v4-per_channel-pre": {
+        "run": true,
+        "existing_retained": false,
+        "rescued_by_h16": [
+          "hotpot"
+        ],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [
+          "gsm8k",
+          "hotpot"
+        ],
+        "status": "触发补测",
+        "reason": "H=16 挽回任务类",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+            "sha256": "d14dea9ed152dacb8d22bc5d9ce65773ff2d937369c5434aebd883225be64a5d",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 65.99673330142079,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.7020089285714286,
+              "lower": 0.0,
+              "upper": 4.520089285714286,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.6276041666666665,
+              "lower": 0.0,
+              "upper": 4.296875,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual16.json",
+            "sha256": "f6694d7fabf6b8f1f0c664313f27297fe5065281bbb71db29e64bdd9ddaa0efa",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 0.8035714285714286,
+              "lower": -1.3392857142857142,
+              "upper": 3.75,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": true,
+            "lost_class_pass": false
+          }
+        }
+      },
+      "k8v4-per_token-pre": {
+        "run": false,
+        "existing_retained": false,
+        "rescued_by_h16": [],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [
+          "gsm8k"
+        ],
+        "status": "未补测",
+        "reason": "仅点估计改善，区间不足以支持；待确认",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre-residual16.json",
+            "sha256": "4ec0240d6018cc2972072cee74da9765199af3cf9feb0d646e30f8ea5acce58a",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 4.6875,
+              "lower": -5.8679912319045835,
+              "upper": 14.435628574313652,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 3
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 67.69874222999223,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.07440476190476208,
+              "lower": -3.3482142857142856,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre-residual16.json",
+            "sha256": "e83af30c2cea21ba50cfb011b423918a46e38d9e06046d5c745f4962e1f1c726",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      },
+      "k8v4-per_token-post": {
+        "run": false,
+        "existing_retained": true,
+        "rescued_by_h16": [],
+        "positive_interval_tasks": [],
+        "positive_point_tasks": [
+          "gsm8k"
+        ],
+        "status": "复用",
+        "reason": "已有 H=8 测量照常保留",
+        "h16_evidence": {
+          "gsm8k": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json",
+            "sha256": "eeef74a28b30d60503a07c66fad023706042a9fcffbe0ba9d6af0103c8523a1f",
+            "execution_commit": "2ccd43a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "hotpot": {
+            "score": 66.58267080142079,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.1160714285714286,
+              "lower": 0.0,
+              "upper": 3.3482142857142856,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.0416666666666665,
+              "lower": 0.0,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json",
+            "sha256": "bdb8e609e583b3b4b7c4c48c8ffd459d6113b2e991a45a590c754e3be145a0aa",
+            "execution_commit": "38f7320",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -1.1160714285714286,
+              "lower": -3.3482142857142856,
+              "upper": -0.0,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      }
+    }
+  },
+  "audit": {
+    "status": "passed",
+    "frozen_inputs_verified": true,
+    "calibration_sha256_verified": true,
+    "protected_results_unchanged": true,
+    "quality_files_verified": 30
+  },
+  "cells": {
+    "qwen": {
+      "k8v4-per_channel-pre": {
+        "gsm8k": {
+          "0": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json",
+            "sha256": "618212c4f87d70fbed809804875d516c48452a2db52b3bcb5d8a40c96ac4987e",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+            "sha256": "ecf2b755be1438851ff40a43b2b6d0a442b911c4b639a8fd298dcc9453db285c",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 90.625,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 2,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual8.json",
+            "sha256": "75cbd050edd1ba0c17dd4ec1d8dd8ce8a96c91ab7fab9d585b6769553cb4ec3e",
+            "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": true
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 44.45587842981052,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 5.774625221200483,
+              "lower": -3.206756630963909,
+              "upper": 15.040692554057484,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.8573311474045373,
+              "lower": -7.336018050856591,
+              "upper": 11.293515814309025,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json",
+            "sha256": "69e4fc9881e3763c84276786d97ec615ee8ae3c619afe95518dd2fa6bb087fbe",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 44.81623396715247,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 5.414269683858538,
+              "lower": -0.8962763618712781,
+              "upper": 12.34531967249746,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.4969756100625908,
+              "lower": -5.595272200776767,
+              "upper": 8.644046975370633,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual16.json",
+            "sha256": "838f7a72c0ce2fdbb61a6aed766fa1a9672f789c1d13d3fcbd3e051e60d984ae",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 0.36035553734194714,
+              "lower": -8.349905469955406,
+              "upper": 9.286949642125489,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 45.68312865982045,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 4.547374991190562,
+              "lower": -2.1424949302292826,
+              "upper": 11.294502440536109,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.6300809173946158,
+              "lower": -7.173746415211649,
+              "upper": 8.445371338151096,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual8.json",
+            "sha256": "8bca861550a249ec107479ad9d1ec17ebce0c2a746c6bf0078cf0d443a6198f2",
+            "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 1.2272502300099206,
+              "lower": -5.0405736432357475,
+              "upper": 8.000135370324548,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      },
+      "k8v4-per_token-pre": {
+        "gsm8k": {
+          "0": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json",
+            "sha256": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json",
+            "sha256": "114ed40ad89907a9729312a9433c48a7b66475ec0627a9822a129809d62d7a2f",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 90.625,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 2,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json",
+            "sha256": "0b6116ea31950db2fa976c21f8bc2e910ea323db63242e5a515f006badbaeef7",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": true
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 49.321726509540696,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.9087771414703227,
+              "lower": -4.421693957868158,
+              "upper": 6.4373629517826085,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.008516932325624,
+              "lower": -9.675644911561932,
+              "upper": 3.7800029311749306,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json",
+            "sha256": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 44.11764399283245,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 6.1128596581785635,
+              "lower": -0.046299841107301974,
+              "upper": 12.870668412847504,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.1955655843826167,
+              "lower": -5.366532180018229,
+              "upper": 10.061517689835824,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json",
+            "sha256": "875c5c1a995f94c0ced4e1669c3738f08d66b6ef1041238bda37ded90f81467d",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -5.20408251670824,
+              "lower": -9.57460238526693,
+              "upper": -1.5969484659693565,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": true
+          },
+          "8": {
+            "score": 42.8433774856685,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 7.387126165342509,
+              "lower": 1.8522965169650913,
+              "upper": 13.787519847706067,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 3.4698320915465626,
+              "lower": -2.382821032306194,
+              "upper": 9.91356051829941,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json",
+            "sha256": "a7be8ea768c4b43c19edb4684cc92f1dbabcd5d02b48bcd842ad1cd4aef11805",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -6.478349023872187,
+              "lower": -13.79505450051784,
+              "upper": 0.5013402545715806,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": true
+          }
+        }
+      },
+      "k8v4-per_token-post": {
+        "gsm8k": {
+          "0": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
+            "sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 92.1875,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -1.5625,
+              "lower": -9.561195761895199,
+              "upper": 6.598122286219151,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post-residual16.json",
+            "sha256": "c08739889f80be8b2117dec5a85785d5b33e41e980bb0c5ba602730d7be00bb6",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "measurement_status": "未测"
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 45.82903825026269,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 4.40146540074833,
+              "lower": -2.585058907190424,
+              "upper": 11.485064257657308,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.48417132695238196,
+              "lower": -5.7912295665951445,
+              "upper": 6.872478384999313,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
+            "sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 45.26366360543601,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 4.966840045575001,
+              "lower": -1.1860339829337299,
+              "upper": 11.773703434013624,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.0495459717790543,
+              "lower": -5.429588862547445,
+              "upper": 8.071232060871491,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post-residual16.json",
+            "sha256": "b0e1aa241300a8e7c151441cc72c9f4809f94875573d39ff3d981cad8b268977",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.5653746448266727,
+              "lower": -7.711898277363044,
+              "upper": 6.52378699637837,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "measurement_status": "未测"
+          }
+        }
+      }
+    },
+    "llama": {
+      "k8v4-per_channel-pre": {
+        "gsm8k": {
+          "0": {
+            "score": 90.625,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json",
+            "sha256": "9087d8db1049078d5a8189305ea2e635261758fb76ab88ec6a52f6bf3d6eb438",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+            "sha256": "d14dea9ed152dacb8d22bc5d9ce65773ff2d937369c5434aebd883225be64a5d",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual8.json",
+            "sha256": "5b1d4745c97991e1fb9da7622a2050873bf80244d21715d7f50bfc057fee0cc6",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 65.19316187284937,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 2.505580357142857,
+              "lower": -0.4464285714285714,
+              "upper": 6.517857142857143,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.431175595238095,
+              "lower": -0.4464285714285714,
+              "upper": 6.233677455357137,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json",
+            "sha256": "6e20df29c2b5fa5dcd78c5ff5f413a71a28071024e72199c58d46d7b74983392",
+            "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+            "n": 64
+          },
+          "16": {
+            "score": 65.99673330142079,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.7020089285714286,
+              "lower": 0.0,
+              "upper": 4.520089285714286,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.6276041666666665,
+              "lower": 0.0,
+              "upper": 4.296875,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual16.json",
+            "sha256": "f6694d7fabf6b8f1f0c664313f27297fe5065281bbb71db29e64bdd9ddaa0efa",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 0.8035714285714286,
+              "lower": -1.3392857142857142,
+              "upper": 3.75,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": true,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 65.99673330142079,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.7020089285714286,
+              "lower": 0.0,
+              "upper": 4.520089285714286,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.6276041666666665,
+              "lower": 0.0,
+              "upper": 4.296875,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual8.json",
+            "sha256": "100cdb63e19002dc9fb38abaf86ab15c439293c7075e2968f0353d14877fe0fd",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 0.8035714285714286,
+              "lower": -1.3392857142857142,
+              "upper": 3.75,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": true,
+            "lost_class_pass": false
+          }
+        }
+      },
+      "k8v4-per_token-pre": {
+        "gsm8k": {
+          "0": {
+            "score": 89.0625,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.5625,
+              "lower": -6.598122286219151,
+              "upper": 9.561195761895199,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json",
+            "sha256": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+            "execution_commit": "2ccd43a",
+            "n": 64
+          },
+          "16": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre-residual16.json",
+            "sha256": "4ec0240d6018cc2972072cee74da9765199af3cf9feb0d646e30f8ea5acce58a",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 4.6875,
+              "lower": -5.8679912319045835,
+              "upper": 14.435628574313652,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 3
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "measurement_status": "未测"
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 67.69874222999223,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.07440476190476208,
+              "lower": -3.3482142857142856,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json",
+            "sha256": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+            "execution_commit": "2ccd43a",
+            "n": 64
+          },
+          "16": {
+            "score": 67.69874222999223,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.07440476190476208,
+              "lower": -3.3482142857142856,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "新测",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre-residual16.json",
+            "sha256": "e83af30c2cea21ba50cfb011b423918a46e38d9e06046d5c745f4962e1f1c726",
+            "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "measurement_status": "未测"
+          }
+        }
+      },
+      "k8v4-per_token-post": {
+        "gsm8k": {
+          "0": {
+            "score": 90.625,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -9.541543346037267,
+              "upper": 9.541543346037267,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 1,
+                "improve": 1
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json",
+            "sha256": "ef8459980f8acc6410be821315eb393a711ab0523d25972ac04d86c3d6cf9918",
+            "execution_commit": "2ccd43a",
+            "n": 64
+          },
+          "16": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json",
+            "sha256": "eeef74a28b30d60503a07c66fad023706042a9fcffbe0ba9d6af0103c8523a1f",
+            "execution_commit": "2ccd43a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 93.75,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "versus_kv8": {
+              "estimate": -3.125,
+              "lower": -12.09887515415175,
+              "upper": 6.3549534272533865,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json",
+            "sha256": "191e9bfc1e1493ad85f8d6226ae3b4c0522a420bf6895c24763e23df231bbb42",
+            "execution_commit": "2ccd43a",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": 3.125,
+              "lower": -6.3549534272533865,
+              "upper": 12.09887515415175,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 2
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        },
+        "hotpot": {
+          "0": {
+            "score": 67.69874222999223,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.07440476190476208,
+              "lower": -3.3482142857142856,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json",
+            "sha256": "26256661d46d3f3355975c269a4a12b702bd21228416199a32b255c395de9647",
+            "execution_commit": "2ccd43a",
+            "n": 64
+          },
+          "16": {
+            "score": 66.58267080142079,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 1.1160714285714286,
+              "lower": 0.0,
+              "upper": 3.3482142857142856,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 1.0416666666666665,
+              "lower": 0.0,
+              "upper": 3.1249999999999996,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json",
+            "sha256": "bdb8e609e583b3b4b7c4c48c8ffd459d6113b2e991a45a590c754e3be145a0aa",
+            "execution_commit": "38f7320",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -1.1160714285714286,
+              "lower": -3.3482142857142856,
+              "upper": -0.0,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          },
+          "8": {
+            "score": 67.22854547073297,
+            "invalid_samples": 0,
+            "versus_bf16": {
+              "estimate": 0.4701967592592593,
+              "lower": 0.0,
+              "upper": 1.410590277777778,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.3957919973544972,
+              "lower": -2.8780175264550265,
+              "upper": 3.5207919973544968,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "measurement_status": "复用",
+            "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json",
+            "sha256": "7d921af49bcb047a3441432f0910e288f133d474e4941ada36a975911fad25fe",
+            "execution_commit": "38f7320",
+            "n": 64,
+            "gain_vs_h0": {
+              "estimate": -0.4701967592592593,
+              "lower": -1.410590277777778,
+              "upper": -0.0,
+              "kind": "bootstrap",
+              "n": 64,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              },
+              "direction": "candidate_minus_h0"
+            },
+            "rescued_class": false,
+            "lost_class_pass": false
+          }
+        }
+      }
+    }
+  },
+  "scope": "diagnostic_only",
+  "active_selection": {
+    "qwen": {
+      "representation": "k8v4-per_token-pre",
+      "H": 0
+    },
+    "llama": {
+      "representation": "k8v4-per_token-post",
+      "H": 0
+    }
+  },
+  "candidate_supplement": {
+    "commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+    "status": "completed",
+    "completed_steps": [],
+    "started_at_utc": "2026-10-06T07:13:54.244451+00:00",
+    "models": [
+      "qwen",
+      "llama"
+    ],
+    "protected_sha256": {
+      "research/phase1/experiments/representation_interactions/results/qwen/samples.json": "040697ec6a9bc898e2297da17bcb3b97545d82c668783ca9655eec09a8a826ed",
+      "research/phase1/experiments/representation_interactions/results/qwen/summary.json": "4cd527f51fd357c8c989eae7bb280a5b3b2e5746c204827f6443bc691dc0bb88",
+      "research/phase1/experiments/representation_interactions/results/llama/samples.json": "ba9a04fd22b407433504d83d1a86bb6d2abe37f0fca7a6e2cd3efd8bcd9ee8da",
+      "research/phase1/experiments/representation_interactions/results/llama/summary.json": "586c31457ff47a145590e75fc3e64c70c6b7faff01ae28dfc94161ff37be4c08",
+      "research/phase1/experiments/generation_error_sources/results/c_execution.json": "8f4fbb5fe63ed1362e8ea83497b506c07077371ec15e14298eea8117ee3865a6",
+      "research/phase1/experiments/generation_error_sources/results/c_retrieval_execution.json": "ed1ddbc607e4b0fdb2f2c61bf4fcc216d1a83f63b05291351eb8b6513fa63e6d",
+      "research/phase1/experiments/generation_error_sources/results/calibration.json": "df3ce58c58a3360b908ae4f03045a7361792a25f27c469a6e82158617015d86f",
+      "research/phase1/experiments/generation_error_sources/results/execution.json": "e3ce7069004ff9ed16e9e892fd6eb0b588a5583683f82e326c092662b07e3250",
+      "research/phase1/experiments/generation_error_sources/results/v_hotpot_execution.json": "6c6c920b024cb983f8944f2fbcffd7dffd3afe41190ee551b7dc848d284e2a84",
+      "research/phase1/experiments/generation_error_sources/results/v_retrieval_audit.json": "0c571f76ad568dd25fc7e22c73a30cc759625e299c4414a21d846ee2b348b35e",
+      "research/phase1/experiments/generation_error_sources/results/completion_execution.json": "c8082b354c1bd3bc1f7069d0fbd97f77d3038552694711c1884a09e641c9c5c8",
+      "research/phase1/experiments/generation_error_sources/results/llama/c_gsm8k_bf16.json": "e92ec1b5eccfdc32fbe9c19b962db1b6ed8dddb60f0d6268cc94e49199587d7b",
+      "research/phase1/experiments/generation_error_sources/results/llama/c_retrieval_bf16.json": "afa78edca9f678ed7eba8a0367f556b6de70243aa65372223f672f7bbed70fcb",
+      "research/phase1/experiments/generation_error_sources/results/llama/cross_token_gt32.json": "c46936ef40c96ad731c1b90e099e302145c30002f2d6ac816ecb7ce15ffb82a8",
+      "research/phase1/experiments/generation_error_sources/results/llama/long_decode_selection.json": "952e1e3bbc468fb8048733fec9e5b535994f52122c24e250858a846f046d92fe",
+      "research/phase1/experiments/generation_error_sources/results/llama/no_residual_selection.json": "3995392ee8568a1472ff8808d163da6cdd41af1d3505fe8009c8aeac647685eb",
+      "research/phase1/experiments/generation_error_sources/results/llama/residual_selection.json": "deed6fa89ab3c837fbe9d102c1e103e16e339d858b84835d37808e6b44f7c9c5",
+      "research/phase1/experiments/generation_error_sources/results/llama/trajectories.json": "795dd05096d02a0c959acf9d897db94dc39000307b6a48c7df42532367a1db71",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json": "fa2039551ab04234e826f32e9deabe50b6318a93b2c64b9ed11cca7cb66ff1c9",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json": "eeef74a28b30d60503a07c66fad023706042a9fcffbe0ba9d6af0103c8523a1f",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json": "191e9bfc1e1493ad85f8d6226ae3b4c0522a420bf6895c24763e23df231bbb42",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json": "ef8459980f8acc6410be821315eb393a711ab0523d25972ac04d86c3d6cf9918",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv4-per_token-post.json": "6a105ce182e644e80dc934dab5054c67435b7333b862d7d72d3a0c1ea7403e8c",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv8-per_token-post.json": "5b367fd96f1090933e8a1bcbce76adc9711baee15dc887a1e052069c1ccd1d19",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json": "030e2bfa28c7c675d3e2eaf56db8dc14e4a8eeab81ddb80f9d883c7eeaf83c4d",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json": "bdb8e609e583b3b4b7c4c48c8ffd459d6113b2e991a45a590c754e3be145a0aa",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json": "7d921af49bcb047a3441432f0910e288f133d474e4941ada36a975911fad25fe",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json": "26256661d46d3f3355975c269a4a12b702bd21228416199a32b255c395de9647",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv4-per_token-post.json": "a4ae44ea408d80932ef86d0941b00c089e9289b64290042c743fc59e90957482",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv8-per_token-post.json": "56613df77f6b3ae76abe8ec6f1f34b29df9bed571b1a7c2169878914eea559b3",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_long_bf16.json": "ebd2ce7d625592e7622d540e3dc300ad0944da92ea9407290898a762579603c8",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_bf16.json": "8ff4cb20ee3d92128401a137f4ac5261916f1b90e6bba7b9cc7def3e6f87d9d1",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json": "9087d8db1049078d5a8189305ea2e635261758fb76ab88ec6a52f6bf3d6eb438",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json": "6e20df29c2b5fa5dcd78c5ff5f413a71a28071024e72199c58d46d7b74983392",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-post.json": "8894531b303cd65c6bcafef72c9280166cca1020bc014f9f14fc77a5fbdb70d7",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-post.json": "4e6efc7db1bb8ea0b93a55eb8efec358d6cabd254f568a756f1746110797b973",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual16.json": "d14dea9ed152dacb8d22bc5d9ce65773ff2d937369c5434aebd883225be64a5d",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual16.json": "f6694d7fabf6b8f1f0c664313f27297fe5065281bbb71db29e64bdd9ddaa0efa",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre-residual16.json": "4ec0240d6018cc2972072cee74da9765199af3cf9feb0d646e30f8ea5acce58a",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre-residual16.json": "e83af30c2cea21ba50cfb011b423918a46e38d9e06046d5c745f4962e1f1c726",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual8.json": "5b1d4745c97991e1fb9da7622a2050873bf80244d21715d7f50bfc057fee0cc6",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual8.json": "100cdb63e19002dc9fb38abaf86ab15c439293c7075e2968f0353d14877fe0fd",
+      "research/phase1/experiments/generation_error_sources/results/qwen/c_gsm8k_bf16.json": "0062edde6e22f42747d2770fc1ebea4cf9fb948fc2cf5a5c432d52a4efd35c28",
+      "research/phase1/experiments/generation_error_sources/results/qwen/c_retrieval_bf16.json": "af9a582597d45b9394b52109b833762afe8f9ef45c22f501adca1176301050fa",
+      "research/phase1/experiments/generation_error_sources/results/qwen/cross_token_gt32.json": "87185a8b33395937688e49846ee48c19fa44cc118bff9ba0efcdde9909470d57",
+      "research/phase1/experiments/generation_error_sources/results/qwen/no_residual_selection.json": "17ecdba295df3a17c2bdd049ffae56226b7f67b67ceb367579be60cfbb525daf",
+      "research/phase1/experiments/generation_error_sources/results/qwen/range_refit_k8v4-per_channel-post.json": "153a0d09c766f5130be0f1638843acc5ad390047704c9218928351d20e2d03bd",
+      "research/phase1/experiments/generation_error_sources/results/qwen/residual_selection.json": "c3ef1cd10a0c9a53dbc8ab3152f09403584af590954b33da413d7b149bc056fc",
+      "research/phase1/experiments/generation_error_sources/results/qwen/scale_drift_k8v4-per_channel-post.json": "ccd50f721586d4aebe679d3174bea6772b0f6b12240e1cb97d010d4386d119f0",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json": "b735c25fa42311ae1979ae825185aa3abf5733485ccd069c256025b9a8f36109",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-post.json": "b6f16db459fbaf914cb2f77ea4a945690ed3fc0cfd4ea1be15aeb4bf813396c7",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv4-per_channel-pre.json": "0c8da4de7ba163ec990441647a5dd4ed4453d4a8c45abdf34dab3bd29d0c7590",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv4-per_token-post_early_stop.json": "b321bd627b2d5ed7ec24e4b56a51a3f9c088c8b20352676dcea5e72868cc6673",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv8-per_token-post.json": "a1be7681f34e524c71f7025b274ddd3eb7f134a0e3f3b39ab8f611752145f5e8",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json": "0dc0ea8faeeea012f50f1cf82509c83fee533250a353253b10cf9e8fa498fcb5",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-post.json": "af5c4674a66d11de31412057dc87dcd95ff978df833463d91697fc69118845e1",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv4-per_channel-pre.json": "17c31b81875fd32d6c4f783a03e730a9aa385c91080408d4038ad474c3690e33",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv8-per_token-post.json": "dff2631ee2415d33287c9ffc211636249c29b2cda8717fad9f81a3c0845ecf42",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_bf16.json": "a94f878bf9d490581cf33c340a1b6b3f5486edd24e085e38ab54747c23a73aae",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json": "618212c4f87d70fbed809804875d516c48452a2db52b3bcb5d8a40c96ac4987e",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json": "69e4fc9881e3763c84276786d97ec615ee8ae3c619afe95518dd2fa6bb087fbe",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json": "0b6116ea31950db2fa976c21f8bc2e910ea323db63242e5a515f006badbaeef7",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json": "a7be8ea768c4b43c19edb4684cc92f1dbabcd5d02b48bcd842ad1cd4aef11805",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json": "114ed40ad89907a9729312a9433c48a7b66475ec0627a9822a129809d62d7a2f",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json": "875c5c1a995f94c0ced4e1669c3738f08d66b6ef1041238bda37ded90f81467d",
+      "research/phase1/experiments/generation_error_sources/results/qwen/trajectories.json": "4af8c39431d91e0858cd7e4136b38efbd8edc37b9f4f254c440badbc63b06bc0",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_long_bf16.json": "301c239bdc7f4bc60973c9cabdcfcc8057ff3e6d4f7f624e4ffe2827f094e7c9",
+      "research/phase1/experiments/generation_error_sources/results/qwen/long_decode_selection.json": "5905d72629fdbf9d8261f395190eff495ca48d816feb799f7997e498d6da4ce0",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual16.json": "ecf2b755be1438851ff40a43b2b6d0a442b911c4b639a8fd298dcc9453db285c",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual16.json": "838f7a72c0ce2fdbb61a6aed766fa1a9672f789c1d13d3fcbd3e051e60d984ae",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post-residual16.json": "c08739889f80be8b2117dec5a85785d5b33e41e980bb0c5ba602730d7be00bb6",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post-residual16.json": "b0e1aa241300a8e7c151441cc72c9f4809f94875573d39ff3d981cad8b268977",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_bf16_n256.json": "5d1604717954d95b4e83e84400cbbadfc09c68432d636dae4bb1b37551be8b36",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_kv8_n256.json": "b7e46978291c903369546bf571a2cda4fdef7ab97818ffac2733b5a022581a0b",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/gsm8k_uniform_quantization_n256.json": "09951ea7f91fd47aab1f55b0173b8a3e81c533082ad96cdef44ab93cec6e0818",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_bf16_n128.json": "b632f679a7a0fe32e490a6516e48d0cb445a9844a80c154820a1ddce26c24b1d",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_kv8_n128.json": "0a7d60b06256f95d19343dc42610651812df82f0488b7a8fec4f80f4a9a44e32",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/hotpot_uniform_quantization_n128.json": "3e352ca529b4f9edb2f03c73bc3220304645e66b8f1d2961c3f9ef0ec3a97141",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/llama/selection.json": "12cce19739f25beca40f205cc4ab7767fe5f31a214144b78e70008c3297e5c7d",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609231_n256.json": "93a74fee3704ead47668cd898c6fb45b81234118ea77396217ccdbf968386619",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609232_n256.json": "79f07c2e36c1fb2095e3585d74bfca6b8ea48a245f4672c3416c26a4b40a482b",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_random_202609233_n256.json": "e7d223a872fd401d46d90e7925f5474063bb939bd0ec1e006d164bfeccbc979e",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_allocation-p50_sensitivity_n256.json": "88f659eb358be73554ac2cf9c2d82ceea068064e9096994b8c74024eac42ee61",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_bf16_n256.json": "e3bdc86c0dd94e6dde20464054a769d3023c6314d9f1d484d8d858f77fe9a21f",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_kv8_n256.json": "705127d15a6b59ce0400e5c23f50c781548a0a7c6537ca05f1c02ee42fb38a65",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609231_n256.json": "b5f2c9365c356080b34a82955a4cfd07edade2c7d4fa42173b8bd07d5ceaa5d9",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609232_n256.json": "658b083ea1202d689c75f9d245fd632e63066c31fb23eff2768508c4dfa8140a",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_random_202609233_n256.json": "ca84c7f39ef7103b6079a01db96ba47a86f1928e21f1c2ae8d5146435439ba1b",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_allocation-p50_sensitivity_n256.json": "90617cf8a658be74b13030b540ec90d51a50beb901e30f2897f282bc096ab1ad",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_bf16_n256.json": "764da343198f4c842c8c7ac247d7fb95395ff4580d156b31135da8d12a998f21",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_kv8_n256.json": "27ddf098f98e57e6af1df58f1ad4f296eb815497f3f52e066b5c9c97e097d90a",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/selection.json": "94277365fd5f2a8c8e269ab40e4af2c1d3ed5f7ec1d8174f1efd913b2c9ae78d",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/gsm8k_uniform_quantization_n256.json": "c2bf1be1e84b45a783293185998691c09c75d161529a4b01d1279fc80c16b550",
+      "research/phase1/experiments/static_layer_allocation/results/expanded_quality/qwen/hotpot_uniform_quantization_n256.json": "2836db04397f6998408aee6a260a0130c1cb5d01637f0fc37f98c096d18288b0",
+      "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "6ca5e5e4639e370b360041c17b033d79e3114f0fcc3366f02da512a369988bb7",
+      "research/phase1/experiments/static_layer_allocation/results/llama/gate.json": "7d63b804376a547c5a1da16248fbe8d3db76ebf0d556d246994588038c1af418",
+      "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "26da59f475265dd4f62b965260a4693a4ab77378286ff515317c1416158bd241",
+      "research/phase1/experiments/static_layer_allocation/results/llama/selection.json": "0ee12688ec2e95d6d96bd4efe4083b2a6fc2de050a21bd3c8e3fa1c87688bbd8",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_inverse.json": "d6c38a521498e244cbeed4f2e1a5c7890c54c119db8a871c281a12b4c523f482",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609231.json": "4a9cb3f36922641c54336cb038f35807695a04aca70eda36f40bb68baa104a85",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609232.json": "b0e072f535b493b0af2a79c1070739ecc81d6f1b36af9e2e686e9ab29659ed07",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_random_202609233.json": "a41fb8cd1fa22e83c1529c944c0be96a6325ae1536b5ed25e4923961eee6e946",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_gsm8k_p50_reconstruction.json": "c3d629f3ece2652190749c3873853d17af4b855ab42ab163c0f8323cb679fb79",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_inverse.json": "42c9771d4d849a3153f3db54354869f04b99a5f1199e14ff99df0b94b9d717e6",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609231.json": "d2d94866b27a0e1ff9db1bdf6dce1638cc1f1ff56a8c911c81c53c835c6fe46a",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609232.json": "a3c3b37e5d6f8b48ef5f6a4db2c31fe9261e95a456ffd6e13e61ce09c4eee302",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_random_202609233.json": "e44d7df4edae42456042e5f12a6adef2b948035388571735d897f1c8f7ffbba8",
+      "research/phase1/experiments/static_layer_allocation/results/llama/v_hotpot_p50_reconstruction.json": "c4ff0b39c0fa448868d814d305e7e682f14a8f8e81cdb561106c455971cbd84b",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "67909b7f3f98053a95ea0c95548d94339fe883993174d66570be71241f598979",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/gate.json": "8951495933e105ef4a4adf534f5e40aad07f7bb4b865c589dc04381031acd46f",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "0bcc93dd9f5a3d29f690d894c4f3aa0bfdb60d71ddac3b90bf35c4f27b22e0dd",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/selection.json": "f4cee2ca0e4828675971baa7623abef7ea67a90af3f931a4d0d162ee916b5e9c",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_inverse.json": "c36da1f0b13ba4e83522e39910eca18747cf7f44037882a0d6a312dff6c9c806",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609231.json": "92ecff4f79d014f3c19f47ae8404ad2017d259fc141fb1b7d29fb0f9be62fef0",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609232.json": "df74d28f812d2d3f619baa4e2ddc4188b6ceb3cc3b284289ec1639af270d253d",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_random_202609233.json": "78ffaa1f262fa8211a5f8afdda2f7720f013d7f1f1c5594cde40f5e45669798b",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_gsm8k_p50_sensitivity.json": "5d30d20e03adb371b30a60af8b93ed3f6d10ad3cca41acfd40fab681864db7cf",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_inverse.json": "91fec91d65028897a3092d06fac59c942e24e6e2eb5d129632b82690392e4454",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609231.json": "d53bffe9f525b2d6e4478f05b19eb8e6189bb5a6482d3d4f51969d6ae93d2005",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609232.json": "288ca01b87a38afa68eed4739776ddb3068cb38b3d35baafef0e7e24a363bb38",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_random_202609233.json": "3a50eaba6d17eb64f682efd93d5b90fae6ee15c6849db4e2812b5cce30cc271c",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/v_hotpot_p50_sensitivity.json": "f6f9d1ce26f44c97de61ccba38b2ca03bf311a680b1016f4da5e240701c8409e",
+      "research/phase1/experiments/storage_service_cost/results/llama/layout.json": "a8569a6fc26c93008c7e3c520fad2952df1c476031f276bbe1b5cc93a120ee59",
+      "research/phase1/experiments/storage_service_cost/results/qwen/layout.json": "9d7c437fcdc314cf4b27582c817812032fa7c775f24acf8d1d827647f4d1f385"
+    },
+    "code_config_sha256": {
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+      "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+      "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+      "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+      "research/phase1/src/phase1/complete_experiments.py": "55807f0a981b4eb80fee74b77b26abf5c6ca90c5a4a9e82b1fc1230882fc7e2a",
+      "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/phase1/src/phase1/review_results.py": "87b76f65c5f3bc7ac7f466659ce9f06ca0baf07442bf59d35efa63363664b0e9",
+      "research/phase1/src/phase1/runner.py": "76bcb9527243c1be35140759218e6a29a4b3657c0e195807890a065433f917af",
+      "research/phase1/src/phase1/score.py": "6ceeb1a9fa1ba3c26da0d2f5289e57661be82b85eda8c7d2fe6e87f00826288e",
+      "research/phase1/src/phase1/splits_build.py": "f79bf9724777a47b064f42fe6de2dafd4476dccbdb78f5a4e906ee0bae838882",
+      "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+      "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+      "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+      "research/phase1/experiments/representation_interactions/code/evaluate.py": "052ecabcfcac0cd0ccb0121e38d01b5ef579979f1bfbc3b3767a7c272c174046",
+      "research/phase1/experiments/representation_interactions/code/metrics.py": "164fe2819d1a1c9f951424acbac5dc857db914a2072f37e4d49b6ac19986bbfc",
+      "research/phase1/experiments/representation_interactions/code/results.py": "810bfab4e9d9f4e53c5cc36c5361a03b4df44149eaa8d0a1bf4f4fd75f76fdd3",
+      "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+      "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+      "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/generation_error_sources/code/candidates.py": "56a595255e95271a70f37f0cc073e9b86ea249515c6c71be0c7192cf28ab1397",
+      "research/phase1/experiments/generation_error_sources/code/cross_token_groups.py": "c039fd72071607a3d8fb3a41bd0c837b43c7ad54241cde6e857c6fb42d907d45",
+      "research/phase1/experiments/generation_error_sources/code/early_stop.py": "a8629e0392879c88b9734f42f783b520bd932f6106008c877abe2b54a2b613d6",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "f5af657c48c10a817eb57ac51a72a6972510f7372dc723b984bfa0d6cb387054",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "434053784d2beedd4cf8b4c006c71b14262d0c432ab6c3687cac1f92a7006934",
+      "research/phase1/experiments/generation_error_sources/code/range_refit.py": "3fed386dcbef34f7e8e6e8002c8db2be6ec370f0a964a2246b425601a88b885b",
+      "research/phase1/experiments/generation_error_sources/code/scale_drift.py": "eccf10a423162774ea4adb87ef2d7afa3ef5979ed42693c2a3d60855b2dce6a9",
+      "research/phase1/experiments/generation_error_sources/code/select.py": "7048915da065965cd544d26eff57a0c3118985cdeb9c91468a8b14325a94124d",
+      "research/phase1/experiments/generation_error_sources/code/select_long_decode.py": "3f52d76d1d6369efecb2bc0711cb3b1b1070b390beb2ea99dda866590ac772c4",
+      "research/phase1/experiments/generation_error_sources/code/select_residual.py": "80d47b2aacf5f32c5909695d55f56b572989b702715344ab4eff7e4f8b00a50b",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/experiments/generation_error_sources/code/sources.py": "eba69139eaf608d6b0d2567fad778abf03f4455989379b8fef1c4d3e1433c7ed",
+      "research/phase1/experiments/generation_error_sources/code/trajectories.py": "9517a37ebc495d319e14547df4e7885f07c0fd721b6c7d54bf7946d748ac8b89",
+      "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "63b1479d45982cb1054085d8758f648c21e70ce29a3e7e90104cfc7350e2364f",
+      "research/phase1/experiments/generation_error_sources/code/trajectory_results.py": "28e7cf2f565a2e5f825dcffe3d66a43f69b17e75ffe746df3d0142fb492dd91e",
+      "research/phase1/experiments/generation_error_sources/code/answer_review.py": "777de485215a6a50ce5eaf6e74d84c487ec89720005df2ca103cf78de2fd46ae",
+      "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/static_layer_allocation/code/allocations.py": "766cbd440f25821160c091e6058eb2d2408d88351c7fb38ae8ae04c716cb45f1",
+      "research/phase1/experiments/static_layer_allocation/code/expand.py": "d69ea0e965a1a6fbb0a9a75d1627068bf27ea305ceda1153dc8d94d2d078dd04",
+      "research/phase1/experiments/static_layer_allocation/code/gate.py": "67b2f62b43bcf7f793f0bab91b9e296ebfc33aa0f972877626c867e2f29ea745",
+      "research/phase1/experiments/static_layer_allocation/code/probe.py": "18673d62dfadc1eef5d07d049d76a165299f57efba217be689e0f9cac3bc7755",
+      "research/phase1/experiments/static_layer_allocation/code/quality.py": "a103e6432a07441804fe0351e4f35c8ad7dc6c29557084bc31cc5cc6cbb0b346",
+      "research/phase1/experiments/static_layer_allocation/code/select.py": "5032da8d0ccd478203c1392446e7901797a733849780d678a0fa5e256b43e2ba",
+      "research/phase1/experiments/static_layer_allocation/code/select_final.py": "61c350c3514fa0a8ee05c303a9bb916e4303dea888be75bb193fb9b34c604d80",
+      "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/storage_service_cost/code/layout.py": "9a3f187a1d554a8b09fae0e1462f8a420cb5b4eeb722a065cf86117e936f2869",
+      "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/configs/h1_diagnostics.json": "7c5ce1de57525100fad75414679f2159952991d5c62f928759a2d95a6190aba0",
+      "research/phase1/configs/data.md": "43891ae03f0fe9e21f75e0ab3fc3ea12e0296cf195faec1689ee7d2e074e6395",
+      "research/phase1/configs/quality.md": "d2e877d62c31b6b34c3d53f2bbe511ae27470a5343ac48930bbc44f1d05e477e",
+      "research/phase1/configs/quant.md": "20aba400a480f9e3a039dc211e58d866e3c8f0d17cc6c815f9efac68c9c91927",
+      "research/phase1/configs/representation_diagnostics.json": "e61b428dff1061c032584362d26e0ec658248f3a06318f45f19254a849fd5c0c",
+      "research/phase1/configs/runtime.md": "9a2db16a4e6247db06fafeba697a2e7a3e38a74f0ebcc9b639c9d4569403f9c2",
+      "research/phase1/configs/results.md": "31b4da606bcd7ce369d5982e6d3c182b80097f8a437e6e60526cfd91bc95d617",
+      "research/phase1/splits/checks.json": "fcb27a5e1dd6ddf3f67348808949db184c7a3cc29b8cdbc83075aee8b78b9813",
+      "research/phase1/splits/gsm8k.json": "1b1882ea571de31a76ee5eb7075791d080cabcaa3be198c7e3344ee51338b295",
+      "research/phase1/splits/hotpot.json": "42ce2b031c6e63644b7a2cf5259ebe12d81dc440d6d5aa1756d6ff0b3bb5b5c0",
+      "research/phase1/splits/retrieval.json": "f48f4d0350215b0763f5ae5a6de4d55e0c3ce0ef730bc20f908a180e037c5de3",
+      "research/phase1/splits/seeds.json": "2ee980700f7055270014f786a188371fb78f8fc14f08e91497d9b413dfd7d32e",
+      "research/phase1/splits/templates.json": "15dd43f168b382bcb1f9a1a63fe2ab0fa8c449d7d63dd6f071a5684563d9ce54",
+      "research/phase1/splits/trajectories.json": "8999a238f3188fda7d6ee7b4132e6b6cfa33df79576eb87e8be26f83b64c769d",
+      "research/phase1/guide.md": "88b7a94c166e03b69b48bd05f9fc3ca0fe4efdce85b8ff5c1b4d9d221eb21551"
+    },
+    "reused_measurements": [
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv8-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv8-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv8-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_channel-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-post-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv8-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_channel-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre-residual16.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual8.json",
+      "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-post-residual16.json"
+    ],
+    "preregistration": {
+      "models": [
+        "qwen"
+      ],
+      "formats": [
+        "k8v4-per_channel-pre"
+      ],
+      "H": 8,
+      "R": 128,
+      "tasks": [
+        "gsm8k",
+        "hotpot"
+      ],
+      "n": 64,
+      "order": "gsm8k_then_hotpot",
+      "authorization": "用户明确要求补测，不依赖 H=16 是否触发",
+      "downstream": "unchanged_no_selection_or_rerun",
+      "fixed_replay": "禁止新增实验"
+    },
+    "preflight": {
+      "frozen_inputs_verified": true,
+      "calibration_sha256_verified": true
+    },
+    "updated_at_utc": "2026-10-06T08:22:02.241471+00:00",
+    "resource_observation": "0, NVIDIA GeForce RTX 4090, 24199, 24564\n1, NVIDIA GeForce RTX 4090, 22667, 24564\n2, NVIDIA GeForce RTX 4090, 22667, 24564\n3, NVIDIA GeForce RTX 4090, 24199, 24564\n",
+    "pre_generation_revisions": [
+      {
+        "path": "research/phase1/experiments/generation_error_sources/code/answer_review.py",
+        "previous_sha256": "ca0dffd7d91614ff2a8be91ee687c0eda736639e7f4d52a9e7a5db2c4bd59a0d",
+        "new_sha256": "e7fad43415fdbdfe5493a13c79a0eebc6ec4cb0b922f266bc06830b93c2be2fd",
+        "reason": "Allow tokenizer chat-template trimming of trailing question whitespace; exact prompt SHA256 unchanged",
+        "at_utc": "2026-10-06T07:17:37.003844+00:00"
+      },
+      {
+        "reason": "User-authorized memory admission; latest explicit execution target node8; preserve concurrent local replay cleanup",
+        "files": {
+          "research/phase1/configs/runtime.md": {
+            "old": "1aa7f0b1377412c3c6b4b9e60da8d5bf29c4130600c1aab1c5014585f66eaf56",
+            "new": "9a2db16a4e6247db06fafeba697a2e7a3e38a74f0ebcc9b639c9d4569403f9c2"
+          },
+          "research/phase1/experiments/generation_error_sources/code/answer_review.py": {
+            "old": "e7fad43415fdbdfe5493a13c79a0eebc6ec4cb0b922f266bc06830b93c2be2fd",
+            "new": "777de485215a6a50ce5eaf6e74d84c487ec89720005df2ca103cf78de2fd46ae"
+          },
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": {
+            "old": "5c00072c435b072b2622c73977168839ce1bb6bd8895df13c283941b1d54f62e",
+            "new": "434053784d2beedd4cf8b4c006c71b14262d0c432ab6c3687cac1f92a7006934"
+          },
+          "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": {
+            "old": "f57367412cac0e9c917dac3e0a87ace97e39e0751fc892c142f37e6c27699bf0",
+            "new": "63b1479d45982cb1054085d8758f648c21e70ce29a3e7e90104cfc7350e2364f"
+          },
+          "research/phase1/guide.md": {
+            "old": "78626ba3d8e4e4b2bad83c8c6eee3eb7d64cf687abfcc29510c278c4020d49ff",
+            "new": "88b7a94c166e03b69b48bd05f9fc3ca0fe4efdce85b8ff5c1b4d9d221eb21551"
+          }
+        },
+        "at_utc": "2026-10-06T07:27:41.533765+00:00"
+      }
+    ],
+    "device_admission": {
+      "family": "rtx4090",
+      "required_free_mib": 23552,
+      "reference": "research/phase1/configs/runtime.md"
+    },
+    "current_step": null,
+    "failure_history": [
+      {
+        "status": "failed",
+        "step": "gsm8k",
+        "error": "CUDA out of memory. Tried to allocate 130.00 MiB. GPU 0 has a total capacity of 47.50 GiB of which 89.00 MiB is free. Process 1280659 has 34.64 GiB memory in use. Including non-PyTorch memory, this process has 12.74 GiB memory in use. Of the allocated memory 12.21 GiB is allocated by PyTorch, and 117.35 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+        "device": {
+          "family": "ada48",
+          "required_free_mib": 24576,
+          "reference": "research/phase1/configs/runtime.md"
+        },
+        "updated_at_utc": "2026-10-06T07:31:00.556384+00:00",
+        "recovery": "User clarified RTX4090 node allowed; switch node7 without changing inputs or scoring"
+      }
+    ],
+    "latest_user_device_authorization": "RTX4090 nodes allowed; node8 correctly identified as RTX6000 Ada",
+    "authorization": "2026-10-06 用户明确补测，不依赖 H=16 筛选；禁止固定回放实验",
+    "audit": {
+      "status": "passed",
+      "frozen_inputs_verified": true,
+      "calibration_sha256_verified": true,
+      "protected_results_unchanged": true
+    },
+    "execution_source": {
+      "base_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+      "working_tree_modified": true,
+      "identity": "base_commit_plus_actual_file_sha256",
+      "published_at_utc": "2026-10-06T07:13:45.877028+00:00",
+      "files": {
+        "research/manifests/data/gsm8k.source.json": "5e4b87589933720a1dbc78f87178246d6ebcd371d5ec0df01a60244ac1ec9ad9",
+        "research/manifests/data/hotpotqa.source.json": "1dc2cc0f1edb24f21da801188a4f9a8f7d7ad1367fcfa99ba2024afcca941be7",
+        "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "6822d61ab03d9c639717ebbca8d4578a5350b6fb26e56d96ae46b61e978db9e8",
+        "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "3b63c725201faa979b73da6aa6214c57b701bf45bba6bfcdde3278a167600cde",
+        "research/phase1/configs/data.md": "43891ae03f0fe9e21f75e0ab3fc3ea12e0296cf195faec1689ee7d2e074e6395",
+        "research/phase1/configs/h1_diagnostics.json": "7c5ce1de57525100fad75414679f2159952991d5c62f928759a2d95a6190aba0",
+        "research/phase1/configs/quality.md": "d2e877d62c31b6b34c3d53f2bbe511ae27470a5343ac48930bbc44f1d05e477e",
+        "research/phase1/configs/quant.md": "20aba400a480f9e3a039dc211e58d866e3c8f0d17cc6c815f9efac68c9c91927",
+        "research/phase1/configs/representation_diagnostics.json": "e61b428dff1061c032584362d26e0ec658248f3a06318f45f19254a849fd5c0c",
+        "research/phase1/configs/results.md": "31b4da606bcd7ce369d5982e6d3c182b80097f8a437e6e60526cfd91bc95d617",
+        "research/phase1/configs/runtime.md": "9a2db16a4e6247db06fafeba697a2e7a3e38a74f0ebcc9b639c9d4569403f9c2",
+        "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+        "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+        "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+        "research/phase1/experiments/generation_error_sources/code/answer_review.py": "777de485215a6a50ce5eaf6e74d84c487ec89720005df2ca103cf78de2fd46ae",
+        "research/phase1/experiments/generation_error_sources/code/candidates.py": "56a595255e95271a70f37f0cc073e9b86ea249515c6c71be0c7192cf28ab1397",
+        "research/phase1/experiments/generation_error_sources/code/cross_token_groups.py": "c039fd72071607a3d8fb3a41bd0c837b43c7ad54241cde6e857c6fb42d907d45",
+        "research/phase1/experiments/generation_error_sources/code/early_stop.py": "a8629e0392879c88b9734f42f783b520bd932f6106008c877abe2b54a2b613d6",
+        "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "f5af657c48c10a817eb57ac51a72a6972510f7372dc723b984bfa0d6cb387054",
+        "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "434053784d2beedd4cf8b4c006c71b14262d0c432ab6c3687cac1f92a7006934",
+        "research/phase1/experiments/generation_error_sources/code/range_refit.py": "3fed386dcbef34f7e8e6e8002c8db2be6ec370f0a964a2246b425601a88b885b",
+        "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "63b1479d45982cb1054085d8758f648c21e70ce29a3e7e90104cfc7350e2364f",
+        "research/phase1/experiments/generation_error_sources/code/scale_drift.py": "eccf10a423162774ea4adb87ef2d7afa3ef5979ed42693c2a3d60855b2dce6a9",
+        "research/phase1/experiments/generation_error_sources/code/select.py": "7048915da065965cd544d26eff57a0c3118985cdeb9c91468a8b14325a94124d",
+        "research/phase1/experiments/generation_error_sources/code/select_long_decode.py": "3f52d76d1d6369efecb2bc0711cb3b1b1070b390beb2ea99dda866590ac772c4",
+        "research/phase1/experiments/generation_error_sources/code/select_residual.py": "80d47b2aacf5f32c5909695d55f56b572989b702715344ab4eff7e4f8b00a50b",
+        "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+        "research/phase1/experiments/generation_error_sources/code/sources.py": "eba69139eaf608d6b0d2567fad778abf03f4455989379b8fef1c4d3e1433c7ed",
+        "research/phase1/experiments/generation_error_sources/code/trajectories.py": "9517a37ebc495d319e14547df4e7885f07c0fd721b6c7d54bf7946d748ac8b89",
+        "research/phase1/experiments/generation_error_sources/code/trajectory_results.py": "28e7cf2f565a2e5f825dcffe3d66a43f69b17e75ffe746df3d0142fb492dd91e",
+        "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+        "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+        "research/phase1/experiments/representation_interactions/code/evaluate.py": "052ecabcfcac0cd0ccb0121e38d01b5ef579979f1bfbc3b3767a7c272c174046",
+        "research/phase1/experiments/representation_interactions/code/metrics.py": "164fe2819d1a1c9f951424acbac5dc857db914a2072f37e4d49b6ac19986bbfc",
+        "research/phase1/experiments/representation_interactions/code/results.py": "810bfab4e9d9f4e53c5cc36c5361a03b4df44149eaa8d0a1bf4f4fd75f76fdd3",
+        "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+        "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+        "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+        "research/phase1/experiments/static_layer_allocation/code/allocations.py": "766cbd440f25821160c091e6058eb2d2408d88351c7fb38ae8ae04c716cb45f1",
+        "research/phase1/experiments/static_layer_allocation/code/expand.py": "d69ea0e965a1a6fbb0a9a75d1627068bf27ea305ceda1153dc8d94d2d078dd04",
+        "research/phase1/experiments/static_layer_allocation/code/gate.py": "67b2f62b43bcf7f793f0bab91b9e296ebfc33aa0f972877626c867e2f29ea745",
+        "research/phase1/experiments/static_layer_allocation/code/probe.py": "18673d62dfadc1eef5d07d049d76a165299f57efba217be689e0f9cac3bc7755",
+        "research/phase1/experiments/static_layer_allocation/code/quality.py": "a103e6432a07441804fe0351e4f35c8ad7dc6c29557084bc31cc5cc6cbb0b346",
+        "research/phase1/experiments/static_layer_allocation/code/select.py": "5032da8d0ccd478203c1392446e7901797a733849780d678a0fa5e256b43e2ba",
+        "research/phase1/experiments/static_layer_allocation/code/select_final.py": "61c350c3514fa0a8ee05c303a9bb916e4303dea888be75bb193fb9b34c604d80",
+        "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+        "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+        "research/phase1/experiments/storage_service_cost/code/layout.py": "9a3f187a1d554a8b09fae0e1462f8a420cb5b4eeb722a065cf86117e936f2869",
+        "research/phase1/guide.md": "88b7a94c166e03b69b48bd05f9fc3ca0fe4efdce85b8ff5c1b4d9d221eb21551",
+        "research/phase1/splits/checks.json": "fcb27a5e1dd6ddf3f67348808949db184c7a3cc29b8cdbc83075aee8b78b9813",
+        "research/phase1/splits/gsm8k.json": "1b1882ea571de31a76ee5eb7075791d080cabcaa3be198c7e3344ee51338b295",
+        "research/phase1/splits/hotpot.json": "42ce2b031c6e63644b7a2cf5259ebe12d81dc440d6d5aa1756d6ff0b3bb5b5c0",
+        "research/phase1/splits/retrieval.json": "f48f4d0350215b0763f5ae5a6de4d55e0c3ce0ef730bc20f908a180e037c5de3",
+        "research/phase1/splits/seeds.json": "2ee980700f7055270014f786a188371fb78f8fc14f08e91497d9b413dfd7d32e",
+        "research/phase1/splits/templates.json": "15dd43f168b382bcb1f9a1a63fe2ab0fa8c449d7d63dd6f071a5684563d9ce54",
+        "research/phase1/splits/trajectories.json": "8999a238f3188fda7d6ee7b4132e6b6cfa33df79576eb87e8be26f83b64c769d",
+        "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+        "research/phase1/src/phase1/complete_experiments.py": "55807f0a981b4eb80fee74b77b26abf5c6ca90c5a4a9e82b1fc1230882fc7e2a",
+        "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+        "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+        "research/phase1/src/phase1/review_results.py": "87b76f65c5f3bc7ac7f466659ce9f06ca0baf07442bf59d35efa63363664b0e9",
+        "research/phase1/src/phase1/runner.py": "76bcb9527243c1be35140759218e6a29a4b3657c0e195807890a065433f917af",
+        "research/phase1/src/phase1/score.py": "6ceeb1a9fa1ba3c26da0d2f5289e57661be82b85eda8c7d2fe6e87f00826288e",
+        "research/phase1/src/phase1/splits_build.py": "f79bf9724777a47b064f42fe6de2dafd4476dccbdb78f5a4e906ee0bae838882",
+        "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+        "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+        "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+        "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+        "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+        "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+        "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10"
+      },
+      "validation": {
+        "tests_run": 104,
+        "passed": 103,
+        "skipped_cuda": 1,
+        "log": "research/.runtime/candidate-tests.log",
+        "device_metadata_tests_passed": 3,
+        "device_metadata_test_log": "research/.runtime/candidate-tests-device.log"
+      }
+    }
+  }
+}

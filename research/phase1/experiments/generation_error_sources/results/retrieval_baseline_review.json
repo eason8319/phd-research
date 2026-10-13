@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "protocol": "phase1-ruler-number-retrieval",
+  "manifest_sha256": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+  "models": {
+    "qwen": {
+      "n": 64,
+      "correct": 64,
+      "em": 100.0,
+      "strict_correct": 0,
+      "strata": {
+        "depth=0.1;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.1;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.35;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.35;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.65;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.65;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.9;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.9;interference=high": {
+          "n": 8,
+          "correct": 8
+        }
+      },
+      "input_tokens_min": 31722,
+      "input_tokens_max": 31732,
+      "baseline_passed": true,
+      "eos": 64,
+      "result_path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_bf16.json",
+      "result_sha256": "7dfe090ee8f8431597431f67d3743523a15d70f1f1c3aec8a954fed1d18af564",
+      "raw_source": {
+        "path": "research/.runtime/retrieval-ruler/qwen.json",
+        "sha256": "67cf4eaac70035065214d0c1465a5594a95468927734396cd4ff8f116db0e2a7"
+      }
+    },
+    "llama": {
+      "n": 64,
+      "correct": 64,
+      "em": 100.0,
+      "strict_correct": 0,
+      "strata": {
+        "depth=0.1;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.1;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.35;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.35;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.65;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.65;interference=high": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.9;interference=low": {
+          "n": 8,
+          "correct": 8
+        },
+        "depth=0.9;interference=high": {
+          "n": 8,
+          "correct": 8
+        }
+      },
+      "input_tokens_min": 31738,
+      "input_tokens_max": 31744,
+      "baseline_passed": true,
+      "eos": 64,
+      "result_path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_bf16.json",
+      "result_sha256": "c9d7466f6b0c256697ff488ad845ce32b1c17c9b78d1850822d2eb4c9926c180",
+      "raw_source": {
+        "path": "research/.runtime/retrieval-ruler/llama.json",
+        "sha256": "518b36de9b4e6bae3a7b828bc77d1849551758175886df38ff5cad543314c0ba"
+      }
+    }
+  },
+  "boundary": "新构造的完整 BF16 基线；未运行同输入量化候选，不重算历史结论",
+  "compatibility_review": {
+    "quality_catalog_and_length_verified": true,
+    "predictions_decoded_from_generated_ids": 128,
+    "eos_sequences_verified": 128,
+    "legacy_manifest_logical_equal": true,
+    "reviewer_source": {
+      "path": "research/phase1/src/phase1/review_results.py",
+      "sha256": "dfd5ce015703877e5bc539d97db8573e3eb9f86a25738be93416504def498614"
+    },
+    "regression_tests": 4,
+    "regression_status": "passed"
+  }
+}

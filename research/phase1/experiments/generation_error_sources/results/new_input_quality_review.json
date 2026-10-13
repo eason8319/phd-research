@@ -1,0 +1,942 @@
+{
+  "protocol": "phase1-new-input-quality-review",
+  "status": "passed",
+  "reviewed_utc": "2026-10-10T02:41:30.291643+00:00",
+  "completed_utc": "2026-10-10T02:08:18.762022+00:00",
+  "execution_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+  "frozen_index_sha256": "3f1665e7b71421bd1a5fd2b83616d78f2ec208dd14495a494a621de182f9a5f8",
+  "checks": {
+    "baseline_requests": 160,
+    "quantized_requests": 800,
+    "formal_quantized_files": 20,
+    "tracked_source_files": 18,
+    "python_source_files": 46,
+    "input_full_text_and_token_count_verified": 160,
+    "predictions_decoded_and_rescored": 960,
+    "prediction_file_hashes_verified": 24,
+    "paired_intervals_recomputed": true,
+    "seed": 20260923,
+    "bootstrap_draws": 10000,
+    "generation_forward_calls": 0,
+    "preserved_original_qwen_retrieval_requests": 320,
+    "path_repair_numerical_module_ast_unchanged": true
+  },
+  "models": {
+    "qwen": {
+      "retrieval_ruler": {
+        "bf16": {
+          "n": 64,
+          "score": 100.0,
+          "invalid_samples": 0,
+          "stops": {
+            "eos": 64
+          },
+          "below_256_tokens": 64,
+          "missing_answers": 0,
+          "output_min": 10,
+          "output_max": 11,
+          "output_mean": 10.390625,
+          "peak_allocated_gib": null,
+          "peak_reserved_gib": null
+        },
+        "conditions": {
+          "kv8-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 10,
+            "output_max": 11,
+            "output_mean": 10.390625,
+            "peak_allocated_gib": 20.153412342071533,
+            "peak_reserved_gib": 21.244140625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 10,
+            "output_max": 11,
+            "output_mean": 10.390625,
+            "peak_allocated_gib": 21.00147771835327,
+            "peak_reserved_gib": 22.365234375,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 10,
+            "output_max": 11,
+            "output_mean": 10.390625,
+            "peak_allocated_gib": 20.154141902923584,
+            "peak_reserved_gib": 21.244140625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 10,
+            "output_max": 11,
+            "output_mean": 10.390625,
+            "peak_allocated_gib": 21.00154447555542,
+            "peak_reserved_gib": 22.365234375,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 10,
+            "output_max": 11,
+            "output_mean": 10.390625,
+            "peak_allocated_gib": 21.00154447555542,
+            "peak_reserved_gib": 22.37890625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          }
+        }
+      },
+      "hotpot_four": {
+        "bf16": {
+          "n": 16,
+          "score": 64.29554208046855,
+          "invalid_samples": 0,
+          "stops": {
+            "eos": 16
+          },
+          "below_256_tokens": 0,
+          "missing_answers": 0,
+          "output_min": 278,
+          "output_max": 949,
+          "output_mean": 528.25,
+          "peak_allocated_gib": 20.154869079589844,
+          "peak_reserved_gib": 21.263671875
+        },
+        "conditions": {
+          "kv8-per_token-post/H=0": {
+            "n": 16,
+            "score": 68.40878560777458,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 0,
+            "output_min": 278,
+            "output_max": 947,
+            "output_mean": 516.625,
+            "peak_allocated_gib": 20.154869079589844,
+            "peak_reserved_gib": 21.263671875,
+            "versus_bf16": {
+              "estimate": -4.113243527306027,
+              "lower": -13.27204728864885,
+              "upper": 4.667059828192639,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-pre/H=0": {
+            "n": 16,
+            "score": 70.47181372549021,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 0,
+            "output_min": 285,
+            "output_max": 805,
+            "output_mean": 512.0,
+            "peak_allocated_gib": 21.003376483917236,
+            "peak_reserved_gib": 22.365234375,
+            "versus_bf16": {
+              "estimate": -6.176271645021645,
+              "lower": -17.106753923160174,
+              "upper": 3.9924918831168785,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -2.0630281177156187,
+              "lower": -10.26179387019231,
+              "upper": 5.20872259251165,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 16,
+            "score": 68.6228354978355,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 0,
+            "output_min": 289,
+            "output_max": 823,
+            "output_mean": 490.5625,
+            "peak_allocated_gib": 20.155746936798096,
+            "peak_reserved_gib": 21.244140625,
+            "versus_bf16": {
+              "estimate": -4.327293417366946,
+              "lower": -14.776396780303033,
+              "upper": 6.27876718869366,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -0.21404989006091935,
+              "lower": -7.08270559097765,
+              "upper": 6.4546112588392,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 16,
+            "score": 43.40872330713662,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 16,
+            "output_min": 291,
+            "output_max": 1000,
+            "output_mean": 526.125,
+            "peak_allocated_gib": 21.003443241119385,
+            "peak_reserved_gib": 22.365234375,
+            "versus_bf16": {
+              "estimate": 20.88681877333193,
+              "lower": 6.210466905331941,
+              "upper": 36.33176175376373,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 25.000062300637957,
+              "lower": 10.801186538067947,
+              "upper": 40.35206338753103,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "淘汰",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 16,
+            "score": 62.508982286096256,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 16
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 4,
+            "output_min": 268,
+            "output_max": 864,
+            "output_mean": 479.5,
+            "peak_allocated_gib": 21.003443241119385,
+            "peak_reserved_gib": 22.37890625,
+            "versus_bf16": {
+              "estimate": 1.7865597943722946,
+              "lower": -12.982975683170997,
+              "upper": 18.880208333333336,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 5.899803321678322,
+              "lower": -6.8959425990676,
+              "upper": 21.335527753496507,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          }
+        }
+      }
+    },
+    "llama": {
+      "retrieval_ruler": {
+        "bf16": {
+          "n": 64,
+          "score": 100.0,
+          "invalid_samples": 0,
+          "stops": {
+            "eos": 64
+          },
+          "below_256_tokens": 64,
+          "missing_answers": 0,
+          "output_min": 7,
+          "output_max": 7,
+          "output_mean": 7.0,
+          "peak_allocated_gib": null,
+          "peak_reserved_gib": null
+        },
+        "conditions": {
+          "kv8-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 7,
+            "output_max": 7,
+            "output_mean": 7.0,
+            "peak_allocated_gib": 23.486398696899414,
+            "peak_reserved_gib": 26.22265625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 7,
+            "output_max": 7,
+            "output_mean": 7.0,
+            "peak_allocated_gib": 24.305817127227783,
+            "peak_reserved_gib": 27.1640625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 7,
+            "output_max": 7,
+            "output_mean": 7.0,
+            "peak_allocated_gib": 23.486398696899414,
+            "peak_reserved_gib": 26.22265625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 7,
+            "output_max": 7,
+            "output_mean": 7.0,
+            "peak_allocated_gib": 24.305969715118408,
+            "peak_reserved_gib": 27.306640625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 64,
+            "score": 100.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 64
+            },
+            "below_256_tokens": 64,
+            "missing_answers": 0,
+            "output_min": 7,
+            "output_max": 7,
+            "output_mean": 7.0,
+            "peak_allocated_gib": 24.305969715118408,
+            "peak_reserved_gib": 27.337890625,
+            "versus_bf16": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": -6.617774702077083,
+              "upper": 6.617774702077083,
+              "kind": "binary",
+              "n": 64,
+              "detail": {
+                "degrade": 0,
+                "improve": 0
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          }
+        }
+      },
+      "hotpot_four": {
+        "bf16": {
+          "n": 16,
+          "score": 72.54464285714286,
+          "invalid_samples": 0,
+          "stops": {
+            "eos": 14,
+            "limit": 2
+          },
+          "below_256_tokens": 0,
+          "missing_answers": 6,
+          "output_min": 436,
+          "output_max": 1024,
+          "output_mean": 635.5625,
+          "peak_allocated_gib": 22.36866044998169,
+          "peak_reserved_gib": 23.791015625
+        },
+        "conditions": {
+          "kv8-per_token-post/H=0": {
+            "n": 16,
+            "score": 77.05109126984128,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "output_min": 394,
+            "output_max": 1024,
+            "output_mean": 596.25,
+            "peak_allocated_gib": 23.697908401489258,
+            "peak_reserved_gib": 25.908203125,
+            "versus_bf16": {
+              "estimate": -4.506448412698413,
+              "lower": -15.518849206349206,
+              "upper": 2.4803447420634885,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.0,
+              "lower": null,
+              "upper": null,
+              "kind": "all_zero",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-pre/H=0": {
+            "n": 16,
+            "score": 76.79067460317461,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "output_min": 387,
+            "output_max": 1024,
+            "output_mean": 600.1875,
+            "peak_allocated_gib": 24.30591630935669,
+            "peak_reserved_gib": 27.185546875,
+            "versus_bf16": {
+              "estimate": -4.246031746031745,
+              "lower": -13.430369543650793,
+              "upper": 3.9161706349206358,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 0.2604166666666674,
+              "lower": -6.510416666666665,
+              "upper": 7.03125,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_token-post/H=0": {
+            "n": 16,
+            "score": 75.0,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "output_min": 427,
+            "output_max": 1024,
+            "output_mean": 587.375,
+            "peak_allocated_gib": 23.697908401489258,
+            "peak_reserved_gib": 25.908203125,
+            "versus_bf16": {
+              "estimate": -2.455357142857143,
+              "lower": -14.80654761904762,
+              "upper": 6.696428571428571,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.05109126984127,
+              "lower": -3.385416666666666,
+              "upper": 7.343936011904759,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=0": {
+            "n": 16,
+            "score": 74.7594246031746,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 6,
+            "output_min": 334,
+            "output_max": 1024,
+            "output_mean": 563.9375,
+            "peak_allocated_gib": 24.306068897247314,
+            "peak_reserved_gib": 27.302734375,
+            "versus_bf16": {
+              "estimate": -2.214781746031745,
+              "lower": -17.825334821428573,
+              "upper": 15.632812499999995,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": 2.291666666666668,
+              "lower": -7.812499999999998,
+              "upper": 17.5,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": false,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          },
+          "k8v4-per_channel-pre/H=8": {
+            "n": 16,
+            "score": 79.32501526251525,
+            "invalid_samples": 0,
+            "stops": {
+              "eos": 15,
+              "limit": 1
+            },
+            "below_256_tokens": 0,
+            "missing_answers": 2,
+            "output_min": 406,
+            "output_max": 1024,
+            "output_mean": 620.75,
+            "peak_allocated_gib": 24.306068897247314,
+            "peak_reserved_gib": 27.333984375,
+            "versus_bf16": {
+              "estimate": -6.780372405372406,
+              "lower": -18.98592509920635,
+              "upper": 2.7810926053113487,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "versus_kv8": {
+              "estimate": -2.2739239926739927,
+              "lower": -7.184638278388278,
+              "upper": 2.8182234432234434,
+              "kind": "bootstrap",
+              "n": 16,
+              "detail": {
+                "draws": 10000,
+                "seed": 20260923
+              }
+            },
+            "state": "证据不足",
+            "class_unit_passes": true,
+            "interval_meets_retention_bounds": false,
+            "retention_awarded": false
+          }
+        }
+      }
+    }
+  },
+  "retention_awarded": false,
+  "evidence_boundary": {
+    "retrieval_unit_n": 64,
+    "long_decode_independent_unit": "request",
+    "long_decode_unit_n": 16,
+    "bf16_subset_all_requests": true,
+    "not_an_expanded_final_candidate": true,
+    "h16_not_measured": true,
+    "higher_observed_f1_does_not_establish_quantization_improvement": true
+  }
+}

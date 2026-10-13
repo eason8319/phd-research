@@ -1,6 +1,5 @@
 {
   "measurement_version": "paired-propagation-diagnostics",
-  "top_k": 8,
   "bootstrap_seed": 8319,
   "bootstrap_resamples": 2000
 }

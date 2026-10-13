@@ -35,7 +35,8 @@ $$
 - 在线 per-token 默认 $G_c=32$。离线 per-channel 的 pre-RoPE 与 post-RoPE 分别校准。
 - 主物理块 64 token。跨 token 分组只用能容纳完整组的块。尾块保存有效长度。存储与服务成本另扫的块长写在 guide.md。
 - K/V 分存。INT4 每字节两个码，较小索引在低四位。
-- 成本模型默认 128 字节对齐，并标明这是接口假设。
+- 成本布局默认 128 字节存储对齐；事务粒度独立登记于
+  [storage_service.json](storage_service.json)，不能由存储对齐推定。
 
 ## 三本账
 

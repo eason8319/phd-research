@@ -13,7 +13,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ade914b55429939a52fe8f9",
@@ -22,7 +24,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab6b6fd5542995eadef006b",
@@ -31,7 +35,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab55b0c554299488d4d995e",
@@ -40,7 +46,9 @@
       "new_tokens": 10,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7a43245542994f819ef19d",
@@ -49,7 +57,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7c34905542996dd594b8d5",
@@ -58,7 +68,9 @@
       "new_tokens": 34,
       "stop": "eos",
       "em": false,
-      "f1": 19.999999999999996
+      "f1": 19.999999999999996,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abc3c545542993a06baf89f",
@@ -67,7 +79,9 @@
       "new_tokens": 6,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a73266d5542994cef4bc47d",
@@ -76,7 +90,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae7fd085542993210984007",
@@ -85,7 +101,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab7ba7555429928e1fe38b5",
@@ -94,7 +112,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7e3a3f5542995ed0d166dd",
@@ -103,7 +123,9 @@
       "new_tokens": 12,
       "stop": "eos",
       "em": false,
-      "f1": 44.44444444444444
+      "f1": 44.44444444444444,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab29bdc554299545a2cf9d1",
@@ -112,7 +134,9 @@
       "new_tokens": 17,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae544d75542990ba0bbb249",
@@ -121,7 +145,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adf430e5542993a75d2645e",
@@ -130,7 +156,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ac23ff0554299636651994d",
@@ -139,7 +167,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae198bf5542997b2ef7d20d",
@@ -148,7 +178,9 @@
       "new_tokens": 6,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7dcc775542990b8f503ab5",
@@ -157,7 +189,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ade630e55429975fa854eb7",
@@ -166,7 +200,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae33cf45542990afbd1e0ea",
@@ -175,7 +211,9 @@
       "new_tokens": 19,
       "stop": "eos",
       "em": false,
-      "f1": 87.50000000000001
+      "f1": 87.50000000000001,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae0d7315542990adbacf678",
@@ -184,7 +222,9 @@
       "new_tokens": 11,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7c988755429935c91b524d",
@@ -193,7 +233,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5add433b5542997545bbbd02",
@@ -202,7 +244,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abd44d955429933744ab760",
@@ -211,7 +255,9 @@
       "new_tokens": 11,
       "stop": "eos",
       "em": false,
-      "f1": 33.333333333333336
+      "f1": 33.333333333333336,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7d158155429909bec76947",
@@ -220,7 +266,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a772c925542993735360208",
@@ -229,7 +277,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adea83b55429975fa854f53",
@@ -238,7 +288,9 @@
       "new_tokens": 29,
       "stop": "eos",
       "em": false,
-      "f1": 22.22222222222222
+      "f1": 22.22222222222222,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7c6bcc55429935c91b519c",
@@ -247,7 +299,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a806aca5542996402f6a503",
@@ -256,7 +310,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae234005542994d89d5b392",
@@ -265,7 +321,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae3f6775542991a06ce9a3f",
@@ -274,7 +332,9 @@
       "new_tokens": 51,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adc983c5542990d50227cb6",
@@ -283,7 +343,9 @@
       "new_tokens": 6,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a88f2cc55429938390d3ffb",
@@ -292,7 +354,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abeab375542990832d3a091",
@@ -301,7 +365,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae7eb43554299540e5a5695",
@@ -310,7 +376,9 @@
       "new_tokens": 12,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abc715f5542993a06baf8ea",
@@ -319,7 +387,9 @@
       "new_tokens": 10,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a758f775542992db9473682",
@@ -328,7 +398,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7ce50f55429909bec76869",
@@ -337,7 +409,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a763986554299109176e6bd",
@@ -346,7 +420,9 @@
       "new_tokens": 41,
       "stop": "eos",
       "em": false,
-      "f1": 15.384615384615381
+      "f1": 15.384615384615381,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adf8c375542995534e8c7dd",
@@ -355,7 +431,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ac4c0fc5542997ea680cab1",
@@ -364,7 +442,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 80.0
+      "f1": 80.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adc57325542996e6852531b",
@@ -373,7 +453,9 @@
       "new_tokens": 11,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a8a1b7a5542992d82986ec0",
@@ -382,7 +464,9 @@
       "new_tokens": 5,
       "stop": "eos",
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ac1089f554299012d1db688",
@@ -391,7 +475,9 @@
       "new_tokens": 19,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ac1ff2255429964131be2b3",
@@ -400,7 +486,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae3dcc05542991a06ce9a33",
@@ -409,7 +497,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7c00a55542996dd594b87e",
@@ -418,7 +508,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abff0785542997d64295957",
@@ -427,7 +519,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": false,
-      "f1": 40.0
+      "f1": 40.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7ef49a5542994959419a91",
@@ -436,7 +530,9 @@
       "new_tokens": 28,
       "stop": "eos",
       "em": false,
-      "f1": 37.5
+      "f1": 37.5,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a862da855429960ec39b640",
@@ -445,7 +541,9 @@
       "new_tokens": 5,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a82800855429966c78a6a2f",
@@ -454,7 +552,9 @@
       "new_tokens": 35,
       "stop": "eos",
       "em": false,
-      "f1": 9.09090909090909
+      "f1": 9.09090909090909,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a79c8fa5542994bb94570a1",
@@ -463,7 +563,9 @@
       "new_tokens": 24,
       "stop": "eos",
       "em": false,
-      "f1": 30.76923076923077
+      "f1": 30.76923076923077,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5adf65555542992d7e9f9334",
@@ -472,7 +574,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae2075f5542994d89d5b315",
@@ -481,7 +585,9 @@
       "new_tokens": 30,
       "stop": "eos",
       "em": false,
-      "f1": 58.333333333333336
+      "f1": 58.333333333333336,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a738b855542992d56e7e363",
@@ -490,7 +596,9 @@
       "new_tokens": 10,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7b69b155429927d897bfbc",
@@ -499,7 +607,9 @@
       "new_tokens": 11,
       "stop": "eos",
       "em": false,
-      "f1": 33.33333333333333
+      "f1": 33.33333333333333,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abe36aa5542993f32c2a08f",
@@ -508,7 +618,9 @@
       "new_tokens": 15,
       "stop": "eos",
       "em": false,
-      "f1": 44.44444444444444
+      "f1": 44.44444444444444,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abf12005542997719eab661",
@@ -517,7 +629,9 @@
       "new_tokens": 10,
       "stop": "eos",
       "em": false,
-      "f1": 66.66666666666667
+      "f1": 66.66666666666667,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5abc095c5542993f40c73c5d",
@@ -526,7 +640,9 @@
       "new_tokens": 9,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae7e1fc55429952e35ea9cc",
@@ -535,7 +651,9 @@
       "new_tokens": 6,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a78eea555429970f5fffddf",
@@ -544,7 +662,9 @@
       "new_tokens": 22,
       "stop": "eos",
       "em": false,
-      "f1": 36.36363636363636
+      "f1": 36.36363636363636,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ae531ee5542990ba0bbb1ff",
@@ -553,7 +673,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab2b61d5542991669774065",
@@ -562,7 +684,9 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": false,
-      "f1": 0.0
+      "f1": 0.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5a7b46e55542995eb53be8e5",
@@ -571,7 +695,9 @@
       "new_tokens": 8,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     },
     {
       "id": "5ab38cdd5542992ade7c6de2",
@@ -580,9 +706,16 @@
       "new_tokens": 7,
       "stop": "eos",
       "em": true,
-      "f1": 100.0
+      "f1": 100.0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
     }
   ],
   "em": 54.6875,
-  "f1": 67.69874222999223
+  "f1": 67.69874222999223,
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0
 }

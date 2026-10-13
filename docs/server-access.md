@@ -41,17 +41,42 @@ srun -p gpu -c 32 -n 1 -N 1 --nodelist=node[n] --pty /bin/bash
 
 从 Windows 连接时，在上面的 `ssh` 之后、`-F` 之前加 `-tt`，并使用支持终端交互的会话。远程命令仍先执行 `cd /cluster/home/zengy/phd-research || exit 1`，然后执行上述 `srun`。进入计算节点 shell 后，在任何检查或实验之前再次执行 `cd /cluster/home/zengy/phd-research || exit 1`；全部后续操作留在项目树内。
 
-进入节点后核对实际 GPU、实时空闲显存与该次峰值估算，使用项目内冻结运行环境。更换设备时核对 BF16 和软件兼容性，保留实际设备与逐请求峰值。实验继续保持每次一个模型、一个进程，并保留逐题恢复进度。会话结束后按实际状态记录中断或完成，不将排队、获得 shell 或启动进程记为实验完成。
+进入节点后核对实际 GPU、实时空闲显存与该次峰值估算，使用项目内冻结运行环境。更换设备时核对 BF16 和软件兼容性，保留实际设备与逐请求峰值。每张 GPU 同时只运行一个模型、一个进程；用户已允许 Qwen 与 Llama 分别使用两张空闲 GPU 并行，各模型的参考与候选仍在同一张卡上配对。保留逐题恢复进度。会话结束后按实际状态记录中断或完成，不将排队、获得 shell 或启动进程记为实验完成。
 
 长时间等待显存或运行实验时，在服务器端的持久交互终端中执行上述 `srun`，以便本地 SSH 连接结束后继续运行。使用 `tmux` 时，将其显式配置文件和套接字放在本项目的 `research/.runtime/` 内；计算节点 shell 仍须先进入项目根目录。启动后通过另一条连接确认终端存活、等待日志持续更新，再记为自动等待或执行。
 
-当前补测的持久终端名为 `phase1-completion-node8`，套接字为 `research/.runtime/phase1-completion.tmux.sock`。按连接命令进入项目根目录后，可用以下命令接回该终端：
+历史共同候选补测的持久终端名为 `phase1-completion-node8`，套接字为 `research/.runtime/phase1-completion.tmux.sock`。该补测已完成并释放分配；以下命令只用于核对尚存的历史终端，不作为当前实验运行入口：
 
 ```bash
 tmux -S /cluster/home/zengy/phd-research/research/.runtime/phase1-completion.tmux.sock attach -t phase1-completion-node8
 ```
 
 接回终端后，`Ctrl+b` 再按 `d` 可脱离终端并保持服务器进程运行。不要在等待或实验前台运行时退出计算节点 shell；重启前先确认当前交互分配与进程是否仍存活，避免重复运行。
+
+## 阶段代码发布与恢复
+
+第一阶段的统一入口为 `python -m phase1.entry`。本地代码可以按逐文件校验发布到
+独立源码快照，保留服务器维护树和历史运行；维护树已经同步一致时，也可在项目
+冻结环境中使用 `publish --commit <实际基准提交>` 发布实际文件快照。
+当前发布索引是 `research/.runtime/phase1-execution/current.json`，其中源码根、
+逐文件校验和计算实现校验用于核对本地与服务器的版本。只在服务器建立运行目录。
+
+在计算节点进入项目根目录后，选择当前发布的代码并盘点结果：
+
+```bash
+phase1_source=$(research/.runtime/env/py311/bin/python -c 'import json; from pathlib import Path; r=Path.cwd(); p=(r/json.loads((r/"research/.runtime/phase1-execution/current.json").read_text())["source_root"]).resolve(); assert p.is_relative_to(r); print(p)')
+export PYTHONPATH="$phase1_source/research/src:$phase1_source/research/phase1/src:$phase1_source/research/phase1"
+research/.runtime/env/py311/bin/python -m phase1.entry status
+research/.runtime/env/py311/bin/python -m phase1.entry plan --experiment static_layer_allocation
+```
+
+先用 `status` 和 `plan --experiment <实验名>` 查看复用与缺样；显式 `run` 从当前
+已核对快照恢复。代码发布不启动实验，也不覆盖历史源码快照。已完成结果仍保留
+原执行来源；兼容恢复的累计记录逐段登记源码。旧静态收尾完整预测和恢复点继续
+保留在 `research/.runtime/static-final/`，新恢复点使用其中的 `shared_progress/`
+与 `shared_reference_progress/`，避免改写历史输出实体。
+
+所有远程操作继续使用本页 SSH 参数、项目根目录隔离与交互式计算节点要求。
 
 ## Codex 项目级长期授权
 

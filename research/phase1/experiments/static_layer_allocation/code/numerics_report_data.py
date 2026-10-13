@@ -7,14 +7,10 @@ from pathlib import Path
 
 import numpy as np
 
-from kvstudy.paths import project_root
+from kvstudy.artifacts import read_json as read
 from experiments.static_layer_allocation.code.numerics_logits import file_sha
 from experiments.static_layer_allocation.code.numerics_summary import paired_comparison, variants
-
-
-def read(path: Path) -> dict:
-    """读取审核后的 JSON，不读取完整预测或模型实体。"""
-    return json.loads(path.read_text('utf-8'))
+from kvstudy.paths import project_root
 
 
 def model_data(folder: Path, design: dict) -> dict:

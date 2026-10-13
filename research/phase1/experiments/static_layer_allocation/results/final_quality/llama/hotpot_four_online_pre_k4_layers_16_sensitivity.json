@@ -1,0 +1,1006 @@
+{
+  "protocol": "static-allocation-independent-generation",
+  "model": "llama",
+  "task": "hotpot_four",
+  "condition": "online_pre_k4_layers_16_sensitivity",
+  "config": {
+    "name": "k8v4-per_token-pre",
+    "k_bits": 8,
+    "v_bits": 4,
+    "key_mode": "per_token",
+    "rope": "pre",
+    "value_mode": "per_token",
+    "layer_bits": [
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 4,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      },
+      {
+        "k": 8,
+        "v": 4
+      }
+    ]
+  },
+  "config_digest": "d3e939b57876a80b1aa424f4cd2514f5e723f99e84f9b1891f228671ffba9b6d",
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.46.3",
+    "cuda": "12.1",
+    "visible_device": "0",
+    "slurm_job": "21545",
+    "tf32": false,
+    "weights": "bfloat16",
+    "attention": "float32",
+    "autocast": false
+  },
+  "n": 16,
+  "rows": [
+    {
+      "id": "hotpot-four-v-00",
+      "input_tokens": 31719,
+      "input_sha256": "75923ec31b837719190045bac4027d143bc042607437ff316c46ee768363a53b",
+      "new_tokens": 581,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098250240,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "0e37f665fd5d7378d408a10d2d4e1250978120521bc46cfeae0844d7f1430497",
+      "extracted_answers": [
+        "Adelaide",
+        "Discover Pure Energy",
+        "The Wolfhounds",
+        "the Big 12 Conference"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "input_tokens": 31739,
+      "input_sha256": "c63c94aa5d24f5bf6063b96e16701d957cd2dbf7cf73931fd0df10a2dfe7d360",
+      "new_tokens": 420,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "0387cd5dcda6efc5ffc7637e658a6a026f726daa19a9faa1efda081bf88970b1",
+      "extracted_answers": [
+        "1982",
+        "Andre Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "input_tokens": 31697,
+      "input_sha256": "1fd2ba99cf50e6a0d2e378356a802ccedef3dfbbc33a69427abb741ff0518353",
+      "new_tokens": 548,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26090062336,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "09059dc1303f89864d8f0d9a09a6fec0bd53aff826894ba41cadd211c29223a7",
+      "extracted_answers": [
+        "Barack Obama",
+        "James Mitchum",
+        "Billy Idol",
+        "nationalist, nativist, and authoritarian"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        33.333333333333336
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 58.333333333333336,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "input_tokens": 31741,
+      "input_sha256": "af864f561319c9d07cd50b00828408ef49ab7acc1bcb57e9c2e2e0f33c959f6a",
+      "new_tokens": 773,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "e17e32c64ba92d97f3960e60764fe1866397a7537d740651baee1dea2e46e2d1",
+      "extracted_answers": [
+        "chalk quarry",
+        "Miami Canal",
+        "2000",
+        "yes"
+      ],
+      "answer_f1": [
+        100.0,
+        50.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 87.5,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "input_tokens": 31737,
+      "input_sha256": "beef70c88aae2014282d8c028345fe5ca8d247cd2c2771c31616fb5668b7ab88",
+      "new_tokens": 436,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "171b0817323197ca74824497fe3b1efe735cadcb72533f1f97c3fe0929226a2b",
+      "extracted_answers": [
+        "Picric acid",
+        "Old World fossil representatives",
+        "24/7",
+        "Toshi Ichiyanagi"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        44.44444444444444,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 86.11111111111111,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "input_tokens": 31725,
+      "input_sha256": "6a878313e45a803182a663d67031f5842defdde5270f22ec905b34df42139d0f",
+      "new_tokens": 424,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "e7b648700ce03523a0089e4a1fd8679f69fb45ccc71cbff305f6cbfcf0275cdd",
+      "extracted_answers": [
+        "Tom Jones",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "input_tokens": 31738,
+      "input_sha256": "0d2126baad8eb52ed4eb8c6cb9f1d2276a523655681d5d17f9d1896b30ee2ee8",
+      "new_tokens": 517,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "9ccccd9daaf7b10e17ffb7ce6a02f6f9d41859af0798c48acdc60e5ee25b6385",
+      "extracted_answers": [
+        "1979",
+        "Tharangambadi",
+        "1944",
+        "Orcs"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "input_tokens": 31742,
+      "input_sha256": "baa172609fbc43aaeedd9b08dd7d5c49df2e629864490310f5028f37b66114ae",
+      "new_tokens": 518,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "d89d090018103c4bc9d6f84185139b800c873ebf8a56ac80ab14be0b4b540bbf",
+      "extracted_answers": [
+        "Rob Thomas",
+        "Providing media support",
+        "Brazil",
+        "2017"
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "input_tokens": 31727,
+      "input_sha256": "5a455424f01e61a4882c3f6abbfcec9cdc4469b75c9f8b2f453e4ff644762567",
+      "new_tokens": 484,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "c61581bda69308091228ffcb5f22b15df948cdf6ec4a88297818fc2c87efbc21",
+      "extracted_answers": [
+        "Wes Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "210,000"
+      ],
+      "answer_f1": [
+        40.0,
+        100.0,
+        100.0,
+        66.66666666666667
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 76.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "input_tokens": 31704,
+      "input_sha256": "d2ce7c902249e9d20c6d1fd1338e5c4e5d71dc9c6340c906695a2b7d44443903",
+      "new_tokens": 482,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26091266560,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "d89f4b2aa03d9d8437339d038d124eb90e0bd59af3f677815641fe8cd2a2ff9e",
+      "extracted_answers": [
+        "1939",
+        "Christian Poulsen",
+        "1972",
+        "Napoleon III"
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 25.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "input_tokens": 31727,
+      "input_sha256": "c27f322a582bbd6014a0719839ddd55f12c5a2d066ed5168bf3f091ef7a855ad",
+      "new_tokens": 594,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "a60e7c1f488a5ca037b1be61cea13ba71132751afeb0f83e91eec941d49fad53",
+      "extracted_answers": [
+        "Giacomo Puccini",
+        "Boston, Massachusetts",
+        "no",
+        "26,788"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 66.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "input_tokens": 31712,
+      "input_sha256": "cff46cdcc3634d9872abb495f78d97ae6a50566d6df164439e1d4f41ab92a65a",
+      "new_tokens": 1024,
+      "stop": "limit",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "75f068c4c4ab795cd14343f1d57786496393247b47b19d241291d6958d24d307",
+      "extracted_answers": [
+        "Las Vegas.",
+        "Mediterranean.",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 2,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "input_tokens": 31726,
+      "input_sha256": "79a046d70794a90f29c0a31bb4a9b13c8ebc1e8847badb5952de75c1d42bb408",
+      "new_tokens": 568,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "8a33655b188efca0eb0cab90ed70f90bb0c8a90b22a21c462fb68f9bb9ba6109",
+      "extracted_answers": [
+        "Berk Communications",
+        "No",
+        "Technical director",
+        "Wendell Berry"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "input_tokens": 31718,
+      "input_sha256": "53117ce1edd2b56bdd8a80873686bc021ca80b54af29a6deb532329b41b82eea",
+      "new_tokens": 413,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "7ba14e0f552920e638139d7a0b4016ca5ed10e3fea8ccb3b472115dc57fc1941",
+      "extracted_answers": [
+        "Captain Matthew Gideon",
+        "St. Elizabeths Hospital",
+        "Clitheroe F.C.",
+        "American Scientist"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        33.33333333333333,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 58.33333333333333,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "input_tokens": 31732,
+      "input_sha256": "3c3b78060c3490dda8aaf52c9a4422c3ebeba4bcc4d6b88f579856e7721ea54c",
+      "new_tokens": 1021,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26098147840,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "74b073c2494e5c6f2dc2a95aa68ef46317f4986536886621f19abce576baed8f",
+      "extracted_answers": [
+        "Umberto II of Italy",
+        "Fazoli's",
+        "Orange",
+        "Richard Boleslavsky"
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        50.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 79.16666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "input_tokens": 31678,
+      "input_sha256": "8396ec8311cff103045c3e0ae575d28b4fac03593ebd23789a7d45d6f5b7ae26",
+      "new_tokens": 1024,
+      "stop": "limit",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 26083548672,
+      "peak_reserved_bytes": 29169287168,
+      "prediction_sha256": "2f267c9a8b30577313d0eedcdd5f8f1cd2cc4b96143225588410811c2dfc7703",
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    }
+  ],
+  "output_limit": 1024,
+  "score": 64.54861111111111,
+  "raw_source": {
+    "path": "research/.runtime/hold/reference-consolidation/bacb528e503c5ed7ca36de1b556e4268e71f58d367238fcb1c8acf38eca50ace.json",
+    "sha256": "bacb528e503c5ed7ca36de1b556e4268e71f58d367238fcb1c8acf38eca50ace"
+  },
+  "publication": {
+    "base_commit": "cbce2edc20183fff42f8444a67b539eb1fbf205d",
+    "files": {
+      "research/manifests/data/gsm8k.source.json": "2d732973e51f9bf9e3952162c4c3a6442612a87a15c2bf2bba953ec1b33561b5",
+      "research/manifests/data/hotpotqa.source.json": "3157b6f249091417583d3f84a7a782ddc2355ad88fd39321f4c9152f97ff1129",
+      "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2",
+      "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+      "research/phase1/configs/data.md": "20b7b1f83939b856f78f2bc0eb36000b1aa71ed931383f508634c38f7719826a",
+      "research/phase1/configs/long_decode.json": "a374518b658b717822e7969179916f274a544786dd9934b366d3b9c686876e95",
+      "research/phase1/configs/quality.md": "ec25f37a18e4fb31a1eed8c7bd50534525bbb892637d73d6d39f191ba1eada91",
+      "research/phase1/configs/quant.md": "742b7e8e9b6ac7adbc3f00a50d1f6176a4ec41d9a268d4020cb6604f9d3b4b7e",
+      "research/phase1/configs/representation_diagnostics.json": "082ef8ded9ea471a12e985584a3508d27464b76d2fe79086ac774e0f5b899a83",
+      "research/phase1/configs/results.md": "2e19d0ed05483aa84d49e0a58741a0006efcee001952aad7539d4d3743ffab8d",
+      "research/phase1/configs/retrieval.json": "cbccc951f10f55e17d4e5160781ab668297dfb2a032215bede14c71485b18193",
+      "research/phase1/configs/runtime.md": "5b8372e1556454ffbdf785b98e18ad105d49b0feaddf549d0cc32e812b336fab",
+      "research/phase1/configs/static_layer_allocation.json": "eca5080f410cf712b89c666a89c70de1840a78d074d5d61a8e9e99b864617aa3",
+      "research/phase1/configs/static_numerics.json": "9dfc1b8db84f555fea54efd98a1f461936740ab791dea3db379d1ccc7834a92c",
+      "research/phase1/configs/trajectory_replay.json": "7ee73ad6faaf0ad661cbd22e45c6bc60cb34d75a013091eb3fb9f131350e7bcc",
+      "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "8b16ecf3f9a189c4c15fa4a1aa4ba829d1fde1e557ad6407379a95c825cfc7e8",
+      "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "3773ee6efbd30ea792879a8af8a43fbfdab9140350e47046b2ef0a563542d565",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "b513d4cea66db030bd02e284b4f16367757f7c424bf377b64ef8e688d47ce8a9",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "ebd6d0cc9cb2eeaf9f712471062c5b454b12e93583d320e8b65ba75097421893",
+      "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+      "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/generation_error_sources/code/early_stop.py": "c33f6d13a947391bfbaa1c6823aa659d2aabfac0b4c7ce42fa45dcddc761a7ea",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "228be29589e56e11cb84c91fe8af3dd0334bb9e0ad32c2d3f032ec77d84f1614",
+      "research/phase1/experiments/generation_error_sources/code/plot_trajectories.py": "4c5d8b53fd1ab4fec7c8f4b8ea4bea2d38687a58810aa32a295d0e8683853e60",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "c4bb03c950188e1b3bef3328da76c96226ef64237c868088bfc3a76c71156456",
+      "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "0171b438d8b2c297af94b70d7bb9df4e290aabd400b8090166a480346ee8b084",
+      "research/phase1/experiments/generation_error_sources/code/review_trajectories.py": "a866eaa8a06f931a02a71809a5bfedd309d3d3e9f0812dc78240dff659058a5d",
+      "research/phase1/experiments/generation_error_sources/code/select_residual.py": "f128350a24e4dba17fe73be2eb2621a1bc9b4aa15fe9f996b11b89f35af43508",
+      "research/phase1/experiments/generation_error_sources/code/select.py": "117c4749a74386e84debec15497d2d631b84f0afb1af306625e254e9c98c72d5",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
+      "research/phase1/experiments/generation_error_sources/code/trajectories.py": "47918ad6551bda05ff15731e49dfe560da33cd6401edc1e77f46f76c0a2c5291",
+      "research/phase1/experiments/generation_error_sources/code/trajectory_replay.py": "6c38c90433838c7b7432d523729c2ba5e424cfabfde1537da0948d6e9b0f3e80",
+      "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+      "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+      "research/phase1/experiments/representation_interactions/code/evaluate.py": "6e1f295ef08726bae1eef4ad991a22913f506c1390fa967bd19e049868f15996",
+      "research/phase1/experiments/representation_interactions/code/metrics.py": "ffc1fc6293b267a095d4a3ec0bdeeb09b03c0721b310ca5fe81b21437c1c9a70",
+      "research/phase1/experiments/representation_interactions/code/results.py": "d16f05d0a61e1ab668687d66afd02cd2304ab85b7a775f91b56471f0750bb455",
+      "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+      "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/static_layer_allocation/code/allocations.py": "44472dffbb529873f8c5c9ead89cbe5c0361ce595f2b81ed43a72d30696df34d",
+      "research/phase1/experiments/static_layer_allocation/code/content_data.py": "10e90928e2e694d8ae8c3412f44c17376417fd68bd2fa1ef1d1b99e3c9b1632d",
+      "research/phase1/experiments/static_layer_allocation/code/content_metrics.py": "eb24ee3c83cb18dfbb7d2c2a2bfbab57597e8d361a277d88c05af9e2f4f7e15e",
+      "research/phase1/experiments/static_layer_allocation/code/content_plot.py": "644990b4526f2620f73043c2a5e560bb33633255adf466f71e355106e996c50e",
+      "research/phase1/experiments/static_layer_allocation/code/content_review.py": "50b2d4aeaa1b1fd912d0e5f18260a7c14059b652a4450cdb56f2f83f1a8af09f",
+      "research/phase1/experiments/static_layer_allocation/code/content.py": "caf7da6142eceaf77b537b4f8c63b50471aa87d75776144a5a887c885db23d06",
+      "research/phase1/experiments/static_layer_allocation/code/expand.py": "2ff6310233ff7fac85178035d93c112bcdfdb72d610c5a998ba58269e6c7c390",
+      "research/phase1/experiments/static_layer_allocation/code/free_token_diagnostic.py": "626e8aabd414d48a250215847dd559ade25ddcda662bd1be91fd810a7fafd23b",
+      "research/phase1/experiments/static_layer_allocation/code/gate.py": "6a91358fed5374869c2ae294702303e59dd0da62aec548dc214f309c41b3109c",
+      "research/phase1/experiments/static_layer_allocation/code/metrics.py": "e5f3009ad84c9bb54bebb833fca86fe9b9cec52cef6bebe942636f32248f7aa1",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_forward.py": "9c669cb991a3f9db7a9c2937353e171d4da569207d291d5dd55814ddaa54eaaf",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_logits.py": "813a3adeb835f0596e36e5b0dd964989d04d4d4d65ac2ce34ea107bae56195be",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_metrics.py": "a9372431cb3fa08c9a26d9fd52ed9158913a8f1863a32272d9dde9babfdbe255",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_plot.py": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_review.py": "d84f944784f8d94d82eacb97963a819e71c9b20e67a4835f0cf28c4a0616db2a",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_summary.py": "e5fc58e8db2d741529a959f80f3eff474122381c0b203a5a0f40815f94a2bd01",
+      "research/phase1/experiments/static_layer_allocation/code/numerics.py": "98032fa04a948439580ec2da1b0558919466c5f5773241295987b5c3ad1dff88",
+      "research/phase1/experiments/static_layer_allocation/code/probe.py": "65db35ea8a81e7652b2739b50cb784a339e95df4e3abe9d912e99e822098b608",
+      "research/phase1/experiments/static_layer_allocation/code/protocol.py": "4a8a23358d33e33b5a905dd6c38ef0b936f75fe7474cf2a31825bf991f980d4e",
+      "research/phase1/experiments/static_layer_allocation/code/quality_data.py": "ddcf49c9b86c4d53805426e0f10c85eeaa0a0d075457e944e0f263284b40c595",
+      "research/phase1/experiments/static_layer_allocation/code/quality.py": "65c63b81cabfc0a16c7ddfa8e9207ad00a4d75ab065e73f5e15326d8bf6beeef",
+      "research/phase1/experiments/static_layer_allocation/code/select_final.py": "1072a12edbcdb97eaa09505ba65d79d5e03ce981b42e80babb90c30d52228cb4",
+      "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/storage_service_cost/code/layout.py": "aec2600972de3f5f314730daff71ba77ec58acf803d8642377e1e5a9a674cad4",
+      "research/phase1/guide.md": "01b62678f9b12aa8fd315fc9441c45390e88ba80f52cfd53c6b3a0d2926f7cf4",
+      "research/phase1/splits/checks.json": "abe6b5d12d596df4ab7358e3987c87f2cf14c9056f0d711b042292dcf76862e1",
+      "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+      "research/phase1/splits/hotpot_four_expand.json": "0ab3497273d202a17de7c79420c73410d99c6f7a174c68ec97a3a416f2d3d4c6",
+      "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+      "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+      "research/phase1/splits/retrieval_ruler_expand.json": "efd140d96199f270bc69483315f1eb576309946431289f93573c5b481f798a4a",
+      "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+      "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+      "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+      "research/phase1/splits/static_retrieval.json": "72f1f0bf306a8182bc212471c2db3d0cebf982313939abc90e8d8a5bf58c89ee",
+      "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+      "research/phase1/splits/trajectories.json": "03cabd9fe5027899019d963524b05be011f2b2b4a5b0e8e21ae8fca3b35424db",
+      "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+      "research/phase1/src/phase1/complete_experiments.py": "47a8a301c5c350ba81bbba3caf7e8dfcd9fecd02002d12b27bdad8393fd4ec29",
+      "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/phase1/src/phase1/review_results.py": "74c1727278f4de937354b6cf8030a097269eab0e67347ccf7a5b540e5ed640f4",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/src/phase1/runner.py": "cdb7d3f74660c37f4e02c43973d65a966034b0dfed569c9eae08bc6cfd685c7f",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/splits_build.py": "459fc0f13c2be44af29f2c8067ee3738ab23e13314bd164c8bad3b7a6ccf3bda",
+      "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+      "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+      "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+      "research/tests/test_attention_intervals.py": "80344533d9c392632a6f7334733cff9f242078bba87580f9109bf1727524ff3a",
+      "research/tests/test_cache_offload.py": "de8a89e0bdc54a4546e9fe999a5ac7651ac47063ecec9300d16bbda432b64dc3",
+      "research/tests/test_candidate_supplement.py": "847f949c1b82fba6139837462ce771a864e12dc8894800b2b7f633268255ed6e",
+      "research/tests/test_content_allocation.py": "ea8517013a17dc0008ddae373bda289a34fc24794c67bf46705e2f65cc9fbea2",
+      "research/tests/test_experiment_completion.py": "f62c2b22b7a877d2e01921fe96981a313cb9d9f57f6d84bdab7ad845a9061159",
+      "research/tests/test_four_question_scoring.py": "fa0cc25940e407c690d186aa817cde04fb94c9094289c9bc8f77784200b85d7c",
+      "research/tests/test_generation_quantization.py": "076e051e74c226ce531c31d6887b8a52be03726d5e0f5a999289f89aff82c64f",
+      "research/tests/test_generation_selection.py": "c4798172e2f5a4d3cb9a68723536df8e87d636a92a55ef03f992fea7dd5edde0",
+      "research/tests/test_ledger.py": "533173aa53db6be231c00db4a2dbfd144923c04993187844e2f4505d3c88381a",
+      "research/tests/test_new_input_quality.py": "4b404dab5b389bcd882eb07048011e3891d6140238109f0dddc12a591c49bdde",
+      "research/tests/test_quantize.py": "4b61e2726ec3a432649a0adb1f286079eb7918d2c712797cfeac8517e1d60aea",
+      "research/tests/test_representation_evaluate.py": "6ee4204872c966faf106a1a8927575c0b2bc4cc85943f5e3fd536847dabef180",
+      "research/tests/test_representation_metrics.py": "d8314be7672b37ea70f8be01e1223d17b6c2032b5327065d74f2aa91b07f0e24",
+      "research/tests/test_representation_results.py": "ffecef1a80dfb49161967b0548ea4045c07672ca2d3eac378fc6fe47311374d2",
+      "research/tests/test_representation_selection.py": "ec84127d57731202f368abd78d8f9b2e817f3ab6ae532a5041801dac4b90e862",
+      "research/tests/test_residual_diagnostics.py": "04f0d74569859f3e8d97d8cb4bcdb73a239844e89bccb053a641a609621a9b11",
+      "research/tests/test_result_format.py": "514f6fb37e3d62b15f17fbedc598389b9e0d1b005829298dcfe53512bd4bf697",
+      "research/tests/test_retrieval_scoring.py": "c81e94c68627cf888687818e48ad4774d21a20fee31b5a8dc014232180863fe3",
+      "research/tests/test_static_key_allocation.py": "2b8fb1d46cefeecec92dcb97fd6a5a3e8f49f0a5b3b6f6df03f2da7fc53e5a23",
+      "research/tests/test_static_numerics.py": "923e4fce7a2d4f4cd2faac9bdbb1be918667f1ffb20f186c4651c040b4a73077",
+      "research/tests/test_static_quality.py": "c41e9cebb3205707b4303e79b9747fd191075436e22e81f7af766252fa65ff3a",
+      "research/tests/test_trajectory_results.py": "477df9533f5fccab14a2ef8bc9a953f2c31464599711ae220849bb3e4152cd8a"
+    }
+  },
+  "reused_prefix": {
+    "n": 0,
+    "source": null
+  },
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0,
+  "organization_source": {
+    "path": "research/.runtime/hold/reference-consolidation/7903f3e0da92d525ddd3af3bc0386e36d1eea0d2a812616f0b956f65df0d0229.json",
+    "sha256": "7903f3e0da92d525ddd3af3bc0386e36d1eea0d2a812616f0b956f65df0d0229"
+  },
+  "original_raw_source": {
+    "path": "research/.runtime/static-final/progress/llama/hotpot_four_online_pre_k4_layers_16_sensitivity.json",
+    "sha256": "bacb528e503c5ed7ca36de1b556e4268e71f58d367238fcb1c8acf38eca50ace"
+  },
+  "raw_selection": {
+    "ids": [
+      "hotpot-four-v-00",
+      "hotpot-four-v-01",
+      "hotpot-four-v-02",
+      "hotpot-four-v-03",
+      "hotpot-four-v-04",
+      "hotpot-four-v-05",
+      "hotpot-four-v-06",
+      "hotpot-four-v-07",
+      "hotpot-four-v-08",
+      "hotpot-four-v-09",
+      "hotpot-four-v-10",
+      "hotpot-four-v-11",
+      "hotpot-four-v-12",
+      "hotpot-four-v-13",
+      "hotpot-four-v-14",
+      "hotpot-four-v-15"
+    ]
+  },
+  "source_segments": [
+    {
+      "start": 0,
+      "end": 16,
+      "publication": {
+        "base_commit": "cbce2edc20183fff42f8444a67b539eb1fbf205d",
+        "files": {
+          "research/manifests/data/gsm8k.source.json": "2d732973e51f9bf9e3952162c4c3a6442612a87a15c2bf2bba953ec1b33561b5",
+          "research/manifests/data/hotpotqa.source.json": "3157b6f249091417583d3f84a7a782ddc2355ad88fd39321f4c9152f97ff1129",
+          "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2",
+          "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+          "research/phase1/configs/data.md": "20b7b1f83939b856f78f2bc0eb36000b1aa71ed931383f508634c38f7719826a",
+          "research/phase1/configs/long_decode.json": "a374518b658b717822e7969179916f274a544786dd9934b366d3b9c686876e95",
+          "research/phase1/configs/quality.md": "ec25f37a18e4fb31a1eed8c7bd50534525bbb892637d73d6d39f191ba1eada91",
+          "research/phase1/configs/quant.md": "742b7e8e9b6ac7adbc3f00a50d1f6176a4ec41d9a268d4020cb6604f9d3b4b7e",
+          "research/phase1/configs/representation_diagnostics.json": "082ef8ded9ea471a12e985584a3508d27464b76d2fe79086ac774e0f5b899a83",
+          "research/phase1/configs/results.md": "2e19d0ed05483aa84d49e0a58741a0006efcee001952aad7539d4d3743ffab8d",
+          "research/phase1/configs/retrieval.json": "cbccc951f10f55e17d4e5160781ab668297dfb2a032215bede14c71485b18193",
+          "research/phase1/configs/runtime.md": "5b8372e1556454ffbdf785b98e18ad105d49b0feaddf549d0cc32e812b336fab",
+          "research/phase1/configs/static_layer_allocation.json": "eca5080f410cf712b89c666a89c70de1840a78d074d5d61a8e9e99b864617aa3",
+          "research/phase1/configs/static_numerics.json": "9dfc1b8db84f555fea54efd98a1f461936740ab791dea3db379d1ccc7834a92c",
+          "research/phase1/configs/trajectory_replay.json": "7ee73ad6faaf0ad661cbd22e45c6bc60cb34d75a013091eb3fb9f131350e7bcc",
+          "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "8b16ecf3f9a189c4c15fa4a1aa4ba829d1fde1e557ad6407379a95c825cfc7e8",
+          "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "3773ee6efbd30ea792879a8af8a43fbfdab9140350e47046b2ef0a563542d565",
+          "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "b513d4cea66db030bd02e284b4f16367757f7c424bf377b64ef8e688d47ce8a9",
+          "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "ebd6d0cc9cb2eeaf9f712471062c5b454b12e93583d320e8b65ba75097421893",
+          "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+          "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/generation_error_sources/code/early_stop.py": "c33f6d13a947391bfbaa1c6823aa659d2aabfac0b4c7ce42fa45dcddc761a7ea",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "228be29589e56e11cb84c91fe8af3dd0334bb9e0ad32c2d3f032ec77d84f1614",
+          "research/phase1/experiments/generation_error_sources/code/plot_trajectories.py": "4c5d8b53fd1ab4fec7c8f4b8ea4bea2d38687a58810aa32a295d0e8683853e60",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "c4bb03c950188e1b3bef3328da76c96226ef64237c868088bfc3a76c71156456",
+          "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "0171b438d8b2c297af94b70d7bb9df4e290aabd400b8090166a480346ee8b084",
+          "research/phase1/experiments/generation_error_sources/code/review_trajectories.py": "a866eaa8a06f931a02a71809a5bfedd309d3d3e9f0812dc78240dff659058a5d",
+          "research/phase1/experiments/generation_error_sources/code/select_residual.py": "f128350a24e4dba17fe73be2eb2621a1bc9b4aa15fe9f996b11b89f35af43508",
+          "research/phase1/experiments/generation_error_sources/code/select.py": "117c4749a74386e84debec15497d2d631b84f0afb1af306625e254e9c98c72d5",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
+          "research/phase1/experiments/generation_error_sources/code/trajectories.py": "47918ad6551bda05ff15731e49dfe560da33cd6401edc1e77f46f76c0a2c5291",
+          "research/phase1/experiments/generation_error_sources/code/trajectory_replay.py": "6c38c90433838c7b7432d523729c2ba5e424cfabfde1537da0948d6e9b0f3e80",
+          "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+          "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+          "research/phase1/experiments/representation_interactions/code/evaluate.py": "6e1f295ef08726bae1eef4ad991a22913f506c1390fa967bd19e049868f15996",
+          "research/phase1/experiments/representation_interactions/code/metrics.py": "ffc1fc6293b267a095d4a3ec0bdeeb09b03c0721b310ca5fe81b21437c1c9a70",
+          "research/phase1/experiments/representation_interactions/code/results.py": "d16f05d0a61e1ab668687d66afd02cd2304ab85b7a775f91b56471f0750bb455",
+          "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+          "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/static_layer_allocation/code/allocations.py": "44472dffbb529873f8c5c9ead89cbe5c0361ce595f2b81ed43a72d30696df34d",
+          "research/phase1/experiments/static_layer_allocation/code/content_data.py": "10e90928e2e694d8ae8c3412f44c17376417fd68bd2fa1ef1d1b99e3c9b1632d",
+          "research/phase1/experiments/static_layer_allocation/code/content_metrics.py": "eb24ee3c83cb18dfbb7d2c2a2bfbab57597e8d361a277d88c05af9e2f4f7e15e",
+          "research/phase1/experiments/static_layer_allocation/code/content_plot.py": "644990b4526f2620f73043c2a5e560bb33633255adf466f71e355106e996c50e",
+          "research/phase1/experiments/static_layer_allocation/code/content_review.py": "50b2d4aeaa1b1fd912d0e5f18260a7c14059b652a4450cdb56f2f83f1a8af09f",
+          "research/phase1/experiments/static_layer_allocation/code/content.py": "caf7da6142eceaf77b537b4f8c63b50471aa87d75776144a5a887c885db23d06",
+          "research/phase1/experiments/static_layer_allocation/code/expand.py": "2ff6310233ff7fac85178035d93c112bcdfdb72d610c5a998ba58269e6c7c390",
+          "research/phase1/experiments/static_layer_allocation/code/free_token_diagnostic.py": "626e8aabd414d48a250215847dd559ade25ddcda662bd1be91fd810a7fafd23b",
+          "research/phase1/experiments/static_layer_allocation/code/gate.py": "6a91358fed5374869c2ae294702303e59dd0da62aec548dc214f309c41b3109c",
+          "research/phase1/experiments/static_layer_allocation/code/metrics.py": "e5f3009ad84c9bb54bebb833fca86fe9b9cec52cef6bebe942636f32248f7aa1",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_forward.py": "9c669cb991a3f9db7a9c2937353e171d4da569207d291d5dd55814ddaa54eaaf",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_logits.py": "813a3adeb835f0596e36e5b0dd964989d04d4d4d65ac2ce34ea107bae56195be",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_metrics.py": "a9372431cb3fa08c9a26d9fd52ed9158913a8f1863a32272d9dde9babfdbe255",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_plot.py": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_review.py": "d84f944784f8d94d82eacb97963a819e71c9b20e67a4835f0cf28c4a0616db2a",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_summary.py": "e5fc58e8db2d741529a959f80f3eff474122381c0b203a5a0f40815f94a2bd01",
+          "research/phase1/experiments/static_layer_allocation/code/numerics.py": "98032fa04a948439580ec2da1b0558919466c5f5773241295987b5c3ad1dff88",
+          "research/phase1/experiments/static_layer_allocation/code/probe.py": "65db35ea8a81e7652b2739b50cb784a339e95df4e3abe9d912e99e822098b608",
+          "research/phase1/experiments/static_layer_allocation/code/protocol.py": "4a8a23358d33e33b5a905dd6c38ef0b936f75fe7474cf2a31825bf991f980d4e",
+          "research/phase1/experiments/static_layer_allocation/code/quality_data.py": "ddcf49c9b86c4d53805426e0f10c85eeaa0a0d075457e944e0f263284b40c595",
+          "research/phase1/experiments/static_layer_allocation/code/quality.py": "65c63b81cabfc0a16c7ddfa8e9207ad00a4d75ab065e73f5e15326d8bf6beeef",
+          "research/phase1/experiments/static_layer_allocation/code/select_final.py": "1072a12edbcdb97eaa09505ba65d79d5e03ce981b42e80babb90c30d52228cb4",
+          "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/storage_service_cost/code/layout.py": "aec2600972de3f5f314730daff71ba77ec58acf803d8642377e1e5a9a674cad4",
+          "research/phase1/guide.md": "01b62678f9b12aa8fd315fc9441c45390e88ba80f52cfd53c6b3a0d2926f7cf4",
+          "research/phase1/splits/checks.json": "abe6b5d12d596df4ab7358e3987c87f2cf14c9056f0d711b042292dcf76862e1",
+          "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+          "research/phase1/splits/hotpot_four_expand.json": "0ab3497273d202a17de7c79420c73410d99c6f7a174c68ec97a3a416f2d3d4c6",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/phase1/splits/retrieval_ruler_expand.json": "efd140d96199f270bc69483315f1eb576309946431289f93573c5b481f798a4a",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+          "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+          "research/phase1/splits/static_retrieval.json": "72f1f0bf306a8182bc212471c2db3d0cebf982313939abc90e8d8a5bf58c89ee",
+          "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+          "research/phase1/splits/trajectories.json": "03cabd9fe5027899019d963524b05be011f2b2b4a5b0e8e21ae8fca3b35424db",
+          "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+          "research/phase1/src/phase1/complete_experiments.py": "47a8a301c5c350ba81bbba3caf7e8dfcd9fecd02002d12b27bdad8393fd4ec29",
+          "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/phase1/src/phase1/review_results.py": "74c1727278f4de937354b6cf8030a097269eab0e67347ccf7a5b540e5ed640f4",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/src/phase1/runner.py": "cdb7d3f74660c37f4e02c43973d65a966034b0dfed569c9eae08bc6cfd685c7f",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/splits_build.py": "459fc0f13c2be44af29f2c8067ee3738ab23e13314bd164c8bad3b7a6ccf3bda",
+          "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+          "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+          "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+          "research/tests/test_attention_intervals.py": "80344533d9c392632a6f7334733cff9f242078bba87580f9109bf1727524ff3a",
+          "research/tests/test_cache_offload.py": "de8a89e0bdc54a4546e9fe999a5ac7651ac47063ecec9300d16bbda432b64dc3",
+          "research/tests/test_candidate_supplement.py": "847f949c1b82fba6139837462ce771a864e12dc8894800b2b7f633268255ed6e",
+          "research/tests/test_content_allocation.py": "ea8517013a17dc0008ddae373bda289a34fc24794c67bf46705e2f65cc9fbea2",
+          "research/tests/test_experiment_completion.py": "f62c2b22b7a877d2e01921fe96981a313cb9d9f57f6d84bdab7ad845a9061159",
+          "research/tests/test_four_question_scoring.py": "fa0cc25940e407c690d186aa817cde04fb94c9094289c9bc8f77784200b85d7c",
+          "research/tests/test_generation_quantization.py": "076e051e74c226ce531c31d6887b8a52be03726d5e0f5a999289f89aff82c64f",
+          "research/tests/test_generation_selection.py": "c4798172e2f5a4d3cb9a68723536df8e87d636a92a55ef03f992fea7dd5edde0",
+          "research/tests/test_ledger.py": "533173aa53db6be231c00db4a2dbfd144923c04993187844e2f4505d3c88381a",
+          "research/tests/test_new_input_quality.py": "4b404dab5b389bcd882eb07048011e3891d6140238109f0dddc12a591c49bdde",
+          "research/tests/test_quantize.py": "4b61e2726ec3a432649a0adb1f286079eb7918d2c712797cfeac8517e1d60aea",
+          "research/tests/test_representation_evaluate.py": "6ee4204872c966faf106a1a8927575c0b2bc4cc85943f5e3fd536847dabef180",
+          "research/tests/test_representation_metrics.py": "d8314be7672b37ea70f8be01e1223d17b6c2032b5327065d74f2aa91b07f0e24",
+          "research/tests/test_representation_results.py": "ffecef1a80dfb49161967b0548ea4045c07672ca2d3eac378fc6fe47311374d2",
+          "research/tests/test_representation_selection.py": "ec84127d57731202f368abd78d8f9b2e817f3ab6ae532a5041801dac4b90e862",
+          "research/tests/test_residual_diagnostics.py": "04f0d74569859f3e8d97d8cb4bcdb73a239844e89bccb053a641a609621a9b11",
+          "research/tests/test_result_format.py": "514f6fb37e3d62b15f17fbedc598389b9e0d1b005829298dcfe53512bd4bf697",
+          "research/tests/test_retrieval_scoring.py": "c81e94c68627cf888687818e48ad4774d21a20fee31b5a8dc014232180863fe3",
+          "research/tests/test_static_key_allocation.py": "2b8fb1d46cefeecec92dcb97fd6a5a3e8f49f0a5b3b6f6df03f2da7fc53e5a23",
+          "research/tests/test_static_numerics.py": "923e4fce7a2d4f4cd2faac9bdbb1be918667f1ffb20f186c4651c040b4a73077",
+          "research/tests/test_static_quality.py": "c41e9cebb3205707b4303e79b9747fd191075436e22e81f7af766252fa65ff3a",
+          "research/tests/test_trajectory_results.py": "477df9533f5fccab14a2ef8bc9a953f2c31464599711ae220849bb3e4152cd8a"
+        }
+      }
+    }
+  ]
+}

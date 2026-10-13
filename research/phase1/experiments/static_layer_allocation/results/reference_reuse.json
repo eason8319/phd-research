@@ -1,0 +1,1266 @@
+{
+  "status": "passed",
+  "policy": "verified-prefix-append-missing",
+  "inventory": {
+    "qwen/gsm8k/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_bf16.json",
+        "sha256": "b735c25fa42311ae1979ae825185aa3abf5733485ccd069c256025b9a8f36109",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "b735c25fa42311ae1979ae825185aa3abf5733485ccd069c256025b9a8f36109",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "01b98b8a35415807c58f16aa1b0c4f2ebb7c60a73b696223d7165458c4508eab"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/gsm8k/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_kv8-per_token-post.json",
+        "sha256": "a1be7681f34e524c71f7025b274ddd3eb7f134a0e3f3b39ab8f611752145f5e8",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "a1be7681f34e524c71f7025b274ddd3eb7f134a0e3f3b39ab8f611752145f5e8",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "6364e3816510311630b7a3b10191c4aaee907fb1d414a836bd27a4718b509c5f"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/gsm8k/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json",
+        "sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "99096e87a8095bc8cc582d9d51c35487c90190649da1ea2da50376a9b0da0099"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/retrieval_ruler/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_bf16.json",
+        "sha256": "7dfe090ee8f8431597431f67d3743523a15d70f1f1c3aec8a954fed1d18af564",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "7dfe090ee8f8431597431f67d3743523a15d70f1f1c3aec8a954fed1d18af564",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "60dcba85a0c6ff09c786e181b01c82878569e2e47d60bfda552b60ed3da5e7dd"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/retrieval_ruler/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_kv8-per_token-post.json",
+        "sha256": "2dbc2cb2a9ae99a326983077015d118335244276faa505bcf9dfc20cc41fea6e",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "2dbc2cb2a9ae99a326983077015d118335244276faa505bcf9dfc20cc41fea6e",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "2cca30a1e395e49f4074cc0ab763516bbb298d92f412093bd0f3e6cdb602145f"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/retrieval_ruler/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_retrieval_ruler_k8v4-per_token-post.json",
+        "sha256": "186464cfdfd2e52bbb344917974d6ffd1a2f52d55fc7fe9e7239d5ebad6484c5",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "186464cfdfd2e52bbb344917974d6ffd1a2f52d55fc7fe9e7239d5ebad6484c5",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "58adfa1f34d052b930990d47369715b1b13a771164ecf5de413818c1ffb17f6c"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_bf16.json",
+        "sha256": "0dc0ea8faeeea012f50f1cf82509c83fee533250a353253b10cf9e8fa498fcb5",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "0dc0ea8faeeea012f50f1cf82509c83fee533250a353253b10cf9e8fa498fcb5",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "fb9e8e766879a666f39c514437f7a5237281915c0d70a1e923b7b1c1c51a4085"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_kv8-per_token-post.json",
+        "sha256": "dff2631ee2415d33287c9ffc211636249c29b2cda8717fad9f81a3c0845ecf42",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "dff2631ee2415d33287c9ffc211636249c29b2cda8717fad9f81a3c0845ecf42",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "1aaaffb5f2f7a21010ed8054a7dcaee8cfa4e7d94548724eb3fc04f22899dd75"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json",
+        "sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "3fba19391594227acef903debfba216f954474345ecaf46923a763d07e119827"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot_four/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_bf16.json",
+        "sha256": "c2b178ebbf5fd43961482f6afe9743dbd3347fe42d3694f5e37ba1c39eb0bd8d",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "c2b178ebbf5fd43961482f6afe9743dbd3347fe42d3694f5e37ba1c39eb0bd8d",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "bf4444719fb0e8d8fba92c73175bf71efd53760c4724175beb888f88203e5ba7"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot_four/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_kv8-per_token-post.json",
+        "sha256": "3d95170bd98068b6e30db79d4867a52f2bb9d868af14d26ec8ead1784b667f1a",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "3d95170bd98068b6e30db79d4867a52f2bb9d868af14d26ec8ead1784b667f1a",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "285e75f0685626f6d2b1aa55472b9c2708739acfc0c5a40585ff60d82285c145"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "qwen/hotpot_four/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_k8v4-per_token-post.json",
+        "sha256": "2ec49f3b3b95205c94855d9a6b21fe71981375770a3147c8f2e47200564f94d6",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "2ec49f3b3b95205c94855d9a6b21fe71981375770a3147c8f2e47200564f94d6",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "dd69b35f4cb1d61424673e7c4e28a3bc48c8f2fadafb84a2c874af0ae629d2a2"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/gsm8k/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_bf16.json",
+        "sha256": "fa2039551ab04234e826f32e9deabe50b6318a93b2c64b9ed11cca7cb66ff1c9",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "fa2039551ab04234e826f32e9deabe50b6318a93b2c64b9ed11cca7cb66ff1c9",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "5227054561ef3fc732dec623ac54659ede276c1d4cffe8987da0ff786a71c982"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/gsm8k/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_kv8-per_token-post.json",
+        "sha256": "5b367fd96f1090933e8a1bcbce76adc9711baee15dc887a1e052069c1ccd1d19",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "5b367fd96f1090933e8a1bcbce76adc9711baee15dc887a1e052069c1ccd1d19",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "74af1d779d65d222cf35b069d27862cd62692d42dfb9ef9f8599832345ce6380"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/gsm8k/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_gsm8k_k8v4-per_token-pre.json",
+        "sha256": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "b5936dd412b3fdce7a839cbd2fe7966b502be1869888ce499cc9ea488405d734",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "4bd4b4e61522c6356956603dce250c7e90a73779a4de8427fba21c6fc09af50f"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/retrieval_ruler/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_bf16.json",
+        "sha256": "c9d7466f6b0c256697ff488ad845ce32b1c17c9b78d1850822d2eb4c9926c180",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "c9d7466f6b0c256697ff488ad845ce32b1c17c9b78d1850822d2eb4c9926c180",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "5a55bd24fc844ae6b0e42348743c2d973d799f55d7215278b5f13350f4c25b7a"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/retrieval_ruler/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_kv8-per_token-post.json",
+        "sha256": "fb7e44f1ad52d8a7c74ea68dfb723a20faf54fc31bf903ff8802cebea906acbe",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "fb7e44f1ad52d8a7c74ea68dfb723a20faf54fc31bf903ff8802cebea906acbe",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "46f98d791aad1ed9b5de35c1768ef6862a544a80855b976a3cc9b123764247eb"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/retrieval_ruler/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_retrieval_ruler_k8v4-per_token-pre.json",
+        "sha256": "e48021b47adcd15ccd13b92c7b3568ea92ccb90c32cd195a600fabaea5669bf8",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "e48021b47adcd15ccd13b92c7b3568ea92ccb90c32cd195a600fabaea5669bf8",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "6b4ecc1ce177015e6371fd202594230d7bcbcb92e83c0b002e579296c6a60d1b"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_bf16.json",
+        "sha256": "030e2bfa28c7c675d3e2eaf56db8dc14e4a8eeab81ddb80f9d883c7eeaf83c4d",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "030e2bfa28c7c675d3e2eaf56db8dc14e4a8eeab81ddb80f9d883c7eeaf83c4d",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "874b75f6cc4a283e3bc22d2ee1e79ca89cc87da624ae3ee0120e99b3f6caeeef"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_kv8-per_token-post.json",
+        "sha256": "56613df77f6b3ae76abe8ec6f1f34b29df9bed571b1a7c2169878914eea559b3",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "56613df77f6b3ae76abe8ec6f1f34b29df9bed571b1a7c2169878914eea559b3",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "ed020539b307d66ecff4b599111c03a487e4a145fa7e3dd99adbb4f85f717376"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_k8v4-per_token-pre.json",
+        "sha256": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+        "n": 64
+      },
+      "validation": {
+        "status": "passed",
+        "n": 64,
+        "source_sha256": "be0a35cce8d5629b2106b0e3dc79eac1815be2cc27a8fd381206bcd81f0642f8",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 64,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "345271e88cbe746bcefc8501611b544be6cc17cbe37dd41aae504ff17f50c1ea"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot_four/bf16": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_bf16.json",
+        "sha256": "3595c3aba6737edb0d129062b2f9734c3e8de3477244626e7aedfe305b63cf95",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "3595c3aba6737edb0d129062b2f9734c3e8de3477244626e7aedfe305b63cf95",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "8e2fe36a464eef3b86fda4526f3bfe2afa165ab7c0f06e7b894aefca0b363b26"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot_four/kv8": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_kv8-per_token-post.json",
+        "sha256": "e6c898b56176377b3c8d7488140e79c0433164baed561d795618aa86a986e380",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "e6c898b56176377b3c8d7488140e79c0433164baed561d795618aa86a986e380",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "5faab758d107c816bb4621d517f7593a1473d42adc4e2f3436bfb06a37f8f84b"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    },
+    "llama/hotpot_four/k8v4": {
+      "action": "reuse",
+      "reason": "已有首轮归并及原测量审核已核对",
+      "source": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_k8v4-per_token-pre.json",
+        "sha256": "715639f7bb187206efee9280b08ef9e01d48c419b79d7e80d51559013f7f9d4e",
+        "n": 16
+      },
+      "validation": {
+        "status": "passed",
+        "n": 16,
+        "source_sha256": "715639f7bb187206efee9280b08ef9e01d48c419b79d7e80d51559013f7f9d4e",
+        "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+        "device": {
+          "node": "node8",
+          "gpu": "NVIDIA RTX 6000 Ada Generation",
+          "torch": "2.5.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "tf32": false,
+          "weights": "bfloat16",
+          "attention": "float32",
+          "autocast": false
+        },
+        "historical_prefix_verification": {
+          "status": "matched",
+          "n": 16,
+          "fields": [
+            "input_sha256",
+            "input_tokens",
+            "new_tokens",
+            "correct",
+            "f1",
+            "em",
+            "answer_f1",
+            "answer_em",
+            "extracted_answers",
+            "missing_answers",
+            "strict_correct"
+          ],
+          "duplicate_sha256": "e54dca3fc6d4422113088897058feca69f1b7110208bc952052cba11313482da"
+        },
+        "original_measurement_audit": {
+          "path": "research/.runtime/hold/reference-consolidation/c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f.json",
+          "sha256": "c4cc1a6f6da4035f17468ab3c51748124aa490c06f6f21f970eb0fbae7091b4f"
+        },
+        "original_cleanup": {
+          "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+          "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+        }
+      }
+    }
+  },
+  "plan_digest": "b5ebdc8e260daa20581cd6b74f7ec6a4ae313975093092a7ca1b595a2f3ee7d4",
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.46.3",
+    "cuda": "12.1",
+    "tf32": false,
+    "weights": "bfloat16",
+    "attention": "float32",
+    "autocast": false
+  }
+}

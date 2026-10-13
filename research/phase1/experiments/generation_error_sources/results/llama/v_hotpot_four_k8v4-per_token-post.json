@@ -1,0 +1,665 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+  "model": "llama",
+  "config": "k8v4-per_token-post",
+  "task": "v-hotpot_four",
+  "n": 16,
+  "rows": [
+    {
+      "id": "hotpot-four-v-00",
+      "input_tokens": 31719,
+      "input_sha256": "75923ec31b837719190045bac4027d143bc042607437ff316c46ee768363a53b",
+      "new_tokens": 711,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25440441344,
+      "memory_peak_reserved_bytes": 27797749760,
+      "extracted_answers": [
+        "Sturt",
+        "Discover Pure Energy",
+        "The Wolfhounds",
+        "Big 12 Conference"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 0,
+        "text_sha256": "554a56d00f03816966617aaf0fbb2cc6ba5687db60bef66b861e315918fec8e4"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "input_tokens": 31739,
+      "input_sha256": "c63c94aa5d24f5bf6063b96e16701d957cd2dbf7cf73931fd0df10a2dfe7d360",
+      "new_tokens": 427,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25444784128,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "1982",
+        "Andre Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 1,
+        "text_sha256": "dbcc29d3818fc4fe122c18ea5d702170bbe39691362c8d94bf08c63683acb1f5"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "input_tokens": 31697,
+      "input_sha256": "1fd2ba99cf50e6a0d2e378356a802ccedef3dfbbc33a69427abb741ff0518353",
+      "new_tokens": 535,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25444784128,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Barack Obama",
+        "James Mitchum",
+        "Billy Idol",
+        "nationalist, nativist, and authoritarian"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        33.333333333333336
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 58.333333333333336,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 2,
+        "text_sha256": "bb49704429a97c09b0ba01779924c23a4a707c0649f69d5731a8eaa1b83576d3"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "input_tokens": 31741,
+      "input_sha256": "af864f561319c9d07cd50b00828408ef49ab7acc1bcb57e9c2e2e0f33c959f6a",
+      "new_tokens": 498,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445218304,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "quarry",
+        "Dundee Canal",
+        "2000",
+        "yes"
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 3,
+        "text_sha256": "9b9a02cfb9e14624a080e3a03504a54ae102cdf7b17a8ecd9a65d0b091ae919a"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "input_tokens": 31737,
+      "input_sha256": "beef70c88aae2014282d8c028345fe5ca8d247cd2c2771c31616fb5668b7ab88",
+      "new_tokens": 484,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445218304,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Picric acid",
+        "Old World fossil representatives",
+        "24 hours a day and 7 days a week",
+        "Toshi Ichiyanagi"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 4,
+        "text_sha256": "cca8ccdf7b05245ffbc94de8848bc15c8bcdee5004282b24ebe03439050e68eb"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "input_tokens": 31725,
+      "input_sha256": "6a878313e45a803182a663d67031f5842defdde5270f22ec905b34df42139d0f",
+      "new_tokens": 812,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445218304,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Tom Jones",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 5,
+        "text_sha256": "5c876847bedd1a42ae1ad5c0cda249edb67d00098492e8064bc545a07a2fc487"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "input_tokens": 31738,
+      "input_sha256": "0d2126baad8eb52ed4eb8c6cb9f1d2276a523655681d5d17f9d1896b30ee2ee8",
+      "new_tokens": 513,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445218304,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "1979",
+        "Tharangambadi",
+        "1944",
+        "Orcs"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 6,
+        "text_sha256": "22709e88882158c3f603fbba5582d28fb35dd22ba3e4e82b0d60143a8ed911ed"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "input_tokens": 31742,
+      "input_sha256": "baa172609fbc43aaeedd9b08dd7d5c49df2e629864490310f5028f37b66114ae",
+      "new_tokens": 699,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Rob Thomas",
+        "Not specified",
+        "Brazil",
+        "2017"
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 7,
+        "text_sha256": "0be89676d3b3aba952be2beb12e2edecb39143429afc3baca5ea2cee9d355358"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "input_tokens": 31727,
+      "input_sha256": "5a455424f01e61a4882c3f6abbfcec9cdc4469b75c9f8b2f453e4ff644762567",
+      "new_tokens": 440,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Wes Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "over 210,000"
+      ],
+      "answer_f1": [
+        40.0,
+        100.0,
+        100.0,
+        85.71428571428571
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 81.42857142857143,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 8,
+        "text_sha256": "cb68e0368c4d1983ebac14ac4988a220ddd4da885cc5e811e36ebcd9883f1858"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "input_tokens": 31704,
+      "input_sha256": "d2ce7c902249e9d20c6d1fd1338e5c4e5d71dc9c6340c906695a2b7d44443903",
+      "new_tokens": 544,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "1939",
+        "Pierre Womé",
+        "1972",
+        "Napoleon III"
+      ],
+      "answer_f1": [
+        0.0,
+        80.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 45.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 9,
+        "text_sha256": "864c51daf71e38996b6d8274d5e2875cc9a6934456761b5b96349cfcb82365d0"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "input_tokens": 31727,
+      "input_sha256": "c27f322a582bbd6014a0719839ddd55f12c5a2d066ed5168bf3f091ef7a855ad",
+      "new_tokens": 637,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Giacomo Puccini",
+        "Boston, Massachusetts",
+        "Yes",
+        "26,788"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 10,
+        "text_sha256": "e7913eafe331f246b013fe7eed9bfe7b5dc2aa84974bf8363e000ec2489d7d31"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "input_tokens": 31712,
+      "input_sha256": "cff46cdcc3634d9872abb495f78d97ae6a50566d6df164439e1d4f41ab92a65a",
+      "new_tokens": 1024,
+      "stop": "limit",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Las Vegas.",
+        "Mediterranean Sea.",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 2,
+      "f1": 41.66666666666667,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 11,
+        "text_sha256": "c5f4d0c7bc995a818741f6c3b9a672db2c162eeaa7331b1b7305c54695f7d414"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "input_tokens": 31726,
+      "input_sha256": "79a046d70794a90f29c0a31bb4a9b13c8ebc1e8847badb5952de75c1d42bb408",
+      "new_tokens": 577,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Berk Communications",
+        "No",
+        "Technical director",
+        "Wendell Berry"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 12,
+        "text_sha256": "eb6ea99a64be2b859de06bf82cab5229d3cfa17154c3ceafe1dc7626d75fd04e"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "input_tokens": 31718,
+      "input_sha256": "53117ce1edd2b56bdd8a80873686bc021ca80b54af29a6deb532329b41b82eea",
+      "new_tokens": 436,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Harvey Birdman is based on the superhero Birdman.",
+        "St. Elizabeths Hospital.",
+        "Clitheroe.",
+        "American Scientist."
+      ],
+      "answer_f1": [
+        14.285714285714283,
+        100.0,
+        49.99999999999999,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 66.07142857142857,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 13,
+        "text_sha256": "63d0d0cc183872dfee7fa9142fc026ab4d4566a90eb1b65c7644a8b613c505e9"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "input_tokens": 31732,
+      "input_sha256": "3c3b78060c3490dda8aaf52c9a4422c3ebeba4bcc4d6b88f579856e7721ea54c",
+      "new_tokens": 556,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "Umberto II",
+        "Fazoli's",
+        "Orange",
+        "Richard Boleslawsky"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        50.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 87.5,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 14,
+        "text_sha256": "d856b79d5a297a4616f398de826df5e5b026f2f65937fe9a5e2753ef5180be4a"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "input_tokens": 31678,
+      "input_sha256": "8396ec8311cff103045c3e0ae575d28b4fac03593ebd23789a7d45d6f5b7ae26",
+      "new_tokens": 505,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 25445435392,
+      "memory_peak_reserved_bytes": 27818721280,
+      "extracted_answers": [
+        "War & Peace",
+        "Harrison Ford",
+        "Ordos",
+        "John Lennon"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        66.66666666666667,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 66.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "prediction_source": {
+        "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+        "index": 15,
+        "text_sha256": "1bd98959ad000d7d5836e3c0e1d51c944913741bfd0a8add1a7b03c79d562fdf"
+      },
+      "input_identity_source": "recorded"
+    }
+  ],
+  "calibration_commit": null,
+  "invalid_samples": 0,
+  "execution_source": {
+    "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+    "files": {
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+      "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+      "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+      "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+      "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+      "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+    },
+    "scope": "new-input three candidates, offline pre H=0, plus kv8",
+    "planned_new_generations": 800
+  },
+  "execution_device": {
+    "name": "NVIDIA RTX 6000 Ada Generation",
+    "total_bytes": 51002867712,
+    "torch_version": "2.5.1+cu121",
+    "cuda_version": "12.1"
+  },
+  "prediction_source": {
+    "path": "research/.runtime/generation-llama-hotpot_four-v-k8v4-per_token-post.json",
+    "sha256": "d60ea2b589af8a2ab533c085c9dedce6ee87408cf268c0b8d4eb8c41cba5fa2b"
+  },
+  "statistical_unit": "request",
+  "questions_per_request": 4,
+  "n_questions": 64,
+  "em": 18.75,
+  "f1": 75.0,
+  "answer_em": 64.0625,
+  "missing_answers": 2,
+  "result_format_version": 1,
+  "residual_bits": 0,
+  "residual_tokens": 0
+}

@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-import time
 from collections.abc import Callable
+import time
 from typing import Any
 
 import torch
@@ -12,14 +12,20 @@ from transformers import AutoModelForCausalLM
 from kvstudy.attention import attention_fp32, full_history_mask
 
 
-def load_model(model_dir: str) -> Any:
-    """以 BF16 和 SDPA 加载因果语言模型，放到当前 CUDA 设备。"""
+def load_model(model_dir: str, *, materialize_host_weights: bool = False) -> Any:
+    """以 BF16 和 SDPA 加载模型；可先将映射权重复制到主机内存再搬入 CUDA。"""
     model = AutoModelForCausalLM.from_pretrained(
         model_dir,
         torch_dtype=torch.bfloat16,
         attn_implementation="sdpa",
         low_cpu_mem_usage=True,
     )
+    if materialize_host_weights:
+        for parameter in model.parameters():
+            copied = parameter.detach().clone()
+            if copied.dtype != parameter.dtype or not torch.equal(copied, parameter):
+                raise RuntimeError("主机权重复制发生数值改变")
+            parameter.data = copied
     model.to("cuda")
     model.eval()
     model.requires_grad_(False)
@@ -149,3 +155,27 @@ def timed(function: Callable[[], Any]) -> tuple[Any, float]:
     result = function()
     synchronize()
     return result, time.perf_counter() - start
+
+
+def generate_bf16(
+    model: Any, input_ids: torch.Tensor, eos: set[int], limit: int,
+    *, consume_cache: bool = False,
+) -> tuple[list[int], str]:
+    """生成至 EOS 或上限；返回 token 列表及停止原因。"""
+    outputs = prefill(model, input_ids)
+    keys, values = cache_lists(outputs.past_key_values)
+    token = int(outputs.logits.reshape(-1, outputs.logits.shape[-1])[0].argmax())
+    del outputs
+    produced = [token]
+    if token in eos:
+        return produced, "eos"
+    for step in range(limit - 1):
+        logits, keys, values = decode_step(
+            model, keys, values, token, input_ids.shape[1] + step,
+            consume_cache=consume_cache,
+        )
+        token = int(logits.reshape(-1, logits.shape[-1])[0].argmax())
+        produced.append(token)
+        if token in eos:
+            return produced, "eos"
+    return produced, "limit"

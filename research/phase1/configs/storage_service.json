@@ -1,0 +1,21 @@
+{
+  "source_type": "assumed_interface_and_execution_model",
+  "transaction_bytes": 128,
+  "storage_alignment_bytes": 128,
+  "address_order": "layer, batch, kv_head, physical_block; separate K payload, V payload, K parameters, V parameters; token-major within each stream",
+  "parameter_bytes_per_group": 4,
+  "group_channels": 32,
+  "modes": ["immediate_rmw", "combined"],
+  "immediate_rmw": "Read complete intersecting transactions. Append writes complete transactions; preserve prior valid bytes by RMW when append starts inside a transaction. New transaction unused bytes are initialized without a read. No masked writes or cross-step cache reuse; attention tail transactions are discarded before append and cannot supply the RMW read.",
+  "combined": "Retain one transaction per stream. Read pending valid bytes on chip, complete prefix transactions from memory. Flush at transaction completion, physical-block end, request end or eviction. Frozen windows start and end on transaction boundaries; partial end flush and resume seed reads are recorded separately in boundary tests.",
+  "current_token": "Quantize with stored parameters, then reconstruct locally for attention; append once, no off-chip readback in the same step. No high-precision current-token bypass.",
+  "tile_tokens": 64,
+  "execution": "Layers serial. Quantize current KV; pipeline K read, decode, optional rotation, QK; full-history softmax barrier; pipeline V read, decode, AV; append write completes before next layer. Dedicated stages, double tile buffers, shared K/V link in sequential phases. No cross-layer overlap.",
+  "decode_rate_unit": "values/s including unpack, integer conversion, parameter conversion and stored-parameter multiply/add",
+  "pipeline_resource_condition": "Separate memory, decode, rotation and dot-product engines; at most two live tiles across the pipeline, with backpressure. Separate KV tile, parameter and score SRAM banks; KV read and write ports sustain simultaneous producer/consumer demand, otherwise serialize or extend schedule. Parameter broadcast once per group; GQA shares one decoded KV head. Actual rates must be measured at this concurrency, not isolated peak rates.",
+  "rope_coefficients": "Generate cos/sin for 64 distinct frequencies per position, once per decode step; retain FP32 cos/sin table across layers and heads on chip. Capacity (history+1)*128*4 bytes. Generation throughput, loading frequencies and dynamic scaling setup are explicit common per-model inputs, not zero-time assumptions. Table spills require extra off-chip bytes.",
+  "intermediates": "Two FP32 tiles per active K/V phase, shared across sequential layers; FP32 logits/probability array retained on chip per layer. KV tile write+read and softmax traffic counted separately; no full-history FP32 KV cache.",
+  "measured_throughputs": null,
+  "benchmark_status": "deferred_no_complete_packed_readout_implementation",
+  "bandwidth_TBps": [0.1, 1.0, 3.35]
+}

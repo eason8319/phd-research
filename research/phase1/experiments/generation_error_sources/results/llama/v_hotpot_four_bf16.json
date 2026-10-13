@@ -1,0 +1,701 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+  "manifest_sha256": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+  "publication_sha256": "a2a5ce167159c29ccb5be4d43d407b7e3562831a79bde7a61640000805d9185b",
+  "model": "llama",
+  "config": "bf16-h0",
+  "task": "v-hotpot_four",
+  "n": 16,
+  "n_questions": 64,
+  "statistical_unit": "request",
+  "questions_per_request": 4,
+  "f1": 72.54464285714286,
+  "em": 12.5,
+  "answer_em": 60.9375,
+  "eligible_n": 16,
+  "eligible_ids": [
+    "hotpot-four-v-00",
+    "hotpot-four-v-01",
+    "hotpot-four-v-02",
+    "hotpot-four-v-03",
+    "hotpot-four-v-04",
+    "hotpot-four-v-05",
+    "hotpot-four-v-06",
+    "hotpot-four-v-07",
+    "hotpot-four-v-08",
+    "hotpot-four-v-09",
+    "hotpot-four-v-10",
+    "hotpot-four-v-11",
+    "hotpot-four-v-12",
+    "hotpot-four-v-13",
+    "hotpot-four-v-14",
+    "hotpot-four-v-15"
+  ],
+  "shorter_than_256_n": 0,
+  "eligible_f1": 72.54464285714286,
+  "baseline_usable": true,
+  "missing_answers": 6,
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "cuda_visible_devices": "0",
+    "slurm_job": "21418"
+  },
+  "generation": "bf16_weights_sdpa_prefill_fp32_attention_decode_greedy",
+  "raw_source": {
+    "path": "research/.runtime/four-question-decode/llama.json",
+    "sha256": "e72d97dbb2da2ad58d26c67029e45631c7abbd5bb51a8180b6d0879886dc77e4"
+  },
+  "execution_source": {
+    "path": "research/.runtime/four-question-decode/publication.json",
+    "sha256": "a2a5ce167159c29ccb5be4d43d407b7e3562831a79bde7a61640000805d9185b"
+  },
+  "rows": [
+    {
+      "id": "hotpot-four-v-00",
+      "question_ids": [
+        "5adf715b5542992d7e9f9354",
+        "5ade914b55429939a52fe8f9",
+        "5ab6b6fd5542995eadef006b",
+        "5ab55b0c554299488d4d995e"
+      ],
+      "input_sha256": "75923ec31b837719190045bac4027d143bc042607437ff316c46ee768363a53b",
+      "input_tokens": 31719,
+      "new_tokens": 736,
+      "stop": "eos",
+      "seconds": 52.361876137554646,
+      "peak_allocated_bytes": 24018080256,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "Sturt",
+        "Discover Pure Energy",
+        "The Wolfhounds",
+        "NCAA's Division I"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "question_ids": [
+        "5a7a43245542994f819ef19d",
+        "5a7c34905542996dd594b8d5",
+        "5abc3c545542993a06baf89f",
+        "5a73266d5542994cef4bc47d"
+      ],
+      "input_sha256": "c63c94aa5d24f5bf6063b96e16701d957cd2dbf7cf73931fd0df10a2dfe7d360",
+      "input_tokens": 31739,
+      "new_tokens": 455,
+      "stop": "eos",
+      "seconds": 34.7753989584744,
+      "peak_allocated_bytes": 24017308160,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "1982",
+        "Andre Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "question_ids": [
+        "5ae7fd085542993210984007",
+        "5ab7ba7555429928e1fe38b5",
+        "5a7e3a3f5542995ed0d166dd",
+        "5ab29bdc554299545a2cf9d1"
+      ],
+      "input_sha256": "1fd2ba99cf50e6a0d2e378356a802ccedef3dfbbc33a69427abb741ff0518353",
+      "input_tokens": 31697,
+      "new_tokens": 605,
+      "stop": "eos",
+      "seconds": 44.40886678174138,
+      "peak_allocated_bytes": 24010265088,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "Barack Obama",
+        "James Mitchum",
+        "Billy Idol",
+        "Far-right politics, nationalist, and nativist ideologies, as well as authoritarian tendencies."
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        28.571428571428566
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 57.14285714285714,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "question_ids": [
+        "5ae544d75542990ba0bbb249",
+        "5adf430e5542993a75d2645e",
+        "5ac23ff0554299636651994d",
+        "5ae198bf5542997b2ef7d20d"
+      ],
+      "input_sha256": "af864f561319c9d07cd50b00828408ef49ab7acc1bcb57e9c2e2e0f33c959f6a",
+      "input_tokens": 31741,
+      "new_tokens": 454,
+      "stop": "eos",
+      "seconds": 34.89625310152769,
+      "peak_allocated_bytes": 24017284608,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "quarry",
+        "Dundee Canal",
+        "2000",
+        "yes"
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "question_ids": [
+        "5a7dcc775542990b8f503ab5",
+        "5ade630e55429975fa854eb7",
+        "5ae33cf45542990afbd1e0ea",
+        "5ae0d7315542990adbacf678"
+      ],
+      "input_sha256": "beef70c88aae2014282d8c028345fe5ca8d247cd2c2771c31616fb5668b7ab88",
+      "input_tokens": 31737,
+      "new_tokens": 604,
+      "stop": "eos",
+      "seconds": 44.49432719498873,
+      "peak_allocated_bytes": 24017331712,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Picric acid",
+        "Old World fossil representatives",
+        "24 hours a day and 7 days a week",
+        "Toshi Ichiyanagi"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "question_ids": [
+        "5a7c988755429935c91b524d",
+        "5add433b5542997545bbbd02",
+        "5abd44d955429933744ab760",
+        "5a7d158155429909bec76947"
+      ],
+      "input_sha256": "6a878313e45a803182a663d67031f5842defdde5270f22ec905b34df42139d0f",
+      "input_tokens": 31725,
+      "new_tokens": 802,
+      "stop": "eos",
+      "seconds": 57.18550933152437,
+      "peak_allocated_bytes": 24017473024,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Tom Jones",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "question_ids": [
+        "5a772c925542993735360208",
+        "5adea83b55429975fa854f53",
+        "5a7c6bcc55429935c91b519c",
+        "5a806aca5542996402f6a503"
+      ],
+      "input_sha256": "0d2126baad8eb52ed4eb8c6cb9f1d2276a523655681d5d17f9d1896b30ee2ee8",
+      "input_tokens": 31738,
+      "new_tokens": 494,
+      "stop": "eos",
+      "seconds": 37.54228317737579,
+      "peak_allocated_bytes": 24017319424,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "1979",
+        "Tharangambadi",
+        "1944",
+        "Orcs"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "question_ids": [
+        "5ae234005542994d89d5b392",
+        "5ae3f6775542991a06ce9a3f",
+        "5adc983c5542990d50227cb6",
+        "5a88f2cc55429938390d3ffb"
+      ],
+      "input_sha256": "baa172609fbc43aaeedd9b08dd7d5c49df2e629864490310f5028f37b66114ae",
+      "input_tokens": 31742,
+      "new_tokens": 655,
+      "stop": "eos",
+      "seconds": 47.81664877012372,
+      "peak_allocated_bytes": 24017272320,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Rob Thomas",
+        "He was a senior staffer for her.",
+        "Brazil",
+        "2017"
+      ],
+      "answer_f1": [
+        0.0,
+        49.99999999999999,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 62.5,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "question_ids": [
+        "5abeab375542990832d3a091",
+        "5ae7eb43554299540e5a5695",
+        "5abc715f5542993a06baf8ea",
+        "5a758f775542992db9473682"
+      ],
+      "input_sha256": "5a455424f01e61a4882c3f6abbfcec9cdc4469b75c9f8b2f453e4ff644762567",
+      "input_tokens": 31727,
+      "new_tokens": 493,
+      "stop": "eos",
+      "seconds": 37.46600691601634,
+      "peak_allocated_bytes": 24017449472,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Wes Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "210,000"
+      ],
+      "answer_f1": [
+        40.0,
+        100.0,
+        100.0,
+        66.66666666666667
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 76.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "question_ids": [
+        "5a7ce50f55429909bec76869",
+        "5a763986554299109176e6bd",
+        "5adf8c375542995534e8c7dd",
+        "5ac4c0fc5542997ea680cab1"
+      ],
+      "input_sha256": "d2ce7c902249e9d20c6d1fd1338e5c4e5d71dc9c6340c906695a2b7d44443903",
+      "input_tokens": 31704,
+      "new_tokens": 621,
+      "stop": "eos",
+      "seconds": 45.61104350537062,
+      "peak_allocated_bytes": 24011383296,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "1974",
+        "Pierre Womé",
+        "1972",
+        "Napoleon III"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 70.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "question_ids": [
+        "5adc57325542996e6852531b",
+        "5a8a1b7a5542992d82986ec0",
+        "5ac1089f554299012d1db688",
+        "5ac1ff2255429964131be2b3"
+      ],
+      "input_sha256": "c27f322a582bbd6014a0719839ddd55f12c5a2d066ed5168bf3f091ef7a855ad",
+      "input_tokens": 31727,
+      "new_tokens": 509,
+      "stop": "eos",
+      "seconds": 38.49247043952346,
+      "peak_allocated_bytes": 24017449472,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Giacomo Puccini",
+        "Boston, Massachusetts",
+        "Yes",
+        "26,788"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "question_ids": [
+        "5ae3dcc05542991a06ce9a33",
+        "5a7c00a55542996dd594b87e",
+        "5abff0785542997d64295957",
+        "5a7ef49a5542994959419a91"
+      ],
+      "input_sha256": "cff46cdcc3634d9872abb495f78d97ae6a50566d6df164439e1d4f41ab92a65a",
+      "input_tokens": 31712,
+      "new_tokens": 1024,
+      "stop": "limit",
+      "seconds": 71.51783497259021,
+      "peak_allocated_bytes": 24018166272,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "Las Vegas.",
+        "Mediterranean Sea.",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 2,
+      "f1": 41.66666666666667,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "question_ids": [
+        "5a862da855429960ec39b640",
+        "5a82800855429966c78a6a2f",
+        "5a79c8fa5542994bb94570a1",
+        "5adf65555542992d7e9f9334"
+      ],
+      "input_sha256": "79a046d70794a90f29c0a31bb4a9b13c8ebc1e8847badb5952de75c1d42bb408",
+      "input_tokens": 31726,
+      "new_tokens": 1024,
+      "stop": "limit",
+      "seconds": 71.58380395919085,
+      "peak_allocated_bytes": 24017460736,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "question_ids": [
+        "5ae2075f5542994d89d5b315",
+        "5a738b855542992d56e7e363",
+        "5a7b69b155429927d897bfbc",
+        "5abe36aa5542993f32c2a08f"
+      ],
+      "input_sha256": "53117ce1edd2b56bdd8a80873686bc021ca80b54af29a6deb532329b41b82eea",
+      "input_tokens": 31718,
+      "new_tokens": 436,
+      "stop": "eos",
+      "seconds": 33.85875106975436,
+      "peak_allocated_bytes": 24018092544,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "Harvey Birdman is based on the superhero Birdman.",
+        "St. Elizabeths Hospital.",
+        "Clitheroe.",
+        "American Scientist."
+      ],
+      "answer_f1": [
+        14.285714285714283,
+        100.0,
+        49.99999999999999,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 66.07142857142857,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "question_ids": [
+        "5abf12005542997719eab661",
+        "5abc095c5542993f40c73c5d",
+        "5ae7e1fc55429952e35ea9cc",
+        "5a78eea555429970f5fffddf"
+      ],
+      "input_sha256": "3c3b78060c3490dda8aaf52c9a4422c3ebeba4bcc4d6b88f579856e7721ea54c",
+      "input_tokens": 31732,
+      "new_tokens": 559,
+      "stop": "eos",
+      "seconds": 41.66606664285064,
+      "peak_allocated_bytes": 24017390080,
+      "peak_reserved_bytes": 25545408512,
+      "extracted_answers": [
+        "Umberto II of Italy",
+        "Fazoli's",
+        "Orange",
+        "Richard Boleslawski"
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "question_ids": [
+        "5ae531ee5542990ba0bbb1ff",
+        "5ab2b61d5542991669774065",
+        "5a7b46e55542995eb53be8e5",
+        "5ab38cdd5542992ade7c6de2"
+      ],
+      "input_sha256": "8396ec8311cff103045c3e0ae575d28b4fac03593ebd23789a7d45d6f5b7ae26",
+      "input_tokens": 31678,
+      "new_tokens": 698,
+      "stop": "eos",
+      "seconds": 50.483868442475796,
+      "peak_allocated_bytes": 24003984896,
+      "peak_reserved_bytes": 25524436992,
+      "extracted_answers": [
+        "War & Peace",
+        "Han Solo",
+        "Ordos",
+        "John Lennon"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        66.66666666666667,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    }
+  ],
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0
+}

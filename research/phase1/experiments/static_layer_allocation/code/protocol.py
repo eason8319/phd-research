@@ -7,16 +7,12 @@ import json
 from pathlib import Path
 from typing import Any
 
+from kvstudy.artifacts import digest, write_json
 from kvstudy.paths import project_root
+
 
 PLAN_PATH = "research/phase1/configs/static_layer_allocation.json"
 SCHEMA = "key-downgrade-allocation"
-
-
-def digest(value: Any) -> str:
-    """对配置或输入身份生成稳定校验值。"""
-    raw = json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False)
-    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
 def load_plan(root: Path | None = None) -> dict[str, Any]:
@@ -46,6 +42,7 @@ def input_identity(item: dict[str, Any], token_ids: list[int]) -> dict[str, Any]
 def code_sources(root: Path) -> dict[str, str]:
     """登记实际工作区代码校验，不把未提交代码冒充执行提交。"""
     paths = list((root / "research/phase1/experiments/static_layer_allocation/code").glob("*.py"))
+    paths.extend((root / "research/phase1/src/phase1").glob("*.py"))
     paths.extend(root / path for path in (
         "research/phase1/experiments/generation_error_sources/code/quantized_generation.py",
         "research/phase1/src/phase1/representation.py", "research/phase1/src/phase1/runner.py",
@@ -54,7 +51,6 @@ def code_sources(root: Path) -> dict[str, str]:
         "research/src/kvstudy/ledger.py",
         "research/src/kvstudy/groups.py", "research/src/kvstudy/paths.py",
         "research/phase1/src/phase1/score.py", "research/phase1/src/phase1/result_format.py",
-        "research/phase1/experiments/generation_error_sources/code/sources.py",
         "research/phase1/experiments/generation_error_sources/code/short_baseline.py",
         "research/phase1/experiments/generation_error_sources/code/long_baseline.py",
     ))
@@ -118,14 +114,3 @@ def existing_quality(root: Path, model_key: str, spec: dict[str, Any]) -> dict[s
         "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "status": "existing_condition_evidence", "tasks": tasks,
     }
-
-
-def write_json(path: Path, payload: dict[str, Any]) -> None:
-    """原子保存正式小型结果，不生成报告或图片。"""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(".tmp")
-    temporary.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False) + "\n",
-        encoding="utf-8",
-    )
-    temporary.replace(path)

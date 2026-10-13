@@ -13,24 +13,38 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.attention import attention_fp32
-from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.quantized_generation import (
-    _config, _decode_step, _inputs, _layer_params, _prefill_cache, _quantize, _recent,
-    _rotate_key,
-)
-from experiments.generation_error_sources.code.short_baseline import _eos_ids
 from experiments.static_layer_allocation.code.allocations import build_choices, cost, layer_bits
 from experiments.static_layer_allocation.code.content_metrics import (
-    additive_metrics, question_metrics, validation_summary,
+    additive_metrics,
+    question_metrics,
+    validation_summary,
 )
 from experiments.static_layer_allocation.code.metrics import grouped_rse, rank_agreement, ranking
 from experiments.static_layer_allocation.code.probe import _reconstruction
 from experiments.static_layer_allocation.code.protocol import code_sources, digest, load_plan
+from kvstudy.attention import attention_fp32
+from kvstudy.paths import project_root
+from phase1.generation import (
+    _config,
+    _decode_step,
+    _layer_params,
+    _prefill_cache,
+    _quantize,
+    _recent,
+    _rotate_key,
+)
+from phase1.inputs import _inputs
+from phase1.models import _eos_ids
 from phase1.representation import (
-    MODELS, _capture, _empty_minmax, _fit_minmax, _render_gsm, _update_minmax,
+    MODELS,
+    _capture,
+    _empty_minmax,
+    _fit_minmax,
+    _render_gsm,
+    _update_minmax,
 )
 from phase1.runner import cache_lists, decode_step, load_model, modeling_module, prefill
+
 
 SCHEMA = "independent-retrieval-content-allocation"
 

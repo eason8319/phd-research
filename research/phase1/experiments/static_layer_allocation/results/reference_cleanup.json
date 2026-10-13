@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "computation_signature": "af1bed916ba750a15618436f54e736fe9465dc883578fa166daa84d8b78fdbde",
+  "legacy_execution_root": "research/.runtime/phase1-execution/1c5ed8a21f78b127/execution_root/research/.runtime/static-final/execution_root",
+  "reused_reference_requests": 1248,
+  "retained_reference_expansion_requests": 2496,
+  "retained_candidate_requests": 1872,
+  "organized": [
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/f5757309177aec31bac048f754035ae7395c04503621fff40c618db09f3c89f8.json",
+        "sha256": "f5757309177aec31bac048f754035ae7395c04503621fff40c618db09f3c89f8"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/gsm8k_bf16.json",
+      "sha256": "22c6c3a36ca7a0afba14bd3f15a0682d49ba4c568879674bf9b4cea96dc1acb9",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/eee303e5bf4b3377cb9a636fa577355b1b4731bd079d6ac5a83954c861ebd25d.json",
+        "sha256": "eee303e5bf4b3377cb9a636fa577355b1b4731bd079d6ac5a83954c861ebd25d"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/gsm8k_kv8.json",
+      "sha256": "a14ae65a10099d06bce7c5851b7fb86cd4b60187fbe7ed3e70c147dcbc97c181",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/32a3081f02cce53ce5e9be5c48684615aeb07d379e79c0ed3468869e25829380.json",
+        "sha256": "32a3081f02cce53ce5e9be5c48684615aeb07d379e79c0ed3468869e25829380"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/hotpot_bf16.json",
+      "sha256": "3af24d9d54f40940ec86fdc0177655a7f0f930d27e2aff3abb86a4346cf607b8",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/7a5f60397250c9414598e81e9160c56f964f5ad0c81daffa2859f66a406bc25a.json",
+        "sha256": "7a5f60397250c9414598e81e9160c56f964f5ad0c81daffa2859f66a406bc25a"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/hotpot_four_bf16.json",
+      "sha256": "be9a12f6c878baa64596dcb343daa9c989bcf28bdf6ddc360ec8c16de1e4b727",
+      "n": 48
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/dd46a92a091541018d663857bb0924221127290d9600eb16fa4376fb84db8d89.json",
+        "sha256": "dd46a92a091541018d663857bb0924221127290d9600eb16fa4376fb84db8d89"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/hotpot_four_kv8.json",
+      "sha256": "b6f6dc10974b7b49584862856e8082fb74d21c773b227bfc1f44a989f2fd5769",
+      "n": 48
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/29d0c1184a9109b7c3b188e7f324e93dbc81d1c33e09a060bd995575730b4063.json",
+        "sha256": "29d0c1184a9109b7c3b188e7f324e93dbc81d1c33e09a060bd995575730b4063"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/hotpot_kv8.json",
+      "sha256": "9900f875f044a3eb0805dc6ca3085135e663b10b4627fede630fb63864a1ccaa",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/06a6f7c39647d6e34be867786bba657ec3053b8b86943985ef11d23e6fddbd44.json",
+        "sha256": "06a6f7c39647d6e34be867786bba657ec3053b8b86943985ef11d23e6fddbd44"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/retrieval_ruler_bf16.json",
+      "sha256": "1725540e75eb78b5094f931e1b93bd7ca44a0cd44831b870d53ea9ea4abf793a",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/127b04c84077fdd18efb6508750555f289f8db7223b683fe184f05804ad6fe37.json",
+        "sha256": "127b04c84077fdd18efb6508750555f289f8db7223b683fe184f05804ad6fe37"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/llama/retrieval_ruler_kv8.json",
+      "sha256": "583e049a453df4475743795b8aa80c1addbbd463a5639a5d5ee92e82f4df1b11",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/7572342e743775dcb1698846610c7ffc7ce90429c3eeb1fd50356f57a6962f4e.json",
+        "sha256": "7572342e743775dcb1698846610c7ffc7ce90429c3eeb1fd50356f57a6962f4e"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/gsm8k_bf16.json",
+      "sha256": "5cf6be673b28dc39a92ed5a440e4c5ddbb6ebb14e48be6abd0a23f0c31db1229",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/7a81781fc23bed0ae35cf5cdabd67c8e04b686c7aee251b7e671d29ca0704382.json",
+        "sha256": "7a81781fc23bed0ae35cf5cdabd67c8e04b686c7aee251b7e671d29ca0704382"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/gsm8k_kv8.json",
+      "sha256": "39293650d75f831b42050bee8f232a7c4f7d178bf94deefd18150453f7309484",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/1f67ea9e58d9e4118bc89b1744e67e2af3673f377416f1ba3cfd8707d9e1320c.json",
+        "sha256": "1f67ea9e58d9e4118bc89b1744e67e2af3673f377416f1ba3cfd8707d9e1320c"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/hotpot_bf16.json",
+      "sha256": "9ed9bdacce8f283c213f0a462324decacf96a129c506729212089efcd09dd07f",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/947977f12943510c0b0268f7cea03f9a76adf171c11f400aed956e73e6108280.json",
+        "sha256": "947977f12943510c0b0268f7cea03f9a76adf171c11f400aed956e73e6108280"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/hotpot_four_bf16.json",
+      "sha256": "9168c841907652f0902a879cb81cb44bd6adfceeb60d91b9537c4ad0e33e601f",
+      "n": 48
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/fe9c3acf275328bba173e0308a89c45aadc5cd8014e4b3d0ec1a57b4aa65fab9.json",
+        "sha256": "fe9c3acf275328bba173e0308a89c45aadc5cd8014e4b3d0ec1a57b4aa65fab9"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/hotpot_four_kv8.json",
+      "sha256": "6e2c4a81aa79503f54511ff6af5ac805da64f60236effa73fc5aa85bca61d48c",
+      "n": 48
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/56d2da4c4df3d9bfcb645a43fea28e989fbf8bdfedcce4c825abe6bc60db9c07.json",
+        "sha256": "56d2da4c4df3d9bfcb645a43fea28e989fbf8bdfedcce4c825abe6bc60db9c07"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/hotpot_kv8.json",
+      "sha256": "c61b016d24c9f0b70886e21e25bd3659949036c333dbe7918f7c782da4404411",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/975357d72febcf60b2b4c9a5ce135c0fe7380bff591c3bf5f6c66087054b5b13.json",
+        "sha256": "975357d72febcf60b2b4c9a5ce135c0fe7380bff591c3bf5f6c66087054b5b13"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/retrieval_ruler_bf16.json",
+      "sha256": "ffa7f7b2fc6bd464b17803fd2f90ddd8d065a3bd0744005027657ffb40096ff1",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/81f2c5cf89be690b3ea627090be52ddce7bd5c70f20bd4f023cf826703d4d855.json",
+        "sha256": "81f2c5cf89be690b3ea627090be52ddce7bd5c70f20bd4f023cf826703d4d855"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/reference_expansion/qwen/retrieval_ruler_kv8.json",
+      "sha256": "a4082e0b72bd11e4ebb72f7fae6980bf87bae37cba3c1b7d2742b54f45e51f0a",
+      "n": 192
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/ab93ad8093890d33f219f0e9d96a9da304f3334b401f75e9f8d057a0c925f62c.json",
+        "sha256": "ab93ad8093890d33f219f0e9d96a9da304f3334b401f75e9f8d057a0c925f62c"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/gsm8k_online_pre_all_kv4.json",
+      "sha256": "b33a1c99cd48d7b8ed01984d504e5d1f2b1e9f537f2386ca4141d3552ad1dc2d",
+      "n": 256
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/5d13423986f4b33f0b2b7114540a8ca0b322a0b7065e1495f5b18d6bb79c3193.json",
+        "sha256": "5d13423986f4b33f0b2b7114540a8ca0b322a0b7065e1495f5b18d6bb79c3193"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/gsm8k_online_pre_k4_layers_16_sensitivity.json",
+      "sha256": "c06dacd59dc40d3af58a1c536a95768e36e0334de910c25b4dbe4a12f6b079c4",
+      "n": 64
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/a62395fe50b92d9a5a0ac7da4d3c8475d0bee2d1b55d2d8608a65e0a385412cf.json",
+        "sha256": "a62395fe50b92d9a5a0ac7da4d3c8475d0bee2d1b55d2d8608a65e0a385412cf"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/hotpot_four_online_pre_all_kv4.json",
+      "sha256": "b46ddebac8566db8c0a411d143661d618b1c3cf01ee80f8f52e97137934cc9ed",
+      "n": 64
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/7903f3e0da92d525ddd3af3bc0386e36d1eea0d2a812616f0b956f65df0d0229.json",
+        "sha256": "7903f3e0da92d525ddd3af3bc0386e36d1eea0d2a812616f0b956f65df0d0229"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/hotpot_four_online_pre_k4_layers_16_sensitivity.json",
+      "sha256": "c4a6b5d80251ee03417917fc603f4f36e6e5d30d71d7d8e41eedcdce8bfade0b",
+      "n": 16
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/52e9d476369ff92aac2e00d4e06dd8690cbb1dfdf10d733cae81309b11379d4d.json",
+        "sha256": "52e9d476369ff92aac2e00d4e06dd8690cbb1dfdf10d733cae81309b11379d4d"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/hotpot_online_pre_all_kv4.json",
+      "sha256": "3e69e1d3d947aa5f0b8310acf97962f944bad372f073f6454e9792d727da15a2",
+      "n": 256
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/788472f3f3bd660fb2b17c2eda9b11bdbf026d24a329dc24d6d3b17466abbead.json",
+        "sha256": "788472f3f3bd660fb2b17c2eda9b11bdbf026d24a329dc24d6d3b17466abbead"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/hotpot_online_pre_k4_layers_16_sensitivity.json",
+      "sha256": "231de97a60809686d60d2dbe937d226082fca2234569e8016dba137167251412",
+      "n": 64
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/d19f083e7bd2235d37c5ee5a0a46fc8f0c903fcfaa6c3aea46619501feb1387a.json",
+        "sha256": "d19f083e7bd2235d37c5ee5a0a46fc8f0c903fcfaa6c3aea46619501feb1387a"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/retrieval_ruler_online_pre_all_kv4.json",
+      "sha256": "18155532fdfb9006d795c029e3aa1d245ae8885c08b6ac944dee66b63d52388d",
+      "n": 256
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/d75f678e80c885e5d91294166d40d57553cc7a167a3644472637dbd89c499859.json",
+        "sha256": "d75f678e80c885e5d91294166d40d57553cc7a167a3644472637dbd89c499859"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/llama/retrieval_ruler_online_pre_k4_layers_16_sensitivity.json",
+      "sha256": "a7e574b1b9081c0e3f5e0c341ddc0607f5793904270a464e323edf9ea2925adf",
+      "n": 64
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/ac6f00e58266f220a39a55458094ee52d31fb6b2f5cb64fbc1178cf32f6ebddf.json",
+        "sha256": "ac6f00e58266f220a39a55458094ee52d31fb6b2f5cb64fbc1178cf32f6ebddf"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/qwen/gsm8k_online_post_k4_layers_14_sensitivity.json",
+      "sha256": "982571d056df5a1e2b1486dfab558c92aa796db32b3ffff2cee3130c3aae4605",
+      "n": 256
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/117c22f39ea974835b0472ea344288790e19d9de4489c0d268ba32d0162ddb94.json",
+        "sha256": "117c22f39ea974835b0472ea344288790e19d9de4489c0d268ba32d0162ddb94"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/qwen/hotpot_four_online_post_k4_layers_14_sensitivity.json",
+      "sha256": "9afd937610945ac232d26a8cd843a3ac7f4bdf24aacc8af9e9478f2f129cff23",
+      "n": 64
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/3e54aee033b43022279decbc22ab99ca690c6108f3d849a2ff233f5c5b48613a.json",
+        "sha256": "3e54aee033b43022279decbc22ab99ca690c6108f3d849a2ff233f5c5b48613a"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/qwen/hotpot_online_post_k4_layers_14_sensitivity.json",
+      "sha256": "70a320391170f1f48e9b5e8096a2d505c121174babd3cf88a762121dd65de103",
+      "n": 256
+    },
+    {
+      "source": {
+        "path": "research/.runtime/hold/reference-consolidation/514e1013ad6ba8fc39e75d8c959ed1e51fe78c4e4d1b5f6590c9193f2b59dc48.json",
+        "sha256": "514e1013ad6ba8fc39e75d8c959ed1e51fe78c4e4d1b5f6590c9193f2b59dc48"
+      },
+      "destination": "research/phase1/experiments/static_layer_allocation/results/final_quality/qwen/retrieval_ruler_online_post_k4_layers_14_sensitivity.json",
+      "sha256": "3cfd4adb867f85db4104eb5c71e04e9cdb8c726fc32577d83c52f682062b6047",
+      "n": 256
+    }
+  ],
+  "previous_cleanup": {
+    "path": "research/.runtime/hold/reference-consolidation/aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634.json",
+    "sha256": "aa6c761d91fdc3d30d9fa8951c550b8ee8099592f7e9cf134af545c1110c1634"
+  },
+  "previously_removed_unneeded_k8v4_expansion_requests": 1088,
+  "historical_snapshots": "preserved_with_original_sources",
+  "prefix_rule": "original_reference_entity_plus_new_rows_only"
+}

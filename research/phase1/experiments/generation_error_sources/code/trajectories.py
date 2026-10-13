@@ -1,55 +1,44 @@
-"""真实生成与误差来源：在冻结轨迹上区分单层误差、固定 token 累积误差与自由生成分歧。"""
+"""三个开发候选在两模型上的跨层、跨步传播配对实验。"""
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
-import sys
 from pathlib import Path
+import sys
+import time
 from typing import Any
 
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.attention import attention_fp32
+from experiments.generation_error_sources.code.trajectory_replay import candidate_run, reference_run
 from kvstudy.paths import project_root
-from experiments.generation_error_sources.code import quantized_generation as quant_module
-from experiments.generation_error_sources.code.cross_token_groups import (
-    _items_with_v_math,
-    _source_index,
-)
-from experiments.generation_error_sources.code.short_baseline import _eos_ids
-from experiments.generation_error_sources.code.long_baseline import _generate as generate_bf16
-from experiments.generation_error_sources.code.quantized_generation import (
-    MAX_CONTEXT,
-    _calibration,
-    _config,
-    _decode_step,
-    _generate as generate_quantized,
-    _prefill_cache,
-    _quantize,
-    _rotate_key,
-)
-from experiments.generation_error_sources.code.scale_drift import _head_errors, _input_ids
-from experiments.generation_error_sources.code.sources import _runtime_path
-from phase1.representation import MODELS, _capture, _rotate_query
+from phase1.generation import MAX_CONTEXT, _calibration, _config, _generate
+from phase1.inputs import _inputs
+from phase1.models import _eos_ids
+from phase1.representation import MODELS, _render_gsm
 from phase1.runner import load_model
+from phase1.score import gsm8k_exact, token_f1
 
 
-def _frozen_sources(root: Path, items: list[dict[str, Any]]) -> list[str]:
-    """核对数学题原文哈希，并返回全部轨迹的冻结来源索引。"""
-    split = json.loads((root / "research/phase1/splits/gsm8k.json").read_text("utf-8"))
-    indexed = {
-        row["id"]: row["question_sha256"] for group in ("c", "v")
-        for row in split[group]
-    }
-    for item in items:
-        if item["kind"] != "math":
-            continue
-        digest = hashlib.sha256(item["question"].encode("utf-8")).hexdigest()
-        if digest != indexed[item["id"]]:
-            raise RuntimeError(f"冻结数学题原文不一致：{item['id']}")
-    return _source_index(items)
+def _input_ids(
+    tokenizer: Any, model_key: str, item: dict[str, Any]
+) -> torch.Tensor:
+    """把预登记题目恢复成 CUDA 上的输入 token，并核对冻结全文与长度。"""
+    if item["kind"] == "math":
+        return _render_gsm(tokenizer, item["question"], model_key == "llama")
+    if "text" in item:
+        source = item["text"]
+    else:
+        source = item["path"].read_text("utf-8")
+        if hashlib.sha256(source.encode("utf-8")).hexdigest() != item["sha256"]:
+            raise RuntimeError(f"快照全文校验失败：{item['id']}")
+    ids = tokenizer(source, add_special_tokens=False, return_tensors="pt").input_ids.to("cuda")
+    if ids.shape[1] != item["tokens"]:
+        raise RuntimeError(f"快照 token 长度不符：{item['id']}")
+    return ids
 
 
 def _input_hash(
@@ -74,252 +63,164 @@ def _input_hash(
     return hashlib.sha256(source.encode("utf-8")).hexdigest()
 
 
-def _concentration(errors: list[float | None]) -> dict[str, float | int | None]:
-    """记录最高误差 KV head 的占比与非零 head 数，不把零范数当作误差。"""
-    positive = [max(0.0, value) for value in errors if value is not None]
-    total = sum(positive)
-    return {
-        "largest_head_share": max(positive) / total if total > 0 else None,
-        "nonzero_heads": sum(value > 0 for value in positive),
-        "defined_heads": len(positive),
-    }
+def _read(path: Path) -> Any:
+    return json.loads(path.read_text("utf-8-sig"))
 
 
-def _local_layers(
-    model: Any,
-    blob: dict[str, Any],
-    config: dict[str, Any],
-    calibration: dict[str, Any],
-    input_tokens: int,
-) -> tuple[list[dict[str, Any]], list[torch.Tensor], list[torch.Tensor]]:
-    """在相同 BF16 隐藏状态上逐层单独干预，并保存首个生成 query 的参考输出。"""
-    n_layers = len(blob["post"])
-    positions = torch.arange(input_tokens + 1, device="cuda").view(1, -1)
-    layers: list[dict[str, Any]] = []
-    reference_outputs: list[torch.Tensor] = []
-    reference_queries: list[torch.Tensor] = []
-    for layer in range(n_layers):
-        key_ref = blob["post"][layer].to("cuda")
-        value_ref = blob["value"][layer].to("cuda")
-        query = _rotate_query(model, blob["query"][layer], input_tokens).to("cuda")
-        source = blob["pre"][layer] if config["rope"] == "pre" else blob["post"][layer]
-        key_params = calibration.get("key", [None] * n_layers)[layer]
-        key_hat, bad_key = _quantize(
-            source.to("cuda"), config["k_bits"], config["key_mode"], key_params
-        )
-        if config["rope"] == "pre":
-            key_hat = _rotate_key(model, key_hat, positions)
-        value_params = calibration.get("value", [None] * n_layers)[layer]
-        value_hat, bad_value = _quantize(
-            value_ref, config["v_bits"], config["value_mode"], value_params
-        )
-        reference, _, _ = attention_fp32(query, key_ref, value_ref)
-        key_only, _, _ = attention_fp32(query, key_hat, value_ref)
-        value_only, _, _ = attention_fp32(query, key_ref, value_hat)
-        combined, _, _ = attention_fp32(query, key_hat, value_hat)
-        kv_heads = key_ref.shape[0]
-        combined_errors = _head_errors(reference, combined, kv_heads)
-        layers.append({
-            "layer": layer,
-            "invalid_key_groups": int(bad_key),
-            "invalid_value_groups": int(bad_value),
-            "key_only_error_by_kv_head": _head_errors(reference, key_only, kv_heads),
-            "value_only_error_by_kv_head": _head_errors(
-                reference, value_only, kv_heads
-            ),
-            "combined_error_by_kv_head": combined_errors,
-            "combined_concentration": _concentration(combined_errors),
-        })
-        reference_outputs.append(reference.float().cpu())
-        reference_queries.append(query.float().cpu())
-    return layers, reference_outputs, reference_queries
+def _sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _fixed_replay(
-    model: Any,
-    ids: torch.Tensor,
-    first_token: int,
-    config: dict[str, Any],
-    calibration: dict[str, Any],
-    reference_outputs: list[torch.Tensor],
-    reference_queries: list[torch.Tensor],
-) -> tuple[list[dict[str, Any]], int | None, int]:
-    """固定 BF16 首 token，全层量化一步并与同位置 BF16 轨迹比较。"""
-    first, keys, values, read_keys, read_values, invalid = _prefill_cache(
-        model, ids, config, calibration, 2, 0
-    )
-    if first != first_token:
-        raise RuntimeError("固定回放的 BF16 首 token 与参考轨迹不同")
-    captured: list[tuple[torch.Tensor, torch.Tensor]] = []
-    original_attention = quant_module.attention_from_batch
-
-    def capture(
-        query: torch.Tensor, key: torch.Tensor, value: torch.Tensor
-    ) -> torch.Tensor:
-        """记录全层回放的 query 与注意力输出，不改变解码计算。"""
-        attended = original_attention(query, key, value)
-        captured.append((
-            query[0, :, 0, :].detach().float().cpu(),
-            attended[0, 0].detach().float().cpu().reshape(
-                query.shape[1], query.shape[-1]
-            ),
-        ))
-        return attended
-
-    quant_module.attention_from_batch = capture
-    try:
-        next_token, bad = _decode_step(
-            model, keys, values, read_keys, read_values,
-            first_token, int(ids.shape[1]), config, calibration, 0,
-        )
-    finally:
-        quant_module.attention_from_batch = original_attention
-    if len(captured) != len(reference_outputs):
-        raise RuntimeError("固定回放未经过全部层")
-    layers = []
-    kv_heads = keys[0].shape[1]
-    for layer, ((query, output), reference, ref_query) in enumerate(zip(
-        captured, reference_outputs, reference_queries
-    )):
-        errors = _head_errors(reference, output, kv_heads)
-        layers.append({
-            "layer": layer,
-            "query_error_by_kv_head": _head_errors(ref_query, query, kv_heads),
-            "attention_output_error_by_kv_head": errors,
-            "attention_concentration": _concentration(errors),
-        })
-    del keys, values, read_keys, read_values
-    return layers, next_token, invalid + bad
+def _write(path: Path, value: Any) -> None:
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(value, ensure_ascii=False) + "\n", encoding="utf-8")
+    temporary.replace(path)
 
 
-def _first_divergence(reference: list[int], candidate: list[int]) -> int | None:
-    """返回从零开始的首个不同位置；共同前缀后长度不同时返回其长度。"""
-    for index, (old, new) in enumerate(zip(reference, candidate)):
-        if old != new:
-            return index
-    return min(len(reference), len(candidate)) if len(reference) != len(candidate) else None
-
-
-def _free_generation(
-    model: Any,
-    ids: torch.Tensor,
-    eos: set[int],
-    limit: int,
-    config: dict[str, Any],
-    calibration: dict[str, Any],
-) -> dict[str, Any]:
-    """分别自由生成，只记录分歧位置与停止信息，不保存完整预测。"""
-    reference, reference_stop = generate_bf16(model, ids, eos, limit)
-    candidate, candidate_stop, invalid = generate_quantized(
-        model, ids[0].tolist(), eos, limit, config, calibration, 0
-    )
-    return {
-        "bf16_new_tokens": len(reference),
-        "candidate_new_tokens": len(candidate),
-        "bf16_stop": reference_stop,
-        "candidate_stop": candidate_stop,
-        "candidate_invalid_groups": invalid,
-        "first_divergence_index": _first_divergence(reference, candidate),
-    }
+def _compact(payload: dict[str, Any], progress: Path, root: Path) -> dict[str, Any]:
+    """完整预测与层步矩阵留在服务器，回传逐步标量及层汇总。"""
+    result = copy.deepcopy(payload)
+    result["raw_source"] = {"path": progress.relative_to(root).as_posix(),
+                            "sha256": _sha(progress)}
+    for row in result["rows"]:
+        row["bf16_new_tokens"] = len(row.pop("bf16_tokens"))
+        row.pop("bf16_text")
+        for candidate in row["candidates"]:
+            free = candidate["paired_free_generation"]
+            free["new_tokens"] = len(free.pop("token_ids"))
+            free.pop("text")
+            steps = candidate["steps"]
+            if not steps:
+                raise RuntimeError("参考首 token 已终止，缺少可诊断 decode 步")
+            candidate["layer_mean_rse"] = [
+                {name: sum(step["layers"][layer][name] for step in steps) / len(steps)
+                 for name in ("hidden",)}
+                for layer in range(len(steps[0]["layers"]))
+            ]
+            for step in steps:
+                step["final_hidden_rse"] = step["layers"][-1]["hidden"]
+                step.pop("layers")
+    return result
 
 
 def run(model_key: str, commit: str) -> None:
-    """对真实生成与误差来源选定的低位宽表示运行预登记轨迹，并逐题保存可恢复进度。"""
+    """按冻结病例运行，逐题持久保存；正式文件只在全部病例完成后替换。"""
     root = project_root()
+    plan_path = root / "research/phase1/configs/trajectory_replay.json"
+    plan = _read(plan_path)
+    for source in plan["sources"]:
+        if _sha(root / source["path"]) != source["sha256"]:
+            raise RuntimeError(f"冻结质量来源变化：{source['path']}")
+    publication = root / "research/.runtime/trajectory-publication.json"
+    provenance = _read(publication)
+    for path, digest in provenance["files"].items():
+        if _sha(root / path) != digest:
+            raise RuntimeError(f"执行源码与发布清单不一致：{path}")
     folder = root / "research/phase1/experiments/generation_error_sources/results" / model_key
-    selection = json.loads((folder / "no_residual_selection.json").read_text("utf-8"))
-    name = selection["selected_low_bit"]
-    if name is None:
-        raise RuntimeError("低位宽全部淘汰时不运行所选表示的自由生成轨迹")
-    config = _config(name)
-    calibration = _calibration(root, model_key, config)
-    items = _items_with_v_math(root, model_key)
-    ordered_ids = [item["id"] for item in items]
-    sources = _frozen_sources(root, items)
-    if len(items) != 32:
-        raise RuntimeError("真实生成与误差来源预登记轨迹数量不是 32")
+    progress = root / f"research/.runtime/generation-propagation-{model_key}.json"
+    identity = {"model": model_key, "commit": commit, "plan_sha256": _sha(plan_path),
+                "publication_sha256": _sha(publication)}
+    payload = _read(progress) if progress.exists() else {
+        **identity, "schema": "kv-propagation-v1", "rows": [], "reviewed": False,
+    }
+    if any(payload[k] != value for k, value in identity.items()):
+        raise RuntimeError("断点来源与当前执行不一致")
+    if [row["id"] for row in payload["rows"]] != [
+            case["id"] for case in plan["cases"][:len(payload["rows"])]]:
+        raise RuntimeError("断点题目顺序不一致")
     tokenizer = AutoTokenizer.from_pretrained(root / MODELS[model_key])
-    input_hashes = [_input_hash(root, tokenizer, model_key, item) for item in items]
-    progress = _runtime_path(
-        root, f"generation-trajectories-{model_key}.json", f"e2-trajectories-{model_key}.json"
-    )
-    if progress.exists():
-        state = json.loads(progress.read_text("utf-8"))
-        if (state["commit"] != commit or state["ids"] != ordered_ids
-                or state["source_index"] != sources
-                or state["input_hashes"] != input_hashes
-                or state["representation"] != name):
-            raise RuntimeError("真实生成与误差来源轨迹进度与代码、输入或表示不一致")
-        rows = state["rows"]
-        if [row["id"] for row in rows] != ordered_ids[:len(rows)]:
-            raise RuntimeError("真实生成与误差来源轨迹逐题顺序不一致")
-    else:
-        rows = []
+    torch.set_num_threads(4)
     model = load_model(str(root / MODELS[model_key]))
     eos = _eos_ids(tokenizer, model_key == "llama")
+    items = {task: {row["id"]: row for row in _inputs(root, model_key, task, "v")}
+             for task in ("gsm8k", "hotpot")}
     with torch.inference_mode():
-        for item in items[len(rows):]:
+        for case in plan["cases"][len(payload["rows"]):]:
+            started = time.monotonic()
+            task = case["task"]
+            item = {**items[task][case["id"]], "kind": "math" if task == "gsm8k" else task}
             ids = _input_ids(tokenizer, model_key, item)
-            limit = 128 if item["kind"] == "retrieval" else 1024
-            if ids.shape[1] + limit > MAX_CONTEXT:
-                raise RuntimeError(f"轨迹输入超出总窗口：{item['id']}")
+            digest = _input_hash(root, tokenizer, model_key, item)
+            if ids.shape[1] + plan["max_new_tokens"] > MAX_CONTEXT:
+                raise RuntimeError("诊断超出冻结上下文长度")
+            quality = {}
+            for condition in [{"name": "bf16", "h": 0}, *plan["conditions"]]:
+                suffix = f"-residual{condition['h']}" if condition["h"] else ""
+                name = condition["name"] + suffix
+                source = folder / f"v_{task}_{name}.json"
+                row = next(row for row in _read(source)["rows"] if row["id"] == item["id"])
+                if row["input_sha256"] != digest or row["input_tokens"] != ids.shape[1]:
+                    raise RuntimeError("已有自由质量与回放实际输入不一致")
+                quality[name] = {"score": 100 * int(row["correct"]) if task == "gsm8k"
+                                else row["f1"], "new_tokens": row["new_tokens"],
+                                "source": source.relative_to(root).as_posix(),
+                                "sha256": _sha(source)}
+            torch.cuda.empty_cache()
             torch.cuda.reset_peak_memory_stats()
-            blob = _capture(model, ids)
-            local, reference_outputs, reference_queries = _local_layers(
-                model, blob, config, calibration, int(ids.shape[1])
+            offload = 8 if model_key == "llama" else 0
+            tokens, stop, references = reference_run(
+                model, ids, eos, plan["max_new_tokens"], consume_cache=bool(offload),
             )
-            fixed, next_token, fixed_invalid = _fixed_replay(
-                model, ids, blob["token"], config, calibration,
-                reference_outputs, reference_queries,
-            )
-            del blob, reference_outputs, reference_queries
-            torch.cuda.empty_cache()
-            free = _free_generation(model, ids, eos, limit, config, calibration)
-            row = {
-                "id": item["id"],
-                "subset": item["subset"],
-                "input_tokens": int(ids.shape[1]),
-                "source_sha256": sources[len(rows)],
-                "input_sha256": input_hashes[len(rows)],
-                "query_position": int(ids.shape[1]),
+            text = tokenizer.decode(tokens, skip_special_tokens=True)
+            score = (100 * gsm8k_exact(text, item["answer"]) if task == "gsm8k"
+                     else token_f1(text, item["answer"]))
+            historical_match = (abs(score - quality["bf16"]["score"]) <= 1e-8
+                                and len(tokens) == quality["bf16"]["new_tokens"])
+            candidates = []
+            for condition in plan["conditions"]:
+                config = _config(condition["name"])
+                calibrated = _calibration(root, model_key, config)
+                measured = candidate_run(
+                    model, ids, tokens, references, config, calibrated, condition["h"],
+                    plan["max_new_tokens"],
+                    offload_layers=offload,
+                )
+                free_tokens, free_stop, invalid = _generate(
+                    model, ids[0].tolist(), eos, plan["max_new_tokens"], config,
+                    calibrated, condition["h"],
+                    offload_layers=offload,
+                )
+                if invalid:
+                    raise RuntimeError("同次自由生成出现无效组")
+                free_text = tokenizer.decode(free_tokens, skip_special_tokens=True)
+                free_score = (100 * gsm8k_exact(free_text, item["answer"])
+                              if task == "gsm8k" else token_f1(free_text, item["answer"]))
+                divergence = next((i for i, (a, b) in enumerate(zip(tokens, free_tokens))
+                                   if a != b), None)
+                if divergence is None and len(tokens) != len(free_tokens):
+                    divergence = min(len(tokens), len(free_tokens))
+                if divergence != measured["first_divergence_index"]:
+                    raise RuntimeError("自由生成与强制回放的首次分歧不一致")
+                measured["paired_free_generation"] = {
+                    "token_ids": free_tokens, "text": free_text, "stop": free_stop,
+                    "score": free_score, "bf16_score": score, "delta": free_score - score,
+                }
+                candidates.append(measured)
+                print(model_key, task, item["id"], condition["name"],
+                      measured["first_divergence_index"], flush=True)
+                del calibrated
+                torch.cuda.empty_cache()
+            payload["rows"].append({
+                "id": item["id"], "task": task, "role": case["role"],
+                "input_tokens": int(ids.shape[1]), "input_sha256": digest,
+                "bf16_tokens": tokens, "bf16_text": text, "bf16_stop": stop,
+                "bf16_score": score, "historical_bf16_score_length_match": historical_match,
+                "free_quality": quality, "candidates": candidates,
                 "device_name": torch.cuda.get_device_name(),
+                "cache_storage": f"cpu_first_{offload}_layers" if offload else "gpu",
                 "device_total_bytes": torch.cuda.get_device_properties(0).total_memory,
+                "peak_allocated_bytes": torch.cuda.max_memory_allocated(),
                 "peak_reserved_bytes": torch.cuda.max_memory_reserved(),
-                "local_layers": local,
-                "fixed_replay_layers": fixed,
-                "fixed_next_token": next_token,
-                "fixed_invalid_groups": fixed_invalid,
-                "free_generation": free,
-            }
-            rows.append(row)
-            progress.write_text(json.dumps({
-                "commit": commit, "ids": ordered_ids, "source_index": sources,
-                "input_hashes": input_hashes, "representation": name, "rows": rows,
-            }, ensure_ascii=False) + "\n", encoding="utf-8")
-            print(model_key, item["subset"], len(rows), item["id"], flush=True)
-            del ids
+                "elapsed_s": time.monotonic() - started,
+            })
+            _write(progress, payload)
+            print("COMPLETED", model_key, len(payload["rows"]), "peak_GiB",
+                  torch.cuda.max_memory_reserved() / 2 ** 30, flush=True)
+            del references, ids
             torch.cuda.empty_cache()
-    payload = {
-        "protocol": "phase1-full-key-retrieval",
-        "commit": commit,
-        "model": model_key,
-        "representation": name,
-        "selection_commit": selection["commit"],
-        "h": 0,
-        "n": len(rows),
-        "subset_counts": {
-            subset: sum(row["subset"] == subset for row in rows)
-            for subset in (
-                "c_math", "c_retrieval", "v_math", "v_retrieval_32k", "v_hotpot"
-            )
-        },
-        "source": "pre_registered_c_v_trajectories",
-        "calibration_commit": calibration.get("commit"),
-        "rows": rows,
-    }
-    (folder / "trajectories.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    payload["n"] = len(payload["rows"])
+    _write(progress, payload)
+    _write(folder / "trajectories.json", _compact(payload, progress, root))
 
 
 if __name__ == "__main__":

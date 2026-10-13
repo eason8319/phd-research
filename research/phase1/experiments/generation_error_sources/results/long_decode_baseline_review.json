@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "protocol": "phase1-four-question-long-decode",
+  "statistical_unit": "request",
+  "manifest_sha256": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+  "models": {
+    "qwen": {
+      "n_requests": 16,
+      "n_questions": 64,
+      "f1": 64.29554208046855,
+      "request_em": 6.25,
+      "answer_em": 51.5625,
+      "eligible_n": 16,
+      "eligible_f1": 64.29554208046855,
+      "baseline_usable": true,
+      "missing_answers": 0,
+      "output_min": 278,
+      "output_max": 949,
+      "output_mean": 528.25,
+      "eos": 16,
+      "result": {
+        "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_bf16.json",
+        "sha256": "c2b178ebbf5fd43961482f6afe9743dbd3347fe42d3694f5e37ba1c39eb0bd8d"
+      },
+      "raw_source": {
+        "path": "research/.runtime/four-question-decode/qwen.json",
+        "sha256": "b1efc46ce34aad528ec6980ff3d552c40c2e6302e15806c7b86ec4c4f94afd83"
+      }
+    },
+    "llama": {
+      "n_requests": 16,
+      "n_questions": 64,
+      "f1": 72.54464285714286,
+      "request_em": 12.5,
+      "answer_em": 60.9375,
+      "eligible_n": 16,
+      "eligible_f1": 72.54464285714286,
+      "baseline_usable": true,
+      "missing_answers": 6,
+      "output_min": 436,
+      "output_max": 1024,
+      "output_mean": 635.5625,
+      "eos": 14,
+      "result": {
+        "path": "research/phase1/experiments/generation_error_sources/results/llama/v_hotpot_four_bf16.json",
+        "sha256": "3595c3aba6737edb0d129062b2f9734c3e8de3477244626e7aedfe305b63cf95"
+      },
+      "raw_source": {
+        "path": "research/.runtime/four-question-decode/llama.json",
+        "sha256": "e72d97dbb2da2ad58d26c67029e45631c7abbd5bb51a8180b6d0879886dc77e4"
+      }
+    }
+  },
+  "boundary": "完整 V 四问联答 BF16 基线；量化候选尚未运行；历史单问结果保留"
+}

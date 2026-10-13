@@ -7,111 +7,38 @@ import json
 import os
 import socket
 import sys
-from pathlib import Path
 from typing import Any
 
 import torch
 from transformers import AutoTokenizer
 
 from kvstudy.paths import project_root
+from phase1.inputs import _samples
+from phase1.models import MODELS, _eos_ids
 from phase1.result_format import write_quality_result
-from experiments.generation_error_sources.code.short_baseline import MODELS, _eos_ids
-from experiments.generation_error_sources.code.sources import _runtime_path
-from phase1.runner import cache_lists, decode_step, load_model, prefill
-from phase1.score import (
-    answer_exact, retrieval_exact, retrieval_number_exact, retrieval_numbers, token_f1,
-)
+from phase1.reuse import GENERATION_RESULTS, require_missing_result
 from phase1.ruler_retrieval import CONFIG, MANIFEST, file_hash, verify_publication
-
-
-def _samples(root: Path, model_key: str, task: str, split: str) -> list[dict[str, Any]]:
-    """按冻结顺序返回题目、全文位置和校验值。"""
-    if task == "retrieval_ruler":
-        frozen = json.loads((root / MANIFEST).read_text("utf-8"))
-        if split != "v" or frozen["n"] != 64:
-            raise RuntimeError("RULER 改编检索仅冻结完整 V 64 题")
-        if file_hash(root / CONFIG) != frozen["config_sha256"]:
-            raise RuntimeError("冻结后配置发生变化")
-        return [
-            {"id": item["id"], "answer": item["models"][model_key]["value"],
-             "tokens": item["models"][model_key]["tokens"],
-             "sha256": item["models"][model_key]["sha256"],
-             "path": root / item["models"][model_key]["path"]}
-            for item in frozen["items"]
-        ]
-    if task == "retrieval":
-        items = json.loads((root / "research/phase1/splits/retrieval.json").read_text("utf-8"))
-        prefix = f"synth-{split}-"
-        return [
-            {
-                "id": item["id"],
-                "answer": item["models"][model_key]["value"],
-                "tokens": item["models"][model_key]["tokens"],
-                "sha256": item["models"][model_key]["sha256"],
-                "path": root / "research/.runtime/data/phase1-text/retrieval"
-                / model_key / f"{item['id']}.txt",
-            }
-            for item in items if item["id"].startswith(prefix)
-        ]
-    if task in ("hotpot", "hotpot_long"):
-        frozen = json.loads((root / "research/phase1/splits/hotpot.json").read_text("utf-8"))
-        if task == "hotpot_long":
-            if split != "v":
-                raise ValueError("长解码诊断只使用 V")
-            indexed = {item["id"]: item for item in frozen["v"]}
-            items = [indexed[item_id] for item_id in frozen["long_decode"]]
-            variant = "long"
-        else:
-            items = frozen[split]
-            variant = "main"
-        return [
-            {
-                "id": item["id"],
-                "answer": item["answer"],
-                "tokens": item["models"][model_key][f"{variant}_tokens"],
-                "sha256": item["models"][model_key][f"{variant}_sha256"],
-                "path": root / "research/.runtime/data/phase1-text/hotpot"
-                / model_key / split / f"{item['id']}.{variant}.txt",
-            }
-            for item in items
-        ]
-    raise ValueError(f"未知任务：{task}")
-
-
-def _generate(
-    model: Any, input_ids: torch.Tensor, eos: set[int], limit: int,
-    *, consume_cache: bool = False,
-) -> tuple[list[int], str]:
-    """生成至 EOS 或上限；返回 token 列表及停止原因。"""
-    outputs = prefill(model, input_ids)
-    keys, values = cache_lists(outputs.past_key_values)
-    token = int(outputs.logits.reshape(-1, outputs.logits.shape[-1])[0].argmax())
-    del outputs
-    produced = [token]
-    if token in eos:
-        return produced, "eos"
-    for step in range(limit - 1):
-        logits, keys, values = decode_step(
-            model, keys, values, token, input_ids.shape[1] + step,
-            consume_cache=consume_cache,
-        )
-        token = int(logits.reshape(-1, logits.shape[-1])[0].argmax())
-        produced.append(token)
-        if token in eos:
-            return produced, "eos"
-    return produced, "limit"
+from phase1.runner import cache_lists, decode_step, load_model, prefill
+from phase1.runner import generate_bf16 as _generate
+from phase1.runtime_sources import _runtime_path
+from phase1.score import (
+    answer_exact,
+    retrieval_exact,
+    retrieval_number_exact,
+    retrieval_numbers,
+    token_f1,
+)
 
 
 def run(model_key: str, task: str, split: str, commit: str) -> None:
     """逐样本核对输入并运行高精度生成；中断后从已完成样本继续。"""
     if (task, split) not in {
-        ("retrieval", "c"), ("retrieval", "v"), ("retrieval", "expand"),
         ("hotpot", "v"), ("hotpot", "expand"),
-        ("hotpot_long", "v"),
         ("retrieval_ruler", "v"),
     }:
         raise ValueError(f"不支持的任务与划分：{task}/{split}")
     root = project_root()
+    require_missing_result(root / GENERATION_RESULTS / model_key / f"{split}_{task}_bf16.json")
     samples = _samples(root, model_key, task, split)
     if not samples:
         raise RuntimeError("冻结样本为空")

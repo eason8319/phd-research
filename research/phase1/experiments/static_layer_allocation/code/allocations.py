@@ -9,12 +9,17 @@ from typing import Any
 
 import numpy as np
 
-from kvstudy.ledger import account_pair
-from kvstudy.paths import project_root
 from experiments.static_layer_allocation.code.metrics import ranking
 from experiments.static_layer_allocation.code.protocol import (
-    SCHEMA, code_sources, digest, frozen_sources, load_plan, write_json,
+    SCHEMA,
+    code_sources,
+    digest,
+    frozen_sources,
+    load_plan,
+    write_json,
 )
+from kvstudy.ledger import account_pair
+from kvstudy.paths import project_root
 
 
 def layer_bits(layers: int, k4_layers: list[int]) -> list[dict[str, int]]:
@@ -118,7 +123,7 @@ def run(model_key: str, commit: str) -> None:
     if probe["frozen_sources"] != frozen_sources(root, model_key):
         raise RuntimeError("探针之后冻结输入、模板、种子或模型清单发生变化")
     from phase1.representation import MODELS
-    from experiments.generation_error_sources.code.quantized_generation import _config
+    from phase1.generation import _config
 
     model = json.loads((root / MODELS[model_key] / "config.json").read_text("utf-8"))
     layers = int(model["num_hidden_layers"])

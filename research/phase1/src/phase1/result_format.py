@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 from typing import Any
 
+
 RESULT_FORMAT_VERSION = 1
 RESIDUAL_TOKENS = 128
 
@@ -29,7 +30,12 @@ def normalize_quality_result(
         raise ValueError("该实体不是逐题质量结果")
     result = copy.deepcopy(payload)
     rows = result["rows"]
-    baseline = result.get("config", result.get("source", "")).startswith("bf16")
+    config = result.get("config", result.get("source", ""))
+    if isinstance(config, dict):
+        config = config.get("name", "")
+    baseline = result.get("condition") == "bf16" or (
+        isinstance(config, str) and config.startswith("bf16")
+    )
     result["result_format_version"] = RESULT_FORMAT_VERSION
     result.setdefault("n", len(rows))
     if result["n"] != len(rows):

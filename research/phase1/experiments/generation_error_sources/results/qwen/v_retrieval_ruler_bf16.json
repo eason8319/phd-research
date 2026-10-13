@@ -1,0 +1,994 @@
+{
+  "protocol": "phase1-ruler-number-retrieval",
+  "commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+  "model": "qwen",
+  "config": "bf16-h0",
+  "task": "v-retrieval_ruler",
+  "n": 64,
+  "rows": [
+    {
+      "id": "synth-v-0000",
+      "input_tokens": 31732,
+      "input_sha256": "162b416ec940dbd34926b0be03f4dcb9fa162d150974253c10da7b9c7e01953e",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1063198"
+      ],
+      "target": "1063198",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0001",
+      "input_tokens": 31732,
+      "input_sha256": "dacf89a9f1f0d1c9256561392ad6858cdaa93138a93d9e954450cc1620d184ec",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8580415"
+      ],
+      "target": "8580415",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0002",
+      "input_tokens": 31732,
+      "input_sha256": "2780ecf802e7f21b68d76b87766baa06863f63ea3ae803c44e1384b1b1796f22",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1933143"
+      ],
+      "target": "1933143",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0003",
+      "input_tokens": 31732,
+      "input_sha256": "d22d4e001e9431e5a10b2bd4378dda3beb5295920a419bcf8104a7aebaee1b9d",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1644131"
+      ],
+      "target": "1644131",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0004",
+      "input_tokens": 31732,
+      "input_sha256": "1029df067cfb96f7fdc1578368befcce391193f305b86b7c65484fb0fd325667",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2380021"
+      ],
+      "target": "2380021",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0005",
+      "input_tokens": 31732,
+      "input_sha256": "7afdce7626a51367d334823fd36885d381900a37ef4299683bdf0172b2b6649b",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6485176"
+      ],
+      "target": "6485176",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0006",
+      "input_tokens": 31732,
+      "input_sha256": "db9ac283294db04b486560f29b887301bb2a4b57d5cffd4523697149a541fb92",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5421955"
+      ],
+      "target": "5421955",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0007",
+      "input_tokens": 31732,
+      "input_sha256": "dedb8d0a8babdd669c42eaa9b1c4c50a30eec18c00d1bd6079d7fe6767d91464",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2690054"
+      ],
+      "target": "2690054",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0008",
+      "input_tokens": 31722,
+      "input_sha256": "35dee3226bfadacefe77b73c4bf5c4921336e024239674b594b4fdfee557c8fb",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1225106"
+      ],
+      "target": "1225106",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0009",
+      "input_tokens": 31722,
+      "input_sha256": "cccb1c486599b55827163e5da4068d458f730dd41f9e247307837d0a3d87594b",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8811980"
+      ],
+      "target": "8811980",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0010",
+      "input_tokens": 31722,
+      "input_sha256": "6559c72b52e2b660f6e0fa1b247a552fcd668649440b048aac992646d62b022c",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "4431122"
+      ],
+      "target": "4431122",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0011",
+      "input_tokens": 31722,
+      "input_sha256": "2681a0c6c55394ae1b8f2f099451f59096277d7368ab5da45c8a6879389635ed",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6241516"
+      ],
+      "target": "6241516",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0012",
+      "input_tokens": 31722,
+      "input_sha256": "59ce370618ea44ff522b1283a1d079569eea75bae41a13c7b8fc049bd209679e",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "7668200"
+      ],
+      "target": "7668200",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0013",
+      "input_tokens": 31722,
+      "input_sha256": "e3efda1a8e0d7196656ba790b69ae20c050497a9275b1f26001b5d7fb5a95e2d",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "4802257"
+      ],
+      "target": "4802257",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0014",
+      "input_tokens": 31722,
+      "input_sha256": "f42139d2b5de7baef54fd26968078db4b183caa95f0b499c2df2344ad26b6e12",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "9228387"
+      ],
+      "target": "9228387",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0015",
+      "input_tokens": 31722,
+      "input_sha256": "6468dfa7604fa0da888c90da68372bfdfa92555041729596fdf863434ab17de4",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8788930"
+      ],
+      "target": "8788930",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0016",
+      "input_tokens": 31732,
+      "input_sha256": "bcfe6123df0202d0d6333e1199c9e4ee7b6922bd7791f6c52d3069403dafcbeb",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2561432"
+      ],
+      "target": "2561432",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0017",
+      "input_tokens": 31732,
+      "input_sha256": "579378b893fb0376f569399be9f1024df0b56de097ed49bdf48d0fa8cd57c6a8",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6845574"
+      ],
+      "target": "6845574",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0018",
+      "input_tokens": 31732,
+      "input_sha256": "22937f7795a152b62813bf4bcf2984459ee414cfcaf355f9cd20db5022096f78",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3563259"
+      ],
+      "target": "3563259",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0019",
+      "input_tokens": 31732,
+      "input_sha256": "d694bcbc865e867983a969ce399592f2841271a1753d6be7a190aa6aafe6eb1e",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3146349"
+      ],
+      "target": "3146349",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0020",
+      "input_tokens": 31732,
+      "input_sha256": "b9ee0a85a7a7f6357a447001ee1fabb089c03f816375c0e217a3e089b697a29c",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "9089750"
+      ],
+      "target": "9089750",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0021",
+      "input_tokens": 31732,
+      "input_sha256": "09511d620027c0ebb7df104bed8b08e3aa54d9cf7aea5f3c8bee0b049c823bdd",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8315893"
+      ],
+      "target": "8315893",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0022",
+      "input_tokens": 31732,
+      "input_sha256": "53e22cefbc21ad58542a9d70e11bee54ff592e55dfbf307d0c4394ca9b7e53fd",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "4887166"
+      ],
+      "target": "4887166",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0023",
+      "input_tokens": 31732,
+      "input_sha256": "90fcffd568ea4ef911495d7e010c2d6e5b98b802b2c78a6b4baf72350ffd19ab",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5553700"
+      ],
+      "target": "5553700",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0024",
+      "input_tokens": 31722,
+      "input_sha256": "4bab9f47619b89e9346f2e06719ee5eb0048d0f4a7d5fd77c788dfa0d0c8ec15",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2938182"
+      ],
+      "target": "2938182",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0025",
+      "input_tokens": 31722,
+      "input_sha256": "4bf7359058e1a5a224ab1d780ec563258c695c2a63e0fda627f160589499c5c1",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3569809"
+      ],
+      "target": "3569809",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0026",
+      "input_tokens": 31722,
+      "input_sha256": "40fe58a94be00b68558ccac36373878896823cfac6fe77b68253dfc6172f3f59",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "7221945"
+      ],
+      "target": "7221945",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0027",
+      "input_tokens": 31722,
+      "input_sha256": "92dbfea0e6fff5868995a37b0b80f20e33b6da8efc615e18d59f3156aac3dfdb",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "7308630"
+      ],
+      "target": "7308630",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0028",
+      "input_tokens": 31722,
+      "input_sha256": "2d5539b48042dac0991f96021f00e9b1c317e1142e2df74ee927f7a54434b3d5",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6064704"
+      ],
+      "target": "6064704",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0029",
+      "input_tokens": 31722,
+      "input_sha256": "c88ad6f00d1751b9414884c65ef621b7c50bc57b4da9c68a74fdcd469c588832",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2709517"
+      ],
+      "target": "2709517",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0030",
+      "input_tokens": 31722,
+      "input_sha256": "cb67f4878b8376c28f894699ea1e3a7f3c0baa47138337e22839a8e07ef28aa3",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5387733"
+      ],
+      "target": "5387733",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0031",
+      "input_tokens": 31722,
+      "input_sha256": "4709608cf2856c3053b604938c7e9a35f804638b4f2404b3063cc3a980cea1c4",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1458026"
+      ],
+      "target": "1458026",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0032",
+      "input_tokens": 31732,
+      "input_sha256": "5003043f62b5d21ef212fa368a1ae664ff017df635946f2aeda4510fa6560e95",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5000205"
+      ],
+      "target": "5000205",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0033",
+      "input_tokens": 31732,
+      "input_sha256": "2c8e07a3643aa09a1801a26c362af1d13032521ace1a05d09be2716e26036934",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2429312"
+      ],
+      "target": "2429312",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0034",
+      "input_tokens": 31732,
+      "input_sha256": "6e5c98fc1a5b4aeaf54b8e13930df98c7682bf48a6e175ac346d17e139ebf440",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3735164"
+      ],
+      "target": "3735164",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0035",
+      "input_tokens": 31732,
+      "input_sha256": "bf557a578e39adb9a35135d4742183575ab33862daf3ebc28426bc7702da2d24",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1545799"
+      ],
+      "target": "1545799",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0036",
+      "input_tokens": 31732,
+      "input_sha256": "a0b2bce4a07a3459e1c8a161d60a52ceffde6efb4cdc4c4a50b728307601c2f3",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8474311"
+      ],
+      "target": "8474311",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0037",
+      "input_tokens": 31732,
+      "input_sha256": "4a74ce6612a4c21f38caf94218b82f03f2e4bf375709dd309cb0e8375f7b4c92",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "4371505"
+      ],
+      "target": "4371505",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0038",
+      "input_tokens": 31732,
+      "input_sha256": "22254a5ce05d623993fa6097ec500b65df87130003f2e4656e7b63c09d6877b9",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1452993"
+      ],
+      "target": "1452993",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0039",
+      "input_tokens": 31732,
+      "input_sha256": "6183b18636e71fc4afc4a3cbdd0d2577243c64274d9ebbd8cb67648b93805bb5",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5158320"
+      ],
+      "target": "5158320",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0040",
+      "input_tokens": 31722,
+      "input_sha256": "c21d66197fb3c1199e92f9e1208a150f4bac5b572b325fd18255166f9d61ce11",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "9113166"
+      ],
+      "target": "9113166",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0041",
+      "input_tokens": 31722,
+      "input_sha256": "dafff390b2ed60c21a1cf89458a5e8a241741ab63f540add2002fd9b1823fd72",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6181730"
+      ],
+      "target": "6181730",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0042",
+      "input_tokens": 31722,
+      "input_sha256": "ba9168b721f2fa8a5a2ae2ecde28b2c7ad7d257ea82a9338a57026fcc05a3b63",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1733583"
+      ],
+      "target": "1733583",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0043",
+      "input_tokens": 31722,
+      "input_sha256": "b3f293d5c44e8cf1425f759a94d4b2d6231b761206c1091757e5b6abdfc1d703",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3388693"
+      ],
+      "target": "3388693",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0044",
+      "input_tokens": 31722,
+      "input_sha256": "3798572aa63ed025ebc8ac1806fab924ae2bde9d7e13eb8c0861828508146201",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2896646"
+      ],
+      "target": "2896646",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0045",
+      "input_tokens": 31722,
+      "input_sha256": "74ea7b863c1dbc7556442e4f3f83e691659c7db864a19862bc339b5fdf945294",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "7100918"
+      ],
+      "target": "7100918",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0046",
+      "input_tokens": 31722,
+      "input_sha256": "ab0d177ffbf963cbe1db7c922b38450bc2f690b153175ca2b56b6180952dd94d",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6307358"
+      ],
+      "target": "6307358",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0047",
+      "input_tokens": 31722,
+      "input_sha256": "5779e6b9d8eb6b49b5a24208fd57c68da0fac84c21ae83241227ea37e44891c9",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8767428"
+      ],
+      "target": "8767428",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0048",
+      "input_tokens": 31732,
+      "input_sha256": "64f24211339a456ca41f9d7627b2676a3e3862eb7acda8e81abfe0464e9d3169",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8497179"
+      ],
+      "target": "8497179",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0049",
+      "input_tokens": 31732,
+      "input_sha256": "976679b6db3646956257f81420a73f623ab889da9efb3573b67749e9dc1f9e7f",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2592109"
+      ],
+      "target": "2592109",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0050",
+      "input_tokens": 31732,
+      "input_sha256": "ba6569fbfeafa95fb85fc082b3fe02ef4fd68b2383f93bfed05dcc7fbedf4710",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2124345"
+      ],
+      "target": "2124345",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0051",
+      "input_tokens": 31732,
+      "input_sha256": "bffa5d1052342cae057e0518bd6e8f5721076ffeee1eb4727b1c19f71863bcf4",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "4328774"
+      ],
+      "target": "4328774",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0052",
+      "input_tokens": 31732,
+      "input_sha256": "191775cfa0bb3e6f0f1ea9029f24f46b374a2722ad4957bcbed148f35726da06",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "7685722"
+      ],
+      "target": "7685722",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0053",
+      "input_tokens": 31732,
+      "input_sha256": "ef714f71fc3ec2449b54a0dcf34b427bdbcf5fe577b29d4c4e932d3a5179a8b9",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "3865243"
+      ],
+      "target": "3865243",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0054",
+      "input_tokens": 31732,
+      "input_sha256": "a4c7c9b535e225df7d1405c5e5a9f9b0093024a28ab5c60b84b4ec8af912ab18",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8619256"
+      ],
+      "target": "8619256",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0055",
+      "input_tokens": 31732,
+      "input_sha256": "9ca758cab0633e4500638784c1f7436980fc907dd2aa5c38e84a458699838dcd",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "9332547"
+      ],
+      "target": "9332547",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0056",
+      "input_tokens": 31722,
+      "input_sha256": "f3820b31244503bcdc77761f1804d05631e33258bbb4eac5e3508ce7738d8d67",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "1235794"
+      ],
+      "target": "1235794",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0057",
+      "input_tokens": 31722,
+      "input_sha256": "fe890777f92c24407edc95fcd7dd42ad12e66285320f81f10a32564273bd4d0c",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "6787587"
+      ],
+      "target": "6787587",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0058",
+      "input_tokens": 31722,
+      "input_sha256": "9ef2e4672f0404343c53cc4ed4f2fcd5699571072f63e28cabea7b72dc1fa3f7",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8736096"
+      ],
+      "target": "8736096",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0059",
+      "input_tokens": 31722,
+      "input_sha256": "4d2c0ef8e85c89a45b79fad6b0aed8fc16b535d72e77ba007d8f9c98786fbb6a",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "8047534"
+      ],
+      "target": "8047534",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0060",
+      "input_tokens": 31722,
+      "input_sha256": "528cb37eaf82138f62623b7d86885e83a175aa754fb3d62cfcd7debda9421efe",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5770284"
+      ],
+      "target": "5770284",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0061",
+      "input_tokens": 31722,
+      "input_sha256": "5aa4081ca2c55c330c8a4ad563b1494e48b5dae6c68001ba8996a838bb12d98d",
+      "new_tokens": 11,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5076207"
+      ],
+      "target": "5076207",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0062",
+      "input_tokens": 31722,
+      "input_sha256": "aabe743bd3d597270da7c24dc5c3cd939a2b9fec5a21a365272ebb337241525b",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "2336547"
+      ],
+      "target": "2336547",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "synth-v-0063",
+      "input_tokens": 31722,
+      "input_sha256": "8c3ffa4488c3224444f09344403f8aba4a54846cbf9e16616ea7e499c67686e2",
+      "new_tokens": 10,
+      "stop": "eos",
+      "correct": true,
+      "strict_correct": false,
+      "extracted_values": [
+        "5410942"
+      ],
+      "target": "5410942",
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    }
+  ],
+  "correct": 64,
+  "em": 100.0,
+  "strict_correct": 0,
+  "manifest_sha256": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+  "config_sha256": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "cuda_visible_devices": "0"
+  },
+  "generation": "bf16_weights_sdpa_prefill_fp32_attention_decode_greedy",
+  "raw_source": {
+    "path": "research/.runtime/retrieval-ruler/qwen.json",
+    "sha256": "67cf4eaac70035065214d0c1465a5594a95468927734396cd4ff8f116db0e2a7"
+  },
+  "execution_source": {
+    "path": "research/.runtime/retrieval-ruler/publication.json",
+    "sha256": "bdaa3800bbcf5720a8b0074dad43efde2d6d90f888cc3c1a58646464c9763e1a"
+  },
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0
+}

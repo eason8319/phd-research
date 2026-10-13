@@ -1,0 +1,701 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3",
+  "manifest_sha256": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+  "publication_sha256": "a2a5ce167159c29ccb5be4d43d407b7e3562831a79bde7a61640000805d9185b",
+  "model": "qwen",
+  "config": "bf16-h0",
+  "task": "v-hotpot_four",
+  "n": 16,
+  "n_questions": 64,
+  "statistical_unit": "request",
+  "questions_per_request": 4,
+  "f1": 64.29554208046855,
+  "em": 6.25,
+  "answer_em": 51.5625,
+  "eligible_n": 16,
+  "eligible_ids": [
+    "hotpot-four-v-00",
+    "hotpot-four-v-01",
+    "hotpot-four-v-02",
+    "hotpot-four-v-03",
+    "hotpot-four-v-04",
+    "hotpot-four-v-05",
+    "hotpot-four-v-06",
+    "hotpot-four-v-07",
+    "hotpot-four-v-08",
+    "hotpot-four-v-09",
+    "hotpot-four-v-10",
+    "hotpot-four-v-11",
+    "hotpot-four-v-12",
+    "hotpot-four-v-13",
+    "hotpot-four-v-14",
+    "hotpot-four-v-15"
+  ],
+  "shorter_than_256_n": 0,
+  "eligible_f1": 64.29554208046855,
+  "baseline_usable": true,
+  "missing_answers": 0,
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "cuda_visible_devices": "0",
+    "slurm_job": "21418"
+  },
+  "generation": "bf16_weights_sdpa_prefill_fp32_attention_decode_greedy",
+  "raw_source": {
+    "path": "research/.runtime/four-question-decode/qwen.json",
+    "sha256": "b1efc46ce34aad528ec6980ff3d552c40c2e6302e15806c7b86ec4c4f94afd83"
+  },
+  "execution_source": {
+    "path": "research/.runtime/four-question-decode/publication.json",
+    "sha256": "a2a5ce167159c29ccb5be4d43d407b7e3562831a79bde7a61640000805d9185b"
+  },
+  "rows": [
+    {
+      "id": "hotpot-four-v-00",
+      "question_ids": [
+        "5adf715b5542992d7e9f9354",
+        "5ade914b55429939a52fe8f9",
+        "5ab6b6fd5542995eadef006b",
+        "5ab55b0c554299488d4d995e"
+      ],
+      "input_sha256": "68c93906c37c7a54cd5495977b53e37c3078570869cd1e009022d20a952c9367",
+      "input_tokens": 31742,
+      "new_tokens": 520,
+      "stop": "eos",
+      "seconds": 24.279824044555426,
+      "peak_allocated_bytes": 21641125888,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Sturt",
+        "Discover Pure Energy",
+        "Music for Dead Birds",
+        "the NCAA's Division I and the Big 12 Conference"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        54.54545454545455
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 63.63636363636364,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "question_ids": [
+        "5a7a43245542994f819ef19d",
+        "5a7c34905542996dd594b8d5",
+        "5abc3c545542993a06baf89f",
+        "5a73266d5542994cef4bc47d"
+      ],
+      "input_sha256": "99843a4a59d17dce9b7af133dd666fd807c76ced77e76e7d8177c045d2eda9bb",
+      "input_tokens": 31720,
+      "new_tokens": 382,
+      "stop": "eos",
+      "seconds": 19.087153509259224,
+      "peak_allocated_bytes": 21637679104,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "1982",
+        "Andre Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "question_ids": [
+        "5ae7fd085542993210984007",
+        "5ab7ba7555429928e1fe38b5",
+        "5a7e3a3f5542995ed0d166dd",
+        "5ab29bdc554299545a2cf9d1"
+      ],
+      "input_sha256": "42ea804a12695c30287665f05e0b5e5a2460c2af8cd0a505b7ae880df3214d62",
+      "input_tokens": 31707,
+      "new_tokens": 439,
+      "stop": "eos",
+      "seconds": 21.361288517713547,
+      "peak_allocated_bytes": 21637055488,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "President Obama",
+        "James Mitchum",
+        "Billy Idol",
+        "far-right politics"
+      ],
+      "answer_f1": [
+        50.0,
+        100.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 37.5,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "question_ids": [
+        "5ae544d75542990ba0bbb249",
+        "5adf430e5542993a75d2645e",
+        "5ac23ff0554299636651994d",
+        "5ae198bf5542997b2ef7d20d"
+      ],
+      "input_sha256": "fbf0ec788623ea18437cac6934616e6708ef20231dae663d8f33a7be4d700d37",
+      "input_tokens": 31707,
+      "new_tokens": 949,
+      "stop": "eos",
+      "seconds": 40.835064832121134,
+      "peak_allocated_bytes": 21637055488,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "A chalk quarry.",
+        "Dundee Canal.",
+        "2000.",
+        "Yes."
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "question_ids": [
+        "5a7dcc775542990b8f503ab5",
+        "5ade630e55429975fa854eb7",
+        "5ae33cf45542990afbd1e0ea",
+        "5ae0d7315542990adbacf678"
+      ],
+      "input_sha256": "bc85131258f206566a381e3fcd8767b7c0f52a89dda48000615ada8f0b4c2a24",
+      "input_tokens": 31632,
+      "new_tokens": 702,
+      "stop": "eos",
+      "seconds": 31.592441629618406,
+      "peak_allocated_bytes": 21619074048,
+      "peak_reserved_bytes": 22793945088,
+      "extracted_answers": [
+        "picric acid",
+        "species",
+        "on a schedule that includes both weekdays and weekends",
+        "Toshi Ichiyanagi"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        13.333333333333332,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 53.33333333333333,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "question_ids": [
+        "5a7c988755429935c91b524d",
+        "5add433b5542997545bbbd02",
+        "5abd44d955429933744ab760",
+        "5a7d158155429909bec76947"
+      ],
+      "input_sha256": "ac113364599349d552730765e609b709ffbeac1fd642d72e0c7c0faa4dbd0b6d",
+      "input_tokens": 31713,
+      "new_tokens": 278,
+      "stop": "eos",
+      "seconds": 15.73779147490859,
+      "peak_allocated_bytes": 21637086208,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "Henry Fielding",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "question_ids": [
+        "5a772c925542993735360208",
+        "5adea83b55429975fa854f53",
+        "5a7c6bcc55429935c91b519c",
+        "5a806aca5542996402f6a503"
+      ],
+      "input_sha256": "0264eb50f4c00d494dc8decd388c95e65844693f7945453dce8404daaf8a9b44",
+      "input_tokens": 31691,
+      "new_tokens": 454,
+      "stop": "eos",
+      "seconds": 22.37581243738532,
+      "peak_allocated_bytes": 21636973568,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "The Farming Game",
+        "Tharangambadi",
+        "1944",
+        "Orcs"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "question_ids": [
+        "5ae234005542994d89d5b392",
+        "5ae3f6775542991a06ce9a3f",
+        "5adc983c5542990d50227cb6",
+        "5a88f2cc55429938390d3ffb"
+      ],
+      "input_sha256": "ef4591014f7973e1a9fc62a34f80d3208276459ced4090075038103b08b0aeb5",
+      "input_tokens": 31720,
+      "new_tokens": 789,
+      "stop": "eos",
+      "seconds": 35.12152313813567,
+      "peak_allocated_bytes": 21637679104,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Rob Thomas.",
+        "Ray Wert was a senior staffer for Jennifer Granholm.",
+        "Brazil.",
+        "2017."
+      ],
+      "answer_f1": [
+        0.0,
+        40.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 60.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "question_ids": [
+        "5abeab375542990832d3a091",
+        "5ae7eb43554299540e5a5695",
+        "5abc715f5542993a06baf8ea",
+        "5a758f775542992db9473682"
+      ],
+      "input_sha256": "4593ffb1f05f2a52e519c879418e33049921110a25ed48b4bb6f4f1427157bd3",
+      "input_tokens": 31709,
+      "new_tokens": 297,
+      "stop": "eos",
+      "seconds": 16.56392114982009,
+      "peak_allocated_bytes": 21637065728,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "Wes Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "over 210,000 residents"
+      ],
+      "answer_f1": [
+        40.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 85.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "question_ids": [
+        "5a7ce50f55429909bec76869",
+        "5a763986554299109176e6bd",
+        "5adf8c375542995534e8c7dd",
+        "5ac4c0fc5542997ea680cab1"
+      ],
+      "input_sha256": "0b7cb5ec0a438103472c065c28c5299cfa91145821ef896e343bb1775a882114",
+      "input_tokens": 31707,
+      "new_tokens": 549,
+      "stop": "eos",
+      "seconds": 26.105759385973215,
+      "peak_allocated_bytes": 21637055488,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "1939",
+        "Christian Poulsen",
+        "1972",
+        "Second French Empire"
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        66.66666666666666
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 41.666666666666664,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "question_ids": [
+        "5adc57325542996e6852531b",
+        "5a8a1b7a5542992d82986ec0",
+        "5ac1089f554299012d1db688",
+        "5ac1ff2255429964131be2b3"
+      ],
+      "input_sha256": "5dba64dce5a003e9eb66cf6238c8ed40600ced0031d43ec1718502d8bee1d97a",
+      "input_tokens": 31740,
+      "new_tokens": 401,
+      "stop": "eos",
+      "seconds": 20.50761678814888,
+      "peak_allocated_bytes": 21640812544,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Giacomo Puccini.",
+        "Boston, Massachusetts.",
+        "No.",
+        "26,788."
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 66.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "question_ids": [
+        "5ae3dcc05542991a06ce9a33",
+        "5a7c00a55542996dd594b87e",
+        "5abff0785542997d64295957",
+        "5a7ef49a5542994959419a91"
+      ],
+      "input_sha256": "ae5dd97a4d469c911ee88674cf8b557f2e82db94c045ec3755eaf94f161d7665",
+      "input_tokens": 31733,
+      "new_tokens": 461,
+      "stop": "eos",
+      "seconds": 22.808495867997408,
+      "peak_allocated_bytes": 21639715840,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Las Vegas",
+        "Mediterranean Sea",
+        "Cate Blanchett",
+        "2011"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        40.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 51.66666666666667,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "question_ids": [
+        "5a862da855429960ec39b640",
+        "5a82800855429966c78a6a2f",
+        "5a79c8fa5542994bb94570a1",
+        "5adf65555542992d7e9f9334"
+      ],
+      "input_sha256": "dc03a303e7a8951c5354e6ca9bcc79f14beb4fd01459d2af59aab93aed1c7467",
+      "input_tokens": 31699,
+      "new_tokens": 477,
+      "stop": "eos",
+      "seconds": 23.4003054946661,
+      "peak_allocated_bytes": 21637014528,
+      "peak_reserved_bytes": 22802333696,
+      "extracted_answers": [
+        "Rawlings",
+        "No",
+        "Co-founder of Metaweb",
+        "Wendell Berry"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "question_ids": [
+        "5ae2075f5542994d89d5b315",
+        "5a738b855542992d56e7e363",
+        "5a7b69b155429927d897bfbc",
+        "5abe36aa5542993f32c2a08f"
+      ],
+      "input_sha256": "48c618df9425972cb1999a1f2d4b378676e03cbe98ad245306420adcc756e8c1",
+      "input_tokens": 31728,
+      "new_tokens": 666,
+      "stop": "eos",
+      "seconds": 30.58122779428959,
+      "peak_allocated_bytes": 21638932480,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Gary Cole's character is based on Matthew Gideon from the television series \"Babylon 5\".",
+        "St. Elizabeths Hospital opened first in 1855.",
+        "There is no direct association of Dan Hanford with a club based in Clitheroe, Lancashire.",
+        "American Scientist was published first."
+      ],
+      "answer_f1": [
+        0.0,
+        59.99999999999999,
+        23.529411764705877,
+        57.142857142857146
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 35.168067226890756,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "question_ids": [
+        "5abf12005542997719eab661",
+        "5abc095c5542993f40c73c5d",
+        "5ae7e1fc55429952e35ea9cc",
+        "5a78eea555429970f5fffddf"
+      ],
+      "input_sha256": "f866fd04ceff9171fba79ee7141382bfa7229be8b31307455a4db247eadb796e",
+      "input_tokens": 31743,
+      "new_tokens": 532,
+      "stop": "eos",
+      "seconds": 25.523194827139378,
+      "peak_allocated_bytes": 21640758272,
+      "peak_reserved_bytes": 22831693824,
+      "extracted_answers": [
+        "Umberto II of Italy.",
+        "Fazoli's.",
+        "Orange.",
+        "Richard Boleslawski."
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "question_ids": [
+        "5ae531ee5542990ba0bbb1ff",
+        "5ab2b61d5542991669774065",
+        "5a7b46e55542995eb53be8e5",
+        "5ab38cdd5542992ade7c6de2"
+      ],
+      "input_sha256": "edd7e478a3882f72c409ff5c468cf2ef889abc1a5611d281cf768b35491043d2",
+      "input_tokens": 31729,
+      "new_tokens": 556,
+      "stop": "eos",
+      "seconds": 26.460217405110598,
+      "peak_allocated_bytes": 21639089152,
+      "peak_reserved_bytes": 22810722304,
+      "extracted_answers": [
+        "Jack Lowden found success with the 2016 BBC miniseries \"War & Peace.\"",
+        "Harrison Ford played Jack Ryan in the \"Patriot Games\" and \"Clear and Present Danger\" films.",
+        "Spaceware Sky Vision II is manufactured by Ordos City China Science Flying Universe Science and Technology Co., Ltd.",
+        "Mimi Smith was the aunt and guardian of John Lennon."
+      ],
+      "answer_f1": [
+        33.333333333333336,
+        0.0,
+        20.0,
+        36.36363636363636
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 22.424242424242422,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded",
+      "invalid_groups": 0
+    }
+  ],
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0
+}

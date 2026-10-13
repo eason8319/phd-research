@@ -12,7 +12,10 @@ import torch
 from experiments.static_layer_allocation.code.content_review import compare
 from experiments.static_layer_allocation.code.metrics import vocabulary_kl
 from experiments.static_layer_allocation.code.numerics_metrics import (
-    centered_energy, incremental_comparison, path_metrics, score_answer,
+    centered_energy,
+    incremental_comparison,
+    path_metrics,
+    score_answer,
 )
 
 

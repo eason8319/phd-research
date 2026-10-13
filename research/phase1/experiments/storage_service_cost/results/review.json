@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "counts": {
+    "qwen": 36,
+    "llama": 37
+  },
+  "results": {
+    "research/phase1/experiments/storage_service_cost/results/qwen/layout.json": "73b6a3f822f26df963d3ea80238be2bce32af08e9329f9585b93909c3c2c638e",
+    "research/phase1/experiments/storage_service_cost/results/llama/layout.json": "fdb480543d8605347d8619740c9da4eb364184a4e4edd9b092d1aa70a5bbbbb2"
+  },
+  "quality_review_sha256": "7a2f894459e394b81baa7595e9cc7468c7591b9c937c9c234923047e46146614",
+  "execution_source": {
+    "path": "research/.runtime/static-final/cost_publication.json",
+    "sha256": "826ef3b596c1c2611ec646748a3a597dae4a972190a27a7f31e260624dd0f451"
+  },
+  "review_code_sha256": "0a3822c924ea2bf3414e33f75aa68828a70976804254ff0056f64023dab5b544",
+  "checks": [
+    "independent_payload_and_parameter_formula",
+    "full_32k_capacity",
+    "decode_256_reads_writes_rotation",
+    "assumed_bandwidth_bounds",
+    "quality_source_and_fixed_batch_representative"
+  ]
+}

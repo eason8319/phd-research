@@ -1,0 +1,38 @@
+# 仅放行 docs/server-access.md 规定的 SSH 参数与主机。
+# 此规则控制本地命令审批；远程目录范围仍由项目隔离规则约束。
+ssh_myserver_options = [
+    "-F", "C:\\Users\\User\\.ssh\\config",
+    "-i", "C:\\Users\\User\\.ssh\\id_ecdsa_zengy",
+    "-o", "IdentitiesOnly=yes",
+    "-o", "BatchMode=yes",
+    "-o", "ConnectTimeout=15",
+    "-o", "ConnectionAttempts=1",
+    "-o", "ServerAliveInterval=30",
+    "-o", "StrictHostKeyChecking=yes",
+    "myserver",
+]
+
+ssh_myserver_example = ' -F "C:\\Users\\User\\.ssh\\config" -i "C:\\Users\\User\\.ssh\\id_ecdsa_zengy" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 -o ConnectionAttempts=1 -o ServerAliveInterval=30 -o StrictHostKeyChecking=yes myserver "cd /cluster/home/zengy/phd-research || exit 1; pwd -P"'
+
+prefix_rule(
+    pattern = ["ssh"] + ssh_myserver_options,
+    decision = "allow",
+    justification = "用户授权本项目使用指定 SSH 凭据和固定连接参数访问 myserver；远程操作须先进入项目根目录并留在项目内。",
+    match = ["ssh" + ssh_myserver_example],
+    not_match = [
+        "ssh myserver",
+        'ssh -F "C:\\Users\\User\\.ssh\\config" -i "C:\\Users\\User\\.ssh\\id_ecdsa_zengy" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 -o ConnectionAttempts=1 -o ServerAliveInterval=30 -o StrictHostKeyChecking=yes otherserver "cd /cluster/home/zengy/phd-research || exit 1; pwd -P"',
+        'ssh -F "C:\\Users\\User\\.ssh\\config" -i "C:\\Users\\User\\.ssh\\other_identity" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 -o ConnectionAttempts=1 -o ServerAliveInterval=30 -o StrictHostKeyChecking=yes myserver "cd /cluster/home/zengy/phd-research || exit 1; pwd -P"',
+    ],
+)
+
+prefix_rule(
+    pattern = ["ssh", "-tt"] + ssh_myserver_options,
+    decision = "allow",
+    justification = "用户授权同一项目连接使用交互式终端；其余 SSH 参数、凭据、主机与远程目录约束相同。",
+    match = ["ssh -tt" + ssh_myserver_example],
+    not_match = [
+        "ssh -tt myserver",
+        'ssh -tt -F "C:\\Users\\User\\.ssh\\config" -i "C:\\Users\\User\\.ssh\\id_ecdsa_zengy" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 -o ConnectionAttempts=1 -o ServerAliveInterval=30 -o StrictHostKeyChecking=yes otherserver "cd /cluster/home/zengy/phd-research || exit 1; pwd -P"',
+    ],
+)

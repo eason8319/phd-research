@@ -14,6 +14,7 @@ from experiments.representation_interactions.code.results import (
     MATRIX_CONFIGS,
     PAIRS,
     SCHEMA_VERSION,
+    summarize_diagnostics,
     summarize_rows,
     summarize_samples,
     write_results,
@@ -27,10 +28,8 @@ def make_rows(folds: tuple[int, ...] = (0, 0, 1, 1)) -> list[dict]:
         for index, fold in enumerate(folds):
             heads = [
                 {
-                    "score_rms2": index * 2.0 + offset,
-                    "weighted_score_var": 0.4,
-                    "paired_probability_kl": 0.2,
-                    "probability_l1": 0.1,
+                    "weighted_score_var": index * 2.0 + offset,
+                    "paired_probability_kl": (index * 2.0 + offset) / 2,
                     "optional": None,
                 }
                 for offset in (0.0, 100.0)
@@ -47,10 +46,6 @@ def make_rows(folds: tuple[int, ...] = (0, 0, 1, 1)) -> list[dict]:
                         "value_increment_error": value,
                         "difference_residual": 0.0,
                         "zero_reference_output": False,
-                    },
-                    "competition": {
-                        "heads": [{"pair_flip_rate": 0.1}, {"pair_flip_rate": 0.3}],
-                        "pair_rows": [{"positions": [0, 1], "margin": 0.5}],
                     },
                 }],
             })
@@ -82,24 +77,19 @@ class SummarizeResultsTest(unittest.TestCase):
         self.assertEqual(result["samples"], 4)
         self.assertEqual(result["layers"], 4)
         self.assertEqual(result["query_heads"], 8)
-        self.assertEqual(result["head_metric_means"]["score_rms2"], 53.0)
-        quantiles = result["head_metric_quantiles"]["score_rms2"]
-        self.assertEqual(quantiles["p50"], 53.0)
-        self.assertAlmostEqual(quantiles["p90"], 55.4)
+        self.assertEqual(result["head_metric_means"]["weighted_score_var"], 53.0)
         self.assertEqual(result["key_increment_greater_samples"], 4)
         self.assertEqual(result["key_increment_comparable_samples"], 4)
         self.assertEqual(result["key_increment_minus_value_ci95"]["samples"], 4)
         self.assertEqual(result["key_increment_minus_value_ci95"]["estimate"], 2.5)
         self.assertEqual(result["paired_kl_over_half_weighted_variance"], 1.0)
-        self.assertAlmostEqual(samples[0]["competition_means"]["pair_flip_rate"], 0.2)
         self.assertNotIn("layers", samples[0])
-        self.assertNotIn("pair_rows", samples[0])
 
     def test_overall_mean_and_bootstrap_keep_fold_weights(self) -> None:
         rows = make_rows((0, 1, 1, 1))
         metrics, _samples = summarize_rows(rows, self.ids, bootstrap_seed=4, resamples=50)
         result = metrics[PAIRS[0]]
-        self.assertEqual(result["head_metric_means"]["score_rms2"], 52.0)
+        self.assertEqual(result["head_metric_means"]["weighted_score_var"], 52.0)
         ci = result["key_increment_minus_value_ci95"]
         self.assertEqual(ci["estimate"], 2.0)
         self.assertEqual(ci["seed"], 4)
@@ -126,12 +116,12 @@ class SummarizeResultsTest(unittest.TestCase):
         changed[0]["layers"][0]["layer"] = 1
         with self.assertRaises(ValueError):
             summarize_rows(changed, self.ids, resamples=5)
-        for group in ("heads", "pair_rows"):
+        for group in ("heads", "output"):
             changed = copy.deepcopy(self.rows)
             if group == "heads":
-                changed[0]["layers"][0]["heads"][0]["score_rms2"] = math.nan
+                changed[0]["layers"][0]["heads"][0]["weighted_score_var"] = math.nan
             else:
-                changed[0]["layers"][0]["competition"]["pair_rows"][0]["margin"] = math.inf
+                changed[0]["layers"][0]["output"]["key_increment_error"] = math.inf
             with self.subTest(group=group), self.assertRaises(ValueError):
                 summarize_rows(changed, self.ids, resamples=5)
 
@@ -139,17 +129,13 @@ class SummarizeResultsTest(unittest.TestCase):
         result = summarize_rows(self.rows, self.ids, resamples=5)[0][PAIRS[0]]
         self.assertIsNone(result["head_metric_means"]["optional"])
         self.assertEqual(result["head_metric_valid_samples"]["optional"], 0)
-        self.assertEqual(result["head_metric_quantiles"]["optional"]["p90"], None)
 
-    def test_legacy_samples_do_not_fabricate_unmeasured_fields(self) -> None:
+    def test_sample_summary_does_not_fabricate_layer_or_head_counts(self) -> None:
         _metrics, samples = summarize_rows(self.rows, self.ids, resamples=5)
-        for row in samples:
-            row.pop("competition_means")
         result = summarize_samples(samples, self.ids, resamples=5)[PAIRS[0]]
-        self.assertNotIn("competition_means", result)
         self.assertNotIn("layers", result)
         self.assertNotIn("query_heads", result)
-        self.assertEqual(result["head_metric_quantiles"]["score_rms2"]["p50"], 53.0)
+        self.assertEqual(result["head_metric_means"]["weighted_score_var"], 53.0)
         with self.assertRaises(ValueError):
             summarize_samples(samples[:-1], self.ids, resamples=5)
 
@@ -181,6 +167,64 @@ class SummarizeResultsTest(unittest.TestCase):
         self.assertEqual(result["layer_output_means"]["key_prediction_relative_error"], 0.5)
         self.assertIsNone(result["key_increment_minus_value_ci95"]["lower"])
         self.assertEqual(result["key_increment_comparable_samples"], 0)
+
+
+class LayerStatisticsTest(unittest.TestCase):
+    """逐层统计保留折权重、未定义值和完整配对，不借用历史审核字段。"""
+
+    def setUp(self) -> None:
+        self.rows = make_rows((0, 1, 1, 1))
+        self.ids = {f"sample-{index}" for index in range(4)}
+        for row in self.rows:
+            index = int(row["id"].split("-")[-1])
+            output = row["layers"][0]["output"]
+            r2 = index / 2.0
+            output.update({
+                "key_prediction_error": output["key_increment_error"] * r2,
+                "key_prediction_relative_error": r2, "key_prediction_cosine": 0.5,
+            })
+            second = copy.deepcopy(row["layers"][0])
+            second["layer"] = 1
+            second["output"]["key_increment_error"] *= 2
+            second["output"]["key_prediction_error"] *= 2
+            row["layers"].append(second)
+
+    def test_layer_statistics_use_equal_fold_weights_and_actual_extremes(self) -> None:
+        metrics, samples, checks = summarize_diagnostics(iter(self.rows), self.ids, resamples=5)
+        self.assertEqual((metrics, samples), summarize_rows(self.rows, self.ids, resamples=5))
+        self.assertEqual(checks["rows"], 16)
+        pair = checks["pairs"][PAIRS[0]]
+        self.assertEqual(pair["layer_means"], [[0, 3.0, 13 / 6, 0.5, 0.5],
+                                               [1, 6.0, 13 / 3, 0.5, 0.5]])
+        self.assertEqual(pair["layer_valid_samples"], [[0, 4, 4, 4, 4], [1, 4, 4, 4, 4]])
+        self.assertEqual(pair["r2_gt_one_layers"], 2)
+        self.assertEqual(pair["max_r2_location"]["id"], "sample-3")
+        self.assertEqual(pair["max_r2_location"]["r2"], 1.5)
+        self.assertEqual(pair["max_output_decomposition_error"], 0.0)
+
+    def test_undefined_fold_is_not_reweighted_or_counted_as_zero(self) -> None:
+        self.rows[0]["layers"][0]["output"]["key_prediction_cosine"] = None
+        checks = summarize_diagnostics(self.rows, self.ids, resamples=5)[2]
+        pair = checks["pairs"][PAIRS[0]]
+        self.assertIsNone(pair["layer_means"][0][-1])
+        self.assertEqual(pair["layer_valid_samples"][0][-1], 3)
+
+    def test_prediction_identity_and_required_fields_are_checked(self) -> None:
+        for broken in ("identity", "missing"):
+            rows = copy.deepcopy(self.rows)
+            output = rows[0]["layers"][0]["output"]
+            if broken == "identity":
+                output["key_prediction_error"] = 10.0
+            else:
+                for row in rows:
+                    for layer in row["layers"]:
+                        del layer["output"]["key_prediction_cosine"]
+            with self.subTest(broken=broken), self.assertRaises(ValueError):
+                summarize_diagnostics(rows, self.ids, resamples=5)
+
+    def test_incomplete_pairs_cannot_publish_layer_statistics(self) -> None:
+        with self.assertRaises(ValueError):
+            summarize_diagnostics(self.rows[:-1], self.ids, resamples=5)
 
 
 class WriteResultsTest(unittest.TestCase):

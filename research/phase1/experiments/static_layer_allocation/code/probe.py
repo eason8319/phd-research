@@ -8,15 +8,28 @@ from typing import Any
 import torch
 from transformers import AutoTokenizer
 
-from kvstudy.attention import attention_fp32
-from kvstudy.paths import project_root
-from experiments.generation_error_sources.code.quantized_generation import (
-    RESIDUAL_TOKENS, _calibration, _config, _layer_params, _quantize, _recent, _rotate_key,
-)
 from experiments.static_layer_allocation.code.metrics import grouped_rse, rank_agreement, ranking
 from experiments.static_layer_allocation.code.protocol import (
-    SCHEMA, calibration_source, code_sources, digest, existing_quality, frozen_sources,
-    input_identity, load_plan, write_json,
+    SCHEMA,
+    calibration_source,
+    code_sources,
+    digest,
+    existing_quality,
+    frozen_sources,
+    input_identity,
+    load_plan,
+    write_json,
+)
+from kvstudy.attention import attention_fp32
+from kvstudy.paths import project_root
+from phase1.generation import (
+    RESIDUAL_TOKENS,
+    _calibration,
+    _config,
+    _layer_params,
+    _quantize,
+    _recent,
+    _rotate_key,
 )
 from phase1.representation import MODELS, _capture, _load_c_items, _render_gsm, _rotate_query
 from phase1.runner import load_model

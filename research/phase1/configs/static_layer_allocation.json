@@ -56,7 +56,137 @@
     "role": "development_validation_no_V_quality_admission"
   },
   "v_plan": {
-    "frozen": false
+    "frozen": true,
+    "protocol": "static-allocation-independent-generation",
+    "candidates": {
+      "qwen": {
+        "online_post_k4_layers_14_sensitivity": {
+          "representation": "k8v4-per_token-post",
+          "k4_layers": [
+            4,
+            5,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            18,
+            20,
+            21,
+            22,
+            24
+          ],
+          "residual_bits": 0
+        }
+      },
+      "llama": {
+        "online_pre_all_kv4": {
+          "representation": "kv4-per_token-pre",
+          "k4_layers": null,
+          "residual_bits": 0
+        },
+        "online_pre_k4_layers_16_sensitivity": {
+          "representation": "k8v4-per_token-pre",
+          "k4_layers": [
+            0,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "residual_bits": 0
+        }
+      }
+    },
+    "references": {
+      "bf16": "bf16",
+      "kv8": "kv8-per_token-post",
+      "same_format_k8v4": {
+        "qwen": "k8v4-per_token-post",
+        "llama": "k8v4-per_token-pre"
+      }
+    },
+    "tasks": {
+      "gsm8k": {
+        "totals": [
+          64,
+          128,
+          256
+        ],
+        "max_new_tokens": 1024,
+        "metric": "em",
+        "baseline_minimum": 50,
+        "unit": "question"
+      },
+      "retrieval_ruler": {
+        "expansion_source": "research/phase1/configs/retrieval.json",
+        "max_new_tokens": 128,
+        "metric": "em",
+        "baseline_minimum": 90,
+        "unit": "question"
+      },
+      "hotpot": {
+        "totals": [
+          64,
+          128,
+          256
+        ],
+        "max_new_tokens": 1024,
+        "metric": "f1",
+        "baseline_minimum": 40,
+        "unit": "question"
+      },
+      "hotpot_four": {
+        "expansion_source": "research/phase1/configs/long_decode.json",
+        "max_new_tokens": 1024,
+        "metric": "f1",
+        "baseline_minimum": 40,
+        "unit": "request",
+        "baseline_min_tokens": 256
+      }
+    },
+    "quality_source": "research/phase1/configs/quality.md",
+    "precision": "stage_bf16_weights_activations_fp32_attention",
+    "llama_priority": [
+      "online_pre_all_kv4",
+      "online_pre_k4_layers_16_sensitivity"
+    ],
+    "stop_candidate_on_any_required_task_eliminated": true,
+    "expand_only_evidence_insufficient": true,
+    "same_format_reference_expands_with_candidate": false,
+    "reference_policy": "reuse_verified_existing_prefix_append_missing_bf16_kv8_only",
+    "cost": {
+      "lengths": [
+        4096,
+        32768,
+        131072
+      ],
+      "blocks": [
+        32,
+        64,
+        128
+      ],
+      "batches": [
+        1,
+        4
+      ],
+      "decode_steps": 256,
+      "length_131072_role": "layout_only"
+    },
+    "dependency_review": "passed_reference_reuse_and_expansion_inputs"
   },
   "measurement": "teacher_forced_answer_content",
   "dataset": "research/phase1/splits/static_retrieval.json",

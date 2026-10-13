@@ -5,24 +5,22 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import subprocess
 from pathlib import Path
+import subprocess
 from typing import Any
 
 import numpy as np
 
-from kvstudy.paths import project_root
+from kvstudy.artifacts import read_json as read
 from experiments.static_layer_allocation.code.allocations import build_choices, cost, layer_bits
 from experiments.static_layer_allocation.code.content_metrics import (
-    additive_metrics, question_metrics, validation_summary,
+    additive_metrics,
+    question_metrics,
+    validation_summary,
 )
 from experiments.static_layer_allocation.code.metrics import rank_agreement, ranking
 from experiments.static_layer_allocation.code.protocol import digest, load_plan
-
-
-def read(path: Path) -> dict[str, Any]:
-    """读取小型正式记录，不改原始测量。"""
-    return json.loads(path.read_text("utf-8"))
+from kvstudy.paths import project_root
 
 
 def compare(actual: Any, expected: Any, context: str) -> None:

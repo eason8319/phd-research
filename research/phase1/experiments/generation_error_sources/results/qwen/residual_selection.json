@@ -1,9 +1,380 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "435e205",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "83028d8519f9e466bf86bd2b54256f53298aa345",
   "model": "qwen",
-  "selected_low_bit": null,
-  "e3_representation": "kv8-per_token-post",
+  "selection_policy": "joint_measured_format_residual",
+  "selected_low_bit": "k8v4-per_token-pre",
+  "e3_representation": "k8v4-per_token-pre",
   "e3_residual_bits": 0,
-  "reason": "低位宽在 H=0 下全部淘汰"
+  "baseline_usable": {
+    "gsm8k": true,
+    "hotpot": true,
+    "retrieval": false
+  },
+  "retrieval_32k_excluded": true,
+  "cells": {
+    "gsm8k": {
+      "0": {
+        "score": 92.1875,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -1.5625,
+          "lower": -9.561195761895199,
+          "upper": 6.598122286219151,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "8": {
+        "score": 90.625,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.0,
+          "lower": -9.541543346037267,
+          "upper": 9.541543346037267,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 3.125,
+          "lower": -6.3549534272533865,
+          "upper": 12.09887515415175,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 2,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      },
+      "16": {
+        "score": 92.1875,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -1.5625,
+          "lower": -9.561195761895199,
+          "upper": 6.598122286219151,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      }
+    },
+    "hotpot": {
+      "0": {
+        "score": 49.321726509540696,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 0.9087771414703227,
+          "lower": -4.421693957868158,
+          "upper": 6.4373629517826085,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": -3.008516932325624,
+          "lower": -9.675644911561932,
+          "upper": 3.7800029311749306,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "8": {
+        "score": 42.8433774856685,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 7.387126165342509,
+          "lower": 1.8522965169650913,
+          "upper": 13.787519847706067,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 3.4698320915465626,
+          "lower": -2.382821032306194,
+          "upper": 9.91356051829941,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      },
+      "16": {
+        "score": 44.11764399283245,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 6.1128596581785635,
+          "lower": -0.046299841107301974,
+          "upper": 12.870668412847504,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 2.1955655843826167,
+          "lower": -5.366532180018229,
+          "upper": 10.061517689835824,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      }
+    }
+  },
+  "categories": {
+    "short_generation": "无残留可行",
+    "retrieval": "无残留可行"
+  },
+  "rescued_classes": [],
+  "ranking": [
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 2679373312,
+      "maximum_drop": 1.5625,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": true
+      }
+    },
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 2679373312,
+      "maximum_drop": 4.40146540074833,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 8,
+      "R": 128,
+      "complete_bytes": 2882824448,
+      "maximum_drop": 4.547374991190562,
+      "class_passes": {
+        "gsm8k": false,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 3371515392,
+      "maximum_drop": 4.966840045575001,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 3185636608,
+      "maximum_drop": 5.414269683858538,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_channel-pre",
+      "H": 0,
+      "R": 0,
+      "complete_bytes": 2493494528,
+      "maximum_drop": 5.774625221200483,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 16,
+      "R": 128,
+      "complete_bytes": 3371515392,
+      "maximum_drop": 6.1128596581785635,
+      "class_passes": {
+        "gsm8k": true,
+        "hotpot": false
+      }
+    },
+    {
+      "representation": "k8v4-per_token-pre",
+      "H": 8,
+      "R": 128,
+      "complete_bytes": 3068703232,
+      "maximum_drop": 7.387126165342509,
+      "class_passes": {
+        "gsm8k": false,
+        "hotpot": false
+      }
+    }
+  ],
+  "excluded_conditions": [],
+  "missing_conditions": [
+    {
+      "representation": "k8v4-per_token-post",
+      "H": 8,
+      "tasks": [
+        "gsm8k",
+        "hotpot"
+      ]
+    }
+  ],
+  "measurement_sources": {
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre.json": {
+      "sha256": "618212c4f87d70fbed809804875d516c48452a2db52b3bcb5d8a40c96ac4987e",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre.json": {
+      "sha256": "69e4fc9881e3763c84276786d97ec615ee8ae3c619afe95518dd2fa6bb087fbe",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual8.json": {
+      "sha256": "75cbd050edd1ba0c17dd4ec1d8dd8ce8a96c91ab7fab9d585b6769553cb4ec3e",
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual8.json": {
+      "sha256": "8bca861550a249ec107479ad9d1ec17ebce0c2a746c6bf0078cf0d443a6198f2",
+      "execution_commit": "3284bfe55cea2ce906e553979039e63f4a1cd1c3"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_channel-pre-residual16.json": {
+      "sha256": "ecf2b755be1438851ff40a43b2b6d0a442b911c4b639a8fd298dcc9453db285c",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_channel-pre-residual16.json": {
+      "sha256": "838f7a72c0ce2fdbb61a6aed766fa1a9672f789c1d13d3fcbd3e051e60d984ae",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre.json": {
+      "sha256": "c749e3a04fb029a037c69910f8a679232c352ca37a8fc8378fc9110e54d3e993",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre.json": {
+      "sha256": "7660b86e4eff8a9ed51498a69c0b8b3d75eba747c2a78b0422135a741624fbb1",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual8.json": {
+      "sha256": "0b6116ea31950db2fa976c21f8bc2e910ea323db63242e5a515f006badbaeef7",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual8.json": {
+      "sha256": "a7be8ea768c4b43c19edb4684cc92f1dbabcd5d02b48bcd842ad1cd4aef11805",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-pre-residual16.json": {
+      "sha256": "114ed40ad89907a9729312a9433c48a7b66475ec0627a9822a129809d62d7a2f",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-pre-residual16.json": {
+      "sha256": "875c5c1a995f94c0ced4e1669c3738f08d66b6ef1041238bda37ded90f81467d",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post.json": {
+      "sha256": "ced5475668d404b945dff00ee8c0000ecf4f0f7d8a7190c27d54c628ccf56486",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post.json": {
+      "sha256": "150c82fd8e1bbca23380e8d81c0ab9e2a7b74e4c778055cbe8ae762289e60c98",
+      "execution_commit": "6abde3269299475a21d6b2d566e26dc9927fb70a"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_gsm8k_k8v4-per_token-post-residual16.json": {
+      "sha256": "c08739889f80be8b2117dec5a85785d5b33e41e980bb0c5ba602730d7be00bb6",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    },
+    "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_k8v4-per_token-post-residual16.json": {
+      "sha256": "b0e1aa241300a8e7c151441cc72c9f4809f94875573d39ff3d981cad8b268977",
+      "execution_commit": "e7518c36473401372ba90eaaf8579dc98ca1ea05"
+    }
+  },
+  "previous_selection": {
+    "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
+    "representation": "k8v4-per_token-pre",
+    "H": 0,
+    "sha256": "d69dd9818366ab7805d40df2e581f08b7da3e04efb54f5ccccbbe064ec7b68c0"
+  },
+  "capacity_scope": "主矩阵 96 道 C 输入长度的完整驻留字节之和，含残留和对齐",
+  "quality_scope": "初始 V 两个有效任务各 64 题，不使用后续扩样评分",
+  "reason": "全部已测未淘汰格式加 H 联合最小化最大下降，再比较完整字节",
+  "record_update": {
+    "updated_at_utc": "2026-10-10T08:53:52.633970+00:00",
+    "kind": "derived_record_refresh",
+    "previous_record_sha256": "c3ef1cd10a0c9a53dbc8ab3152f09403584af590954b33da413d7b149bc056fc",
+    "previous_record_commit": "bb4ceb3300fffbe19ce44f204b44d1ef3051a76a",
+    "analysis_code_sha256": "f128350a24e4dba17fe73be2eb2621a1bc9b4aa15fe9f996b11b89f35af43508",
+    "measurement_values_unchanged": true,
+    "selected_configuration_unchanged": true,
+    "reason": "补入已完成的离线 pre、H=8 两项正式测量，更新联合排序与缺测登记"
+  }
 }

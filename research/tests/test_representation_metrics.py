@@ -5,7 +5,6 @@ import unittest
 import torch
 
 from experiments.representation_interactions.code.metrics import (
-    competition_metrics,
     output_metrics,
     paired_head_metrics,
 )
@@ -71,9 +70,8 @@ class PairedHeadMetricsTest(unittest.TestCase):
         torch.testing.assert_close(
             result["difference_residual"], torch.zeros(1, dtype=torch.float64), atol=1e-14, rtol=0
         )
-        torch.testing.assert_close(result["probability_tv"], result["probability_l1"] / 2)
 
-    def test_small_perturbation_prediction_converges_in_length_and_direction(self) -> None:
+    def test_small_perturbation_prediction_converges_in_residual_and_direction(self) -> None:
         direction = torch.tensor([[0.9, -0.7, 0.2]], dtype=torch.float64)
         residuals = []
         for scale in (0.1, 0.01, 0.001):
@@ -81,7 +79,6 @@ class PairedHeadMetricsTest(unittest.TestCase):
             residuals.append(float(result["key_prediction_relative_error"][0]))
         self.assertLess(residuals[1], residuals[0] / 50)
         self.assertLess(residuals[2], residuals[1] / 50)
-        self.assertAlmostEqual(float(result["key_prediction_norm_ratio"][0]), 1.0, delta=0.001)
         self.assertGreater(float(result["key_prediction_cosine"][0]), 0.999999)
         ratio = float(result["paired_probability_kl"][0] / (result["weighted_score_var"][0] / 2))
         self.assertAlmostEqual(ratio, 1.0, delta=0.001)
@@ -95,22 +92,18 @@ class PairedHeadMetricsTest(unittest.TestCase):
         self.assertTrue(bool(result["key_prediction_zero"][0]))
         for name in (
             "kv8_error", "key_increment_error", "value_increment_error",
-            "key_prediction_relative_error", "key_prediction_norm_ratio", "key_prediction_cosine",
+            "key_prediction_relative_error", "key_prediction_cosine",
         ):
             self.assertTrue(bool(torch.isnan(result[name][0])), name)
         self.assertEqual(float(result["weighted_score_var"][0]), 0.0)
-        self.assertEqual(float(result["probability_l1"][0]), 0.0)
 
-    def test_pair_norms_do_not_add_up_to_total_first_order_error(self) -> None:
+    def test_symmetric_value_terms_cancel_first_order_prediction(self) -> None:
         score8 = torch.zeros((1, 3), dtype=torch.float64)
         score4 = torch.tensor([[0.1, 0.0, -0.1]], dtype=torch.float64)
         value = torch.tensor([[[0.0], [1.0], [0.0]]], dtype=torch.float64)
         result = paired_head_metrics(score8, score4, value, value, torch.ones((1, 1)))
-        pairs = competition_metrics(score8, score4, value, top_k=3)
-        self.assertGreater(float(pairs["pair_first_order_norm"].sum()), 0.0)
         self.assertFalse(bool(result["key_increment_zero"][0]))
         # 对称项在数学上抵消；浮点矩阵乘法仍可能留下微小且非零的舍入残差。
-        self.assertAlmostEqual(float(result["key_prediction_norm_ratio"][0]), 0.0, places=12)
         self.assertAlmostEqual(float(result["key_prediction_relative_error"][0]), 1.0, places=12)
         if bool(result["key_prediction_zero"][0]):
             self.assertTrue(bool(torch.isnan(result["key_prediction_cosine"][0])))
@@ -137,7 +130,6 @@ class PairedHeadMetricsTest(unittest.TestCase):
         self.assertAlmostEqual(float(result["key_increment_error"]), 2 / 101)
         self.assertNotAlmostEqual(float(result["key_increment_error"]), (1 + 0.01) / 2)
         self.assertEqual(float(result["key_prediction_error"]), 0.0)
-        self.assertAlmostEqual(float(result["key_prediction_norm_ratio"]), 1.0)
         self.assertAlmostEqual(float(result["key_prediction_cosine"]), 1.0)
         self.assertTrue(all(tensor.ndim == 0 for tensor in result.values()))
 
@@ -152,51 +144,6 @@ class PairedHeadMetricsTest(unittest.TestCase):
             self.metrics(torch.full_like(self.score4, torch.nan))
 
 
-class CompetitionMetricsTest(unittest.TestCase):
-    """检查固定基准 top-k 的竞争配对及退化历史情况。"""
-
-    def test_selection_stays_fixed_when_an_unselected_position_overtakes(self) -> None:
-        score8 = torch.tensor([[2.0, 1.0, 0.0]], dtype=torch.float64)
-        score4 = torch.tensor([[1.0, 2.0, 10.0]], dtype=torch.float64)
-        value = torch.tensor([[[0.0, 0.0], [3.0, 4.0], [100.0, 100.0]]])
-        result = competition_metrics(score8, score4, value, top_k=2)
-        torch.testing.assert_close(result["selected_positions"], torch.tensor([[0, 1]]))
-        torch.testing.assert_close(result["pair_positions"], torch.tensor([[[0, 1]]]))
-        self.assertEqual(float(result["pair_margin"][0, 0]), 1.0)
-        self.assertEqual(float(result["pair_differential"][0, 0]), -2.0)
-        self.assertEqual(float(result["pair_quantized_margin"][0, 0]), -1.0)
-        self.assertEqual(float(result["pair_value_distance2"][0, 0]), 25.0)
-        self.assertEqual(int(result["pair_flip_count"][0]), 1)
-        self.assertEqual(float(result["pair_flip_rate"][0]), 1.0)
-        probability = torch.softmax(score8, dim=-1)
-        expected = probability[0, 0] * probability[0, 1] * 2 * 5
-        torch.testing.assert_close(result["pair_first_order_norm"][0, 0], expected)
-        torch.testing.assert_close(
-            result["selected_probability_coverage"], probability[:, :2].sum(-1)
-        )
-
-    def test_baseline_ties_use_position_order_and_are_not_strict_flips(self) -> None:
-        score8 = torch.tensor([[1.0, 1.0, 0.0]])
-        score4 = torch.tensor([[0.0, 2.0, 0.0]])
-        result = competition_metrics(score8, score4, torch.zeros((1, 3, 2)), top_k=2)
-        torch.testing.assert_close(result["selected_positions"], torch.tensor([[0, 1]]))
-        self.assertEqual(int(result["pair_tie_count"][0]), 1)
-        self.assertEqual(int(result["pair_flip_count"][0]), 0)
-        self.assertEqual(float(result["pair_first_order_norm"][0, 0]), 0.0)
-
-    def test_single_position_has_empty_pairs_and_explicit_zero_rate(self) -> None:
-        result = competition_metrics(
-            torch.tensor([[1.0]]), torch.tensor([[2.0]]), torch.ones((1, 1, 2))
-        )
-        self.assertEqual(result["pair_positions"].shape, (1, 0, 2))
-        self.assertEqual(result["pair_margin"].shape, (1, 0))
-        self.assertEqual(int(result["pair_count"][0]), 0)
-        self.assertEqual(float(result["pair_flip_rate"][0]), 0.0)
-        self.assertEqual(float(result["selected_probability_coverage"][0]), 1.0)
-        with self.assertRaisesRegex(ValueError, "正整数"):
-            competition_metrics(
-                torch.tensor([[1.0]]), torch.tensor([[2.0]]), torch.ones((1, 1, 2)), top_k=0
-            )
 
 
 if __name__ == "__main__":

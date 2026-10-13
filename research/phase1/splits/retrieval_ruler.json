@@ -1,0 +1,4882 @@
+{
+  "protocol": "phase1-ruler-number-retrieval",
+  "config_sha256": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+  "identity_source_sha256": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+  "pilot_byte_identity_checked": [
+    "synth-v-0000",
+    "synth-v-0008",
+    "synth-v-0016",
+    "synth-v-0024",
+    "synth-v-0032",
+    "synth-v-0040",
+    "synth-v-0048",
+    "synth-v-0056"
+  ],
+  "n": 64,
+  "items": [
+    {
+      "id": "synth-v-0000",
+      "seed": 1623096999,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3932133",
+          "value": "1063198",
+          "tokens": 31732,
+          "sha256": "162b416ec940dbd34926b0be03f4dcb9fa162d150974253c10da7b9c7e01953e",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "3932133",
+              "value": "1063198"
+            },
+            {
+              "key": "6765109",
+              "value": "7007270"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0000.txt"
+        },
+        "llama": {
+          "key": "3932133",
+          "value": "1063198",
+          "tokens": 31738,
+          "sha256": "639d3f93c75de8167b46cd61ecbd8e613a7310e555a30ac18f00e9b1c2508fe9",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "3932133",
+              "value": "1063198"
+            },
+            {
+              "key": "6765109",
+              "value": "7007270"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0000.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0001",
+      "seed": 1623097000,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5400966",
+          "value": "8580415",
+          "tokens": 31732,
+          "sha256": "dacf89a9f1f0d1c9256561392ad6858cdaa93138a93d9e954450cc1620d184ec",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "5400966",
+              "value": "8580415"
+            },
+            {
+              "key": "6050854",
+              "value": "6516388"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0001.txt"
+        },
+        "llama": {
+          "key": "5400966",
+          "value": "8580415",
+          "tokens": 31738,
+          "sha256": "bb888083d98dd7eeba5116c3ce9459ed7d3b2d3448fa4daf7fd927259781bb8e",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "5400966",
+              "value": "8580415"
+            },
+            {
+              "key": "6050854",
+              "value": "6516388"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0001.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0002",
+      "seed": 1623097001,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1724480",
+          "value": "1933143",
+          "tokens": 31732,
+          "sha256": "2780ecf802e7f21b68d76b87766baa06863f63ea3ae803c44e1384b1b1796f22",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "1724480",
+              "value": "1933143"
+            },
+            {
+              "key": "9341260",
+              "value": "6674535"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0002.txt"
+        },
+        "llama": {
+          "key": "1724480",
+          "value": "1933143",
+          "tokens": 31738,
+          "sha256": "c1c469171fa180e57791512584578d7f90acf0dfc5491ed37d203e6f07f61d47",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "1724480",
+              "value": "1933143"
+            },
+            {
+              "key": "9341260",
+              "value": "6674535"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0002.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0003",
+      "seed": 1623097002,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2247551",
+          "value": "1644131",
+          "tokens": 31732,
+          "sha256": "d22d4e001e9431e5a10b2bd4378dda3beb5295920a419bcf8104a7aebaee1b9d",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "2247551",
+              "value": "1644131"
+            },
+            {
+              "key": "7364757",
+              "value": "4884589"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0003.txt"
+        },
+        "llama": {
+          "key": "2247551",
+          "value": "1644131",
+          "tokens": 31738,
+          "sha256": "b74202654eb6f7c0e670751b3147464be3356ee9abd017f73282a906b6ddf70e",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "2247551",
+              "value": "1644131"
+            },
+            {
+              "key": "7364757",
+              "value": "4884589"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0003.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0004",
+      "seed": 1623097003,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1018563",
+          "value": "2380021",
+          "tokens": 31732,
+          "sha256": "1029df067cfb96f7fdc1578368befcce391193f305b86b7c65484fb0fd325667",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "1018563",
+              "value": "2380021"
+            },
+            {
+              "key": "5048381",
+              "value": "6040582"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0004.txt"
+        },
+        "llama": {
+          "key": "1018563",
+          "value": "2380021",
+          "tokens": 31738,
+          "sha256": "7d7959f5cc2c162664abbb416e8a579edb062e28ebff748f19e5856724bd7da8",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "1018563",
+              "value": "2380021"
+            },
+            {
+              "key": "5048381",
+              "value": "6040582"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0004.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0005",
+      "seed": 1623097004,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3491020",
+          "value": "6485176",
+          "tokens": 31732,
+          "sha256": "7afdce7626a51367d334823fd36885d381900a37ef4299683bdf0172b2b6649b",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "3491020",
+              "value": "6485176"
+            },
+            {
+              "key": "5277876",
+              "value": "5360301"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0005.txt"
+        },
+        "llama": {
+          "key": "3491020",
+          "value": "6485176",
+          "tokens": 31738,
+          "sha256": "e0a295311bfe921e73df0946dde74bd5b8970bea2be137d0a865488ec2e70abf",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "3491020",
+              "value": "6485176"
+            },
+            {
+              "key": "5277876",
+              "value": "5360301"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0005.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0006",
+      "seed": 1623097005,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5392302",
+          "value": "5421955",
+          "tokens": 31732,
+          "sha256": "db9ac283294db04b486560f29b887301bb2a4b57d5cffd4523697149a541fb92",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "5392302",
+              "value": "5421955"
+            },
+            {
+              "key": "8865980",
+              "value": "1043116"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0006.txt"
+        },
+        "llama": {
+          "key": "5392302",
+          "value": "5421955",
+          "tokens": 31738,
+          "sha256": "0e68f126ce747d6e5b2e55dcf2dbcb54c2500320ca85325eabf227c7ce188295",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "5392302",
+              "value": "5421955"
+            },
+            {
+              "key": "8865980",
+              "value": "1043116"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0006.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0007",
+      "seed": 1623097006,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6169548",
+          "value": "2690054",
+          "tokens": 31732,
+          "sha256": "dedb8d0a8babdd669c42eaa9b1c4c50a30eec18c00d1bd6079d7fe6767d91464",
+          "actual_depth": 0.10144333795537627,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6169548",
+              "value": "2690054"
+            },
+            {
+              "key": "9035123",
+              "value": "5909144"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0007.txt"
+        },
+        "llama": {
+          "key": "6169548",
+          "value": "2690054",
+          "tokens": 31738,
+          "sha256": "1a81f4b6ac38303d1b03ab100a41f907a70ed8ef761dbbe10d48f7cccfd85c8b",
+          "actual_depth": 0.10161320814165983,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6169548",
+              "value": "2690054"
+            },
+            {
+              "key": "9035123",
+              "value": "5909144"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0007.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0008",
+      "seed": 1623097007,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1311465",
+          "value": "1225106",
+          "tokens": 31722,
+          "sha256": "35dee3226bfadacefe77b73c4bf5c4921336e024239674b594b4fdfee557c8fb",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "1311465",
+              "value": "1225106"
+            },
+            {
+              "key": "3976035",
+              "value": "3469011"
+            },
+            {
+              "key": "1416419",
+              "value": "4683894"
+            },
+            {
+              "key": "1665562",
+              "value": "7997606"
+            },
+            {
+              "key": "7706171",
+              "value": "8884676"
+            },
+            {
+              "key": "3959193",
+              "value": "5914632"
+            },
+            {
+              "key": "5725591",
+              "value": "9641946"
+            },
+            {
+              "key": "8095033",
+              "value": "6402981"
+            },
+            {
+              "key": "9518270",
+              "value": "1485546"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0008.txt"
+        },
+        "llama": {
+          "key": "1311465",
+          "value": "1225106",
+          "tokens": 31744,
+          "sha256": "dfc2435c6c65fd3bd6ff791e1b86a269b2f8ecc613615cc7453b16f5b39a09e4",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "1311465",
+              "value": "1225106"
+            },
+            {
+              "key": "3976035",
+              "value": "3469011"
+            },
+            {
+              "key": "1416419",
+              "value": "4683894"
+            },
+            {
+              "key": "1665562",
+              "value": "7997606"
+            },
+            {
+              "key": "7706171",
+              "value": "8884676"
+            },
+            {
+              "key": "3959193",
+              "value": "5914632"
+            },
+            {
+              "key": "5725591",
+              "value": "9641946"
+            },
+            {
+              "key": "8095033",
+              "value": "6402981"
+            },
+            {
+              "key": "9518270",
+              "value": "1485546"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0008.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0009",
+      "seed": 1623097008,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6919294",
+          "value": "8811980",
+          "tokens": 31722,
+          "sha256": "cccb1c486599b55827163e5da4068d458f730dd41f9e247307837d0a3d87594b",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "6919294",
+              "value": "8811980"
+            },
+            {
+              "key": "6825864",
+              "value": "5160866"
+            },
+            {
+              "key": "7188254",
+              "value": "4831543"
+            },
+            {
+              "key": "3271882",
+              "value": "4346276"
+            },
+            {
+              "key": "7971335",
+              "value": "7613523"
+            },
+            {
+              "key": "3560122",
+              "value": "5815135"
+            },
+            {
+              "key": "8119589",
+              "value": "5064220"
+            },
+            {
+              "key": "8008904",
+              "value": "7878285"
+            },
+            {
+              "key": "2817569",
+              "value": "4694855"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0009.txt"
+        },
+        "llama": {
+          "key": "6919294",
+          "value": "8811980",
+          "tokens": 31744,
+          "sha256": "6903d99f77f527b858ec44e107192f32045a0c27c80c2e570a30802e98422a02",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "6919294",
+              "value": "8811980"
+            },
+            {
+              "key": "6825864",
+              "value": "5160866"
+            },
+            {
+              "key": "7188254",
+              "value": "4831543"
+            },
+            {
+              "key": "3271882",
+              "value": "4346276"
+            },
+            {
+              "key": "7971335",
+              "value": "7613523"
+            },
+            {
+              "key": "3560122",
+              "value": "5815135"
+            },
+            {
+              "key": "8119589",
+              "value": "5064220"
+            },
+            {
+              "key": "8008904",
+              "value": "7878285"
+            },
+            {
+              "key": "2817569",
+              "value": "4694855"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0009.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0010",
+      "seed": 1623097009,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "4272011",
+          "value": "4431122",
+          "tokens": 31722,
+          "sha256": "6559c72b52e2b660f6e0fa1b247a552fcd668649440b048aac992646d62b022c",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "4272011",
+              "value": "4431122"
+            },
+            {
+              "key": "5843444",
+              "value": "3794909"
+            },
+            {
+              "key": "5844790",
+              "value": "1579770"
+            },
+            {
+              "key": "7142045",
+              "value": "6774314"
+            },
+            {
+              "key": "2729314",
+              "value": "8024802"
+            },
+            {
+              "key": "5062188",
+              "value": "4885422"
+            },
+            {
+              "key": "3767341",
+              "value": "9602864"
+            },
+            {
+              "key": "6227963",
+              "value": "5990773"
+            },
+            {
+              "key": "7353234",
+              "value": "1055463"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0010.txt"
+        },
+        "llama": {
+          "key": "4272011",
+          "value": "4431122",
+          "tokens": 31744,
+          "sha256": "3c58ff3f93dd845154599b5210ffe0479f0be9bc7eadbcddbb164b73d89c92cf",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "4272011",
+              "value": "4431122"
+            },
+            {
+              "key": "5843444",
+              "value": "3794909"
+            },
+            {
+              "key": "5844790",
+              "value": "1579770"
+            },
+            {
+              "key": "7142045",
+              "value": "6774314"
+            },
+            {
+              "key": "2729314",
+              "value": "8024802"
+            },
+            {
+              "key": "5062188",
+              "value": "4885422"
+            },
+            {
+              "key": "3767341",
+              "value": "9602864"
+            },
+            {
+              "key": "6227963",
+              "value": "5990773"
+            },
+            {
+              "key": "7353234",
+              "value": "1055463"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0010.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0011",
+      "seed": 1623097010,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6771381",
+          "value": "6241516",
+          "tokens": 31722,
+          "sha256": "2681a0c6c55394ae1b8f2f099451f59096277d7368ab5da45c8a6879389635ed",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "6771381",
+              "value": "6241516"
+            },
+            {
+              "key": "7735254",
+              "value": "1624454"
+            },
+            {
+              "key": "9893647",
+              "value": "5089624"
+            },
+            {
+              "key": "5150251",
+              "value": "8137545"
+            },
+            {
+              "key": "8338071",
+              "value": "7787264"
+            },
+            {
+              "key": "7311508",
+              "value": "9554189"
+            },
+            {
+              "key": "4807276",
+              "value": "4726939"
+            },
+            {
+              "key": "8043193",
+              "value": "8386304"
+            },
+            {
+              "key": "4270502",
+              "value": "3421867"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0011.txt"
+        },
+        "llama": {
+          "key": "6771381",
+          "value": "6241516",
+          "tokens": 31744,
+          "sha256": "57d10b5409fceb79e2d3371701f00fa7ba6d1a1ea2bb4e8ec0e611413baec088",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "6771381",
+              "value": "6241516"
+            },
+            {
+              "key": "7735254",
+              "value": "1624454"
+            },
+            {
+              "key": "9893647",
+              "value": "5089624"
+            },
+            {
+              "key": "5150251",
+              "value": "8137545"
+            },
+            {
+              "key": "8338071",
+              "value": "7787264"
+            },
+            {
+              "key": "7311508",
+              "value": "9554189"
+            },
+            {
+              "key": "4807276",
+              "value": "4726939"
+            },
+            {
+              "key": "8043193",
+              "value": "8386304"
+            },
+            {
+              "key": "4270502",
+              "value": "3421867"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0011.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0012",
+      "seed": 1623097011,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5251781",
+          "value": "7668200",
+          "tokens": 31722,
+          "sha256": "59ce370618ea44ff522b1283a1d079569eea75bae41a13c7b8fc049bd209679e",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5251781",
+              "value": "7668200"
+            },
+            {
+              "key": "4805698",
+              "value": "4664027"
+            },
+            {
+              "key": "3418613",
+              "value": "1527884"
+            },
+            {
+              "key": "6002175",
+              "value": "9282073"
+            },
+            {
+              "key": "9294405",
+              "value": "4737892"
+            },
+            {
+              "key": "1749438",
+              "value": "3366872"
+            },
+            {
+              "key": "3883209",
+              "value": "9824416"
+            },
+            {
+              "key": "3092602",
+              "value": "7481784"
+            },
+            {
+              "key": "1775573",
+              "value": "8287062"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0012.txt"
+        },
+        "llama": {
+          "key": "5251781",
+          "value": "7668200",
+          "tokens": 31744,
+          "sha256": "b2d7fc4d6aaa8bf7d1b2a20f7a4736eb5845cdb125814a2a8d89f09af93c089a",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5251781",
+              "value": "7668200"
+            },
+            {
+              "key": "4805698",
+              "value": "4664027"
+            },
+            {
+              "key": "3418613",
+              "value": "1527884"
+            },
+            {
+              "key": "6002175",
+              "value": "9282073"
+            },
+            {
+              "key": "9294405",
+              "value": "4737892"
+            },
+            {
+              "key": "1749438",
+              "value": "3366872"
+            },
+            {
+              "key": "3883209",
+              "value": "9824416"
+            },
+            {
+              "key": "3092602",
+              "value": "7481784"
+            },
+            {
+              "key": "1775573",
+              "value": "8287062"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0012.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0013",
+      "seed": 1623097012,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "8554018",
+          "value": "4802257",
+          "tokens": 31722,
+          "sha256": "e3efda1a8e0d7196656ba790b69ae20c050497a9275b1f26001b5d7fb5a95e2d",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "8554018",
+              "value": "4802257"
+            },
+            {
+              "key": "6200226",
+              "value": "6524797"
+            },
+            {
+              "key": "5533108",
+              "value": "3416450"
+            },
+            {
+              "key": "9910334",
+              "value": "3534515"
+            },
+            {
+              "key": "1597552",
+              "value": "3175382"
+            },
+            {
+              "key": "6727095",
+              "value": "1102410"
+            },
+            {
+              "key": "6870540",
+              "value": "1529211"
+            },
+            {
+              "key": "1543502",
+              "value": "8688446"
+            },
+            {
+              "key": "1062390",
+              "value": "8860413"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0013.txt"
+        },
+        "llama": {
+          "key": "8554018",
+          "value": "4802257",
+          "tokens": 31744,
+          "sha256": "e7437ab4d02c119e8e05ec2b1c304577a0bbdf1c11693430a92aa7bd24ed50b3",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "8554018",
+              "value": "4802257"
+            },
+            {
+              "key": "6200226",
+              "value": "6524797"
+            },
+            {
+              "key": "5533108",
+              "value": "3416450"
+            },
+            {
+              "key": "9910334",
+              "value": "3534515"
+            },
+            {
+              "key": "1597552",
+              "value": "3175382"
+            },
+            {
+              "key": "6727095",
+              "value": "1102410"
+            },
+            {
+              "key": "6870540",
+              "value": "1529211"
+            },
+            {
+              "key": "1543502",
+              "value": "8688446"
+            },
+            {
+              "key": "1062390",
+              "value": "8860413"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0013.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0014",
+      "seed": 1623097013,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2938672",
+          "value": "9228387",
+          "tokens": 31722,
+          "sha256": "f42139d2b5de7baef54fd26968078db4b183caa95f0b499c2df2344ad26b6e12",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2938672",
+              "value": "9228387"
+            },
+            {
+              "key": "5050573",
+              "value": "7975482"
+            },
+            {
+              "key": "6817961",
+              "value": "4218725"
+            },
+            {
+              "key": "2604025",
+              "value": "7830778"
+            },
+            {
+              "key": "9598444",
+              "value": "1779616"
+            },
+            {
+              "key": "7200709",
+              "value": "4754406"
+            },
+            {
+              "key": "3808961",
+              "value": "9132351"
+            },
+            {
+              "key": "9635552",
+              "value": "3764952"
+            },
+            {
+              "key": "6347554",
+              "value": "6172040"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0014.txt"
+        },
+        "llama": {
+          "key": "2938672",
+          "value": "9228387",
+          "tokens": 31744,
+          "sha256": "76d96e8cc141d3b5e2889c1acb9b257f2464e71d00a70efcc22c724bdd123343",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2938672",
+              "value": "9228387"
+            },
+            {
+              "key": "5050573",
+              "value": "7975482"
+            },
+            {
+              "key": "6817961",
+              "value": "4218725"
+            },
+            {
+              "key": "2604025",
+              "value": "7830778"
+            },
+            {
+              "key": "9598444",
+              "value": "1779616"
+            },
+            {
+              "key": "7200709",
+              "value": "4754406"
+            },
+            {
+              "key": "3808961",
+              "value": "9132351"
+            },
+            {
+              "key": "9635552",
+              "value": "3764952"
+            },
+            {
+              "key": "6347554",
+              "value": "6172040"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0014.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0015",
+      "seed": 1623097014,
+      "target_tokens": 31744,
+      "depth": 0.1,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1359560",
+          "value": "8788930",
+          "tokens": 31722,
+          "sha256": "6468dfa7604fa0da888c90da68372bfdfa92555041729596fdf863434ab17de4",
+          "actual_depth": 0.10147531681482883,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "1359560",
+              "value": "8788930"
+            },
+            {
+              "key": "2222887",
+              "value": "6051181"
+            },
+            {
+              "key": "1032270",
+              "value": "8170954"
+            },
+            {
+              "key": "1148739",
+              "value": "4938380"
+            },
+            {
+              "key": "4305968",
+              "value": "5795007"
+            },
+            {
+              "key": "4442773",
+              "value": "2504994"
+            },
+            {
+              "key": "8497804",
+              "value": "8115010"
+            },
+            {
+              "key": "3391862",
+              "value": "6889500"
+            },
+            {
+              "key": "2083268",
+              "value": "5453892"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0015.txt"
+        },
+        "llama": {
+          "key": "1359560",
+          "value": "8788930",
+          "tokens": 31744,
+          "sha256": "780b45f1d9a309e10c0141d75c1488a225d81a7959433584f3ca3c7c08dd3ff9",
+          "actual_depth": 0.10159400201612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "1359560",
+              "value": "8788930"
+            },
+            {
+              "key": "2222887",
+              "value": "6051181"
+            },
+            {
+              "key": "1032270",
+              "value": "8170954"
+            },
+            {
+              "key": "1148739",
+              "value": "4938380"
+            },
+            {
+              "key": "4305968",
+              "value": "5795007"
+            },
+            {
+              "key": "4442773",
+              "value": "2504994"
+            },
+            {
+              "key": "8497804",
+              "value": "8115010"
+            },
+            {
+              "key": "3391862",
+              "value": "6889500"
+            },
+            {
+              "key": "2083268",
+              "value": "5453892"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0015.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0016",
+      "seed": 1623097015,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6894344",
+          "value": "2561432",
+          "tokens": 31732,
+          "sha256": "bcfe6123df0202d0d6333e1199c9e4ee7b6922bd7791f6c52d3069403dafcbeb",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6894344",
+              "value": "2561432"
+            },
+            {
+              "key": "5597369",
+              "value": "6606933"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0016.txt"
+        },
+        "llama": {
+          "key": "6894344",
+          "value": "2561432",
+          "tokens": 31738,
+          "sha256": "552245a58e87b767e7fac9014dab9b485e73c910d7cd9ac870c0ec8486ea4af9",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6894344",
+              "value": "2561432"
+            },
+            {
+              "key": "5597369",
+              "value": "6606933"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0016.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0017",
+      "seed": 1623097016,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6309444",
+          "value": "6845574",
+          "tokens": 31732,
+          "sha256": "579378b893fb0376f569399be9f1024df0b56de097ed49bdf48d0fa8cd57c6a8",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6309444",
+              "value": "6845574"
+            },
+            {
+              "key": "8070327",
+              "value": "9513718"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0017.txt"
+        },
+        "llama": {
+          "key": "6309444",
+          "value": "6845574",
+          "tokens": 31738,
+          "sha256": "5d98e4188fa8beaa8e4dab944a2d8090bdd8bdec1bfa2a52468b09a016b3a102",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6309444",
+              "value": "6845574"
+            },
+            {
+              "key": "8070327",
+              "value": "9513718"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0017.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0018",
+      "seed": 1623097017,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "8040918",
+          "value": "3563259",
+          "tokens": 31732,
+          "sha256": "22937f7795a152b62813bf4bcf2984459ee414cfcaf355f9cd20db5022096f78",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "8040918",
+              "value": "3563259"
+            },
+            {
+              "key": "8008506",
+              "value": "4413172"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0018.txt"
+        },
+        "llama": {
+          "key": "8040918",
+          "value": "3563259",
+          "tokens": 31738,
+          "sha256": "c87ea6c4d7af81f1dfa26d4f5773a5a52a60fca00d9647c2671095215a6e7241",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "8040918",
+              "value": "3563259"
+            },
+            {
+              "key": "8008506",
+              "value": "4413172"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0018.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0019",
+      "seed": 1623097018,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "7700982",
+          "value": "3146349",
+          "tokens": 31732,
+          "sha256": "d694bcbc865e867983a969ce399592f2841271a1753d6be7a190aa6aafe6eb1e",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "7700982",
+              "value": "3146349"
+            },
+            {
+              "key": "6054418",
+              "value": "7043170"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0019.txt"
+        },
+        "llama": {
+          "key": "7700982",
+          "value": "3146349",
+          "tokens": 31738,
+          "sha256": "82dc24780b66462b70787f0738b3f5594e5ad1c3ab46bcbf82ddb9008c148987",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "7700982",
+              "value": "3146349"
+            },
+            {
+              "key": "6054418",
+              "value": "7043170"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0019.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0020",
+      "seed": 1623097019,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "8727298",
+          "value": "9089750",
+          "tokens": 31732,
+          "sha256": "b9ee0a85a7a7f6357a447001ee1fabb089c03f816375c0e217a3e089b697a29c",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "8727298",
+              "value": "9089750"
+            },
+            {
+              "key": "4116776",
+              "value": "5041818"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0020.txt"
+        },
+        "llama": {
+          "key": "8727298",
+          "value": "9089750",
+          "tokens": 31738,
+          "sha256": "715c04c89d16e54981b96d480a9654d3501f37ca7f2371c4263ed27c8e952545",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "8727298",
+              "value": "9089750"
+            },
+            {
+              "key": "4116776",
+              "value": "5041818"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0020.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0021",
+      "seed": 1623097020,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2436389",
+          "value": "8315893",
+          "tokens": 31732,
+          "sha256": "09511d620027c0ebb7df104bed8b08e3aa54d9cf7aea5f3c8bee0b049c823bdd",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "2436389",
+              "value": "8315893"
+            },
+            {
+              "key": "4347795",
+              "value": "1300327"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0021.txt"
+        },
+        "llama": {
+          "key": "2436389",
+          "value": "8315893",
+          "tokens": 31738,
+          "sha256": "3f0a537e0ff9b9ee86262190e0dfee26819ec39528ab5f99fa288045146126e6",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "2436389",
+              "value": "8315893"
+            },
+            {
+              "key": "4347795",
+              "value": "1300327"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0021.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0022",
+      "seed": 1623097021,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3010756",
+          "value": "4887166",
+          "tokens": 31732,
+          "sha256": "53e22cefbc21ad58542a9d70e11bee54ff592e55dfbf307d0c4394ca9b7e53fd",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "3010756",
+              "value": "4887166"
+            },
+            {
+              "key": "5078907",
+              "value": "5787841"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0022.txt"
+        },
+        "llama": {
+          "key": "3010756",
+          "value": "4887166",
+          "tokens": 31738,
+          "sha256": "ae4b79c677573201ece9569a5407ddcada7e37192b40c3c4c578d54a8a391453",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "3010756",
+              "value": "4887166"
+            },
+            {
+              "key": "5078907",
+              "value": "5787841"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0022.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0023",
+      "seed": 1623097022,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6371717",
+          "value": "5553700",
+          "tokens": 31732,
+          "sha256": "90fcffd568ea4ef911495d7e010c2d6e5b98b802b2c78a6b4baf72350ffd19ab",
+          "actual_depth": 0.35027732257657884,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6371717",
+              "value": "5553700"
+            },
+            {
+              "key": "8282571",
+              "value": "1159039"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0023.txt"
+        },
+        "llama": {
+          "key": "6371717",
+          "value": "5553700",
+          "tokens": 31738,
+          "sha256": "f0ba71843badb527e3d55e6fbbf9a30216c5f8bc0dc603fe403573b8acc5cf6b",
+          "actual_depth": 0.3511563425546663,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6371717",
+              "value": "5553700"
+            },
+            {
+              "key": "8282571",
+              "value": "1159039"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0023.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0024",
+      "seed": 1623097023,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9348236",
+          "value": "2938182",
+          "tokens": 31722,
+          "sha256": "4bab9f47619b89e9346f2e06719ee5eb0048d0f4a7d5fd77c788dfa0d0c8ec15",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "9348236",
+              "value": "2938182"
+            },
+            {
+              "key": "5860553",
+              "value": "8483968"
+            },
+            {
+              "key": "1776447",
+              "value": "7724385"
+            },
+            {
+              "key": "3424285",
+              "value": "6190653"
+            },
+            {
+              "key": "3598920",
+              "value": "2320422"
+            },
+            {
+              "key": "7321781",
+              "value": "5156910"
+            },
+            {
+              "key": "5236722",
+              "value": "9082895"
+            },
+            {
+              "key": "8177408",
+              "value": "6745592"
+            },
+            {
+              "key": "6125460",
+              "value": "3360679"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0024.txt"
+        },
+        "llama": {
+          "key": "9348236",
+          "value": "2938182",
+          "tokens": 31744,
+          "sha256": "d16f109267b40cc72b9b7721f22db4c529f33d1b119f9a51019ad816c2d59ae9",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "9348236",
+              "value": "2938182"
+            },
+            {
+              "key": "5860553",
+              "value": "8483968"
+            },
+            {
+              "key": "1776447",
+              "value": "7724385"
+            },
+            {
+              "key": "3424285",
+              "value": "6190653"
+            },
+            {
+              "key": "3598920",
+              "value": "2320422"
+            },
+            {
+              "key": "7321781",
+              "value": "5156910"
+            },
+            {
+              "key": "5236722",
+              "value": "9082895"
+            },
+            {
+              "key": "8177408",
+              "value": "6745592"
+            },
+            {
+              "key": "6125460",
+              "value": "3360679"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0024.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0025",
+      "seed": 1623097024,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9638408",
+          "value": "3569809",
+          "tokens": 31722,
+          "sha256": "4bf7359058e1a5a224ab1d780ec563258c695c2a63e0fda627f160589499c5c1",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "9638408",
+              "value": "3569809"
+            },
+            {
+              "key": "3837405",
+              "value": "4608187"
+            },
+            {
+              "key": "6623357",
+              "value": "5313815"
+            },
+            {
+              "key": "3770588",
+              "value": "1827520"
+            },
+            {
+              "key": "4147323",
+              "value": "4934232"
+            },
+            {
+              "key": "4369551",
+              "value": "2619799"
+            },
+            {
+              "key": "7514729",
+              "value": "4338886"
+            },
+            {
+              "key": "4210710",
+              "value": "1960482"
+            },
+            {
+              "key": "4256341",
+              "value": "2368090"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0025.txt"
+        },
+        "llama": {
+          "key": "9638408",
+          "value": "3569809",
+          "tokens": 31744,
+          "sha256": "138b6c962a17f238aa9b21b0ab932c07ec3bc1daf1ee435456025dfb93606349",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "9638408",
+              "value": "3569809"
+            },
+            {
+              "key": "3837405",
+              "value": "4608187"
+            },
+            {
+              "key": "6623357",
+              "value": "5313815"
+            },
+            {
+              "key": "3770588",
+              "value": "1827520"
+            },
+            {
+              "key": "4147323",
+              "value": "4934232"
+            },
+            {
+              "key": "4369551",
+              "value": "2619799"
+            },
+            {
+              "key": "7514729",
+              "value": "4338886"
+            },
+            {
+              "key": "4210710",
+              "value": "1960482"
+            },
+            {
+              "key": "4256341",
+              "value": "2368090"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0025.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0026",
+      "seed": 1623097025,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5892638",
+          "value": "7221945",
+          "tokens": 31722,
+          "sha256": "40fe58a94be00b68558ccac36373878896823cfac6fe77b68253dfc6172f3f59",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5892638",
+              "value": "7221945"
+            },
+            {
+              "key": "7662081",
+              "value": "4739258"
+            },
+            {
+              "key": "3706091",
+              "value": "9572798"
+            },
+            {
+              "key": "8764448",
+              "value": "3241850"
+            },
+            {
+              "key": "2244285",
+              "value": "6308811"
+            },
+            {
+              "key": "9857211",
+              "value": "3198742"
+            },
+            {
+              "key": "6406093",
+              "value": "8757055"
+            },
+            {
+              "key": "9848451",
+              "value": "6640307"
+            },
+            {
+              "key": "5645114",
+              "value": "1937763"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0026.txt"
+        },
+        "llama": {
+          "key": "5892638",
+          "value": "7221945",
+          "tokens": 31744,
+          "sha256": "5632046184c36c4269937155aab1888a8e2a49806318697927d217eb1f5f6be4",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5892638",
+              "value": "7221945"
+            },
+            {
+              "key": "7662081",
+              "value": "4739258"
+            },
+            {
+              "key": "3706091",
+              "value": "9572798"
+            },
+            {
+              "key": "8764448",
+              "value": "3241850"
+            },
+            {
+              "key": "2244285",
+              "value": "6308811"
+            },
+            {
+              "key": "9857211",
+              "value": "3198742"
+            },
+            {
+              "key": "6406093",
+              "value": "8757055"
+            },
+            {
+              "key": "9848451",
+              "value": "6640307"
+            },
+            {
+              "key": "5645114",
+              "value": "1937763"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0026.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0027",
+      "seed": 1623097026,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3000697",
+          "value": "7308630",
+          "tokens": 31722,
+          "sha256": "92dbfea0e6fff5868995a37b0b80f20e33b6da8efc615e18d59f3156aac3dfdb",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "3000697",
+              "value": "7308630"
+            },
+            {
+              "key": "9192547",
+              "value": "5102108"
+            },
+            {
+              "key": "8905874",
+              "value": "5684046"
+            },
+            {
+              "key": "7124243",
+              "value": "9947699"
+            },
+            {
+              "key": "2324131",
+              "value": "2090403"
+            },
+            {
+              "key": "4430419",
+              "value": "7691070"
+            },
+            {
+              "key": "2299977",
+              "value": "3134580"
+            },
+            {
+              "key": "2740383",
+              "value": "2837531"
+            },
+            {
+              "key": "1428319",
+              "value": "6455291"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0027.txt"
+        },
+        "llama": {
+          "key": "3000697",
+          "value": "7308630",
+          "tokens": 31744,
+          "sha256": "1c46efbb55f8a01f02c955b7c7f91fd9417050c6dc7d91acbc1ed7a05bc606f0",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "3000697",
+              "value": "7308630"
+            },
+            {
+              "key": "9192547",
+              "value": "5102108"
+            },
+            {
+              "key": "8905874",
+              "value": "5684046"
+            },
+            {
+              "key": "7124243",
+              "value": "9947699"
+            },
+            {
+              "key": "2324131",
+              "value": "2090403"
+            },
+            {
+              "key": "4430419",
+              "value": "7691070"
+            },
+            {
+              "key": "2299977",
+              "value": "3134580"
+            },
+            {
+              "key": "2740383",
+              "value": "2837531"
+            },
+            {
+              "key": "1428319",
+              "value": "6455291"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0027.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0028",
+      "seed": 1623097027,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2927857",
+          "value": "6064704",
+          "tokens": 31722,
+          "sha256": "2d5539b48042dac0991f96021f00e9b1c317e1142e2df74ee927f7a54434b3d5",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2927857",
+              "value": "6064704"
+            },
+            {
+              "key": "2538876",
+              "value": "6422629"
+            },
+            {
+              "key": "9066233",
+              "value": "5204795"
+            },
+            {
+              "key": "3884082",
+              "value": "9720457"
+            },
+            {
+              "key": "4968904",
+              "value": "1625938"
+            },
+            {
+              "key": "9633781",
+              "value": "1023539"
+            },
+            {
+              "key": "1425277",
+              "value": "6843820"
+            },
+            {
+              "key": "9270221",
+              "value": "2089776"
+            },
+            {
+              "key": "5516097",
+              "value": "7212344"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0028.txt"
+        },
+        "llama": {
+          "key": "2927857",
+          "value": "6064704",
+          "tokens": 31744,
+          "sha256": "dfbe09ff5332b50b47ddf5268e421315ef11520b3ba05c96aff1266a1f1cf94d",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2927857",
+              "value": "6064704"
+            },
+            {
+              "key": "2538876",
+              "value": "6422629"
+            },
+            {
+              "key": "9066233",
+              "value": "5204795"
+            },
+            {
+              "key": "3884082",
+              "value": "9720457"
+            },
+            {
+              "key": "4968904",
+              "value": "1625938"
+            },
+            {
+              "key": "9633781",
+              "value": "1023539"
+            },
+            {
+              "key": "1425277",
+              "value": "6843820"
+            },
+            {
+              "key": "9270221",
+              "value": "2089776"
+            },
+            {
+              "key": "5516097",
+              "value": "7212344"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0028.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0029",
+      "seed": 1623097028,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2563719",
+          "value": "2709517",
+          "tokens": 31722,
+          "sha256": "c88ad6f00d1751b9414884c65ef621b7c50bc57b4da9c68a74fdcd469c588832",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2563719",
+              "value": "2709517"
+            },
+            {
+              "key": "7726751",
+              "value": "9434271"
+            },
+            {
+              "key": "3207067",
+              "value": "7011191"
+            },
+            {
+              "key": "7350536",
+              "value": "6652243"
+            },
+            {
+              "key": "5804442",
+              "value": "1078761"
+            },
+            {
+              "key": "6592511",
+              "value": "7754545"
+            },
+            {
+              "key": "5670617",
+              "value": "6217198"
+            },
+            {
+              "key": "1475693",
+              "value": "3008818"
+            },
+            {
+              "key": "7028968",
+              "value": "3993168"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0029.txt"
+        },
+        "llama": {
+          "key": "2563719",
+          "value": "2709517",
+          "tokens": 31744,
+          "sha256": "077168a8bba9e4179feff768337c450dcc2eb716d8d43834a011dffd7a3bd7ee",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2563719",
+              "value": "2709517"
+            },
+            {
+              "key": "7726751",
+              "value": "9434271"
+            },
+            {
+              "key": "3207067",
+              "value": "7011191"
+            },
+            {
+              "key": "7350536",
+              "value": "6652243"
+            },
+            {
+              "key": "5804442",
+              "value": "1078761"
+            },
+            {
+              "key": "6592511",
+              "value": "7754545"
+            },
+            {
+              "key": "5670617",
+              "value": "6217198"
+            },
+            {
+              "key": "1475693",
+              "value": "3008818"
+            },
+            {
+              "key": "7028968",
+              "value": "3993168"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0029.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0030",
+      "seed": 1623097029,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5045523",
+          "value": "5387733",
+          "tokens": 31722,
+          "sha256": "cb67f4878b8376c28f894699ea1e3a7f3c0baa47138337e22839a8e07ef28aa3",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5045523",
+              "value": "5387733"
+            },
+            {
+              "key": "5957122",
+              "value": "1615445"
+            },
+            {
+              "key": "3245573",
+              "value": "1752314"
+            },
+            {
+              "key": "6635418",
+              "value": "3058008"
+            },
+            {
+              "key": "3345437",
+              "value": "8215830"
+            },
+            {
+              "key": "4838274",
+              "value": "9394064"
+            },
+            {
+              "key": "1039955",
+              "value": "5721413"
+            },
+            {
+              "key": "7643227",
+              "value": "2598547"
+            },
+            {
+              "key": "9300332",
+              "value": "5665862"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0030.txt"
+        },
+        "llama": {
+          "key": "5045523",
+          "value": "5387733",
+          "tokens": 31744,
+          "sha256": "1d366bfd1bfadad2bc9edeb1b326af9623322e114c59ddbb959c0ac9b909fe49",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5045523",
+              "value": "5387733"
+            },
+            {
+              "key": "5957122",
+              "value": "1615445"
+            },
+            {
+              "key": "3245573",
+              "value": "1752314"
+            },
+            {
+              "key": "6635418",
+              "value": "3058008"
+            },
+            {
+              "key": "3345437",
+              "value": "8215830"
+            },
+            {
+              "key": "4838274",
+              "value": "9394064"
+            },
+            {
+              "key": "1039955",
+              "value": "5721413"
+            },
+            {
+              "key": "7643227",
+              "value": "2598547"
+            },
+            {
+              "key": "9300332",
+              "value": "5665862"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0030.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0031",
+      "seed": 1623097030,
+      "target_tokens": 31744,
+      "depth": 0.35,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "4697815",
+          "value": "1458026",
+          "tokens": 31722,
+          "sha256": "4709608cf2856c3053b604938c7e9a35f804638b4f2404b3063cc3a980cea1c4",
+          "actual_depth": 0.3504507912489755,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "4697815",
+              "value": "1458026"
+            },
+            {
+              "key": "2552090",
+              "value": "5012628"
+            },
+            {
+              "key": "4947349",
+              "value": "6838667"
+            },
+            {
+              "key": "1892663",
+              "value": "2845266"
+            },
+            {
+              "key": "6213558",
+              "value": "9645309"
+            },
+            {
+              "key": "3778307",
+              "value": "1923055"
+            },
+            {
+              "key": "6824576",
+              "value": "5709354"
+            },
+            {
+              "key": "8759400",
+              "value": "7046400"
+            },
+            {
+              "key": "8523501",
+              "value": "3125141"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0031.txt"
+        },
+        "llama": {
+          "key": "4697815",
+          "value": "1458026",
+          "tokens": 31744,
+          "sha256": "50c0374f02d5044897eb44361a683556385060c483e8924cf398ff222386f4d8",
+          "actual_depth": 0.3509009576612903,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "4697815",
+              "value": "1458026"
+            },
+            {
+              "key": "2552090",
+              "value": "5012628"
+            },
+            {
+              "key": "4947349",
+              "value": "6838667"
+            },
+            {
+              "key": "1892663",
+              "value": "2845266"
+            },
+            {
+              "key": "6213558",
+              "value": "9645309"
+            },
+            {
+              "key": "3778307",
+              "value": "1923055"
+            },
+            {
+              "key": "6824576",
+              "value": "5709354"
+            },
+            {
+              "key": "8759400",
+              "value": "7046400"
+            },
+            {
+              "key": "8523501",
+              "value": "3125141"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0031.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0032",
+      "seed": 1623097031,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5202544",
+          "value": "5000205",
+          "tokens": 31732,
+          "sha256": "5003043f62b5d21ef212fa368a1ae664ff017df635946f2aeda4510fa6560e95",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "5202544",
+              "value": "5000205"
+            },
+            {
+              "key": "1431523",
+              "value": "1971834"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0032.txt"
+        },
+        "llama": {
+          "key": "5202544",
+          "value": "5000205",
+          "tokens": 31738,
+          "sha256": "6a320d3b5c1a431dea3b52489b9ad926df5892a664f72773c09e89653ff8eec9",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "5202544",
+              "value": "5000205"
+            },
+            {
+              "key": "1431523",
+              "value": "1971834"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0032.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0033",
+      "seed": 1623097032,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9623922",
+          "value": "2429312",
+          "tokens": 31732,
+          "sha256": "2c8e07a3643aa09a1801a26c362af1d13032521ace1a05d09be2716e26036934",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "9623922",
+              "value": "2429312"
+            },
+            {
+              "key": "5172755",
+              "value": "6890457"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0033.txt"
+        },
+        "llama": {
+          "key": "9623922",
+          "value": "2429312",
+          "tokens": 31738,
+          "sha256": "84faa928b9123f79f907b8b2df48d8b3b17e95962b73f6334a5aa4d624b21e55",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "9623922",
+              "value": "2429312"
+            },
+            {
+              "key": "5172755",
+              "value": "6890457"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0033.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0034",
+      "seed": 1623097033,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "7730129",
+          "value": "3735164",
+          "tokens": 31732,
+          "sha256": "6e5c98fc1a5b4aeaf54b8e13930df98c7682bf48a6e175ac346d17e139ebf440",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "7730129",
+              "value": "3735164"
+            },
+            {
+              "key": "6113141",
+              "value": "3928777"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0034.txt"
+        },
+        "llama": {
+          "key": "7730129",
+          "value": "3735164",
+          "tokens": 31738,
+          "sha256": "69f2780c289efda1fecc276148cf952f72d714c3b98d544d8c8fa6dfb223b39f",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "7730129",
+              "value": "3735164"
+            },
+            {
+              "key": "6113141",
+              "value": "3928777"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0034.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0035",
+      "seed": 1623097034,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3727599",
+          "value": "1545799",
+          "tokens": 31732,
+          "sha256": "bf557a578e39adb9a35135d4742183575ab33862daf3ebc28426bc7702da2d24",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "3727599",
+              "value": "1545799"
+            },
+            {
+              "key": "2303681",
+              "value": "9744879"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0035.txt"
+        },
+        "llama": {
+          "key": "3727599",
+          "value": "1545799",
+          "tokens": 31738,
+          "sha256": "312fb1b84c65a1b19a634d0b6280e0f7f49b2867a7bf65dfe518880f2e5c75ea",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "3727599",
+              "value": "1545799"
+            },
+            {
+              "key": "2303681",
+              "value": "9744879"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0035.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0036",
+      "seed": 1623097035,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3850397",
+          "value": "8474311",
+          "tokens": 31732,
+          "sha256": "a0b2bce4a07a3459e1c8a161d60a52ceffde6efb4cdc4c4a50b728307601c2f3",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "3850397",
+              "value": "8474311"
+            },
+            {
+              "key": "7666768",
+              "value": "3176329"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0036.txt"
+        },
+        "llama": {
+          "key": "3850397",
+          "value": "8474311",
+          "tokens": 31738,
+          "sha256": "564727f519d76dccd5c842f0a5815afd2032273dce1c61dc47f1f1dcd707b027",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "3850397",
+              "value": "8474311"
+            },
+            {
+              "key": "7666768",
+              "value": "3176329"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0036.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0037",
+      "seed": 1623097036,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "7055963",
+          "value": "4371505",
+          "tokens": 31732,
+          "sha256": "4a74ce6612a4c21f38caf94218b82f03f2e4bf375709dd309cb0e8375f7b4c92",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "7055963",
+              "value": "4371505"
+            },
+            {
+              "key": "8658711",
+              "value": "9178067"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0037.txt"
+        },
+        "llama": {
+          "key": "7055963",
+          "value": "4371505",
+          "tokens": 31738,
+          "sha256": "a685bf242d32bd2f9ae56c426482c58efe56012eb57db9c3cef129352fc65a95",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "7055963",
+              "value": "4371505"
+            },
+            {
+              "key": "8658711",
+              "value": "9178067"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0037.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0038",
+      "seed": 1623097037,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2462984",
+          "value": "1452993",
+          "tokens": 31732,
+          "sha256": "22254a5ce05d623993fa6097ec500b65df87130003f2e4656e7b63c09d6877b9",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "2462984",
+              "value": "1452993"
+            },
+            {
+              "key": "1264080",
+              "value": "2110425"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0038.txt"
+        },
+        "llama": {
+          "key": "2462984",
+          "value": "1452993",
+          "tokens": 31738,
+          "sha256": "6a3536e3d663d54c6e0693a8ce0865000779bc0246d2226619302c8452556662",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "2462984",
+              "value": "1452993"
+            },
+            {
+              "key": "1264080",
+              "value": "2110425"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0038.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0039",
+      "seed": 1623097038,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9107331",
+          "value": "5158320",
+          "tokens": 31732,
+          "sha256": "6183b18636e71fc4afc4a3cbdd0d2577243c64274d9ebbd8cb67648b93805bb5",
+          "actual_depth": 0.6497857052817345,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "9107331",
+              "value": "5158320"
+            },
+            {
+              "key": "9890439",
+              "value": "7583021"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0039.txt"
+        },
+        "llama": {
+          "key": "9107331",
+          "value": "5158320",
+          "tokens": 31738,
+          "sha256": "17c0f12199365f5243c2944f31658e191ac7411b13c586418bcf62658403b5ef",
+          "actual_depth": 0.6498519125338711,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "9107331",
+              "value": "5158320"
+            },
+            {
+              "key": "9890439",
+              "value": "7583021"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0039.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0040",
+      "seed": 1623097039,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2521653",
+          "value": "9113166",
+          "tokens": 31722,
+          "sha256": "c21d66197fb3c1199e92f9e1208a150f4bac5b572b325fd18255166f9d61ce11",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2521653",
+              "value": "9113166"
+            },
+            {
+              "key": "8660550",
+              "value": "7051428"
+            },
+            {
+              "key": "6190450",
+              "value": "4038237"
+            },
+            {
+              "key": "1506827",
+              "value": "9659188"
+            },
+            {
+              "key": "6444913",
+              "value": "3264225"
+            },
+            {
+              "key": "8848384",
+              "value": "2925639"
+            },
+            {
+              "key": "7888533",
+              "value": "1179999"
+            },
+            {
+              "key": "6847159",
+              "value": "5769458"
+            },
+            {
+              "key": "9805083",
+              "value": "6334383"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0040.txt"
+        },
+        "llama": {
+          "key": "2521653",
+          "value": "9113166",
+          "tokens": 31744,
+          "sha256": "1a74b887b98a0ec3dbc5f2d31e3a788526499fe5395fec6074815153d28b7047",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2521653",
+              "value": "9113166"
+            },
+            {
+              "key": "8660550",
+              "value": "7051428"
+            },
+            {
+              "key": "6190450",
+              "value": "4038237"
+            },
+            {
+              "key": "1506827",
+              "value": "9659188"
+            },
+            {
+              "key": "6444913",
+              "value": "3264225"
+            },
+            {
+              "key": "8848384",
+              "value": "2925639"
+            },
+            {
+              "key": "7888533",
+              "value": "1179999"
+            },
+            {
+              "key": "6847159",
+              "value": "5769458"
+            },
+            {
+              "key": "9805083",
+              "value": "6334383"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0040.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0041",
+      "seed": 1623097040,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2603752",
+          "value": "6181730",
+          "tokens": 31722,
+          "sha256": "dafff390b2ed60c21a1cf89458a5e8a241741ab63f540add2002fd9b1823fd72",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2603752",
+              "value": "6181730"
+            },
+            {
+              "key": "2521090",
+              "value": "8969834"
+            },
+            {
+              "key": "6507891",
+              "value": "7496190"
+            },
+            {
+              "key": "4803966",
+              "value": "6727365"
+            },
+            {
+              "key": "8709332",
+              "value": "8968129"
+            },
+            {
+              "key": "4226113",
+              "value": "7692532"
+            },
+            {
+              "key": "8262016",
+              "value": "1961625"
+            },
+            {
+              "key": "1698608",
+              "value": "5685091"
+            },
+            {
+              "key": "2952751",
+              "value": "4061664"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0041.txt"
+        },
+        "llama": {
+          "key": "2603752",
+          "value": "6181730",
+          "tokens": 31744,
+          "sha256": "0bd3af06a3be5d649952a17f20589a2603ca280a96f84b453ca97a4180f57de9",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2603752",
+              "value": "6181730"
+            },
+            {
+              "key": "2521090",
+              "value": "8969834"
+            },
+            {
+              "key": "6507891",
+              "value": "7496190"
+            },
+            {
+              "key": "4803966",
+              "value": "6727365"
+            },
+            {
+              "key": "8709332",
+              "value": "8968129"
+            },
+            {
+              "key": "4226113",
+              "value": "7692532"
+            },
+            {
+              "key": "8262016",
+              "value": "1961625"
+            },
+            {
+              "key": "1698608",
+              "value": "5685091"
+            },
+            {
+              "key": "2952751",
+              "value": "4061664"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0041.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0042",
+      "seed": 1623097041,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3592320",
+          "value": "1733583",
+          "tokens": 31722,
+          "sha256": "ba9168b721f2fa8a5a2ae2ecde28b2c7ad7d257ea82a9338a57026fcc05a3b63",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "3592320",
+              "value": "1733583"
+            },
+            {
+              "key": "8575130",
+              "value": "9042507"
+            },
+            {
+              "key": "9565051",
+              "value": "6521740"
+            },
+            {
+              "key": "1079052",
+              "value": "5689192"
+            },
+            {
+              "key": "1341337",
+              "value": "3867600"
+            },
+            {
+              "key": "6797722",
+              "value": "9280569"
+            },
+            {
+              "key": "2840587",
+              "value": "2600372"
+            },
+            {
+              "key": "6894012",
+              "value": "1278330"
+            },
+            {
+              "key": "1391942",
+              "value": "2370740"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0042.txt"
+        },
+        "llama": {
+          "key": "3592320",
+          "value": "1733583",
+          "tokens": 31744,
+          "sha256": "ede71ecfa739528386bb160fe245767ccc23188100aafde9a55867c9ef6ac576",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "3592320",
+              "value": "1733583"
+            },
+            {
+              "key": "8575130",
+              "value": "9042507"
+            },
+            {
+              "key": "9565051",
+              "value": "6521740"
+            },
+            {
+              "key": "1079052",
+              "value": "5689192"
+            },
+            {
+              "key": "1341337",
+              "value": "3867600"
+            },
+            {
+              "key": "6797722",
+              "value": "9280569"
+            },
+            {
+              "key": "2840587",
+              "value": "2600372"
+            },
+            {
+              "key": "6894012",
+              "value": "1278330"
+            },
+            {
+              "key": "1391942",
+              "value": "2370740"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0042.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0043",
+      "seed": 1623097042,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "4178097",
+          "value": "3388693",
+          "tokens": 31722,
+          "sha256": "b3f293d5c44e8cf1425f759a94d4b2d6231b761206c1091757e5b6abdfc1d703",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "4178097",
+              "value": "3388693"
+            },
+            {
+              "key": "3124593",
+              "value": "5389664"
+            },
+            {
+              "key": "3042345",
+              "value": "1258615"
+            },
+            {
+              "key": "4207966",
+              "value": "1003817"
+            },
+            {
+              "key": "8099628",
+              "value": "6499459"
+            },
+            {
+              "key": "4045635",
+              "value": "3884219"
+            },
+            {
+              "key": "7398248",
+              "value": "6331978"
+            },
+            {
+              "key": "5959926",
+              "value": "9966705"
+            },
+            {
+              "key": "5913156",
+              "value": "8867252"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0043.txt"
+        },
+        "llama": {
+          "key": "4178097",
+          "value": "3388693",
+          "tokens": 31744,
+          "sha256": "f99d21f2b2cac86dc803ea6bf925d5a54cc8a5899fcf692193343c090c113a37",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "4178097",
+              "value": "3388693"
+            },
+            {
+              "key": "3124593",
+              "value": "5389664"
+            },
+            {
+              "key": "3042345",
+              "value": "1258615"
+            },
+            {
+              "key": "4207966",
+              "value": "1003817"
+            },
+            {
+              "key": "8099628",
+              "value": "6499459"
+            },
+            {
+              "key": "4045635",
+              "value": "3884219"
+            },
+            {
+              "key": "7398248",
+              "value": "6331978"
+            },
+            {
+              "key": "5959926",
+              "value": "9966705"
+            },
+            {
+              "key": "5913156",
+              "value": "8867252"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0043.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0044",
+      "seed": 1623097043,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "3924541",
+          "value": "2896646",
+          "tokens": 31722,
+          "sha256": "3798572aa63ed025ebc8ac1806fab924ae2bde9d7e13eb8c0861828508146201",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "3924541",
+              "value": "2896646"
+            },
+            {
+              "key": "7083243",
+              "value": "6620913"
+            },
+            {
+              "key": "8645648",
+              "value": "2810256"
+            },
+            {
+              "key": "5924003",
+              "value": "4198793"
+            },
+            {
+              "key": "3168970",
+              "value": "8430911"
+            },
+            {
+              "key": "3695314",
+              "value": "4868986"
+            },
+            {
+              "key": "7851235",
+              "value": "1901991"
+            },
+            {
+              "key": "2515148",
+              "value": "4727990"
+            },
+            {
+              "key": "6405365",
+              "value": "4512627"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0044.txt"
+        },
+        "llama": {
+          "key": "3924541",
+          "value": "2896646",
+          "tokens": 31744,
+          "sha256": "19a2967954e213b6201fa1acfa4f19729c4bcd4a631b14fe49730461a65bd81d",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "3924541",
+              "value": "2896646"
+            },
+            {
+              "key": "7083243",
+              "value": "6620913"
+            },
+            {
+              "key": "8645648",
+              "value": "2810256"
+            },
+            {
+              "key": "5924003",
+              "value": "4198793"
+            },
+            {
+              "key": "3168970",
+              "value": "8430911"
+            },
+            {
+              "key": "3695314",
+              "value": "4868986"
+            },
+            {
+              "key": "7851235",
+              "value": "1901991"
+            },
+            {
+              "key": "2515148",
+              "value": "4727990"
+            },
+            {
+              "key": "6405365",
+              "value": "4512627"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0044.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0045",
+      "seed": 1623097044,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6310538",
+          "value": "7100918",
+          "tokens": 31722,
+          "sha256": "74ea7b863c1dbc7556442e4f3f83e691659c7db864a19862bc339b5fdf945294",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "6310538",
+              "value": "7100918"
+            },
+            {
+              "key": "2863483",
+              "value": "6616904"
+            },
+            {
+              "key": "8285926",
+              "value": "5112114"
+            },
+            {
+              "key": "2373233",
+              "value": "3337499"
+            },
+            {
+              "key": "6278181",
+              "value": "7399714"
+            },
+            {
+              "key": "8818759",
+              "value": "4447456"
+            },
+            {
+              "key": "8244610",
+              "value": "1006378"
+            },
+            {
+              "key": "3121663",
+              "value": "7525384"
+            },
+            {
+              "key": "1737745",
+              "value": "1458184"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0045.txt"
+        },
+        "llama": {
+          "key": "6310538",
+          "value": "7100918",
+          "tokens": 31744,
+          "sha256": "7b1312bbd980d765059972744ebeff5046acd57f0b5f90262b57b89d2c7859bf",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "6310538",
+              "value": "7100918"
+            },
+            {
+              "key": "2863483",
+              "value": "6616904"
+            },
+            {
+              "key": "8285926",
+              "value": "5112114"
+            },
+            {
+              "key": "2373233",
+              "value": "3337499"
+            },
+            {
+              "key": "6278181",
+              "value": "7399714"
+            },
+            {
+              "key": "8818759",
+              "value": "4447456"
+            },
+            {
+              "key": "8244610",
+              "value": "1006378"
+            },
+            {
+              "key": "3121663",
+              "value": "7525384"
+            },
+            {
+              "key": "1737745",
+              "value": "1458184"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0045.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0046",
+      "seed": 1623097045,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2363573",
+          "value": "6307358",
+          "tokens": 31722,
+          "sha256": "ab0d177ffbf963cbe1db7c922b38450bc2f690b153175ca2b56b6180952dd94d",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "2363573",
+              "value": "6307358"
+            },
+            {
+              "key": "5790865",
+              "value": "8560165"
+            },
+            {
+              "key": "7748898",
+              "value": "6492521"
+            },
+            {
+              "key": "4588152",
+              "value": "6112236"
+            },
+            {
+              "key": "2218669",
+              "value": "3676608"
+            },
+            {
+              "key": "1479032",
+              "value": "7467123"
+            },
+            {
+              "key": "7321354",
+              "value": "3193989"
+            },
+            {
+              "key": "5550746",
+              "value": "8670842"
+            },
+            {
+              "key": "4392744",
+              "value": "1479899"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0046.txt"
+        },
+        "llama": {
+          "key": "2363573",
+          "value": "6307358",
+          "tokens": 31744,
+          "sha256": "94513cc5f30a5f45b2fce8a9d61eb14cc8afe3206d2d8488ab26b2a40234400c",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "2363573",
+              "value": "6307358"
+            },
+            {
+              "key": "5790865",
+              "value": "8560165"
+            },
+            {
+              "key": "7748898",
+              "value": "6492521"
+            },
+            {
+              "key": "4588152",
+              "value": "6112236"
+            },
+            {
+              "key": "2218669",
+              "value": "3676608"
+            },
+            {
+              "key": "1479032",
+              "value": "7467123"
+            },
+            {
+              "key": "7321354",
+              "value": "3193989"
+            },
+            {
+              "key": "5550746",
+              "value": "8670842"
+            },
+            {
+              "key": "4392744",
+              "value": "1479899"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0046.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0047",
+      "seed": 1623097046,
+      "target_tokens": 31744,
+      "depth": 0.65,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9011832",
+          "value": "8767428",
+          "tokens": 31722,
+          "sha256": "5779e6b9d8eb6b49b5a24208fd57c68da0fac84c21ae83241227ea37e44891c9",
+          "actual_depth": 0.6494861610238951,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "9011832",
+              "value": "8767428"
+            },
+            {
+              "key": "5618101",
+              "value": "5137135"
+            },
+            {
+              "key": "4176766",
+              "value": "2721700"
+            },
+            {
+              "key": "3039126",
+              "value": "8570069"
+            },
+            {
+              "key": "5672740",
+              "value": "9377061"
+            },
+            {
+              "key": "7281878",
+              "value": "6369204"
+            },
+            {
+              "key": "6701123",
+              "value": "6143477"
+            },
+            {
+              "key": "9258956",
+              "value": "1137646"
+            },
+            {
+              "key": "4338355",
+              "value": "6206954"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0047.txt"
+        },
+        "llama": {
+          "key": "9011832",
+          "value": "8767428",
+          "tokens": 31744,
+          "sha256": "026af6ea05b2f2e35f0a87b30ccf1d3ccd25717d468aadb7f45e732e726b4621",
+          "actual_depth": 0.6504851310483871,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "9011832",
+              "value": "8767428"
+            },
+            {
+              "key": "5618101",
+              "value": "5137135"
+            },
+            {
+              "key": "4176766",
+              "value": "2721700"
+            },
+            {
+              "key": "3039126",
+              "value": "8570069"
+            },
+            {
+              "key": "5672740",
+              "value": "9377061"
+            },
+            {
+              "key": "7281878",
+              "value": "6369204"
+            },
+            {
+              "key": "6701123",
+              "value": "6143477"
+            },
+            {
+              "key": "9258956",
+              "value": "1137646"
+            },
+            {
+              "key": "4338355",
+              "value": "6206954"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0047.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0048",
+      "seed": 1623097047,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "2203051",
+          "value": "8497179",
+          "tokens": 31732,
+          "sha256": "64f24211339a456ca41f9d7627b2676a3e3862eb7acda8e81abfe0464e9d3169",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "2203051",
+              "value": "8497179"
+            },
+            {
+              "key": "4410902",
+              "value": "1984103"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0048.txt"
+        },
+        "llama": {
+          "key": "2203051",
+          "value": "8497179",
+          "tokens": 31738,
+          "sha256": "60da828d7ee1845f07d6bb2efd7d26b58ee705693d0bdac94c273d6f678250b6",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "2203051",
+              "value": "8497179"
+            },
+            {
+              "key": "4410902",
+              "value": "1984103"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0048.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0049",
+      "seed": 1623097048,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6453620",
+          "value": "2592109",
+          "tokens": 31732,
+          "sha256": "976679b6db3646956257f81420a73f623ab889da9efb3573b67749e9dc1f9e7f",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6453620",
+              "value": "2592109"
+            },
+            {
+              "key": "1244931",
+              "value": "2592479"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0049.txt"
+        },
+        "llama": {
+          "key": "6453620",
+          "value": "2592109",
+          "tokens": 31738,
+          "sha256": "2f65441ce25f34475612dc6bca0b4f5cc5c74414d67e21a96aa8c1a9fb05ecbb",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6453620",
+              "value": "2592109"
+            },
+            {
+              "key": "1244931",
+              "value": "2592479"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0049.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0050",
+      "seed": 1623097049,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9177097",
+          "value": "2124345",
+          "tokens": 31732,
+          "sha256": "ba6569fbfeafa95fb85fc082b3fe02ef4fd68b2383f93bfed05dcc7fbedf4710",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "9177097",
+              "value": "2124345"
+            },
+            {
+              "key": "5774094",
+              "value": "6561315"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0050.txt"
+        },
+        "llama": {
+          "key": "9177097",
+          "value": "2124345",
+          "tokens": 31738,
+          "sha256": "073fa17376b7134e5b285a2f738ee877da296f755b3a36099e3668bec6623cb1",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "9177097",
+              "value": "2124345"
+            },
+            {
+              "key": "5774094",
+              "value": "6561315"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0050.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0051",
+      "seed": 1623097050,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "7753029",
+          "value": "4328774",
+          "tokens": 31732,
+          "sha256": "bffa5d1052342cae057e0518bd6e8f5721076ffeee1eb4727b1c19f71863bcf4",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "7753029",
+              "value": "4328774"
+            },
+            {
+              "key": "4787773",
+              "value": "2734021"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0051.txt"
+        },
+        "llama": {
+          "key": "7753029",
+          "value": "4328774",
+          "tokens": 31738,
+          "sha256": "c96a944945d9aee711fd833d2c3992a58b4bed893155a8431a5d15aefde2503d",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "7753029",
+              "value": "4328774"
+            },
+            {
+              "key": "4787773",
+              "value": "2734021"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0051.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0052",
+      "seed": 1623097051,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "8699219",
+          "value": "7685722",
+          "tokens": 31732,
+          "sha256": "191775cfa0bb3e6f0f1ea9029f24f46b374a2722ad4957bcbed148f35726da06",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "8699219",
+              "value": "7685722"
+            },
+            {
+              "key": "9431906",
+              "value": "6218158"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0052.txt"
+        },
+        "llama": {
+          "key": "8699219",
+          "value": "7685722",
+          "tokens": 31738,
+          "sha256": "b88f61447ca0f2b6418ca597416eecb53ea26293f2baad7eb7ddc487fb23a028",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "8699219",
+              "value": "7685722"
+            },
+            {
+              "key": "9431906",
+              "value": "6218158"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0052.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0053",
+      "seed": 1623097052,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1067763",
+          "value": "3865243",
+          "tokens": 31732,
+          "sha256": "ef714f71fc3ec2449b54a0dcf34b427bdbcf5fe577b29d4c4e932d3a5179a8b9",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "1067763",
+              "value": "3865243"
+            },
+            {
+              "key": "3747549",
+              "value": "4019392"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0053.txt"
+        },
+        "llama": {
+          "key": "1067763",
+          "value": "3865243",
+          "tokens": 31738,
+          "sha256": "40fc85ec2b2bd0137472f12949ebd8e16a7dcc528c146ff0ef30854c13889993",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "1067763",
+              "value": "3865243"
+            },
+            {
+              "key": "3747549",
+              "value": "4019392"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0053.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0054",
+      "seed": 1623097053,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6358777",
+          "value": "8619256",
+          "tokens": 31732,
+          "sha256": "a4c7c9b535e225df7d1405c5e5a9f9b0093024a28ab5c60b84b4ec8af912ab18",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "6358777",
+              "value": "8619256"
+            },
+            {
+              "key": "4899075",
+              "value": "6316655"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0054.txt"
+        },
+        "llama": {
+          "key": "6358777",
+          "value": "8619256",
+          "tokens": 31738,
+          "sha256": "9246cdcfefc8d8db290b5fd994947ded5f6eaa9b4cefc38def378d46f5f56f43",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "6358777",
+              "value": "8619256"
+            },
+            {
+              "key": "4899075",
+              "value": "6316655"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0054.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0055",
+      "seed": 1623097054,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "low",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "4634919",
+          "value": "9332547",
+          "tokens": 31732,
+          "sha256": "9ca758cab0633e4500638784c1f7436980fc907dd2aa5c38e84a458699838dcd",
+          "actual_depth": 0.8986196899029371,
+          "background_sentences": 1318,
+          "records": [
+            {
+              "key": "4634919",
+              "value": "9332547"
+            },
+            {
+              "key": "3135462",
+              "value": "7010097"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0055.txt"
+        },
+        "llama": {
+          "key": "4634919",
+          "value": "9332547",
+          "tokens": 31738,
+          "sha256": "c3d71f4f43e771f5e68876cb905e3d39a0ed39b5b05ad2d6b57e674f4cf761b7",
+          "actual_depth": 0.8993950469468776,
+          "background_sentences": 1319,
+          "records": [
+            {
+              "key": "4634919",
+              "value": "9332547"
+            },
+            {
+              "key": "3135462",
+              "value": "7010097"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0055.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0056",
+      "seed": 1623097055,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "6532878",
+          "value": "1235794",
+          "tokens": 31722,
+          "sha256": "f3820b31244503bcdc77761f1804d05631e33258bbb4eac5e3508ce7738d8d67",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "6532878",
+              "value": "1235794"
+            },
+            {
+              "key": "8809542",
+              "value": "9090769"
+            },
+            {
+              "key": "2167685",
+              "value": "1718875"
+            },
+            {
+              "key": "3480185",
+              "value": "1081271"
+            },
+            {
+              "key": "9840218",
+              "value": "3628788"
+            },
+            {
+              "key": "3372524",
+              "value": "1219582"
+            },
+            {
+              "key": "4509178",
+              "value": "5039618"
+            },
+            {
+              "key": "3058947",
+              "value": "3790049"
+            },
+            {
+              "key": "3598713",
+              "value": "5051670"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0056.txt"
+        },
+        "llama": {
+          "key": "6532878",
+          "value": "1235794",
+          "tokens": 31744,
+          "sha256": "6427a0e03f53af5ad732bf227f5326945999d52e3ce60ab2e7a172c0f8f7a478",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "6532878",
+              "value": "1235794"
+            },
+            {
+              "key": "8809542",
+              "value": "9090769"
+            },
+            {
+              "key": "2167685",
+              "value": "1718875"
+            },
+            {
+              "key": "3480185",
+              "value": "1081271"
+            },
+            {
+              "key": "9840218",
+              "value": "3628788"
+            },
+            {
+              "key": "3372524",
+              "value": "1219582"
+            },
+            {
+              "key": "4509178",
+              "value": "5039618"
+            },
+            {
+              "key": "3058947",
+              "value": "3790049"
+            },
+            {
+              "key": "3598713",
+              "value": "5051670"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0056.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0057",
+      "seed": 1623097056,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5450705",
+          "value": "6787587",
+          "tokens": 31722,
+          "sha256": "fe890777f92c24407edc95fcd7dd42ad12e66285320f81f10a32564273bd4d0c",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5450705",
+              "value": "6787587"
+            },
+            {
+              "key": "5786795",
+              "value": "4126734"
+            },
+            {
+              "key": "9982337",
+              "value": "8922949"
+            },
+            {
+              "key": "5915957",
+              "value": "7601185"
+            },
+            {
+              "key": "9320107",
+              "value": "1049403"
+            },
+            {
+              "key": "7014466",
+              "value": "5700129"
+            },
+            {
+              "key": "8173485",
+              "value": "6549107"
+            },
+            {
+              "key": "1139980",
+              "value": "1083764"
+            },
+            {
+              "key": "9580346",
+              "value": "1527188"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0057.txt"
+        },
+        "llama": {
+          "key": "5450705",
+          "value": "6787587",
+          "tokens": 31744,
+          "sha256": "3d5248833a435c8a557666c4fe8bc3bbd0c72c1be6276775829ee5adcaef5207",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5450705",
+              "value": "6787587"
+            },
+            {
+              "key": "5786795",
+              "value": "4126734"
+            },
+            {
+              "key": "9982337",
+              "value": "8922949"
+            },
+            {
+              "key": "5915957",
+              "value": "7601185"
+            },
+            {
+              "key": "9320107",
+              "value": "1049403"
+            },
+            {
+              "key": "7014466",
+              "value": "5700129"
+            },
+            {
+              "key": "8173485",
+              "value": "6549107"
+            },
+            {
+              "key": "1139980",
+              "value": "1083764"
+            },
+            {
+              "key": "9580346",
+              "value": "1527188"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0057.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0058",
+      "seed": 1623097057,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "1253655",
+          "value": "8736096",
+          "tokens": 31722,
+          "sha256": "9ef2e4672f0404343c53cc4ed4f2fcd5699571072f63e28cabea7b72dc1fa3f7",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "1253655",
+              "value": "8736096"
+            },
+            {
+              "key": "7988121",
+              "value": "8182792"
+            },
+            {
+              "key": "6589128",
+              "value": "5965672"
+            },
+            {
+              "key": "1049029",
+              "value": "5992789"
+            },
+            {
+              "key": "9302726",
+              "value": "9201310"
+            },
+            {
+              "key": "4928510",
+              "value": "7878234"
+            },
+            {
+              "key": "6445801",
+              "value": "1075848"
+            },
+            {
+              "key": "3562837",
+              "value": "6093733"
+            },
+            {
+              "key": "1287633",
+              "value": "2100404"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0058.txt"
+        },
+        "llama": {
+          "key": "1253655",
+          "value": "8736096",
+          "tokens": 31744,
+          "sha256": "52f8878d8734d0c721ad9c06821bca0ffe574e9cb0f0a554f4095f52d9d0a80b",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "1253655",
+              "value": "8736096"
+            },
+            {
+              "key": "7988121",
+              "value": "8182792"
+            },
+            {
+              "key": "6589128",
+              "value": "5965672"
+            },
+            {
+              "key": "1049029",
+              "value": "5992789"
+            },
+            {
+              "key": "9302726",
+              "value": "9201310"
+            },
+            {
+              "key": "4928510",
+              "value": "7878234"
+            },
+            {
+              "key": "6445801",
+              "value": "1075848"
+            },
+            {
+              "key": "3562837",
+              "value": "6093733"
+            },
+            {
+              "key": "1287633",
+              "value": "2100404"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0058.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0059",
+      "seed": 1623097058,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "8895371",
+          "value": "8047534",
+          "tokens": 31722,
+          "sha256": "4d2c0ef8e85c89a45b79fad6b0aed8fc16b535d72e77ba007d8f9c98786fbb6a",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "8895371",
+              "value": "8047534"
+            },
+            {
+              "key": "9946436",
+              "value": "1215711"
+            },
+            {
+              "key": "1504296",
+              "value": "5383466"
+            },
+            {
+              "key": "7166868",
+              "value": "2004821"
+            },
+            {
+              "key": "9625541",
+              "value": "8094929"
+            },
+            {
+              "key": "3561122",
+              "value": "5808935"
+            },
+            {
+              "key": "1088244",
+              "value": "4477304"
+            },
+            {
+              "key": "4168955",
+              "value": "4791125"
+            },
+            {
+              "key": "9264979",
+              "value": "2991395"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0059.txt"
+        },
+        "llama": {
+          "key": "8895371",
+          "value": "8047534",
+          "tokens": 31744,
+          "sha256": "4089c1e86a8338d813a0fc67e63d9939cf24be61d9be0cb1a8bb8cf426cde8ca",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "8895371",
+              "value": "8047534"
+            },
+            {
+              "key": "9946436",
+              "value": "1215711"
+            },
+            {
+              "key": "1504296",
+              "value": "5383466"
+            },
+            {
+              "key": "7166868",
+              "value": "2004821"
+            },
+            {
+              "key": "9625541",
+              "value": "8094929"
+            },
+            {
+              "key": "3561122",
+              "value": "5808935"
+            },
+            {
+              "key": "1088244",
+              "value": "4477304"
+            },
+            {
+              "key": "4168955",
+              "value": "4791125"
+            },
+            {
+              "key": "9264979",
+              "value": "2991395"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0059.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0060",
+      "seed": 1623097059,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "9282620",
+          "value": "5770284",
+          "tokens": 31722,
+          "sha256": "528cb37eaf82138f62623b7d86885e83a175aa754fb3d62cfcd7debda9421efe",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "9282620",
+              "value": "5770284"
+            },
+            {
+              "key": "3461030",
+              "value": "2733044"
+            },
+            {
+              "key": "9984322",
+              "value": "6091524"
+            },
+            {
+              "key": "1324153",
+              "value": "2730754"
+            },
+            {
+              "key": "7311213",
+              "value": "2719729"
+            },
+            {
+              "key": "2654204",
+              "value": "6600431"
+            },
+            {
+              "key": "5602694",
+              "value": "7961981"
+            },
+            {
+              "key": "7031465",
+              "value": "1864500"
+            },
+            {
+              "key": "9456514",
+              "value": "9820388"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0060.txt"
+        },
+        "llama": {
+          "key": "9282620",
+          "value": "5770284",
+          "tokens": 31744,
+          "sha256": "c0fe2cbf05f4d3bfa4b184449a02f04604b2f175171ca9132934b0aff93d6210",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "9282620",
+              "value": "5770284"
+            },
+            {
+              "key": "3461030",
+              "value": "2733044"
+            },
+            {
+              "key": "9984322",
+              "value": "6091524"
+            },
+            {
+              "key": "1324153",
+              "value": "2730754"
+            },
+            {
+              "key": "7311213",
+              "value": "2719729"
+            },
+            {
+              "key": "2654204",
+              "value": "6600431"
+            },
+            {
+              "key": "5602694",
+              "value": "7961981"
+            },
+            {
+              "key": "7031465",
+              "value": "1864500"
+            },
+            {
+              "key": "9456514",
+              "value": "9820388"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0060.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0061",
+      "seed": 1623097060,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5660528",
+          "value": "5076207",
+          "tokens": 31722,
+          "sha256": "5aa4081ca2c55c330c8a4ad563b1494e48b5dae6c68001ba8996a838bb12d98d",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5660528",
+              "value": "5076207"
+            },
+            {
+              "key": "8832992",
+              "value": "6886449"
+            },
+            {
+              "key": "5499413",
+              "value": "4128514"
+            },
+            {
+              "key": "9901735",
+              "value": "5280134"
+            },
+            {
+              "key": "8695502",
+              "value": "6216142"
+            },
+            {
+              "key": "3662429",
+              "value": "4672445"
+            },
+            {
+              "key": "5483115",
+              "value": "6458494"
+            },
+            {
+              "key": "2418114",
+              "value": "2565192"
+            },
+            {
+              "key": "2309518",
+              "value": "4000733"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0061.txt"
+        },
+        "llama": {
+          "key": "5660528",
+          "value": "5076207",
+          "tokens": 31744,
+          "sha256": "3fd7532c42bb52dedc895172f844cd7b331e25e3ee1a3580a8646e86811f7550",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5660528",
+              "value": "5076207"
+            },
+            {
+              "key": "8832992",
+              "value": "6886449"
+            },
+            {
+              "key": "5499413",
+              "value": "4128514"
+            },
+            {
+              "key": "9901735",
+              "value": "5280134"
+            },
+            {
+              "key": "8695502",
+              "value": "6216142"
+            },
+            {
+              "key": "3662429",
+              "value": "4672445"
+            },
+            {
+              "key": "5483115",
+              "value": "6458494"
+            },
+            {
+              "key": "2418114",
+              "value": "2565192"
+            },
+            {
+              "key": "2309518",
+              "value": "4000733"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0061.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0062",
+      "seed": 1623097061,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "5043141",
+          "value": "2336547",
+          "tokens": 31722,
+          "sha256": "aabe743bd3d597270da7c24dc5c3cd939a2b9fec5a21a365272ebb337241525b",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "5043141",
+              "value": "2336547"
+            },
+            {
+              "key": "6789636",
+              "value": "4695741"
+            },
+            {
+              "key": "7672508",
+              "value": "9235690"
+            },
+            {
+              "key": "3738803",
+              "value": "4862013"
+            },
+            {
+              "key": "8350715",
+              "value": "8419638"
+            },
+            {
+              "key": "1913693",
+              "value": "2470626"
+            },
+            {
+              "key": "6766176",
+              "value": "3558545"
+            },
+            {
+              "key": "3468950",
+              "value": "2433291"
+            },
+            {
+              "key": "2099792",
+              "value": "6060819"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0062.txt"
+        },
+        "llama": {
+          "key": "5043141",
+          "value": "2336547",
+          "tokens": 31744,
+          "sha256": "4f44b65d5a3cfa90e248284b5607cf9a793724f51a753c29426aeea8eb885a76",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "5043141",
+              "value": "2336547"
+            },
+            {
+              "key": "6789636",
+              "value": "4695741"
+            },
+            {
+              "key": "7672508",
+              "value": "9235690"
+            },
+            {
+              "key": "3738803",
+              "value": "4862013"
+            },
+            {
+              "key": "8350715",
+              "value": "8419638"
+            },
+            {
+              "key": "1913693",
+              "value": "2470626"
+            },
+            {
+              "key": "6766176",
+              "value": "3558545"
+            },
+            {
+              "key": "3468950",
+              "value": "2433291"
+            },
+            {
+              "key": "2099792",
+              "value": "6060819"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0062.txt"
+        }
+      }
+    },
+    {
+      "id": "synth-v-0063",
+      "seed": 1623097062,
+      "target_tokens": 31744,
+      "depth": 0.9,
+      "interference": "high",
+      "fold": null,
+      "models": {
+        "qwen": {
+          "key": "4128372",
+          "value": "5410942",
+          "tokens": 31722,
+          "sha256": "8c3ffa4488c3224444f09344403f8aba4a54846cbf9e16616ea7e499c67686e2",
+          "actual_depth": 0.8985877309123006,
+          "background_sentences": 1317,
+          "records": [
+            {
+              "key": "4128372",
+              "value": "5410942"
+            },
+            {
+              "key": "5130673",
+              "value": "8932953"
+            },
+            {
+              "key": "7247300",
+              "value": "6341606"
+            },
+            {
+              "key": "5594812",
+              "value": "9595489"
+            },
+            {
+              "key": "9095652",
+              "value": "7761857"
+            },
+            {
+              "key": "6965820",
+              "value": "9694047"
+            },
+            {
+              "key": "9361016",
+              "value": "5525744"
+            },
+            {
+              "key": "4072689",
+              "value": "9349897"
+            },
+            {
+              "key": "5940129",
+              "value": "4643817"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/qwen/synth-v-0063.txt"
+        },
+        "llama": {
+          "key": "4128372",
+          "value": "5410942",
+          "tokens": 31744,
+          "sha256": "4dd04374d8143f3e2107585b5301b684d75519b0fda39c24c7621ce1fe389ce6",
+          "actual_depth": 0.8994140625,
+          "background_sentences": 1321,
+          "records": [
+            {
+              "key": "4128372",
+              "value": "5410942"
+            },
+            {
+              "key": "5130673",
+              "value": "8932953"
+            },
+            {
+              "key": "7247300",
+              "value": "6341606"
+            },
+            {
+              "key": "5594812",
+              "value": "9595489"
+            },
+            {
+              "key": "9095652",
+              "value": "7761857"
+            },
+            {
+              "key": "6965820",
+              "value": "9694047"
+            },
+            {
+              "key": "9361016",
+              "value": "5525744"
+            },
+            {
+              "key": "4072689",
+              "value": "9349897"
+            },
+            {
+              "key": "5940129",
+              "value": "4643817"
+            }
+          ],
+          "path": "research/.runtime/data/phase1-text/retrieval_ruler/llama/synth-v-0063.txt"
+        }
+      }
+    }
+  ]
+}

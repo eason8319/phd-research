@@ -1,0 +1,862 @@
+{
+  "schema": "kv-propagation-review-v1",
+  "reviewed": true,
+  "complete": true,
+  "audit_code_sha256": "a866eaa8a06f931a02a71809a5bfedd309d3d3e9f0812dc78240dff659058a5d",
+  "models": {
+    "qwen": {
+      "conditions": [
+        {
+          "representation": "k8v4-per_token-pre",
+          "h": 0,
+          "n": 8,
+          "mean_kl": 0.0025731164893631423,
+          "mean_final_hidden_rse": 0.004945087815105353,
+          "mean_layer_hidden_rse": [
+            0.004524451499693373,
+            0.003213594809775212,
+            0.002517182576326992,
+            0.002510011519793145,
+            0.002415732951980415,
+            0.0020792977528169216,
+            0.0018342195435960282,
+            0.0016489123204706697,
+            0.001968122793463996,
+            0.0016171993982201495,
+            0.0016270514500617596,
+            0.0018692762522210373,
+            0.0019205176433692295,
+            0.0021225529015241424,
+            0.0019472203512398319,
+            0.002226806540942865,
+            0.0026031749311034038,
+            0.0031281470153386327,
+            0.003590937927507827,
+            0.0034597836805181337,
+            0.003548352587220587,
+            0.003264903288719643,
+            0.0033111419297479155,
+            0.003004223247676824,
+            0.0025126487860958556,
+            0.0022543559790291446,
+            0.001966121159741271,
+            0.004945087815105353
+          ],
+          "reset_n": 7,
+          "reset_normal_mean_kl": 0.114413917463805,
+          "reset_rebuilt_mean_kl": 0.10651373015597139,
+          "reset_recovered_argmax_n": 3,
+          "first_divergence_indices": [
+            5,
+            104,
+            45,
+            24,
+            230,
+            14,
+            148,
+            null
+          ]
+        },
+        {
+          "representation": "k8v4-per_token-post",
+          "h": 0,
+          "n": 8,
+          "mean_kl": 0.002411870274083755,
+          "mean_final_hidden_rse": 0.00543240872046811,
+          "mean_layer_hidden_rse": [
+            0.0045268068327072595,
+            0.003195652564269365,
+            0.0024772327395261905,
+            0.002431257368775637,
+            0.0023416872806237177,
+            0.0020130971951219725,
+            0.0017961817570698322,
+            0.001621342923147226,
+            0.001940011384232634,
+            0.0016064785633034936,
+            0.0016027722536296968,
+            0.0018435262650569038,
+            0.0018907577457046804,
+            0.0020975218118853426,
+            0.0019559594792072964,
+            0.002232474988174243,
+            0.0026552720408040006,
+            0.0031797617186121595,
+            0.0036661811777378463,
+            0.003504749784771532,
+            0.003695822955167049,
+            0.003452652129897494,
+            0.0036671084569109874,
+            0.0034536379904020233,
+            0.002953517560511916,
+            0.0025763633681583817,
+            0.002145985509599968,
+            0.005432408720468111
+          ],
+          "reset_n": 8,
+          "reset_normal_mean_kl": 0.011239081592066213,
+          "reset_rebuilt_mean_kl": 0.006868622624097043,
+          "reset_recovered_argmax_n": 4,
+          "first_divergence_indices": [
+            5,
+            85,
+            45,
+            24,
+            377,
+            14,
+            11,
+            72
+          ]
+        },
+        {
+          "representation": "k8v4-per_channel-pre",
+          "h": 8,
+          "n": 8,
+          "mean_kl": 0.004955537511188252,
+          "mean_final_hidden_rse": 0.0030190708373702756,
+          "mean_layer_hidden_rse": [
+            0.002383378539485091,
+            0.0016181977396437627,
+            0.001192927956988431,
+            0.001049686595539728,
+            0.0009864379497072286,
+            0.0008474253426267031,
+            0.0007487462997461543,
+            0.0006539817919128605,
+            0.0008681139472999804,
+            0.0007089518476130761,
+            0.000749170314776397,
+            0.0008956363474934405,
+            0.0008922315961924446,
+            0.0009785432480906146,
+            0.0009954845498219903,
+            0.0011425576578408738,
+            0.0014423665640420102,
+            0.0017087464848708428,
+            0.001840898321694341,
+            0.0017890627826270401,
+            0.0018674974238834085,
+            0.0017130083444519965,
+            0.0019283452581485012,
+            0.0018648625566516322,
+            0.0015549408276692603,
+            0.0013428580732285215,
+            0.0011761049740719983,
+            0.0030190708373702756
+          ],
+          "reset_n": 6,
+          "reset_normal_mean_kl": 0.5684845473151654,
+          "reset_rebuilt_mean_kl": 0.20474995616791603,
+          "reset_recovered_argmax_n": 2,
+          "first_divergence_indices": [
+            5,
+            59,
+            23,
+            null,
+            null,
+            405,
+            148,
+            72
+          ]
+        }
+      ],
+      "historical_bf16_matches": 4,
+      "max_peak_reserved_bytes": 24050139136,
+      "max_peak_allocated_bytes": 22550820864,
+      "total_decode_steps": 1685,
+      "device_names": [
+        "NVIDIA GeForce RTX 4090"
+      ]
+    },
+    "llama": {
+      "conditions": [
+        {
+          "representation": "k8v4-per_token-pre",
+          "h": 0,
+          "n": 8,
+          "mean_kl": 0.0010140177900045107,
+          "mean_final_hidden_rse": 0.003959630736351339,
+          "mean_layer_hidden_rse": [
+            0.0009317904974938777,
+            0.0017633732734753066,
+            0.001831856041551372,
+            0.0020422279947900223,
+            0.002250779665034307,
+            0.002426034657844385,
+            0.0026084722743386366,
+            0.003004969531501777,
+            0.003275148495448717,
+            0.0034804068958405178,
+            0.004011145043214592,
+            0.004250946886770029,
+            0.0046915243594004225,
+            0.004728772333667215,
+            0.0047359075511044174,
+            0.004423282301624334,
+            0.004280367869911953,
+            0.004005637180460563,
+            0.003746783366691316,
+            0.0036713207038645036,
+            0.0037352479540396404,
+            0.003586485094858721,
+            0.003519281161544069,
+            0.003417172844997215,
+            0.0034845435419155572,
+            0.0035227047317182123,
+            0.0036544507152073543,
+            0.003483056370870878,
+            0.0031939436447008945,
+            0.0032868946045807885,
+            0.002899646223481113,
+            0.003959630736351339
+          ],
+          "reset_n": 4,
+          "reset_normal_mean_kl": 0.01275416964199394,
+          "reset_rebuilt_mean_kl": 0.004138721555179359,
+          "reset_recovered_argmax_n": 1,
+          "first_divergence_indices": [
+            null,
+            null,
+            null,
+            null,
+            24,
+            16,
+            15,
+            12
+          ]
+        },
+        {
+          "representation": "k8v4-per_token-post",
+          "h": 0,
+          "n": 8,
+          "mean_kl": 0.0010997200035176066,
+          "mean_final_hidden_rse": 0.0036693420262155566,
+          "mean_layer_hidden_rse": [
+            0.0009312350907996078,
+            0.0017692996588787213,
+            0.0018360748287863167,
+            0.002037256616991762,
+            0.0022434417134947473,
+            0.002423725194322969,
+            0.0026015536155913335,
+            0.002993413246327176,
+            0.0032250727009140983,
+            0.0033888740820210155,
+            0.003752680832494833,
+            0.003777240890711262,
+            0.0040581232968077575,
+            0.004048671681922804,
+            0.003987669976638165,
+            0.003642806308545259,
+            0.003562000469982218,
+            0.0032651326215268183,
+            0.0029625798326641467,
+            0.0029260979086472793,
+            0.0029548816964008245,
+            0.002813701875138465,
+            0.002754537604020626,
+            0.0026952482262748018,
+            0.0027613473637100013,
+            0.002811032591842075,
+            0.002857003487789636,
+            0.002770872159240307,
+            0.0026026754751225815,
+            0.00275484076897886,
+            0.0025068069058988614,
+            0.0036693420262155566
+          ],
+          "reset_n": 4,
+          "reset_normal_mean_kl": 0.013689952087588608,
+          "reset_rebuilt_mean_kl": 0.0037480510072782636,
+          "reset_recovered_argmax_n": 2,
+          "first_divergence_indices": [
+            null,
+            null,
+            null,
+            null,
+            41,
+            16,
+            15,
+            12
+          ]
+        },
+        {
+          "representation": "k8v4-per_channel-pre",
+          "h": 8,
+          "n": 8,
+          "mean_kl": 0.0007799356643976524,
+          "mean_final_hidden_rse": 0.0018845666623130775,
+          "mean_layer_hidden_rse": [
+            0.00010708344105516483,
+            0.00022184944273646374,
+            0.00041489867427271196,
+            0.0005525562663443714,
+            0.0007177249793758776,
+            0.001117895936015386,
+            0.0011819599732448018,
+            0.0013226265002831633,
+            0.0014992209736150563,
+            0.0015545057449249816,
+            0.0018682237367935273,
+            0.0018281962503476727,
+            0.0018534133509576574,
+            0.0023947620564314888,
+            0.002399893886931637,
+            0.002317394672594379,
+            0.0022291954457270002,
+            0.0021926041126816365,
+            0.002098177449605086,
+            0.002125797164510197,
+            0.0021908940188885336,
+            0.0021703093242204465,
+            0.0021603138680437632,
+            0.002133696196090353,
+            0.002205730356346049,
+            0.0022651767214711027,
+            0.002383742451077466,
+            0.0023052462805613467,
+            0.0020865137731615082,
+            0.0021130798819935983,
+            0.0017873033843135956,
+            0.0018845666623130775
+          ],
+          "reset_n": 3,
+          "reset_normal_mean_kl": 0.009640097307662169,
+          "reset_rebuilt_mean_kl": 0.004833171376958489,
+          "reset_recovered_argmax_n": 1,
+          "first_divergence_indices": [
+            null,
+            null,
+            10,
+            null,
+            41,
+            16,
+            null,
+            null
+          ]
+        }
+      ],
+      "historical_bf16_matches": 7,
+      "max_peak_reserved_bytes": 24868028416,
+      "max_peak_allocated_bytes": 24017165824,
+      "total_decode_steps": 812,
+      "device_names": [
+        "NVIDIA GeForce RTX 4090"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/qwen/trajectories.json",
+      "sha256": "10b08873e97e19dec205775128544b37f446a901f85c3ef86ac63b434fdf2a7e"
+    },
+    {
+      "path": "research/phase1/experiments/generation_error_sources/results/llama/trajectories.json",
+      "sha256": "31269f5d0a4a446df75226ec122d57217b008bac6225b4fd3d3e019ef0386b32"
+    }
+  ],
+  "answer_extracts": {
+    "qwen": [
+      {
+        "id": "5ae7fd085542993210984007",
+        "task": "hotpot",
+        "question": "Who was President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris?",
+        "gold": "Barack Obama",
+        "bf16_final": "Barack Obama",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 20.0,
+            "final": "President Barack Obama was the President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 21.052631578947366,
+            "final": "Barack Obama was the President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 21.052631578947366,
+            "final": "Barack Obama was the President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris."
+          }
+        ]
+      },
+      {
+        "id": "5ac1ff2255429964131be2b3",
+        "task": "hotpot",
+        "question": "In the 2011 census what was the population of suburban area in which BA Connect is headquartered ?",
+        "gold": "26,788",
+        "bf16_final": "The population of the suburban area in which BA Connect is headquartered, Didsbury, was 26,788 in the 2011 census.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 0.0,
+            "final": "The exact population of Didsbury, the suburb where BA Connect is headquartered, is not provided in the given information."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 21.052631578947366,
+            "final": "The population of the suburban area in which BA Connect is headquartered, according to the 2011 census, was 26,788."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 21.052631578947366,
+            "final": "The population of the suburban area in which BA Connect is headquartered (Didsbury) in the 2011 census was 26,788."
+          }
+        ]
+      },
+      {
+        "id": "5a7ef49a5542994959419a91",
+        "task": "hotpot",
+        "question": "When was the eighth season renewed for the series starring Al Harrington?",
+        "gold": "March 23, 2017",
+        "bf16_final": "March 23, 2017",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100.0,
+            "final": "March 23, 2017."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100.0,
+            "final": "March 23, 2017."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 33.33333333333333,
+            "final": "March 25, 2016"
+          }
+        ]
+      },
+      {
+        "id": "5a738b855542992d56e7e363",
+        "task": "hotpot",
+        "question": "Which hospital opened first, St. Elizabeths Hospital or Providence Hospital?",
+        "gold": "St. Elizabeths Hospital",
+        "bf16_final": "St. Elizabeths Hospital opened first.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 75.0,
+            "final": "St. Elizabeths Hospital opened first."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 75.0,
+            "final": "St. Elizabeths Hospital opened first."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 75.0,
+            "final": "St. Elizabeths Hospital opened first."
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2131",
+        "task": "gsm8k",
+        "question": "How many right triangles with a height of 2 inches and a width of two inches could fit inside a square with 2-inch sides?",
+        "gold": "2",
+        "bf16_final": "#### #### 2",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### #### 2"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "2"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### #### 2"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2684",
+        "task": "gsm8k",
+        "question": "A state fair charges $5 for a ticket. Two-thirds of the people who buy a ticket will buy deep-fried fair food for $8, one quarter will go on a ride for $4, and one eighth will spend $15 on a souvenir. The fair made $2520 from tickets. How many dollars did they make in all?",
+        "gold": "6657",
+        "bf16_final": "#### 6657",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### 6657"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 6657"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 0,
+            "final": "######_6657"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2887",
+        "task": "gsm8k",
+        "question": "Cara is at her family reunion, where she discovers that she is 20 years younger than her mom.  Her mom is 15 years younger than Cara's Grandmother. If Cara's grandmother is 75, how old is Cara?",
+        "gold": "40",
+        "bf16_final": "#### 40",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### ###### 40"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 40"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### ###### 40"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-1",
+        "task": "gsm8k",
+        "question": "Weng earns $12 an hour for babysitting. Yesterday, she just did 50 minutes of babysitting. How much did she earn?",
+        "gold": "10",
+        "bf16_final": "#### 10",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### 10"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 10"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### 10"
+          }
+        ]
+      }
+    ],
+    "llama": [
+      {
+        "id": "5ae7fd085542993210984007",
+        "task": "hotpot",
+        "question": "Who was President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris?",
+        "gold": "Barack Obama",
+        "bf16_final": "Barack Obama.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100.0,
+            "final": "Barack Obama."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100.0,
+            "final": "Barack Obama."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100.0,
+            "final": "Barack Obama."
+          }
+        ]
+      },
+      {
+        "id": "5ac1ff2255429964131be2b3",
+        "task": "hotpot",
+        "question": "In the 2011 census what was the population of suburban area in which BA Connect is headquartered ?",
+        "gold": "26,788",
+        "bf16_final": "26,788.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100.0,
+            "final": "26,788."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100.0,
+            "final": "26,788."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100.0,
+            "final": "26,788."
+          }
+        ]
+      },
+      {
+        "id": "5a7ef49a5542994959419a91",
+        "task": "hotpot",
+        "question": "When was the eighth season renewed for the series starring Al Harrington?",
+        "gold": "March 23, 2017",
+        "bf16_final": "The eighth season of the series \"Hawaii Five-0\" was renewed on March 23, 2017.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 37.5,
+            "final": "The eighth season of the series \"Hawaii Five-0\" was renewed on March 23, 2017."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 37.5,
+            "final": "The eighth season of the series \"Hawaii Five-0\" was renewed on March 23, 2017."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 0.0,
+            "final": "The eighth season of the series \"Scrubs\" was renewed for the series starring Zach Braff, not Al Harrington."
+          }
+        ]
+      },
+      {
+        "id": "5a738b855542992d56e7e363",
+        "task": "hotpot",
+        "question": "Which hospital opened first, St. Elizabeths Hospital or Providence Hospital?",
+        "gold": "St. Elizabeths Hospital",
+        "bf16_final": "St. Elizabeths Hospital.",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100.0,
+            "final": "St. Elizabeths Hospital."
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100.0,
+            "final": "St. Elizabeths Hospital."
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100.0,
+            "final": "St. Elizabeths Hospital."
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2131",
+        "task": "gsm8k",
+        "question": "How many right triangles with a height of 2 inches and a width of two inches could fit inside a square with 2-inch sides?",
+        "gold": "2",
+        "bf16_final": "#### 2",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### 2"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 2"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### 2"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2684",
+        "task": "gsm8k",
+        "question": "A state fair charges $5 for a ticket. Two-thirds of the people who buy a ticket will buy deep-fried fair food for $8, one quarter will go on a ride for $4, and one eighth will spend $15 on a souvenir. The fair made $2520 from tickets. How many dollars did they make in all?",
+        "gold": "6657",
+        "bf16_final": "#### 4137",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### 6657"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 6657"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### 6657"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-2887",
+        "task": "gsm8k",
+        "question": "Cara is at her family reunion, where she discovers that she is 20 years younger than her mom.  Her mom is 15 years younger than Cara's Grandmother. If Cara's grandmother is 75, how old is Cara?",
+        "gold": "40",
+        "bf16_final": "#### 40",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 0,
+            "final": "#### 70"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 0,
+            "final": "#### 70"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### 40"
+          }
+        ]
+      },
+      {
+        "id": "gsm8k-train-1",
+        "task": "gsm8k",
+        "question": "Weng earns $12 an hour for babysitting. Yesterday, she just did 50 minutes of babysitting. How much did she earn?",
+        "gold": "10",
+        "bf16_final": "#### 10",
+        "candidates": [
+          {
+            "representation": "k8v4-per_token-pre",
+            "h": 0,
+            "score": 100,
+            "final": "#### 10"
+          },
+          {
+            "representation": "k8v4-per_token-post",
+            "h": 0,
+            "score": 100,
+            "final": "#### 10"
+          },
+          {
+            "representation": "k8v4-per_channel-pre",
+            "h": 8,
+            "score": 100,
+            "final": "#### 10"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": {
+    "gsm8k/gsm8k-train-2131": {
+      "task": "gsm8k",
+      "id": "gsm8k-train-2131",
+      "question": "How many right triangles with a height of 2 inches and a width of two inches could fit inside a square with 2-inch sides?",
+      "standard_answer": "A triangle with a height of 2 inches and width of 2 inches has an area of 2 square inches because (1/2) x 2 x 2 = <<(1/2)*2*2=2>>2\nThe square has an area of 4 square inches because 2 x 2 = <<2*2=4>>4\n2 triangles would fit because 4 / 2 = <<4/2=2>>2\n#### 2",
+      "dataset_source": "research/manifests/data/gsm8k.source.json",
+      "source_row": 2131
+    },
+    "gsm8k/gsm8k-train-2684": {
+      "task": "gsm8k",
+      "id": "gsm8k-train-2684",
+      "question": "A state fair charges $5 for a ticket. Two-thirds of the people who buy a ticket will buy deep-fried fair food for $8, one quarter will go on a ride for $4, and one eighth will spend $15 on a souvenir. The fair made $2520 from tickets. How many dollars did they make in all?",
+      "standard_answer": "The fair made $2520 from tickets, so they had 2520 / 5 = <<2520/5=504>>504 people attend the fair.\nTwo-thirds of those people will buy food, so 504 * 2 / 3 = <<504*2/3=336>>336 people will buy food.\nThe fair will make 336 * 8 = $<<336*8=2688>>2688 from food.\nA quarter of the people will go on a ride, so 504 / 4 = <<504/4=126>>126 people will go on a ride.\nThe fair will make 126 * 4 = $<<126*4=504>>504 from rides.\nAn eighth of the people will buy a souvenir, so 504 / 8 = <<504/8=63>>63 people will buy souvenirs.\nThe fair will make 63 * 15 = $<<63*15=945>>945 from souvenirs.\nIn all, the fair will make 2520 + 2688 + 504 + 945 = $<<2520+2688+504+945=6657>>6657.\n#### 6657",
+      "dataset_source": "research/manifests/data/gsm8k.source.json",
+      "source_row": 2684
+    },
+    "gsm8k/gsm8k-train-2887": {
+      "task": "gsm8k",
+      "id": "gsm8k-train-2887",
+      "question": "Cara is at her family reunion, where she discovers that she is 20 years younger than her mom.  Her mom is 15 years younger than Cara's Grandmother. If Cara's grandmother is 75, how old is Cara?",
+      "standard_answer": "Cara's mom: 75-15=<<75-15=60>>60 years old\nCara: 60-20=<<60-20=40>>40 years old\n#### 40",
+      "dataset_source": "research/manifests/data/gsm8k.source.json",
+      "source_row": 2887
+    },
+    "gsm8k/gsm8k-train-1": {
+      "task": "gsm8k",
+      "id": "gsm8k-train-1",
+      "question": "Weng earns $12 an hour for babysitting. Yesterday, she just did 50 minutes of babysitting. How much did she earn?",
+      "standard_answer": "Weng earns 12/60 = $<<12/60=0.2>>0.2 per minute.\nWorking 50 minutes, she earned 0.2 x 50 = $<<0.2*50=10>>10.\n#### 10",
+      "dataset_source": "research/manifests/data/gsm8k.source.json",
+      "source_row": 1
+    },
+    "hotpot/5ae7fd085542993210984007": {
+      "task": "hotpot",
+      "id": "5ae7fd085542993210984007",
+      "question": "Who was President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris?",
+      "standard_answer": "Barack Obama",
+      "dataset_source": "research/manifests/data/hotpotqa.source.json",
+      "source_row": 6919
+    },
+    "hotpot/5ac1ff2255429964131be2b3": {
+      "task": "hotpot",
+      "id": "5ac1ff2255429964131be2b3",
+      "question": "In the 2011 census what was the population of suburban area in which BA Connect is headquartered ?",
+      "standard_answer": "26,788",
+      "dataset_source": "research/manifests/data/hotpotqa.source.json",
+      "source_row": 1577
+    },
+    "hotpot/5a7ef49a5542994959419a91": {
+      "task": "hotpot",
+      "id": "5a7ef49a5542994959419a91",
+      "question": "When was the eighth season renewed for the series starring Al Harrington?",
+      "standard_answer": "March 23, 2017",
+      "dataset_source": "research/manifests/data/hotpotqa.source.json",
+      "source_row": 4856
+    },
+    "hotpot/5a738b855542992d56e7e363": {
+      "task": "hotpot",
+      "id": "5a738b855542992d56e7e363",
+      "question": "Which hospital opened first, St. Elizabeths Hospital or Providence Hospital?",
+      "standard_answer": "St. Elizabeths Hospital",
+      "dataset_source": "research/manifests/data/hotpotqa.source.json",
+      "source_row": 4621
+    }
+  }
+}

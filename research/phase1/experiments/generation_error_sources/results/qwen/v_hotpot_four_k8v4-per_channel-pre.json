@@ -1,0 +1,665 @@
+{
+  "protocol": "phase1-four-question-long-decode",
+  "commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+  "model": "qwen",
+  "config": "k8v4-per_channel-pre",
+  "task": "v-hotpot_four",
+  "n": 16,
+  "rows": [
+    {
+      "id": "hotpot-four-v-00",
+      "input_tokens": 31742,
+      "input_sha256": "68c93906c37c7a54cd5495977b53e37c3078570869cd1e009022d20a952c9367",
+      "new_tokens": 500,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Sturt",
+        "Discover Pure Energy",
+        "The Wolfhounds",
+        "the Big 12 Conference"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 0,
+        "text_sha256": "837b20afc0e3928a7cb1b01f7e1043eaffa8d1bb56d4eb0c74e4a0bc7ffc34a8"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-01",
+      "input_tokens": 31720,
+      "input_sha256": "99843a4a59d17dce9b7af133dd666fd807c76ced77e76e7d8177c045d2eda9bb",
+      "new_tokens": 491,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "1982",
+        "Andre Agassi",
+        "Mexico",
+        "Neville Chamberlain"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 1,
+        "text_sha256": "d839bf3793dc7fccccc3d91752b21aa23decd3d6e084348822ccda99ea4ba632"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-02",
+      "input_tokens": 31707,
+      "input_sha256": "42ea804a12695c30287665f05e0b5e5a2460c2af8cd0a505b7ae880df3214d62",
+      "new_tokens": 691,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "President Obama was the President of the United States when Jennifer Hunt served under Secretary of Labor Seth Harris.",
+        "The Dukes of Hazzard was inspired by the 1975 film starring James Mitchum.",
+        "Billy Idol is younger than Kenny Greene.",
+        "Uyoku dantai falls under far-right politics, characterized by extreme nationalist, and nativist ideologies, as well as authoritarian tendencies."
+      ],
+      "answer_f1": [
+        10.526315789473683,
+        30.76923076923077,
+        44.44444444444444,
+        19.047619047619047
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 26.196902512691988,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 2,
+        "text_sha256": "9fd97b0f57896d824142d60ddf98e9ab0ff1dc669e000ba3c0aef82566d6e94d"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-03",
+      "input_tokens": 31707,
+      "input_sha256": "fbf0ec788623ea18437cac6934616e6708ef20231dae663d8f33a7be4d700d37",
+      "new_tokens": 870,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "A chalk quarry.",
+        "The Dundee Canal.",
+        "2000.",
+        "Yes."
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 3,
+        "text_sha256": "6f8f68ace5b8602b830cc8d1db17b614fe6b9e93aa7eb4cfeb8765a9426fe158"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-04",
+      "input_tokens": 31632,
+      "input_sha256": "bc85131258f206566a381e3fcd8767b7c0f52a89dda48000615ada8f0b4c2a24",
+      "new_tokens": 1000,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 4,
+        "text_sha256": "e41ad92193df5cd8a90c3bcfdf94fc1c961308a5b90018006f9ded7656834f15"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-05",
+      "input_tokens": 31713,
+      "input_sha256": "ac113364599349d552730765e609b709ffbeac1fd642d72e0c7c0faa4dbd0b6d",
+      "new_tokens": 292,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Henry Fielding",
+        "Shohola Falls",
+        "Jefferson Memorial",
+        "1916"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 5,
+        "text_sha256": "8a8cb0f90201763989f0a4071629fc3f9a94660cf332a41bfd53ab1298dbe61f"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-06",
+      "input_tokens": 31691,
+      "input_sha256": "0264eb50f4c00d494dc8decd388c95e65844693f7945453dce8404daaf8a9b44",
+      "new_tokens": 354,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "The Farming Game was published first.",
+        "Thirukkalacherry is a village in the town of Tharangambadi.",
+        "Richard Ford was born in 1944.",
+        "Orcs were added to a Tilted Mill Entertainment video game in 2009."
+      ],
+      "answer_f1": [
+        57.142857142857146,
+        25.0,
+        28.571428571428566,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 27.678571428571427,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 6,
+        "text_sha256": "fbd5297dba0335d7b723a806dff58294ae5c4aa8f31f7f19fec5414615f23850"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-07",
+      "input_tokens": 31720,
+      "input_sha256": "ef4591014f7973e1a9fc62a34f80d3208276459ced4090075038103b08b0aeb5",
+      "new_tokens": 682,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Rob Thomas.",
+        "Ray Wert was responsible for working as a senior staffer for Jennifer Granholm during her tenure as Governor of Michigan.",
+        "Brazil.",
+        "2011."
+      ],
+      "answer_f1": [
+        0.0,
+        19.047619047619047,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 29.761904761904763,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 7,
+        "text_sha256": "18f99c2df9799c8df8931aea941feff44b7e38f10a440ca9c289dc2b3516bdba"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-08",
+      "input_tokens": 31709,
+      "input_sha256": "4593ffb1f05f2a52e519c879418e33049921110a25ed48b4bb6f4f1427157bd3",
+      "new_tokens": 345,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Wes Unseld",
+        "Texas's 27th congressional district",
+        "Daniil Shafran",
+        "over 210,000 residents"
+      ],
+      "answer_f1": [
+        40.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 85.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 8,
+        "text_sha256": "ab08d5c2d07de9d12a4d43f0ab36c844827c885f92ce2256b6759b93203571f6"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-09",
+      "input_tokens": 31707,
+      "input_sha256": "0b7cb5ec0a438103472c065c28c5299cfa91145821ef896e343bb1775a882114",
+      "new_tokens": 291,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Carsten Olsen died after Sørensen.",
+        "Pierre Womé was born first.",
+        "1972.",
+        "Second French Empire."
+      ],
+      "answer_f1": [
+        0.0,
+        49.99999999999999,
+        100.0,
+        66.66666666666666
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 54.166666666666664,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 9,
+        "text_sha256": "493c3270df58d83444af05af658f41796091f7ed372d2e8813c79c157847695f"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-10",
+      "input_tokens": 31740,
+      "input_sha256": "5dba64dce5a003e9eb66cf6238c8ed40600ced0031d43ec1718502d8bee1d97a",
+      "new_tokens": 536,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "\"Quando m'en vo'\" is from \"La bohème\", which was composed by Giacomo Puccini.",
+        "David Walker, the father of Edward Garrison Walker, lived in Boston, Massachusetts when he wrote \"An Appeal to the Coloured Citizens of the World\".",
+        "Shengzhou has more former names than Linchuan District because Shengzhou was formerly known as Shengxian or Sheng County, while Linchuan District does not have any mentioned former names.",
+        "The 2011 census population of the suburban area in which BA Connect is headquartered was 26,788."
+      ],
+      "answer_f1": [
+        25.0,
+        9.523809523809524,
+        0.0,
+        23.529411764705884
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 14.513305322128852,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 10,
+        "text_sha256": "2ebc7657b4aef92be642408cc8a755b9b855ff7915b11360ac21aeb7ad14b48c"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-11",
+      "input_tokens": 31733,
+      "input_sha256": "ae5dd97a4d469c911ee88674cf8b557f2e82db94c045ec3755eaf94f161d7665",
+      "new_tokens": 475,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Las Vegas",
+        "the Mediterranean Sea",
+        "Cate Blanchett",
+        "2010"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        40.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 51.66666666666667,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 11,
+        "text_sha256": "48ec66f79322b9b06f44de71c42e03abef83af9a0e247bb9a13cc9df6cdad3ac"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-12",
+      "input_tokens": 31699,
+      "input_sha256": "dc03a303e7a8951c5354e6ca9bcc79f14beb4fd01459d2af59aab93aed1c7467",
+      "new_tokens": 444,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "Rawlings sponsors the award Alex Rodriguez won two of.",
+        "No, both documentaries were not released in the same year.",
+        "Veda Hlubinka-Cook may have been involved in the development of The Last Express indirectly through her role as a co-founder of Metaweb.",
+        "Wendell Berry."
+      ],
+      "answer_f1": [
+        22.22222222222222,
+        20.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 35.55555555555556,
+      "em": false,
+      "answer_em_percent": 25,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 12,
+        "text_sha256": "216ba129758bc4ad5b84b99afb8b0d88adc6f8dac0cffc219dfa8756c12204dd"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-13",
+      "input_tokens": 31728,
+      "input_sha256": "48c618df9425972cb1999a1f2d4b378676e03cbe98ad245306420adcc756e8c1",
+      "new_tokens": 556,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552090112,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 13,
+        "text_sha256": "87a01ba48cb294df72544591e5303b6d385fb193cc50b3ae042ea7c170533fc6"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-14",
+      "input_tokens": 31743,
+      "input_sha256": "f866fd04ceff9171fba79ee7141382bfa7229be8b31307455a4db247eadb796e",
+      "new_tokens": 476,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552275456,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 14,
+        "text_sha256": "70327abf92e9fc523f3bd385d1b57e61a138cecad6d8a8d2cabdac0240512c09"
+      },
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-v-15",
+      "input_tokens": 31729,
+      "input_sha256": "edd7e478a3882f72c409ff5c468cf2ef889abc1a5611d281cf768b35491043d2",
+      "new_tokens": 415,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "memory_peak_allocated_bytes": 22552275456,
+      "memory_peak_reserved_bytes": 24014487552,
+      "extracted_answers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 4,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "prediction_source": {
+        "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+        "index": 15,
+        "text_sha256": "ddb270d6d055c2babb02ce0af4c51f3559da42f2e15ea839368a6aec3815e05d"
+      },
+      "input_identity_source": "recorded"
+    }
+  ],
+  "calibration_commit": "6ca63fd",
+  "invalid_samples": 0,
+  "execution_source": {
+    "base_commit": "56213c3a8be75e571538e8d255eef9e760ae38dd",
+    "files": {
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "c42521f4638ca082c485bd9695b270886827cc6282f8cb945301732e90ffb13a",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "10880298f24edb059169034a2fac23e62a924a3ebe42b4cf5970955797ebf953",
+      "research/phase1/src/phase1/runner.py": "8d2181dbdf3c884ebcf6ab6e85f4131731d675bc3f2b95a4c47e93851d1f16f2",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/configs/retrieval.json": "734ded29cd423d07508d823dbe8939bddf818f518aca932d44e4145bd2b6d10b",
+      "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/configs/long_decode.json": "298b580d54bcf448689e0824b410561748a7bc7f0932cef414b323ff7ea85504",
+      "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+      "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/phase1/configs/quality.md": "e9d1d264992760ae3663d3e1b33657ce29a5c55091d605e60a242b1e8bc25ea4",
+      "research/phase1/guide.md": "e5de92d196efde28ec27395f8e48a9899b88fe458c87eb2b77880ea83634ba68"
+    },
+    "scope": "new-input three candidates, offline pre H=0, plus kv8",
+    "planned_new_generations": 800
+  },
+  "execution_device": {
+    "name": "NVIDIA RTX 6000 Ada Generation",
+    "total_bytes": 51002867712,
+    "torch_version": "2.5.1+cu121",
+    "cuda_version": "12.1"
+  },
+  "prediction_source": {
+    "path": "research/.runtime/generation-qwen-hotpot_four-v-k8v4-per_channel-pre.json",
+    "sha256": "7484a23a1323c693f863cbfc12c7fa9d7630642da827bd0356c47cad9c597651"
+  },
+  "statistical_unit": "request",
+  "questions_per_request": 4,
+  "n_questions": 64,
+  "em": 12.5,
+  "f1": 43.40872330713662,
+  "answer_em": 32.8125,
+  "missing_answers": 16,
+  "result_format_version": 1,
+  "residual_bits": 0,
+  "residual_tokens": 0
+}

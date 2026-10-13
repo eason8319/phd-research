@@ -1,8 +1,15 @@
 {
-  "protocol": "phase1-protocol v7",
-  "commit": "435e205",
+  "protocol": "phase1-full-key-retrieval",
+  "commit": "6abde3269299475a21d6b2d566e26dc9927fb70a",
   "model": "qwen",
   "e1_commit": "6ca63fd",
+  "candidate_policy": "all-k8v4-representations",
+  "representation_candidates": [
+    "k8v4-per_channel-pre",
+    "k8v4-per_channel-post",
+    "k8v4-per_token-pre",
+    "k8v4-per_token-post"
+  ],
   "h": 0,
   "baseline_usable": {
     "gsm8k": true,
@@ -41,6 +48,34 @@
   },
   "cells": {
     "gsm8k": {
+      "k8v4-per_channel-pre": {
+        "score": 92.1875,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -1.5625,
+          "lower": -9.561195761895199,
+          "upper": 6.598122286219151,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
       "k8v4-per_channel-post": {
         "score": 89.0625,
         "invalid_samples": 0,
@@ -69,36 +104,92 @@
         "state": "证据不足",
         "class_unit_passes": false
       },
-      "kv4-per_channel-pre": {
-        "score": 87.5,
+      "k8v4-per_token-pre": {
+        "score": 92.1875,
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": 3.125,
-          "lower": -8.8114122917227,
-          "upper": 14.41597615845572,
+          "estimate": -1.5625,
+          "lower": -9.561195761895199,
+          "upper": 6.598122286219151,
           "kind": "binary",
           "n": 64,
           "detail": {
-            "degrade": 3,
+            "degrade": 0,
             "improve": 1
           }
         },
         "versus_kv8": {
-          "estimate": 6.25,
-          "lower": -5.219168108095118,
-          "upper": 16.64468309709648,
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
           "kind": "binary",
           "n": 64,
           "detail": {
-            "degrade": 4,
+            "degrade": 1,
             "improve": 0
           }
         },
         "state": "证据不足",
-        "class_unit_passes": false
+        "class_unit_passes": true
+      },
+      "k8v4-per_token-post": {
+        "score": 92.1875,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": -1.5625,
+          "lower": -9.561195761895199,
+          "upper": 6.598122286219151,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 0,
+            "improve": 1
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.5625,
+          "lower": -6.598122286219151,
+          "upper": 9.561195761895199,
+          "kind": "binary",
+          "n": 64,
+          "detail": {
+            "degrade": 1,
+            "improve": 0
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": true
       }
     },
     "hotpot": {
+      "k8v4-per_channel-pre": {
+        "score": 44.45587842981052,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 5.774625221200483,
+          "lower": -3.206756630963909,
+          "upper": 15.040692554057484,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 1.8573311474045373,
+          "lower": -7.336018050856591,
+          "upper": 11.293515814309025,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
+        "class_unit_passes": false
+      },
       "k8v4-per_channel-post": {
         "score": 26.736749478192287,
         "invalid_samples": 0,
@@ -127,13 +218,13 @@
         "state": "淘汰",
         "class_unit_passes": false
       },
-      "kv4-per_channel-pre": {
-        "score": 33.674447465308866,
+      "k8v4-per_token-pre": {
+        "score": 49.321726509540696,
         "invalid_samples": 0,
         "versus_bf16": {
-          "estimate": 16.55605618570214,
-          "lower": 7.464263486383606,
-          "upper": 26.21875922786862,
+          "estimate": 0.9087771414703227,
+          "lower": -4.421693957868158,
+          "upper": 6.4373629517826085,
           "kind": "bootstrap",
           "n": 64,
           "detail": {
@@ -142,9 +233,9 @@
           }
         },
         "versus_kv8": {
-          "estimate": 12.638762111906193,
-          "lower": 3.2335896005892812,
-          "upper": 22.407498671549607,
+          "estimate": -3.008516932325624,
+          "lower": -9.675644911561932,
+          "upper": 3.7800029311749306,
           "kind": "bootstrap",
           "n": 64,
           "detail": {
@@ -152,12 +243,40 @@
             "seed": 20260923
           }
         },
-        "state": "淘汰",
+        "state": "证据不足",
+        "class_unit_passes": true
+      },
+      "k8v4-per_token-post": {
+        "score": 45.82903825026269,
+        "invalid_samples": 0,
+        "versus_bf16": {
+          "estimate": 4.40146540074833,
+          "lower": -2.585058907190424,
+          "upper": 11.485064257657308,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "versus_kv8": {
+          "estimate": 0.48417132695238196,
+          "lower": -5.7912295665951445,
+          "upper": 6.872478384999313,
+          "kind": "bootstrap",
+          "n": 64,
+          "detail": {
+            "draws": 10000,
+            "seed": 20260923
+          }
+        },
+        "state": "证据不足",
         "class_unit_passes": false
       }
     }
   },
-  "selected_low_bit": null,
+  "selected_low_bit": "k8v4-per_token-pre",
   "fallback_if_none": "kv8-per_token-post",
-  "reason": "低位宽表示在参加判断的单元上全部淘汰"
+  "reason": "参加判断的单元最大下降点估计最小"
 }

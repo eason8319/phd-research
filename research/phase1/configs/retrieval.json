@@ -1,0 +1,45 @@
+{
+  "protocol": "phase1-ruler-number-retrieval",
+  "split": "v",
+  "n": 64,
+  "identity_source": "research/phase1/splits/retrieval.json",
+  "rng": "python.random.Random(sample.seed); keys=sample(range,count); values=sample(range,count)",
+  "range_start": 1000000,
+  "range_stop": 10000000,
+  "distractors": {"low": 1, "high": 8},
+  "target_tokens": 31744,
+  "background_search": [20, 2000],
+  "target_slot": "min(n-1, round(n*depth))",
+  "distractor_slot": "(target_slot+3+i*max(1,n//(count+1)))%n; advance until unused",
+  "template": "A special magic number is hidden within the following text. Make sure to memorize it. I will quiz you about the number afterwards.\n{context}\nWhat is the special magic number for {query} mentioned in the provided text?",
+  "answer_prefix": " The special magic number for {query} mentioned in the provided text is",
+  "needle": "One of the special magic numbers for {key} is: {value}.",
+  "noise": "The grass is green. The sky is blue. The sun is yellow. Here we go. There and back again.",
+  "date_string": "26 Jul 2024",
+  "max_new_tokens": 128,
+  "context_limit": 32768,
+  "expansion": {
+    "totals": [64, 128, 256],
+    "additional_samples": 192,
+    "identity_source": "research/phase1/splits/retrieval.json",
+    "identity_prefix": "synth-expand-",
+    "manifest": "research/phase1/splits/retrieval_ruler_expand.json",
+    "order": "original frozen expansion order; four depths and two interference levels balanced at each checkpoint",
+    "generation": "same independent seven-digit key/value protocol as V; preserve original IDs and seeds"
+  },
+  "scoring": {
+    "pattern": "(?<![0-9])[0-9]{7}(?![0-9])",
+    "main": "sorted(set(matches)) == [target]",
+    "format_diagnostic": "normalized_whole_response_exact",
+    "baseline_em_minimum": 90
+  },
+  "source": {
+    "constants_url": "https://raw.githubusercontent.com/NVIDIA/RULER/main/scripts/data/synthetic/constants.py",
+    "constants_sha256": "6296e901d495ec6200dc3f68993ea13d8282e3c0dbe1a8c47967f111105d1fde",
+    "niah_url": "https://raw.githubusercontent.com/NVIDIA/RULER/main/scripts/data/synthetic/niah.py",
+    "niah_sha256": "e9cada0a7660d274fe73a1338a90a7087e17b630169f1aaf14a8d3221c6805b5",
+    "pilot_generator_sha256": "50f037a158b8642d7ba4eefd3e6dbc868ee4114af17be5bf5b04acd075b75293",
+    "license": "Apache-2.0; NVIDIA CORPORATION 2024",
+    "adaptation": "single target; fixed project depths and distractor counts; token length fit; model chat template plus answer prefix"
+  }
+}

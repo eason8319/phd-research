@@ -1,0 +1,1995 @@
+{
+  "protocol": "static-allocation-independent-generation",
+  "model": "qwen",
+  "task": "hotpot_four",
+  "condition": "bf16",
+  "config": null,
+  "config_digest": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "device": {
+    "node": "node8",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.46.3",
+    "cuda": "12.1",
+    "visible_device": "0",
+    "slurm_job": "21545",
+    "tf32": false,
+    "weights": "bfloat16",
+    "attention": "float32",
+    "autocast": false
+  },
+  "n": 48,
+  "rows": [
+    {
+      "id": "hotpot-four-expand-00",
+      "input_tokens": 31724,
+      "input_sha256": "9349f95e99061fe94f381f6a3dc2bd92366caa1532959f1051be15353b54aa19",
+      "new_tokens": 415,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637649920,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "74002ba4c4e5edbbbdd42c2e974f6505d97bf2b7304754d4b6021608b273e6b0",
+      "extracted_answers": [
+        "Borgo San Donnino",
+        "Yes",
+        "March 30, 1983",
+        "Dave Malloy"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 100.0,
+      "em": true,
+      "answer_em_percent": 100,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-01",
+      "input_tokens": 31733,
+      "input_sha256": "0c837926f389e6f18c5a2f658dd2e8a67a5df23c3cdb6af385a90e451b9e8c97",
+      "new_tokens": 576,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639059968,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "d720fad3bfd7f568e7a4ec815cb29ebf39c060202a33fc857d64a2918cbc8325",
+      "extracted_answers": [
+        "Gustavus Adolphus",
+        "University of Georgia",
+        "Bernard Fitzalan-Howard, 3rd Baron Howard of Glossop",
+        "February 13, 1946"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        39.99999999999999,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 60.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-02",
+      "input_tokens": 31702,
+      "input_sha256": "3a14a5967d4c1fe93894d57a738ccab0a2f759c4c95aab2c4a74cc9cb55f68fe",
+      "new_tokens": 396,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21634203136,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "24f1dea9b0ccb796044affa8628b502faa64a7ff06423223161726c3a310b527",
+      "extracted_answers": [
+        "The document does not provide information about Nugroho Notosusanto's opponents during his service in the Student Army.",
+        "Both Richard Harding Davis and Harry Stephen Keeler wrote fiction and drama.",
+        "Ganjam district is located in the eastern part of India.",
+        "Shenandoah Valley Regional Airport is used for both public and military purposes."
+      ],
+      "answer_f1": [
+        0.0,
+        15.384615384615383,
+        36.36363636363636,
+        13.333333333333332
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 16.27039627039627,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-03",
+      "input_tokens": 31739,
+      "input_sha256": "48552ee196db6815aff204cd8cb9e6ded264b944e8b3390b4c10e8318632cebf",
+      "new_tokens": 476,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640000000,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "6406731726c1decf8b1b5fa29dc51ab85bffc719730d6059f5488c192e31f7ba",
+      "extracted_answers": [
+        "Isla Grande de Tierra del Fuego",
+        "\"Dexter's Laboratory\" and \"Samurai Jack\"",
+        "Maxwell Smart",
+        "Catcha Lake is in Nova Scotia, Canada; Hedley Mascot Mine is in Hedley, British Columbia, Canada"
+      ],
+      "answer_f1": [
+        44.444444444444436,
+        90.9090909090909,
+        100.0,
+        31.57894736842105
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 66.7331206804891,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-04",
+      "input_tokens": 31733,
+      "input_sha256": "6cccb192d54fe6d6f209f7e9a224a1bc61b1b9c42e114ce9a06e456b4c3fd782",
+      "new_tokens": 387,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639059968,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "9d1341af14174666bc624bbdd6371766b7f4bdb6bc1a61fe84e8b9b3a538ac65",
+      "extracted_answers": [
+        "The Prince of Wales is not a non-alcoholic drink.",
+        "Otto Robert Frisch.",
+        "Mani.",
+        "In the 13th century."
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        33.33333333333333
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 58.33333333333333,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-05",
+      "input_tokens": 31728,
+      "input_sha256": "f2b55e235fac717206b9c1ca759a3a3064009aa49ef87722616bbbaa047e22a1",
+      "new_tokens": 477,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638276608,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "99bb790004d7ccc81254db6ab248f1e383f477c431194af3d7501826c7586239",
+      "extracted_answers": [
+        "June 7, 1954:",
+        "Olimpiyskiy National Sports Complex:",
+        "Free Range Films:",
+        "The Lord of the Rings: The Return of the King:"
+      ],
+      "answer_f1": [
+        49.99999999999999,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 62.5,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-06",
+      "input_tokens": 31741,
+      "input_sha256": "552ea2ca6fb52528229ee77aa0d24233397eaabb0042392a7c5bd1af5f629bfd",
+      "new_tokens": 418,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640313344,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "df72beb6bf5b0f3426dfe4255955c5a2fc7b09a297881c98f888774516b8fc0e",
+      "extracted_answers": [
+        "1933",
+        "Kuno Becker",
+        "the Vietnam War",
+        "Dutch"
+      ],
+      "answer_f1": [
+        100.0,
+        66.66666666666667,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 91.66666666666667,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-07",
+      "input_tokens": 31712,
+      "input_sha256": "beee62b511095c858b901c29cc880634fd1be33cbe7699cd2e2a50121a9442eb",
+      "new_tokens": 318,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21635769856,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "44ad33c177dabfaf50045fd00f9700115d1b12cbcd89b5924eb1464a2c1e4c37",
+      "extracted_answers": [
+        "Robert \"Bobby\" Germaine",
+        "Berea College",
+        "Bonobo",
+        "15"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-08",
+      "input_tokens": 31740,
+      "input_sha256": "bebdad22ab03743c92cfb7a0d9bbce0e6561d2cab6195bf5a5c806fee8e9094e",
+      "new_tokens": 485,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640156672,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "d21e1c86b51a93d20342e9ad5dd0a38af8a1ba255c49cda4dad93ac297f4db2a",
+      "extracted_answers": [
+        "1919",
+        "TRS-80 Color Computer",
+        "Minoan or Mykenaian",
+        "BraveStarr"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        40.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 85.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-09",
+      "input_tokens": 31725,
+      "input_sha256": "a0d76860646b46fcc09686b3ef02c786c027a9247a218a6b76308a14e3eb694c",
+      "new_tokens": 368,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637806592,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "a8573bafe27ac170e9073ba393c4600ca58c20e2a12b946d1d31befda657d217",
+      "extracted_answers": [
+        "Miami Gardens",
+        "Man or Astro-man?",
+        "Centre for Social Cohesion",
+        "cocktails"
+      ],
+      "answer_f1": [
+        80.0,
+        0.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 45.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-10",
+      "input_tokens": 31713,
+      "input_sha256": "7a99f6e4b902bdf2921ed648b61e06edd2c5e83ec83fc4017dd725a91f15fa5c",
+      "new_tokens": 436,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21635926528,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "e2bc748676cbb19f28d6f8c7f2f90637c45931da9d627f616798287cd20497c3",
+      "extracted_answers": [
+        "University of Arizona",
+        "Earl of Lauderdale",
+        "Cincinnati Bengals",
+        "Les Miles"
+      ],
+      "answer_f1": [
+        0.0,
+        22.222222222222218,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 30.555555555555554,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-11",
+      "input_tokens": 31704,
+      "input_sha256": "3666386f05c957ec2584e32d9a35f44a5bcf41e7695086b54a3bb623c7b149d9",
+      "new_tokens": 316,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21634516480,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "833f506890df4598a9696249e3ac40382e3c7984c4cb8eeca03e03c02ace601b",
+      "extracted_answers": [
+        "Dawn Lake was described as Australia's Lucille Ball.",
+        "2011.",
+        "Brent Burns.",
+        "Mike Fratello."
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-12",
+      "input_tokens": 31742,
+      "input_sha256": "4f4862a03057098a89b79f2baf4e466fa27a989f439b5797558c88e245378df1",
+      "new_tokens": 444,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640470016,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "b602a53d8775d97ad2cf02f77d94ac5094a513f39bfef948ffcac0aee2f2be56",
+      "extracted_answers": [
+        "Duval County",
+        "Jim Cummings",
+        "Howard University Hospital",
+        "University of Missouri"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-13",
+      "input_tokens": 31741,
+      "input_sha256": "62bcc735604c9c5fab4c6cb5fe0fd623c818e61c9695e617100c527b35e5a4fb",
+      "new_tokens": 284,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640313344,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "7f5cfb4dff3afde8b177b2f907651d789a67400674add3c3b0bbe27662aea7c5",
+      "extracted_answers": [
+        "Istanbul",
+        "July 25 to August 4, 1985",
+        "American football",
+        "socialite, musician, author, and former model"
+      ],
+      "answer_f1": [
+        0.0,
+        90.9090909090909,
+        100.0,
+        49.99999999999999
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 60.22727272727273,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-14",
+      "input_tokens": 31727,
+      "input_sha256": "8da27ff869e5033d4c612b77475522b1f7395081e28ac82b0df59a87ded2a01c",
+      "new_tokens": 357,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638119936,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "aaedb733d406ed6e69816f90e57c19fba16212c4be2a28ae6e4bbb8569b33987",
+      "extracted_answers": [
+        "Mumbai",
+        "Sleepy Brown",
+        "more than 110",
+        "Denmark and Norway"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        49.99999999999999,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 62.5,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-15",
+      "input_tokens": 31721,
+      "input_sha256": "1d19cbc8585e8f27fd3744e3d84af3aa5c3e16e5a2de35bb4f1c321208a06ef4",
+      "new_tokens": 378,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637179904,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "1b7af7a358e36fd0e10a68d1f728f3e54afcdb3e36291a50dc69d9944b29ed6e",
+      "extracted_answers": [
+        "T.I.",
+        "horror films",
+        "Fifty Pills",
+        "Las Vegas Sands company"
+      ],
+      "answer_f1": [
+        0.0,
+        33.333333333333336,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 58.333333333333336,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-16",
+      "input_tokens": 31726,
+      "input_sha256": "37939c3dd070d850123c3071df5d6e8b56f186e92c8fb6ea1f4d3b7eecf39616",
+      "new_tokens": 328,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637963264,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "99e95f06f2b32c48b65a1769c034509524305df69f981667302a014a192cee3b",
+      "extracted_answers": [
+        "child actress",
+        "Eugene O'Neill",
+        "Richard Llewellyn",
+        "Paul Manafort"
+      ],
+      "answer_f1": [
+        50.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 12.5,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-17",
+      "input_tokens": 31738,
+      "input_sha256": "ae666393cc1aeb74b1084fcae38e52d0b18dd76d4a8c6be8fb6158b3ace06114",
+      "new_tokens": 387,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639843328,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "45fc9ec468a179346d4de80d182d0b40056098022f9b47be5ca123a1f71eab8e",
+      "extracted_answers": [
+        "Mary Wayte, Dara Torres, and Laura Walker.",
+        "March 9, 1961.",
+        "Jimmy Butler played for the Chicago Bulls, Minnesota Timberwolves, and the Philadelphia 76ers, and he played as a shooting guard.",
+        "No."
+      ],
+      "answer_f1": [
+        39.99999999999999,
+        100.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 60.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-18",
+      "input_tokens": 31742,
+      "input_sha256": "8940bd5d2d10485cb0605843e2891bc865a5f542a8db9cfe83d94d92df176479",
+      "new_tokens": 447,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640470016,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "3dff596df1fc9d6c1adf9e81f3eb574cf3f5d2f60e4c8733c3854ca3975ef76a",
+      "extracted_answers": [
+        "88 parish churches were rebuilt after the Great Fire of London.",
+        "\"El Ardiente Secreto\" was based on a novel published under the pen name \"Pauline Réage.\"",
+        "\"Black Swan\" is based on a Russian ballet.",
+        "Jean Sagbo is considered \"Russia's Obama\" and is of Beninese origin."
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        22.22222222222222,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 5.555555555555555,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-19",
+      "input_tokens": 31719,
+      "input_sha256": "9635ec4a3781036ac3928a14dbc45094db844965d4f41fdc18b7f5e18fa0e196",
+      "new_tokens": 284,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21636866560,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "5157f9d6e5447b2edaef79fda88536273536e994f1ee23b8080f7fc832e7c56b",
+      "extracted_answers": [
+        "Legoland Billund",
+        "Martin McCann",
+        "restaurant chain",
+        "ZZ Top"
+      ],
+      "answer_f1": [
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 95.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-20",
+      "input_tokens": 31718,
+      "input_sha256": "c0582cc5e32c4e223c68009170c7e13520379425de7e1c1067987478b0398195",
+      "new_tokens": 508,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21636709888,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "7d6d99acca5260a2622bab7d6b9af3d4d58f02b4828fc7d5699fecdcd07ad44a",
+      "extracted_answers": [
+        "Farhan Akhtar",
+        "Guangzhou, China",
+        "Skyscraper",
+        "Pinball Wizard"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-21",
+      "input_tokens": 31735,
+      "input_sha256": "6ede60c097b9d4b47966e3e11920765f778025e23f935d6d20cd3ad40b67f17d",
+      "new_tokens": 283,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639373312,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "a9b47940fd73499d4147d831855d8b128a319d690eee515ea7e50387f843a0c7",
+      "extracted_answers": [
+        "1975",
+        "Jacques Feyder",
+        "King Edward II",
+        "Clearing a spot for New England kicker John Smith to kick the game-winning field goal."
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        61.538461538461526
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 90.38461538461539,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-22",
+      "input_tokens": 31739,
+      "input_sha256": "a66400f73d44aeafc8da8d7a4137c2e790351fef778b87fc2f74c9d756af1425",
+      "new_tokens": 479,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640000000,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "7829357c27626ddee15659c89ed01b9dbfd7563aea8564612cc55bb750a091d7",
+      "extracted_answers": [
+        "Jett Rink",
+        "Medinilla",
+        "Wragby Road",
+        "Yes, No"
+      ],
+      "answer_f1": [
+        66.66666666666667,
+        100.0,
+        100.0,
+        66.66666666666667
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 83.33333333333334,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-23",
+      "input_tokens": 31709,
+      "input_sha256": "e3f4a3cf6249f84da556de2d265f83e63940aa3229c64da5872acabd3276be24",
+      "new_tokens": 377,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21635299840,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "2a1d06e65328e09f5d15b89db024f87faec33922a8c564777e17a01b5befc78f",
+      "extracted_answers": [
+        "Diva",
+        "Min Sun",
+        "film director",
+        "4080 ft"
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        66.66666666666667
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 16.666666666666668,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-24",
+      "input_tokens": 31734,
+      "input_sha256": "85f30083d05c448e3a8a77fc3cb3e0a6c9190282a22b1aba815317084b7ba049",
+      "new_tokens": 474,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639216640,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "4532f84724d5a684b4c5e27bef667d0a9ba577b9541b2a6b9f1e9058a6fad541",
+      "extracted_answers": [
+        "1927",
+        "Ann-Marie MacDonald",
+        "November 6, 2018",
+        "Antiochus III the Great"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-25",
+      "input_tokens": 31729,
+      "input_sha256": "f4adf0884cc63ccc46dc6ca15891f51de94cdfec90f8ac56665189cd77951e9d",
+      "new_tokens": 318,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638433280,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "8b3b451bcf7f743354a4270f1cefc9d3ecd41195aa40c0c4183d1ced20d0c89c",
+      "extracted_answers": [
+        "Louisa Adams was the daughter of the American Consul in London.",
+        "Supersuckers.",
+        "Jean-Marc Vallée.",
+        "The Zou."
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 25.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-26",
+      "input_tokens": 31728,
+      "input_sha256": "cebffab2144150f0c0d9a7a42b0606d56917a6679809fa9c29e8948714f97b20",
+      "new_tokens": 458,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638276608,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "a072928cf65b98c48c3f8bab9de0176b7a640ff82068e0d60e872de1d1cfead6",
+      "extracted_answers": [
+        "Liguria",
+        "Philip K. Dick",
+        "AT&T",
+        "compact car"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        100.0,
+        40.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 85.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-27",
+      "input_tokens": 31740,
+      "input_sha256": "f71403250e3369cf7d724f9477b953537eceed90bda2ec3eaa6d82367b421c58",
+      "new_tokens": 787,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640156672,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "b3ac7e6060213e4101e7b58dcbeafcaa65232d29665f95ff46cf9438ddcb0c93",
+      "extracted_answers": [
+        "Hugh Dowding.",
+        "Yes.",
+        "The Life of Charlotte Brontë.",
+        "310."
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-28",
+      "input_tokens": 31728,
+      "input_sha256": "f8dd8082f11592603a831878a91d3e52a57fce5fb1b210657be213f4b5f5f622",
+      "new_tokens": 393,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638276608,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "c60e00fb927f761173d0547a9c7b1364f93b5985400af2ffd0ec7b248b2e9ee4",
+      "extracted_answers": [
+        "Norman Macdonnell and John Meston",
+        "National Hockey League (NHL)",
+        "five months",
+        "364th"
+      ],
+      "answer_f1": [
+        57.142857142857146,
+        40.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 49.285714285714285,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-29",
+      "input_tokens": 31737,
+      "input_sha256": "9450dd4141208769b397e89c0d2b9ee22bab304d59d83f74bf9b379d7e7b48d6",
+      "new_tokens": 749,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639686656,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "6f9ef81ad45c1b2af06d444a2a0131399f3b5bad80c14718f21f0cab0ca286ce",
+      "extracted_answers": [
+        "China Blue",
+        "Madonna",
+        "Kennebec County",
+        "Shispare"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        50.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 37.5,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-30",
+      "input_tokens": 31733,
+      "input_sha256": "731b57ab96298c3c8063f993aee934f2eee19e0c176d12fdb67312a561fde8aa",
+      "new_tokens": 1024,
+      "stop": "limit",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639059968,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "9388f4e460c3b56b8bff367f18770848473db693c5e24db48e2b8bd4694da6db",
+      "extracted_answers": [
+        "Jaguar Land Rover.",
+        "American.",
+        "Ozzie Newsome.",
+        ""
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        80.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 1,
+      "f1": 70.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-31",
+      "input_tokens": 31706,
+      "input_sha256": "9cda02c8298eda4df1fa0fd0c8bc7e3f87116b400256f4635dc23d22595dbe2e",
+      "new_tokens": 743,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21634829824,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "e34a793dc167554b602220bf21f5c060e5fa9574b4d432b572e2afa64fdb200c",
+      "extracted_answers": [
+        "The Incredibles",
+        "Westfield Old Orchard",
+        "Statue of Liberty",
+        "hardcore punk"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        33.33333333333333,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 58.33333333333333,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-32",
+      "input_tokens": 31730,
+      "input_sha256": "46b06ac925012bbaac3853b3356fc814821bad8b386ce6c206851654ffea36f4",
+      "new_tokens": 585,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638589952,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "7aced955d147572bf1c12f8a7ee7c520bece40e98f21c3f07292e3b4bcb6d412",
+      "extracted_answers": [
+        "Jake Gyllenhaal and Anne Hathaway",
+        "Nia Sanchez",
+        "1967",
+        "Round Table Pizza"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-33",
+      "input_tokens": 31715,
+      "input_sha256": "4954fd11e6e7591bfa20ccf2aafab709fd55d152651d43a58deed67232f54c77",
+      "new_tokens": 380,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21636239872,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "3ff7b090843c55141b09378ae37a5d3f257940d8a56898e1670f91dfd86c5fc4",
+      "extracted_answers": [
+        "Bismarck",
+        "China",
+        "Lewis Carroll",
+        "200,167"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-34",
+      "input_tokens": 31719,
+      "input_sha256": "ead373306831085f7e3c8f1c3f5bbc46c08a7e73893591f5d9aafcdd89533d5a",
+      "new_tokens": 425,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21636866560,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "2e5df7dd8892108da6e0a5304c86481d3028b2c5a3fd50cd2fe0573d5f2d2448",
+      "extracted_answers": [
+        "No, Universidad de Oriente and California State University, Dominguez Hills are not part of the same public university system.",
+        "The first stud book for the Percheron breed was created in 1883.",
+        "Chris Pine appeared in both \"Just My Luck\" and \"Into the Woods.\"",
+        "Margery Williams influenced the animated Easter television special \"The First Easter Rabbit.\""
+      ],
+      "answer_f1": [
+        10.526315789473683,
+        18.18181818181818,
+        14.285714285714286,
+        33.333333333333336
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 19.08179539758487,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-35",
+      "input_tokens": 31741,
+      "input_sha256": "d42e3ee39f8b55df67aef9b32b73d46698b9405b5b6bc45268a1d0aea815bed7",
+      "new_tokens": 372,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640313344,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "c1109dc41408a283ea66f3a4626aee5e7136fca4e540c39345f74df78c7d18a7",
+      "extracted_answers": [
+        "Stan Lee and Mark Helprin are not both comic book writers.",
+        "Georges-Henri Bousquet translated the work of a historian of Muslim heritage.",
+        "George Harrison.",
+        "The Supremes."
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 0.0,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-36",
+      "input_tokens": 31741,
+      "input_sha256": "9ceaf604e8776b2e2103917b6df246f728da1bd41b60528ffcd0f6c5a8d4fb36",
+      "new_tokens": 417,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21640313344,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "0b9d8319892f0fc06686b0cd4e539b916a8b488157a3f087e8d815357a332850",
+      "extracted_answers": [
+        "1614",
+        "brother-in-law",
+        "Laws of Jante",
+        "Book of Judges"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 75.0,
+      "em": false,
+      "answer_em_percent": 75,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-37",
+      "input_tokens": 31744,
+      "input_sha256": "d8a36cc53632e2ee4666320c25f1fa747284798fe2e771ad918b41c0e154d0f5",
+      "new_tokens": 380,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21649171968,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "01ca8fe480e046adafce040d11f310b6ff3de8d1ccedd9d7fb1bdaaa72709771",
+      "extracted_answers": [
+        "Noori",
+        "Frederick W. Smith",
+        "Singapore",
+        "Graffiti"
+      ],
+      "answer_f1": [
+        100.0,
+        57.14285714285714,
+        66.66666666666667,
+        100.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 80.95238095238095,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-38",
+      "input_tokens": 31723,
+      "input_sha256": "8b9ea01400684bc5404a4897f0044a266e612ff88e824418ccb648ba61d3317b",
+      "new_tokens": 349,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637493248,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "8321f57981620e641a4f1c3e21c0053fa448ae470a6d40472b988330739618ed",
+      "extracted_answers": [
+        "Both cases are Supreme Court cases.",
+        "Islamic mysticism.",
+        "The 1960s.",
+        "Three periods."
+      ],
+      "answer_f1": [
+        0.0,
+        0.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 25.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-39",
+      "input_tokens": 31716,
+      "input_sha256": "6b0c7fa565ae71ac3a82dea9846d11a512bed3f2776f945b2e03d55f6785b76d",
+      "new_tokens": 358,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21636396544,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "8b7a20ab7364719cc05bb92bb45c72e3dbd117812768a976c55a2a3d65b04398",
+      "extracted_answers": [
+        "magazine",
+        "metropolitan area",
+        "Taylor Swift",
+        "Pakistan"
+      ],
+      "answer_f1": [
+        100.0,
+        0.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-40",
+      "input_tokens": 31729,
+      "input_sha256": "cafafe8d8df08c7e97d256c49502b722c3eb2384d9d98d35e414ad5373af0d58",
+      "new_tokens": 691,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638433280,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "7445552106b06a1a521602bd063d9de9c35f4a6fe6cd9d7a87bf9053b7158d31",
+      "extracted_answers": [
+        "2005",
+        "Ferdinand",
+        "Chop Socky Chooks",
+        "Florence Nightingale"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 50.0,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-41",
+      "input_tokens": 31733,
+      "input_sha256": "816cee134132a1fbaf3322ab0b26bd72c47693e40b824fb53c80ae8a86563495",
+      "new_tokens": 634,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639059968,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "fa4f6cbc1958c0f65ddcd4fb74189bedfb522dbe7458c9a08b46e290531c8ee9",
+      "extracted_answers": [
+        "The area known for its Crottin de Chavignol goat cheese has been inhabited since the Middle Palaeolithic period.",
+        "The boxer that defeated Oliver Lavigilante in the 2012 Summer Olympics is Ghanaian.",
+        "Colonel Charles Hastings Judd was the Chamberlain and Colonel of the military staff of King Kalākaua.",
+        "Christopher I of Denmark succeeded his brother, Eric IV Plovpenning, who ruled from 1241 until his death in 1250."
+      ],
+      "answer_f1": [
+        31.57894736842105,
+        30.76923076923077,
+        44.44444444444444,
+        47.99999999999999
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 38.69815564552407,
+      "em": false,
+      "answer_em_percent": 0,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-42",
+      "input_tokens": 31735,
+      "input_sha256": "b0ca838a0dc906764b7739e154c113e774933adc311ce87290bef7dfd0d5b6e2",
+      "new_tokens": 445,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21639373312,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "2ad2a70586d21f142645fe2f7eca70a9b8eeb7ab33c3ec64c7fd816d1c927103",
+      "extracted_answers": [
+        "Not explicitly stated.",
+        "Roman Kostomarov.",
+        "The Washington Post.",
+        "Carlos Enrique Lehder Rivas."
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        0.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 25.0,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-43",
+      "input_tokens": 31730,
+      "input_sha256": "73873758e24bef45e8da5afa45e12644b9a50d1683d40c6707db7a4e87802ed0",
+      "new_tokens": 307,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21638589952,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "8b280d3469ca5e717b00501bcce95aa1cb1c0fa72220beb3897ad835f5ddabcb",
+      "extracted_answers": [
+        "lightweight aluminum foil",
+        "Kristin Scott Thomas",
+        "film industry",
+        "Comodoro Arturo Merino Benítez International Airport"
+      ],
+      "answer_f1": [
+        80.0,
+        0.0,
+        66.66666666666667,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 61.66666666666667,
+      "em": false,
+      "answer_em_percent": 25,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-44",
+      "input_tokens": 31707,
+      "input_sha256": "dba59eb42f59fc73077e54fa78b7710b567df061b8a86ddb344246fbc1730c24",
+      "new_tokens": 427,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21634986496,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "4bbbe6b521023e9e9aa98bfd48b681e64448261896e8a39e52580a16b26e908f",
+      "extracted_answers": [
+        "KT Music",
+        "Kurt Gerron",
+        "526 people per square mile",
+        "Security Management"
+      ],
+      "answer_f1": [
+        100.0,
+        100.0,
+        33.333333333333336,
+        40.0
+      ],
+      "answer_em": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 68.33333333333334,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-45",
+      "input_tokens": 31705,
+      "input_sha256": "e2ab5f8286e0b092d56045582751287a77e255fecf444759cf51aafa8e6b9233",
+      "new_tokens": 284,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21634673152,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "fa3be730bc2c52c996f0040623ad04e6d4177e75eacd9a8caa79bed1d239667c",
+      "extracted_answers": [
+        "Himalchuli",
+        "Anne",
+        "Montreal, Quebec, Canada",
+        "John M. Dowd"
+      ],
+      "answer_f1": [
+        12.5,
+        100.0,
+        49.99999999999999,
+        100.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "missing_answers": 0,
+      "f1": 65.625,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-46",
+      "input_tokens": 31722,
+      "input_sha256": "829b9335cfff104bbc72ec56f67f57265b702f58024a935c48af454ae655518c",
+      "new_tokens": 377,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637336576,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "50c7083e8c17161ea7b227794f96396ac1e44471000d40b5e14dfc3344df1451",
+      "extracted_answers": [
+        "promoting global peace",
+        "Karl Kraus",
+        "Yes",
+        "Chelmsford City"
+      ],
+      "answer_f1": [
+        0.0,
+        100.0,
+        100.0,
+        66.66666666666667
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 66.66666666666667,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    },
+    {
+      "id": "hotpot-four-expand-47",
+      "input_tokens": 31721,
+      "input_sha256": "7959e6dbed9f75c966530ba42c3ea3e8717f815a53a64b2e325e4f5f3c762ad6",
+      "new_tokens": 337,
+      "stop": "eos",
+      "invalid_groups": 0,
+      "peak_allocated_bytes": 21637179904,
+      "peak_reserved_bytes": 22810722304,
+      "prediction_sha256": "f78f8827bcac3c23ef3f426ed3022d1bf659b923924b39c6cf2835bb0a300a3f",
+      "extracted_answers": [
+        "2011 Pulitzer Prize in General Nonfiction",
+        "Yes",
+        "1985",
+        "Caroline Wozniacki"
+      ],
+      "answer_f1": [
+        49.99999999999999,
+        100.0,
+        100.0,
+        0.0
+      ],
+      "answer_em": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "missing_answers": 0,
+      "f1": 62.5,
+      "em": false,
+      "answer_em_percent": 50,
+      "input_identity_source": "recorded"
+    }
+  ],
+  "output_limit": 1024,
+  "score": 55.712560328925456,
+  "raw_source": {
+    "path": "research/.runtime/hold/reference-consolidation/c035ddce97b7585b5dac83fdc572c79e5a1c751d2466b9968f7642cde84979eb.json",
+    "sha256": "c035ddce97b7585b5dac83fdc572c79e5a1c751d2466b9968f7642cde84979eb"
+  },
+  "publication": {
+    "base_commit": "cbce2edc20183fff42f8444a67b539eb1fbf205d",
+    "files": {
+      "research/manifests/data/gsm8k.source.json": "2d732973e51f9bf9e3952162c4c3a6442612a87a15c2bf2bba953ec1b33561b5",
+      "research/manifests/data/hotpotqa.source.json": "3157b6f249091417583d3f84a7a782ddc2355ad88fd39321f4c9152f97ff1129",
+      "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2",
+      "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+      "research/phase1/configs/data.md": "20b7b1f83939b856f78f2bc0eb36000b1aa71ed931383f508634c38f7719826a",
+      "research/phase1/configs/long_decode.json": "a374518b658b717822e7969179916f274a544786dd9934b366d3b9c686876e95",
+      "research/phase1/configs/quality.md": "ec25f37a18e4fb31a1eed8c7bd50534525bbb892637d73d6d39f191ba1eada91",
+      "research/phase1/configs/quant.md": "742b7e8e9b6ac7adbc3f00a50d1f6176a4ec41d9a268d4020cb6604f9d3b4b7e",
+      "research/phase1/configs/representation_diagnostics.json": "082ef8ded9ea471a12e985584a3508d27464b76d2fe79086ac774e0f5b899a83",
+      "research/phase1/configs/results.md": "2e19d0ed05483aa84d49e0a58741a0006efcee001952aad7539d4d3743ffab8d",
+      "research/phase1/configs/retrieval.json": "cbccc951f10f55e17d4e5160781ab668297dfb2a032215bede14c71485b18193",
+      "research/phase1/configs/runtime.md": "5b8372e1556454ffbdf785b98e18ad105d49b0feaddf549d0cc32e812b336fab",
+      "research/phase1/configs/static_layer_allocation.json": "eca5080f410cf712b89c666a89c70de1840a78d074d5d61a8e9e99b864617aa3",
+      "research/phase1/configs/static_numerics.json": "9dfc1b8db84f555fea54efd98a1f461936740ab791dea3db379d1ccc7834a92c",
+      "research/phase1/configs/trajectory_replay.json": "7ee73ad6faaf0ad661cbd22e45c6bc60cb34d75a013091eb3fb9f131350e7bcc",
+      "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "8b16ecf3f9a189c4c15fa4a1aa4ba829d1fde1e557ad6407379a95c825cfc7e8",
+      "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "3773ee6efbd30ea792879a8af8a43fbfdab9140350e47046b2ef0a563542d565",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "b513d4cea66db030bd02e284b4f16367757f7c424bf377b64ef8e688d47ce8a9",
+      "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "ebd6d0cc9cb2eeaf9f712471062c5b454b12e93583d320e8b65ba75097421893",
+      "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+      "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/generation_error_sources/code/early_stop.py": "c33f6d13a947391bfbaa1c6823aa659d2aabfac0b4c7ce42fa45dcddc761a7ea",
+      "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+      "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+      "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "228be29589e56e11cb84c91fe8af3dd0334bb9e0ad32c2d3f032ec77d84f1614",
+      "research/phase1/experiments/generation_error_sources/code/plot_trajectories.py": "4c5d8b53fd1ab4fec7c8f4b8ea4bea2d38687a58810aa32a295d0e8683853e60",
+      "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "c4bb03c950188e1b3bef3328da76c96226ef64237c868088bfc3a76c71156456",
+      "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "0171b438d8b2c297af94b70d7bb9df4e290aabd400b8090166a480346ee8b084",
+      "research/phase1/experiments/generation_error_sources/code/review_trajectories.py": "a866eaa8a06f931a02a71809a5bfedd309d3d3e9f0812dc78240dff659058a5d",
+      "research/phase1/experiments/generation_error_sources/code/select_residual.py": "f128350a24e4dba17fe73be2eb2621a1bc9b4aa15fe9f996b11b89f35af43508",
+      "research/phase1/experiments/generation_error_sources/code/select.py": "117c4749a74386e84debec15497d2d631b84f0afb1af306625e254e9c98c72d5",
+      "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+      "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
+      "research/phase1/experiments/generation_error_sources/code/trajectories.py": "47918ad6551bda05ff15731e49dfe560da33cd6401edc1e77f46f76c0a2c5291",
+      "research/phase1/experiments/generation_error_sources/code/trajectory_replay.py": "6c38c90433838c7b7432d523729c2ba5e424cfabfde1537da0948d6e9b0f3e80",
+      "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+      "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+      "research/phase1/experiments/representation_interactions/code/evaluate.py": "6e1f295ef08726bae1eef4ad991a22913f506c1390fa967bd19e049868f15996",
+      "research/phase1/experiments/representation_interactions/code/metrics.py": "ffc1fc6293b267a095d4a3ec0bdeeb09b03c0721b310ca5fe81b21437c1c9a70",
+      "research/phase1/experiments/representation_interactions/code/results.py": "d16f05d0a61e1ab668687d66afd02cd2304ab85b7a775f91b56471f0750bb455",
+      "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+      "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/static_layer_allocation/code/allocations.py": "44472dffbb529873f8c5c9ead89cbe5c0361ce595f2b81ed43a72d30696df34d",
+      "research/phase1/experiments/static_layer_allocation/code/content_data.py": "10e90928e2e694d8ae8c3412f44c17376417fd68bd2fa1ef1d1b99e3c9b1632d",
+      "research/phase1/experiments/static_layer_allocation/code/content_metrics.py": "eb24ee3c83cb18dfbb7d2c2a2bfbab57597e8d361a277d88c05af9e2f4f7e15e",
+      "research/phase1/experiments/static_layer_allocation/code/content_plot.py": "644990b4526f2620f73043c2a5e560bb33633255adf466f71e355106e996c50e",
+      "research/phase1/experiments/static_layer_allocation/code/content_review.py": "50b2d4aeaa1b1fd912d0e5f18260a7c14059b652a4450cdb56f2f83f1a8af09f",
+      "research/phase1/experiments/static_layer_allocation/code/content.py": "caf7da6142eceaf77b537b4f8c63b50471aa87d75776144a5a887c885db23d06",
+      "research/phase1/experiments/static_layer_allocation/code/expand.py": "2ff6310233ff7fac85178035d93c112bcdfdb72d610c5a998ba58269e6c7c390",
+      "research/phase1/experiments/static_layer_allocation/code/free_token_diagnostic.py": "626e8aabd414d48a250215847dd559ade25ddcda662bd1be91fd810a7fafd23b",
+      "research/phase1/experiments/static_layer_allocation/code/gate.py": "6a91358fed5374869c2ae294702303e59dd0da62aec548dc214f309c41b3109c",
+      "research/phase1/experiments/static_layer_allocation/code/metrics.py": "e5f3009ad84c9bb54bebb833fca86fe9b9cec52cef6bebe942636f32248f7aa1",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_forward.py": "9c669cb991a3f9db7a9c2937353e171d4da569207d291d5dd55814ddaa54eaaf",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_logits.py": "813a3adeb835f0596e36e5b0dd964989d04d4d4d65ac2ce34ea107bae56195be",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_metrics.py": "a9372431cb3fa08c9a26d9fd52ed9158913a8f1863a32272d9dde9babfdbe255",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_plot.py": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_review.py": "d84f944784f8d94d82eacb97963a819e71c9b20e67a4835f0cf28c4a0616db2a",
+      "research/phase1/experiments/static_layer_allocation/code/numerics_summary.py": "e5fc58e8db2d741529a959f80f3eff474122381c0b203a5a0f40815f94a2bd01",
+      "research/phase1/experiments/static_layer_allocation/code/numerics.py": "98032fa04a948439580ec2da1b0558919466c5f5773241295987b5c3ad1dff88",
+      "research/phase1/experiments/static_layer_allocation/code/probe.py": "65db35ea8a81e7652b2739b50cb784a339e95df4e3abe9d912e99e822098b608",
+      "research/phase1/experiments/static_layer_allocation/code/protocol.py": "4a8a23358d33e33b5a905dd6c38ef0b936f75fe7474cf2a31825bf991f980d4e",
+      "research/phase1/experiments/static_layer_allocation/code/quality_data.py": "ddcf49c9b86c4d53805426e0f10c85eeaa0a0d075457e944e0f263284b40c595",
+      "research/phase1/experiments/static_layer_allocation/code/quality.py": "65c63b81cabfc0a16c7ddfa8e9207ad00a4d75ab065e73f5e15326d8bf6beeef",
+      "research/phase1/experiments/static_layer_allocation/code/select_final.py": "1072a12edbcdb97eaa09505ba65d79d5e03ce981b42e80babb90c30d52228cb4",
+      "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+      "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+      "research/phase1/experiments/storage_service_cost/code/layout.py": "aec2600972de3f5f314730daff71ba77ec58acf803d8642377e1e5a9a674cad4",
+      "research/phase1/guide.md": "01b62678f9b12aa8fd315fc9441c45390e88ba80f52cfd53c6b3a0d2926f7cf4",
+      "research/phase1/splits/checks.json": "abe6b5d12d596df4ab7358e3987c87f2cf14c9056f0d711b042292dcf76862e1",
+      "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+      "research/phase1/splits/hotpot_four_expand.json": "0ab3497273d202a17de7c79420c73410d99c6f7a174c68ec97a3a416f2d3d4c6",
+      "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+      "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+      "research/phase1/splits/retrieval_ruler_expand.json": "efd140d96199f270bc69483315f1eb576309946431289f93573c5b481f798a4a",
+      "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+      "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+      "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+      "research/phase1/splits/static_retrieval.json": "72f1f0bf306a8182bc212471c2db3d0cebf982313939abc90e8d8a5bf58c89ee",
+      "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+      "research/phase1/splits/trajectories.json": "03cabd9fe5027899019d963524b05be011f2b2b4a5b0e8e21ae8fca3b35424db",
+      "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+      "research/phase1/src/phase1/complete_experiments.py": "47a8a301c5c350ba81bbba3caf7e8dfcd9fecd02002d12b27bdad8393fd4ec29",
+      "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+      "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+      "research/phase1/src/phase1/review_results.py": "74c1727278f4de937354b6cf8030a097269eab0e67347ccf7a5b540e5ed640f4",
+      "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+      "research/phase1/src/phase1/runner.py": "cdb7d3f74660c37f4e02c43973d65a966034b0dfed569c9eae08bc6cfd685c7f",
+      "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+      "research/phase1/src/phase1/splits_build.py": "459fc0f13c2be44af29f2c8067ee3738ab23e13314bd164c8bad3b7a6ccf3bda",
+      "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+      "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+      "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+      "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+      "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+      "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+      "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+      "research/tests/test_attention_intervals.py": "80344533d9c392632a6f7334733cff9f242078bba87580f9109bf1727524ff3a",
+      "research/tests/test_cache_offload.py": "de8a89e0bdc54a4546e9fe999a5ac7651ac47063ecec9300d16bbda432b64dc3",
+      "research/tests/test_candidate_supplement.py": "847f949c1b82fba6139837462ce771a864e12dc8894800b2b7f633268255ed6e",
+      "research/tests/test_content_allocation.py": "ea8517013a17dc0008ddae373bda289a34fc24794c67bf46705e2f65cc9fbea2",
+      "research/tests/test_experiment_completion.py": "f62c2b22b7a877d2e01921fe96981a313cb9d9f57f6d84bdab7ad845a9061159",
+      "research/tests/test_four_question_scoring.py": "fa0cc25940e407c690d186aa817cde04fb94c9094289c9bc8f77784200b85d7c",
+      "research/tests/test_generation_quantization.py": "076e051e74c226ce531c31d6887b8a52be03726d5e0f5a999289f89aff82c64f",
+      "research/tests/test_generation_selection.py": "c4798172e2f5a4d3cb9a68723536df8e87d636a92a55ef03f992fea7dd5edde0",
+      "research/tests/test_ledger.py": "533173aa53db6be231c00db4a2dbfd144923c04993187844e2f4505d3c88381a",
+      "research/tests/test_new_input_quality.py": "4b404dab5b389bcd882eb07048011e3891d6140238109f0dddc12a591c49bdde",
+      "research/tests/test_quantize.py": "4b61e2726ec3a432649a0adb1f286079eb7918d2c712797cfeac8517e1d60aea",
+      "research/tests/test_representation_evaluate.py": "6ee4204872c966faf106a1a8927575c0b2bc4cc85943f5e3fd536847dabef180",
+      "research/tests/test_representation_metrics.py": "d8314be7672b37ea70f8be01e1223d17b6c2032b5327065d74f2aa91b07f0e24",
+      "research/tests/test_representation_results.py": "ffecef1a80dfb49161967b0548ea4045c07672ca2d3eac378fc6fe47311374d2",
+      "research/tests/test_representation_selection.py": "ec84127d57731202f368abd78d8f9b2e817f3ab6ae532a5041801dac4b90e862",
+      "research/tests/test_residual_diagnostics.py": "04f0d74569859f3e8d97d8cb4bcdb73a239844e89bccb053a641a609621a9b11",
+      "research/tests/test_result_format.py": "514f6fb37e3d62b15f17fbedc598389b9e0d1b005829298dcfe53512bd4bf697",
+      "research/tests/test_retrieval_scoring.py": "c81e94c68627cf888687818e48ad4774d21a20fee31b5a8dc014232180863fe3",
+      "research/tests/test_static_key_allocation.py": "2b8fb1d46cefeecec92dcb97fd6a5a3e8f49f0a5b3b6f6df03f2da7fc53e5a23",
+      "research/tests/test_static_numerics.py": "923e4fce7a2d4f4cd2faac9bdbb1be918667f1ffb20f186c4651c040b4a73077",
+      "research/tests/test_static_quality.py": "c41e9cebb3205707b4303e79b9747fd191075436e22e81f7af766252fa65ff3a",
+      "research/tests/test_trajectory_results.py": "477df9533f5fccab14a2ef8bc9a953f2c31464599711ae220849bb3e4152cd8a"
+    }
+  },
+  "reused_prefix": {
+    "n": 0,
+    "source": null
+  },
+  "reference_source": {
+    "path": "research/phase1/experiments/generation_error_sources/results/qwen/v_hotpot_four_bf16.json",
+    "sha256": "c2b178ebbf5fd43961482f6afe9743dbd3347fe42d3694f5e37ba1c39eb0bd8d",
+    "n": 16
+  },
+  "total_n_with_reference": 64,
+  "result_format_version": 1,
+  "calibration_commit": null,
+  "residual_bits": 0,
+  "residual_tokens": 0,
+  "invalid_samples": 0,
+  "organization_source": {
+    "path": "research/.runtime/hold/reference-consolidation/947977f12943510c0b0268f7cea03f9a76adf171c11f400aed956e73e6108280.json",
+    "sha256": "947977f12943510c0b0268f7cea03f9a76adf171c11f400aed956e73e6108280"
+  },
+  "original_raw_source": {
+    "path": "research/.runtime/static-final/reference_progress/qwen/hotpot_four_bf16.json",
+    "sha256": "c035ddce97b7585b5dac83fdc572c79e5a1c751d2466b9968f7642cde84979eb"
+  },
+  "raw_selection": {
+    "ids": [
+      "hotpot-four-expand-00",
+      "hotpot-four-expand-01",
+      "hotpot-four-expand-02",
+      "hotpot-four-expand-03",
+      "hotpot-four-expand-04",
+      "hotpot-four-expand-05",
+      "hotpot-four-expand-06",
+      "hotpot-four-expand-07",
+      "hotpot-four-expand-08",
+      "hotpot-four-expand-09",
+      "hotpot-four-expand-10",
+      "hotpot-four-expand-11",
+      "hotpot-four-expand-12",
+      "hotpot-four-expand-13",
+      "hotpot-four-expand-14",
+      "hotpot-four-expand-15",
+      "hotpot-four-expand-16",
+      "hotpot-four-expand-17",
+      "hotpot-four-expand-18",
+      "hotpot-four-expand-19",
+      "hotpot-four-expand-20",
+      "hotpot-four-expand-21",
+      "hotpot-four-expand-22",
+      "hotpot-four-expand-23",
+      "hotpot-four-expand-24",
+      "hotpot-four-expand-25",
+      "hotpot-four-expand-26",
+      "hotpot-four-expand-27",
+      "hotpot-four-expand-28",
+      "hotpot-four-expand-29",
+      "hotpot-four-expand-30",
+      "hotpot-four-expand-31",
+      "hotpot-four-expand-32",
+      "hotpot-four-expand-33",
+      "hotpot-four-expand-34",
+      "hotpot-four-expand-35",
+      "hotpot-four-expand-36",
+      "hotpot-four-expand-37",
+      "hotpot-four-expand-38",
+      "hotpot-four-expand-39",
+      "hotpot-four-expand-40",
+      "hotpot-four-expand-41",
+      "hotpot-four-expand-42",
+      "hotpot-four-expand-43",
+      "hotpot-four-expand-44",
+      "hotpot-four-expand-45",
+      "hotpot-four-expand-46",
+      "hotpot-four-expand-47"
+    ]
+  },
+  "source_segments": [
+    {
+      "start": 0,
+      "end": 48,
+      "publication": {
+        "base_commit": "cbce2edc20183fff42f8444a67b539eb1fbf205d",
+        "files": {
+          "research/manifests/data/gsm8k.source.json": "2d732973e51f9bf9e3952162c4c3a6442612a87a15c2bf2bba953ec1b33561b5",
+          "research/manifests/data/hotpotqa.source.json": "3157b6f249091417583d3f84a7a782ddc2355ad88fd39321f4c9152f97ff1129",
+          "research/manifests/models/Llama-3.1-8B-Instruct.source.json": "5a83c4b7c4469d533b51f9db47aa0c8abe68dfac78e9b26087c73aaea778f4c2",
+          "research/manifests/models/Qwen2.5-7B-Instruct.source.json": "0876e681d4bf4932b2b2ba31cd8b14a3d139e1d6aa5213fb5ceeb21ca0fc3e74",
+          "research/phase1/configs/data.md": "20b7b1f83939b856f78f2bc0eb36000b1aa71ed931383f508634c38f7719826a",
+          "research/phase1/configs/long_decode.json": "a374518b658b717822e7969179916f274a544786dd9934b366d3b9c686876e95",
+          "research/phase1/configs/quality.md": "ec25f37a18e4fb31a1eed8c7bd50534525bbb892637d73d6d39f191ba1eada91",
+          "research/phase1/configs/quant.md": "742b7e8e9b6ac7adbc3f00a50d1f6176a4ec41d9a268d4020cb6604f9d3b4b7e",
+          "research/phase1/configs/representation_diagnostics.json": "082ef8ded9ea471a12e985584a3508d27464b76d2fe79086ac774e0f5b899a83",
+          "research/phase1/configs/results.md": "2e19d0ed05483aa84d49e0a58741a0006efcee001952aad7539d4d3743ffab8d",
+          "research/phase1/configs/retrieval.json": "cbccc951f10f55e17d4e5160781ab668297dfb2a032215bede14c71485b18193",
+          "research/phase1/configs/runtime.md": "5b8372e1556454ffbdf785b98e18ad105d49b0feaddf549d0cc32e812b336fab",
+          "research/phase1/configs/static_layer_allocation.json": "eca5080f410cf712b89c666a89c70de1840a78d074d5d61a8e9e99b864617aa3",
+          "research/phase1/configs/static_numerics.json": "9dfc1b8db84f555fea54efd98a1f461936740ab791dea3db379d1ccc7834a92c",
+          "research/phase1/configs/trajectory_replay.json": "7ee73ad6faaf0ad661cbd22e45c6bc60cb34d75a013091eb3fb9f131350e7bcc",
+          "research/phase1/experiments/static_layer_allocation/results/llama/allocations.json": "8b16ecf3f9a189c4c15fa4a1aa4ba829d1fde1e557ad6407379a95c825cfc7e8",
+          "research/phase1/experiments/static_layer_allocation/results/llama/probe.json": "3773ee6efbd30ea792879a8af8a43fbfdab9140350e47046b2ef0a563542d565",
+          "research/phase1/experiments/static_layer_allocation/results/qwen/allocations.json": "b513d4cea66db030bd02e284b4f16367757f7c424bf377b64ef8e688d47ce8a9",
+          "research/phase1/experiments/static_layer_allocation/results/qwen/probe.json": "ebd6d0cc9cb2eeaf9f712471062c5b454b12e93583d320e8b65ba75097421893",
+          "research/phase1/experiments/__init__.py": "453a7ab4f2391a579b89e514acde45e28850b9ea6124693ff3194e62d363ed60",
+          "research/phase1/experiments/generation_error_sources/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/generation_error_sources/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/generation_error_sources/code/early_stop.py": "c33f6d13a947391bfbaa1c6823aa659d2aabfac0b4c7ce42fa45dcddc761a7ea",
+          "research/phase1/experiments/generation_error_sources/code/four_question_baseline.py": "8250197757738ba4651186c840672c374ddae152a9002652167c684d8dcfc808",
+          "research/phase1/experiments/generation_error_sources/code/long_baseline.py": "a1ad99f80cb0d2cc7b1e0eed1023c6f391963c967088961bf31a34468f38f571",
+          "research/phase1/experiments/generation_error_sources/code/new_input_quality.py": "228be29589e56e11cb84c91fe8af3dd0334bb9e0ad32c2d3f032ec77d84f1614",
+          "research/phase1/experiments/generation_error_sources/code/plot_trajectories.py": "4c5d8b53fd1ab4fec7c8f4b8ea4bea2d38687a58810aa32a295d0e8683853e60",
+          "research/phase1/experiments/generation_error_sources/code/quantized_generation.py": "c4bb03c950188e1b3bef3328da76c96226ef64237c868088bfc3a76c71156456",
+          "research/phase1/experiments/generation_error_sources/code/residual_diagnostics.py": "0171b438d8b2c297af94b70d7bb9df4e290aabd400b8090166a480346ee8b084",
+          "research/phase1/experiments/generation_error_sources/code/review_trajectories.py": "a866eaa8a06f931a02a71809a5bfedd309d3d3e9f0812dc78240dff659058a5d",
+          "research/phase1/experiments/generation_error_sources/code/select_residual.py": "f128350a24e4dba17fe73be2eb2621a1bc9b4aa15fe9f996b11b89f35af43508",
+          "research/phase1/experiments/generation_error_sources/code/select.py": "117c4749a74386e84debec15497d2d631b84f0afb1af306625e254e9c98c72d5",
+          "research/phase1/experiments/generation_error_sources/code/short_baseline.py": "8da96811bad2b037d340211163fbbc5c4073df07f2de13bc73e691df07a0515f",
+          "research/phase1/experiments/generation_error_sources/code/sources.py": "e5787e27966709492e9992fe33412d2501b3ecf9278fdea0bd3a71d52d46d583",
+          "research/phase1/experiments/generation_error_sources/code/trajectories.py": "47918ad6551bda05ff15731e49dfe560da33cd6401edc1e77f46f76c0a2c5291",
+          "research/phase1/experiments/generation_error_sources/code/trajectory_replay.py": "6c38c90433838c7b7432d523729c2ba5e424cfabfde1537da0948d6e9b0f3e80",
+          "research/phase1/experiments/representation_interactions/__init__.py": "1150825318375717f8f78595f0ba19b0293938338795f595810d5f3333824a43",
+          "research/phase1/experiments/representation_interactions/code/__init__.py": "33371d5ba9ca26eb389d18941e9d1669492e65329e9b2f4bdbb304ac1749c6ee",
+          "research/phase1/experiments/representation_interactions/code/evaluate.py": "6e1f295ef08726bae1eef4ad991a22913f506c1390fa967bd19e049868f15996",
+          "research/phase1/experiments/representation_interactions/code/metrics.py": "ffc1fc6293b267a095d4a3ec0bdeeb09b03c0721b310ca5fe81b21437c1c9a70",
+          "research/phase1/experiments/representation_interactions/code/results.py": "d16f05d0a61e1ab668687d66afd02cd2304ab85b7a775f91b56471f0750bb455",
+          "research/phase1/experiments/representation_interactions/code/select.py": "5519423d60e298c3e7be095cb1213f83048e502a07944dd7cd8a07d558c6f058",
+          "research/phase1/experiments/static_layer_allocation/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/static_layer_allocation/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/static_layer_allocation/code/allocations.py": "44472dffbb529873f8c5c9ead89cbe5c0361ce595f2b81ed43a72d30696df34d",
+          "research/phase1/experiments/static_layer_allocation/code/content_data.py": "10e90928e2e694d8ae8c3412f44c17376417fd68bd2fa1ef1d1b99e3c9b1632d",
+          "research/phase1/experiments/static_layer_allocation/code/content_metrics.py": "eb24ee3c83cb18dfbb7d2c2a2bfbab57597e8d361a277d88c05af9e2f4f7e15e",
+          "research/phase1/experiments/static_layer_allocation/code/content_plot.py": "644990b4526f2620f73043c2a5e560bb33633255adf466f71e355106e996c50e",
+          "research/phase1/experiments/static_layer_allocation/code/content_review.py": "50b2d4aeaa1b1fd912d0e5f18260a7c14059b652a4450cdb56f2f83f1a8af09f",
+          "research/phase1/experiments/static_layer_allocation/code/content.py": "caf7da6142eceaf77b537b4f8c63b50471aa87d75776144a5a887c885db23d06",
+          "research/phase1/experiments/static_layer_allocation/code/expand.py": "2ff6310233ff7fac85178035d93c112bcdfdb72d610c5a998ba58269e6c7c390",
+          "research/phase1/experiments/static_layer_allocation/code/free_token_diagnostic.py": "626e8aabd414d48a250215847dd559ade25ddcda662bd1be91fd810a7fafd23b",
+          "research/phase1/experiments/static_layer_allocation/code/gate.py": "6a91358fed5374869c2ae294702303e59dd0da62aec548dc214f309c41b3109c",
+          "research/phase1/experiments/static_layer_allocation/code/metrics.py": "e5f3009ad84c9bb54bebb833fca86fe9b9cec52cef6bebe942636f32248f7aa1",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_forward.py": "9c669cb991a3f9db7a9c2937353e171d4da569207d291d5dd55814ddaa54eaaf",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_logits.py": "813a3adeb835f0596e36e5b0dd964989d04d4d4d65ac2ce34ea107bae56195be",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_metrics.py": "a9372431cb3fa08c9a26d9fd52ed9158913a8f1863a32272d9dde9babfdbe255",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_plot.py": "b95ac07991749e4412491ecd203725e079f8bf25e78971da987ba66950e859f5",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_report_data.py": "994bd312af02c6b9a23f29aa64d69b4132ca9feb3ef987c19b3e62bdece8d1a1",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_review.py": "d84f944784f8d94d82eacb97963a819e71c9b20e67a4835f0cf28c4a0616db2a",
+          "research/phase1/experiments/static_layer_allocation/code/numerics_summary.py": "e5fc58e8db2d741529a959f80f3eff474122381c0b203a5a0f40815f94a2bd01",
+          "research/phase1/experiments/static_layer_allocation/code/numerics.py": "98032fa04a948439580ec2da1b0558919466c5f5773241295987b5c3ad1dff88",
+          "research/phase1/experiments/static_layer_allocation/code/probe.py": "65db35ea8a81e7652b2739b50cb784a339e95df4e3abe9d912e99e822098b608",
+          "research/phase1/experiments/static_layer_allocation/code/protocol.py": "4a8a23358d33e33b5a905dd6c38ef0b936f75fe7474cf2a31825bf991f980d4e",
+          "research/phase1/experiments/static_layer_allocation/code/quality_data.py": "ddcf49c9b86c4d53805426e0f10c85eeaa0a0d075457e944e0f263284b40c595",
+          "research/phase1/experiments/static_layer_allocation/code/quality.py": "65c63b81cabfc0a16c7ddfa8e9207ad00a4d75ab065e73f5e15326d8bf6beeef",
+          "research/phase1/experiments/static_layer_allocation/code/select_final.py": "1072a12edbcdb97eaa09505ba65d79d5e03ce981b42e80babb90c30d52228cb4",
+          "research/phase1/experiments/storage_service_cost/__init__.py": "89fbf887298e46a9eb31b47c1ddf0d62d6981d20d2f651ffb9fdb038bf729d54",
+          "research/phase1/experiments/storage_service_cost/code/__init__.py": "c6f0fbc43e2ead9b44e31d64aa149de71bfd0eca78edd60556ee8faca48591e5",
+          "research/phase1/experiments/storage_service_cost/code/layout.py": "aec2600972de3f5f314730daff71ba77ec58acf803d8642377e1e5a9a674cad4",
+          "research/phase1/guide.md": "01b62678f9b12aa8fd315fc9441c45390e88ba80f52cfd53c6b3a0d2926f7cf4",
+          "research/phase1/splits/checks.json": "abe6b5d12d596df4ab7358e3987c87f2cf14c9056f0d711b042292dcf76862e1",
+          "research/phase1/splits/gsm8k.json": "cd8071912ea671f9c6865ebb8e86c564a1b5d4cbaa21f7a0164a6fa21d88e524",
+          "research/phase1/splits/hotpot_four_expand.json": "0ab3497273d202a17de7c79420c73410d99c6f7a174c68ec97a3a416f2d3d4c6",
+          "research/phase1/splits/hotpot_four.json": "43adc51a5c0037939696e92c6b014dcf476cd538fb86ca57df4ba7f31982f49f",
+          "research/phase1/splits/hotpot.json": "04766d41a211e61e8a83c0a4451f8e043ba085c91552fa0e7fbad508a7e9c4f6",
+          "research/phase1/splits/retrieval_ruler_expand.json": "efd140d96199f270bc69483315f1eb576309946431289f93573c5b481f798a4a",
+          "research/phase1/splits/retrieval_ruler.json": "5e3326f82202879016d9c0529312a0b8e6919a50323cd7b7821ce5d6b45d4805",
+          "research/phase1/splits/retrieval.json": "d84eafa9f64b45526b6e33bda11c672ee2db8d0b66982cc434593a007e61afb4",
+          "research/phase1/splits/seeds.json": "b93fc331668b2448c8dbc59b3c4cedaaa3a727720cbd381dfb68447a5dbde911",
+          "research/phase1/splits/static_retrieval.json": "72f1f0bf306a8182bc212471c2db3d0cebf982313939abc90e8d8a5bf58c89ee",
+          "research/phase1/splits/templates.json": "8e3622484f687ac973b6ac84d689445c256c90a098ed312264e576034cf3101a",
+          "research/phase1/splits/trajectories.json": "03cabd9fe5027899019d963524b05be011f2b2b4a5b0e8e21ae8fca3b35424db",
+          "research/phase1/src/phase1/__init__.py": "56e9ea828d1c2fb485193bd2cbd74aca65d580264431df90ad2a0bb479c81916",
+          "research/phase1/src/phase1/complete_experiments.py": "47a8a301c5c350ba81bbba3caf7e8dfcd9fecd02002d12b27bdad8393fd4ec29",
+          "research/phase1/src/phase1/representation.py": "17f54e1a6bf8775f4d820b80ec5c4c11b63ae6d30de5792cbd0778c43e60081a",
+          "research/phase1/src/phase1/result_format.py": "e4f88bb1360a2fb7a87e93e37d0cdfe085b88aaf1e9b097a7c5219c80f8cba4d",
+          "research/phase1/src/phase1/review_results.py": "74c1727278f4de937354b6cf8030a097269eab0e67347ccf7a5b540e5ed640f4",
+          "research/phase1/src/phase1/ruler_retrieval.py": "753e2c8b747f34b83ae31a7d140b521c5cc426d97a78d2061384df12f2eccfba",
+          "research/phase1/src/phase1/runner.py": "cdb7d3f74660c37f4e02c43973d65a966034b0dfed569c9eae08bc6cfd685c7f",
+          "research/phase1/src/phase1/score.py": "acc69b9fc12741b2d014f974aa9119f9349cef6e03ad69c90cfebd679a7e2cf8",
+          "research/phase1/src/phase1/splits_build.py": "459fc0f13c2be44af29f2c8067ee3738ab23e13314bd164c8bad3b7a6ccf3bda",
+          "research/src/kvstudy/__init__.py": "3ffc95a5779b6ff74c935fbbc7ad5e110a7175c3c90c2951e72c8bfa7872608c",
+          "research/src/kvstudy/attention.py": "8e37050d90d0ddd4526254f8313244d7ed50a2dc823e38fcc4745a7e3458c834",
+          "research/src/kvstudy/groups.py": "0ffa3d02dcbf8ba174accc563e0a42a9cea39ba020889c45d589f6aef863fab5",
+          "research/src/kvstudy/intervals.py": "42d851c4988795213e6856f859e49a2fad2646dbb2c903af82b2528402265e1a",
+          "research/src/kvstudy/ledger.py": "2b251b83d27647198310649abb9e1eab5ebd8fcc8f7b409ce356006e4acaefbf",
+          "research/src/kvstudy/paths.py": "27f92eb5ac0a84b6d8b72e615ab2bde26f135fafe3a738fd3218b2fb83029032",
+          "research/src/kvstudy/quantize.py": "1dcf6d79294dcfdd33b380db689a123b30869e270754f0110ed1fda6d2c1ff10",
+          "research/tests/test_attention_intervals.py": "80344533d9c392632a6f7334733cff9f242078bba87580f9109bf1727524ff3a",
+          "research/tests/test_cache_offload.py": "de8a89e0bdc54a4546e9fe999a5ac7651ac47063ecec9300d16bbda432b64dc3",
+          "research/tests/test_candidate_supplement.py": "847f949c1b82fba6139837462ce771a864e12dc8894800b2b7f633268255ed6e",
+          "research/tests/test_content_allocation.py": "ea8517013a17dc0008ddae373bda289a34fc24794c67bf46705e2f65cc9fbea2",
+          "research/tests/test_experiment_completion.py": "f62c2b22b7a877d2e01921fe96981a313cb9d9f57f6d84bdab7ad845a9061159",
+          "research/tests/test_four_question_scoring.py": "fa0cc25940e407c690d186aa817cde04fb94c9094289c9bc8f77784200b85d7c",
+          "research/tests/test_generation_quantization.py": "076e051e74c226ce531c31d6887b8a52be03726d5e0f5a999289f89aff82c64f",
+          "research/tests/test_generation_selection.py": "c4798172e2f5a4d3cb9a68723536df8e87d636a92a55ef03f992fea7dd5edde0",
+          "research/tests/test_ledger.py": "533173aa53db6be231c00db4a2dbfd144923c04993187844e2f4505d3c88381a",
+          "research/tests/test_new_input_quality.py": "4b404dab5b389bcd882eb07048011e3891d6140238109f0dddc12a591c49bdde",
+          "research/tests/test_quantize.py": "4b61e2726ec3a432649a0adb1f286079eb7918d2c712797cfeac8517e1d60aea",
+          "research/tests/test_representation_evaluate.py": "6ee4204872c966faf106a1a8927575c0b2bc4cc85943f5e3fd536847dabef180",
+          "research/tests/test_representation_metrics.py": "d8314be7672b37ea70f8be01e1223d17b6c2032b5327065d74f2aa91b07f0e24",
+          "research/tests/test_representation_results.py": "ffecef1a80dfb49161967b0548ea4045c07672ca2d3eac378fc6fe47311374d2",
+          "research/tests/test_representation_selection.py": "ec84127d57731202f368abd78d8f9b2e817f3ab6ae532a5041801dac4b90e862",
+          "research/tests/test_residual_diagnostics.py": "04f0d74569859f3e8d97d8cb4bcdb73a239844e89bccb053a641a609621a9b11",
+          "research/tests/test_result_format.py": "514f6fb37e3d62b15f17fbedc598389b9e0d1b005829298dcfe53512bd4bf697",
+          "research/tests/test_retrieval_scoring.py": "c81e94c68627cf888687818e48ad4774d21a20fee31b5a8dc014232180863fe3",
+          "research/tests/test_static_key_allocation.py": "2b8fb1d46cefeecec92dcb97fd6a5a3e8f49f0a5b3b6f6df03f2da7fc53e5a23",
+          "research/tests/test_static_numerics.py": "923e4fce7a2d4f4cd2faac9bdbb1be918667f1ffb20f186c4651c040b4a73077",
+          "research/tests/test_static_quality.py": "c41e9cebb3205707b4303e79b9747fd191075436e22e81f7af766252fa65ff3a",
+          "research/tests/test_trajectory_results.py": "477df9533f5fccab14a2ef8bc9a953f2c31464599711ae220849bb3e4152cd8a"
+        }
+      }
+    }
+  ]
+}

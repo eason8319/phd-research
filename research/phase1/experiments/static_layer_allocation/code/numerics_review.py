@@ -4,28 +4,37 @@ from __future__ import annotations
 
 import argparse
 import copy
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import numpy as np
 from transformers import AutoTokenizer
 
-from kvstudy.paths import project_root
 from experiments.static_layer_allocation.code.content import save
 from experiments.static_layer_allocation.code.content_review import compare
 from experiments.static_layer_allocation.code.numerics import (
-    DESIGN, FORMAL, RUNTIME, protected_allocations, read, sha,
+    DESIGN,
+    FORMAL,
+    RUNTIME,
+    protected_allocations,
+    read,
+    sha,
 )
 from experiments.static_layer_allocation.code.numerics_logits import (
-    audit_entities, file_sha, question_analysis, raw_summary,
+    audit_entities,
+    file_sha,
+    question_analysis,
+    raw_summary,
 )
 from experiments.static_layer_allocation.code.numerics_metrics import score_answer
 from experiments.static_layer_allocation.code.numerics_summary import (
-    budget_comparisons, generation_divergence, layer_summary, path_summary,
+    budget_comparisons,
+    generation_divergence,
+    layer_summary,
+    path_summary,
 )
 from experiments.static_layer_allocation.code.protocol import digest, load_plan
+from kvstudy.paths import project_root
 from phase1.representation import MODELS
 
 

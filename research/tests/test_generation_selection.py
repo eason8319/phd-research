@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from experiments.generation_error_sources.code.candidates import (
+from experiments.generation_error_sources.code.select import (
     KV4,
     KV8,
     generation_candidates,
